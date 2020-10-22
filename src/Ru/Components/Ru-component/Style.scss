@@ -1,0 +1,170 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "Ru/Pages/variable.scss";
+// 以下開始自訂CSS
+
+.ru-noPadding {
+  padding: 0;
+}
+.ru-noMargin {
+  margin: 0;
+}
+
+.showWidth {
+  position: fixed;
+  z-index: 100;
+  right: 0;
+}
+
+.navBar {
+  height: 135px;
+}
+
+.ru-mainImg {
+  height: 362px;
+  background-image: url("./Images/mainImg.jpg");
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: cover;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $sub-title,
+    $regular,
+    $letter-spacing,
+    $white
+  );
+  @include flex($df, $fdr, $jcc, $alc);
+}
+
+.ru-mainImg > p {
+  display: flex;
+  justify-content: center;
+}
+
+// .ru-mainImg::before {
+//   content: "";
+//   display: block; // 偽元素預設為inline屬性
+//   height: 100%; // block屬性會自動適應父層, 不需要再給width:100%
+//   opacity: 50%;
+//   background-color: black;
+// }
+
+.ru-containerA {
+  background-color: blueviolet;
+  @include page();
+}
+
+.ru-searchBar {
+  width: 43.76%;
+  height: 50px;
+  border-radius: 9999px;
+  padding: 0px 20px;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    0px,
+    $light-orange
+  );
+}
+
+.ru-optionWarp {
+  background-color: dodgerblue;
+  color: white;
+  height: 324px;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.ru-buttonWarp {
+  background-color: rgb(30, 236, 255);
+  width: 80.8%;
+  height: 64px;
+  margin-top: 50px;
+  @include flex($df, $fdr, space-between, $alc);
+}
+
+.ru-button {
+  background-color: $white;
+  height: 64px;
+  width: 197px;
+  border: 1px solid $light-orange;
+  border-radius: 9999px;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-orange
+  );
+}
+
+.ru-button:hover {
+  background-color: $light-orange;
+  color: white;
+}
+
+.ru-button4 {
+  color: $light-green;
+  border: 1px solid $light-green;
+}
+
+.ru-button4:hover {
+  background-color: $light-green;
+  color: white;
+}
+
+.ru-machandise {
+  height: 2001px;
+  // background-color: rgb(77, 255, 106);
+  color: white;
+}
+
+.ru-navbarCollapse {
+  justify-content: flex-end;
+}
+
+.logo {
+  width: 160px;
+}
+
+.ru-containerB {
+  background-color: gold;
+  max-width: 1170px;
+  padding-top: 80px;
+}
+.ru-row {
+  background-color: orangered;
+  margin-bottom: 100px;
+}
+
+.ru-itemWarp {
+  background-color: cornflowerblue;
+  outline: 1px solid black;
+  height: 531.73px;
+  @include flex($df, $fdr, $jcs, $als);
+}
+
+.ru-itemWarp2 {
+  @include flex($df, $fdr, $jcc, $als);
+}
+
+.ru-itemWarp3 {
+  @include flex($df, $fdr, $jce, $als);
+}
+
+.ru-item {
+  outline: 1px solid black;
+  width: 345px;
+  height: 100%;
+}
+
+.ru-col {
+  background-color: chartreuse;
+  outline: 1px solid black;
+}
+
+.ru-Col1 {
+  background-color: gold;
+}
