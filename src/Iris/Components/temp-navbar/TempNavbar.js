@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./temp-nevbar.css";
+import "./temp-nevbar.scss";
 import {
   Navbar,
   Nav,
@@ -12,7 +12,7 @@ import {
 // 選單連結要使用NavLink取代Link
 import { NavLink } from "react-router-dom";
 
-function MyNavbar(props) {
+function TempNavbar(props) {
   return (
     <>
       <Navbar
@@ -56,4 +56,4 @@ function MyNavbar(props) {
   );
 }
 
-export default MyNavbar;
+export default TempNavbar;
