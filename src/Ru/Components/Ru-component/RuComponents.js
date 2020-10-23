@@ -7,10 +7,12 @@ import cart from "Ru/Components/Ru-component/Images/cart.svg";
 function RuComponents() {
   return (
     <>
+      <input type="text"></input>
       <div style={{ height: "135px", backgroundColor: "#FF5151" }}>
         我是navbar
       </div>
       {/* 如果元件有定義key或ref, 它們並不會向下傳資料, 它們不屬於props */}
+
       <RuShowWidth />
       <div className="ru-mainImg">
         <h1>享受美食 不需要理由</h1>
@@ -32,65 +34,106 @@ function RuComponents() {
 
         <div className="itemWarp itemWarp1">
           <div className="ru-item ru-item1">
+            {/* item圖片s */}
             <section className="item-img"></section>
+            {/* item圖片e */}
+            {/* item資訊s */}
             <section className="item-info-warp">
-              <h2>慢煮嫩雞胸-蒜味香草</h2>
-              <section className="star-warp">
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <p className="num commentNum">1180則評論</p>
-                <p className="num buyNum">234已購買</p>
+              <div className="item-info">
+                <h2>慢煮嫩雞胸-蒜味香草</h2>
+
+                <div className="star-warp">
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                </div>
+
+                <span>
+                  <p className="num commentNum">1180 則評論</p>
+                  <p className="num buyNum">234 已購買</p>
+                </span>
+                
                 <h3>$130</h3>
-              </section>
-              <button>
+              </div>
+            </section>
+            {/* item資訊e */}
+            {/* item按鈕s */}
+            <section className="item-button-warp">
+              <button className="addBtn">
                 <img className="cart" src={cart} />
               </button>
             </section>
-            <section className="item-button-warp"></section>
+            {/* item按鈕e */}
           </div>
+
+          {/* 待修正 s */}
           <div className="ru-item ru-item1">
+            {/* item圖片s */}
             <section className="item-img"></section>
+            {/* item圖片e */}
+            {/* item資訊s */}
             <section className="item-info-warp">
-              <h2>慢煮嫩雞胸-蒜味香草</h2>
-              <section className="star-warp">
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <p className="num commentNum">1180則評論</p>
-                <p className="num buyNum">234已購買</p>
-                <h3>$130</h3>
-              </section>
-              <button>
+              <div className="item-info">
+                <h2>慢煮嫩雞胸-蒜味香草</h2>
+                <section className="star-warp">
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                </section>
+                <span>
+                  <p className="num commentNum">1180 則評論</p>
+                  <p className="num buyNum">234 已購買</p>
+                </span>
+              </div>
+              {/* <h3>$130</h3> */}
+            </section>
+            {/* item資訊e */}
+            {/* item按鈕s */}
+            <section className="item-button-warp">
+              <button className="addBtn">
                 <img className="cart" src={cart} />
               </button>
             </section>
-            <section className="item-button-warp"></section>
+            {/* item按鈕e */}
           </div>
+
           <div className="ru-item ru-item1">
+            {/* item圖片s */}
             <section className="item-img"></section>
+            {/* item圖片e */}
+            {/* item資訊s */}
             <section className="item-info-warp">
-              <h2>慢煮嫩雞胸-蒜味香草</h2>
-              <section className="star-warp">
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <img className="star" src={star} />
-                <p className="num commentNum">1180則評論</p>
-                <p className="num buyNum">234已購買</p>
-                <h3>$130</h3>
-              </section>
-              <button>
+              <div className="item-info">
+                <h2>慢煮嫩雞胸-蒜味香草</h2>
+                <section className="star-warp">
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                  <img className="star" src={star} />
+                </section>
+                <span>
+                  <p className="num commentNum">1180 則評論</p>
+                  <p className="num buyNum">234 已購買</p>
+                </span>
+              </div>
+              {/* <h3>$130</h3> */}
+            </section>
+            {/* item資訊e */}
+            {/* item按鈕s */}
+            <section className="item-button-warp">
+              <button className="addBtn">
                 <img className="cart" src={cart} />
               </button>
             </section>
-            <section className="item-button-warp"></section>
+            {/* item按鈕e */}
           </div>
+          
+          {/* 待修正 e */}
         </div>
       </div>
 

@@ -1,5 +1,4 @@
 import React from "react";
-// import RuApp from "Ru/RuApp";
 import RuApp from "./Ru/RuApp";
 import "./App.css";
 

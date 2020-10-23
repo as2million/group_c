@@ -1,7 +1,10 @@
-@import "~bootstrap/scss/bootstrap.scss";
 @import "Ru/Pages/variable.scss";
 // 以下開始自訂CSS
-
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 .ru-noPadding {
   padding: 0;
 }
@@ -131,13 +134,82 @@
 }
 
 .item-info-warp {
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.item-info {
+  background-color: lawngreen;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.num {
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $number-size,
+    $regular,
+    0px,
+    $light-grey
+  );
+}
+
+.commentNum {
+  margin-right: 6px;
+  margin-bottom: 16px;
+}
+
+// .star-warp {
+// vertical-align: middle;
+// margin-bottom: 5px;
+// }
+
+.star {
+  margin: 0px 2px;
+}
+
+.item-info-warp {
   background-color: indianred;
   width: 100%;
   height: 108px;
 }
 
+.item-info {
+  height: 79px;
+  position: relative;
+}
+
+.item-info > h3 {
+  position: absolute;
+  top: 0;
+  left: 180px;
+}
+
+.item-info > h2 {
+  font-size: $productName-size;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $productName-size,
+    $regular,
+    0px,
+    $productName-Color
+  );
+  margin-bottom: 10px;
+}
+
+// .star-warp {
+// height: 14px;
+// }
+
 .star {
   width: 14px;
+}
+
+.addBtn {
+  width: 150px;
+  height: 45px;
+  border-radius: 9999px;
+  border: 1px solid $light-orange;
 }
 
 .cart {
@@ -152,6 +224,7 @@
   background-color: khaki;
   width: 100%;
   height: 84px;
+  @include flex($df, $fdc, $jcc, $alc);
 }
 
 .ru-row {
