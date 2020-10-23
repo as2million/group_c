@@ -7,7 +7,6 @@ import cart from "Ru/Components/Ru-component/Images/cart.svg";
 function RuComponents() {
   return (
     <>
-      <input type="text"></input>
       <div style={{ height: "135px", backgroundColor: "#FF5151" }}>
         我是navbar
       </div>
@@ -54,7 +53,7 @@ function RuComponents() {
                   <p className="num commentNum">1180 則評論</p>
                   <p className="num buyNum">234 已購買</p>
                 </span>
-                
+
                 <h3>$130</h3>
               </div>
             </section>
@@ -77,19 +76,22 @@ function RuComponents() {
             <section className="item-info-warp">
               <div className="item-info">
                 <h2>慢煮嫩雞胸-蒜味香草</h2>
-                <section className="star-warp">
+
+                <div className="star-warp">
                   <img className="star" src={star} />
                   <img className="star" src={star} />
                   <img className="star" src={star} />
                   <img className="star" src={star} />
                   <img className="star" src={star} />
-                </section>
+                </div>
+
                 <span>
                   <p className="num commentNum">1180 則評論</p>
                   <p className="num buyNum">234 已購買</p>
                 </span>
+
+                <h3>$130</h3>
               </div>
-              {/* <h3>$130</h3> */}
             </section>
             {/* item資訊e */}
             {/* item按鈕s */}
@@ -109,19 +111,22 @@ function RuComponents() {
             <section className="item-info-warp">
               <div className="item-info">
                 <h2>慢煮嫩雞胸-蒜味香草</h2>
-                <section className="star-warp">
+
+                <div className="star-warp">
                   <img className="star" src={star} />
                   <img className="star" src={star} />
                   <img className="star" src={star} />
                   <img className="star" src={star} />
                   <img className="star" src={star} />
-                </section>
+                </div>
+
                 <span>
                   <p className="num commentNum">1180 則評論</p>
                   <p className="num buyNum">234 已購買</p>
                 </span>
+
+                <h3>$130</h3>
               </div>
-              {/* <h3>$130</h3> */}
             </section>
             {/* item資訊e */}
             {/* item按鈕s */}
@@ -132,7 +137,7 @@ function RuComponents() {
             </section>
             {/* item按鈕e */}
           </div>
-          
+
           {/* 待修正 e */}
         </div>
       </div>
