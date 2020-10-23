@@ -10,29 +10,6 @@ $custom-select-bg: #f5a016;
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 
-// temp
-input {
-  margin: 10px;
-}
-
-// 20px 圓角輸入框
-.iris-input-size-lg {
-  font-size: 2rem;
-  border-radius: 2rem;
-}
-
-// 18px 方角輸入框
-.iris-input-size-md {
-  font-size: 1.8rem;
-  border-radius: 0.6rem;
-}
-
-// 15px 方角輸入框
-.iris-input-size-sm {
-  font-size: 1.5rem;
-  border-radius: 0.5rem;
-}
-
 // 下拉選單 15px 方角
 .select-size-sm {
   font-size: 1.5rem;
@@ -40,3 +17,28 @@ input {
   margin: 1rem;
 }
 
+// height:50px   font-size:20px   圓角輸入框
+.iris-inputH50 {
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  height: 5rem;
+}
+
+// height:44px   font-size:20px   圓角輸入框
+.iris-InputH44 {
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  height: 4.4rem;
+}
+
+// height:40px   font-size:15px   方角輸入框
+.iris-InputH40 {
+  font-size: 1.5rem;
+  border-radius: 0.8rem;
+  height: 4rem;
+}
+
+// textarea   font-size:15px
+.iris-textarea {
+  font-size: 15px;
+}

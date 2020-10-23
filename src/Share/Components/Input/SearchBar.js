@@ -1,5 +1,5 @@
 // height:50px   font-size:20px   圓角搜尋框
-
+// ru
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./Input.scss";
