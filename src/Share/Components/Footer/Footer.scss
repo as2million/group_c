@@ -1,9 +1,9 @@
 @media screen and (max-width: 375px) {
-    .copyright p {
+    .claudia-copyright p {
       font-size: 1.2rem;
     }
 
-    .icons {
+    .claudia-icons {
         margin-top: 15px;
     }
   }
@@ -12,18 +12,18 @@ html {
     font-size: 10px;
 }
 
-.background {
+.claudia-background {
     background-color: #F7EDE2;
     height: 30vh;
     display: flex;
     justify-content: center;
 }
 
-.card {
+.claudia-card {
     font-size: 1.5rem;
 }
 
-.footer-text {
+.claudia-footer-text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,7 @@ html {
 }
 
 
-.footer-text a {
+.claudia-footer-text a {
     text-decoration: none;
     padding-top: 20px;
     margin: 20px 10px;
@@ -41,30 +41,30 @@ html {
     justify-content: center;
 }
 
-.footer-text a:hover {
+.claudia-footer-text a:hover {
     text-decoration: underline;
 }
 
-.icons {
+.claudia-icons {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
 }
 
-svg {
+.claudia-icons svg {
     width: 50px;
     height: 50px;
     fill: #F48145;
     margin: 20px 10px;
 }
 
-svg:hover {
+.claudia-icons svg:hover {
     cursor: pointer;
 }
 
 
-.copyright {
+.claudia-copyright {
     width: 80vw;
     color: #858585;
     display: flex;
