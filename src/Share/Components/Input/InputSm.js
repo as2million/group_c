@@ -8,7 +8,7 @@ function InputSm() {
   return (
     <>
       <input
-        class="form-control input-size-sm"
+        class="form-control iris-input-size-sm"
         type="text"
         placeholder="15px 方角"
       />

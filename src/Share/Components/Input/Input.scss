@@ -16,19 +16,19 @@ input {
 }
 
 // 20px 圓角輸入框
-.input-size-lg {
+.iris-input-size-lg {
   font-size: 2rem;
   border-radius: 2rem;
 }
 
 // 18px 方角輸入框
-.input-size-md {
+.iris-input-size-md {
   font-size: 1.8rem;
   border-radius: 0.6rem;
 }
 
 // 15px 方角輸入框
-.input-size-sm {
+.iris-input-size-sm {
   font-size: 1.5rem;
   border-radius: 0.5rem;
 }
@@ -40,18 +40,3 @@ input {
   margin: 1rem;
 }
 
-// 20px 圓角搜尋框
-.search-size-lg {
-  font-size: 2rem;
-  border-radius: 0 2rem 2rem 0;
-  border-left: #fff;
-}
-
-.search-icon-wrap {
-  background-color: #faf;
-  border: 1px solid black;
-  height: 39.5px;
-}
-
-.search-wrapper {
-}

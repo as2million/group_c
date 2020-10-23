@@ -8,7 +8,7 @@ function InputMd() {
   return (
     <>
       <input
-        class="form-control input-size-md"
+        class="form-control iris-input-size-md"
         type="text"
         placeholder="18px 方角"
       />

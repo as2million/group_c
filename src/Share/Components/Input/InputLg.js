@@ -9,7 +9,7 @@ function InputLg() {
   return (
     <>
       <input
-        class="form-control input-size-lg"
+        class="form-control iris-input-size-lg"
         type="text"
         placeholder="20px 圓角"
       />

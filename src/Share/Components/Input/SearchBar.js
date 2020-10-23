@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./Input.scss";
-import "./main.css";
+import "./SearchBar.css";
 import searchIcon from "./../../image/search_icon.svg";
 
 function SearchBar() {
