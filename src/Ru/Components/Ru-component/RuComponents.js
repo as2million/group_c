@@ -1,14 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import "Ru/Components/Ru-component/Style.scss";
 import { Container, Col, Row } from "react-bootstrap";
 import RuShowWidth from "Ru/Components/Ru-ShowWidth/RuShowWidth";
 import star from "Ru/Components/Ru-component/Images/star.svg";
 import cart from "Ru/Components/Ru-component/Images/cart.svg";
 function RuComponents() {
+  // const [state, setstate] = useState(initialState);
+  const addToCart = (e) => {
+    console.log("按鈕座標", e.clientX, e.clientY);
+    let $cart = document.querySelector(".target");
+    console.log(
+      "目標",
+      $cart,
+      "X座標: ",
+      $cart.offsetLeft,
+      "Y座標: ",
+      $cart.offsetTop
+    );
+    const top = e.clientX;
+    const letf = e.clientY;
+    const offsetTop = $cart.offsetTop + "px";
+    const offsetLeft = $cart.offsetLeft + "px";
+
+    const newEl = document.createElement("div");
+    const newContent = document.createTextNode("Hi there and greetings!");
+    newEl.appendChild(newContent);
+    newEl.setAttribute(
+      "style",
+      `position:absolute; top: ${top}; left:${letf}, z-index:100`
+    );
+    console.log(newEl);
+
+    const $currentEl = document.querySelector(".ru-addBtn");
+    const $currentElParent = document.querySelector(".ru-item-btn-warp");
+    $currentElParent.insertBefore(newEl, $currentEl.nextSibling); // 已存在元素的父層.insertBefoe('新元素', 已存在元素) => 在已存在元素之前加入新元素
+    setInterval(() => {
+      top += 1;
+    }, 500);
+    console.log(newEl.getAttribute("style"));
+  };
   return (
     <>
       <div style={{ height: "135px", backgroundColor: "#FF5151" }}>
         我是navbar
+        <img
+          className="ru-cart target"
+          style={{ backgroundColor: "white" }}
+          src={cart}
+        />
       </div>
       {/* 如果元件有定義key或ref, 它們並不會向下傳資料, 它們不屬於props */}
 
@@ -59,9 +98,9 @@ function RuComponents() {
             </section>
             {/* item資訊e */}
             {/* item按鈕s */}
-            <section className="item-button-warp">
-              <button className="addBtn">
-                <img className="cart" src={cart} />
+            <section className="ru-item-btn-warp">
+              <button className="ru-addBtn" onClick={addToCart}>
+                <img className="ru-cart" src={cart} />
               </button>
             </section>
             {/* item按鈕e */}
@@ -95,9 +134,9 @@ function RuComponents() {
             </section>
             {/* item資訊e */}
             {/* item按鈕s */}
-            <section className="item-button-warp">
-              <button className="addBtn">
-                <img className="cart" src={cart} />
+            <section className="ru-item-btn-warp">
+              <button className="ru-addBtn">
+                <img className="ru-cart" src={cart} />
               </button>
             </section>
             {/* item按鈕e */}
@@ -130,9 +169,9 @@ function RuComponents() {
             </section>
             {/* item資訊e */}
             {/* item按鈕s */}
-            <section className="item-button-warp">
-              <button className="addBtn">
-                <img className="cart" src={cart} />
+            <section className="ru-item-btn-warp">
+              <button className="ru-addBtn">
+                <img className="ru-cart" src={cart} />
               </button>
             </section>
             {/* item按鈕e */}

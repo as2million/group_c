@@ -96,14 +96,14 @@ input {
 
 .ru-button {
   background-color: $white;
-  height: 64px;
-  width: 197px;
+  height: 65px;
+  width: 200px;
   border: 1px solid $light-orange;
   border-radius: 9999px;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  transition: 0.5s;
+  transition: color $three-five, border $zero;
   @include font(
     // 字體, 字體大小, 字重, 字距, 字色
     $notoSansTC,
@@ -114,8 +114,13 @@ input {
   );
 }
 
+// 一般按鈕hover時
 .ru-button:hover {
   color: $white;
+}
+
+.ru-button:active {
+  border: 1px solid $dark-orange;
 }
 
 .ru-button::after {
@@ -123,8 +128,11 @@ input {
   background-color: $light-orange;
   height: 65px;
   width: 200px;
-  border: 1px solid $light-orange;
-  // border-radius: 9999px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: 0px;
+  transition: top $two-five, background-color $zero, border $zero;
   @include font(
     // 字體, 字體大小, 字重, 字距, 字色
     $notoSansTC,
@@ -133,16 +141,14 @@ input {
     1.25px,
     $white
   );
-  position: absolute;
-  z-index: -1;
-  top: 70px;
-  left: 0px;
-  transition: .5s;
 }
 
 .ru-button:hover::after {
   top: -1px;
-  left: 0px;
+}
+
+.ru-button:active::after {
+  background-color: $dark-orange;
 }
 
 .ru-button4 {
@@ -150,13 +156,23 @@ input {
   border: 1px solid $light-green;
 }
 
+.ru-button4:hover {
+  color: white;
+}
+.ru-button4:active {
+  border: 1px solid $dark-green;
+}
+
 .ru-button4::after {
   content: "";
   background-color: $light-green;
   height: 65px;
   width: 200px;
-  border: 1px solid $light-green;
-  // border-radius: 9999px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: 0px;
+  transition: $two-five, background-color $zero, border $zero;
   @include font(
     // 字體, 字體大小, 字重, 字距, 字色
     $notoSansTC,
@@ -165,15 +181,10 @@ input {
     1.25px,
     $white
   );
-  position: absolute;
-  z-index: -1;
-  top: 70px;
-  left: 0px;
-  transition: 0.5s;
 }
 
-.ru-button4:hover {
-  color: white;
+.ru-button4:active::after {
+  background-color: $dark-green;
 }
 
 .ru-containerB {
@@ -215,11 +226,6 @@ input {
   margin-right: 6px;
   margin-bottom: 16px;
 }
-
-// .star-warp {
-// vertical-align: middle;
-// margin-bottom: 5px;
-// }
 
 .star {
   margin: 0px 2px;
@@ -263,30 +269,74 @@ input {
   );
 }
 
-// .star-warp {
-// height: 14px;
-// }
-
 .star {
   width: 14px;
 }
 
-.addBtn {
+.ru-addBtn {
+  background-color: $white;
   width: 150px;
   height: 45px;
   border-radius: 9999px;
   border: 1px solid $light-orange;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
 }
 
-.cart {
-  width: 30px;
+.ru-addBtn::after {
+  content: "加入購物車";
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  // transition: 屬性1 執行時間1 延遲多久1, ... , 屬性N 執行時間N 延遲多久N
+  transition: opacity $two-five $zero-one, background-color $zero $zero,
+    color $zero $zero;
+  user-select: none;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-orange
+  );
+  @include flex($df, $fdr, $jcc, $alc);
 }
+// 當 加入購物車 被 按到時
+.ru-addBtn:hover::after {
+  opacity: 100;
+}
+
+.ru-addBtn:active::after {
+  background-color: $light-orange;
+  color: $white;
+}
+
+.ru-cart {
+  width: 30px;
+  transition: $three-five; // 滑鼠滑離.ru-cart時執行的時間
+  transition-delay: $zero-one;
+  user-select: none;
+}
+
+// 購物車按鈕hover時
+.ru-addBtn:hover > .ru-cart {
+  transform: translateX(-100px);
+  transition: $three-five; // 滑鼠hover到.ru-cart時執行的時間
+}
+
+// 購物車按鈕被點擊時
 
 .num {
   display: inline;
 }
 
-.item-button-warp {
+.ru-item-btn-warp {
   background-color: khaki;
   width: 100%;
   height: 84px;
@@ -326,4 +376,11 @@ input {
 
 .ru-Col1 {
   background-color: gold;
+}
+
+.position{
+  color: aquamarine;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
