@@ -1,13 +1,3 @@
-@media screen and (max-width: 375px) {
-    .navbar-copyright p {
-      font-size: 1.2rem;
-    }
-
-    .navbar-icons {
-        margin-top: 15px;
-    }
-  }
-
 html {
     font-size: 10px;
 }
@@ -74,3 +64,13 @@ html {
     margin: 10px auto 0px auto;
     border-top: 1px solid #CCCCCC;
 }
+
+@media screen and (max-width: 375px) {
+    .navbar-copyright p {
+      font-size: 1.2rem;
+    }
+
+    .navbar-icons {
+        margin-top: 15px;
+    }
+  }
