@@ -1,0 +1,67 @@
+.claudia-fake-navbar {
+    width: 100vw;
+    height: 135px;
+}
+
+.claudia-background-image {
+    height: 765px;
+    width: 100vw;
+    position: relative;
+}
+
+//change top after adding navbar
+.claudia-text {
+    font-family: 'Noto Serif TC';
+    position: absolute;
+    top: 600px;
+    right: 200px;
+    color: #FAFAFA;
+}
+
+.claudia-text-1 {
+    font-size: 50px;
+}
+
+.claudia-text-2 {
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 375px) {
+    .claudia-fake-navbar {
+        width: 100vw;
+        height: 120px;
+    }
+    .claudia-index-background {
+        position: relative;
+        
+    }
+
+    //need to fix
+    .claudia-background-image {
+        width: auto;
+        height: 547px;
+        overflow: hidden;
+        position: absolute;
+        left: -270px;
+    }
+
+    .claudia-text {
+        position: absolute;
+        top: 420px;
+        right: 55px;
+    }
+
+    .claudia-text-1 {
+        text-align: center;
+    }
+
+    .claudia-text-2 {
+        text-align: center;
+    }
+}
+
+
+
+
+
+
