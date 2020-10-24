@@ -20,7 +20,7 @@ function RuComponents() {
     const top = e.clientX;
     const letf = e.clientY;
     const offsetTop = $cart.offsetTop + "px";
-    const offsetLeft = $cart.offsetLeft + "px";
+    const offsetLeft = $cart.offsetLeft + "px"; 
 
     const newEl = document.createElement("div");
     const newContent = document.createTextNode("Hi there and greetings!");

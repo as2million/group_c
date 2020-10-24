@@ -7,6 +7,6 @@ function RuApp() {
       <RuProductList />
     </>
   );
-}
+} 
 
 export default RuApp;

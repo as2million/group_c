@@ -1,6 +1,6 @@
 @import "Ru/Pages/variable.scss";
 // 以下開始自訂CSS
-* {
+* { 
   margin: 0;
   padding: 0;
   list-style: none;
@@ -317,7 +317,7 @@ input {
   color: $white;
 }
 
-.ru-cart {
+.ru-cart { 
   width: 30px;
   transition: $three-five; // 滑鼠滑離.ru-cart時執行的時間
   transition-delay: $zero-one;
