@@ -25,7 +25,7 @@ function RuComponents() {
     const newEl = document.createElement("div");
     const newContent = document.createTextNode("Hi there and greetings!");
     newEl.appendChild(newContent);
-    newEl.setAttribute(
+    newEl.setAttribute( 
       "style",
       `position:absolute; top: ${top}; left:${letf}, z-index:100`
     );
