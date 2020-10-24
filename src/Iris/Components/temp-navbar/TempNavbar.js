@@ -32,24 +32,14 @@ function TempNavbar(props) {
             <Nav.Link as={NavLink} to="/" exact>
               首頁
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/todo">
-              待辨事項
+            <Nav.Link as={NavLink} to="/test">
+              Test
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/product">
-              產品
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/login">
-              登入/登出
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/register">
-              註冊
+            <Nav.Link as={NavLink} to="/userprofile">
+              User Profile
             </Nav.Link>
           </Nav>
-          <Nav>
-            <Nav.Link as={NavLink} to="/about">
-              關於我們
-            </Nav.Link>
-          </Nav>
+
         </Navbar.Collapse>
       </Navbar>
     </>
