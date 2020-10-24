@@ -59,7 +59,14 @@ function RuComponents() {
   };
   return (
     <>
-      <div style={{ height: "135px", backgroundColor: "#FF5151" }}>
+      <div
+        style={{
+          width: "100%",
+          height: "135px",
+          backgroundColor: "#FF5151",
+          position: "fixed",
+        }}
+      >
         我是navbar
         <img
           className="ru-cart target"
@@ -72,6 +79,7 @@ function RuComponents() {
           src={cart}
         />
       </div>
+      <div style={{ height: "135px", backgroundColor: "#FF5151" }}></div>
       {/* 如果元件有定義key或ref, 它們並不會向下傳資料, 它們不屬於props */}
 
       <RuShowWidth />
