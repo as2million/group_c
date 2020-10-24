@@ -7,7 +7,8 @@ import cart from "Ru/Components/Ru-component/Images/cart.svg";
 function RuComponents() {
   // const [state, setstate] = useState(initialState);
   const addToCart = (e) => {
-    console.log("按鈕座標", e.clientX, e.clientY);
+    console.log("e.clientX", e.clientX, "e.clientY", e.clientY);
+    console.log("e.pageX", e.pageX, "e.pageY", e.pageY);
     let $cart = document.querySelector(".target");
     console.log(
       "目標",
@@ -17,27 +18,44 @@ function RuComponents() {
       "Y座標: ",
       $cart.offsetTop
     );
-    const top = e.clientX;
-    const letf = e.clientY;
-    const offsetTop = $cart.offsetTop + "px";
-    const offsetLeft = $cart.offsetLeft + "px"; 
+    let pageX = e.pageX;
+    let pageY = e.pageY;
+    let offsetLeft = $cart.offsetLeft;
+    let offsetTop = $cart.offsetTop;
+    // console.log("e.pageX值", top);
 
     const newEl = document.createElement("div");
     const newContent = document.createTextNode("Hi there and greetings!");
     newEl.appendChild(newContent);
-    newEl.setAttribute( 
+    newEl.setAttribute(
       "style",
-      `position:absolute; top: ${top}; left:${letf}, z-index:100`
+      `position: absolute; left:${pageX}px; top: ${pageY}px; transform:translate(-50%,-50%); z-index:100`
     );
-    console.log(newEl);
-
+    // console.log(newEl);
     const $currentEl = document.querySelector(".ru-addBtn");
     const $currentElParent = document.querySelector(".ru-item-btn-warp");
     $currentElParent.insertBefore(newEl, $currentEl.nextSibling); // 已存在元素的父層.insertBefoe('新元素', 已存在元素) => 在已存在元素之前加入新元素
+    // 這邊加入nextSibling => 相當於將新元素加到已存在元素之後
+
     setInterval(() => {
-      top += 1;
-    }, 500);
-    console.log(newEl.getAttribute("style"));
+      let distanceX = pageX - offsetLeft;
+      let distanceY = pageY - offsetTop;
+      let m = distanceY / distanceX; // 斜率 => X走一步, Y要走X*m步
+      console.log(m);
+
+      // if (pageY < offsetTop) {
+      //   return;
+      // } else if (pageX > offsetLeft && pageY > offsetTop) {
+      console.log(pageY);
+      pageX -= 5;
+      pageY -= 5 * m;
+      newEl.setAttribute(
+        "style",
+        `position: absolute; left:${pageX}px; top: ${pageY}px; transform:translate(-50%,-50%); z-index:100`
+      );
+      // }
+    }, 50);
+    // console.log(newEl.getAttribute("style"));
   };
   return (
     <>
@@ -45,7 +63,7 @@ function RuComponents() {
         我是navbar
         <img
           className="ru-cart target"
-          style={{ backgroundColor: "white" }}
+          style={{ backgroundColor: "white",position:'absolute', top:'100px', left:'100px' }}
           src={cart}
         />
       </div>
