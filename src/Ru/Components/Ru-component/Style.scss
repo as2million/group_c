@@ -1,13 +1,13 @@
 @import "Ru/Pages/variable.scss";
 // 以下開始自訂CSS
-* { 
+* {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 button:focus,
-input { 
+input {
   outline: none;
 }
 
@@ -127,11 +127,11 @@ input {
   content: "";
   background-color: $light-orange;
   height: 65px;
-  width: 200px;
+  width: 220px;
   position: absolute;
   z-index: -1;
   top: 70px;
-  left: 0px;
+  left: -10px;
   transition: top $two-five, background-color $zero, border $zero;
   @include font(
     // 字體, 字體大小, 字重, 字距, 字色
@@ -167,11 +167,11 @@ input {
   content: "";
   background-color: $light-green;
   height: 65px;
-  width: 200px;
+  width: 220px;
   position: absolute;
   z-index: -1;
   top: 70px;
-  left: 0px;
+  left: -10px;
   transition: $two-five, background-color $zero, border $zero;
   @include font(
     // 字體, 字體大小, 字重, 字距, 字色
@@ -200,7 +200,55 @@ input {
   background-position: 70% center;
   background-repeat: no-repeat;
   height: 340px;
+  position: relative;
 }
+
+.favorite-btn {
+  background-color: $white;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 282px;
+  left: 287px;
+  background-image: url('./Images/addFavoriteA.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
+.favorite-btn:hover {
+  background-color: $light-yellow;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 282px;
+  left: 287px;
+  background-image: url('./Images/addFavoriteB.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
+.favorite-btn:active {
+  background-color: $dark-yellow;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 282px;
+  left: 287px;
+  background-image: url('./Images/addFavoriteC.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
+
 
 .item-info-warp {
   @include flex($df, $fdc, $jcc, $alc);
@@ -317,7 +365,7 @@ input {
   color: $white;
 }
 
-.ru-cart { 
+.ru-cart {
   width: 30px;
   transition: $three-five; // 滑鼠滑離.ru-cart時執行的時間
   transition-delay: $zero-one;
@@ -378,7 +426,7 @@ input {
   background-color: gold;
 }
 
-.position{
+.position {
   color: aquamarine;
   position: absolute;
   top: 0;

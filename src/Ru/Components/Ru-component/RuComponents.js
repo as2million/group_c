@@ -63,7 +63,12 @@ function RuComponents() {
         我是navbar
         <img
           className="ru-cart target"
-          style={{ backgroundColor: "white",position:'absolute', top:'100px', left:'100px' }}
+          style={{
+            backgroundColor: "white",
+            position: "absolute",
+            top: "100px",
+            left: "100px",
+          }}
           src={cart}
         />
       </div>
@@ -91,7 +96,9 @@ function RuComponents() {
         <div className="itemWarp itemWarp1">
           <div className="ru-item ru-item1">
             {/* item圖片s */}
-            <section className="item-img"></section>
+            <section className="item-img">
+              <button className="favorite-btn"></button>
+            </section>
             {/* item圖片e */}
             {/* item資訊s */}
             <section className="item-info-warp">
