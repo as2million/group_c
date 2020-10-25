@@ -124,11 +124,11 @@ body {
 .step2-5-take-address-1 {
   border: 1px solid #e0611e;
 }
-.Cha-Credit-Card{
+.Cha-Credit-Card {
   width: 420px;
 }
 
-.Cha-Credit-Card-div{
+.Cha-Credit-Card-div {
   display: flex;
   justify-content: center;
 
@@ -136,43 +136,58 @@ body {
 }
 
 .Cha-Credit-Card-flip {
-  // // position: absolute;
-  // left: 100px;
-  // width: 400px;
   width: 420px;
   height: 240px;
   transform-style: preserve-3d;
-  img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    backface-visibility: hidden;
-  }
 }
-
-.Cha-Credit-Card-flip img:nth-of-type(1) {
+.Cha-Credit-Card-all {
+  position: absolute;
+  left: 0;
+  top: 0;
+  backface-visibility: hidden;
+}
+.Cha-Credit-Card-flip .Cha-Credit-Card-all:nth-of-type(1) {
   // background: blue;
-  transition: .5s transform
+  transition: 0.5s transform;
 }
 
-.Cha-Credit-Card-flip img:nth-of-type(2) {
+.Cha-Credit-Card-flip .Cha-Credit-Card-all:nth-of-type(2) {
   // background: red;
   transform: rotateY(-180deg);
-  transition: .5s transform
+  transition: 0.5s transform;
 }
 
-.Cha-Credit-Card-flip:hover img:nth-of-type(1) {
+.Cha-Credit-Card-flip:hover .Cha-Credit-Card-all:nth-of-type(1) {
   transform: rotateY(180deg);
 }
-.Cha-Credit-Card-flip:hover img:nth-of-type(2) {
+.Cha-Credit-Card-flip:hover .Cha-Credit-Card-all:nth-of-type(2) {
   transform: rotateY(0deg);
 }
 
-.step3-5-receipt-div{
+.step3-5-receipt-div {
   display: flex;
 }
-
-.step3-receipt-alert{
-  color:#e0611e;
+.card-number-on-picture {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  font-size: 30px;
+}
+.card-MONTH-YEAR-on-picture {
+  position: absolute;
+  left: 120px;
+  top: 170px;
+  font-size: 24px;
+}
+.card-3number-on-picture{
+  position: absolute;
+  left: 310px;
+  top: 125px;
+  font-size: 24px;
+  background-color: rgba(49, 0, 0, 0);
+  border: none;
+}
+.step3-receipt-alert {
+  color: #e0611e;
   font-size: 15px;
 }
