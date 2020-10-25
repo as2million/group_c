@@ -1,0 +1,45 @@
+.claudia-detailed-slider {
+    width: 1160px;
+    margin: 65px auto 0px auto;
+}
+
+.claudia-image-select img {
+    width: 225px;
+    height: 150px;
+    cursor: pointer;
+}
+
+
+.claudia-image-select {
+    display: flex;
+    justify-content: space-between;
+}
+
+.claudia-image-triangle-area {
+    width: 1160px;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.claudia-image-triangle-box {
+    width: 225px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.claudia-image-triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 10px 0 10px;
+    border-color: #66AB8C transparent transparent transparent;
+}
+
+.claudia-image-large img {
+    width: 1160px;
+    height: 785px;
+}

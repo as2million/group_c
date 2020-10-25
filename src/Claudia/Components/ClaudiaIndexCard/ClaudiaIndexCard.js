@@ -1,8 +1,8 @@
 import React from 'react';
-import './ClaudiaCard.scss'
+import './ClaudiaIndexCard.scss'
 import farm_intro_pic from './Images/farm_index_intro_pic.jpg';
 
-function ClaudiaCard() {
+function ClaudiaIndexCard() {
 
     return (
         <>
@@ -12,7 +12,7 @@ function ClaudiaCard() {
                     <h2 id="claudia-index-card-title1"><b>小小城市農夫</b></h2>
                     <h2 id="claudia-index-card-title2"><b>－台北內湖農驛棧有機農園</b></h2>
                     <hr />
-                    <img src={farm_intro_pic} />
+                    <img alt="farm_intro_pic" src={farm_intro_pic} />
                     <h3 id="claudia-index-card-intro">想體驗自然風光，採新鮮有機草莓、享用草莓特餐嗎？一起品嘗農園特製—草莓蔬果捲、草莓蜜雞，各種DIY任你玩！</h3>
                 </div>
 
@@ -23,4 +23,4 @@ function ClaudiaCard() {
 
 }
 
-export default ClaudiaCard;
+export default ClaudiaIndexCard;

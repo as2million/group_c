@@ -1,7 +1,7 @@
 import React from 'react';
-import './ClaudiaInducText.scss'
+import './ClaudiaIndexInducText.scss'
 
-function ClaudiaInduxText() {
+function ClaudiaIndexInducText() {
 
     return (
         <>
@@ -12,4 +12,4 @@ function ClaudiaInduxText() {
     )
 }
 
-export default ClaudiaInduxText;
+export default ClaudiaIndexInducText;
