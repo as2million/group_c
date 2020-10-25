@@ -15,7 +15,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 function IrisApp() {
 
-  const [name, setName] = useState("test");
+  const [name, setName] = useState("iris");
 
   return (
     <Router>
