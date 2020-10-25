@@ -1,0 +1,61 @@
+@import "./Variable.scss";
+
+// .ru-button
+.button-btn:focus {
+  outline: none;
+}
+.button-btn {
+  background-color: $white;
+  height: 65px;
+  width: 200px;
+  border: 1px solid $light-orange;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color $three-five, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $light-orange
+  );
+}
+
+.button-btn:hover {
+  color: $white;
+}
+
+.button-btn:active {
+  border: 1px solid $dark-orange;
+}
+
+.button-btn::after {
+  content: "";
+  background-color: $light-orange;
+  height: 65px;
+  width: 220px;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: -10px;
+  transition: top $two-five, background-color $zero, border $zero;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    1.25px,
+    $white
+  );
+}
+
+.button-btn:hover::after {
+  top: 0px;
+}
+
+.button-btn:active::after {
+  background-color: $dark-orange;
+}

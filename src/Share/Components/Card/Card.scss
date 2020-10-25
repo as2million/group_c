@@ -1,0 +1,113 @@
+@import "./Variable.scss";
+
+.card {
+  border: 1px solid $hr-Color;
+  border-radius: 5px;
+  width: 345px;
+  height: 100%;
+  // z-index: -200;
+}
+
+.card-img-warp {
+  height: 340px;
+  position: relative;
+}
+
+.card-img-warp:hover > .card-abs {
+  top: 282px;
+  transition: 0.35s;
+}
+
+.card-img {
+  background-image: url("./Images/item1.jpg");
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.card-abs {
+  position: absolute;
+  top: 350px;
+  left: 287px;
+  transition: 0.35s;
+}
+
+.card-info-warp {
+  background-color: $white;
+  width: 100%;
+  height: 108px;
+  position: relative;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.card-hr {
+  width: 87.465%;
+  height: 100%;
+  border-bottom: 1px solid $hr-Color;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.card-info {
+  width: 170px;
+  height: 79px;
+  position: relative;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.card-info > h2 {
+  font-size: $productName-size;
+  margin-bottom: 8px;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $productName-size,
+    $regular,
+    0px,
+    $productName-Color
+  );
+}
+
+.card-star {
+  margin: 0px 2px;
+  width: 14px;
+}
+
+.card-num {
+  display: inline;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $number-size,
+    $regular,
+    0px,
+    $light-grey
+  );
+}
+
+.card-commentNum {
+  margin-right: 6px;
+  margin-bottom: 16px;
+}
+
+.card-info > h3 {
+  position: absolute;
+  top: 53px;
+  left: 170px;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $bold,
+    0px,
+    $light-orange
+  );
+}
+
+.card-addCartWarp {
+  @include flex($df, $fdr, $jcc, $alc);
+  height: 84px;
+}

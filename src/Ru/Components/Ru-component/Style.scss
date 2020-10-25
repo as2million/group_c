@@ -50,14 +50,6 @@ input {
   @include flex($df, $fdr, $jcc, $alc);
 }
 
-// .ru-mainImg::before {
-//   content: "";
-//   display: block; // 偽元素預設為inline屬性
-//   height: 100%; // block屬性會自動適應父層, 不需要再給width:100%
-//   opacity: 50%;
-//   background-color: black;
-// }
-
 .ru-containerA {
   background-color: blueviolet;
   @include page();
@@ -94,6 +86,7 @@ input {
   @include flex($df, $fdr, space-between, $alc);
 }
 
+// button-btn 開始
 .ru-button {
   background-color: $white;
   height: 65px;
@@ -186,6 +179,7 @@ input {
 .ru-button4:active::after {
   background-color: $dark-green;
 }
+// button-btn 結束
 
 .ru-containerB {
   background-color: gold;
@@ -203,6 +197,7 @@ input {
   position: relative;
 }
 
+// .favorite-btn 未改動 要加絕對定位 開始
 .favorite-btn {
   background-color: $white;
   width: 37px;
@@ -212,7 +207,7 @@ input {
   position: absolute;
   top: 282px;
   left: 287px;
-  background-image: url('./Images/addFavoriteA.svg');
+  background-image: url("./Images/addFavoriteA.svg");
   background-repeat: no-repeat;
   background-position: 75% 60%;
   background-size: 32px;
@@ -227,7 +222,7 @@ input {
   position: absolute;
   top: 282px;
   left: 287px;
-  background-image: url('./Images/addFavoriteB.svg');
+  background-image: url("./Images/addFavoriteB.svg");
   background-repeat: no-repeat;
   background-position: 75% 60%;
   background-size: 32px;
@@ -242,13 +237,12 @@ input {
   position: absolute;
   top: 282px;
   left: 287px;
-  background-image: url('./Images/addFavoriteC.svg');
+  background-image: url("./Images/addFavoriteC.svg");
   background-repeat: no-repeat;
   background-position: 75% 60%;
   background-size: 32px;
 }
-
-
+// .favorite-btn 未改動 結束
 
 .item-info-warp {
   @include flex($df, $fdc, $jcc, $alc);
@@ -321,6 +315,8 @@ input {
   width: 14px;
 }
 
+
+// .addCart-btn .addCart-cart開始
 .ru-addBtn {
   background-color: $white;
   width: 150px;
@@ -377,6 +373,7 @@ input {
   transform: translateX(-100px);
   transition: $three-five; // 滑鼠hover到.ru-cart時執行的時間
 }
+// .addCart-btn .addCart-cart結束
 
 // 購物車按鈕被點擊時
 
@@ -384,13 +381,14 @@ input {
   display: inline;
 }
 
+// .ru-item-btn-warp開始
 .ru-item-btn-warp {
   background-color: khaki;
   width: 100%;
   height: 84px;
   @include flex($df, $fdc, $jcc, $alc);
 }
-
+// .ru-item-btn-warp結束
 .ru-row {
   background-color: orangered;
   margin-bottom: 100px;
