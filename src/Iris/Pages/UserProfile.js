@@ -5,6 +5,7 @@ import InputH40 from "./../../Share/Components/Input/InputH40";
 import TextArea from "./../../Share/Components/Input/TextArea";
 import SearchBar from "./../../Share/Components/Input/SearchBar";
 import SelectBox from "./../../Share/Components/Input/SelectBox";
+import InputAdd from "./../../Share/Components/Input/InputAdd";
 
 
 function UserProfile(props) {
@@ -27,6 +28,8 @@ function UserProfile(props) {
         <TextArea />
         <br />
         <SelectBox />
+        <br />
+        <InputAdd />
       </div>
     </>
   );

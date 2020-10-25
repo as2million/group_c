@@ -60,9 +60,33 @@ $dropdown-link-hover-bg: #f5a016;
   position: relative;
 }
 
-.iris-triangle{
+.iris-triangle {
   position: absolute;
   right: 1.3rem;
   top: 1.4rem;
   pointer-events: none;
+}
+
+// input-add
+.iris-InputAdd{
+  font-size: 1.5rem;
+  border-radius: 0.8rem;
+  height: 4rem;
+}
+.iris-symbolAdd {
+  position: absolute;
+  right: 1rem;
+  top: -1rem;
+  pointer-events: none;
+  font-size: 3.5rem;
+  color: #858585;
+}
+.iris-whitebox-add{
+  border-radius: 0.8rem;
+  height: 4rem;
+  width: 4rem;
+  background-color:transparent;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.1rem;
 }
