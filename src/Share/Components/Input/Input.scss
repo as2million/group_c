@@ -2,20 +2,12 @@
 $primary: #f5a016;
 $dropdown-link-hover-color: #fff;
 $dropdown-link-hover-bg: #f5a016;
-$custom-select-bg: #f5a016;
 
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
-
-// 下拉選單 15px 方角
-.select-size-sm {
-  font-size: 1.5rem;
-  border-radius: 0.5rem;
-  margin: 1rem;
-}
 
 // height:50px   font-size:20px   圓角輸入框
 .iris-inputH50 {
@@ -27,7 +19,7 @@ $custom-select-bg: #f5a016;
 // height:44px   font-size:20px   圓角輸入框
 .iris-InputH44 {
   font-size: 2rem;
-  border-radius: 2.5rem;
+  border-radius: 2.2rem;
   height: 4.4rem;
 }
 
@@ -38,7 +30,39 @@ $custom-select-bg: #f5a016;
   height: 4rem;
 }
 
-// textarea   font-size:15px
+// textarea   font-size:15px   方角輸入框
 .iris-textarea {
   font-size: 15px;
+  border-radius: 0.8rem;
+}
+
+// height:40px   font-size:15px   方角select box
+// 用白div蓋住原本的圖示
+.iris-select {
+  font-size: 1.5rem;
+  border-radius: 0.8rem;
+  height: 4rem;
+}
+
+.iris-whitebox {
+  border-radius: 0.8rem;
+  height: 3.8rem;
+  width: 4rem;
+  background-color: #fff;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.1rem;
+  // 點擊會直接穿透whitebox
+  pointer-events: none;
+}
+
+.iris-select-wrapper {
+  position: relative;
+}
+
+.iris-triangle{
+  position: absolute;
+  right: 1.3rem;
+  top: 1.4rem;
+  pointer-events: none;
 }
