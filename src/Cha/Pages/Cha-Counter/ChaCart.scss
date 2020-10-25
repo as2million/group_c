@@ -1,0 +1,154 @@
+html {
+  font-size: 10px;
+  font-style: 微軟正黑體;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  background-color: #F7EDE2;
+}
+
+.fake-navbar {
+  width: auto;
+  height: 13.5rem;
+  background-color: #faf;
+}
+
+.progress-bar {
+  width: auto;
+  height: 6rem;
+  background-color: #F6BD60;
+}
+
+.main-card {
+  width: 800px;
+  /* height: 30px; */
+  border-radius: 5px;
+  outline: 1px solid #E5E5E5;
+  background-color: #fff;
+  margin-right: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+.aside-card {
+  width: 360px;
+  /* height: 30px; */
+  border-radius: 5px;
+  outline: 1px solid #E5E5E5;
+  background-color: #fff;
+  margin-left: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.step1-header {
+  font-size: 24px;
+  border-bottom: 1px solid #8585853a;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 16px;
+}
+
+.order .step1-product-name {
+  font-size: 16px;
+}
+
+.order .step1-product-price {
+  font-size: 16px;
+  color: #F48145;
+}
+
+.trash-can-gray {
+  width: 22px;
+
+}
+
+.product-pic {
+  width: 57px;
+  height: 57px;
+  background-color: #faf;
+}
+
+.step1-total-price {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #8585853a;
+}
+
+.step1-total-price-word {
+  font-size: 15px;
+  color: #858585;
+}
+
+.step1-total-price-number {
+  font-size: 36px;
+  color: #F48145;
+}
+
+.little-total,
+.shipping,
+.tableware,
+.shopping-list-total {
+  font-size: 15px;
+  color: #858585;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  border-top: 1px solid #8585853a;
+}
+
+.shopping-list-total-number {
+  color: #F48145;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.shopping-cart-btn {
+  height: 45px;
+  width: 170px;
+  border-radius: 50px;
+  background-color: #F48145;
+  border: 0;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
+
+
+}
+
+.shopping-cart-btn:hover {
+  background-color: #E0611E;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

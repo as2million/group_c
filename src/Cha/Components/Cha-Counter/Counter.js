@@ -3,6 +3,8 @@ import 'Cha/Components/Cha-Counter/Counter.scss'
 
 function Counter(props) {
   const [count, setCount] = useState(1)
+  // const [hoverBackgroundColor, setHoverBackgroundColor] = useState('white')
+  // const [hoverMinusColor, setHoverMinusColor] = useState('#858585')
 
   const handleClick = (type) => {
     if (type === 'increment') {
@@ -17,8 +19,35 @@ function Counter(props) {
     <>
       <div className="counter-box">
         <div
-          onClick={() => handleClick('decrement')}
-          className="counter-decrement"
+          onClick={() => {
+            handleClick('decrement')
+            // if (count === 2) {
+            //   setHoverBackgroundColor('white')
+            //   setHoverMinusColor('#858585')
+            // }
+          }}
+          className={
+            count === 1
+              ? 'counter-decrement cursor-default'
+              : 'counter-decrement counter-hover'
+          }
+
+          // onMouseEnter={() => {
+          //   if (count === 1) {
+          //     return
+          //   } else {
+          //     setHoverBackgroundColor('#f6bd60')
+          //     setHoverMinusColor('#FFF')
+          //   }
+          // }}
+          // onMouseLeave={() => {
+          //   setHoverBackgroundColor('white')
+          //   setHoverMinusColor('#858585')
+          // }}
+          // style={{
+          //   backgroundColor: hoverBackgroundColor,
+          //   color: hoverMinusColor,
+          // }}
         >
           <p>-</p>
         </div>

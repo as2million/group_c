@@ -1,35 +1,18 @@
-.to-top {
-  position: relative;
-}
-
-.monster {
-  height: 80px;
-  width: 96px;
-  position: absolute;
-}
-
-.top-arrow {
-  width: 22px;
-  height: 10px;
-  position: absolute;
-  top: 15px;
-  left: 43px;
-}
-
-.top-arrow {
-  animation: ani1 1.5s infinite;
-}
-
-@keyframes ani1 {
-  0% {
-    top: 15px;
+html, body{
+    height: 100%;
+  }
+  
+  a {
+    color: white;
+  }
+    
+  .long {
+    width: 100%;
+    background-color: #010e19;
+  }
+   
+  .container {
+    height: 400px;
   }
 
-  50% {
-    top: 5px;
-  }
 
-  100% {
-    top: 15px;
-  }
-}

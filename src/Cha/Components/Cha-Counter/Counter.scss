@@ -7,7 +7,7 @@ body {
 }
 
 .counter-box {
-  outline: 0rem solid #858585;
+  outline: 0rem ;
   width: 16rem;
   height: 3.5rem;
   display: flex;
@@ -32,7 +32,9 @@ body {
   padding-top: 0.2rem;
 }
 
-.counter-decrement:hover,
+.cursor-default{cursor: default;}
+.counter-hover:hover,
+// .counter-decrement:hover,
 .counter-increment:hover {
   color: #fff;
   background-color: #f6bd60;
@@ -53,6 +55,7 @@ body {
 
 .counter-count p {
   margin: 0;
+  user-select: none;
 }
 
 .counter-decrement p,

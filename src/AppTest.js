@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react'
-// import ChaCounterAppPage from 'Cha/Pages/ChaCounterAppPage'
-import Counter from 'Cha/Components/Cha-Counter/Counter'
-import ToTop from 'Cha/Components/Cha-ToTop/ToTop'
+// import Counter from 'Cha/Components/Cha-Counter/Counter'
+// import ToTop from 'Cha/Components/Cha-ToTop/ToTop'
+import ScrollApp from 'Cha/Components/Cha-ToTop/ScrollApp'
+// import ChaCart from 'Cha/Pages/Cha-Counter/ChaCart'
+// import ChaProgressBar from 'Cha/Components/Cha-ProgressBar/ChaProgressBar'
 
 function AppTest() {
   return (
     <>
-      {/* <ChaCounterAppPage /> */}
-      <Counter />
-      <ToTop />
+      {/* <Counter /> */}
+      {/* <ChaCart /> */}
+      <ScrollApp />
+      {/* <ChaProgressBar /> */}
     </>
   )
 }

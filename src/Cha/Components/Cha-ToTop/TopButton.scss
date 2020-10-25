@@ -1,0 +1,36 @@
+
+.to-top {
+  position: relative;
+  margin: auto;
+  cursor: pointer;
+  
+}
+
+.monster {
+  height: 80px;
+  width: 96px;
+  position: absolute;
+}
+
+.top-arrow {
+  width: 22px;
+  height: 10px;
+  position: absolute;
+  top: 10px;
+  left: 36px;
+  animation: ani1 1.5s infinite;
+}
+
+@keyframes ani1 {
+  0% {
+    top: 10px;
+  }
+
+  50% {
+    top: 0px;
+  }
+
+  100% {
+    top: 10px;
+  }
+}
