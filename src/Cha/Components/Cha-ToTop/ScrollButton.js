@@ -17,14 +17,14 @@ function ScrollButton(props) {
     }
     // console.log(window.pageYOffset - props.scrollStepInPx)
     console.log(window.pageYOffset)
-    window.scroll(0, window.pageYOffset - props.scrollStepInPx)
-    // window.scroll(0, -5000)
+    // window.scroll(0, window.pageYOffset - props.scrollStepInPx)
+    window.scroll(0, -5000)
   }
 
   function scrollToTop() {
     // console.log('toTop')
-    // let intervalId2 = window.setTimeout(scrollStep, props.delayInMs)
-    let intervalId = setInterval(scrollStep, props.delayInMs)
+    let intervalId = window.setTimeout(scrollStep, props.delayInMs)
+    // let intervalId = setInterval(scrollStep, props.delayInMs)
     setIntervalId(intervalId)
     // console.log(intervalId2)
   }
@@ -39,7 +39,7 @@ function ScrollButton(props) {
         }}
       >
         <img src={Monster} className="monster" alt="Monster" />
-        <img src={TopArrow} className="top-arrow" alt="Monster" />
+        <img src={TopArrow} className="top-arrow" alt="TopArrow" />
       </div>
     </>
   )

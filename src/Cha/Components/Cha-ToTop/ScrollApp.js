@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ScrollButton from './ScrollButton'
 import ColoredContainer from './ColoredContainer'
+import 'Cha/Components/Cha-ToTop/ToTop.scss'
 
 function ScrollApp(props) {
   const [colors, setColors] = useState([

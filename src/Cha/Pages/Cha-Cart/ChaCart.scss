@@ -1,0 +1,178 @@
+html {
+  font-size: 10px;
+  font-style: 微軟正黑體;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  background-color: #f7ede2;
+}
+
+.main-card {
+  width: 800px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+// .main-card-step2 {
+//   height: 500px;
+// }
+
+.aside-card {
+  width: 360px;
+  /* height: 30px; */
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  margin-left: 5px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-top: 80px;
+}
+
+.step-header {
+  font-size: 24px;
+  border-bottom: 1px solid #8585853a;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.step1-total-price {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.step1-total-price-word {
+  font-size: 15px;
+  color: #858585;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.step1-total-price-number {
+  font-size: 36px;
+  color: #f48145;
+}
+
+.step-check-btn {
+  height: 45px;
+  width: 170px;
+  border-radius: 50px;
+  background-color: #fff;
+  border: solid 1px #e0611e;
+  outline: none;
+  color: #e0611e;
+  font-size: 18px;
+  &:hover {
+    background-color: #e0611e;
+    color: #fff;
+  }
+}
+.step-check-btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.step1-promotion-header-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .step1-promotion-header {
+    color: #f48145;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+.step1-promotion-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.step1-promotion-picture {
+  background-color: #faf;
+  width: 133px;
+  height: 133px;
+  margin: 0 20px 0 20px;
+}
+
+.horizontal-line {
+  border-bottom: 1px solid #8585853a;
+}
+
+.step2-take-date-time {
+  display: flex;
+}
+
+.step2-5-take-address-1 {
+  border: 1px solid #e0611e;
+}
+.Cha-Credit-Card{
+  width: 420px;
+}
+
+.Cha-Credit-Card-div{
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 40px;
+}
+
+.Cha-Credit-Card-flip {
+  // // position: absolute;
+  // left: 100px;
+  // width: 400px;
+  width: 420px;
+  height: 240px;
+  transform-style: preserve-3d;
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    backface-visibility: hidden;
+  }
+}
+
+.Cha-Credit-Card-flip img:nth-of-type(1) {
+  // background: blue;
+  transition: .5s transform
+}
+
+.Cha-Credit-Card-flip img:nth-of-type(2) {
+  // background: red;
+  transform: rotateY(-180deg);
+  transition: .5s transform
+}
+
+.Cha-Credit-Card-flip:hover img:nth-of-type(1) {
+  transform: rotateY(180deg);
+}
+.Cha-Credit-Card-flip:hover img:nth-of-type(2) {
+  transform: rotateY(0deg);
+}
+
+.step3-5-receipt-div{
+  display: flex;
+}
+
+.step3-receipt-alert{
+  color:#e0611e;
+  font-size: 15px;
+}
