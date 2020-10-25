@@ -6,6 +6,8 @@ import ClaudiaDetailedSilder from '../Components/ClaudiaDetailedSilder/ClaudiaDe
 import ClaudiaDetailedSchedule from '../Components/ClaudiaDetailedSchedule/ClaudiaDetailedSchedule';
 import ClaudiaDetailedFarmIntro from '../Components/ClaudiaDetailedFarmIntro/ClaudiaDetailedFarmIntro'
 import ClaudiaDetailedFarmAdr from '../Components/ClaudiaDetailedFarmAdr/ClaudiaDetailedFarmAdr';
+import ClaudiaDetailedNavButtons from '../Components/ClaudiaDetailedNavButtons/ClaudiaDetailedNavButtons';
+import ClaudiaDetailedRecommended from '../Components/ClaudiaDetailedRecommended/ClaudiaDetailedRecommended';
 import Footer from '../../Share/Components/Footer/Footer';
 
 function ClaudiaFarmIntroPage() {
@@ -19,6 +21,8 @@ function ClaudiaFarmIntroPage() {
                 <ClaudiaDetailedSchedule />
                 <ClaudiaDetailedFarmIntro />
                 <ClaudiaDetailedFarmAdr />
+                <ClaudiaDetailedNavButtons />
+                <ClaudiaDetailedRecommended />
             </ClaudiaMainContent>
             <Footer />
         </>
