@@ -4,16 +4,16 @@ html {
   font-size: 10px;
 }
 /* 清除內外邊距 */
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 結構元素 */
-dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-pre, /* text formatting elements 文字格式元素 */
-fieldset, lengend, button, input, textarea, /* form elements 表單元素 */
-th, td {
+* {
   /* table elements 表格元素 */
   margin: 0;
   padding: 0;
 }
-
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 
