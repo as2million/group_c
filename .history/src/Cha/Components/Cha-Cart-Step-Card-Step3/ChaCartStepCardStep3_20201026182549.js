@@ -204,36 +204,30 @@ function ChaCartStepCardStep3(props) {
           </div>
           <div className="cha-horizontal-line"></div>
           <div className="cha-group-receipt-type-3">
-            <div className="form-group">
-              <label htmlhtmlFor="cha-step3-5-3-1-vehicle">公司抬頭</label>
-              <input
-                type="text"
-                className="form-control cha-step3-5-3-1-vehicle"
-                id="cha-step3-5-3-1-vehicle"
-                name="cha-step3-5-3-1-vehicle"
-                placeholder="公司抬頭"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlhtmlFor="cha-step3-5-3-2-vehicle">統一編號</label>
-              <input
-                type="text"
-                className="form-control cha-step3-5-3-2-vehicle"
-                id="cha-step3-5-3-2-vehicle"
-                name="cha-step3-5-3-2-vehicle"
-                placeholder="統一編號"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlhtmlFor="cha-step3-5-3-3-vehicle">Email</label>
-              <input
-                type="text"
-                className="form-control cha-step3-5-3-3-vehicle"
-                id="cha-step3-5-3-3-vehicle"
-                name="cha-step3-5-3-3-vehicle"
-                placeholder="Email"
-              />
-            </div>
+            <label htmlhtmlFor="cha-step3-5-3-1-vehicle">公司抬頭</label>
+            <input
+              type="text"
+              className="form-control cha-step3-5-3-1-vehicle"
+              id="cha-step3-5-3-1-vehicle"
+              name="cha-step3-5-3-1-vehicle"
+              placeholder="公司抬頭"
+            />
+            <label htmlhtmlFor="cha-step3-5-3-2-vehicle">統一編號</label>
+            <input
+              type="text"
+              className="form-control cha-step3-5-3-2-vehicle"
+              id="cha-step3-5-3-2-vehicle"
+              name="cha-step3-5-3-2-vehicle"
+              placeholder="統一編號"
+            />
+            <label htmlhtmlFor="cha-step3-5-3-3-vehicle">Email</label>
+            <input
+              type="text"
+              className="form-control cha-step3-5-3-3-vehicle"
+              id="cha-step3-5-3-3-vehicle"
+              name="cha-step3-5-3-3-vehicle"
+              placeholder="Email"
+            />
           </div>
           {/* 確認按鈕 */}
           <div className="cha-step-check-btn-div">

@@ -10,9 +10,7 @@ function ChaCartStepCardStep1(props) {
           步驟1：餐點明細
           {/* <button className="cha-normal-cart-switch">訂餐購物車</button> */}
           <button className="cha-former-cart-switch">小農購物車</button>
-          <button className="cha-normal-cart-switch" disabled>
-            訂餐購物車
-          </button>
+          <button className="cha-normal-cart-switch" disabled>訂餐購物車</button>
         </div>
 
         <ChaOrder />

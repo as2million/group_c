@@ -9,7 +9,7 @@ function AppTest() {
   return (
     <>
       {/* <Counter /> */}
-      <ChaCart />
+      {/* <ChaCart /> */}
       {/* <ScrollArrow /> */}
       {/* <ScrollApp /> */}
       {/* <ChaProgressBar /> */}

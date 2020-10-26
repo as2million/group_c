@@ -140,101 +140,78 @@ function ChaCartStepCardStep3(props) {
             (依統一發票使用辦法規定：發票一經開立不得任意更改或改開發票。)
           </p>
           <div className="cha-horizontal-line"></div>
-          <div className="cha-group-receipt-type-2">
-            <div className="form-group">
-              <label htmlhtmlFor="cha-step3-5-1-charitable">愛心碼</label>
-              <input
-                type="text"
-                className="form-control cha-step3-5-1-charitable"
-                id="cha-step3-5-1-charitable"
-                name="cha-step3-5-1-charitable"
-                placeholder="請填寫後三碼"
-              />
-            </div>
+          {/* cha-step3-charitable */}
+          <div className="form-group">
+            <label htmlhtmlFor="cha-step3-5-1-charitable">愛心碼</label>
+            <input
+              type="text"
+              className="form-control cha-step3-5-1-charitable"
+              id="cha-step3-5-1-charitable"
+              name="cha-step3-5-1-charitable"
+              placeholder="請填寫後三碼"
+            />
           </div>
           <div className="cha-horizontal-line"></div>
-          <div className="cha-group-receipt-type-2">
-            <div className="form-group">
-              <label htmlhtmlFor="cha-step3-5-2-1-vehicle">載具類型</label>
-              <input
-                type="text"
-                className="form-control cha-step3-5-2-1-vehicle"
-                id="cha-step3-5-2-1-vehicle"
-                name="cha-step3-5-2-1-vehicle"
-                placeholder="會員載具"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlhtmlFor="cha-step3-5-2-2-vehicle">Email</label>
-              <input
-                type="email"
-                className="form-control cha-step3-5-2-2-vehicle"
-                id="cha-step3-5-2-2-vehicle"
-                name="cha-step3-5-2-2-vehicle"
-                placeholder="Email"
-              />
-            </div>
-            <div className="form-group">
-              <label>發票寄送地址</label>
-              <input
-                type="text"
-                className="form-control cha-step3-5-2-3-vehicle"
-                id="cha-step3-5-2-3-vehicle"
-                name="cha-step3-5-2-3-vehicle"
-                placeholder="縣市"
-              />
-              <input
-                type="text"
-                className="form-control cha-step3-5-2-4-vehicle"
-                id="cha-step3-5-2-4-vehicle"
-                name="cha-step3-5-2-4-vehicle"
-                placeholder="鄉鎮市區"
-              />
-              <input
-                type="text"
-                className="form-control cha-step3-5-2-5-vehicle"
-                id="cha-step3-5-2-5-vehicle"
-                name="cha-step3-5-2-5-vehicle"
-                placeholder="發票寄送地址"
-              />
-              <p className="cha-step3-receipt-alert">
-                (由拾餐為您兌獎，中獎後將會寄送紙本發票給您)
-              </p>
-            </div>
+          <div className="">
+          <div className="form-group">
+            <label htmlhtmlFor="cha-step3-5-2-1-vehicle">載具類型</label>
+            <input
+              type="text"
+              className="form-control cha-step3-5-2-1-vehicle"
+              id="cha-step3-5-2-1-vehicle"
+              name="cha-step3-5-2-1-vehicle"
+              placeholder="會員載具"
+            />
           </div>
-          <div className="cha-horizontal-line"></div>
-          <div className="cha-group-receipt-type-3">
-            <div className="form-group">
-              <label htmlhtmlFor="cha-step3-5-3-1-vehicle">公司抬頭</label>
-              <input
-                type="text"
-                className="form-control cha-step3-5-3-1-vehicle"
-                id="cha-step3-5-3-1-vehicle"
-                name="cha-step3-5-3-1-vehicle"
-                placeholder="公司抬頭"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlhtmlFor="cha-step3-5-3-2-vehicle">統一編號</label>
-              <input
-                type="text"
-                className="form-control cha-step3-5-3-2-vehicle"
-                id="cha-step3-5-3-2-vehicle"
-                name="cha-step3-5-3-2-vehicle"
-                placeholder="統一編號"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlhtmlFor="cha-step3-5-3-3-vehicle">Email</label>
-              <input
-                type="text"
-                className="form-control cha-step3-5-3-3-vehicle"
-                id="cha-step3-5-3-3-vehicle"
-                name="cha-step3-5-3-3-vehicle"
-                placeholder="Email"
-              />
-            </div>
-          </div>
+
+          {/* <div className="form-group-l-1">
+                <div className="cha-H-box-5">
+                  <p className="cha-font-l-1">載具類型</p>
+                  <div className="form-group-l-1">
+                    <select className="cha-s1 s3" id="cha-card_type" name="card_type">
+                      <option value="1">會員載具</option>
+                      <option value="2">手機載具</option>
+                      <option value="3">自然人憑證</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="cha-H-box-5 div_card_no" style="">
+                  <p className="cha-font-l-1">
+                    <span ori="載具號碼" err="載具號碼未輸入或錯誤">
+                      載具號碼
+                    </span>
+                  </p>
+                  <div className="form-group-l-1">
+                    <input
+                      type="text"
+                      id="cha-card_no"
+                      name="cha-card_no"
+                      value=""
+                      maxlength=""
+                      placeholder="載具號碼"
+                      className="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="H-box-6">
+                <p class="font-l-1">
+                  <span ori="Email" err="請輸入Email">
+                    Email
+                  </span>
+                </p>
+                <div claform-group-l-1">
+                  <input
+                    type="email"
+                    id="email_2"
+                    name="email_2"
+                    value=""
+                    maxlength=""
+                    placeholder="Email"
+                    claform-control"
+                  />
+                </div>
+              </div> */}
           {/* 確認按鈕 */}
           <div className="cha-step-check-btn-div">
             <input type="button" value="確認" className="cha-step-check-btn" />
