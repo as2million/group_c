@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './VNavbar.scss';
-import {
-  Navbar,
-  Brand,
-  NavDropdown,
-  Row,
-  Container,
-  Col,
-  Button,
-} from 'react-bootstrap';
+import { Navbar, Button } from 'react-bootstrap';
 import calendar from './calendar.svg';
 import mapLocator from './mapLocator.svg';
 import DatePicker from 'react-datepicker';
@@ -25,12 +17,10 @@ function VNavbar(props) {
 
   return (
     <>
-      <Navbar className="JanVNBcc d-flex justify-content-between">
-        {/* <Container> */}
-        {/* <Row className="d-flex justify-content-md-center"> */}
-        <div className="d-flex align-items-center">
-          <img alt="" src={calendar} className="JanVNIcons " />
-          <p className="JanVNIconsTitle">選擇日期/時間：</p>
+      <Navbar className="vnavbar-jan d-flex flex-wrap justify-content-between">
+        <div className="d-flex align-items-center calendar-jan">
+          <img alt="" src={calendar} className="icons-jan " />
+          <p className="titles-jan">選擇日期/時間：</p>
           <DatePicker
             dateFormat="yyyy-MM-dd / HH:mm"
             selected={startDate}
@@ -49,20 +39,18 @@ function VNavbar(props) {
         </div>
 
         <div className="d-flex align-items-center">
-          <img alt="" src={mapLocator} className="JanVNIcons" />
-          <p className="JanVNIconsTitle">外送地址：</p>
-          <input className="JanVNAddress" placeholder="點我填寫地址" />
-          {/* <Button className="JanChangeAddress" onClick={() => {}}>
+          <img alt="" src={mapLocator} className="icons-jan" />
+          <p className="titles-jan">外送地址：</p>
+          <input className="address-input-jan" placeholder="點我填寫地址" />
+          {/* <Button className="address-btn-jan" onClick={() => {}}>
             外送取餐
           </Button> */}
         </div>
         <div className="d-flex justify-content-end">
-          <Button className="JanSelectShop" onClick={() => {}}>
+          <Button className="shop-btn-jan" onClick={() => {}}>
             門市取餐
           </Button>
         </div>
-        {/* </Row> */}
-        {/* </Container> */}
       </Navbar>
     </>
   );

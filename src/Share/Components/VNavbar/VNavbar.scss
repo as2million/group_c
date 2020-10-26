@@ -13,51 +13,71 @@ html {
 //   background-color: #f5f5f5;
 // }
 
-@media screen and (max-width: 98.5rem) {
-  .JanVNIcons {
-    height: 1.4rem;
-    margin-right: 1rem;
-  }
-  .JanVNIconsTitle {
-    font-size: 1.2rem;
-    color: #858585;
-    margin: 0;
-  }
-}
-
-.JanVNBcc {
+.vnavbar-jan {
   background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0rem 0.3rem 0.8rem #00000010;
   padding-left: 13.5rem;
   padding-right: 13.5rem;
-  height: 5rem;
+  min-height: 5rem;
 }
 
-.JanVNIcons {
+.icons-jan {
   height: 1.8rem;
   margin-right: 1rem;
 }
 
-.JanVNIconsTitle {
+.titles-jan {
   font-size: 1.5rem;
   color: #858585;
   margin: 0;
 }
 
-.JanVNAddress {
+.address-input-jan {
   height: 2.5rem;
   width: 25rem;
 }
-.JanChangeAddress {
+.address-btn-jan {
   height: 2.5rem;
   background-color: #fff !important;
   color: #f48145 !important;
   border-color: #f48145 !important;
 }
 
-.JanSelectShop {
+.shop-btn-jan {
   height: 2.5rem;
   background-color: #fff !important;
   color: #f48145 !important;
   border-color: #f48145 !important;
+}
+
+@media screen and (max-width: 57.6rem) {
+  .icons-jan {
+    height: 1.3rem;
+    margin-right: 1rem;
+  }
+  .titles-jan {
+    font-size: 1.2rem;
+    color: #858585;
+    margin: 0;
+  }
+  .vnavbar-jan {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0rem 0.3rem 0.8rem #00000010;
+    min-height: 5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .calendar-jan {
+    margin-bottom: 0.2rem;
+  }
+  //   .shop-btn-jan {
+  //   height: 2rem;
+  //   background-color: #fff !important;
+  //   color: #f48145 !important;
+  //   border-color: #f48145 !important;
+  // }
+  .address-input-jan {
+    height: 2.5rem;
+    width: 16rem;
+  }
 }
