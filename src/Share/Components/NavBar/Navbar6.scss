@@ -21,15 +21,20 @@ html {
 
 .nav {
   width: 100%;
-  height: 13.5rem;
+  height: 10rem;
   background-color: rgb(255, 255, 255);
   padding: 0.5rem 5rem;
   box-shadow: 0.3rem 0 1rem #cfcfcf;
 }
-
+.navBar-jess-container {
+  width: 140rem;
+  height: 10rem;
+  text-align: center;
+  position: relative;
+}
 //logo
-.nav .nav_brand {
-  margin-top: -2rem;
+.nav .navBar-jess-nav_brand {
+  margin-top: -3rem;
   width: 39rem;
   text-align: center;
 }
@@ -38,7 +43,7 @@ html {
   color: #858585;
   text-decoration: none;
 }
-.nav_navigation {
+.nav .navBar-jess-navigation {
   width: 114rem;
   display: flex;
   justify-content: space-between;
@@ -52,77 +57,134 @@ html {
   text-decoration: none;
 }
 
-.nav .nav_toggle {
-  float: right;
-  clear: both;
-  display: none;
-}
-
-.nav_collapse {
+.nav .navBar-jess-navCollapse {
   display: inline-block;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 3.5rem;
 }
 
-.nav_collapse ul {
+.nav .navBar-jess-navCollapse ul {
   list-style: none;
   padding-left: 0;
 }
 //選單文字
-.nav_collapse li {
-  padding-left: 10px;
+.nav .navBar-jess-navCollapse li {
+  padding-left: 0px;
   font-size: 2rem;
 }
 // 下拉式選單出現切換
-.nav_collapse .nav_navigation .nav_navigation_item {
+.nav
+  .navBar-jess-navCollapse
+  .navBar-jess-navigation
+  .navBar-jess-navigation_item {
   display: inline-block;
-  position: relative;
 }
-.nav_navigation_item:hover .dropdown {
+.nav .navBar-jess-navigation_item:hover .navBar-jess-dropdown {
   display: block;
 }
 //下拉式選單 none隱藏
-.nav_navigation_item .dropdown {
+.nav .navBar-jess-navigation_item .navBar-jess-dropdown {
   display: none;
   position: absolute;
+  // position: relative;
   width: 17rem;
   height: 22.5rem;
   background-color: rgba(0, 0, 0, 0.3);
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   border-radius: 0.5rem;
   text-align: center;
-  left: -3rem;
+  left: 30rem;
 }
+
 //下拉式選單間距
-.nav_navigation_item .dropdown .dropdown_item {
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown
+  .navBar-jess-dropdown_item {
   padding: 5px;
 }
 // 下拉式選單 文字顏色
-.nav_navigation_item .dropdown .dropdown_item a {
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown
+  .navBar-jess-dropdown_item
+  a {
   color: rgb(255, 255, 255);
   line-height: 3.5rem;
   font-size: 1.8rem;
 }
 //下拉式選單 hover後效果
-.nav_navigation_item .dropdown .dropdown_item:hover {
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown
+  .navBar-jess-dropdown_item:hover {
   color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 //下拉式選單 頂部三角形
-.triangle {
-  width: 0;
-  height: 0;
+.nav .navBar-jess-triangle {
+  width: 0rem;
+  height: 0rem;
   border-style: solid;
   border-width: 0 9px 15px 9px;
   border-color: transparent transparent rgba(0, 0, 0, 0.3) transparent;
   position: absolute;
   top: -1.5rem;
-  left: 8rem;
+  left: 7.5rem;
+  z-index: 2;
   text-align: center;
 }
-//小怪獸的出現效果-低GI便當
-.nav_navigation_item .dropdown .dropdown_item .jess-monster1 {
+
+//右邊dropdowm
+.nav .navBar-jess-navigation_item .navBar-jess-dropdown2 {
+  display: none;
+  position: absolute;
+  width: 17rem;
+  height: 22.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  right: 15rem;
+}
+.nav .navBar-jess-navigation_item:hover .navBar-jess-dropdown2 {
+  display: block;
+}
+
+// 下拉式選單間距
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item {
+  padding: 5px;
+}
+// 下拉式選單 文字顏色
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item
+  a {
+  color: rgb(255, 255, 255);
+  line-height: 3.5rem;
+  font-size: 1.8rem;
+}
+//下拉式選單 hover後效果
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+//小怪獸的出現效果-訂單管理
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item
+  .navBar-jess-monster1 {
   position: absolute;
   left: 14rem;
   top: 0rem;
@@ -131,13 +193,21 @@ html {
   transition-timing-function: linear;
   z-index: 2;
 }
-.nav_navigation_item .dropdown .dropdown_item:hover .jess-monster1 {
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item:hover
+  .navBar-jess-monster1 {
   opacity: 1;
   z-index: 1;
   left: 16rem;
 }
-//小怪獸的出現效果-美味沙拉
-.nav_navigation_item .dropdown .dropdown_item .jess-monster2 {
+//小怪獸的出現效果-修改會員資料
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item
+  .navBar-jess-monster2 {
   position: absolute;
   left: 14rem;
   top: 4.5rem;
@@ -146,28 +216,22 @@ html {
   transition-timing-function: linear;
   z-index: 2;
 }
-.nav_navigation_item .dropdown .dropdown_item:hover .jess-monster2 {
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item:hover
+  .navBar-jess-monster2 {
   opacity: 1;
   z-index: 1;
   left: 16rem;
 }
-//小怪獸的出現效果-蔬菜箱
-.nav_navigation_item .dropdown .dropdown_item .jess-monster3 {
-  position: absolute;
-  left: 14rem;
-  top: 9rem;
-  opacity: 0;
-  transition: left 0.5s;
-  transition-timing-function: linear;
-  z-index: 2;
-}
-.nav_navigation_item .dropdown .dropdown_item:hover .jess-monster3 {
-  opacity: 1;
-  z-index: 1;
-  left: 16rem;
-}
-//小怪獸的出現效果-客製化便當
-.nav_navigation_item .dropdown .dropdown_item .jess-monster4 {
+
+//小怪獸的出現效果-我的怪獸
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item
+  .navBar-jess-monster4 {
   position: absolute;
   left: 14rem;
   top: 13.5rem;
@@ -176,13 +240,21 @@ html {
   transition-timing-function: linear;
   z-index: 2;
 }
-.nav_navigation_item .dropdown .dropdown_item:hover .jess-monster4 {
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item:hover
+  .navBar-jess-monster4 {
   opacity: 1;
   z-index: 1;
   left: 16rem;
 }
-//小怪獸的出現效果-外送服務
-.nav_navigation_item .dropdown .dropdown_item .jess-monster5 {
+//小怪獸的出現效果-登出
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item
+  .navBar-jess-monster5 {
   position: absolute;
   left: 14rem;
   top: 18rem;
@@ -191,77 +263,139 @@ html {
   transition-timing-function: linear;
   z-index: 2;
 }
-.nav_navigation_item .dropdown .dropdown_item:hover .jess-monster5 {
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item:hover
+  .navBar-jess-monster5 {
   opacity: 1;
   z-index: 1;
   left: 16rem;
 }
-//shopping cart number
-.jess-navbarAmount {
+//right下拉式選單 頂部三角形
+.nav .navBar-jess-triangle2 {
+  width: 0rem;
+  height: 0rem;
+  border-style: solid;
+  border-width: 0 9px 15px 9px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.3) transparent;
   position: absolute;
-  top: 4rem;
-  right: 15rem;
+  top: -1.5rem;
+  right: 7.5rem;
+  z-index: 2;
+  text-align: center;
 }
 
-.jess-navbarCartNum {
+//shopping cart number
+.nav .jess-navbarCartAmount {
+  position: absolute;
+  top: 2rem;
+  right: 11.5rem;
+}
+
+.nav .jess-navbarCartNum {
   font-family: 'Noto Sans TC';
   font-weight: bold;
   position: absolute;
-  top: 4rem;
-  right: 15.5rem;
+  top: 2rem;
+  right: 12.4rem;
   font-size: 1.3rem;
   color: #ffffff;
 }
 .nav .nav_toggle {
-  float: right;
+  // float: right;
   clear: both;
   display: none;
   font-size: 4rem;
+  position: absolute;
+  left: 2;
+  top: 0;
 }
+
 /*mobile styles*/
-@media (max-width: 576px) {
+@media screen and (max-width: 57.6rem) {
+  .nav .navBar-jess-container {
+    display: none;
+  }
   .nav .nav_toggle {
     display: block;
   }
-  .jess-navbarAmount {
+}
+@media screen and(max-width: 57.6rem) {
+  .nav.responsive {
+    width: 100%;
+    height: 43rem;
+    background-color: rgb(255, 255, 255);
+    // padding: 0.5rem 5rem;
+    box-shadow: 0.3rem 0 1rem #cfcfcf;
+  }
+  .nav.responsive .backArrow {
     display: none;
   }
-  .jess-navbarCartNum {
+  .nav.responsive .navBar-jess-container {
+    display: block;
+  }
+  .nav.responsive .nav_toggle {
+    position: absolute;
+    left: 2;
+    top: 0;
+  }
+  .nav.responsive .jess-navbarCartAmount {
+    display: none;
+  }
+  .nav.responsive .jess-navbarCartNum {
     display: none;
   }
 
-  .collapse {
+  .nav.responsive .collapse {
     display: none;
   }
-  .nav_navigation {
+  .nav.responsive .navBar-jess-navigation {
+    // display: flex;
+    // text-align: center;
     width: 100%;
   }
-  .nav_collapse {
+  .nav.responsive .navBar-jess-navigation li {
+    // display: flex;
+    // text-align: center;
+    padding: 0;
+  }
+  .nav.responsive .navBar-jess-navCollapse {
     position: absolute;
     top: 42px;
     left: 0;
-    // background-color: ;
     width: 100%;
+    display: block;
   }
 
-  .nav_collapse .nav_navigation {
-    text-align: center;
-    flex-direction: column;
+  .nav.responsive .navBar-jess-navCollapse .navBar-jess-navigation {
+    // text-align: center;
+    // flex-direction: column;
+    display: block;
+    margin: 0 auto;
   }
 
-  .nav_collapse .nav_navigation .nav_navigation_item {
+  .nav.responsive
+    .navBar-jess-navCollapse
+    .navBar-jess-navigation
+    .navBar-jess-navigation_item {
     display: block;
     position: relative;
     padding: 10px 0;
-
-    // display: none;
+    // text-align: center;
   }
 
-  .nav_navigation_item .dropdown {
+  .nav.responsive .navBar-jess-navigation_item .navBar-jess-dropdown {
+    display: none;
+  }
+  .nav.responsive .navBar-jess-navigation_item .navBar-jess-dropdown2 {
     display: none;
   }
   //logo
-  .nav .nav_brand {
+  .nav.responsive .navBar-jess-nav_brand {
     display: none;
+  }
+  .nav.responsive .navbar-jess-popover {
+    // display: none;
   }
 }
