@@ -1,0 +1,49 @@
+.iris-menu-background {
+  background-color: #f7ede2;
+  width: 24.2rem;
+  height: 100%;
+  margin-top: -2rem;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iris-profile-photo {
+  background-color: #fff;
+  width: 13.2rem;
+  height: 13.2rem;
+  border-radius: 6.6rem;
+  margin-top: 3rem;
+}
+
+.iris-brief-info-wraper {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.iris-user-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #404040;
+  margin-top: 1.5rem;
+}
+
+.iris-brief-info {
+  font-size: 1.5rem;
+  color: rgb(134, 134, 134);
+  width: 8rem;
+}
+
+.iris-vl {
+  border-left: 0.1rem solid rgb(134, 134, 134);
+}
+
+.iris-menu-item {
+  height: 7.3rem;
+  width: 100%;
+}
+
+.iris-menu-hr {
+  border-top: 0.1rem solid rgb(134, 134, 134);
+  width: 20rem;
+}
