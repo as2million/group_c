@@ -16,11 +16,27 @@ $dropdown-link-hover-bg: #f5a016;
   height: 5rem;
 }
 
+@media screen and (max-width: 376px) {
+  .iris-inputH50 {
+    font-size: 1.4rem;
+    border-radius: 1.5rem;
+    height: 3rem;
+  }
+}
+
 // height:44px   font-size:20px   圓角輸入框
 .iris-InputH44 {
   font-size: 2rem;
   border-radius: 2.2rem;
   height: 4.4rem;
+}
+
+@media screen and (max-width: 376px) {
+  .iris-InputH44 {
+    font-size: 1.8rem;
+    border-radius: 1.35rem;
+    height: 2.7rem;
+  }
 }
 
 // height:40px   font-size:15px   方角輸入框
