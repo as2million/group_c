@@ -35,11 +35,13 @@ function TempNavbar(props) {
             <Nav.Link as={NavLink} to="/test">
               Test
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/test2">
+              Test2
+            </Nav.Link>
             <Nav.Link as={NavLink} to="/userprofile">
-              User Profile
+              user profile
             </Nav.Link>
           </Nav>
-
         </Navbar.Collapse>
       </Navbar>
     </>
