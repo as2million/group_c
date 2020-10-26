@@ -1,0 +1,207 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+// * {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+//navBar的背景
+.jess-navBackgroung {
+  width: 100%;
+  height: 13.5rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0.3rem 0 1rem #cfcfcf;
+}
+//全部選單的範圍
+.jess-textTotalRange {
+  display: flex;
+  margin-top: 3rem;
+  margin: 0 auto;
+  padding: 0rem;
+}
+//左邊文字
+.jess-navLeftText {
+  font-family: 'Noto Sans TC';
+  font-size: 2rem;
+  display: flex;
+  width: 39rem;
+  margin-top: 3rem;
+  justify-content: space-around;
+  list-style-type: none;
+}
+//右邊文字
+.jess-navRightText {
+  font-family: 'Noto Sans TC';
+  font-size: 2rem;
+  display: flex;
+  width: 42rem;
+  margin-top: 3rem;
+  justify-content: space-between;
+  list-style-type: none;
+}
+//下拉式選單-設定relative //display: block-區塊呈現
+.jess-dropdown {
+  position: relative;
+}
+.jess-dropdown:hover div {
+  display: block;
+}
+//下拉式選單背景樣式
+.jess-dropdownMenu {
+  width: 17rem;
+  height: 22.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 5rem;
+  left: -3rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  display: none;
+}
+.jess-menuItem:hover {
+  color: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+//下拉式選單的三角形樣式
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 9px 13px 9px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.4) transparent;
+  position: absolute;
+  top: -1.3rem;
+  left: 8rem;
+  text-align: center;
+}
+
+// 下拉式選單的文字樣式
+.jess-menuItem a {
+  font-family: 'Noto Sans TC';
+  font-size: 1.8rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  line-height: 4.5rem;
+  text-align: center;
+}
+.jess-menuItem a:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+//小怪獸的出現效果-低GI便當
+.jess-monster {
+  position: absolute;
+  left: 14rem;
+  top: 0rem;
+  opacity: 0;
+  transition: left 0.5s;
+  transition-timing-function: linear;
+  z-index: 2;
+}
+.jess-menuItem:hover .jess-monster {
+  opacity: 1;
+  z-index: 1;
+  left: 16rem;
+}
+//小怪獸的出現效果-美味沙拉
+.jess-monster1 {
+  position: absolute;
+  left: 14rem;
+  top: 4.5rem;
+  opacity: 0;
+  transition: left 0.5s;
+  transition-timing-function: linear;
+}
+.jess-menuItem:hover .jess-monster1 {
+  opacity: 1;
+  left: 16rem;
+}
+//小怪獸的出現效果-蔬菜箱
+.jess-monster2 {
+  position: absolute;
+  left: 14rem;
+  top: 9rem;
+  opacity: 0;
+  transition: left 0.5s;
+  transition-timing-function: linear;
+}
+.jess-menuItem:hover .jess-monster2 {
+  opacity: 1;
+  left: 16rem;
+}
+//小怪獸的出現效果-蔬菜箱
+.jess-monster3 {
+  position: absolute;
+  left: 14rem;
+  top: 13.5rem;
+  opacity: 0;
+  transition: left 0.5s;
+  transition-timing-function: linear;
+}
+.jess-menuItem:hover .jess-monster3 {
+  opacity: 1;
+  left: 16rem;
+}
+//小怪獸的出現效果-外送服務
+.jess-monster4 {
+  position: absolute;
+  left: 14rem;
+  top: 18rem;
+  opacity: 0;
+  transition: left 0.5s;
+  transition-timing-function: linear;
+}
+.jess-menuItem:hover .jess-monster4 {
+  opacity: 1;
+  left: 16rem;
+}
+//LOGO
+.jess-navLogo {
+  width: 39rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+//選單文字滑鼠效果
+.jess-menu a {
+  color: #858585;
+  text-decoration: none;
+}
+.jess-menu a:hover {
+  color: #e0611e;
+  text-decoration: none;
+}
+.jess-menu a:focus {
+  color: #e0611e;
+  text-decoration: none;
+}
+
+.jess-navbarAmount {
+  width: 2rem;
+  height: 2rem;
+  z-index: 10;
+  position: absolute;
+  top: 4rem;
+  right: 11rem;
+}
+.jess-navbarCartNum {
+  font-family: 'Noto Sans TC';
+  font-weight: bold;
+  position: absolute;
+  z-index: 11;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.3rem;
+  color: #ffffff;
+}

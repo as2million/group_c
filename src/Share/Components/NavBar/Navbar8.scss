@@ -1,0 +1,151 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+// * {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+//navBar的背景
+// :root {
+//   --background-color: #e52b50;
+//   --accent-color: #2be5c0;
+//   --text-color: #f0f8ff;
+//   --dropdown-background-color: #ce2648;
+// }
+
+// body {
+//   margin: 0;
+// }
+
+.nav {
+  width: 100%;
+  height: 13.5rem;
+  background-color: rgb(128, 113, 113);
+  padding: 0.5rem 5rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0.3rem 0 1rem #cfcfcf;
+}
+
+.nav .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nav .nav_brand {
+  font-size: 15rem;
+}
+
+.nav a {
+  color: #858585;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a:focus,
+.nav a:active {
+  color: #e0611e;
+  text-decoration: none;
+}
+
+.nav .nav_toggle {
+  float: right;
+  clear: both;
+  display: none;
+}
+
+.nav_collapse {
+  display: inline-block;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.nav_collapse ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav_collapse li {
+  padding-left: 10px;
+}
+
+.nav_collapse .nav_navigation .nav_navigation_item {
+  display: inline-block;
+  //   position: relative;
+}
+
+.nav_navigation_item .dropdown {
+  /*   display: none; */
+  position: absolute;
+  width: 10rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+
+.nav_navigation_item .dropdown .dropdown_item {
+  padding: 5px;
+}
+.nav_navigation_item .dropdown .dropdown_item a {
+  color: rgb(255, 255, 255);
+}
+.nav_navigation_item .dropdown .dropdown_item:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 9px 15px 9px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.3) transparent;
+  position: absolute;
+  top: 4.5rem;
+  left: 8rem;
+  text-align: center;
+}
+
+/*mobile styles*/
+@media (max-width: 576px) {
+  .nav .nav_toggle {
+    display: block;
+  }
+
+  .collapse {
+    display: none;
+  }
+
+  .nav_collapse {
+    position: absolute;
+    top: 42px;
+    left: 0;
+    // background-color: ;
+    width: 100%;
+  }
+
+  .nav_collapse .nav_navigation {
+    text-align: center;
+  }
+
+  .nav_collapse .nav_navigation .nav_navigation_item {
+    display: block;
+    position: relative;
+    padding: 10px 0;
+  }
+
+  .nav_navigation_item .dropdown {
+    z-index: 1;
+    left: 300px;
+    width: auto;
+  }
+}

@@ -1,0 +1,5 @@
+import React, { useState, useEffect } from 'react'
+import { Tabs, Sonnet, Tab, Container } from 'react-bootstrap'
+import { Rate } from 'antd'
+import 'antd/dist/antd.css'
+import './JessListA.scss'

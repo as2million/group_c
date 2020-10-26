@@ -1,0 +1,261 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap');
+
+container {
+  width: 100%;
+  display: flex;
+}
+.productPic {
+  background: url('./Images/chickenRice.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 87rem;
+  height: 65rem;
+  margin-top: 25rem;
+  margin-right: 13.5rem;
+}
+.menuList {
+  margin-top: 25rem;
+  width: 29rem;
+}
+.menuList > h1 {
+  font-size: 2.8rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 600;
+  color: #f48145;
+}
+.menuList > p {
+  font-family: 'Noto Sans TC';
+  font-size: 1.5rem;
+  color: #858585;
+  margin-top: 3rem;
+}
+.nutrient {
+  margin-top: 3rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #decdbb;
+  color: #a59583;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.6rem;
+  box-sizing: border-box;
+  line-height: 2.5rem;
+}
+.nutrient2 {
+  margin-top: 3rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #decdbb;
+  text-align: center;
+  padding: 0.6rem;
+  color: #a59583;
+}
+
+.rateStar {
+  margin-top: 3rem;
+  text-align: justify;
+}
+.rateStar > p {
+  font-family: 'Noto Sans TC';
+  font-size: 1.5rem;
+  color: #858585;
+  position: absolute;
+  right: 14rem;
+  top: 65rem;
+}
+hr {
+  color: #a59583;
+  margin-top: 3rem;
+}
+.price {
+  margin-top: 3rem;
+}
+.price > h1 {
+  font-family: 'Noto Sans TC';
+  font-size: 3.6rem;
+  color: #f48145;
+}
+.price > p {
+  font-family: 'Noto Sans TC';
+  font-size: 1.5rem;
+  color: #858585;
+  position: absolute;
+  right: 14rem;
+  top: 73rem;
+}
+
+@media (min-width: 480px) and (max-width: 680px) {
+  container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .productPic {
+    background: url('./Images/chickenRice.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    margin: 0;
+  }
+  .menuList {
+    margin: 0 auto;
+    margin-top: 3rem;
+    text-align: center;
+  }
+  //標題
+  .menuList > h1 {
+    font-size: 2.4rem;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    color: #f48145;
+    text-align: center;
+    line-height: 3rem;
+  }
+  //內文
+  .menuList > p {
+    font-family: 'Noto Sans TC';
+    font-size: 1.5rem;
+    color: #858585;
+    margin-top: 5rem;
+  }
+  //營養標示
+  .nutrient {
+    margin-top: 3rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #decdbb;
+    color: #a59583;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.6rem;
+    box-sizing: border-box;
+    line-height: 2.5rem;
+  }
+  .nutrient2 {
+    margin-top: 3rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #decdbb;
+    text-align: center;
+    padding: 0.6rem;
+  }
+  h6 {
+    font-family: 'Noto Sans TC';
+    color: #a59583;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+  }
+
+  .rateStar {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    text-align: center;
+  }
+  .rateStar p {
+    text-align: center;
+    position: absolute;
+    top: 92rem;
+    left: 30%;
+  }
+  hr {
+    color: #a59583;
+    margin-top: 3rem;
+  }
+  .price {
+    margin-top: 5rem;
+  }
+  .price > h1 {
+    font-family: 'Noto Sans TC';
+    font-size: 3.6rem;
+    color: #f48145;
+  }
+  .price > p {
+    font-family: 'Noto Sans TC';
+    left: 30%;
+    top: 100rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .productPic > img {
+    min-width: 100%;
+  }
+  .menuList {
+    margin: 0 auto;
+    margin-top: 3rem;
+    text-align: center;
+  }
+  //標題
+  h3 {
+    font-size: 2.4rem;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    color: #f48145;
+    text-align: center;
+  }
+  //內文
+  p {
+    font-family: 'Noto Sans TC';
+    font-size: 1.5rem;
+    color: #858585;
+    margin-top: 3rem;
+  }
+  //營養標示
+  .nutrient {
+    display: none;
+  }
+  .nutrient2 {
+    display: none;
+  }
+  h6 {
+    font-family: 'Noto Sans TC';
+    color: #a59583;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+  }
+
+  .rateStar {
+    margin-top: 3rem;
+    // margin: 0 auto;
+    text-align: center;
+  }
+  .rateStar > span {
+    right: 5rem;
+    top: 127rem;
+  }
+  hr {
+    color: #a59583;
+    margin-top: 3rem;
+  }
+  .price {
+    margin-top: 3rem;
+  }
+  .price > h1 {
+    font-family: 'Noto Sans TC';
+    font-size: 3.6rem;
+    color: #f48145;
+  }
+  .price > span {
+    font-family: 'Noto Sans TC';
+    right: 5rem;
+    top: 138rem;
+  }
+}
