@@ -1,6 +1,7 @@
 import React from 'react';
 import './ClaudiaDetailedRecommended.scss';
-import Farm from './Images/farm_recommanded.jpg';
+import Farm from './Images/JPG/farm_recommanded.jpg';
+import Wave from './Images/SVG/wave.svg';
 
 function ClaudiaDetailedRecommended() {
 
@@ -39,6 +40,7 @@ function ClaudiaDetailedRecommended() {
                         </div>
                     </div>
                 </div>
+                <div><img alt="" src={Wave} /></div>
 
             </div>
         </>

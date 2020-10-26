@@ -1,6 +1,25 @@
 .claudia-detailed-slider {
+    width: 1440px;
+    height: 1000px;
+    background-color: #fff;
+    padding: 50px 0px;
+    position: relative;
+    display: inline-block;
+}
+
+.claudia-detailed-slider-ricebg {
+    position: relative;
+    width: 1440px;
+    height: 1000px;
+    object-fit: cover;
+}
+
+.claudia-detailed-slider-container {
     width: 1160px;
     margin: 65px auto 0px auto;
+    position: absolute;
+    top: 45px;
+    left: 130px;
 }
 
 .claudia-image-select img {
@@ -41,5 +60,6 @@
 
 .claudia-image-large img {
     width: 1160px;
-    height: 785px;
+    height: 570px;
+    object-fit: cover;
 }
