@@ -11,23 +11,6 @@ input {
   outline: none;
 }
 
-.ru-noPadding {
-  padding: 0;
-}
-.ru-noMargin {
-  margin: 0;
-}
-
-.showWidth {
-  position: fixed;
-  z-index: 100;
-  right: 0;
-}
-
-.navBar {
-  height: 135px;
-}
-
 .ru-mainImg {
   height: 362px;
   background-image: url("./Images/mainImg.jpg");
@@ -50,10 +33,13 @@ input {
   @include flex($df, $fdr, $jcc, $alc);
 }
 
-.ru-containerA {
-  // background-color: blueviolet;
-  @include page();
-}
+// .ru-productList-container {
+// background-color: blueviolet;
+// }
+
+// .ru-option-container {
+// height: 324px;
+// }
 
 .ru-searchBar {
   width: 43.76%;
@@ -71,10 +57,16 @@ input {
   );
 }
 
+.ru-option-container {
+  // background-color: red;
+  width: 100%;
+}
+
 .ru-optionWarp {
   // background-color: dodgerblue;
   color: white;
   height: 324px;
+  @include page();
   @include flex($df, $fdc, $jcc, $alc);
 }
 
@@ -86,254 +78,18 @@ input {
   @include flex($df, $fdr, space-between, $alc);
 }
 
-// button-btn 開始
-.ru-button {
-  background-color: $white;
-  height: 65px;
-  width: 200px;
-  border: 1px solid $light-orange;
-  border-radius: 9999px;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  transition: color $three-five, border $zero;
-  @include font(
-    // 字體, 字體大小, 字重, 字距, 字色
-    $notoSansTC,
-    $minor-heading,
-    $regular,
-    1.25px,
-    $light-orange
-  );
+.ru-item-container {
+  // background-color: blue;
+  background-image: url("./Images/background.svg");
+  background-position: center center;
+  // background-size: cover;
+  width: 100%;
 }
 
-// 一般按鈕hover時
-.ru-button:hover {
-  color: $white;
-}
-
-.ru-button:active {
-  border: 1px solid $dark-orange;
-}
-
-.ru-button::after {
-  content: "";
-  background-color: $light-orange;
-  height: 65px;
-  width: 220px;
-  position: absolute;
-  z-index: -1;
-  top: 70px;
-  left: -10px;
-  transition: top $two-five, background-color $zero, border $zero;
-  @include font(
-    // 字體, 字體大小, 字重, 字距, 字色
-    $notoSansTC,
-    $minor-heading,
-    $regular,
-    1.25px,
-    $white
-  );
-}
-
-.ru-button:hover::after {
-  top: -1px;
-}
-
-.ru-button:active::after {
-  background-color: $dark-orange;
-}
-
-.ru-button4 {
-  color: $light-green;
-  border: 1px solid $light-green;
-}
-
-.ru-button4:hover {
-  color: white;
-}
-.ru-button4:active {
-  border: 1px solid $dark-green;
-}
-
-.ru-button4::after {
-  content: "";
-  background-color: $light-green;
-  height: 65px;
-  width: 220px;
-  position: absolute;
-  z-index: -1;
-  top: 70px;
-  left: -10px;
-  transition: $two-five, background-color $zero, border $zero;
-  @include font(
-    // 字體, 字體大小, 字重, 字距, 字色
-    $notoSansTC,
-    $minor-heading,
-    $regular,
-    1.25px,
-    $white
-  );
-}
-
-.ru-button4:active::after {
-  background-color: $dark-green;
-}
-// button-btn 結束
-
-.ru-containerB {
+.ru-card-warp {
   // background-color: gold;
-  max-width: 1170px;
-  padding-top: 80px;
-}
-
-.item-info-warp {
-  @include flex($df, $fdc, $jcc, $alc);
-}
-
-.item-info {
-  // background-color: lawngreen;
-  @include flex($df, $fdc, $jcc, $alc);
-}
-
-.num {
-  @include font(
-    // 字體, 字體大小, 字重, 字距, 字色
-    $notoSansTC,
-    $number-size,
-    $regular,
-    0px,
-    $light-grey
-  );
-}
-
-.commentNum {
-  margin-right: 6px;
-  margin-bottom: 16px;
-}
-
-.star {
-  margin: 0px 2px;
-}
-
-.item-info-warp {
-  // background-color: indianred;
   width: 100%;
-  height: 108px;
-}
-
-.item-info {
-  height: 79px;
-  position: relative;
-}
-
-.item-info > h3 {
-  position: absolute;
-  top: 53px;
-  left: 170px;
-  @include font(
-    // 字體, 字體大小, 字重, 字距, 字色
-    $notoSansTC,
-    $minor-heading,
-    $bold,
-    0px,
-    $light-orange
-  );
-}
-
-.item-info > h2 {
-  font-size: $productName-size;
-  margin-bottom: 10px;
-  @include font(
-    // 字體, 字體大小, 字重, 字距, 字色
-    $notoSansTC,
-    $productName-size,
-    $regular,
-    0px,
-    $productName-Color
-  );
-}
-
-.star {
-  width: 14px;
-}
-
-// .addCart-btn .addCart-cart開始
-.ru-addBtn {
-  background-color: $white;
-  width: 150px;
-  height: 45px;
-  border-radius: 9999px;
-  border: 1px solid $light-orange;
-  position: relative;
-  overflow: hidden;
-  user-select: none;
-}
-
-.ru-addBtn::after {
-  content: "加入購物車";
-  width: 200px;
-  height: 50px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  // transition: 屬性1 執行時間1 延遲多久1, ... , 屬性N 執行時間N 延遲多久N
-  transition: opacity $two-five $zero-one, background-color $zero $zero,
-    color $zero $zero;
-  user-select: none;
-  @include font(
-    // 字體, 字體大小, 字重, 字距, 字色
-    $notoSansTC,
-    $minor-heading,
-    $regular,
-    1.25px,
-    $light-orange
-  );
-  @include flex($df, $fdr, $jcc, $alc);
-}
-// 當 加入購物車 被 按到時
-.ru-addBtn:hover::after {
-  opacity: 100;
-}
-
-.ru-addBtn:active::after {
-  background-color: $light-orange;
-  color: $white;
-}
-
-.ru-cart {
-  width: 30px;
-  transition: $three-five; // 滑鼠滑離.ru-cart時執行的時間
-  transition-delay: $zero-one;
-  user-select: none;
-}
-
-// 購物車按鈕hover時
-.ru-addBtn:hover > .ru-cart {
-  transform: translateX(-100px);
-  transition: $three-five; // 滑鼠hover到.ru-cart時執行的時間
-}
-// .addCart-btn .addCart-cart結束
-
-// 購物車按鈕被點擊時
-
-.num {
-  display: inline;
-}
-
-// .ru-item-btn-warp開始
-.ru-item-btn-warp {
-  background-color: khaki;
-  width: 100%;
-  height: 84px;
-  @include flex($df, $fdc, $jcc, $alc);
-}
-// .ru-item-btn-warp結束
-.ru-row {
-  background-color: orangered;
-  margin-bottom: 100px;
+  @include page();
 }
 
 .itemWarp {
@@ -343,32 +99,6 @@ input {
   @include flex($df, $fdr, space-between, $als);
 }
 
-.ru-itemWarp2 {
-  @include flex($df, $fdr, $jcc, $als);
-}
-
-.ru-itemWarp3 {
-  @include flex($df, $fdr, $jce, $als);
-}
-
-.ru-item {
-  outline: 1px solid black;
-  width: 345px;
-  height: 100%;
-}
-
-.ru-col {
-  background-color: chartreuse;
-  outline: 1px solid black;
-}
-
-.ru-Col1 {
-  background-color: gold;
-}
-
-.position {
-  color: aquamarine;
-  position: absolute;
-  top: 0;
-  left: 0;
+.itemWarp1 {
+  margin-top: 90px;
 }

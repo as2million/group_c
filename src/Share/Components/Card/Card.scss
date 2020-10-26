@@ -1,11 +1,9 @@
 @import "./Variable.scss";
 
-.card {
-  border: 1px solid $hr-Color;
+.card-container {
   border-radius: 5px;
   width: 345px;
   height: 100%;
-  // z-index: -200;
 }
 
 .card-img-warp {
@@ -19,15 +17,76 @@
 }
 
 .card-img {
-  background-image: url("./Images/item1.jpg");
-  background-size: cover;
-  background-position: 70% center;
-  background-repeat: no-repeat;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
   width: 100%;
   height: 100%;
 }
+
+#card-img-1 {
+  background-image: url("./Images/item1.jpg");
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-2 {
+  background-image: url("./Images/item2.jpg");
+  background-size: cover;
+  background-position: 45% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-3 {
+  background-image: url("./Images/item3.jpg");
+  background-size: cover;
+  background-position: 62.5% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-4 {
+  background-image: url("./Images/item4.jpg");
+  background-size: cover;
+  background-position: 57.5% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-5 {
+  background-image: url("./Images/item5.jpg");
+  background-size: cover;
+  background-position: 60% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-6 {
+  background-image: url("./Images/item6.jpg");
+  background-size: cover;
+  background-position: 17.5% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-7 {
+  background-image: url("./Images/item7.jpg");
+  background-size: cover;
+  background-position: 17.5% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-8 {
+  background-image: url("./Images/item8.jpg");
+  background-size: cover;
+  background-position: 65% center;
+  background-repeat: no-repeat;
+}
+
+#card-img-9 {
+  background-image: url("./Images/item9.jpg");
+  background-size: cover;
+  background-position: 62.5% center;
+  background-repeat: no-repeat;
+}
+
+
 
 .card-abs {
   position: absolute;
@@ -38,6 +97,8 @@
 
 .card-info-warp {
   background-color: $white;
+  border-right: 1px solid $hr-Color;
+  border-left: 1px solid $hr-Color;
   width: 100%;
   height: 108px;
   position: relative;
@@ -108,6 +169,10 @@
 }
 
 .card-addCartWarp {
-  @include flex($df, $fdr, $jcc, $alc);
+  background-color: $white;
   height: 84px;
+  border-right: 1px solid $hr-Color;
+  border-left: 1px solid $hr-Color;
+  border-bottom: 1px solid $hr-Color;
+  @include flex($df, $fdr, $jcc, $alc);
 }
