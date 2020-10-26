@@ -6,10 +6,9 @@ import TextArea from "./../../Share/Components/Input/TextArea";
 import SearchBar from "./../../Share/Components/Input/SearchBar";
 import SelectBox from "./../../Share/Components/Input/SelectBox";
 import InputAdd from "./../../Share/Components/Input/InputAdd";
-
+import InputAddress from "./../../Share/Components/Input/InputAddress";
 
 function UserProfile(props) {
-
   const { name } = props;
   return (
     <>
@@ -30,6 +29,8 @@ function UserProfile(props) {
         <SelectBox />
         <br />
         <InputAdd />
+        <br />
+        <InputAddress />
       </div>
     </>
   );

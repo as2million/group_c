@@ -11,15 +11,18 @@ function SearchBar() {
   //   document.querySelector("#search").style['background-color'] = '#f00';
   // }
 
-  
   return (
     <>
       <div class="iris-input-field first-wrap">
         <div class="svg-wrapper">
           <img class="iris-img" src={searchIcon} />
         </div>
-        <input class="iris-searchbar" id="search" type="text" placeholder="search" 
-        // onClick={()=>{lightenBorder()}}
+        <input
+          class="iris-searchbar"
+          id="search"
+          type="text"
+          placeholder="search"
+          // onClick={()=>{lightenBorder()}}
         />
       </div>
       {/* </div> */}

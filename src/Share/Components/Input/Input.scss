@@ -68,7 +68,7 @@ $dropdown-link-hover-bg: #f5a016;
 }
 
 // input-add
-.iris-InputAdd{
+.iris-InputAdd {
   font-size: 1.5rem;
   border-radius: 0.8rem;
   height: 4rem;
@@ -81,12 +81,53 @@ $dropdown-link-hover-bg: #f5a016;
   font-size: 3.5rem;
   color: #858585;
 }
-.iris-whitebox-add{
+.iris-whitebox-add {
   border-radius: 0.8rem;
   height: 4rem;
   width: 4rem;
-  background-color:transparent;
+  background-color: transparent;
   position: absolute;
   right: 0.1rem;
   top: 0.1rem;
+}
+
+.iris-whitebox-add:hover {
+  cursor: pointer;
+}
+
+// 地址輸入框
+.iris-InputAddress {
+  font-size: 1.5rem;
+  border-radius: 0.8rem;
+  height: 4rem;
+  position: relative;
+  line-height: 3rem;
+}
+
+.iris-edit-icon {
+  fill: #c9c9c9;
+  position: absolute;
+  right: 4.5rem;
+  top: 1.1rem;
+}
+.iris-edit-icon:hover {
+  fill: #f5a016;
+  cursor: pointer;
+}
+.iris-delete-icon {
+  fill: #c9c9c9;
+  position: absolute;
+  right: 1.3rem;
+  top: 0.9rem;
+}
+.iris-delete-icon:hover {
+  fill: #f5a016;
+  cursor: pointer;
+}
+
+// 地址輸入框編輯狀態
+.iris-InputAddress-edit {
+  font-size: 1.5rem;
+  border-radius: 0.8rem;
+  height: 4rem;
 }

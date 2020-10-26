@@ -7,13 +7,11 @@ import "./Input.scss";
 function InputAdd() {
   const turnOrange = () => {
     const symbolAdd = document.querySelector(".iris-symbolAdd");
-    symbolAdd.style.color="#f5a016"
-    
+    symbolAdd.style.color = "#f5a016";
   };
   const turnGrey = () => {
     const symbolAdd = document.querySelector(".iris-symbolAdd");
-    symbolAdd.style.color="#858585"
-    
+    symbolAdd.style.color = "#858585";
   };
 
   return (
