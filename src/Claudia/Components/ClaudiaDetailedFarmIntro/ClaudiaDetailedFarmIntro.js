@@ -10,7 +10,7 @@ function ClaudiaDetailedFarmIntro() {
             <div className="claudia-detailed-farm-intro">
                 <h1><b>認識農場</b></h1>
                 <div className="claudia-detailed-farm-video">
-                    <iframe width="920" height="545" src="https://www.youtube.com/embed/5Jpbe1v1nJk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe title="youtubevid" width="920" height="545" src="https://www.youtube.com/embed/5Jpbe1v1nJk" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 </div>
                 <div className="claudia-detailed-farm-middle">
                     <div className="claudia-detailed-farm-text">
