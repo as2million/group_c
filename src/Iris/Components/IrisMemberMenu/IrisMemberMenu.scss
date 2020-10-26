@@ -41,9 +41,25 @@
 .iris-menu-item {
   height: 7.3rem;
   width: 100%;
+  position: relative;
 }
 
 .iris-menu-hr {
-  border-top: 0.1rem solid rgb(134, 134, 134);
+  border-top: 0.1rem solid #decdbb;
   width: 20rem;
 }
+
+.iris-mune-item-wrapper {
+  justify-content: center;
+}
+
+.iris-menu-icon {
+  fill: #A59583;
+  stroke: #A59583;
+  // fill: pink;
+  position: absolute;
+  left: 10%;
+  top:30%
+}
+
+
