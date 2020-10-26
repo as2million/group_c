@@ -4,7 +4,14 @@ import star from "./Images/star.svg";
 import AddCart from "Share/Components/AddCart/AddCart";
 import AddFavorite from "Share/Components/AddFavorite/AddFavorite";
 function Card(props) {
-  const { title, comment, buy, price } = props;
+  // title 品名
+  // comment 有幾則評論
+  // buy 有多少人買
+  // price 價格
+  // id 不同元件id
+  // parentId 不同元件父母id
+  const { title, comment, buy, price, id, parentId } = props;
+
   return (
     <>
       <div className="card">
@@ -41,7 +48,7 @@ function Card(props) {
         {/* item資訊e */}
         {/* 加入購物車按鈕s */}
         <section className="card-addCartWarp">
-          <AddCart target={".target"} />
+          <AddCart target={"target"} id={id} parentId={parentId}/>
         </section>
         {/* 加入購物車按鈕e */}
       </div>

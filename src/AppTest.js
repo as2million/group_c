@@ -1,5 +1,5 @@
 import React from "react";
-// import RuApp from "./Ru/RuApp";
+import RuApp from "./Ru/RuApp";
 import Button from "Share/Components/Button/Button";
 import AddFavorite from "Share/Components/AddFavorite/AddFavorite";
 import AddCart from "Share/Components/AddCart/AddCart";
@@ -9,12 +9,12 @@ import "./App.css";
 function AppTest() {
   return (
     <>
-      {/* <RuApp /> */}
-      <Button text={"預設字樣"} />
-      <AddFavorite />
-      <div className="target" style={{ marginLeft: "1000px" }}>test-target</div>
-      <AddCart target={".target"} />
-      <Card title={'我是商品名稱'} comment={'NNNN'} buy={'KKK'} price={'$XXX'}/>
+      <RuApp />
+      {/* <Button text={"預設字樣"} /> */}
+      {/* <AddFavorite /> */}
+      {/* <div className="target" style={{ marginLeft: "1000px" }}>test-target</div> */}
+      {/* <AddCart target={".target"} /> */}
+      {/* <Card title={'我是商品名稱'} comment={'NNNN'} buy={'KKK'} price={'$XXX'}/> */}
     </>
   );
 }

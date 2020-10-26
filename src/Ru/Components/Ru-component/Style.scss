@@ -51,7 +51,7 @@ input {
 }
 
 .ru-containerA {
-  background-color: blueviolet;
+  // background-color: blueviolet;
   @include page();
 }
 
@@ -72,14 +72,14 @@ input {
 }
 
 .ru-optionWarp {
-  background-color: dodgerblue;
+  // background-color: dodgerblue;
   color: white;
   height: 324px;
   @include flex($df, $fdc, $jcc, $alc);
 }
 
 .ru-buttonWarp {
-  background-color: rgb(30, 236, 255);
+  // background-color: rgb(30, 236, 255);
   width: 80.8%;
   height: 64px;
   margin-top: 50px;
@@ -182,74 +182,17 @@ input {
 // button-btn 結束
 
 .ru-containerB {
-  background-color: gold;
+  // background-color: gold;
   max-width: 1170px;
   padding-top: 80px;
 }
-
-.item-img {
-  background-color: darkgreen;
-  background-image: url("./Images/item1.jpg");
-  background-size: cover;
-  background-position: 70% center;
-  background-repeat: no-repeat;
-  height: 340px;
-  position: relative;
-}
-
-// .favorite-btn 未改動 要加絕對定位 開始
-.favorite-btn {
-  background-color: $white;
-  width: 37px;
-  height: 37px;
-  border: none;
-  border-radius: 5px;
-  position: absolute;
-  top: 282px;
-  left: 287px;
-  background-image: url("./Images/addFavoriteA.svg");
-  background-repeat: no-repeat;
-  background-position: 75% 60%;
-  background-size: 32px;
-}
-
-.favorite-btn:hover {
-  background-color: $light-yellow;
-  width: 37px;
-  height: 37px;
-  border: none;
-  border-radius: 5px;
-  position: absolute;
-  top: 282px;
-  left: 287px;
-  background-image: url("./Images/addFavoriteB.svg");
-  background-repeat: no-repeat;
-  background-position: 75% 60%;
-  background-size: 32px;
-}
-
-.favorite-btn:active {
-  background-color: $dark-yellow;
-  width: 37px;
-  height: 37px;
-  border: none;
-  border-radius: 5px;
-  position: absolute;
-  top: 282px;
-  left: 287px;
-  background-image: url("./Images/addFavoriteC.svg");
-  background-repeat: no-repeat;
-  background-position: 75% 60%;
-  background-size: 32px;
-}
-// .favorite-btn 未改動 結束
 
 .item-info-warp {
   @include flex($df, $fdc, $jcc, $alc);
 }
 
 .item-info {
-  background-color: lawngreen;
+  // background-color: lawngreen;
   @include flex($df, $fdc, $jcc, $alc);
 }
 
@@ -274,7 +217,7 @@ input {
 }
 
 .item-info-warp {
-  background-color: indianred;
+  // background-color: indianred;
   width: 100%;
   height: 108px;
 }
@@ -314,7 +257,6 @@ input {
 .star {
   width: 14px;
 }
-
 
 // .addCart-btn .addCart-cart開始
 .ru-addBtn {
@@ -395,9 +337,9 @@ input {
 }
 
 .itemWarp {
-  background-color: cornflowerblue;
-  outline: 1px solid black;
+  // background-color: cornflowerblue;
   height: 531.73px;
+  margin-bottom: 100px;
   @include flex($df, $fdr, space-between, $als);
 }
 
