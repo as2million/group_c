@@ -1,0 +1,193 @@
+html {
+  font-size: 10px;
+  font-style: 微軟正黑體;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  background-color: #f7ede2;
+}
+
+.chamain-card {
+  width: 800px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+// .chamain-card-step2 {
+//   height: 500px;
+// }
+
+.chaaside-card {
+  width: 360px;
+  /* height: 30px; */
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  margin-left: 5px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.chawrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-top: 80px;
+}
+
+.chastep-header {
+  font-size: 24px;
+  border-bottom: 1px solid #8585853a;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.chastep1-total-price {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.chastep1-total-price-word {
+  font-size: 15px;
+  color: #858585;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.chastep1-total-price-number {
+  font-size: 36px;
+  color: #f48145;
+}
+
+.chastep-check-btn {
+  height: 45px;
+  width: 170px;
+  border-radius: 50px;
+  background-color: #fff;
+  border: solid 1px #e0611e;
+  outline: none;
+  color: #e0611e;
+  font-size: 18px;
+  &:hover {
+    background-color: #e0611e;
+    color: #fff;
+  }
+}
+.chastep-check-btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.chastep1-promotion-header-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .chastep1-promotion-header {
+    color: #f48145;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+.chastep1-promotion-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.chastep1-promotion-picture {
+  background-color: #faf;
+  width: 133px;
+  height: 133px;
+  margin: 0 20px 0 20px;
+}
+
+.chahorizontal-line {
+  border-bottom: 1px solid #8585853a;
+}
+
+.chastep2-take-date-time {
+  display: flex;
+}
+
+.chastep2-5-take-address-1 {
+  border: 1px solid #e0611e;
+}
+.chaCha-Credit-Card {
+  width: 420px;
+}
+
+.chaCha-Credit-Card-div {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 40px;
+}
+
+.chaCha-Credit-Card-flip {
+  width: 420px;
+  height: 240px;
+  transform-style: preserve-3d;
+}
+.chaCha-Credit-Card-all {
+  position: absolute;
+  left: 0;
+  top: 0;
+  backface-visibility: hidden;
+}
+.chaCha-Credit-Card-flip .chaCha-Credit-Card-all:nth-of-type(1) {
+  // background: blue;
+  transition: 0.cha5s transform;
+}
+
+.chaCha-Credit-Card-flip .chaCha-Credit-Card-all:nth-of-type(2) {
+  // background: red;
+  transform: rotateY(-180deg);
+  transition: 0.cha5s transform;
+}
+
+.chaCha-Credit-Card-flip:hover .chaCha-Credit-Card-all:nth-of-type(1) {
+  transform: rotateY(180deg);
+}
+.chaCha-Credit-Card-flip:hover .chaCha-Credit-Card-all:nth-of-type(2) {
+  transform: rotateY(0deg);
+}
+
+.chastep3-5-receipt-div {
+  display: flex;
+}
+.chacard-number-on-picture {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  font-size: 30px;
+}
+.chacard-MONTH-YEAR-on-picture {
+  position: absolute;
+  left: 120px;
+  top: 170px;
+  font-size: 24px;
+}
+.chacard-3number-on-picture{
+  position: absolute;
+  left: 310px;
+  top: 125px;
+  font-size: 24px;
+  background-color: rgba(49, 0, 0, 0);
+  border: none;
+}
+.chastep3-receipt-alert {
+  color: #e0611e;
+  font-size: 15px;
+}
