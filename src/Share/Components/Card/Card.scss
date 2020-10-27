@@ -4,12 +4,18 @@
   border-radius: 5px;
   width: 345px;
   height: 100%;
+  // margin: 0px 20px;
+}
+
+#card-margin{
+  margin: 0px 20px;
 }
 
 .card-img-warp {
   height: 340px;
   position: relative;
 }
+
 
 .card-img-warp:hover > .card-abs {
   top: 83%;
@@ -86,8 +92,6 @@
   background-repeat: no-repeat;
 }
 
-
-
 .card-abs {
   position: absolute;
   top: 110%;
@@ -157,7 +161,7 @@
 .card-info > h3 {
   position: absolute;
   top: 53px;
-  left: 170px;
+  left: 100%;
   @include font(
     // 字體, 字體大小, 字重, 字距, 字色
     $notoSansTC,

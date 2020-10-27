@@ -8,14 +8,15 @@ function Card(props) {
   // comment 有幾則評論
   // buy 有多少人買
   // price 價格
+  // cardMargin 卡片margin => props傳入 card-margin
   // id 不同元件id => addCart-btn-n n為自訂數
   // parentId 不同元件父母id => addCart-btn-warp-n n為自訂數
   // imgId 產品圖片 => card-img-n n為1~9
-  const { title, comment, buy, price, id, parentId, imgId } = props;
+  const { title, comment, buy, price, cardMargin, id, parentId, imgId } = props;
 
   return (
     <>
-      <div className="card-container">
+      <div className="card-container" id={cardMargin}>
         {/* item圖片s */}
         <section className="card-img-warp">
           <a href="" className="card-link">

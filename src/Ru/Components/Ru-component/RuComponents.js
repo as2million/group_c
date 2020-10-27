@@ -4,6 +4,8 @@ import "Ru/Components/Ru-component/Style.scss";
 import Button from "Share/Components/Button/Button";
 import Card from "Share/Components/Card/Card";
 import line from "Ru/Components/Ru-component/Images/line.svg";
+import lineB from "Ru/Components/Ru-component/Images/line.png";
+import background from "Ru/Components/Ru-component/Images/background.png";
 
 function RuComponents() {
   // JSX
@@ -45,24 +47,34 @@ function RuComponents() {
       </div>
 
       <div className="ru-productList-container">
-        <div class="ru-option-container">
-          <div className="ru-optionWarp">
-            <input
-              type="text"
-              className="ru-searchBar"
-              placeholder="search"
-            ></input>
-            <section className="ru-buttonWarp">
-              <Button text={"低GI便當"} className={"button-btn"} />
-              <Button text={"鮮蔬沙拉"} className={"button-btn"} />
-              <Button text={"客製化便當"} className={"button-btn"} />
-              <Button text={"蔬菜箱"} className={"button-btn-g"} />
-            </section>
-          </div>
-          <img src={line}></img>
+        <div className="ru-optionWarp">
+          {/* 搜尋欄s */}
+          <input
+            type="text"
+            className="ru-searchBar"
+            placeholder="search"
+          ></input>
+          {/* 搜尋欄e */}
+
+          {/* 選項按鈕 s */}
+          <section className="ru-buttonWarp">
+            <Button text={"低GI便當"} className={"button-btn"} />
+            <Button text={"鮮蔬沙拉"} className={"button-btn"} />
+            <Button text={"客製化便當"} className={"button-btn"} />
+            <Button text={"蔬菜箱"} className={"button-btn-g"} />
+          </section>
+          {/* 選項按鈕 e */}
         </div>
 
+        {/* 分隔曲線 s*/}
+        <div className="ru-line">
+          <img src={lineB}></img>
+        </div>
+        {/* 分隔曲線 e*/}
+
+        {/* 商品區 s */}
         <div className="ru-item-container">
+          {/* 卡片區 s */}
           <div className="ru-card-warp">
             <div className="itemWarp itemWarp1">
               <Card
@@ -82,6 +94,7 @@ function RuComponents() {
                 id={"addCart-btn-2"}
                 parentId={"addCart-btn-warp-2"}
                 imgId={"card-img-2"}
+                cardMargin={"card-margin"}
               />
               <Card
                 title={"醬烤厚切1983黑豚"}
@@ -112,6 +125,7 @@ function RuComponents() {
                 id={"addCart-btn-5"}
                 parentId={"addCart-btn-warp-5"}
                 imgId={"card-img-5"}
+                cardMargin={"card-margin"}
               />
               <Card
                 title={"美式熟成烤牛肋條"}
@@ -142,6 +156,7 @@ function RuComponents() {
                 id={"addCart-btn-8"}
                 parentId={"addCart-btn-warp-8"}
                 imgId={"card-img-8"}
+                cardMargin={"card-margin"}
               />
               <Card
                 title={"會議雙拼組合"}
@@ -154,7 +169,13 @@ function RuComponents() {
               />
             </div>
           </div>
+          {/* 卡片區 e */}
+
+          {/* 背景米圖 s */}
+          <img src={background}></img>
+          {/* 背景米圖 e */}
         </div>
+        {/* 商品區 e */}
       </div>
 
       <div style={{ height: "222px", backgroundColor: "#FF5151" }}>
