@@ -14,23 +14,23 @@ function SearchBar() {
     document.querySelector(".iris-img").style.fill = "#F5CB87";
   }
   window.onclick = (e) => {
+    console.log("input", document.querySelector(".iris-input-field"));
     if (e.target.id !== "iris-search") {
-      document.querySelector(".iris-input-field").style["box-shadow"] = "none";
-      document.querySelector(".iris-input-field").style["border-color"] =
-        "#858585";
-      document.querySelector(".iris-img").style.fill = "#c2c4ca";
+      if (document.querySelector(".iris-input-field")) {
+        document.querySelector(".iris-input-field").style["box-shadow"] =
+          "none";
+        document.querySelector(".iris-input-field").style["border-color"] =
+          "#858585";
+        document.querySelector(".iris-img").style.fill = "#c2c4ca";
+      }
     }
-
-    // console.log(typeof(e.target))
-    // document.querySelector(".iris-input-field").style["box-shadow"] = "0 0 0.5rem #faf";
-    // document.querySelector(".iris-input-field").style["border-color"] = "#fff";
   };
   return (
     <>
       <div class="iris-input-field first-wrap">
         <div class="svg-wrapper">
           {/* <img class="iris-img" src={searchIcon} /> */}
-          <SearchIcon class="iris-img"/>
+          <SearchIcon class="iris-img" />
         </div>
         <input
           class="iris-searchbar"
