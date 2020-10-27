@@ -25,9 +25,6 @@
     margin-top: 20px;
 }
 
-.claudia-detailed-farm-adr-transport {
-    width: auto;
-}
 
 .claudia-detailed-farm-adr-transport p {
     font-size: 18px;
@@ -37,6 +34,44 @@
 .claudia-detailed-farm-adr-transport-container {
     width: 85%;
     margin: 150px auto;
+}
+
+@media only screen and (max-width: 375px) {
+    .claudia-detailed-farm-adr {
+        width: 375px;
+        height: 800px;
+
+    }
+    .claudia-detailed-farm-adr h1 {
+        font-size: 24px;
+        margin: 40px auto;
+    }
+
+    .claudia-detailed-farm-adr-container {
+        width: 375px;
+        display: block;
+    }
+
+    .claudia-detailed-farm-adr-info { 
+        width: 310px;
+    }
+
+    .claudia-detailed-farm-adr-info p {
+        font-size: 18px;
+    }
+
+    .claudia-detailed-farm-adr-info iframe {
+        width: 310px;
+        height: 255px;
+    }
+
+    .claudia-detailed-farm-adr-transport {
+        width: 310px;
+    }
+
+    .claudia-detailed-farm-adr-transport-container {
+        width: 275px;
+    }
 }
 
 

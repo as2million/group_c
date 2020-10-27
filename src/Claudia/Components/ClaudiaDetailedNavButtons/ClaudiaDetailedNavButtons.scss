@@ -48,3 +48,19 @@
     margin: 0 auto;
 }
 
+@media only screen and (max-width: 375px) {
+    .claudia-detailed-nav-buttons-outside {
+        width: 375px;
+    }
+
+    .claudia-detailed-nav-buttons-area {
+        display: block;
+    }
+
+    .claudia-detailed-nav-buttons {
+        width: 375px;
+    }
+
+
+}
+
