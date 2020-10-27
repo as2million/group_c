@@ -29,23 +29,34 @@ function Card(props) {
         {/* item圖片e */}
         {/* item資訊s */}
         <section className="card-info-warp">
-          <div className="card-hr">
-            <div className="card-info">
-              <h2>{title}</h2>
-              <div className="card-star-warp">
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
-              </div>
-              <span>
-                <p className="card-num card-commentNum">{comment} 則評論</p>
-                <p className="card-num card-buyNum">{buy} 已購買</p>
-              </span>
-              <h3>{price}</h3>
-            </div>
+          {/* <div className="card-hr"> */}
+          {/* <div className="card-info"> */}
+          <div>
+            <h3>{price}</h3>
           </div>
+          <div className="card-info">
+            <h2>{title}</h2>
+            <section>
+              <div>
+                <div className="card-star-warp">
+                  <img className="card-star" src={star} />
+                  <img className="card-star" src={star} />
+                  <img className="card-star" src={star} />
+                  <img className="card-star" src={star} />
+                  <img className="card-star" src={star} />
+                </div>
+                <span>
+                  <p className="card-num card-commentNum">{comment} 則評論</p>
+                  <p className="card-num card-buyNum">{buy} 已購買</p>
+                </span>
+              </div>
+            </section>
+          </div>
+          <div>
+            <h3>{price}</h3>
+          </div>
+          {/* </div> */}
+          {/* </div> */}
         </section>
         {/* item資訊e */}
         {/* 加入購物車按鈕s */}
