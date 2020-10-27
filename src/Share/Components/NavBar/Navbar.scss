@@ -105,6 +105,7 @@ html {
   border-radius: 0.5rem;
   text-align: center;
   left: 32rem;
+  backdrop-filter: blur(3px);
 }
 
 //下拉式選單間距
@@ -131,6 +132,7 @@ html {
   .navBar-jess-dropdown_item:hover {
   color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 //下拉式選單 頂部三角形
 .nav .navBar-jess-triangle {
@@ -148,7 +150,7 @@ html {
 
 //右邊dropdowm
 .nav .navBar-jess-navigation_item .navBar-jess-dropdown2 {
-  display: none;
+  // display: none;
   position: absolute;
   width: 17rem;
   height: 22.5rem;
@@ -157,6 +159,7 @@ html {
   border-radius: 0.5rem;
   text-align: center;
   right: 15rem;
+  backdrop-filter: blur(3px);
 }
 .nav .navBar-jess-navigation_item:hover .navBar-jess-dropdown2 {
   display: block;
@@ -200,6 +203,7 @@ html {
   opacity: 0;
   transition: left 0.5s;
   transition-timing-function: linear;
+  z-index: -1;
 }
 .nav
   .navBar-jess-navigation_item
@@ -207,7 +211,6 @@ html {
   .navBar-jess-dropdown_item:hover
   .navBar-jess-monster4 {
   opacity: 1;
-
   left: 16rem;
 }
 

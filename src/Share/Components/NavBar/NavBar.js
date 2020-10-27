@@ -143,7 +143,9 @@ function MyNavbar(props) {
                 >
                   <ShoppingCart className="navbar-jess-ShopingCart" />
                   <ShoppingAmount className="jess-navbarCartAmount" />
-                  <span className="jess-navbarCartNum">{count}</span>
+                  <span className="jess-navbarCartNum" id="jess-navbarCartNum">
+                    {count}
+                  </span>
                 </Popover>
               </li>
             </ul>
