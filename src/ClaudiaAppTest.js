@@ -4,7 +4,7 @@ import './App.css';
 import ClaudiaFarmIndex from './Claudia/Pages/ClaudiaFarmIndex';
 import ClaudiaFarmDetailedPage from './Claudia/Pages/ClaudiaFarmDetailedPage';
 
-function App() {
+function ClaudiaAppTest() {
   return (
     <>
       <ClaudiaFarmDetailedPage />
@@ -13,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default ClaudiaAppTest;

@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
-import AppTest from './AppTest'
+import ClaudiaAppTest from './ClaudiaAppTest'
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppTest />
+    <ClaudiaAppTest />
   </React.StrictMode>,
   document.getElementById('root')
 );
