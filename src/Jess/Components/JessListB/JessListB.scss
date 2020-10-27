@@ -22,19 +22,23 @@ $lightBrown: #f7ede2;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
 
-.cheif {
+.container-fluid {
+  background: url('./SVG/bg.svg') repeat;
+  padding: 0;
+}
+.jess-ListB-cheif {
   width: 114rem;
   padding-top: 10rem;
   margin: 0 auto;
   text-align: center;
 }
-.cheif > h1 {
+.jess-ListB-cheif > h1 {
   color: #a59583;
   font-size: 3rem;
   font-family: 'Noto Serif TC', serif;
   font-weight: bold;
 }
-.cheif > p {
+.jess-ListB-cheif > p {
   font-size: 1.5rem;
   width: 52rem;
   color: #858585;
@@ -43,61 +47,64 @@ $lightBrown: #f7ede2;
   line-height: 3rem;
   margin: 0 auto;
 }
-.chicken {
+.jess-ListB-chicken {
   background: url('./Images/chichen.jpg');
   background-size: cover;
   background-position: center center;
-  width: 116rem;
+  width: 114rem;
   height: 39.8rem;
   margin-top: 6rem;
 }
-.word {
-  width: 116rem;
+.jess-ListB-word {
+  width: 114rem;
   height: 66.2rem;
   display: flex;
-  margin-top: 10rem;
-  margin-bottom: 10rem;
+  // margin-top: 10rem;
+  // margin-bottom: 10rem;
+  margin: 10rem 0;
   justify-content: space-between;
   align-items: flex-end;
-}
-.word > h2 {
-  font-size: 3.6rem;
-  writing-mode: vertical-rl;
-  font-family: 'Noto Serif TC', serif;
-  font-weight: 600;
-  color: #a59583;
-  padding-left: 3rem;
-  align-self: flex-start;
-}
-.word > p {
-  width: 13rem;
-  height: 51rem;
-  font-size: 1.5rem;
-  writing-mode: vertical-rl;
-  font-family: 'Noto Sans TC';
-  font-weight: 300;
-  color: #858585;
-  // padding-top: 11rem;
+
+  & h2 {
+    font-size: 3.6rem;
+    writing-mode: vertical-rl;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    color: #a59583;
+    padding-left: 3rem;
+    align-self: flex-start;
+  }
+  & p {
+    width: 13rem;
+    height: 51rem;
+    font-size: 1.5rem;
+    writing-mode: vertical-rl;
+    font-family: 'Noto Sans TC';
+    font-weight: 300;
+    color: #858585;
+  }
 }
 
-.pic1 {
+.jessListBpic1 {
   width: 28rem;
   height: 51.2rem;
+  background: url('./Images/rice01.jpg') no-repeat;
   background-color: #ccc;
-  // margin-top: 11rem;
   margin-right: 3rem;
   margin-left: 3rem;
 }
-.pic2 {
+.jessListBpic2 {
   width: 28rem;
   height: 51.2rem;
+  background: url('./Images/Mask\ Group\ 9.jpg') no-repeat;
   background-color: #ccc;
   margin-right: 3rem;
   align-self: flex-start;
 }
-.pic3 {
+.jessListBpic3 {
   width: 28rem;
   height: 51.2rem;
+  background: url('./Images/Mask\ Group\ 7.jpg');
   background-color: #ccc;
   // margin-top: 11rem;
   // margin-right: 3rem;
