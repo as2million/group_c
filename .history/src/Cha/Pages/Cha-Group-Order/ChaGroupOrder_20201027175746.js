@@ -52,10 +52,10 @@ function ChaGroupOrder(props) {
           <label htmlFor="">揪團人姓名</label>
           <input
             type="text"
-            className=""
-            id=""
-            name=""
-            placeholder="請填入取餐地址"
+            className="form-control cha-step2-1-name"
+            id="cha-step2-1-name"
+            name="cha-step2-1-name"
+            placeholder="請填寫姓名"
           />
         </div>
         {/* 取餐方式 */}

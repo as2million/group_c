@@ -49,17 +49,17 @@
   align-items: center;
   & span {
     margin-top: 10px;
-    font-weight: 600;
   }
 }
-.cha-group-create-text-yellow {
-  color: #f6bd60;
+.cha-group-create-text{
+  color:#F6BD60;
 }
 .cha-group-search-text,
-.cha-group-menu-text {
-  color: #a59583;
+.cha-group-menu-text{
+  color:#F6BD60;
 }
 
+// #A59583
 .cha-group-create-card {
   width: 700px;
   border-radius: 5px;
@@ -70,25 +70,4 @@
   padding: 30px;
   box-sizing: border-box;
   margin: auto;
-}
-.cha-group-create-header {
-  color: #858585;
-  font-size: 30px;
-}
-.cha-group-create-header-div {
-  display: flex;
-  justify-content: center;
-}
-.cha-group-create-alert {
-  color: #e0611e;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 15px;
-}
-.cha-group-create-alert-to-order-management{
-  color: #7C7C7C;
-  margin-top: 10px;
-  text-decoration:underline;
 }

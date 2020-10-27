@@ -52,7 +52,7 @@
     font-weight: 600;
   }
 }
-.cha-group-create-text-yellow {
+.cha-group-create-text {
   color: #f6bd60;
 }
 .cha-group-search-text,
@@ -85,10 +85,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 .cha-group-create-alert-to-order-management{
   color: #7C7C7C;
-  margin-top: 10px;
-  text-decoration:underline;
 }

@@ -55,7 +55,7 @@ function ChaGroupOrder(props) {
             className=""
             id=""
             name=""
-            placeholder="請填入取餐地址"
+            placeholder="請填寫姓名"
           />
         </div>
         {/* 取餐方式 */}
