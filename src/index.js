@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
+import JanAppTest from './JanAppTest';
 import * as serviceWorker from './serviceWorker';
-import ClaudiaAppTest from './ClaudiaAppTest'
+// import ClaudiaAppTest from './ClaudiaAppTest'
 
 ReactDOM.render(
   <React.StrictMode>
-    <ClaudiaAppTest />
+    {/* <ClaudiaAppTest /> */}
+    <JanAppTest />
   </React.StrictMode>,
   document.getElementById('root')
 );
