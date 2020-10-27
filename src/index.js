@@ -4,16 +4,17 @@ import './index.scss';
 import JanAppTest from './JanAppTest';
 import * as serviceWorker from './serviceWorker';
 // import ClaudiaAppTest from './ClaudiaAppTest'
-
+import JessAppTest from './JessAppTest'
 ReactDOM.render(
   <React.StrictMode>
     {/* <ClaudiaAppTest /> */}
-    <JanAppTest />
+    {/* <JanAppTest /> */}
+    <JessAppTest />
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.unregister()
