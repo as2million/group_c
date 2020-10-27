@@ -1,4 +1,4 @@
-@import "Ru/Pages/variable.scss";
+@import 'Ru/Pages/variable.scss';
 // 以下開始自訂CSS
 * {
   margin: 0;
@@ -11,17 +11,16 @@ input {
   outline: none;
 }
 
-.ru-mainImg {
-  height: 362px;
-  background-image: url("./Images/mainImg.jpg");
-  background-repeat: no-repeat;
-  background-position: center 30%;
-  background-size: cover;
-  @include flex($df, $fdr, $jcc, $alc);
+.ru-mainImg-warp {
+  position: relative;
 }
 
-.ru-mainImg > h1 {
-  display: flex;
+.ru-mainImg-warp > h1 {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   @include font(
     // 字體, 字體大小, 字重, 字距, 字色
     $notoSansTC,
@@ -30,8 +29,18 @@ input {
     $letter-spacing,
     $white
   );
-  @include flex($df, $fdr, $jcc, $alc);
 }
+
+.ru-mainImg {
+  height: 362px;
+  background-image: url('./Images/mainImg.jpg');
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: cover;
+  @include flex($df, $fdr, $jcc, $alc);
+  filter: brightness(0.5);
+}
+
 .ru-searchBar {
   width: 43.76%;
   height: 50px;
@@ -81,10 +90,9 @@ input {
   width: 100%;
   position: relative;
   overflow: hidden;
-  @include page();
 }
 
-.ru-item-container > img{
+.ru-item-container > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -93,15 +101,9 @@ input {
 }
 
 .ru-card-warp {
+  @include page();
   // background-color: gold;
   width: 100%;
-}
-
-.test{
-  margin: auto;
-  background-color: sienna;
-  width: 50px;
-  height: 50px;
 }
 
 .itemWarp {
