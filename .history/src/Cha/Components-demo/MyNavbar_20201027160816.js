@@ -39,10 +39,10 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/cha_cart_order_success">
               交易成功
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/group_order">
+            <Nav.Link as={NavLink} to="/cha_group_order">
               作伙揪團
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/order_management">
+            <Nav.Link as={NavLink} to="/cha_order_management">
               訂單管理
             </Nav.Link>
           </Nav>

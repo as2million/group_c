@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-// import MyNavbar from 'Cha/Components-demo/MyNavbar'
-// import MainContent from 'Cha/Components-demo/MainContent'
+import MyNavbar from 'Cha/Components-demo/MyNavbar'
+import MainContent from 'Cha/Components-demo/MainContent'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 import Home from 'Cha/pages-demo/Home'
@@ -12,7 +12,7 @@ import Success from 'Cha/pages-demo/Success'
 import ChaGroupOrder from 'Cha/Pages/Cha-Group-Order/ChaGroupOrder'
 
 // import ChaCart from "Cha/Pages/ChaCart"
-// import ChaGroupOrder from "Cha/Pages/Cha-Group-Order/ChaGroupOrder"
+import ChaGroupOrder from "Cha/Pages/Cha-Group-Order/ChaGroupOrder"
 // import ChaOrderManagement from "Cha/Pages/Order-Management/OrderManagement"
 
 // import Counter from 'Cha/Components/Cha-Counter/Counter'
@@ -61,15 +61,16 @@ function ChaAppTest() {
             <ChaOrderManagement />
           </Route> */}
 
-          <Route path="/cart">
+
+          <Route  path="/cart">
             <ChaCart />
           </Route>
           <Route path="/groupOrder">
             <ChaGroupOrder />
           </Route>
-          {/* <Route path="/orderManagement">
+          <Route path="/orderManagement">
             <ChaOrderManagement />
-          </Route> */}
+          </Route>
         </Switch>
         {/* </MainContent> */}
       </>

@@ -12,7 +12,7 @@ import Success from 'Cha/pages-demo/Success'
 import ChaGroupOrder from 'Cha/Pages/Cha-Group-Order/ChaGroupOrder'
 
 // import ChaCart from "Cha/Pages/ChaCart"
-// import ChaGroupOrder from "Cha/Pages/Cha-Group-Order/ChaGroupOrder"
+import ChaGroupOrder from "Cha/Pages/Cha-Group-Order/ChaGroupOrder"
 // import ChaOrderManagement from "Cha/Pages/Order-Management/OrderManagement"
 
 // import Counter from 'Cha/Components/Cha-Counter/Counter'
@@ -61,7 +61,8 @@ function ChaAppTest() {
             <ChaOrderManagement />
           </Route> */}
 
-          <Route path="/cart">
+
+          <Route  path="/cart">
             <ChaCart />
           </Route>
           <Route path="/groupOrder">

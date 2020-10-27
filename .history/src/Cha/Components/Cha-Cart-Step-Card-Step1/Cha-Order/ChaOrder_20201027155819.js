@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Counter from 'Share/Components/Counter/Counter'
+import Counter from 'Share/Components/Cha-Cart-Step-Card-Step1/Counter/Counter'
 import './ChaOrder.scss'
 function ChaOrder(props) {
   return (

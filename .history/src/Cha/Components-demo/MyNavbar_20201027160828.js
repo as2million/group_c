@@ -42,7 +42,7 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/group_order">
               作伙揪團
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/order_management">
+            <Nav.Link as={NavLink} to="order_management">
               訂單管理
             </Nav.Link>
           </Nav>
