@@ -13,7 +13,8 @@ function ClaudiaDetailedSchedule() {
             <div className="claudia-detailed-schedule">
                 <h1><b>活動行程</b></h1>
                 <div className="claudia-detailed-schedule-container">
-                    <img alt="timeline" src={Timeline} />
+                    <div className="claudia-detailed-schedule-timeline"></div>
+                    {/* <img alt="timeline" src={Timeline} /> */}
                     <div className="claudia-detailed-schedule-card1">
                         <div className="claudia-detailed-schedule-card1-text">
                             <h2>9:30</h2>

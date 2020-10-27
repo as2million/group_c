@@ -18,8 +18,8 @@ function ClaudiaFarmIntroPage() {
                 <ClaudiaDetailedThemePic />
                 <ClaudiaDetailedMainText />
                 <ClaudiaDetailedSilder />
-                {/* <ClaudiaDetailedSchedule />
-                <ClaudiaDetailedFarmIntro />
+                <ClaudiaDetailedSchedule />
+                {/* <ClaudiaDetailedFarmIntro />
                 <ClaudiaDetailedFarmAdr />
                 <ClaudiaDetailedNavButtons />
                 <ClaudiaDetailedRecommended /> */}
