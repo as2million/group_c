@@ -19,6 +19,7 @@
 .iris-brief-info-wraper {
   text-align: center;
   margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .iris-user-name {
@@ -42,6 +43,28 @@
   height: 7.3rem;
   width: 100%;
   position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.iris-menu-item:hover {
+  background-color: #f5a016;
+  transition: .6s;;
+  // -webkit-box-shadow: 0px 10px 10px 0px rgba(163,160,163,1);
+  // -moz-box-shadow: 0px 10px 10px 0px rgba(163,160,163,1);
+  // box-shadow: 0px 10px 10px 0px rgba(163,160,163,1);
+  -webkit-box-shadow: 0px 10px 14px 0px rgba(176,147,135,1);
+-moz-box-shadow: 0px 10px 14px 0px rgba(176,147,135,1);
+box-shadow: 0px 10px 14px 0px rgba(176,147,135,1);
+
+}
+
+.iris-menu-item:hover .iris-menu-icon {
+  fill: #fff;
+  stroke: #fff;
+}
+
+.iris-menu-item:hover .iris-menu-text {
+  color: white;
 }
 
 .iris-menu-hr {
@@ -56,12 +79,15 @@
 .iris-menu-icon {
   // fill: #A59583;
   // stroke: #A59583;
-  stroke: pink;
-  fill: pink;
+  stroke: #a59583;
+  fill: #a59583;
   position: absolute;
-  left: 10%;
-  top:30%
+  left: 15%;
 }
-
-
-
+.iris-menu-text {
+  color: #a59583;
+  font-size: medium;
+  font-size: 1.8rem;
+  position: absolute;
+  left: 40%;
+}
