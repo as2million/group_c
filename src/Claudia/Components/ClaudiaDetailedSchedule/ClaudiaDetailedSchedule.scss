@@ -206,10 +206,15 @@
 @media only screen and (max-width: 375px) {
     .claudia-detailed-schedule-container {
         position: relative;
+        height: 1600px;
     }
 
     .claudia-detailed-schedule {
         height: 1630px;
+    }
+
+    .claudia-detailed-schedule h1 {
+        font-size: 24px;
     }
 
     //dont change the height
@@ -328,6 +333,12 @@
         font-size: 14px;
     }
 
+    .claudia-detailed-schedule-card4 {
+        width: 0px;
+        height: 0px;
+
+    }
+
     //Card5
 
     .claudia-detailed-schedule-card5-text {
@@ -351,6 +362,7 @@
         top: 1335px;
         left: 130px;
     }
+
 
 
 
