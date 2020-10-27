@@ -7,10 +7,25 @@
 .claudia-detailed-maintext-left {
     width: 50%;
     margin: 0px auto;
-
 }
 
 .claudia-detailed-maintext-right {
     width: 50%;
     margin: 0px auto;
+}
+
+@media only screen and (max-width: 375px) {
+    .claudia-detailed-maintext {
+        display: block;
+    }
+
+    .claudia-detailed-maintext-left {
+        width: 90%;
+        margin: 0px auto;
+    }
+
+    .claudia-detailed-maintext-right {
+        width: 90%;
+        margin: 0px auto;
+    }
 }

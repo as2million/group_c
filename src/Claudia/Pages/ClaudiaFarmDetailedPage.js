@@ -17,12 +17,12 @@ function ClaudiaFarmIntroPage() {
             <ClaudiaMainContent>
                 <ClaudiaDetailedThemePic />
                 <ClaudiaDetailedMainText />
-                <ClaudiaDetailedSilder />
+                {/* <ClaudiaDetailedSilder />
                 <ClaudiaDetailedSchedule />
                 <ClaudiaDetailedFarmIntro />
                 <ClaudiaDetailedFarmAdr />
                 <ClaudiaDetailedNavButtons />
-                <ClaudiaDetailedRecommended />
+                <ClaudiaDetailedRecommended /> */}
             </ClaudiaMainContent>
             <Footer />
         </>

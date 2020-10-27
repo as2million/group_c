@@ -34,30 +34,29 @@
         width: 100vw;
         height: 120px;
     }
-    .claudia-detailed-background {
-        position: relative;
-        
-    }
 
     .claudia-detailed-background-image {
         width: 375px;
         height: 547px;
-        position: absolute;
+        position: relative;
         background-image: url(./Images/rwd_strawberry.jpg);
     }
 
     .claudia-detailed-text {
+        width: 270px;
+        height: 105px;
         position: absolute;
-        top: 420px;
-        right: 55px;
+        top: 90px;
+        left: 60px;
     }
 
     .claudia-detailed-text-1 {
-        text-align: center;
+        font-size: 40px;
+
     }
 
     .claudia-detailed-text-2 {
-        text-align: center;
+        font-size: 24px;
     }
 }
 
