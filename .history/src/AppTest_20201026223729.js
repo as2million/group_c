@@ -5,9 +5,9 @@ import MyFooter from 'Cha/components-demo/MyFooter'
 import MainContent from 'Cha/components-demo/MainContent'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
-import Home from 'Cha/pages-demo/Home'
-import About from 'Cha/pages-demo/About'
-import Product from 'Cha/pages-demo/Product'
+import Home from './Cha/pages-demo/Home'
+import About from './Cha/pages-demo/About'
+import Product from './Cha/pages-demo/pages/Product'
 
 // import Counter from 'Cha/Components/Cha-Counter/Counter'
 // import ScrollApp from 'Cha/Components/Cha-ToTop/ScrollApp'
