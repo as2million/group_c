@@ -6,7 +6,7 @@ import AddCart from "Share/Components/AddCart/AddCart";
 import Card from "Share/Components/Card/Card";
 import "./App.css";
 
-function AppTest() {
+function RuAppTest() {
   return (
     <>
       <RuApp />
@@ -19,4 +19,4 @@ function AppTest() {
   );
 }
 
-export default AppTest;
+export default RuAppTest;

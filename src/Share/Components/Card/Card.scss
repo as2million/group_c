@@ -4,7 +4,6 @@
   border-radius: 5px;
   width: 345px;
   height: 100%;
-  // margin: 0px 20px;
 }
 
 #card-margin {
@@ -16,8 +15,26 @@
   position: relative;
 }
 
+.card-info-warp h3 {
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $bold,
+    0px,
+    $light-orange
+  );
+}
+
 .card-img-warp:hover > .card-abs {
   top: 83%;
+  transition: 0.35s;
+}
+
+.card-abs {
+  position: absolute;
+  top: 110%;
+  right: 20px;
   transition: 0.35s;
 }
 
@@ -91,15 +108,7 @@
   background-repeat: no-repeat;
 }
 
-.card-abs {
-  position: absolute;
-  top: 110%;
-  left: 82%;
-  transition: 0.35s;
-}
-
 .card-info-warp {
-  // background-color: rgb(124, 136, 105);
   background-color: $white;
   border-right: 1px solid $hr-Color;
   border-left: 1px solid $hr-Color;
@@ -110,20 +119,23 @@
   flex-direction: row;
 }
 
+.card-none {
+  opacity: 0;
+}
+
 .card-info {
+  width: 170px;
   @include flex($df, $fdc, $jcc, $alc);
 }
 
-.card-hr {
-  width: 87.465%;
-  height: 100%;
-  border-bottom: 1px solid $hr-Color;
-  @include flex($df, $fdc, $jcc, $alc);
+.card-price {
+  align-self: flex-end;
+  margin-bottom: 10px;
 }
 
 .card-info > h2 {
   font-size: $productName-size;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
   @include font(
     // 字體, 字體大小, 字重, 字距, 字色
     $notoSansTC,
@@ -160,34 +172,6 @@
   margin-bottom: 16px;
 }
 
-h3 {
-  // position: absolute;
-  // top: 53px;
-  // left: 100%;
-  @include font(
-    // 字體, 字體大小, 字重, 字距, 字色
-    $notoSansTC,
-    $minor-heading,
-    $bold,
-    0px,
-    $light-orange
-  );
-}
-
-// .card-info > h3 {
-//   position: absolute;
-//   top: 53px;
-//   left: 100%;
-//   @include font(
-//     // 字體, 字體大小, 字重, 字距, 字色
-//     $notoSansTC,
-//     $minor-heading,
-//     $bold,
-//     0px,
-//     $light-orange
-//   );
-// }
-
 .card-addCartWarp {
   background-color: $white;
   height: 84px;
@@ -195,4 +179,11 @@ h3 {
   border-left: 1px solid $hr-Color;
   border-bottom: 1px solid $hr-Color;
   @include flex($df, $fdr, $jcc, $alc);
+}
+
+.card-hr {
+  width: 87.465%;
+  height: 100%;
+  border-top: 1px solid $hr-Color;
+  @include flex($df, $fdc, $jcc, $alc);
 }

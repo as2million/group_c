@@ -29,9 +29,7 @@ function Card(props) {
         {/* item圖片e */}
         {/* item資訊s */}
         <section className="card-info-warp">
-          {/* <div className="card-hr"> */}
-          {/* <div className="card-info"> */}
-          <div>
+          <div className="card-none">
             <h3>{price}</h3>
           </div>
           <div className="card-info">
@@ -52,16 +50,16 @@ function Card(props) {
               </div>
             </section>
           </div>
-          <div>
+          <div className="card-price">
             <h3>{price}</h3>
           </div>
-          {/* </div> */}
-          {/* </div> */}
         </section>
         {/* item資訊e */}
         {/* 加入購物車按鈕s */}
         <section className="card-addCartWarp">
-          <AddCart target={"target"} id={id} parentId={parentId} />
+          <div className="card-hr">
+            <AddCart target={"target"} id={id} parentId={parentId} />
+          </div>
         </section>
         {/* 加入購物車按鈕e */}
       </div>
