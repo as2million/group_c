@@ -45,7 +45,7 @@ function ChaGroupOrder(props) {
               className="form-control"
               id=""
               name=""
-              placeholder="請填寫群組名稱"
+              placeholder="請填寫姓名"
             />
           </div>
           {/* 揪團人姓名 */}
@@ -56,7 +56,7 @@ function ChaGroupOrder(props) {
               className="form-control"
               id=""
               name=""
-              placeholder="請填寫揪團人姓名"
+              placeholder="請填寫姓名"
             />
           </div>
           {/* 取餐方式 */}
@@ -70,7 +70,7 @@ function ChaGroupOrder(props) {
                 </lab>
                 <lab>
                   <input type="radio" name="tableware" value="tableware-no" />
-                  外送
+                  不附餐具
                 </lab>
               </div>
             </div>
@@ -79,7 +79,7 @@ function ChaGroupOrder(props) {
               className="form-control "
               id=""
               name=""
-              placeholder="請輸入取餐地址"
+              placeholder="請填寫姓名"
             />
           </div>
           {/* 取餐日期、時間 */}

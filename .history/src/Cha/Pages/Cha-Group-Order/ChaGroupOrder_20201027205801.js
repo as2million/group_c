@@ -39,47 +39,46 @@ function ChaGroupOrder(props) {
           </div>
           {/* 群組名稱 */}
           <div className="form-group">
-            <label htmlFor="">群組名稱</label>
+            <label htmlFor="cha-group">群組名稱</label>
             <input
               type="text"
-              className="form-control"
-              id=""
-              name=""
-              placeholder="請填寫群組名稱"
+              className="form-control cha-step2-1-name"
+              id="cha-step2-1-name"
+              name="cha-step2-1-name"
+              placeholder="請填寫姓名"
             />
           </div>
           {/* 揪團人姓名 */}
           <div className="form-group">
-            <label htmlFor="cha-group">揪團人姓名</label>
+            <label htmlFor="cha-group">群組名稱</label>
             <input
               type="text"
-              className="form-control"
-              id=""
-              name=""
-              placeholder="請填寫揪團人姓名"
-            />
-          </div>
+              className="form-control cha-step2-1-name"
+              id="cha-step2-1-name"
+              name="cha-step2-1-name"
+              placeholder="請填寫姓名"
+            /></div>
           {/* 取餐方式 */}
           <div className="form-group">
-            <label htmlFor="">取餐方式</label>
+            <label htmlFor="cha-step2-1-name">取餐方式</label>
             <div className="cha-tableware">
               <div>
                 <lab>
                   <input type="radio" name="tableware" value="tableware-yes" />
-                  自取
+                  附餐具
                 </lab>
                 <lab>
                   <input type="radio" name="tableware" value="tableware-no" />
-                  外送
+                  不附餐具
                 </lab>
               </div>
             </div>
             <input
               type="text"
-              className="form-control "
-              id=""
-              name=""
-              placeholder="請輸入取餐地址"
+              className="form-control cha-step2-1-name"
+              id="cha-step2-1-name"
+              name="cha-step2-1-name"
+              placeholder="請填寫姓名"
             />
           </div>
           {/* 取餐日期、時間 */}

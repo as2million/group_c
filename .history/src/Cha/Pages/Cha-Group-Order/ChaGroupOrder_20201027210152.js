@@ -79,7 +79,7 @@ function ChaGroupOrder(props) {
               className="form-control "
               id=""
               name=""
-              placeholder="請輸入取餐地址"
+              placeholder="請寫填姓名"
             />
           </div>
           {/* 取餐日期、時間 */}
