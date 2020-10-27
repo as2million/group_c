@@ -6,14 +6,16 @@ import * as serviceWorker from './serviceWorker';
 // import ClaudiaAppTest from './ClaudiaAppTest'
 // import JessAppTest from './JessAppTest'
 // import IrisAppTest from './IrisAppTest';
-import ChaAppTest from './ChaAppTest';
+// import ChaAppTest from './ChaAppTest';
+import RuAppTest from './RuAppTest';
 ReactDOM.render(
   <React.StrictMode>
-    <ChaAppTest />
     {/* <ClaudiaAppTest /> */}
     {/* <JanAppTest /> */}
     {/* <JessAppTest /> */}
     {/* <IrisAppTest /> */}
+    {/* <ChaAppTest /> */}
+    <RuAppTest />
   </React.StrictMode>,
   document.getElementById('root')
 );
