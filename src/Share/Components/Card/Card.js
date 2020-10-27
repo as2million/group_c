@@ -25,7 +25,7 @@ function Card(props) {
           <div className="card-abs">
             <AddFavorite />
           </div>
-        </section>
+        </section> 
         {/* item圖片e */}
         {/* item資訊s */}
         <section className="card-info-warp">
