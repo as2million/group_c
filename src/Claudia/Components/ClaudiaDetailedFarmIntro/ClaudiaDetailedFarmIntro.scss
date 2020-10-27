@@ -3,6 +3,20 @@
     height: 1480px;
     background-color: #fff;
     padding: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.claudia-detailed-farm-intro-grice {
+    width: 1440px;
+    height: 1480px;
+    transform: scale(1.1);
+}
+
+.claudia-detailed-farm-intro-container {
+    position: absolute;
+    top: 0px;
+    left: 260px;
 }
 
 .claudia-detailed-farm-intro h1 {
@@ -57,6 +71,7 @@
     width: 40px;
     height: 5px;
     background-color: #fff;
+    cursor: pointer;
 }
 
 .claudia-detailed-farm-card {
@@ -91,5 +106,17 @@
     position: absolute;
     top: 130px;
     right: 200px;
+}
+
+.claudia-detailed-farm-card-quote-left {
+    position: absolute;
+    top: 80px;
+    right: 510px;
+}
+
+.claudia-detailed-farm-card-quote-right {
+    position: absolute;
+    top: 80px;
+    right: 140px;
 }
 

@@ -3,12 +3,15 @@ import './ClaudiaDetailedFarmIntro.scss';
 import Avatar from './Images/JPG/avatar.jpg';
 import Farm1 from './Images/JPG/farm1.jpg';
 import GRice from './Images/SVG/green_rice.svg'
+import QLeft from './Images/SVG/quote_left.svg';
+import QRight from './Images/SVG/quote_right.svg';
 
 function ClaudiaDetailedFarmIntro() {
 
     return (
         <>
             <div className="claudia-detailed-farm-intro">
+                <img className="claudia-detailed-farm-intro-grice" alt="" src={GRice} />
                 <div className="claudia-detailed-farm-intro-container">
                     <h1><b>認識農場</b></h1>
                     <div className="claudia-detailed-farm-video">
@@ -33,7 +36,9 @@ function ClaudiaDetailedFarmIntro() {
                             <img alt="" src={Avatar} />
                         </div>
                         <div className="claudia-detailed-farm-card-quote">
+                            <img className="claudia-detailed-farm-card-quote-left" alt="" src={QLeft} />
                             <h1><b>吃出幸福，也傳達生活態度</b></h1>
+                            <img className="claudia-detailed-farm-card-quote-right" alt="" src={QRight} />
                             <h2>—農驛棧有機農園園長  游素精</h2>
                         </div>
                     </div>
