@@ -5,7 +5,6 @@ import Navbar from "Share/Components/Navbar/Navbar";
 import Footer from "Share/Components/Footer/Footer";
 // import NotFoundPage from "Share/Components/NotFoundPage/NotFoundPage";
 
-
 // 引入 所有人的總元件
 // import NameApp from "Name/NameApp";
 import JanIndex from "Janice/Pages/JanIndex"
