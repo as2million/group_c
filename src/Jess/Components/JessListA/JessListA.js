@@ -9,7 +9,7 @@ function JessListA() {
   const ComponentA = (props) => {
     return (
       <div class="component">
-        <h1>コンポーネント{props.name}</h1>
+        <h1>Hihihi</h1>
         <p>タブ{props.name}をクリックするとこのコンポーネントが見れます。</p>
       </div>
     )
@@ -19,7 +19,7 @@ function JessListA() {
   const ComponentB = (props) => {
     return (
       <div class="component">
-        <h1>This component is {props.name}</h1>
+        <h1>This component is</h1>
         <p>Show this component which on click tab-{props.name}.</p>
       </div>
     )
@@ -36,11 +36,11 @@ function JessListA() {
   }
 
   const TabMenu = () => {
-    const [component, setComponent] = React.useState(<ComponentA name="A" />)
+    const [component, setComponent] = React.useState(<ComponentA />)
 
     const tabContentA = (e) => {
       setTabActive(e.target, '.jess-productTabMenu__item')
-      setComponent(<ComponentA name="A" />)
+      setComponent(<ComponentA name="Hi" />)
     }
 
     const tabContentB = (e) => {
@@ -50,7 +50,7 @@ function JessListA() {
     return (
       <div className="container">
         <div class="jess-productTab">
-          <ul class="jess-productTabMenu d-flex justify-content-center">
+          <ul class="jess-productTabMenu d-flex  justify-content-center">
             <li class="jess-productTabMenu__item active" onClick={tabContentA}>
               今日菜色
             </li>
@@ -58,7 +58,10 @@ function JessListA() {
               營養標示
             </li>
           </ul>
-          {component}
+          <div className="jess-productTabBorder"></div>
+          <div className="container d-flex justify-content-center">
+            {component}
+          </div>
         </div>
       </div>
     )

@@ -31,19 +31,35 @@ $lightBrown: #f7ede2;
 .jess-productTab {
   width: 117rem;
   height: 67rem;
-  justify-content: flex-end;
 }
 .jess-productTabMenu {
   display: flex;
   list-style: none;
   text-align: center;
+  &__item {
+    font-size: 2.8rem;
+    color: $darkBrown;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    padding: 5rem 5rem 3rem 5rem;
+    justify-content: space-around;
+  }
+  & .active {
+    color: $orange;
+  }
 }
-.jess-productTabMenu > li {
-  font-size: 2.8rem;
-  color: $orange;
-  font-family: 'Noto Serif TC', serif;
-  font-weight: 600;
-  padding: 5rem;
+// .jess-productTabMenu > li {
+//   font-size: 2.8rem;
+//   color: $darkBrown;
+//   font-family: 'Noto Serif TC', serif;
+//   font-weight: 600;
+//   padding: 5rem 5rem 3rem 5rem;
+//   justify-content: space-around;
+// }
+.jess-productTabBorder {
+  background: url('./SVG/border.svg') no-repeat;
+  width: 116rem;
+  height: 1rem;
 }
 
 // ul,
