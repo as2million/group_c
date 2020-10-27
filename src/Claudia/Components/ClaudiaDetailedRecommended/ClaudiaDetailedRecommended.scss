@@ -54,3 +54,54 @@
     margin: 10px auto;
 }
 
+@media only screen and (max-width: 375px) {
+    .claudia-detailed-recommanded {
+        width: 375px;
+        height: 570px;
+    }
+
+    .claudia-detailed-recommanded h1 {
+        width: 375px;
+        font-size: 2.4rem;
+        text-align: center;
+        margin: 40px auto;
+    }
+
+    .claudia-detailed-recommanded-container{
+        width: 375px;
+        height: 600px;
+    }
+
+    .claudia-detailed-recommanded-card-container {
+        width: 290px;
+        height: 420px;
+        padding-left: 40px;
+        // overflow: hidden;
+    }
+
+    .claudia-detailed-recommanded-card{
+        width: 290px;
+        height: 410px;
+        padding: 20px;
+        margin: 0px 5px
+    }
+
+    .claudia-detailed-recommanded-card img {
+        width: 245px;
+        height: 160px;
+    }
+
+    .claudia-detailed-recommanded-card h2 {
+        font-size: 18px;
+    }
+
+    .claudia-detailed-recommanded-card h3 {
+        font-size: 14px;
+    }
+
+    .claudia-detailed-recommanded-wave {
+        display: none;
+    }
+
+}
+

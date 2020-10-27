@@ -22,7 +22,7 @@ function ClaudiaFarmIntroPage() {
                 <ClaudiaDetailedFarmIntro />
                 <ClaudiaDetailedFarmAdr />
                 <ClaudiaDetailedNavButtons />
-                {/* <ClaudiaDetailedRecommended /> */}
+                <ClaudiaDetailedRecommended />
             </ClaudiaMainContent>
             <Footer />
         </>
