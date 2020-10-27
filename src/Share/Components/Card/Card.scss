@@ -1,13 +1,13 @@
 @import "./Variable.scss";
 
+#card-margin {
+  margin: 0px 20px;
+}
+
 .card-container {
   border-radius: 5px;
   width: 345px;
   height: 100%;
-}
-
-#card-margin {
-  margin: 0px 20px;
 }
 
 .card-img-warp {

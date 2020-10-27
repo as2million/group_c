@@ -28,7 +28,7 @@ function Card(props) {
         </section> 
         {/* item圖片e */}
         {/* item資訊s */}
-        <section className="card-info-warp">
+        <section className="card-info-warp"> 
           <div className="card-none">
             <h3>{price}</h3>
           </div>
