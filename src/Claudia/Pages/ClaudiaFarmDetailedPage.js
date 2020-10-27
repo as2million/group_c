@@ -17,8 +17,8 @@ function ClaudiaFarmIntroPage() {
             <ClaudiaMainContent>
                 <ClaudiaDetailedThemePic />
                 <ClaudiaDetailedMainText />
-                {/* <ClaudiaDetailedSilder />
-                <ClaudiaDetailedSchedule />
+                <ClaudiaDetailedSilder />
+                {/* <ClaudiaDetailedSchedule />
                 <ClaudiaDetailedFarmIntro />
                 <ClaudiaDetailedFarmAdr />
                 <ClaudiaDetailedNavButtons />

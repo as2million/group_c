@@ -64,3 +64,54 @@
     height: 570px;
     object-fit: cover;
 }
+
+.claudia-image-select img {
+    display: block;
+}
+
+
+@media only screen and (max-width: 375px) {
+    
+
+    .claudia-detailed-slider {
+        width: 375px;
+        height: 1120px;
+        position: static;
+        padding: 0px;
+    }
+
+    .claudia-detailed-slider-container {
+        width: 375px;
+        position: static;
+    }
+
+    .claudia-image-large img {
+        display: none;
+    }
+
+    .claudia-image-select{
+        display: block;
+    }
+
+    .claudia-image-select img {
+        width: 335px;
+        height: 240px;
+        margin-bottom: 10px;
+
+    }
+
+    .claudia-detailed-slider-ricebg {
+        display: none;
+    }
+
+    .claudia-image-triangle-area {
+        display: none;
+    }
+
+
+
+
+
+
+
+}
