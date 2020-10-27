@@ -1,0 +1,29 @@
+.cha-progress-bar {
+  width: 100%;
+  height: 6rem;
+  background-color: #f6bd60;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+}
+.cha-progress-bar-header {
+  font-size: 24px;
+}
+.cha-right-arrow {
+  width: 15px;
+  position: absolute;
+  left: 40px;
+  cursor: pointer;
+}
+
+.cha-right-arrow{
+  background: url('./Images/trash-can-gray.svg');  
+  background-position: center center;
+  background-size: cover;
+  width: 22px;
+  height: 25px;
+  cursor: pointer;
+}
+.cha-trash-can:hover{
+  background: url('./Images/trash-can-yellow.svg');
+}
