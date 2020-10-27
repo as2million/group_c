@@ -1,6 +1,5 @@
 import React from 'react';
 import './ClaudiaDetailedThemePic.scss'
-import DetailedBg from './Images/strawberry.jpg';
 
 function ClaudiaDetailedThemePic() {
 
@@ -8,7 +7,7 @@ function ClaudiaDetailedThemePic() {
         <>
             <div className="claudia-detailed-background">
                 <div className="claudia-fake-navbar"></div>
-                <img className="claudia-detailed-background-image" alt="strawberry" src={DetailedBg} />
+                <div className="claudia-detailed-background-image"></div>
                 <div className="claudia-detailed-text">
                     <h1 className="claudia-detailed-text-1"><b>小小城市農夫</b></h1>
                     <h1 className="claudia-detailed-text-2"><b>內湖農驛棧有機農園</b></h1>

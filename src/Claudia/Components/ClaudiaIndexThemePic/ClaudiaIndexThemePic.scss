@@ -4,8 +4,9 @@
 }
 
 .claudia-index-background-image {
+    background-image: url(./Images/index_bg.jpg);
     height: 765px;
-    width: 100vw;
+    width: 1440px;
     position: relative;
 }
 
@@ -28,7 +29,7 @@
 
 @media only screen and (max-width: 375px) {
     .claudia-fake-navbar {
-        width: 100vw;
+        width: 375vw;
         height: 120px;
     }
     .claudia-index-background {
@@ -36,27 +37,24 @@
         
     }
 
-    //need to fix
     .claudia-index-background-image {
-        width: auto;
+        width: 375px;
         height: 547px;
-        overflow: hidden;
-        position: absolute;
-        left: -270px;
+        background-image: url(./Images/rwd_index_bg.jpg);
     }
 
     .claudia-index-text {
         position: absolute;
-        top: 420px;
-        right: 55px;
+        top: 480px;
+        right: 80px;
     }
 
     .claudia-index-text-1 {
-        text-align: center;
+        font-size: 40px;
     }
 
     .claudia-index-text-2 {
-        text-align: center;
+        font-size: 24px;
     }
 }
 

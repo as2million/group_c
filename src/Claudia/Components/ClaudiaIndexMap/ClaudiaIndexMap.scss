@@ -14,5 +14,16 @@
     fill:  #F4F1C3;
     transform: translate(-5px,-5px)
 }
+
+@media only screen and (max-width: 375px) {
+
+    .claudia-index-map {
+        width: 325px;
+        height: 470px;
+
+
+    }
+
+}
       
       

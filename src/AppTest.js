@@ -7,7 +7,7 @@ import ClaudiaFarmDetailedPage from './Claudia/Pages/ClaudiaFarmDetailedPage';
 function App() {
   return (
     <>
-      <ClaudiaFarmIndex />
+      <ClaudiaFarmDetailedPage />
 
     </>
   );
