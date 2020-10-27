@@ -1,0 +1,33 @@
+.cha-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 16px;
+}
+
+.cha-order .cha-step1-product-name {
+  font-size: 16px;
+}
+
+.cha-order .cha-step1-product-price {
+  font-size: 16px;
+  color: #f48145;
+}
+
+.cha-trash-can-gray {
+  width: 22px;
+  cursor: pointer;
+}
+.a{
+  
+}
+.a:hover{
+  background: url(Images/trash-can-yellow.svg);
+}
+
+.cha-product-pic {
+  width: 57px;
+  height: 57px;
+  background-color: #faf;
+}

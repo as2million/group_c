@@ -1,0 +1,39 @@
+.cha-group-breadcrumbs-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.cha-group-breadcrumbs-row {
+  margin-top: 80px;
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+}
+.cha-group-breadcrumbs-icon{
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cha-group-create-icon {
+  background: url('./Images/group-create.svg');
+  background-size: ;
+  width: 52px;
+  height: 62px;
+}
+.cha-group-search-icon {
+  background: url('./Images/group-search.svg');
+  width: 64px;
+  height: 64px;
+}
+.cha-group-menu-icon {
+  background: url('./Images/group-menu.svg');
+  width: 58px;
+  height: 52px;
+}
+.cha-group-arrow-icon {
+  background: url('./Images/group-arrow.svg');
+  width: 19px;
+  height: 33px;
+}

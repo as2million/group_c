@@ -1,0 +1,29 @@
+
+.claudia-index-map svg {
+    width: 90%;
+}
+
+.claudia-index-map path {
+    stroke: white;
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+
+.claudia-index-map path:hover {
+    fill:  #F4F1C3;
+    transform: translate(-5px,-5px)
+}
+
+@media only screen and (max-width: 375px) {
+
+    .claudia-index-map {
+        width: 325px;
+        height: 470px;
+
+
+    }
+
+}
+      
+      
