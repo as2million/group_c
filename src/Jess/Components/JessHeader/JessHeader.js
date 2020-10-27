@@ -8,7 +8,7 @@ function JessProdoctList() {
   return (
     <>
       <div className="jess-fluidBg">
-        <container className="jess-container"></container>
+        {/* <container className="jess-container"></container> */}
         <div className="jess-productList-chichenPic">
           {/* <img src={ChickenRice} alt="Background" />; */}
         </div>

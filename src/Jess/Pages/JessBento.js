@@ -4,7 +4,7 @@ import JessHeader from '../Components/JessHeader/JessHeader'
 import JessListA from '../Components/JessListA/JessListA'
 import JessListB from '../Components/JessListB/JessListB'
 
-function JessProdoctList() {
+function JessBento() {
   return (
     <>
       {/* <BreadCrumb /> */}
@@ -15,4 +15,4 @@ function JessProdoctList() {
   )
 }
 
-export default JessProdoctList
+export default JessBento

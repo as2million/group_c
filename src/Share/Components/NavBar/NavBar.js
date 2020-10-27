@@ -1,6 +1,6 @@
 // 導入其它的模組
 import React, { useState } from 'react'
-import { Navbar, Button } from 'react-bootstrap'
+import { Nav } from 'react-bootstrap'
 import './Navbar.scss'
 import 'antd/dist/antd.css'
 import { Popover } from 'antd'
@@ -11,11 +11,12 @@ import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg'
 import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg'
 import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg'
 // 選單連結要使用NavLink取代Link
-// import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function MyNavbar(props) {
   const [count, setCount] = useState(0)
   const [shoppingList, setShoppingList] = useState('0')
+  const [showNav, setShowNav] = useState(true)
 
   function myFunction() {
     const x = document.getElementById('myNavBar')
@@ -32,77 +33,101 @@ function MyNavbar(props) {
           <div className="navBar-jess-navCollapse ">
             <ul className="navBar-jess-navigation">
               <li className="navBar-jess-navigation_item">
-                <a href="#home">作伙揪團</a>
+                <Nav.Link as={NavLink} to="/groupOrder">
+                  作伙揪團
+                </Nav.Link>
               </li>
               <li className="navBar-jess-navigation_item">
-                <a href="#home">哈囉小農</a>
+                <Nav.Link as={NavLink} to="/farmMap">
+                  哈囉小農
+                </Nav.Link>
               </li>
               <li className="navBar-jess-navigation_item">
-                <a href="#home">
+                <Nav.Link as={NavLink} to="/menu">
                   尋找美味 <BackArrow className="backArrow" />{' '}
-                </a>
+                </Nav.Link>
                 <div className="navBar-jess-emptydiv">
                   <ul className="navBar-jess-dropdown">
                     <div className="navBar-jess-triangle"></div>
                     <li className="navBar-jess-dropdown_item">
-                      <a href="#home">低GI便當</a>
-                      {/* <Monster className="navBar-jess-monster1" /> */}
+                      <Nav.Link as={NavLink} to="/productList">
+                        低GI便當
+                      </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <a href="#home">美味沙拉</a>
-                      {/* <Monster className="navBar-jess-monster2" /> */}
+                      <Nav.Link as={NavLink} to="/productList">
+                        美味沙拉
+                      </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <a href="#home">蔬菜箱</a>
-                      {/* <Monster className="navBar-jess-monster3" /> */}
+                      <Nav.Link as={NavLink} to="/vages">
+                        蔬菜箱
+                      </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <a href="#home">客製化便當</a>
-                      {/* <Monster className="navBar-jess-monster4" /> */}
+                      <Nav.Link as={NavLink} to="/productList">
+                        客製化便當
+                      </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <a href="#home">外送服務</a>
-                      {/* <Monster className="navBar-jess-monster5" /> */}
+                      <Nav.Link as={NavLink} to="/">
+                        外送服務
+                      </Nav.Link>
                     </li>
                   </ul>
                 </div>
               </li>
-              <a href="#home" className="navBar-jess-nav_brand">
+              <Nav.Link
+                as={NavLink}
+                to="/"
+                exact
+                className="navBar-jess-nav_brand"
+              >
                 <Logo />
-              </a>
+              </Nav.Link>
 
               <li className="navBar-jess-navigation_item">
-                <a href="#home">專屬優惠</a>
+                <Nav.Link as={NavLink} to="/">
+                  專屬優惠
+                </Nav.Link>
               </li>
               <li className="navBar-jess-navigation_item">
-                <a href="#home">關於我們</a>
+                <Nav.Link as={NavLink} to="/">
+                  關於我們
+                </Nav.Link>
               </li>
               <li className="navBar-jess-navigation_item">
-                <a href="#home">
+                <Nav.Link as={NavLink} to="/memberUserprofile">
                   會員中心 <BackArrow className="backArrow" />{' '}
-                </a>
+                </Nav.Link>
                 <div className="navBar-jess-emptydiv">
                   <ul className="navBar-jess-dropdown2">
                     <div className="navBar-jess-triangle2"></div>
                     <li className="navBar-jess-dropdown_item">
-                      <a href="#home">訂單管理</a>
-                      {/* <Monster className="navBar-jess-monster1" /> */}
+                      <Nav.Link as={NavLink} to="/orderComment">
+                        訂單管理
+                      </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <a href="#home">修改會員資料</a>
-                      {/* <Monster className="navBar-jess-monster2" /> */}
+                      <Nav.Link as={NavLink} to="/memberUserprofile">
+                        修改會員資料
+                      </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <a href="#home">我的最愛</a>
-                      {/* <Monster className="navBar-jess-monster3" /> */}
+                      <Nav.Link as={NavLink} to="/myFav">
+                        我的最愛
+                      </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <a href="#home">我的怪獸</a>
+                      <Nav.Link as={NavLink} to="/beastiePoint">
+                        我的怪獸
+                      </Nav.Link>
                       <Monster className="navBar-jess-monster4" />
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <a href="#home">登出</a>
-                      {/* <Monster className="navBar-jess-monster5" /> */}
+                      <Nav.Link as={NavLink} to="/login">
+                        登入/登出
+                      </Nav.Link>
                     </li>
                   </ul>
                 </div>
