@@ -80,8 +80,77 @@ $dropdown-link-hover-bg: #f5a016;
   position: absolute;
   right: 1.3rem;
   top: 1.4rem;
-  pointer-events: none;
+  // pointer-events: none;
   fill:#c9c9c9
+}
+
+// 首頁select box
+.iris-mainpage-select{
+  font-size: 2rem;
+  border-radius: 2.5rem;
+  height: 5rem;
+}
+
+@media screen and (max-width: 376px) {
+  .iris-mainpage-select{
+    font-size: 1.4rem;
+    border-radius: 1.5rem;
+    height: 3rem;
+  }
+}
+
+.iris-mainpage-whitebox {
+  border-radius: 2.5rem;
+  height: 4.7rem;
+  width: 4.7rem;
+  background-color: #fff;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.1rem;
+  // 點擊會直接穿透whitebox
+  pointer-events: none;
+}
+
+@media screen and (max-width: 376px) {
+  .iris-mainpage-whitebox {
+    border-radius: 1.5rem;
+    height: 2.6rem;
+    width: 2.7rem;
+    background-color: #fff;
+    position: absolute;
+    right: 0.1rem;
+    top: 0.2rem;
+    // 點擊會直接穿透whitebox
+    pointer-events: none;
+  }
+}
+.iris-mainpage-backarrow {
+  position: absolute;
+  right: -4rem;
+  top: 2.1em;
+ // pointer-events: none;
+ fill:#c9c9c9
+}
+.iris-mainpage-trianglearrow {
+  position: absolute;
+  right: 1.9rem;
+  top: 2.1em;
+ pointer-events: none;
+ fill:#c9c9c9
+}
+@media screen and (max-width: 376px) {
+  .iris-mainpage-trianglearrow {
+    position: absolute;
+    right: 1.5rem;
+    top: 1em;
+   pointer-events: none;
+   fill:#c9c9c9
+  }
+}
+
+.iris-selectbar-wrapper{
+  width: 16.7rem;
+  position: relative;
 }
 
 // input-add

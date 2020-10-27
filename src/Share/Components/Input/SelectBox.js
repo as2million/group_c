@@ -1,3 +1,5 @@
+// height:50px  font-size:15px
+// cha, Iris 選單
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./Input.scss";

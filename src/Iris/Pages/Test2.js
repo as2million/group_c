@@ -5,6 +5,7 @@ import InputH40 from "./../../Share/Components/Input/InputH40";
 import TextArea from "./../../Share/Components/Input/TextArea";
 import SearchBar from "./../../Share/Components/Input/SearchBar";
 import SelectBox from "./../../Share/Components/Input/SelectBox";
+import MainPageSelectBox from "./../../Share/Components/Input/MainPageSelectBox";
 import InputAdd from "./../../Share/Components/Input/InputAdd";
 import InputAddress from "./../../Share/Components/Input/InputAddress";
 
@@ -27,6 +28,8 @@ function Test2(props) {
         <TextArea />
         <br />
         <SelectBox />
+        <br />
+        <MainPageSelectBox />
         <br />
         <InputAdd />
         <br />
