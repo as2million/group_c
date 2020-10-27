@@ -1,0 +1,173 @@
+html {
+  font-size: 10px;
+}
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.container {
+  padding: 0;
+  width: 117rem;
+}
+.box {
+  width: 144rem;
+  height: 10rem;
+  background-color: #fff;
+}
+
+.jan-index-carousel {
+  width: 144rem;
+  height: 63rem;
+  background-color: #ccc;
+}
+
+.jan-index-feature {
+  width: 117rem;
+  height: 20rem;
+  background-color: #fff;
+}
+
+.jan-feature-title {
+  font-size: 3.2rem;
+  font-family: 'Noto Serif TC', serif;
+  color: #858585;
+  //   margin-bottom: 0;
+  margin: 0.5rem 1rem 1rem 1rem;
+}
+
+.jan-circle-title {
+  font-size: 2rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: #a59583;
+  margin-bottom: 0;
+}
+
+.jan-circles {
+  width: 117rem;
+}
+
+.jan-index-feature-circle {
+  background-color: #f7ede2;
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+}
+
+.jan-index-feature-smcircle {
+  background-color: #f48145;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.jan-farmer-icon {
+  background: url('./Images/Svg/farmer.svg') center center no-repeat;
+  background-size: 8rem 8rem;
+  width: 9rem;
+  height: 9rem;
+  margin: 2rem 0 0 0;
+  cursor: pointer;
+}
+.jan-farmer-icon:hover {
+  background: url('./Images/Svg/farmer.svg') center center no-repeat;
+  background-size: 9rem 9rem;
+  width: 9rem;
+  height: 9rem;
+  margin: 2rem 0 0 0;
+}
+
+.jan-diet-icon {
+  background: url('./Images/Svg/diet.svg') center center no-repeat;
+  background-size: 8rem 8rem;
+  width: 9rem;
+  height: 9rem;
+  margin: 2rem 0 0 0.4rem;
+}
+.jan-diet-icon:hover {
+  background: url('./Images/Svg/diet.svg') center center no-repeat;
+  background-size: 9rem 9rem;
+  width: 9rem;
+  height: 9rem;
+  margin: 2rem 0 0 0.4rem;
+  cursor: pointer;
+}
+
+.jan-choices-icon {
+  background: url('./Images/Svg/choices.svg') center center no-repeat;
+  background-size: 7.5rem 7.5rem;
+  width: 9rem;
+  height: 9rem;
+  margin: 2rem 0 0 0;
+  cursor: pointer;
+}
+.jan-choices-icon:hover {
+  background: url('./Images/Svg/choices.svg') center center no-repeat;
+  background-size: 8.5rem 8.5rem;
+  width: 9rem;
+  height: 9rem;
+  margin: 2rem 0 0 0;
+}
+
+.jan-network-icon {
+  background: url('./Images/Svg/network.svg') center center no-repeat;
+  background-size: 8rem 8rem;
+  width: 9rem;
+  height: 9rem;
+  margin: 2rem 0 0 0.2rem;
+  cursor: pointer;
+}
+.jan-network-icon:hover {
+  background: url('./Images/Svg/network.svg') center center no-repeat;
+  background-size: 9rem 9rem;
+  width: 9rem;
+  height: 9rem;
+  margin: 2rem 0 0 0.2rem;
+}
+
+.jan-kcal-icon {
+  background: url('./Images/Svg/kcal.svg') center center no-repeat;
+  background-size: 8rem 8rem;
+  width: 9rem;
+  height: 9rem;
+  margin: 2rem 0 0 0;
+  cursor: pointer;
+}
+.jan-kcal-icon:hover {
+  background: url('./Images/Svg/kcal.svg') center center no-repeat;
+  background-size: 9rem 9rem;
+  width: 9rem;
+  height: 9rem;
+  margin: 2rem 0 0 0;
+}
+
+.jan-index-feature-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 22px 15px;
+  border-color: transparent transparent #f7ede2 transparent;
+  margin-top: 2rem;
+}
+
+.jan-index-feature-cards {
+  width: 144rem;
+  height: 55rem;
+  background-color: #f7ede2;
+}
+
+.jan-recommend {
+  background: url('./Images/Svg/rice.svg') center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 78rem;
+}

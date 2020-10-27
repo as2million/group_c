@@ -1,0 +1,27 @@
+.chorder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 16px;
+}
+
+.chorder .chstep1-product-name {
+  font-size: 16px;
+}
+
+.chorder .chstep1-product-price {
+  font-size: 16px;
+  color: #f48145;
+}
+
+.chtrash-can-gray {
+  width: 22px;
+  cursor: pointer;
+}
+
+.chproduct-pic {
+  width: 57px;
+  height: 57px;
+  background-color: #faf;
+}

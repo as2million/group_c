@@ -1,0 +1,104 @@
+.cha-main-card {
+  width: 800px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.cha-step-header {
+  font-size: 24px;
+  border-bottom: 1px solid #8585853a;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+* {
+  outline: 1px solid red;
+}
+
+.cha-former-cart-switch {
+  background-color: #66ab8c;
+  height: 45px;
+  width: 120px;
+  position: absolute;
+  top: 20px;
+  right: -31px;
+  border-radius: 25px 0px 0px 25px;
+  color: #fff;
+  font-size: 20px;
+  border: 0px;
+  user-select: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.cha-step1-total-price {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.cha-step1-total-price-word {
+  font-size: 15px;
+  color: #858585;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.cha-step1-total-price-number {
+  font-size: 36px;
+  color: #f48145;
+}
+
+.cha-step-check-btn {
+  height: 45px;
+  width: 170px;
+  border-radius: 50px;
+  background-color: #fff;
+  border: solid 1px #e0611e;
+  outline: none;
+  color: #e0611e;
+  font-size: 18px;
+  &:hover {
+    background-color: #e0611e;
+    color: #fff;
+  }
+}
+.cha-step-check-btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.cha-step1-promotion-header-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .cha-step1-promotion-header {
+    color: #f48145;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+.cha-step1-promotion-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.cha-step1-promotion-picture {
+  background-color: #faf;
+  width: 133px;
+  height: 133px;
+  margin: 0 20px 0 20px;
+}
+
+.cha-horizontal-line {
+  border-bottom: 1px solid #8585853a;
+}

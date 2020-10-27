@@ -1,0 +1,18 @@
+.progress-bar {
+  width: 100%;
+  height: 6rem;
+  background-color: #f6bd60;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+}
+.progress-bar-header {
+  font-size: 24px;
+  ;
+}
+.right-arrow-white {
+  width: 15px;
+  position: absolute;
+  left: 40px;
+  cursor: pointer;
+}
