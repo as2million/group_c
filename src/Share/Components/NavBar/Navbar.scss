@@ -26,19 +26,21 @@ html {
   padding: 0.5rem 5rem;
   box-shadow: 0.3rem 0 1rem #cfcfcf;
   position: fixed;
+  padding: 0;
   z-index: 999;
 }
 .navBar-jess-container {
   width: 140rem;
   height: 10rem;
+  margin: 0 auto;
   text-align: center;
   position: relative;
 }
 //logo
 .nav .navBar-jess-nav_brand {
-  margin-top: -3rem;
-  width: 39rem;
-  text-align: center;
+  margin-top: -2rem;
+  width: 37rem;
+  padding-left: 8rem;
 }
 //text color
 .nav a {
@@ -335,10 +337,9 @@ html {
   //logo
   .nav.responsive .navBar-jess-nav_brand {
     position: fixed;
-    top: 4rem;
-    left: 14rem;
+    top: 3rem;
+    left: 9.5rem;
     width: 20rem;
-    text-align: center;
     display: block;
   }
   .nav.responsive .navBar-jess-emptydiv {

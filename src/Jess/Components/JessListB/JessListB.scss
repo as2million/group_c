@@ -26,6 +26,10 @@ $lightBrown: #f7ede2;
   background: url('./SVG/bg.svg') repeat;
   padding: 0;
 }
+.container {
+  width: 117rem;
+  padding: 0;
+}
 .jess-ListB-cheif {
   width: 114rem;
   padding-top: 10rem;
@@ -40,11 +44,11 @@ $lightBrown: #f7ede2;
 }
 .jess-ListB-cheif > p {
   font-size: 1.5rem;
-  width: 52rem;
+  width: 50rem;
   color: #858585;
   font-family: 'Noto Sans TC';
   padding-top: 3rem;
-  line-height: 3rem;
+  line-height: 4rem;
   margin: 0 auto;
 }
 .jess-ListB-chicken {
@@ -78,6 +82,7 @@ $lightBrown: #f7ede2;
     width: 13rem;
     height: 51rem;
     font-size: 1.5rem;
+    line-height: 4rem;
     writing-mode: vertical-rl;
     font-family: 'Noto Sans TC';
     font-weight: 300;
