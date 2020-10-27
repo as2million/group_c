@@ -42,26 +42,26 @@ $dropdown-link-hover-bg: #f5a016;
 // height:40px   font-size:15px   方角輸入框
 .iris-InputH40 {
   font-size: 1.5rem;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   height: 4rem;
 }
 
 // textarea   font-size:15px   方角輸入框
 .iris-textarea {
   font-size: 15px;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
 }
 
 // height:40px   font-size:15px   方角select box
 // 用白div蓋住原本的圖示
 .iris-select {
   font-size: 1.5rem;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   height: 4rem;
 }
 
 .iris-whitebox {
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   height: 3.8rem;
   width: 4rem;
   background-color: #fff;
@@ -156,7 +156,7 @@ $dropdown-link-hover-bg: #f5a016;
 // input-add
 .iris-InputAdd {
   font-size: 1.5rem;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   height: 4rem;
 }
 .iris-symbolAdd {
@@ -168,7 +168,7 @@ $dropdown-link-hover-bg: #f5a016;
   color: #858585;
 }
 .iris-whitebox-add {
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   height: 4rem;
   width: 4rem;
   background-color: transparent;
@@ -184,7 +184,7 @@ $dropdown-link-hover-bg: #f5a016;
 // 地址輸入框
 .iris-InputAddress {
   font-size: 1.5rem;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   height: 4rem;
   position: relative;
   line-height: 3rem;
@@ -214,6 +214,6 @@ $dropdown-link-hover-bg: #f5a016;
 // 地址輸入框編輯狀態
 .iris-InputAddress-edit {
   font-size: 1.5rem;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   height: 4rem;
 }
