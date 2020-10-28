@@ -2,15 +2,20 @@ import React, { useState, useEffect } from 'react';
 import './JanIndex.scss';
 import titleLeft from './Images/Svg/titleLeft.svg';
 import titleRight from './Images/Svg/titleRight.svg';
-import wave from './Images/Svg/wave.svg';
-import farmer from './Images/Svg/farmer.svg';
-import { Container, Button, Row } from 'react-bootstrap';
+import recommend1 from './Images/Svg/recommend1.svg';
+import recommend2 from './Images/Svg/recommend2.svg';
+import VNavbar from '../../../Share/Components/VNavbar/VNavbar';
 
 function JanIndex(props) {
   return (
     <>
+      <VNavbar className="jan-import-nv" />
+      <div className="jan-import-nv">
+        <VNavbar />
+      </div>
+
+      {/* 輪播牆 */}
       <div className="container-fluid">
-        {/* 輪播牆 */}
         <div className="row">
           <div className="box d-flex justify-content-center align-items-center">
             navbar的高度
@@ -66,8 +71,44 @@ function JanIndex(props) {
 
       {/* 今日推薦 */}
       <div className="container-fluid jan-recommend">
-        <div className="container"></div>
+        <div className="container">
+          <div className="row mt-5">
+            <img alt="" src={recommend1} className="ml-5 mr-5" />
+            <br />
+            <img alt="" src={recommend2} />
+          </div>
+          <div className="jan-recommend-cards"> </div>
+        </div>
       </div>
+
+      {/* 專屬優惠 */}
+      <div className="container-fluid jan-discount">
+        <div className="container">
+          <div className="row mt-5 d-flex justify-content-center">
+            <div className="d-flex align-items-center">
+              <img alt="" src={titleLeft} />
+              <p className="jan-feature-title">專屬優惠</p>
+              <img alt="" src={titleRight} />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* 購物流程 */}
+      <div className="container-fluid jan-shopping-process">
+        <div className="jan-blur">
+          <div className="container jan-black-blur">
+            <div className="row d-flex justify-content-center">
+              <div className="d-flex align-items-center">
+                <img alt="" src={titleLeft} />
+                <p className="jan-feature-title">購物流程</p>
+                <img alt="" src={titleRight} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* 地圖判斷 */}
+      {/* 好文推薦 */}
     </>
   );
 }
