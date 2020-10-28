@@ -8,7 +8,7 @@ import App from './App'
 // import JessAppTest from './JessAppTest'
 // import IrisAppTest from './IrisAppTest';
 // import ChaAppTest from './ChaAppTest';
-import RuAppTest from './RuAppTest';
+// import RuAppTest from './RuAppTest';
 ReactDOM.render(
   <React.StrictMode>
     <App />

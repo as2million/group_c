@@ -1,37 +1,6 @@
 @import "Ru/Pages/variable.scss";
 // 以下開始自訂CSS
 
-// @media screen and (min-width: 768px) and (max-width: 1200px) {
-//   .ru-buttonWarp .button-btn {
-//     width: 150px;
-//     height: 48.75px;
-//     font-size: 15px;
-//   }
-//   .ru-buttonWarp .button-btn-g {
-//     width: 150px;
-//   }
-// }
-
-// @media screen and (max-width: 768px) {
-//   .ru-buttonWarp .button-btn {
-//     width: 100px;
-//   }
-//   .ru-buttonWarp .button-btn-g {
-//     width: 100px;
-//   }
-// }
-
-@media screen and (max-width: 414px) {
-  .ru-buttonWarp .button-btn {
-    width: 150px;
-    height: 48.75px;
-    font-size: 15px;
-  }
-  .ru-buttonWarp .button-btn-g {
-    width: 150px;
-  }
-}
-
 button:focus,
 input {
   outline: none;
@@ -52,7 +21,7 @@ input {
     $notoSansTC,
     $sub-title,
     $regular,
-    $letter-spacing,
+    2.5px,
     $white
   );
 }
@@ -84,7 +53,7 @@ input {
 }
 
 .ru-optionWarp {
-  // background-color: dodgerblue;
+  background-color: dodgerblue;
   color: white;
   height: 324px;
   @include page();
@@ -92,7 +61,7 @@ input {
 }
 
 .ru-buttonWarp {
-  // background-color: rgb(30, 236, 255);
+  background-color: rgb(30, 236, 255);
   width: 80.8%;
   height: 64px;
   margin-top: 50px;
@@ -114,7 +83,7 @@ input {
 }
 
 .ru-line {
-  // background-color: red;
+  background-color: red;
   width: 100%;
   height: 90px;
   @include flex($df, $fdr, $jcc, $als);
@@ -125,14 +94,14 @@ input {
   height: 8px;
 }
 
-.ru-item-container {
-  // background-color: seagreen;
+.ru-item-containerA {
+  background-color: seagreen;
   width: 100%;
   position: relative;
   overflow: hidden;
 }
 
-.ru-item-container > img {
+.ru-item-containerA > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -142,13 +111,300 @@ input {
 
 .ru-card-warp {
   @include page();
-  // background-color: gold;
+  background-color: gold;
   width: 100%;
 }
 
-.itemWarp {
-  // background-color: cornflowerblue;
+.ru-itemWarp {
+  background-color: cornflowerblue;
   height: 531.73px;
   margin-bottom: 100px;
   @include flex($df, $fdr, space-between, $als);
+}
+
+// 切換商品區 ----------
+.ru-item-containerA {
+  display: block;
+}
+
+.ru-item-containerB {
+  display: none;
+}
+
+// 響應式 --------------------------------------------------------------------------------
+// ipad版
+@media screen and (max-width: 1199.98px) {
+  .ru-optionWarp {
+    @include page-iPadPro();
+    // height: 257px;
+  }
+
+  button:focus,
+  input {
+    outline: none;
+  }
+
+  .ru-mainImg-warp {
+    position: relative;
+  }
+
+  .ru-mainImg-warp > h1 {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include font(
+      // 字體, 字體大小, 字重, 字距, 字色
+      $notoSansTC,
+      $sub-title,
+      $regular,
+      2.5px,
+      $white
+    );
+  }
+
+  .ru-mainImg {
+    height: 362px;
+    background-image: url("./Images/mainImg.jpg");
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    background-size: cover;
+    @include flex($df, $fdr, $jcc, $alc);
+    filter: brightness(0.5);
+  }
+
+  .ru-searchBar {
+    width: 43.76%;
+    height: 50px;
+    border: 1px solid $grey;
+    border-radius: 9999px;
+    padding: 0px 20px;
+    @include font(
+      // 字體, 字體大小, 字重, 字距, 字色
+      $notoSansTC,
+      $minor-heading,
+      $regular,
+      0px,
+      $light-orange
+    );
+  }
+
+  .ru-optionWarp {
+    background-color: dodgerblue;
+    color: white;
+    height: 324px;
+    @include page-iPadPro();
+    @include flex($df, $fdc, $jcc, $alc);
+  }
+
+  .ru-buttonWarp {
+    background-color: rgb(30, 236, 255);
+    width: 80.8%;
+    height: 64px;
+    margin-top: 50px;
+    @include flex($df, $fdr, space-between, $alc);
+  }
+
+  .ru-buttonWarp .button-btn:nth-child(1) {
+    margin-right: 10px;
+  }
+
+  .ru-buttonWarp .button-btn:nth-child(2),
+  .button-btn:nth-child(3) {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .ru-buttonWarp .button-btn-g {
+    margin-left: 10px;
+  }
+
+  .ru-line {
+    background-color: red;
+    width: 100%;
+    height: 90px;
+    @include flex($df, $fdr, $jcc, $als);
+    overflow: hidden;
+  }
+
+  .ru-line > img {
+    height: 8px;
+  }
+
+  .ru-item-containerB {
+    background-color: seagreen;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ru-item-containerB > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    width: 1920px;
+  }
+
+  .ru-card-warp {
+    @include page-iPadPro();
+    background-color: gold;
+    width: 100%;
+  }
+
+  .ru-itemWarp {
+    background-color: cornflowerblue;
+    height: 531.73px;
+    margin-bottom: 100px;
+    @include flex($df, $fdr, space-around, $als);
+  }
+
+  .ru-itemWarp .card-container {
+    margin: 0px 10px;
+  }
+
+  .ru-itemWarp #card-margin {
+    margin: 0px 10px;
+  }
+
+  .ru-itemWarp5 .card-container:nth-child(2){
+    visibility: hidden;
+  }
+
+  // 切換商品區 ----------
+  .ru-item-containerB {
+    display: block;
+  }
+
+  .ru-item-containerA {
+    display: none;
+  }
+}
+
+// 手機版
+@media screen and (max-width: 575.98px) {
+  .ru-optionWarp {
+    @include page-phone();
+    height: 257px;
+  }
+
+  .ru-line {
+    height: 70px;
+  }
+
+  .ru-mainImg-warp {
+    position: relative;
+  }
+
+  .ru-mainImg {
+    height: 365px;
+  }
+
+  .ru-mainImg-warp > h1 {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 0%;
+    transform: translate(30%, -50%);
+    @include font(
+      // 字體, 字體大小, 字重, 字距, 字色
+      $notoSansTC,
+      $rwd-main-title,
+      $regular,
+      $letter-spacing,
+      $white
+    );
+  }
+
+  .ru-searchBar {
+    width: 100%;
+    height: 45px;
+    border: 1px solid $grey;
+    border-radius: 9999px;
+    padding: 0px 20px;
+    @include font(
+      // 字體, 字體大小, 字重, 字距, 字色
+      $notoSansTC,
+      $minor-heading,
+      $regular,
+      0px,
+      $light-orange
+    );
+  }
+
+  .ru-buttonWarp {
+    height: 102px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+
+  .ru-buttonWarp .button-btn {
+    width: 123px;
+    height: 41px;
+    font-size: 18px;
+  }
+
+  .ru-buttonWarp .button-btn:nth-child(1) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .ru-buttonWarp .button-btn:nth-child(2) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .ru-buttonWarp .button-btn:nth-child(3) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .ru-buttonWarp .button-btn:nth-child(4) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .ru-buttonWarp .button-btn-g {
+    width: 123px;
+    height: 41px;
+    font-size: 18px;
+  }
+
+  .ru-item-containerA {
+    height: 100%;
+  }
+
+  .ru-card-warp {
+    // background-color: gold;
+    height: 100%;
+    @include page-phone();
+  }
+
+  .ru-itemWarp {
+    margin-bottom: 0px;
+    display: block;
+    height: 100%;
+  }
+
+  .ru-item-containerA .card-container {
+    width: 335px;
+    height: 531.73px;
+    margin-bottom: 80px;
+  }
+
+  .ru-item-containerA #card-margin {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 80px;
+  }
+
+  // 切換商品區 ----------
+  .ru-item-containerA {
+    display: block;
+  }
+
+  .ru-item-containerB {
+    display: none;
+  }
 }

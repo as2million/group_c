@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
 import 'Ru/Components/Ru-component/Style.scss';
 
-// 引用元件
+// 引用共用元件
 import Button from 'Share/Components/Button/Button';
 import Card from 'Share/Components/Card/Card';
-import NavBar from 'Share/Components/NavBar/NavBar';
+import SearchBar from 'Share/Components/Input/SearchBar';
 
 // 引用圖片
 import line from 'Ru/Components/Ru-component/Images/line.png';
@@ -15,8 +15,7 @@ function RuComponents() {
   // JSX
   return (
     <>
-      {/* <div className="backgroundImg"></div>
-      <div
+      {/* <div
         className="fix"
         style={{
           width: '100%',
@@ -40,11 +39,8 @@ function RuComponents() {
           }}
           // src={cart}
         />
-      </div>
-      <div style={{ height: '135px', backgroundColor: '#FF5151' }}></div> */}
-      <NavBar/>
-      {/* 如果元件有定義key或ref, 它們並不會向下傳資料, 它們不屬於props */}
-
+      </div> */}
+      <div style={{ height: '135px', backgroundColor: '#FF5151' }}></div>
       <RuShowWidth />
 
       <div className="ru-mainImg-warp">
@@ -55,6 +51,7 @@ function RuComponents() {
       <div className="ru-productList-container">
         <div className="ru-optionWarp">
           {/* 搜尋欄s */}
+          {/* <SearchBar/> */}
           <input
             type="text"
             className="ru-searchBar"
@@ -79,11 +76,11 @@ function RuComponents() {
         </div>
         {/* 分隔曲線 e*/}
 
-        {/* 商品區 s */}
-        <div className="ru-item-container">
+        {/* 商品區 - 網頁版 / 手機板s */}
+        <div className="ru-item-containerA">
           {/* 卡片區 s */}
           <div className="ru-card-warp">
-            <div className="itemWarp itemWarp1">
+            <div className="ru-itemWarp ru-itemWarp1">
               <Card
                 title={'慢煮嫩雞胸-蒜味香草'}
                 comment={'1180'}
@@ -114,7 +111,7 @@ function RuComponents() {
               />
             </div>
 
-            <div className="itemWarp itemWarp2">
+            <div className="ru-itemWarp ru-itemWarp2">
               <Card
                 title={'熱帶火烤萊姆蝦'}
                 comment={'1180'}
@@ -145,7 +142,7 @@ function RuComponents() {
               />
             </div>
 
-            <div className="itemWarp itemWarp3">
+            <div className="ru-itemWarp ru-itemWarp3">
               <Card
                 title={'頂級熟成菲力牛排'}
                 comment={'1180'}
@@ -177,17 +174,133 @@ function RuComponents() {
             </div>
           </div>
           {/* 卡片區 e */}
-
           {/* 背景米圖 s */}
           <img src={background}></img>
           {/* 背景米圖 e */}
         </div>
-        {/* 商品區 e */}
+        {/* 商品區 - 網頁版 / 手機板e */}
+
+        {/* 商品區 - ipad版 s */}
+        <div className="ru-item-containerB">
+          {/* 卡片區 s */}
+          <div className="ru-card-warp">
+            <div className="ru-itemWarp ru-itemWarp1">
+              <Card
+                title={'慢煮嫩雞胸-蒜味香草'}
+                comment={'1180'}
+                buy={'234'}
+                price={'$130'}
+                id={'addCart-btn-1'}
+                parentId={'addCart-btn-warp-1'}
+                imgId={'card-img-1'}
+              />
+              <Card
+                title={'慢煮嫩雞胸-中歐香料'}
+                comment={'1180'}
+                buy={'234'}
+                price={'$130'}
+                id={'addCart-btn-2'}
+                parentId={'addCart-btn-warp-2'}
+                imgId={'card-img-2'}
+                cardMargin={'card-margin'}
+              />
+            </div>
+
+            <div className="ru-itemWarp ru-itemWarp2">
+              <Card
+                title={'醬烤厚切1983黑豚'}
+                comment={'1180'}
+                buy={'234'}
+                price={'$130'}
+                id={'addCart-btn-3'}
+                parentId={'addCart-btn-warp-3'}
+                imgId={'card-img-3'}
+              />
+              <Card
+                title={'熱帶火烤萊姆蝦'}
+                comment={'1180'}
+                buy={'234'}
+                price={'$130'}
+                id={'addCart-btn-4'}
+                parentId={'addCart-btn-warp-4'}
+                imgId={'card-img-4'}
+              />
+            </div>
+
+            <div className="ru-itemWarp ru-itemWarp3">
+              <Card
+                title={'麴塩五香松阪豬'}
+                comment={'1180'}
+                buy={'234'}
+                price={'$130'}
+                id={'addCart-btn-5'}
+                parentId={'addCart-btn-warp-5'}
+                imgId={'card-img-5'}
+                cardMargin={'card-margin'}
+              />
+              <Card
+                title={'美式熟成烤牛肋條'}
+                comment={'1180'}
+                buy={'234'}
+                price={'$130'}
+                id={'addCart-btn-6'}
+                parentId={'addCart-btn-warp-6'}
+                imgId={'card-img-6'}
+              />
+            </div>
+            <div className="ru-itemWarp ru-itemWarp4">
+              <Card
+                title={'頂級熟成菲力牛排'}
+                comment={'1180'}
+                buy={'234'}
+                price={'$130'}
+                id={'addCart-btn-7'}
+                parentId={'addCart-btn-warp-7'}
+                imgId={'card-img-7'}
+              />
+              <Card
+                title={'炙燒干貝'}
+                comment={'1180'}
+                buy={'234'}
+                price={'$130'}
+                id={'addCart-btn-8'}
+                parentId={'addCart-btn-warp-8'}
+                imgId={'card-img-8'}
+                cardMargin={'card-margin'}
+              />
+            </div>
+            <div className="ru-itemWarp ru-itemWarp5">
+              <Card
+                title={'會議雙拼組合'}
+                comment={'1180'}
+                buy={'234'}
+                price={'$130'}
+                id={'addCart-btn-9'}
+                parentId={'addCart-btn-warp-9'}
+                imgId={'card-img-9'}
+              />
+              <Card
+                title={'會議雙拼組合'}
+                comment={'1180'}
+                buy={'234'}
+                price={'$130'}
+                id={'addCart-btn-9'}
+                parentId={'addCart-btn-warp-9'}
+                imgId={'card-img-9'}
+              />
+            </div>
+          </div>
+          {/* 卡片區 e */}
+          {/* 背景米圖 s */}
+          <img src={background}></img>
+          {/* 背景米圖 e */}
+        </div>
+        {/* 商品區- ipad版e */}
       </div>
 
-      <div style={{ height: '222px', backgroundColor: '#FF5151' }}>
+      {/* <div style={{ height: '222px', backgroundColor: '#FF5151' }}>
         我是footer
-      </div>
+      </div> */}
     </>
   );
 }
