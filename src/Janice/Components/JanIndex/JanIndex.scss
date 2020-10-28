@@ -2,23 +2,31 @@ html {
   font-size: 10px;
 }
 
+$gray: #858585;
+$brown: #a59583;
+$lightBrown: #decdbb;
+$skin: #f7ede2;
+$green: #66ab8c;
+$deepGreen: #438b6b;
+$orange: #f48145;
+$deepOrange: #e0611e;
+$yellow: #f6bd60;
+$deepYello: #f5a016;
+
 @import '~bootstrap/scss/bootstrap.scss';
+
+// Noto Sans TC
+// font-family: 'Noto Sans TC', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+// Noto Serif TC
+// font-family: 'Noto Serif TC', serif;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
 
-* {
-  padding: 0;
-  margin: 0;
+.jan-p0 {
+  padding: 0 !important;
 }
 
-.container-fluid {
-  padding: 0;
-}
-
-.container {
-  padding: 0;
-  width: 117rem;
-}
 .box {
   width: 144rem;
   height: 10rem;
@@ -26,7 +34,7 @@ html {
 }
 
 .jan-index-carousel {
-  width: 144rem;
+  width: 100%;
   height: 63rem;
   background-color: #ccc;
 }
@@ -40,15 +48,14 @@ html {
 .jan-feature-title {
   font-size: 3.2rem;
   font-family: 'Noto Serif TC', serif;
-  color: #858585;
-  //   margin-bottom: 0;
+  color: $gray;
   margin: 0.5rem 1rem 1rem 1rem;
 }
 
 .jan-circle-title {
   font-size: 2rem;
   font-family: 'Noto Sans TC', sans-serif;
-  color: #a59583;
+  color: $brown;
   margin-bottom: 0;
 }
 
@@ -57,14 +64,14 @@ html {
 }
 
 .jan-index-feature-circle {
-  background-color: #f7ede2;
+  background-color: $skin;
   width: 13rem;
   height: 13rem;
-  border-radius: 50vw;
+  border-radius: 50%;
 }
 
 .jan-index-feature-smcircle {
-  background-color: #f48145;
+  background-color: $orange;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50vw;
@@ -135,44 +142,124 @@ html {
   height: 0;
   border-style: solid;
   border-width: 0 15px 22px 15px;
-  border-color: transparent transparent #f7ede2 transparent;
+  border-color: transparent transparent $skin transparent;
   margin-top: 2rem;
 }
 
 .jan-index-feature-cards {
-  width: 144rem;
+  width: 100%;
   height: 55rem;
-  background-color: #f7ede2;
+  background-color: $skin;
 }
 
 .jan-recommend {
   background: url('./Images/Svg/rice.svg') center center no-repeat;
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   height: 78rem;
 }
 
 .jan-discount {
-  background-color: #f7ede2;
-  width: 100vw;
+  background-color: $skin;
+  width: 100%;
   height: 78rem;
 }
 
+// 購物流程
 .jan-shopping-process {
   background: url('./Images/Images/bentos.jpg') center center no-repeat;
   background-size: cover;
   width: 100vw;
   height: 78rem;
-  overflow: hidden;
+  margin: 0 1.5rem;
+  .jan-blur {
+    background-color: rgba(255, 255, 255, 0.235);
+    width: 100vw;
+    height: 78rem;
+    backdrop-filter: blur(5px) brightness(1.2);
+    .jan-black-blur {
+      height: 45rem;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+// 購物步驟
+.jan-step-circle {
+  margin-top: 6rem;
+  p {
+    font-size: 1.8rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: medium;
+    color: $skin;
+    position: absolute;
+    bottom: -6rem;
+  }
+  .jan-step1 {
+    background: url('./Images/Svg/step1.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+    position: relative;
+  }
+  .jan-step2 {
+    background: url('./Images/Svg/step2.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+    position: relative;
+  }
+  .jan-step3 {
+    background: url('./Images/Svg/step3.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+    position: relative;
+  }
+  .jan-step4 {
+    background: url('./Images/Svg/step4.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+    position: relative;
+  }
+  .jan-step5 {
+    background: url('./Images/Svg/step5.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+    position: relative;
+  }
 }
 
-.jan-blur {
-  background-color: rgba(255, 255, 255, 0.235);
-  width: 100vw;
-  height: 78rem;
-  backdrop-filter: blur(5px) brightness(1.2);
+// 地圖
+.jan-map {
+  background: url('./Images/Svg/rice.svg') center center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 75rem;
+  position: relative;
+  .jan-map-form {
+    background-color: $skin;
+    width: 70%;
+    height: 78rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    margin-top: -3rem;
+  }
+  .jan-map-view {
+    width: 60%;
+    height: 70%;
+    background-color: $yellow;
+    position: absolute;
+    right: 0;
+    bottom: 10rem;
+  }
 }
 
-.jan-black-blur {
-  height: 40;
+.jan-article {
+  background-color: #fff;
+  width: 100%;
+  height: 55rem;
 }
