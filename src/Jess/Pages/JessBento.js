@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import JessHeader from '../Components/JessHeader/JessHeader'
 import JessListA from '../Components/JessListA/JessListA'
 import JessListB from '../Components/JessListB/JessListB'
+import JessListC from '../Components/JessListC/JessListC'
 
 function JessBento() {
   return (
@@ -11,6 +12,7 @@ function JessBento() {
       <JessHeader />
       <JessListA />
       <JessListB />
+      <JessListC />
     </>
   )
 }

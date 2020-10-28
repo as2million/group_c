@@ -341,11 +341,26 @@ html {
   .nav.responsive .navBar-jess-nav_brand {
     position: fixed;
     top: 3rem;
-    left: 9.5rem;
+    left: 5rem;
     width: 20rem;
     display: block;
   }
   .nav.responsive .navBar-jess-emptydiv {
     display: none;
+  }
+  .nav.responsive .navBar-jess-navCollapse ul {
+    list-style: none;
+    padding-top: 2rem;
+  }
+  //選單文字
+  .nav.responsive .navBar-jess-navCollapse li {
+    font-size: 2rem;
+    line-height: 2rem;
+    left: -38rem;
+  }
+  .navbar-jess-ShopingCart {
+    z-index: 1000;
+    position: absolute;
+    left: 19rem;
   }
 }

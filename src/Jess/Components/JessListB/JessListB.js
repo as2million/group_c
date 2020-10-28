@@ -7,18 +7,22 @@ import './JessListB.scss'
 function JessListB() {
   return (
     <>
-      <div className="container-fluid">
-        <div className="container">
-          <div className="jess-ListB-cheif">
-            <Fade top>
-              <h1>產銷履歷安心雞肉，餐桌上肉品的首選</h1>
-              <p>
-                我們選用的雞肉，皆能透過產銷履歷的把關，溯源到養殖環境、成長過程等等
-                從源頭為親朋好友提供最安心與健康的食材。 再藉由蒸烤爐控制火侯
-                讓食材發揮出最新鮮原始的鮮甜味。
-              </p>
-            </Fade>
-            <div className="jess-ListB-chicken"></div>
+      <div className="container-fluid jess-proB-container-fluid mx-auto">
+        <div className="container jess-proB-container">
+          <div className="row">
+            <div className="jess-ListB-cheif mt-5 col-3 col-md-12">
+              <Fade top>
+                <h1>產銷履歷安心雞肉，餐桌上肉品的首選</h1>
+                <p>
+                  我們選用的雞肉，皆能透過產銷履歷的把關，溯源到養殖環境、成長過程等等
+                  從源頭為親朋好友提供最安心與健康的食材。 再藉由蒸烤爐控制火侯
+                  讓食材發揮出最新鮮原始的鮮甜味。
+                </p>
+              </Fade>
+            </div>
+            <div className="row">
+              <div className="jess-ListB-chicken "></div>
+            </div>
           </div>
           <div className="jess-ListB-word">
             <p>

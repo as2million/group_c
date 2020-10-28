@@ -13,13 +13,13 @@ import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNu
 // 選單連結要使用NavLink取代Link
 import { NavLink } from 'react-router-dom'
 
-function MyNavbar(props) {
+function NavBar(props) {
   const [count, setCount] = useState(0)
   const [shoppingList, setShoppingList] = useState('0')
   const [showNav, setShowNav] = useState(true)
 
   function myFunction() {
-    const x = document.getElementById('myNavBar')
+    const x = document.getElementById('NavBar')
     if (x.className === 'nav') {
       x.className += ' responsive'
     } else {
@@ -28,7 +28,7 @@ function MyNavbar(props) {
   }
   return (
     <>
-      <div className="nav" id="myNavBar">
+      <div className="nav" id="NavBar">
         <div className="navBar-jess-container">
           <div className="navBar-jess-navCollapse ">
             <ul className="navBar-jess-navigation">
@@ -161,4 +161,4 @@ function MyNavbar(props) {
 
 // 輸出元件(函式)
 
-export default MyNavbar
+export default NavBar
