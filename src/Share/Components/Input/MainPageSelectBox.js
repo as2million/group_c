@@ -1,10 +1,10 @@
 // height:50px  font-size:20px
 // Janice 地址選單
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import "./Input.scss";
-import { ReactComponent as BackArrow } from "./../../image/triangleArrow.svg";
-import $ from "jquery";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import './Input.scss';
+import { ReactComponent as BackArrow } from './../../image/triangleArrow.svg';
+import $ from 'jquery';
 
 function MainPageSelectBox() {
   return (
@@ -20,10 +20,7 @@ function MainPageSelectBox() {
             <option>3</option>
           </select>
           <div class="iris-mainpage-whitebox"></div>
-          <BackArrow
-            className="iris-mainpage-trianglearrow"
-
-          />
+          <BackArrow className="iris-mainpage-trianglearrow" />
         </div>
       </div>
     </>
