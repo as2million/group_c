@@ -34,6 +34,15 @@ function Test(props) {
           />
           <button onClick={() => setName(searchInput)}>send</button>
         </div>
+        <div className="container iris-container">
+          <h1>test 3</h1>
+          <h1>姓名:</h1>
+          <SearchBar
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
+          />
+          <button onClick={() => setName(searchInput)}>send</button>
+        </div>
       </div>
     </>
   );
