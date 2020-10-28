@@ -13,7 +13,7 @@ function Test2(props) {
   const { name } = props;
   return (
     <>
-      <div className="container iris-container">
+      <div className="container iris-content-container">
         <h1>會員資料</h1>
         <h1>{name}</h1>
 

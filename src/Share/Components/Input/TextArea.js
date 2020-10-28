@@ -1,18 +1,19 @@
 // textarea   font-size:15px
 
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import "./Input.scss";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import './Input.scss';
 
-function TextArea() {
+function TextArea(props) {
+  const { placeholder, id, rows } = props;
   return (
     <>
       <div class="form-group">
         <textarea
           class="form-control iris-textarea"
-          id="exampleFormControlTextarea1"
-          rows="3"
-          placeholder="textarea  font-size:15px"
+          id={id}
+          rows={rows}
+          placeholder={placeholder}
         ></textarea>
       </div>
     </>
