@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import './IrisDataEdit.scss';
 
-function IrisApp() {
+function IrisDataEdit() {
   return (
     <>
-      <h2>12345</h2>
+      <div class="container iris-container test1234">
+        <h2>12345</h2>
+      </div>
     </>
   );
 }
 
-export default IrisApp;
+export default IrisDataEdit;
