@@ -84,7 +84,7 @@ function Home(props) {
         </Link>
         <Link to="/">
           <button type="button" class="btn btn-primary btn-lg mr-5">
-            外送
+            揪團小遊戲
           </button>
         </Link>
       </div>

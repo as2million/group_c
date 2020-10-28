@@ -14,7 +14,7 @@ function ChaGroupOrder(props) {
         <ChaGroupProgressBar />
         <div className="cha-group-wrap">
           {/* <ChaGroupOrderSearch /> */}
-
+          {/* <ChaGroupOrderCreate /> */}
           <Switch>
             <Route path="/groupOrder/groupOrderCreate">
               <ChaGroupOrderCreate />

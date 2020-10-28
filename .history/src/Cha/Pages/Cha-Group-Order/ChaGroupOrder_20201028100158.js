@@ -13,14 +13,14 @@ function ChaGroupOrder(props) {
       <>
         <ChaGroupProgressBar />
         <div className="cha-group-wrap">
-          {/* <ChaGroupOrderSearch /> */}
+          <ChaGroupOrderSearch />
 
           <Switch>
             <Route path="/groupOrder/groupOrderCreate">
               <ChaGroupOrderCreate />
             </Route>
             <Route path="/groupOrder/groupOrderSearch">
-              <ChaGroupOrderSearch />
+            <ChaGroupOrderSearch />
             </Route>
             {/* <Route path="/group_order_sign_in">
       <ChaGroupOrderSignIn />

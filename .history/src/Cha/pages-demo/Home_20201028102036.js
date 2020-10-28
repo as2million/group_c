@@ -82,11 +82,6 @@ function Home(props) {
             自取
           </button>
         </Link>
-        <Link to="/">
-          <button type="button" class="btn btn-primary btn-lg mr-5">
-            外送
-          </button>
-        </Link>
       </div>
     </>
   )

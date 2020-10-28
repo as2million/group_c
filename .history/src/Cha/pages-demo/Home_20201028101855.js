@@ -27,7 +27,7 @@ function Home(props) {
           </button>
         </Link>
         <hr />
-        <h3>作伙揪團</h3>
+        <h3>揪團</h3>
         <Link to="/groupOrder/groupOrderCreate">
           <button type="button" class="btn btn-primary btn-lg mr-5">
             作伙揪團
@@ -53,38 +53,9 @@ function Home(props) {
             開始點餐
           </button>
         </Link>
-        <hr />
-        <h3>訂單管理</h3>
         <Link to="/">
           <button type="button" class="btn btn-primary btn-lg mr-5">
             未送達
-          </button>
-        </Link>
-        <Link to="/">
-          <button type="button" class="btn btn-primary btn-lg mr-5">
-            已送達
-          </button>
-        </Link>
-        <Link to="/">
-          <button type="button" class="btn btn-primary btn-lg mr-5">
-            揪團中
-          </button>
-        </Link>
-        <Link to="/">
-          <button type="button" class="btn btn-primary btn-lg mr-5">
-            揪團小遊戲
-          </button>
-        </Link>
-        <hr />
-        <h3>取餐方式</h3>
-        <Link to="/">
-          <button type="button" class="btn btn-primary btn-lg mr-5">
-            自取
-          </button>
-        </Link>
-        <Link to="/">
-          <button type="button" class="btn btn-primary btn-lg mr-5">
-            外送
           </button>
         </Link>
       </div>

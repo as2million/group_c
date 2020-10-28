@@ -77,16 +77,6 @@ function Home(props) {
         </Link>
         <hr />
         <h3>取餐方式</h3>
-        <Link to="/">
-          <button type="button" class="btn btn-primary btn-lg mr-5">
-            自取
-          </button>
-        </Link>
-        <Link to="/">
-          <button type="button" class="btn btn-primary btn-lg mr-5">
-            外送
-          </button>
-        </Link>
       </div>
     </>
   )

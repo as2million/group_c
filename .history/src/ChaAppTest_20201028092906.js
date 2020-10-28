@@ -10,8 +10,6 @@ import Product from 'Cha/pages-demo/Product'
 import Success from 'Cha/pages-demo/Success'
 
 import ChaGroupOrder from 'Cha/Pages/Cha-Group-Order/ChaGroupOrder'
-import ChaGroupOrderSearch from 'Cha/Components/Cha-Group-Order-Search/ChaGroupOrderSearch'
-import ChaSwitchExample from 'Cha/Components-demo/Cha-Switch-Example/ChaSwitchExample'
 
 // import ChaCart from "Cha/Pages/ChaCart"
 // import ChaGroupOrder from "Cha/Pages/Cha-Group-Order/ChaGroupOrder"
@@ -44,9 +42,9 @@ function ChaAppTest() {
           <Route path="/cart_order_success">
             <Success />
           </Route>
-          <Route path="/groupOrderSearch">
+          {/* <Route path="/group_order_search">
             <ChaGroupOrderSearch />
-          </Route>
+          </Route> */}
           {/* <Route path="/group_order_sign_in">
             <ChaGroupOrderSignIn />
           </Route> */}
@@ -62,7 +60,7 @@ function ChaAppTest() {
           <Route path="/groupOrder">
             <ChaGroupOrder />
           </Route>
-          <Route path="/chaSwitchExample">
+          <Route path="/ChaSwitchExample">
             <ChaSwitchExample />
           </Route>
           {/* <Route path="/orderManagement">
