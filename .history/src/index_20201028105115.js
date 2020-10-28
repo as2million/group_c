@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 // import JessAppTest from './JessAppTest'
 // import IrisAppTest from './IrisAppTest';
 import ChaAppTest from './ChaAppTest';
-// import RuAppTest from './RuAppTest';
+import RuAppTest from './RuAppTest';
 ReactDOM.render(
   <React.StrictMode>
     {/* <ClaudiaAppTest /> */}
