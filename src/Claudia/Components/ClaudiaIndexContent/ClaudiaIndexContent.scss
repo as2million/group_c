@@ -1,0 +1,36 @@
+.claudia-index-content {
+    display: flex;
+    width: 80%;
+    margin: 0px auto;
+    padding-bottom: 50px;
+}
+
+#claudia-index-card {
+    width: 50%;
+    height: 690px;
+    margin-left: 30px;
+
+}
+
+#claudia-index-map {
+    width: 50%;
+    height: 690px;
+}
+
+@media only screen and (max-width: 375px) {
+    .claudia-index-content {
+        display: block;
+        padding-bottom: 0px;
+    }
+
+    #claudia-index-map {
+        width: 50%;
+        height: 470px;
+        padding-top: 20px;
+    }
+
+    #claudia-index-card {
+        display: none;
+    }
+
+}

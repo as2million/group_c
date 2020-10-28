@@ -1,0 +1,89 @@
+html {
+  font-size: 10px;
+}
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss'; //從模組裡面bs資料夾引入
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+// main > .container {
+//   padding: 60px 15px 0;
+// }
+
+// .footer {
+//   background-color: #f5f5f5;
+// }
+
+.vnavbar-jan {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0.3rem 0rem 1rem #cfcfcf !important;
+  width: 100vw;
+  min-height: 5rem;
+  backdrop-filter: blur(3px);
+  z-index: 200;
+}
+
+.container {
+  padding: 0;
+  width: 117rem;
+}
+
+.icons-jan {
+  height: 1.8rem;
+  margin-right: 1rem;
+}
+
+.titles-jan {
+  font-size: 1.5rem;
+  color: #858585;
+  margin: 0;
+}
+
+.address-input-jan {
+  height: 2.5rem;
+  width: 25rem;
+}
+.address-btn-jan {
+  height: 2.5rem;
+  background-color: #fff !important;
+  color: #f48145 !important;
+  border-color: #f48145 !important;
+}
+
+.shop-btn-jan {
+  height: 2.5rem;
+  background-color: #fff !important;
+  color: #f48145 !important;
+  border-color: #f48145 !important;
+}
+
+@media screen and (max-width: 57.6rem) {
+  .icons-jan {
+    height: 1.3rem;
+    margin-right: 1rem;
+  }
+  .titles-jan {
+    font-size: 1.2rem;
+    color: #858585;
+    margin: 0;
+  }
+  .vnavbar-jan {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0.3rem 0rem 1rem #cfcfcf;
+    min-height: 5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .calendar-jan {
+    margin-bottom: 0.2rem;
+  }
+  //   .shop-btn-jan {
+  //   height: 2rem;
+  //   background-color: #fff !important;
+  //   color: #f48145 !important;
+  //   border-color: #f48145 !important;
+  // }
+  .address-input-jan {
+    height: 2.5rem;
+    width: 16rem;
+  }
+}
