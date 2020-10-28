@@ -15,10 +15,16 @@ html {
 
 .vnavbar-jan {
   background-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0rem 0.3rem 0.8rem #00000010;
-  padding-left: 13.5rem;
-  padding-right: 13.5rem;
+  box-shadow: 0.3rem 0rem 1rem #cfcfcf !important;
+  width: 100vw;
   min-height: 5rem;
+  backdrop-filter: blur(3px);
+  z-index: 200;
+}
+
+.container {
+  padding: 0;
+  width: 117rem;
 }
 
 .icons-jan {
@@ -62,7 +68,7 @@ html {
   }
   .vnavbar-jan {
     background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0rem 0.3rem 0.8rem #00000010;
+    box-shadow: 0.3rem 0rem 1rem #cfcfcf;
     min-height: 5rem;
     padding-left: 3rem;
     padding-right: 3rem;
