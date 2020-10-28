@@ -48,7 +48,6 @@ function VNavbar(props) {
             外送取餐
           </Button> */}
           </div>
-
           <div className="d-flex justify-content-end">
             <Button className="shop-btn-jan" onClick={() => {}}>
               門市取餐

@@ -1,0 +1,112 @@
+@import "Ru/Pages/variable.scss";
+// 以下開始自訂CSS
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button:focus,
+input {
+  outline: none;
+}
+
+.ru-mainImg {
+  height: 362px;
+  background-image: url("./Images/mainImg.jpg");
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: cover;
+  @include flex($df, $fdr, $jcc, $alc);
+}
+
+.ru-mainImg > h1 {
+  display: flex;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $sub-title,
+    $regular,
+    $letter-spacing,
+    $white
+  );
+  @include flex($df, $fdr, $jcc, $alc);
+}
+.ru-searchBar {
+  width: 43.76%;
+  height: 50px;
+  border: 1px solid $grey;
+  border-radius: 9999px;
+  padding: 0px 20px;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $regular,
+    0px,
+    $light-orange
+  );
+}
+
+.ru-optionWarp {
+  // background-color: dodgerblue;
+  color: white;
+  height: 324px;
+  @include page();
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.ru-buttonWarp {
+  // background-color: rgb(30, 236, 255);
+  width: 80.8%;
+  height: 64px;
+  margin-top: 50px;
+  @include flex($df, $fdr, space-between, $alc);
+}
+
+.ru-line {
+  // background-color: red;
+  width: 100%;
+  height: 90px;
+  @include flex($df, $fdr, $jcc, $als);
+  overflow: hidden;
+}
+
+.ru-line > img {
+  height: 8px;
+}
+
+.ru-item-container {
+  // background-color: seagreen;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  @include page();
+}
+
+.ru-item-container > img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  width: 1920px;
+}
+
+.ru-card-warp {
+  // background-color: gold;
+  width: 100%;
+}
+
+.test{
+  margin: auto;
+  background-color: sienna;
+  width: 50px;
+  height: 50px;
+}
+
+.itemWarp {
+  // background-color: cornflowerblue;
+  height: 531.73px;
+  margin-bottom: 100px;
+  @include flex($df, $fdr, space-between, $als);
+}

@@ -1,0 +1,9 @@
+// 覆蓋bootstrap
+$primary: #f5a016;
+
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+
+.navbar {
+  height: 13.5rem;
+}

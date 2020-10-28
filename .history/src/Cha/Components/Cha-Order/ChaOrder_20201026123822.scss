@@ -1,0 +1,33 @@
+.cha-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 16px;
+}
+
+.cha-order .cha-step1-product-name {
+  font-size: 16px;
+}
+
+.cha-order .cha-step1-product-price {
+  font-size: 16px;
+  color: #f48145;
+}
+.cha-trash-can{
+  background: url('./Images/trash-can-gray.svg');  
+  background-position: center center;
+  background-size: cover;
+  width: 22px;
+  height: 25px;
+  cursor: pointer;
+}
+.cha-trash-can:hover{
+  background: url('./Images/trash-can-yellow.svg');
+}
+
+.cha-product-pic {
+  width: 57px;
+  height: 57px;
+  background-color: #faf;
+}

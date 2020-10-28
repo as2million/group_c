@@ -1,0 +1,205 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+$primary: #f48145;
+$font-size: 1rem;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap');
+
+.jess-fluidBg {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.jess-productList-chichenPic {
+  background: url('./Images/chickenRice.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 87rem;
+  height: 65rem;
+  margin-top: 30rem;
+  margin-right: 13.5rem;
+}
+.jess-menuList {
+  margin-top: 30rem;
+  width: 29rem;
+}
+.jess-tittle {
+  font-size: $font-size + 1.8;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 600;
+  color: $primary;
+}
+.jess-content {
+  font-family: 'Noto Sans TC';
+  font-size: $font-size + 0.5;
+  color: #858585;
+  margin-top: 3rem;
+}
+.jess-nutrient {
+  margin-top: 3rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #decdbb;
+  color: #a59583;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.6rem;
+  box-sizing: border-box;
+  line-height: 2.5rem;
+}
+.jess-nutrient2 {
+  margin-top: 3rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #decdbb;
+  text-align: center;
+  padding: 0.6rem;
+  color: #a59583;
+}
+
+.jess-rateStar {
+  margin-top: 3rem;
+  width: 29rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jess-rateStarMsgNum {
+  font-family: 'Noto Sans TC';
+  font-size: $font-size + 0.5;
+  color: #858585;
+}
+hr {
+  color: #a59583;
+  margin-top: 3rem;
+}
+.jess-productPrice {
+  margin-top: 5rem;
+  width: 29rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.jess-productPrice .jess-salePrice {
+  font-family: 'Noto Sans TC';
+  font-size: 3.6rem;
+  color: $primary;
+}
+.jess-productPrice > .jess-saleTotal {
+  font-family: 'Noto Sans TC';
+  font-size: 1.5rem;
+  color: #858585;
+}
+
+@media (min-width: 480px) and (max-width: 680px) {
+  .jess-fluidBg {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .jess-productList-chichenPic {
+    background: url('./Images/chickenRice.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    margin: 0;
+  }
+  .jess-menuList {
+    margin: 0 auto;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  //營養標示
+  .jess-nutrient {
+    margin-top: 3rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #decdbb;
+    color: #a59583;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.6rem;
+    box-sizing: border-box;
+    line-height: 2.5rem;
+  }
+  .jess-nutrient2 {
+    margin-top: 3rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #decdbb;
+    text-align: center;
+    padding: 0.6rem;
+  }
+
+  hr {
+    color: #a59583;
+    margin-top: 3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .jess-fluidBg {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .jess-productList-chichenPic {
+    background: url('./Images/chickenRice.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    margin: 0;
+  }
+  .jess-menuList {
+    margin: 0 auto;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  //營養標示
+  .jess-nutrient {
+    margin-top: 3rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #decdbb;
+    color: #a59583;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.6rem;
+    box-sizing: border-box;
+    line-height: 2.5rem;
+  }
+  .jess-nutrient2 {
+    margin-top: 3rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #decdbb;
+    text-align: center;
+    padding: 0.6rem;
+  }
+
+  hr {
+    color: #a59583;
+    margin-top: 3rem;
+  }
+}
