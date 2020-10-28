@@ -10,11 +10,6 @@ function RuAppTest() {
   return (
     <>
       <RuApp />
-      {/* <Button text={"預設字樣"} /> */}
-      {/* <AddFavorite /> */}
-      {/* <div className="target" style={{ marginLeft: "1000px" }}>test-target</div> */}
-      {/* <AddCart target={".target"} /> */}
-      {/* <Card title={'我是商品名稱'} comment={'NNNN'} buy={'KKK'} price={'$XXX'}/> */}
     </>
   );
 }

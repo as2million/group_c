@@ -1,9 +1,35 @@
-@import 'Ru/Pages/variable.scss';
+@import "Ru/Pages/variable.scss";
 // 以下開始自訂CSS
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+
+// @media screen and (min-width: 768px) and (max-width: 1200px) {
+//   .ru-buttonWarp .button-btn {
+//     width: 150px;
+//     height: 48.75px;
+//     font-size: 15px;
+//   }
+//   .ru-buttonWarp .button-btn-g {
+//     width: 150px;
+//   }
+// }
+
+// @media screen and (max-width: 768px) {
+//   .ru-buttonWarp .button-btn {
+//     width: 100px;
+//   }
+//   .ru-buttonWarp .button-btn-g {
+//     width: 100px;
+//   }
+// }
+
+@media screen and (max-width: 414px) {
+  .ru-buttonWarp .button-btn {
+    width: 150px;
+    height: 48.75px;
+    font-size: 15px;
+  }
+  .ru-buttonWarp .button-btn-g {
+    width: 150px;
+  }
 }
 
 button:focus,
@@ -33,7 +59,7 @@ input {
 
 .ru-mainImg {
   height: 362px;
-  background-image: url('./Images/mainImg.jpg');
+  background-image: url("./Images/mainImg.jpg");
   background-repeat: no-repeat;
   background-position: center 30%;
   background-size: cover;
@@ -71,6 +97,20 @@ input {
   height: 64px;
   margin-top: 50px;
   @include flex($df, $fdr, space-between, $alc);
+}
+
+.ru-buttonWarp .button-btn:nth-child(1) {
+  margin-right: 10px;
+}
+
+.ru-buttonWarp .button-btn:nth-child(2),
+.button-btn:nth-child(3) {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.ru-buttonWarp .button-btn-g {
+  margin-left: 10px;
 }
 
 .ru-line {

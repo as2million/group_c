@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
 import 'Ru/Components/Ru-component/Style.scss';
+
+// 引用元件
 import Button from 'Share/Components/Button/Button';
 import Card from 'Share/Components/Card/Card';
+
+// 引用圖片
 import line from 'Ru/Components/Ru-component/Images/line.png';
 import background from 'Ru/Components/Ru-component/Images/background.png';
 
@@ -57,6 +61,7 @@ function RuComponents() {
           {/* 搜尋欄e */}
 
           {/* 選項按鈕 s */}
+
           <section className="ru-buttonWarp">
             <Button text={'低GI便當'} className={'button-btn'} />
             <Button text={'鮮蔬沙拉'} className={'button-btn'} />
