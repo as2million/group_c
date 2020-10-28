@@ -9,7 +9,7 @@ function InputH50(props) {
   return (
     <>
       <input
-        class="form-control iris-inputH50"
+        className="form-control iris-inputH50"
         type={type}
         placeholder={placeholder}
         id={id}

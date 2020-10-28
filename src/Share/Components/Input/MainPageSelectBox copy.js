@@ -18,17 +18,17 @@ function MainPageSelectBox(props) {
 
   return (
     <>
-      <div class="iris-mainpage-select-wrapper d-flex">
-        <div class="iris-selectbar-wrapper">
+      <div className="iris-mainpage-select-wrapper d-flex">
+        <div className="iris-selectbar-wrapper">
           <select
-            class="form-control iris-mainpage-select"
+            className="form-control iris-mainpage-select"
             id="exampleFormControlSelect1"
           >
             <option value={value} id={id}></option>
             <option value={value} id={id}></option>
             <option value={value} id={id}></option>
           </select>
-          <div class="iris-mainpage-whitebox"></div>
+          <div className="iris-mainpage-whitebox"></div>
           <BackArrow
             className="iris-mainpage-backarrow"
             onClick={() => {

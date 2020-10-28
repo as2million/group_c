@@ -19,15 +19,15 @@ function InputAdd(props) {
 
   return (
     <>
-      <div class="iris-select-wrapper">
+      <div className="iris-select-wrapper">
         <input
-          class="form-control iris-InputAdd"
+          className="form-control iris-InputAdd"
           type={type}
           placeholder={placeholder}
           id={id}
         />
         <div
-          class="iris-whitebox-add"
+          className="iris-whitebox-add"
           onMouseEnter={() => {
             turnOrange();
           }}
@@ -35,7 +35,7 @@ function InputAdd(props) {
             turnGrey();
           }}
         ></div>
-        <div class="iris-symbolAdd">+</div>
+        <div className="iris-symbolAdd">+</div>
       </div>
     </>
   );

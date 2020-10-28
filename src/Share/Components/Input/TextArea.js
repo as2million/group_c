@@ -8,9 +8,9 @@ function TextArea(props) {
   const { placeholder, id, rows } = props;
   return (
     <>
-      <div class="form-group">
+      <div className="form-group">
         <textarea
-          class="form-control iris-textarea"
+          className="form-control iris-textarea"
           id={id}
           rows={rows}
           placeholder={placeholder}

@@ -7,7 +7,7 @@ import './IrisProfilePage.scss';
 function IrisProfilePage() {
   return (
     <>
-      <div class="container iris-userprofile-container">
+      <div className="container iris-userprofile-container">
         <IrisMemberMenu />
         <IrisDataEdit />
       </div>
