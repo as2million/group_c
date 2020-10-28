@@ -18,6 +18,7 @@
 .claudia-detailed-farm-adr-info {
     width: 560px;
 }
+
 .claudia-detailed-farm-adr-info p {
     font-size: 20px;
     color: #858585;
@@ -63,9 +64,10 @@
 @media only screen and (max-width: 375px) {
     .claudia-detailed-farm-adr {
         width: 375px;
-        height: 840px;
+        height: 800px;
 
     }
+
     .claudia-detailed-farm-adr h1 {
         font-size: 24px;
         margin: 40px auto;
@@ -74,29 +76,57 @@
     .claudia-detailed-farm-adr-container {
         width: 375px;
         display: block;
+        padding-bottom: 30px;
     }
 
-    .claudia-detailed-farm-adr-info { 
-        width: 310px;
+    //Left
+
+    .claudia-detailed-farm-adr-info-container { 
+        width: 375px;
+        height: 370px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .claudia-detailed-farm-adr-info {
+        width: 335px;
+        height: 350px;
+        margin: 0px auto;
+        
     }
 
     .claudia-detailed-farm-adr-info p {
+        width: 310px;
         font-size: 18px;
+        margin: 0px auto;
     }
 
     .claudia-detailed-farm-adr-info iframe {
-        width: 310px;
+        width: 335px;
         height: 255px;
     }
 
+    //Right
+
     .claudia-detailed-farm-adr-transport {
-        width: 310px;
+        width: 375px;
+        height: 320px;
+        padding: 0px;
     }
 
     .claudia-detailed-farm-adr-transport-container {
-        width: 275px;
-        margin: 40px 0px;
+        width: 285px;
+        height: 320px;
+        margin: 0px auto;
     }
+
+    .claudia-detailed-farm-adr-transport-buttons button{
+        width: 125px;
+        height: 45px;
+        font-size: 18px;
+    }
+
 
     .claudia-detailed-farm-adr-transport-text p{
         margin: 20px 0px;

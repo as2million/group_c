@@ -109,7 +109,7 @@
     color: #A59583;
     font-size: 24px;
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 200px;
 }
 
@@ -117,19 +117,19 @@
     color: #676462;
     font-size: 15px;
     position: absolute;
-    top: 130px;
+    top: 140px;
     right: 200px;
 }
 
 .claudia-detailed-farm-card-quote-left {
     position: absolute;
-    top: 80px;
+    top: 90px;
     right: 510px;
 }
 
 .claudia-detailed-farm-card-quote-right {
     position: absolute;
-    top: 80px;
+    top: 90px;
     right: 140px;
 }
 
@@ -166,6 +166,7 @@
         display: block;
         width: 375px;
         height: 1180px;
+        margin-bottom: 42px;
 
     }
 
@@ -207,13 +208,13 @@
 
     .claudia-detailed-farm-card {
        width: 335px;
-       height: 290px;
+       height: 300px;
        position: relative;
     }
 
     .claudia-detailed-farmer-avatar img {
         position: absolute;
-        top: 20px;
+        top: 30px;
         left: 90px;
         width: 150px;
         height: 150px;
@@ -221,7 +222,7 @@
 
     .claudia-detailed-farm-card-quote h1 {
         position: absolute;
-        top: 150px;
+        top: 160px;
         left: 45px;
         font-size: 20px;
         width: 245px;
@@ -230,7 +231,7 @@
 
     .claudia-detailed-farm-card-quote h2 {
         position: absolute;
-        top: 230px;
+        top: 240px;
         left: 100px;
         font-size: 14px;
         width: 190px;
@@ -241,7 +242,7 @@
         position: absolute;
         width: 20px;
         height: 20px;
-        top: 192px;
+        top: 202px;
         left: 18px;
     }
 
@@ -249,7 +250,7 @@
         position: absolute;
         width: 20px;
         height: 20px;
-        top: 192px;
+        top: 202px;
         right: 18px;
     }
 }
