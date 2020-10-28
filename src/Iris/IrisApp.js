@@ -5,7 +5,7 @@ import NavBar from './../Share/Components/NavBar/NavBar';
 import VNavbar from './../Share/Components/VNavbar/VNavbar';
 import Test from './Pages/Test';
 import Test2 from './Pages/Test2';
-import UserProfile from './Pages/UserProfile';
+import IrisProfilePage from './Pages/IrisProfilePage';
 import MainContent from './Components/MainContent';
 import './IrisApp.scss';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
@@ -29,7 +29,7 @@ function IrisApp() {
               <Test2 name={name} />
             </Route>
             <Route path="/UserProfile">
-              <UserProfile name={name} />
+              <IrisProfilePage name={name} />
             </Route>
           </Switch>
         </MainContent>

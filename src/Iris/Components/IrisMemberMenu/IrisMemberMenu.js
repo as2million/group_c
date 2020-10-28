@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import "./IrisMemberMenu.scss";
-import { ReactComponent as UserProfileIcon } from "./Images/user_profile.svg";
-import { ReactComponent as BeastieIcon } from "./Images/beastie_icon.svg";
-import { ReactComponent as OrderIcon } from "./Images/order_icon.svg";
-import { ReactComponent as PlateIcon } from "./Images/plate_icon.svg";
-import { ReactComponent as GroupOrderIcon } from "./Images/group_order.svg";
-import { ReactComponent as MyFavIcon } from "./Images/my_fav.svg";
-import { ReactComponent as MyCommentIcon } from "./Images/my_comment.svg";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import './IrisMemberMenu.scss';
+import { ReactComponent as UserProfileIcon } from './Images/user_profile.svg';
+import { ReactComponent as BeastieIcon } from './Images/beastie_icon.svg';
+import { ReactComponent as OrderIcon } from './Images/order_icon.svg';
+import { ReactComponent as PlateIcon } from './Images/plate_icon.svg';
+import { ReactComponent as GroupOrderIcon } from './Images/group_order.svg';
+import { ReactComponent as MyFavIcon } from './Images/my_fav.svg';
+import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg';
 
 function IrisMemberMenu() {
   return (
     <>
-      <div class="container iris-container">
+      <div class="container iris-membermenu-container col-3">
         <div class="row">
           <div class="iris-menu-background d-flex">
             {/* ---------- info ----------- */}
