@@ -55,6 +55,14 @@
     position: relative;
 }
 
+.claudia-detailed-farm-silder-img-container {
+    width: 425px;
+    height: 280px;
+    display: flex;
+    overflow: hidden;
+
+}
+
 .claudia-detailed-farm-silder img {
     width: 425px;
     height: 280px;
@@ -74,6 +82,7 @@
     height: 5px;
     background-color: #fff;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 //Quote Card
@@ -128,7 +137,7 @@
 
     .claudia-detailed-farm-intro{
         width: 375px;
-        height: 1450px;
+        height: 1930px;
         position: static;
         padding: 0px;
     }
@@ -156,7 +165,7 @@
     .claudia-detailed-farm-middle {
         display: block;
         width: 375px;
-        height: 700px;
+        height: 1180px;
 
     }
 
@@ -167,6 +176,22 @@
 
     }
 
+    .claudia-detailed-farm-silder {
+        width: 375px;
+        height: 210px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .claudia-detailed-farm-silder-img-container {
+        width: 425px;
+        height: 700px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+    }
+
     .claudia-detailed-farm-silder img {
         width: 335px;
         height: 210px;
@@ -174,10 +199,9 @@
 
     }
 
-    // .claudia-detailed-farm-silder {
-    //     bottom: 20px;
-    //     left: 90px;
-    // }
+    .claudia-detailed-farm-silder-container {
+        display: none;
+    }
 
     //Quote Card
 

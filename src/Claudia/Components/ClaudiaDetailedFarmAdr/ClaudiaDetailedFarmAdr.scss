@@ -13,6 +13,8 @@
     padding-bottom: 70px;
 }
 
+//Left
+
 .claudia-detailed-farm-adr-info {
     width: 560px;
 }
@@ -25,10 +27,10 @@
     margin-top: 20px;
 }
 
+//Right
 
-.claudia-detailed-farm-adr-transport p {
-    font-size: 18px;
-    color: #858585;
+.claudia-detailed-farm-adr-transport {
+    padding-left: 20px;
 }
 
 .claudia-detailed-farm-adr-transport-container {
@@ -36,10 +38,32 @@
     margin: 150px auto;
 }
 
+.claudia-detailed-farm-adr-transport-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.claudia-detailed-farm-adr-transport-buttons button{
+    width: 150px;
+    height: 45px;
+    margin: 0px 2px 30px 2px;
+    background-color: transparent;
+}
+
+.claudia-detailed-farm-adr-transport-text {
+    margin-top: 20px;
+}
+
+.claudia-detailed-farm-adr-transport-text p{
+    font-size: 18px;
+    color: #858585;
+    margin: 40px 0px;
+}
+
 @media only screen and (max-width: 375px) {
     .claudia-detailed-farm-adr {
         width: 375px;
-        height: 800px;
+        height: 840px;
 
     }
     .claudia-detailed-farm-adr h1 {
@@ -71,6 +95,11 @@
 
     .claudia-detailed-farm-adr-transport-container {
         width: 275px;
+        margin: 40px 0px;
+    }
+
+    .claudia-detailed-farm-adr-transport-text p{
+        margin: 20px 0px;
     }
 }
 

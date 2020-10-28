@@ -1,5 +1,6 @@
 import React from 'react';
 import './ClaudiaDetailedFarmAdr.scss';
+import Button from '../../../Share/Components/Button/Button';
 
 function ClaudiaDetailedFarmAdr() {
     return (
@@ -14,8 +15,14 @@ function ClaudiaDetailedFarmAdr() {
                     </div>
                     <div className="claudia-detailed-farm-adr-transport">
                         <div className="claudia-detailed-farm-adr-transport-container">
-                            <p>1. 捷運市政府站→轉小2路公車→白石湖社區同心池下車，即到農場。</p>
-                            <p>2. 捷運內湖站→下車步行至「成功路4段182巷口」（約160公尺）→轉小2路公車或小2路區間車→白石湖社區同心池下車，即抵農場。</p>
+                            <div className="claudia-detailed-farm-adr-transport-buttons">
+                                <div><Button className="button-btn-g" text="開車前往" /></div>
+                                <div><Button className="button-btn-g" text="大眾運輸" /></div>
+                            </div>
+                            <div className="claudia-detailed-farm-adr-transport-text">
+                                <p>1. 捷運市政府站→轉小2路公車→白石湖社區同心池下車，即到農場。</p>
+                                <p>2. 捷運內湖站→下車步行至「成功路4段182巷口」（約160公尺）→轉小2路公車或小2路區間車→白石湖社區同心池下車，即抵農場。</p>
+                            </div>
                         </div>
                     </div>
                 </div>

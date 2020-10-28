@@ -71,17 +71,19 @@
 
 
 @media only screen and (max-width: 375px) {
-    
 
     .claudia-detailed-slider {
         width: 375px;
         height: 1120px;
         position: static;
         padding: 0px;
+        display: block;
     }
 
     .claudia-detailed-slider-container {
         width: 375px;
+        margin: 0px;
+        padding-top: 70px;
         position: static;
     }
 

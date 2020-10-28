@@ -1,5 +1,6 @@
 import React from 'react';
 import './ClaudiaDetailedMainTextRight.scss';
+import Button from '../../../Share/Components/Button/Button';
 
 function ClaudiaDetailedMainTextRight() {
     return (
@@ -16,7 +17,7 @@ function ClaudiaDetailedMainTextRight() {
                     <div className="claudia-signup-text"><span><b>集合時間：</b></span><span>9:20</span></div>
                     <div className="claudia-signup-text"><span className="claudia-signup-text-group-adr"><b>集合地點：</b></span><span>台北市內湖區碧山路58-1號</span></div>
                     <div className="claudia-signup-text-map"><p>點我看地圖</p></div>
-                    <div className="claudia-signup-date-button"><p>查看可預訂日期</p></div>
+                    <div className="claudia-signup-date-button"><Button className="button-btn-g" text="查看可預訂日期" /></div>
                 </div>
             </div>
         </>

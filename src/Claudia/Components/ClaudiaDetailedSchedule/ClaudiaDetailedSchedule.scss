@@ -207,10 +207,11 @@
     .claudia-detailed-schedule-container {
         position: relative;
         height: 1600px;
+        width: 375px;
     }
 
     .claudia-detailed-schedule {
-        height: 1630px;
+        height: 1530px;
     }
 
     .claudia-detailed-schedule h1 {
@@ -233,11 +234,17 @@
 
     //Card1
 
+    .claudia-detailed-schedule-card1 {
+        width: 250px;
+        height: 315px;
+    }
+
     .claudia-detailed-schedule-card1-text {
         position: absolute;
         top: -2px;
         left: 80px;
         font-size: 14px;
+        width: 250px;
     }
 
     .claudia-detailed-schedule-card1 img {
@@ -250,13 +257,19 @@
 
     .claudia-detailed-schedule-card1 h2 {
         font-size: 14px;
+        width: 255px;
     }
 
     .claudia-detailed-schedule-card1 h3 {
         font-size: 14px;
+        width: 255px;
     }
 
     //Card2
+
+    .claudia-detailed-schedule-card2 {
+        width: 375px;
+    }
 
     .claudia-detailed-schedule-card2-text {
         position: absolute;
@@ -284,6 +297,10 @@
 
     
     //Card3
+
+    .claudia-detailed-schedule-card3 {
+        width: 375px;
+    }
 
     .claudia-detailed-schedule-card3-text {
         position: absolute;

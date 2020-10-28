@@ -11,12 +11,26 @@
     margin: 65px auto;
 }
 
+.claudia-detailed-nav-button1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+}
+
+.claudia-detailed-nav-button1 button{
+    width: 170px;
+    height: 50px;
+}
+
 .claudia-detailed-nav-buttons h1 {
     font-size: 24px;
     color: #858585;
     text-align: center;
     margin-bottom: 50px;
 }
+
+//Buttons area
 
 .claudia-detailed-nav-buttons-area {
     width: 890px;
@@ -42,6 +56,12 @@
     text-align: center;
 }
 
+.claudia-detailed-nav-button2 button {
+    width: 170px;
+    height: 50px;
+    margin-top: 30px;
+}
+
 .claudia-detailed-nav-buttons-icons {
     width: 170px;
     height: 120px;
@@ -51,8 +71,13 @@
 @media only screen and (max-width: 375px) {
     .claudia-detailed-nav-buttons-outside {
         width: 375px;
-        height: 1300px;
+        height: 980px;
+        display: block;
     }
+
+    .claudia-detailed-nav-button1 button {
+        margin-top: 50px;
+    } 
 
     .claudia-detailed-nav-buttons-area {
         width: 375px;
@@ -65,9 +90,10 @@
     }
 
     .claudia-detailed-nav-buttons-box {
-        margin: 0px auto;
+        margin: 0px auto 45px auto
 
     }
+
 
 
 }
