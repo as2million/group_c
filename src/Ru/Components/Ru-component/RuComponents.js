@@ -280,13 +280,13 @@ function RuComponents() {
                 imgId={'card-img-9'}
               />
               <Card
-                title={'會議雙拼組合'}
-                comment={'1180'}
-                buy={'234'}
-                price={'$130'}
-                id={'addCart-btn-9'}
-                parentId={'addCart-btn-warp-9'}
-                imgId={'card-img-9'}
+                title={''}
+                comment={''}
+                buy={''}
+                price={''}
+                id={''}
+                parentId={''}
+                imgId={''}
               />
             </div>
           </div>
