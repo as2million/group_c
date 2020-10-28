@@ -11,13 +11,14 @@ import InputAddress from './../../Share/Components/Input/InputAddress';
 
 function Test2(props) {
   const { name } = props;
+  const [searchInput, setSearchInput] = useState('');
   return (
     <>
       <div className="container iris-content-container">
         <h1>會員資料</h1>
         <h1>{name}</h1>
 
-        <SearchBar />
+        <SearchBar searchInput={searchInput} setSearchInput={setSearchInput} />
         <br />
         <InputH50 />
         <br />

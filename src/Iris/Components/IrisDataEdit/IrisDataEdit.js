@@ -20,7 +20,7 @@ function IrisDataEdit() {
             <div className="d-flex  align-items-center iris-profile-item-wrapper">
               <div className="iris-input-box testtest">姓氏</div>
 
-              <InputH40 type="text" placeholder=""/>
+              <InputH40 type="text" placeholder="" />
 
               <div className="iris-input-box">名字</div>
 

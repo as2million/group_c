@@ -6,7 +6,9 @@ import './Input.scss';
 import './SearchBar.scss';
 import { ReactComponent as SearchIcon } from './../../image/search_icon.svg';
 
-function SearchBar() {
+function SearchBar(props) {
+  const { searchInput, setSearchInput } = props;
+
   function lightenBorder() {
     document.querySelector('.iris-input-field').style['box-shadow'] =
       '0 0 0.5rem #f5a016';
@@ -29,7 +31,6 @@ function SearchBar() {
     <>
       <div className="iris-input-field first-wrap">
         <div className="svg-wrapper">
-          {/* <img class="iris-img" src={searchIcon} /> */}
           <SearchIcon className="iris-img" />
         </div>
         <input
@@ -39,6 +40,10 @@ function SearchBar() {
           placeholder="search"
           onClick={() => {
             lightenBorder();
+          }}
+          value={searchInput}
+          onChange={(e) => {
+            setSearchInput(e.target.value);
           }}
         />
       </div>
