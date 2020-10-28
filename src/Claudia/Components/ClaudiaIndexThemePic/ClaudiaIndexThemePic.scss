@@ -1,0 +1,65 @@
+.claudia-fake-navbar {
+    width: 100vw;
+    height: 135px;
+}
+
+.claudia-index-background-image {
+    background-image: url(./Images/index_bg.jpg);
+    height: 765px;
+    width: 1440px;
+    position: relative;
+}
+
+//change top after adding navbar
+.claudia-index-text {
+    font-family: 'Noto Serif TC';
+    position: absolute;
+    top: 600px;
+    right: 200px;
+    color: #FAFAFA;
+}
+
+.claudia-index-text-1 {
+    font-size: 50px;
+}
+
+.claudia-index-text-2 {
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 375px) {
+    .claudia-fake-navbar {
+        width: 375vw;
+        height: 120px;
+    }
+    .claudia-index-background {
+        position: relative;
+        
+    }
+
+    .claudia-index-background-image {
+        width: 375px;
+        height: 547px;
+        background-image: url(./Images/rwd_index_bg.jpg);
+    }
+
+    .claudia-index-text {
+        position: absolute;
+        top: 480px;
+        right: 80px;
+    }
+
+    .claudia-index-text-1 {
+        font-size: 40px;
+    }
+
+    .claudia-index-text-2 {
+        font-size: 24px;
+    }
+}
+
+
+
+
+
+
