@@ -1,0 +1,29 @@
+
+  .order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 16px;
+  }
+  
+  .order .step1-product-name {
+    font-size: 16px;
+  }
+  
+  .order .step1-product-price {
+    font-size: 16px;
+    color: #F48145;
+  }
+  
+  .trash-can-gray {
+    width: 22px;
+    cursor: pointer;
+  
+  }
+  
+  .product-pic {
+    width: 57px;
+    height: 57px;
+    background-color: #faf;
+  }

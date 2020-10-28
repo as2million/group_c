@@ -1,0 +1,117 @@
+.cha-aside-card {
+  width: 360px;
+  /* height: 30px; */
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  margin-left: 5px;
+  padding: 30px;
+  box-sizing: border-box;
+  position: fixed;
+}
+.cha-aside-card-fake {
+  width: 360px;
+}
+.cha-step-header {
+  font-size: 24px;
+  border-bottom: 1px solid #8585853a;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+//   // position: relative;
+}
+// .cha-former-cart-switch {
+//   background-color: #9bccb6;
+//   height: 45px;
+//   width: 120px;
+//   position: absolute;
+//   top: 15px;
+//   right: -30px;
+//   border-radius: 25px 0px 0px 25px;
+//   color: #fff;
+//   font-size: 18px;
+//   border: 0px;
+//   user-select: none;
+//   transition: 0.5s;
+//     &:focus {
+//       outline: none;
+//   }
+// }
+// .cha-former-cart-switch:hover {
+//   width: 170px;
+//   background-color: #66ab8c;
+//   transition: 0.5s;
+// }
+
+// .cha-former-cart-switch:hover + .cha-normal-cart-switch {
+//   width: 120px;
+//   // background-color: #66ab8c;
+//   transition: .5s
+// }
+
+// .cha-normal-cart-switch {
+//   background-color: #f6bd60;
+//   height: 45px;
+//   width: 170px;
+//   position: absolute;
+//   top: -35px;
+//   right: -30px;
+//   border-radius: 25px 0px 0px 25px;
+//   color: #fff;
+//   font-size: 18px;
+//   border: 0px;
+//   user-select: none;
+//   transition: .5s;
+//   &:focus {
+//     outline: none;
+//   }
+// }
+.cha-little-total,
+.cha-shipping,
+.cha-tableware,
+.cha-shopping-list-total {
+  font-size: 15px;
+  color: #858585;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.cha-tableware label{
+  margin-right: 100px;
+}
+
+.cha-shopping-list-total-number {
+  color: #f48145;
+  font-weight: 600;
+  font-size: 36px;
+  margin-top: -10px;
+}
+
+.cha-shopping-cart-btn {
+  height: 45px;
+  width: 170px;
+  border-radius: 50px;
+  background-color: #f48145;
+  border: 0;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.cha-shopping-cart-btn:hover {
+  background-color: #e0611e;
+}
+
+.cha-shopping-cart-btn-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.cha-horizontal-line {
+  border-bottom: 1px solid #8585853a;
+}
+
