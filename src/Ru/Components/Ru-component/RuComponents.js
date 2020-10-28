@@ -5,6 +5,7 @@ import 'Ru/Components/Ru-component/Style.scss';
 // 引用元件
 import Button from 'Share/Components/Button/Button';
 import Card from 'Share/Components/Card/Card';
+import NavBar from 'Share/Components/NavBar/NavBar';
 
 // 引用圖片
 import line from 'Ru/Components/Ru-component/Images/line.png';
@@ -14,7 +15,7 @@ function RuComponents() {
   // JSX
   return (
     <>
-      <div className="backgroundImg"></div>
+      {/* <div className="backgroundImg"></div>
       <div
         className="fix"
         style={{
@@ -40,7 +41,8 @@ function RuComponents() {
           // src={cart}
         />
       </div>
-      <div style={{ height: '135px', backgroundColor: '#FF5151' }}></div>
+      <div style={{ height: '135px', backgroundColor: '#FF5151' }}></div> */}
+      <NavBar/>
       {/* 如果元件有定義key或ref, 它們並不會向下傳資料, 它們不屬於props */}
 
       <RuShowWidth />

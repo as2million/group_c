@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 // import JanAppTest from './JanAppTest';
 import * as serviceWorker from './serviceWorker';
+import App from './App'
 // import ClaudiaAppTest from './ClaudiaAppTest'
 // import JessAppTest from './JessAppTest'
 // import IrisAppTest from './IrisAppTest';
@@ -10,12 +11,13 @@ import * as serviceWorker from './serviceWorker';
 import RuAppTest from './RuAppTest';
 ReactDOM.render(
   <React.StrictMode>
+    <App />
     {/* <ClaudiaAppTest /> */}
     {/* <JanAppTest /> */}
     {/* <JessAppTest /> */}
     {/* <IrisAppTest /> */}
     {/* <ChaAppTest /> */}
-    <RuAppTest />
+    {/* <RuAppTest /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
