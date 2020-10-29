@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './../Share/Components/NavBar/NavBar';
 import VNavbar from './../Share/Components/VNavbar/VNavbar';
+import Footer from './../Share/Components/Footer/Footer';
 import Test from './Pages/Test';
 import Test2 from './Pages/Test2';
 import IrisProfilePage from './Pages/IrisProfilePage';
@@ -37,6 +38,7 @@ function IrisApp() {
             </Route>
           </Switch>
         </MainContent>
+        <Footer />
       </>
     </Router>
   );
