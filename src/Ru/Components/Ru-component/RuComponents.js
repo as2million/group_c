@@ -6,12 +6,13 @@ import 'Ru/Components/Ru-component/Style.scss';
 import Button from 'Share/Components/Button/Button';
 import Card from 'Share/Components/Card/Card';
 import SearchBar from 'Share/Components/Input/SearchBar';
-
 // 引用圖片
 import line from 'Ru/Components/Ru-component/Images/line.png';
 import background from 'Ru/Components/Ru-component/Images/background.png';
 
 function RuComponents() {
+
+  const { searchInput, setSearchInput } = useState('')
   // JSX
   return (
     <>
@@ -51,12 +52,7 @@ function RuComponents() {
       <div className="ru-productList-container">
         <div className="ru-optionWarp">
           {/* 搜尋欄s */}
-          {/* <SearchBar/> */}
-          <input
-            type="text"
-            className="ru-searchBar"
-            placeholder="search"
-          ></input>
+          <SearchBar/>
           {/* 搜尋欄e */}
 
           {/* 選項按鈕 s */}

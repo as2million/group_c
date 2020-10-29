@@ -60,6 +60,11 @@ input {
   @include flex($df, $fdc, $jcc, $alc);
 }
 
+.ru-optionWarp .iris-input-field {
+  width: 512px;
+  height: 50px;
+}
+
 .ru-buttonWarpA {
   // background-color: rgb(30, 236, 255);
   width: 80.8%;
@@ -208,6 +213,11 @@ input {
     height: 324px;
     @include page-iPadPro();
     @include flex($df, $fdc, $jcc, $alc);
+  }
+
+  .ru-optionWarp .iris-input-field {
+    width: 512px;
+    height: 50px;
   }
 
   .ru-buttonWarpA {
@@ -369,6 +379,11 @@ input {
     height: 324px;
     @include page-iPadPro();
     @include flex($df, $fdc, $jcc, $alc);
+  }
+
+  .ru-optionWarp .iris-input-field {
+    width: 512px;
+    height: 50px;
   }
 
   .ru-buttonWarpB {
@@ -551,6 +566,11 @@ input {
     height: 257px;
     @include page-phone();
     @include flex($df, $fdc, $jcc, $alc);
+  }
+
+  .ru-optionWarp .iris-input-field {
+    width: 335px;
+    height: 45px;
   }
 
   .ru-buttonWarpB {

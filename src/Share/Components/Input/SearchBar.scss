@@ -26,6 +26,7 @@
   border: 1px solid gray;
   border-radius: 2.5rem;
   height: 5rem;
+  width: 512px;
 }
 
 .iris-input-field input {
@@ -62,7 +63,6 @@
 
 .iris-input-field.first-wrap {
   -ms-flex-positive: 1;
-  flex-grow: 1;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;

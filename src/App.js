@@ -18,7 +18,7 @@ import Footer from "Share/Components/Footer/Footer";
 // import ChaCart from "Cha/Pages/ChaCart"
 // import ChaGroupOrder from "Cha/Pages/ChaGroupOrder"
 // import ChaOrderManagement from "Cha/Pages/OrderManagement"
-import RuProudctList from "Ru/Pages/ProudctList"
+import RuProudctList from "Ru/Pages/RuProudctList"
 // import ClaudiaFarmIndex from "Claudia/Pages/ClaudiaFarmIndex"
 // import ClaudiaFarmDetailedPage from "Claudia/Pages/ClaudiaFarmDetailedPage"
 

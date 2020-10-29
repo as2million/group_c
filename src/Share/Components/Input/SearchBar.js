@@ -7,6 +7,8 @@ import './SearchBar.scss';
 import { ReactComponent as SearchIcon } from './../../image/search_icon.svg';
 
 function SearchBar(props) {
+  // 先再母元件加上 const { searchInput, setSearchInput } = useState('') => 這樣母元件可以拿到input的value值
+  // 然後搜尋邏輯自己寫
   const { searchInput, setSearchInput } = props;
 
   function lightenBorder() {

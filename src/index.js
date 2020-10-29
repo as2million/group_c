@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 // import IrisAppTest from './IrisAppTest';
 // import ChaAppTest from './ChaAppTest';
 import RuAppTest from './RuAppTest';
+import App from './App';
 ReactDOM.render(
   <React.StrictMode>
     {/* <ClaudiaAppTest /> */}
@@ -15,7 +16,8 @@ ReactDOM.render(
     {/* <JessAppTest /> */}
     {/* <IrisAppTest /> */}
     {/* <ChaAppTest /> */}
-    <RuAppTest />
+    {/* <RuAppTest /> */}
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
