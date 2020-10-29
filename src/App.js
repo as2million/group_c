@@ -10,7 +10,7 @@ import Footer from "Share/Components/Footer/Footer";
 import JanIndex from "Janice/Pages/JanIndex"
 import JessMenu from "Jess/Pages/JessMenu"
 import JessBento from "Jess/Pages/JessBento"
-import JessVages from "Jess/Pages/JessVages"
+import JessVegBox from "Jess/Pages/JessVegBox"
 import IrisUserprofile from "Iris/Pages/IrisUserprofile"
 import IrisOrderComment  from "Iris/Pages/IrisOrderComment "
 import IrisMyFav from "Iris/Pages/IrisMyFav"
@@ -53,8 +53,8 @@ function App() {
           <Route exact path="/bento/:id">
             <JessBento />
           </Route>
-          <Route exact path="/vages">
-            <JessVages />
+          <Route exact path="/vegBox">
+            <JessVegBox />
           </Route>
 
           {/* iris */}
