@@ -2,18 +2,19 @@ html {
     font-size: 10px;
 }
 
-.navbar-background {
+.footer-background {
+    width: 1440px;
     background-color: #F7EDE2;
     height: 30vh;
     display: flex;
     justify-content: center;
 }
 
-.navbar-card {
+.footer-card {
     font-size: 1.5rem;
 }
 
-.navbar-footer-text {
+.footer-text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +23,7 @@ html {
 }
 
 
-.navbar-footer-text a {
+.footer-text a {
     text-decoration: none;
     padding-top: 20px;
     margin: 20px 10px;
@@ -31,30 +32,30 @@ html {
     justify-content: center;
 }
 
-.navbar-footer-text a:hover {
+.footer-text a:hover {
     text-decoration: underline;
 }
 
-.navbar-icons {
+.footer-icons {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
 }
 
-.navbar-icons img {
+.footer-icons img {
     width: 50px;
     height: 50px;
     color: #F48145;
     margin: 20px 10px;
 }
 
-.navbar-icons img:hover {
+.footer-icons img:hover {
     cursor: pointer;
 }
 
 
-.navbar-copyright {
+.footer-copyright {
     width: 80vw;
     color: #858585;
     display: flex;
@@ -66,11 +67,16 @@ html {
 }
 
 @media screen and (max-width: 375px) {
-    .navbar-copyright p {
+
+    .footer-background {
+        width: 375px;
+    }
+
+    .footer-copyright p {
       font-size: 1.2rem;
     }
 
-    .navbar-icons {
+    .footer-icons {
         margin-top: 15px;
     }
   }
