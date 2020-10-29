@@ -14,12 +14,12 @@ html {
 // }
 
 .vnavbar-jan {
-  background-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0.3rem 0rem 1rem #cfcfcf !important;
+  background-color: rgba(250, 250, 250, 0.5);
   width: 100vw;
   min-height: 5rem;
   backdrop-filter: blur(3px);
-  z-index: 200;
+  position: absolute;
+  margin-top: 10rem;
 }
 
 .container {
@@ -67,8 +67,7 @@ html {
     margin: 0;
   }
   .vnavbar-jan {
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0.3rem 0rem 1rem #cfcfcf;
+    background-color: rgba(250, 250, 250, 0.5);
     min-height: 5rem;
     padding-left: 3rem;
     padding-right: 3rem;
@@ -76,12 +75,7 @@ html {
   .calendar-jan {
     margin-bottom: 0.2rem;
   }
-  //   .shop-btn-jan {
-  //   height: 2rem;
-  //   background-color: #fff !important;
-  //   color: #f48145 !important;
-  //   border-color: #f48145 !important;
-  // }
+
   .address-input-jan {
     height: 2.5rem;
     width: 16rem;
