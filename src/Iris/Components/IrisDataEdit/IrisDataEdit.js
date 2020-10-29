@@ -9,7 +9,7 @@ import Button from './../../../Share/Components/Button/Button';
 function IrisDataEdit() {
   return (
     <>
-      <div className="container iris-content-container col-9">
+      <div className="container iris-content-title-container col-9">
         <div className="row justify-content-center">
           <h2 className="iris-profile-title">會員資料修改</h2>
           <WaveLine />

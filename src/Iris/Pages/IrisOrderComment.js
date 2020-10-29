@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import IrisMemberMenu from '../Components/IrisMemberMenu/IrisMemberMenu';
-import IrisDataEdit from '../Components/IrisDataEdit/IrisDataEdit';
+import IrisUserComment from '../Components/IrisUserComment/IrisUserComment';
 import './IrisMemberPage.scss';
 
-function IrisProfilePage() {
+function IrisOrderComment() {
   return (
     <>
       <div className="container iris-memberpage-container">
         <IrisMemberMenu />
-        <IrisDataEdit />
+        <IrisUserComment />
       </div>
     </>
   );
 }
 
-export default IrisProfilePage;
+export default IrisOrderComment;

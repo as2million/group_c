@@ -60,7 +60,7 @@ function MyNavbar(props) {
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/vages">
+                      <Nav.Link as={NavLink} to="/vegBox">
                         蔬菜箱
                       </Nav.Link>
                     </li>

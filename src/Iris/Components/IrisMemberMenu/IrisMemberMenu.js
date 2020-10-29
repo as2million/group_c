@@ -12,7 +12,7 @@ import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg';
 function IrisMemberMenu() {
   return (
     <>
-      <div class="container iris-membermenu-container col-3">
+      <div class="container iris-membermenu-container col-3 ">
         <div class="row">
           <div class="iris-menu-background d-flex">
             {/* ---------- info ----------- */}
