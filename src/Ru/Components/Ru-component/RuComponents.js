@@ -13,7 +13,8 @@ import SearchBar from 'Share/Components/Input/SearchBar';
 import line from 'Ru/Components/Ru-component/Images/line.png';
 import background from 'Ru/Components/Ru-component/Images/background.png';
 
-function RuComponents() {
+function RuComponents(props) {
+  console.log(props)
   const [searchInput, setSearchInput] = useState('');
   // 是否顯示 低GI便當 / 沙拉 / 客製化便當
   const [isShowRuBento, setIsShowRuBento] = useState(true);

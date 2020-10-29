@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 function RuButton(props) {
   // text 按鈕文字
   // className 橘色樣式為button-btn 綠色樣式為button-btn-g
-
+  
   const {
     text,
     className,
@@ -30,6 +30,20 @@ function RuButton(props) {
       setIsShowRuBento(false);
       setIsShowRuSalad(false);
       setIsShowRuCustom(true);
+    } else if (id === 'button-btn-4') {
+      props.history.push('/vegBox');
+    }
+  }
+
+  // 路由方法
+  function handleCardArea(e) {
+    console.log(props);
+    if (id === 'button-btn-1') {
+      props.history.push('/低GI路由');
+    } else if (id === 'button-btn-2') {
+      props.history.push('/沙拉路由');
+    } else if (id === 'button-btn-3') {
+      props.history.push('/客製化路由');
     } else if (id === 'button-btn-4') {
       props.history.push('/vegBox');
     }

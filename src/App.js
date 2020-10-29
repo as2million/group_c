@@ -1,8 +1,8 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
 // 引入 共用元件
-import Navbar from "Share/Components/NavBar/NavBar";
-import Footer from "Share/Components/Footer/Footer";
+import Navbar from 'Share/Components/NavBar/NavBar';
+import Footer from 'Share/Components/Footer/Footer';
 // import NotFoundPage from "Share/Components/NotFoundPage/NotFoundPage";
 
 // 引入 所有人的總元件
@@ -18,13 +18,13 @@ import Footer from "Share/Components/Footer/Footer";
 // import ChaCart from "Cha/Pages/ChaCart"
 // import ChaGroupOrder from "Cha/Pages/ChaGroupOrder"
 // import ChaOrderManagement from "Cha/Pages/OrderManagement"
-import RuProudctList from "Ru/Pages/RuProudctList"
+import RuProudctList from 'Ru/Pages/RuProudctList';
 // import ClaudiaFarmIndex from "Claudia/Pages/ClaudiaFarmIndex"
 // import ClaudiaFarmDetailedPage from "Claudia/Pages/ClaudiaFarmDetailedPage"
 
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // 路由表
 function App() {
@@ -38,7 +38,6 @@ function App() {
 
         {/* 路由設定開始 */}
         <Switch>
-
           {/* janice */}
           {/* 放"page資料夾"內的元件 */}
           {/* <Route exact path="/">
@@ -75,6 +74,12 @@ function App() {
           {/* ru */}
           {/* 放"page資料夾"內的元件 */}
           <Route exact path="/productList">
+            <RuProudctList />
+          </Route>
+          <Route exact path="/productListSalad">
+            <RuProudctList />
+          </Route>
+          <Route exact path="/productListCustom">
             <RuProudctList />
           </Route>
 
@@ -115,4 +120,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
