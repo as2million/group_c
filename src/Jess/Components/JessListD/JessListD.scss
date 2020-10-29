@@ -35,5 +35,34 @@ $white: #ffffff;
   color: $orange;
   letter-spacing: 1rem;
 }
+.jess-msg-tittle {
+  background-color: #f6f6f6;
+  height: 9rem;
+}
+.jess-msg-todo button {
+  width: 13rem;
+  height: 3.5rem;
+}
+.jess-text-20orange {
+  font-size: 2rem;
+  font-family: 'Noto Sans TC';
+  color: $orange;
+}
+.jess-text-15Gray {
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $darkGary;
+  line-height: 2.5rem;
+}
+.jess-text-15brown {
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $darkBrown;
+  line-height: 2.5rem;
+}
+.jess-msg-content {
+  background-color: $white;
+  height: 9rem;
+}
 @media screen and (max-width: 576px) {
 }
