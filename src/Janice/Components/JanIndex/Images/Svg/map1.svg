@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="436" height="88" viewBox="0 0 436 88">
+  <defs>
+    <filter id="_將餐桌上的美味_" x="0" y="0" width="436" height="88" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#_將餐桌上的美味_)" style="mix-blend-mode: luminosity;isolation: isolate">
+    <text id="_將餐桌上的美味_2" data-name="“ 將餐桌上的美味 ," transform="translate(9 59)" fill="#858585" font-size="50" font-family="Georgia-BoldItalic, Georgia" font-weight="700" font-style="italic"><tspan x="0" y="0">“ </tspan><tspan y="0" font-family="STSongti-TC-Bold, Songti TC" font-style="normal">將餐桌上的美味</tspan><tspan y="0" xml:space="preserve"> ,</tspan></text>
+  </g>
+</svg>
