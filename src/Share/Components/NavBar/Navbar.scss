@@ -27,7 +27,7 @@ html {
   box-shadow: 0.3rem 0 1rem #cfcfcf;
   position: fixed;
   padding: 0;
-  z-index: 999;
+  z-index: 1040;
 }
 .navBar-jess-container {
   width: 140rem;
@@ -227,7 +227,7 @@ html {
   text-align: center;
 }
 .navbar-jess-ShopingCart {
-  z-index: 1000;
+  z-index: 1050;
 }
 
 //shopping cart number
@@ -302,7 +302,7 @@ html {
   }
   .nav.responsive .navBar-jess-navCollapse {
     position: absolute;
-    top: 42px;
+    top: 4rem;
     left: 0;
     width: 100%;
     display: block;
@@ -349,17 +349,18 @@ html {
   }
   .nav.responsive .navBar-jess-navCollapse ul {
     list-style: none;
-    padding-top: 2rem;
   }
   //選單文字
   .nav.responsive .navBar-jess-navCollapse li {
     font-size: 2rem;
     line-height: 2rem;
-    left: -38rem;
+    left: 0rem;
+    top: -10rem;
   }
   .navbar-jess-ShopingCart {
     z-index: 1000;
     position: absolute;
-    left: 19rem;
+    left: 16rem;
+    top: 20rem;
   }
 }
