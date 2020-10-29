@@ -17,7 +17,7 @@ function ClaudiaDetailedSilder() {
         console.log('img', e.target.src);
         setImgSrc(selectImg);
 
-        //change triangle display
+        //change triangle display - step 1: find index - make triangle appears
 
         const child = e.target;
         const parent = child.parentNode;
@@ -26,13 +26,11 @@ function ClaudiaDetailedSilder() {
         const index = Array.prototype.indexOf.call(parent.children, child);
         console.log('index', index);
 
-        //change triangle display - step 1: find index
-
         const triangleIcon = e.target.parentNode.nextElementSibling.children[index].children[0]
         console.log('triangleIcon', e.target.parentNode.nextElementSibling.children[index].children[0]);
         triangleIcon.style.visibility = 'visible';
 
-        //change triangle display - step 2: find .siblings
+        //change triangle display - step 2: find .siblings - make triangles disappear
 
         const getSiblings = function (e) {
             let siblings = [];

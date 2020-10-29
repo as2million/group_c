@@ -10,7 +10,7 @@
     width: 920px;
     margin: 0px auto;
     display: flex;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
 }
 
 //Left
@@ -36,6 +36,7 @@
 
 .claudia-detailed-farm-adr-transport-container {
     width: 90%;
+    height: 357px;
     margin: 150px auto;
 }
 
@@ -118,13 +119,17 @@
     .claudia-detailed-farm-adr-transport-container {
         width: 296px;
         height: 320px;
-        margin: 0px auto;
+        margin: 30px auto 0px auto;
     }
 
     .claudia-detailed-farm-adr-transport-buttons button{
         width: 125px;
         height: 45px;
         font-size: 18px;
+    }
+
+    .claudia-detailed-farm-adr-transport-buttons-i {
+        height: 45px;
     }
 
 
