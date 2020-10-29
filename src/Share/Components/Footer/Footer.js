@@ -8,11 +8,13 @@ function Footer() {
         <>
             <div className="footer-background">
                 <div className="footer-card">
-                    <div className="footer-text">
-                        <a href="#"><p>常見問題</p></a>
-                        <a href="#"><p>服務條款</p></a>
-                        <a href="#"><p>關於我們</p></a>
-                        <a href="#"><p>隱私權政策</p></a>
+                    <div className="footer-text-box">
+                        <div className="footer-text">
+                            <a href="#"><p>常見問題</p></a>
+                            <a href="#"><p>服務條款</p></a>
+                            <a href="#"><p>關於我們</p></a>
+                            <a href="#"><p>隱私權政策</p></a>
+                        </div>
                     </div>
                     <div className="footer-icons">
                         <a>
