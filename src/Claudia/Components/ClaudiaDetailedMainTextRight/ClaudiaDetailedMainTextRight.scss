@@ -24,15 +24,6 @@
     
 }
 
-.claudia-signup-date-button {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.claudia-signup-date-button button{
-    height: 55px;
-}
-
 .claudia-signup-box {
     width: 125px;
     height: 40px;
@@ -46,10 +37,6 @@
     font-size: 15px;
 }
 
-.claudia-signup-text-map {
-    font-size: 15px;
-}
-
 .claudia-yellow-confirm {
     margin: 0px 20px;
     width: 70px;
@@ -57,6 +44,40 @@
     background-color: #F6BD60;
     padding: 7px;
     color: white;
+}
+
+.claudia-signup-text-map {
+    font-size: 15px;
+}
+
+.claudia-signup-text-map {
+    display: flex;
+}
+
+.claudia-signup-text-map img {
+    margin-right: 5px;
+    height: 30px;
+}
+
+.claudia-signup-text-map a{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    color: #F6BD60;
+}
+
+.claudia-signup-text-map a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.claudia-signup-date-button {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.claudia-signup-date-button button{
+    height: 55px;
 }
 
 @media only screen and (max-width: 375px) {
