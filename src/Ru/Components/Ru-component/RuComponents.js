@@ -40,7 +40,7 @@ function RuComponents() {
           // src={cart}
         />
       </div> */}
-      <div style={{ height: '135px', backgroundColor: '#FF5151' }}></div>
+      <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
       <RuShowWidth />
 
       <div className="ru-mainImg-warp">
@@ -60,12 +60,24 @@ function RuComponents() {
           {/* 搜尋欄e */}
 
           {/* 選項按鈕 s */}
-
-          <section className="ru-buttonWarp">
+          <section className="ru-buttonWarpA">
             <Button text={'低GI便當'} className={'button-btn'} />
             <Button text={'鮮蔬沙拉'} className={'button-btn'} />
             <Button text={'客製化便當'} className={'button-btn'} />
             <Button text={'蔬菜箱'} className={'button-btn-g'} />
+          </section>
+
+          <section className="ru-buttonWarpB">
+          
+            <div>
+              <Button text={'低GI便當'} className={'button-btn'} />
+              <Button text={'客製化便當'} className={'button-btn'} />
+            </div>
+            <div>
+              <Button text={'鮮蔬沙拉'} className={'button-btn'} />
+              <Button text={'蔬菜箱'} className={'button-btn-g'} />
+            </div>
+       
           </section>
           {/* 選項按鈕 e */}
         </div>

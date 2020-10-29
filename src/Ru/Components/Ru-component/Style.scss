@@ -1,4 +1,4 @@
-@import "Ru/Pages/variable.scss";
+@import 'Ru/Pages/variable.scss';
 // 以下開始自訂CSS
 
 button:focus,
@@ -28,7 +28,7 @@ input {
 
 .ru-mainImg {
   height: 362px;
-  background-image: url("./Images/mainImg.jpg");
+  background-image: url('./Images/mainImg.jpg');
   background-repeat: no-repeat;
   background-position: center 30%;
   background-size: cover;
@@ -53,37 +53,37 @@ input {
 }
 
 .ru-optionWarp {
-  background-color: dodgerblue;
+  // background-color: dodgerblue;
   color: white;
   height: 324px;
   @include page();
   @include flex($df, $fdc, $jcc, $alc);
 }
 
-.ru-buttonWarp {
-  background-color: rgb(30, 236, 255);
+.ru-buttonWarpA {
+  // background-color: rgb(30, 236, 255);
   width: 80.8%;
   height: 64px;
   margin-top: 50px;
   @include flex($df, $fdr, space-between, $alc);
 }
 
-.ru-buttonWarp .button-btn:nth-child(1) {
+.ru-buttonWarpA .button-btn:nth-child(1) {
   margin-right: 10px;
 }
 
-.ru-buttonWarp .button-btn:nth-child(2),
+.ru-buttonWarpA .button-btn:nth-child(2),
 .button-btn:nth-child(3) {
   margin-right: 10px;
   margin-left: 10px;
 }
 
-.ru-buttonWarp .button-btn-g {
+.ru-buttonWarpA .button-btn-g {
   margin-left: 10px;
 }
 
 .ru-line {
-  background-color: red;
+  // background-color: red;
   width: 100%;
   height: 90px;
   @include flex($df, $fdr, $jcc, $als);
@@ -95,7 +95,7 @@ input {
 }
 
 .ru-item-containerA {
-  background-color: seagreen;
+  // background-color: seagreen;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -111,12 +111,12 @@ input {
 
 .ru-card-warp {
   @include page();
-  background-color: gold;
+  // background-color: gold;
   width: 100%;
 }
 
 .ru-itemWarp {
-  background-color: cornflowerblue;
+  // background-color: cornflowerblue;
   height: 100%;
   margin-bottom: 100px;
   @include flex($df, $fdr, space-between, $als);
@@ -136,12 +136,19 @@ input {
   display: none;
 }
 
+.ru-buttonWarpA {
+  display: flex;
+}
+
+.ru-buttonWarpB {
+  display: none;
+}
+
 // 響應式 --------------------------------------------------------------------------------
 // ipad pro版
-@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+@media screen and (min-width: 768.1px) and (max-width: 1200px) {
   .ru-optionWarp {
     @include page-iPadPro();
-    // height: 257px;
   }
 
   button:focus,
@@ -171,7 +178,7 @@ input {
 
   .ru-mainImg {
     height: 362px;
-    background-image: url("./Images/mainImg.jpg");
+    background-image: url('./Images/mainImg.jpg');
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size: cover;
@@ -196,37 +203,37 @@ input {
   }
 
   .ru-optionWarp {
-    background-color: dodgerblue;
+    // background-color: dodgerblue;
     color: white;
     height: 324px;
     @include page-iPadPro();
     @include flex($df, $fdc, $jcc, $alc);
   }
 
-  .ru-buttonWarp {
-    background-color: rgb(30, 236, 255);
-    width: 80.8%;
+  .ru-buttonWarpA {
+    // background-color: rgb(30, 236, 255);
+    width: 110%;
     height: 64px;
     margin-top: 50px;
     @include flex($df, $fdr, space-between, $alc);
   }
 
-  .ru-buttonWarp .button-btn:nth-child(1) {
+  .ru-buttonWarpA .button-btn:nth-child(1) {
     margin-right: 10px;
   }
 
-  .ru-buttonWarp .button-btn:nth-child(2),
+  .ru-buttonWarpA .button-btn:nth-child(2),
   .button-btn:nth-child(3) {
     margin-right: 10px;
     margin-left: 10px;
   }
 
-  .ru-buttonWarp .button-btn-g {
+  .ru-buttonWarpA .button-btn-g {
     margin-left: 10px;
   }
 
   .ru-line {
-    background-color: red;
+    // background-color: red;
     width: 100%;
     height: 90px;
     @include flex($df, $fdr, $jcc, $als);
@@ -238,7 +245,7 @@ input {
   }
 
   .ru-item-containerB {
-    background-color: seagreen;
+    // background-color: seagreen;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -254,12 +261,12 @@ input {
 
   .ru-card-warp {
     @include page-iPadPro();
-    background-color: gold;
+    // background-color: gold;
     width: 100%;
   }
 
   .ru-itemWarp {
-    background-color: cornflowerblue;
+    // background-color: cornflowerblue;
     height: 100%;
     margin-bottom: 100px;
     @include flex($df, $fdr, space-around, $als);
@@ -289,10 +296,18 @@ input {
   .ru-item-containerC {
     display: none;
   }
+
+  .ru-buttonWarpA {
+    display: flex;
+  }
+
+  .ru-buttonWarpB {
+    display: none;
+  }
 }
 
 // ipad 版
-@media screen and (min-width: 576px) and (max-width: 767.98px) {
+@media screen and (min-width: 576.1px) and (max-width: 768px) {
   .ru-optionWarp {
     @include page-iPad();
   }
@@ -324,7 +339,7 @@ input {
 
   .ru-mainImg {
     height: 362px;
-    background-image: url("./Images/mainImg.jpg");
+    background-image: url('./Images/mainImg.jpg');
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size: cover;
@@ -349,37 +364,45 @@ input {
   }
 
   .ru-optionWarp {
-    background-color: dodgerblue;
+    // background-color: dodgerblue;
     color: white;
     height: 324px;
     @include page-iPadPro();
     @include flex($df, $fdc, $jcc, $alc);
   }
 
-  .ru-buttonWarp {
-    background-color: rgb(30, 236, 255);
-    width: 80.8%;
-    height: 64px;
-    margin-top: 50px;
-    @include flex($df, $fdr, space-between, $alc);
+  .ru-buttonWarpB {
+    // background-color: rgb(30, 236, 255);
+    width: 100%;
+    margin-top: 30px;
   }
 
-  .ru-buttonWarp .button-btn:nth-child(1) {
-    margin-right: 10px;
+  .ru-buttonWarpB div {
+    display: flex;
+    justify-content: center;
   }
 
-  .ru-buttonWarp .button-btn:nth-child(2),
-  .button-btn:nth-child(3) {
-    margin-right: 10px;
-    margin-left: 10px;
+  .ru-buttonWarpB div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
   }
 
-  .ru-buttonWarp .button-btn-g {
-    margin-left: 10px;
+  .ru-buttonWarpB div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ru-buttonWarpB div .button-btn {
+    margin: 0px 20px;
+  }
+
+  .ru-buttonWarpB div .button-btn-g {
+    margin: 0px 20px;
   }
 
   .ru-line {
-    background-color: red;
+    // background-color: red;
     width: 100%;
     height: 90px;
     @include flex($df, $fdr, $jcc, $als);
@@ -391,7 +414,7 @@ input {
   }
 
   .ru-item-containerB {
-    background-color: seagreen;
+    // background-color: seagreen;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -407,12 +430,12 @@ input {
 
   .ru-card-warp {
     @include page-iPad();
-    background-color: gold;
+    // background-color: gold;
     width: 100%;
   }
 
   .ru-itemWarp {
-    background-color: cornflowerblue;
+    // background-color: cornflowerblue;
     height: 100%;
     margin-bottom: 100px;
     @include flex($df, $fdr, space-around, $als);
@@ -456,10 +479,18 @@ input {
   .ru-item-containerC {
     display: none;
   }
+
+  .ru-buttonWarpA {
+    display: none;
+  }
+
+  .ru-buttonWarpB {
+    display: block;
+  }
 }
 
 // 手機版
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 576px) {
   button:focus,
   input {
     outline: none;
@@ -489,7 +520,7 @@ input {
 
   .ru-mainImg {
     height: 365px;
-    background-image: url("./Images/mainImg.jpg");
+    background-image: url('./Images/mainImg.jpg');
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size: cover;
@@ -515,57 +546,50 @@ input {
   }
 
   .ru-optionWarp {
-    background-color: dodgerblue;
+    // background-color: dodgerblue;
     color: white;
     height: 257px;
     @include page-phone();
     @include flex($df, $fdc, $jcc, $alc);
   }
 
-  .ru-buttonWarp {
-    background-color: rgb(30, 236, 255);
-    width: 80.8%;
-    height: 102px;
+  .ru-buttonWarpB {
+    // background-color: rgb(30, 236, 255);
+    width: 100%;
     margin-top: 30px;
-    @include flex($df, $fdr, space-between, $alc);
-    flex-wrap: wrap;
   }
 
-  .ru-buttonWarp .button-btn {
+  .ru-buttonWarpB .button-btn {
     width: 123px;
     height: 41px;
-    font-size: 18px;
   }
 
-  .ru-buttonWarp .button-btn:nth-child(1) {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .ru-buttonWarp .button-btn:nth-child(2) {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .ru-buttonWarp .button-btn:nth-child(3) {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .ru-buttonWarp .button-btn:nth-child(4) {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .ru-buttonWarp .button-btn-g {
-    margin-left: 10px;
+  .ru-buttonWarpB .button-btn-g {
     width: 123px;
     height: 41px;
-    font-size: 18px;
+  }
+
+  .ru-buttonWarpB div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ru-buttonWarpB div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .ru-buttonWarpB div .button-btn {
+    margin: 0px 14px;
+  }
+
+  .ru-buttonWarpB div .button-btn-g {
+    margin: 0px 14px;
   }
 
   .ru-line {
-    background-color: red;
+    // background-color: red;
     width: 100%;
     height: 70px;
     @include flex($df, $fdr, $jcc, $als);
@@ -577,7 +601,7 @@ input {
   }
 
   .ru-item-containerC {
-    background-color: seagreen;
+    // background-color: seagreen;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -593,20 +617,20 @@ input {
   }
 
   .ru-card-warp {
-    background-color: gold;
+    // background-color: gold;
     height: 100%;
     width: 100%;
     @include page-phone();
   }
 
   .ru-itemWarp {
-    background-color: cornflowerblue;
+    // background-color: cornflowerblue;
     height: 100%;
     margin-bottom: 80px;
     @include flex($df, $fdr, space-between, $als);
   }
 
-  .ru-itemWarp #card-margin{
+  .ru-itemWarp #card-margin {
     margin: 0px;
   }
 
@@ -620,6 +644,14 @@ input {
   }
 
   .ru-item-containerC {
+    display: block;
+  }
+
+  .ru-buttonWarpA {
+    display: none;
+  }
+
+  .ru-buttonWarpB {
     display: block;
   }
 }
