@@ -1,6 +1,17 @@
 // @import "./Share/Components/NavBar/Navbar.scss";
+html {
+  font-size: 10px;
+}
 
 @import '~bootstrap/scss/bootstrap.scss';
+
+// Noto Sans TC
+// font-family: 'Noto Sans TC', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+// Noto Serif TC
+// font-family: 'Noto Serif TC', serif;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap');
 
 body {
   margin: 0;
