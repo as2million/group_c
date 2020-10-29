@@ -10,7 +10,7 @@ import VNavbar from '../../../Share/Components/VNavbar/VNavbar'
 function IrisProfilePageDemo() {
   return (
     <>
-      {/* <NavBar /> */}
+      <NavBar />
       <VNavbar />
       <div className="container iris-userprofile-container">
         <IrisMemberMenu />
