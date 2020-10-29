@@ -10,15 +10,15 @@ import Footer from "Share/Components/Footer/Footer";
 // import JanIndex from "Janice/Pages/JanIndex"
 // import JessMenu from "Jess/Pages/JessMenu"
 // import JessBento from "Jess/Pages/JessBento"
-// import JessVages from "Jess/Pages/JessVages"
+// import JessVegBox from "Jess/Pages/JessVegBox"
 // import IrisUserprofile from "Iris/Pages/IrisUserprofile"
-// import IrisComment  from "Iris/Pages/IrisComment "
+// import IrisOrderComment  from "Iris/Pages/IrisOrderComment "
 // import IrisMyFav from "Iris/Pages/IrisMyFav"
 // import IrisBeastiePoint from "Iris/Pages/IrisBeastiePoint"
 // import ChaCart from "Cha/Pages/ChaCart"
 // import ChaGroupOrder from "Cha/Pages/ChaGroupOrder"
 // import ChaOrderManagement from "Cha/Pages/OrderManagement"
-import RuProudctList from "Ru/Pages/RuProudctList"
+import RuProudctList from "Ru/Pages/ProudctList"
 // import ClaudiaFarmIndex from "Claudia/Pages/ClaudiaFarmIndex"
 // import ClaudiaFarmDetailedPage from "Claudia/Pages/ClaudiaFarmDetailedPage"
 
@@ -53,9 +53,9 @@ function App() {
           <Route exact path="/bento/:id">
             <JessBento />
           </Route>
-          <Route exact path="/vages">
-            <JessVages />
-          </Route> */}
+          <Route exact path="/vegBox">
+            <JessVegBox />
+          </Route>
 
           {/* iris */}
           {/* 放"page資料夾"內的元件 */}
@@ -63,7 +63,7 @@ function App() {
             <IrisUserprofile />
           </Route>
           <Route exact path="/orderComment">
-            <IrisComment />
+            <IrisOrderComment />
           </Route>
           <Route exact path="/myFav">
             <IrisMyFav />

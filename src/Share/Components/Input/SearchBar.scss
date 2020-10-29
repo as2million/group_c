@@ -3,7 +3,6 @@
   fill: #c2c4ca;
 }
 
-
 .iris-searchbar {
   /* 1 */
   font-size: 100%;
@@ -91,29 +90,29 @@
   height: 36px;
 }
 
-@media screen and (max-width: 992px) {
-  .iris-input-field {
-    height: 5rem;
-  }
-}
+// @media screen and (max-width: 992px) {
+//   .iris-input-field {
+//     height: 5rem;
+//   }
+// }
 
-@media screen and (max-width: 376px) {
-  .iris-input-field.first-wrap .svg-wrapper {
-    min-width: 40px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 0 10px;
-  }
-  .iris-input-field {
-    height: 4.5rem;
-  }
-  .iris-input-field.first-wrap svg {
-    width: 26px;
-    height: 26px;
-    fill: #222;
-  }
-}
+// @media screen and (max-width: 376px) {
+//   .iris-input-field.first-wrap .svg-wrapper {
+//     min-width: 40px;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -ms-flex-pack: center;
+//     justify-content: center;
+//     -ms-flex-align: center;
+//     align-items: center;
+//     padding: 0 10px;
+//   }
+//   .iris-input-field {
+//     height: 4.5rem;
+//   }
+//   .iris-input-field.first-wrap svg {
+//     width: 26px;
+//     height: 26px;
+//     fill: #222;
+//   }
+// }

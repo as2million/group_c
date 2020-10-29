@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ClaudiaDetailedSilder.scss';
 import Pic1 from './Images/JPG/strawberry.jpg';
 import Pic2 from './Images/JPG/strawberry1.jpg';
@@ -8,25 +8,84 @@ import Rice from './Images/SVG/rice.svg';
 
 function ClaudiaDetailedSilder() {
 
+    const [imgSrc, setImgSrc] = useState(Pic2);
+
+    const imageSlider = (e) => {
+
+        //change image
+        let selectImg = e.target.src;
+        console.log('img', e.target.src);
+        setImgSrc(selectImg);
+
+        //change triangle display
+
+        const child = e.target;
+        const parent = child.parentNode;
+        console.log('child', child);
+        console.log('parent', parent);
+        const index = Array.prototype.indexOf.call(parent.children, child);
+        console.log('index', index);
+
+        //change triangle display - step 1: find index
+
+        const triangleIcon = e.target.parentNode.nextElementSibling.children[index].children[0]
+        console.log('triangleIcon', e.target.parentNode.nextElementSibling.children[index].children[0]);
+        triangleIcon.style.visibility = 'visible';
+
+        //change triangle display - step 2: find .siblings
+
+        const getSiblings = function (e) {
+            let siblings = [];
+
+            if (!e.parentNode) {
+                return siblings;
+            }
+
+            let sibling = e.parentNode.firstChild;
+
+            while (sibling) {
+                if (sibling.nodeType === 1 && sibling !== e) {
+                    siblings.push(sibling);
+                }
+                sibling = sibling.nextSibling;
+            }
+            return siblings;
+
+        }
+
+        let siblings = getSiblings(triangleIcon.parentNode)
+
+        siblings.forEach(e => {
+            const siblingsTriangles = e.children[0]
+            // console.log('loop', e.children[0]);
+            console.log('siblingsTriangles', siblingsTriangles)
+            siblingsTriangles.style.visibility = 'hidden';
+
+        });
+
+
+    };
+
+
     return (
         <>
             <div className="claudia-detailed-slider">
                 <img className="claudia-detailed-slider-ricebg" alt="" src={Rice} />
                 <div className="claudia-detailed-slider-container">
                     <div className="claudia-image-select">
-                        <img alt="" src={Pic2} />
-                        <img alt="" src={Pic1} />
-                        <img alt="" src={Pic3} />
-                        <img alt="" src={Pic4} />
+                        <img onClick={imageSlider} alt="" src={Pic2} />
+                        <img onClick={imageSlider} alt="" src={Pic1} />
+                        <img onClick={imageSlider} alt="" src={Pic3} />
+                        <img onClick={imageSlider} alt="" src={Pic4} />
                     </div>
                     <div className="claudia-image-triangle-area">
-                        <div className="claudia-image-triangle-box"><div className="claudia-image-triangle "></div></div>
-                        <div className="claudia-image-triangle-box"><div className="claudia-image-triangle "></div></div>
-                        <div className="claudia-image-triangle-box"><div className="claudia-image-triangle "></div></div>
-                        <div className="claudia-image-triangle-box"><div className="claudia-image-triangle "></div></div>
+                        <div className="claudia-image-triangle-box"><div className="claudia-image-triangle"></div></div>
+                        <div className="claudia-image-triangle-box"><div style={{ visibility: 'hidden' }} className="claudia-image-triangle"></div></div>
+                        <div className="claudia-image-triangle-box"><div style={{ visibility: 'hidden' }} className="claudia-image-triangle"></div></div>
+                        <div className="claudia-image-triangle-box"><div style={{ visibility: 'hidden' }} className="claudia-image-triangle"></div></div>
                     </div>
                     <div className="claudia-image-large">
-                        <img alt="" src={Pic4} />
+                        <img alt="" src={imgSrc} />
                     </div>
                 </div>
 
