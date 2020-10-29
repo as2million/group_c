@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { Row, Col } from 'react-bootstrap'
-import { Rate } from 'antd'
-import 'antd/dist/antd.css'
-import './JessHeader.scss'
+import React, { useState, useEffect } from 'react';
+import { Row, Col } from 'react-bootstrap';
+import { Rate } from 'antd';
+import 'antd/dist/antd.css';
+import './JessHeader.scss';
 
 function JessProdoctList() {
   return (
@@ -44,7 +44,7 @@ function JessProdoctList() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default JessProdoctList
+export default JessProdoctList;

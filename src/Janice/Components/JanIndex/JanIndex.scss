@@ -1,34 +1,55 @@
-html {
-  font-size: 10px;
+$gray: #858585;
+$brown: #a59583;
+$lightBrown: #decdbb;
+$skin: #f7ede2;
+$green: #66ab8c;
+$deepGreen: #438b6b;
+$orange: #f48145;
+$deepOrange: #e0611e;
+$yellow: #f6bd60;
+$deepYello: #f5a016;
+
+.jan-p0 {
+  padding: 0 !important;
 }
 
-@import '~bootstrap/scss/bootstrap.scss';
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
-
-* {
-  padding: 0;
-  margin: 0;
-}
-
-.container-fluid {
-  padding: 0;
-}
-
-.container {
-  padding: 0;
-  width: 117rem;
-}
 .box {
   width: 144rem;
   height: 10rem;
   background-color: #fff;
 }
 
+// 輪播牆
 .jan-index-carousel {
-  width: 144rem;
+  width: 100%;
   height: 63rem;
-  background-color: #ccc;
+  background: url('./Images/Images/banner1.jpg') center center no-repeat;
+  background-size: cover;
+  .jan-download-area {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 20px;
+    background-color: #f5a0168e;
+    margin-left: 3rem;
+    .jan-app-logo {
+      background: url('./Images/Images/appLogo.png') center center no-repeat;
+      // background-size: cover;
+      width: 3rem;
+      height: 3rem;
+      .jan-ios {
+        background: url('./Images/Images/ios.png') center center no-repeat;
+        background-size: cover;
+        height: 2rem;
+        width: 5rem;
+      }
+      .jan-android {
+        background: url('./Images/Images/android.png') center center no-repeat;
+        background-size: cover;
+        width: 2rem;
+        height: 5rem;
+      }
+    }
+  }
 }
 
 .jan-index-feature {
@@ -40,15 +61,14 @@ html {
 .jan-feature-title {
   font-size: 3.2rem;
   font-family: 'Noto Serif TC', serif;
-  color: #858585;
-  //   margin-bottom: 0;
+  color: $gray;
   margin: 0.5rem 1rem 1rem 1rem;
 }
 
 .jan-circle-title {
   font-size: 2rem;
   font-family: 'Noto Sans TC', sans-serif;
-  color: #a59583;
+  color: $brown;
   margin-bottom: 0;
 }
 
@@ -57,97 +77,77 @@ html {
 }
 
 .jan-index-feature-circle {
-  background-color: #f7ede2;
+  background-color: $skin;
   width: 13rem;
   height: 13rem;
   border-radius: 50%;
 }
 
 .jan-index-feature-smcircle {
-  background-color: #f48145;
+  background-color: $orange;
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: 50%;
+  border-radius: 50vw;
 }
 
 .jan-farmer-icon {
   background: url('./Images/Svg/farmer.svg') center center no-repeat;
   background-size: 8rem 8rem;
-  width: 9rem;
-  height: 9rem;
-  margin: 2rem 0 0 0;
+  width: 9.5rem;
+  height: 9.5rem;
+  margin: 1.5rem 0 0.5rem 0;
   cursor: pointer;
 }
 .jan-farmer-icon:hover {
-  background: url('./Images/Svg/farmer.svg') center center no-repeat;
-  background-size: 9rem 9rem;
-  width: 9rem;
-  height: 9rem;
-  margin: 2rem 0 0 0;
+  background-size: 9.5rem 9.5rem;
 }
 
 .jan-diet-icon {
   background: url('./Images/Svg/diet.svg') center center no-repeat;
   background-size: 8rem 8rem;
-  width: 9rem;
-  height: 9rem;
-  margin: 2rem 0 0 0.4rem;
+  width: 9.5rem;
+  height: 9.5rem;
+  margin: 1.5rem 0 0.5rem 0.5rem;
+  cursor: pointer;
 }
 .jan-diet-icon:hover {
-  background: url('./Images/Svg/diet.svg') center center no-repeat;
-  background-size: 9rem 9rem;
-  width: 9rem;
-  height: 9rem;
-  margin: 2rem 0 0 0.4rem;
-  cursor: pointer;
+  background-size: 9.5rem 9.5rem;
 }
 
 .jan-choices-icon {
   background: url('./Images/Svg/choices.svg') center center no-repeat;
   background-size: 7.5rem 7.5rem;
-  width: 9rem;
-  height: 9rem;
+  width: 9.5rem;
+  height: 9.5rem;
   margin: 2rem 0 0 0;
   cursor: pointer;
 }
 .jan-choices-icon:hover {
-  background: url('./Images/Svg/choices.svg') center center no-repeat;
-  background-size: 8.5rem 8.5rem;
-  width: 9rem;
-  height: 9rem;
-  margin: 2rem 0 0 0;
+  background-size: 9rem 9rem;
 }
 
 .jan-network-icon {
   background: url('./Images/Svg/network.svg') center center no-repeat;
   background-size: 8rem 8rem;
-  width: 9rem;
-  height: 9rem;
-  margin: 2rem 0 0 0.2rem;
+  width: 9.5rem;
+  height: 9.5rem;
+  margin: 1.8rem 0 0.2rem 0.2rem;
   cursor: pointer;
 }
 .jan-network-icon:hover {
-  background: url('./Images/Svg/network.svg') center center no-repeat;
-  background-size: 9rem 9rem;
-  width: 9rem;
-  height: 9rem;
-  margin: 2rem 0 0 0.2rem;
+  background-size: 9.5rem 9.5rem;
 }
 
 .jan-kcal-icon {
   background: url('./Images/Svg/kcal.svg') center center no-repeat;
   background-size: 8rem 8rem;
-  width: 9rem;
-  height: 9rem;
+  width: 9.5rem;
+  height: 9.5rem;
   margin: 2rem 0 0 0;
   cursor: pointer;
 }
 .jan-kcal-icon:hover {
-  background: url('./Images/Svg/kcal.svg') center center no-repeat;
-  background-size: 9rem 9rem;
-  width: 9rem;
-  height: 9rem;
-  margin: 2rem 0 0 0;
+  background-size: 9.5rem 9.5rem;
 }
 
 .jan-index-feature-triangle {
@@ -155,19 +155,122 @@ html {
   height: 0;
   border-style: solid;
   border-width: 0 15px 22px 15px;
-  border-color: transparent transparent #f7ede2 transparent;
+  border-color: transparent transparent $skin transparent;
   margin-top: 2rem;
 }
 
 .jan-index-feature-cards {
-  width: 144rem;
+  width: 100%;
   height: 55rem;
-  background-color: #f7ede2;
+  background-color: $skin;
 }
 
 .jan-recommend {
   background: url('./Images/Svg/rice.svg') center center no-repeat;
   background-size: cover;
+  width: 100%;
+  height: 78rem;
+}
+
+.jan-discount {
+  background-color: $skin;
+  width: 100%;
+  height: 78rem;
+}
+
+// 購物流程
+.jan-shopping-process {
+  background: url('./Images/Images/bentos.jpg') center center no-repeat;
+  background-size: cover;
   width: 100vw;
   height: 78rem;
+  margin: 0 1.5rem;
+  .jan-blur {
+    background-color: rgba(255, 255, 255, 0.235);
+    width: 100vw;
+    height: 78rem;
+    backdrop-filter: blur(5px) brightness(1.2);
+    .jan-black-blur {
+      height: 45rem;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+// 購物步驟
+.jan-step-circle {
+  margin-top: 6rem;
+  p {
+    font-size: 1.8rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    color: $skin;
+    margin-top: 14rem;
+  }
+  .jan-step1 {
+    background: url('./Images/Svg/step1.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+  }
+  .jan-step2 {
+    background: url('./Images/Svg/step2.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+  }
+  .jan-step3 {
+    background: url('./Images/Svg/step3.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+  }
+  .jan-step4 {
+    background: url('./Images/Svg/step4.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+  }
+  .jan-step5 {
+    background: url('./Images/Svg/step5.svg') center center no-repeat;
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
+  }
+}
+
+// 地圖
+.jan-map {
+  background: url('./Images/Svg/rice.svg') center center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 75rem;
+  position: relative;
+  .jan-map-form {
+    background-color: $skin;
+    width: 70%;
+    height: 75rem;
+    margin: 0;
+    margin-top: -3rem;
+    left: 0;
+    top: 0;
+    .jan-map-title {
+      margin-left: 15rem;
+      margin-top: 5rem;
+    }
+    .jan-map-view {
+      width: 60%;
+      height: 70%;
+      background-color: $yellow;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+    }
+  }
+}
+
+.jan-article {
+  background-color: #fff;
+  width: 100%;
+  height: 55rem;
 }

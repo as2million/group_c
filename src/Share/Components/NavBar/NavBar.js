@@ -1,34 +1,34 @@
 // 導入其它的模組
-import React, { useState } from 'react'
-import { Nav } from 'react-bootstrap'
-import './Navbar.scss'
-import 'antd/dist/antd.css'
-import { Popover } from 'antd'
-import { MenuOutlined } from '@ant-design/icons'
-import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg'
-import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg'
-import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg'
-import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg'
-import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg'
+import React, { useState } from 'react';
+import { Nav } from 'react-bootstrap';
+import './Navbar.scss';
+import 'antd/dist/antd.css';
+import { Popover } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
+import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg';
+import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg';
+import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg';
+import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg';
+import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg';
 // 選單連結要使用NavLink取代Link
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 function MyNavbar(props) {
-  const [count, setCount] = useState(0)
-  const [shoppingList, setShoppingList] = useState('0')
-  const [showNav, setShowNav] = useState(true)
+  const [count, setCount] = useState(0);
+  const [shoppingList, setShoppingList] = useState('0');
+  const [showNav, setShowNav] = useState(true);
 
   function myFunction() {
-    const x = document.getElementById('myNavBar')
+    const x = document.getElementById('NavBar');
     if (x.className === 'nav') {
-      x.className += ' responsive'
+      x.className += ' responsive';
     } else {
-      x.className = 'nav'
+      x.className = 'nav';
     }
   }
   return (
     <>
-      <div className="nav" id="myNavBar">
+      <div className="nav" id="NavBar">
         <div className="navBar-jess-container">
           <div className="navBar-jess-navCollapse ">
             <ul className="navBar-jess-navigation">
@@ -60,7 +60,7 @@ function MyNavbar(props) {
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/vages">
+                      <Nav.Link as={NavLink} to="/vegBox">
                         蔬菜箱
                       </Nav.Link>
                     </li>
@@ -143,7 +143,9 @@ function MyNavbar(props) {
                 >
                   <ShoppingCart className="navbar-jess-ShopingCart" />
                   <ShoppingAmount className="jess-navbarCartAmount" />
-                  <span className="jess-navbarCartNum">{count}</span>
+                  <span className="jess-navbarCartNum" id="jess-navbarCartNum">
+                    {count}
+                  </span>
                 </Popover>
               </li>
             </ul>
@@ -154,9 +156,9 @@ function MyNavbar(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 // 輸出元件(函式)
 
-export default MyNavbar
+export default MyNavbar;

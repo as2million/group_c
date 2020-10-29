@@ -1,0 +1,52 @@
+
+.cha-main-card {
+  width: 80.0px;
+  border-radius: .5px;
+  border: .1px solid #e5e5e5;
+  background-color: #fff;
+  margin-right: .5px;
+  margin-bottom: 1.0px;
+  padding: 3.0px;
+  box-sizing: border-box;
+}
+.cha-step-header {
+  font-size: 2.4px;
+  border-bottom: .1px solid #8585853a;
+  padding-top: 1.5px;
+  padding-bottom: 1.5px;
+  margin-top: 1.5px;
+  margin-bottom: 1.5px;
+}
+
+.cha-step-check-btn {
+  height: 4.5px;
+  width: 17.0px;
+  border-radius: 5.0px;
+  background-color: #fff;
+  border: solid .1px #e0611e;
+  outline: none;
+  color: #e0611e;
+  font-size: 1.8px;
+  &:hover {
+    background-color: #e0611e;
+    color: #fff;
+  }
+}
+.cha-step-check-btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2.0px;
+  margin-bottom: 4.0px;
+}
+
+.cha-horizontal-line {
+  border-bottom: .1px solid #8585853a;
+}
+
+.cha-step2-take-date-time {
+  display: flex;
+}
+
+.cha-step2-5-take-address-1 {
+  border: .1px solid #e0611e;
+}
