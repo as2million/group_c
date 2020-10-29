@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-// import JanAppTest from './JanAppTest';
+import JanAppTest from './JanAppTest';
 import * as serviceWorker from './serviceWorker';
 // import ClaudiaAppTest from './ClaudiaAppTest'
 // import JessAppTest from './JessAppTest'
@@ -11,7 +11,7 @@ import IrisAppTest from './IrisAppTest';
 ReactDOM.render(
   <React.StrictMode>
     {/* <ClaudiaAppTest /> */}
-    {/* <JanAppTest /> */}
+    <JanAppTest />
     {/* <JessAppTest /> */}
     <IrisAppTest />
     {/* <ChaAppTest /> */}
