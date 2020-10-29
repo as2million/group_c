@@ -1,7 +1,3 @@
-html {
-  font-size: 10px;
-}
-
 $gray: #858585;
 $brown: #a59583;
 $lightBrown: #decdbb;
@@ -13,16 +9,6 @@ $deepOrange: #e0611e;
 $yellow: #f6bd60;
 $deepYello: #f5a016;
 
-@import '~bootstrap/scss/bootstrap.scss';
-
-// Noto Sans TC
-// font-family: 'Noto Sans TC', sans-serif;
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
-
-// Noto Serif TC
-// font-family: 'Noto Serif TC', serif;
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap');
-
 .jan-p0 {
   padding: 0 !important;
 }
@@ -33,10 +19,37 @@ $deepYello: #f5a016;
   background-color: #fff;
 }
 
+// 輪播牆
 .jan-index-carousel {
   width: 100%;
   height: 63rem;
-  background-color: #ccc;
+  background: url('./Images/Images/banner1.jpg') center center no-repeat;
+  background-size: cover;
+  .jan-download-area {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 20px;
+    background-color: #f5a0168e;
+    margin-left: 3rem;
+    .jan-app-logo {
+      background: url('./Images/Images/appLogo.png') center center no-repeat;
+      // background-size: cover;
+      width: 3rem;
+      height: 3rem;
+      .jan-ios {
+        background: url('./Images/Images/ios.png') center center no-repeat;
+        background-size: cover;
+        height: 2rem;
+        width: 5rem;
+      }
+      .jan-android {
+        background: url('./Images/Images/android.png') center center no-repeat;
+        background-size: cover;
+        width: 2rem;
+        height: 5rem;
+      }
+    }
+  }
 }
 
 .jan-index-feature {
@@ -190,45 +203,39 @@ $deepYello: #f5a016;
   p {
     font-size: 1.8rem;
     font-family: 'Noto Sans TC', sans-serif;
-    font-weight: medium;
+    font-weight: 700;
     color: $skin;
-    position: absolute;
-    bottom: -6rem;
+    margin-top: 14rem;
   }
   .jan-step1 {
     background: url('./Images/Svg/step1.svg') center center no-repeat;
     width: 12rem;
     height: 12rem;
     background-size: cover;
-    position: relative;
   }
   .jan-step2 {
     background: url('./Images/Svg/step2.svg') center center no-repeat;
     width: 12rem;
     height: 12rem;
     background-size: cover;
-    position: relative;
   }
   .jan-step3 {
     background: url('./Images/Svg/step3.svg') center center no-repeat;
     width: 12rem;
     height: 12rem;
     background-size: cover;
-    position: relative;
   }
   .jan-step4 {
     background: url('./Images/Svg/step4.svg') center center no-repeat;
     width: 12rem;
     height: 12rem;
     background-size: cover;
-    position: relative;
   }
   .jan-step5 {
     background: url('./Images/Svg/step5.svg') center center no-repeat;
     width: 12rem;
     height: 12rem;
     background-size: cover;
-    position: relative;
   }
 }
 
@@ -242,19 +249,23 @@ $deepYello: #f5a016;
   .jan-map-form {
     background-color: $skin;
     width: 70%;
-    height: 78rem;
-    left: 0;
-    position: absolute;
-    top: 0;
+    height: 75rem;
+    margin: 0;
     margin-top: -3rem;
-  }
-  .jan-map-view {
-    width: 60%;
-    height: 70%;
-    background-color: $yellow;
-    position: absolute;
-    right: 0;
-    bottom: 10rem;
+    left: 0;
+    top: 0;
+    .jan-map-title {
+      margin-left: 15rem;
+      margin-top: 5rem;
+    }
+    .jan-map-view {
+      width: 60%;
+      height: 70%;
+      background-color: $yellow;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+    }
   }
 }
 

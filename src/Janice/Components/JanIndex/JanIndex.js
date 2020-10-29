@@ -6,18 +6,40 @@ import titleLeftLight from './Images/Svg/titleLeft-light.svg';
 import titleRightLight from './Images/Svg/titleRight-light.svg';
 import recommend1 from './Images/Svg/recommend1.svg';
 import recommend2 from './Images/Svg/recommend2.svg';
+import map1 from './Images/Svg/map1.svg';
+import map2 from './Images/Svg/map2.svg';
 import stepArrow from './Images/Svg/stepArrow.svg';
 
 function JanIndex(props) {
   return (
     <>
+      <div className="box d-flex justify-content-center align-items-center">
+        navbar的高度
+      </div>
       {/* 輪播牆 */}
       <div className="container-fluid jan-p0">
         <div className="row">
-          <div className="box d-flex justify-content-center align-items-center">
-            navbar的高度
+          <div className="jan-index-carousel">
+            {/* 切換鈕 */}
+            <div className="jan-carousel-five-boxes">
+              <div className="jan-carousel-page1"></div>
+              <div className="jan-carousel-page2"></div>
+              <div className="jan-carousel-page3"></div>
+              <div className="jan-carousel-page4"></div>
+              <div className="jan-carousel-page5"></div>
+            </div>
+            {/* 應用程式下載 */}
+            <div className="jan-download-area d-flex justify-content-center">
+              <div className="jan-app-logo"></div>
+              <div className="d-flex flex-column align-items-center jan-">
+                <p>點擊此處下載應用程式</p>
+                <div className="jan-download-buttonsm d-flex justify-content-center">
+                  <div className="jan-ios"></div>
+                  <div className="jan-android"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="jan-index-carousel"></div>
         </div>
       </div>
 
@@ -68,14 +90,22 @@ function JanIndex(props) {
 
       {/* 今日推薦 */}
       <div className="container-fluid jan-p0 jan-recommend">
-        <div className="container jan-p0">
-          <div className="row mt-5">
-            <img alt="" src={recommend1} className="ml-5 mr-5" />
-            <br />
+        <div className="container mt-5 flex-column jan-p0">
+          {/* 今日推薦 */}
+          <div className="row col-6">
+            <img alt="" src={recommend1} />
+          </div>
+          {/* 你一定要試試 */}
+          <div className="row col-6">
             <img alt="" src={recommend2} />
           </div>
-          <div className="jan-recommend-cards"> </div>
         </div>
+        <div className="container jan-recommend-cards">
+          <div className="row"></div>
+          <div className="row"></div>
+          <div className="row"></div>
+        </div>
+        <div className="jan-recommend-button"></div>
       </div>
 
       {/* 專屬優惠 */}
@@ -111,31 +141,31 @@ function JanIndex(props) {
               {/* 五個步驟 */}
               <div className="container jan-p0 jan-step-circle d-flex justify-content-between">
                 {/* step1 */}
-                <div className="jan-step1 align-item-center flex-column ">
+                <div className="jan-step1 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="jan-step1-icon"></div>
                   <p>選購商品</p>
                 </div>
                 <img alt="" src={stepArrow} />
                 {/* step2 */}
-                <div className="jan-step2 flex-column">
+                <div className="jan-step2 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="jan-step2-icon"></div>
-                  <p>加入購物車</p>
+                  <p className="">加入購物車</p>
                 </div>
                 <img alt="" src={stepArrow} />
                 {/* step3 */}
-                <div className="jan-step3 flex-column">
+                <div className="jan-step3 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="jan-step3-icon"></div>
                   <p>會員登入</p>
                 </div>
                 <img alt="" src={stepArrow} />
                 {/* step4 */}
-                <div className="jan-step4 flex-column">
+                <div className="jan-step4 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="jan-step4-icon"></div>
                   <p>確認結帳</p>
                 </div>
                 <img alt="" src={stepArrow} />
                 {/* step5 */}
-                <div className="jan-step5 flex-column">
+                <div className="jan-step5 d-flex flex-wrap justify-content-center align-items-center">
                   <div className="jan-step5-icon"></div>
                   <p>領取餐點</p>
                 </div>
@@ -147,8 +177,31 @@ function JanIndex(props) {
 
       {/* 地圖 */}
       <div className="container-fluid jan-p0 jan-map mt-5">
-        <div className="container jan-p0 jan-map-form"></div>
-        <div className="jan-map-view"></div>
+        {/* 表格 */}
+        <div className="container jan-p0 jan-map-form">
+          {/* 標題 */}
+          <div className="container mt-5 flex-column jan-p0 jan-map-title">
+            <br />
+            {/* 將餐桌上的美味 */}
+            <div className="row mt-5">
+              <img alt="" src={map1} />
+            </div>
+            {/* 外送給你 */}
+            <div className="row ">
+              <img alt="" src={map2} />
+            </div>
+          </div>
+          <div className="container">
+            <div className="row"></div>
+          </div>
+          <div className="container jan-map-buttons">
+            <div className="row 5"></div>
+            <div className="row 5"></div>
+          </div>
+
+          {/* 地圖 */}
+          <div className="jan-map-view"></div>
+        </div>
       </div>
 
       {/* 好文推薦 */}
