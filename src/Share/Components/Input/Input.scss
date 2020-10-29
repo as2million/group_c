@@ -75,6 +75,9 @@ $dropdown-link-hover-bg: #f5a016;
 .iris-select-wrapper {
   position: relative;
 }
+.iris-select:hover {
+  cursor: pointer;
+}
 
 .iris-triangle {
   position: absolute;
@@ -89,6 +92,7 @@ $dropdown-link-hover-bg: #f5a016;
   font-size: 2rem;
   border-radius: 2.5rem;
   height: 5rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 376px) {
