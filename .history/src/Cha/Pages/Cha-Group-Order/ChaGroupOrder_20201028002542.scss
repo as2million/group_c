@@ -1,0 +1,73 @@
+.cha-group-wrap {
+  margin-top: 0rem;
+  background-color: #f7ede2;
+}
+
+.cha-group-create-card {
+  width: 70rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #e5e5e5;
+  background-color: #fff;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 3rem;
+  box-sizing: border-box;
+  margin: auto;
+}
+.cha-group-create-header {
+  color: #858585;
+  font-size: 3rem;
+}
+.cha-group-create-header-div {
+  display: flex;
+  justify-content: center;
+}
+
+.group-left-monster {
+  background: url('./Images/group-left-monster.svg') no-repeat;
+  background-size: 100% 100%;
+  width: 12.5rem;
+  height: 14.2rem;
+}
+.group-right-monster {
+  background: url('./Images/group-right-monster.svg') no-repeat;
+  background-size: 100% 100%;
+  width: 14.1rem;
+  height: 12.9rem;
+  margin-top: 1.5rem;
+}
+.group-monster-row {
+  display: flex;
+  justify-content: space-between;
+  width: 35rem;
+}
+.group-monster-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+
+.group-icon-container {
+  display: flex;
+  justify-content: center;
+  
+  // margin-left: 1rem;
+}
+.group-icon-row {
+  display: flex;
+  justify-content: space-between;
+
+}
+.group-fb-icon {
+  background: url('./Images/group-fb-icon.svg') no-repeat;
+  // background-size: 100% 100%;
+  width: 7rem;
+  height: 7rem;
+}
+.group-link-icon {
+  background: url('./Images/group-link-icon.svg') no-repeat;
+  // background-size: 100% 100%;
+  width: 7rem;
+  height: 7rem;
+}

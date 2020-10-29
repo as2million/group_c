@@ -1,0 +1,54 @@
+html {
+  font-size: 10rem;
+  font-style: 微軟正黑體;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  background-color: #f7ede2;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20rem;
+  margin-top: 80rem;
+}
+
+// .step-header {
+//   font-size: 24rem;
+//   border-bottom: 1rem solid #8585853a;
+//   padding-top: 15rem;
+//   padding-bottom: 15rem;
+//   margin-top: 15rem;
+//   margin-bottom: 15rem;
+// }
+
+// .step-check-btn {
+//   height: 45rem;
+//   width: 170rem;
+//   border-radius: 50rem;
+//   background-color: #fff;
+//   border: solid 1rem #e0611e;
+//   outline: none;
+//   color: #e0611e;
+//   font-size: 18rem;
+//   &:hover {
+//     background-color: #e0611e;
+//     color: #fff;
+//   }
+// }
+// .step-check-btn-div {
+//   display: flex;
+//   justify-content: flex-end;
+//   margin-top: 20rem;
+//   margin-bottom: 40rem;
+// }
+
+// .horizontal-line {
+//   border-bottom: 1rem solid #8585853a;
+// }
