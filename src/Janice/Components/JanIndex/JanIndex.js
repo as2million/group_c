@@ -19,22 +19,25 @@ function JanIndex(props) {
       {/* 輪播牆 */}
       <div className="container-fluid jan-p0">
         <div className="row">
-          <div className="jan-index-carousel">
+          <div className="jan-index-carousel position-relative">
             {/* 切換鈕 */}
-            <div className="jan-carousel-five-boxes">
-              <div className="jan-carousel-page1"></div>
-              <div className="jan-carousel-page2"></div>
-              <div className="jan-carousel-page3"></div>
-              <div className="jan-carousel-page4"></div>
-              <div className="jan-carousel-page5"></div>
-            </div>
+            <ul class="position-absolute jan-carousel-dots d-flex justify-content-center">
+              <li class="jan-carousel-dot1"></li>
+              <li class="jan-carousel-dot2"></li>
+              <li class="jan-carousel-dot3"></li>
+              <li class="jan-carousel-dot4"></li>
+              <li class="jan-carousel-dot5"></li>
+            </ul>
+
             {/* 應用程式下載 */}
+            {/* 橘底 */}
             <div className="jan-download-area d-flex justify-content-center">
+              {/* AppLogo＋應用程式icon */}
               <div className="jan-app-logo"></div>
-              <div className="d-flex flex-column align-items-center jan-">
-                <p>點擊此處下載應用程式</p>
+              <div className="d-flex flex-column align-items-center jan-app-info">
+                <p className="mt-1">點擊此處下載應用程式</p>
                 <div className="jan-download-buttonsm d-flex justify-content-center">
-                  <div className="jan-ios"></div>
+                  <div className="jan-ios mr-3"></div>
                   <div className="jan-android"></div>
                 </div>
               </div>

@@ -22,31 +22,53 @@ $deepYello: #f5a016;
 // 輪播牆
 .jan-index-carousel {
   width: 100%;
-  height: 63rem;
+  height: 68rem;
   background: url('./Images/Images/banner1.jpg') center center no-repeat;
   background-size: cover;
+  .jan-carousel-dots {
+    bottom: 2.5rem;
+    right: 13.5rem;
+    li {
+      list-style: none;
+      width: 5.8rem;
+      height: 1.3rem;
+      margin: 0 1rem;
+      background-color: $skin;
+      cursor: pointer;
+    }
+  }
   .jan-download-area {
-    width: 20rem;
-    height: 20rem;
+    margin-top: 55rem;
+    width: 27rem;
+    height: 9rem;
     border-radius: 20px;
     background-color: #f5a0168e;
-    margin-left: 3rem;
+    margin-left: 5rem;
+    padding: 1rem;
     .jan-app-logo {
       background: url('./Images/Images/appLogo.png') center center no-repeat;
-      // background-size: cover;
-      width: 3rem;
-      height: 3rem;
+      background-size: cover;
+      width: 7rem;
+      height: 7rem;
+    }
+    .jan-app-info {
+      p {
+        color: $skin;
+        font-size: 1.6rem;
+      }
+      width: 18rem;
+      height: 8rem;
       .jan-ios {
         background: url('./Images/Images/ios.png') center center no-repeat;
         background-size: cover;
-        height: 2rem;
-        width: 5rem;
+        height: 2.5rem;
+        width: 8rem;
       }
       .jan-android {
         background: url('./Images/Images/android.png') center center no-repeat;
         background-size: cover;
-        width: 2rem;
-        height: 5rem;
+        width: 8rem;
+        height: 2.5rem;
       }
     }
   }
