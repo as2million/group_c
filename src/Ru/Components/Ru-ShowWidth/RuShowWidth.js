@@ -9,7 +9,6 @@ function ShowWidth(props) {
       // console.log(e.target.innerWidth);
       SetWidth(e.target.innerWidth);
     });
-    console.log("Hi");
   }, []);
   const [width, SetWidth] = useState("");
   return (
