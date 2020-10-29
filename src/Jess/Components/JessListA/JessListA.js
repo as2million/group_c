@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { Tabs, Sonnet, Tab, Container } from 'react-bootstrap'
-import './JessListA.scss'
+import React, { useState, useEffect } from 'react';
+import { Tabs, Sonnet, Tab, Container } from 'react-bootstrap';
+import './JessListA.scss';
 
 function JessListA() {
   // Acomponent
@@ -74,13 +74,13 @@ function JessListA() {
           </tbody>
         </table>
       </div>
-    )
-  }
+    );
+  };
 
   // B
   const ComponentB = (props) => {
     return (
-      <div className="container component mt-5 row flex-row justify-content-around  px-5  ">
+      <div className="container component  mt-5 row flex-row justify-content-around  px-5  ">
         <table class="table table-striped jess-table2 col-sm-7 my-5 ">
           <thead>
             <tr>
@@ -157,31 +157,31 @@ function JessListA() {
           </p>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   //
   const setTabActive = (addElem, removeName) => {
-    let removeTargets = document.querySelectorAll(removeName)
+    let removeTargets = document.querySelectorAll(removeName);
     removeTargets.forEach((target) => {
-      target.classList.remove('active')
-    })
+      target.classList.remove('active');
+    });
 
-    addElem.classList.add('active')
-  }
+    addElem.classList.add('active');
+  };
 
   const TabMenu = () => {
-    const [component, setComponent] = React.useState(<ComponentA />)
+    const [component, setComponent] = React.useState(<ComponentA />);
 
     const tabContentA = (e) => {
-      setTabActive(e.target, '.jess-productTabMenu__item')
-      setComponent(<ComponentA />)
-    }
+      setTabActive(e.target, '.jess-productTabMenu__item');
+      setComponent(<ComponentA />);
+    };
 
     const tabContentB = (e) => {
-      setTabActive(e.target, '.jess-productTabMenu__item')
-      setComponent(<ComponentB name="B" />)
-    }
+      setTabActive(e.target, '.jess-productTabMenu__item');
+      setComponent(<ComponentB name="B" />);
+    };
     return (
       <div className="container">
         <div className="jess-prductTabTittle">
@@ -202,14 +202,14 @@ function JessListA() {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <>
       <TabMenu />
     </>
-  )
+  );
 }
 
-export default JessListA
+export default JessListA;
