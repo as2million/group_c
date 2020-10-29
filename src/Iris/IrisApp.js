@@ -6,6 +6,7 @@ import VNavbar from './../Share/Components/VNavbar/VNavbar';
 import Test from './Pages/Test';
 import Test2 from './Pages/Test2';
 import IrisProfilePage from './Pages/IrisProfilePage';
+import IrisOrderComment from './Pages/IrisOrderComment';
 import MainContent from './Components/MainContent';
 import './IrisApp.scss';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
@@ -30,6 +31,9 @@ function IrisApp() {
             </Route>
             <Route path="/UserProfile">
               <IrisProfilePage name={name} />
+            </Route>
+            <Route path="/orderComment">
+              <IrisOrderComment />
             </Route>
           </Switch>
         </MainContent>

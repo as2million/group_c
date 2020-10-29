@@ -12,7 +12,7 @@ import JessMenu from "Jess/Pages/JessMenu"
 import JessBento from "Jess/Pages/JessBento"
 import JessVages from "Jess/Pages/JessVages"
 import IrisUserprofile from "Iris/Pages/IrisUserprofile"
-import IrisComment  from "Iris/Pages/IrisComment "
+import IrisOrderComment  from "Iris/Pages/IrisOrderComment "
 import IrisMyFav from "Iris/Pages/IrisMyFav"
 import IrisBeastiePoint from "Iris/Pages/IrisBeastiePoint"
 import ChaCart from "Cha/Pages/ChaCart"
@@ -63,7 +63,7 @@ function App() {
             <IrisUserprofile />
           </Route>
           <Route exact path="/orderComment">
-            <IrisComment />
+            <IrisOrderComment />
           </Route>
           <Route exact path="/myFav">
             <IrisMyFav />
