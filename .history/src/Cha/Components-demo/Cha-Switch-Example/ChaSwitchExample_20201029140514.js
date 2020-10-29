@@ -11,7 +11,6 @@ function ChaSwitchExample() {
           width: '100px',
           backgroundColor: '#faf',
           margin: 'auto',
-          marginTop: '10px',
         }}
       ></div>
     );
@@ -20,15 +19,10 @@ function ChaSwitchExample() {
   // Bコンポーネント
   const ComponentB = (props) => {
     return (
-      <div
-        style={{
-          height: '100px',
-          width: '100px',
-          backgroundColor: '#faa',
-          margin: 'auto',
-          marginTop: '10px',
-        }}
-      ></div>
+      <div class="component">
+        <h1>This component is</h1>
+        <p>Show this component which on click tab-{props.name}.</p>
+      </div>
     );
   };
 

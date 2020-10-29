@@ -68,8 +68,6 @@ function ChaSwitchExample() {
               營養標示
             </li>
           </ul>
-          <div className="jess-productTabBorder"></div>
-          <div className="jess-product-Tab1 d-flex ">{component}</div>
         </div>
       </div>
     );

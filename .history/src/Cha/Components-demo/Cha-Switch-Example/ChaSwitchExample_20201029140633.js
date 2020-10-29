@@ -24,7 +24,7 @@ function ChaSwitchExample() {
         style={{
           height: '100px',
           width: '100px',
-          backgroundColor: '#faa',
+          backgroundColor: '#faf',
           margin: 'auto',
           marginTop: '10px',
         }}

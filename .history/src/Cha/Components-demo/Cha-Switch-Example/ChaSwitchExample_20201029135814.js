@@ -5,30 +5,72 @@ function ChaSwitchExample() {
   // Acomponent
   const ComponentA = (props) => {
     return (
-      <div
-        style={{
-          height: '100px',
-          width: '100px',
-          backgroundColor: '#faf',
-          margin: 'auto',
-          marginTop: '10px',
-        }}
-      ></div>
+      <div className="container component mt-5 row justify-content-between jess-productTab">
+        <table class="table table-striped jess-table col-4">
+          <thead>
+            <tr>
+              <th scope="col">配 菜</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>義式烘蛋</td>
+            </tr>
+            <tr>
+              <td>蠔油高麗菜</td>
+            </tr>
+            <tr>
+              <td>香烤時蔬</td>
+            </tr>
+            <tr>
+              <td>蒜香空心菜</td>
+            </tr>
+            <tr>
+              <td>點點藜麥飯(50%)</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-striped jess-table col-6">
+          <thead>
+            <tr>
+              <th scope="col">配 菜</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>黑胡椒香蒜舒肥雞</td>
+              <td>原味時代股份有限公司</td>
+            </tr>
+            <tr>
+              <td>高麗菜</td>
+              <td>朝敏菓菜行</td>
+            </tr>
+            <tr>
+              <td>芋香白米</td>
+              <td>朝敏菓菜行</td>
+            </tr>
+            <tr>
+              <td>雞蛋</td>
+              <td>上田企業社</td>
+            </tr>
+            <tr>
+              <td>冷凍綠花椰菜</td>
+              <td>勤億蛋品</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     );
   };
 
   // Bコンポーネント
   const ComponentB = (props) => {
     return (
-      <div
-        style={{
-          height: '100px',
-          width: '100px',
-          backgroundColor: '#faa',
-          margin: 'auto',
-          marginTop: '10px',
-        }}
-      ></div>
+      <div class="component">
+        <h1>This component is</h1>
+        <p>Show this component which on click tab-{props.name}.</p>
+      </div>
     );
   };
 

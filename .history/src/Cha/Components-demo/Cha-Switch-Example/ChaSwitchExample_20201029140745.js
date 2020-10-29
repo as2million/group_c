@@ -67,9 +67,7 @@ function ChaSwitchExample() {
             <li className="jess-productTabMenu__item" onClick={tabContentB}>
               營養標示
             </li>
-          </ul>
-          <div className="jess-productTabBorder"></div>
-          <div className="jess-product-Tab1 d-flex ">{component}</div>
+
         </div>
       </div>
     );
