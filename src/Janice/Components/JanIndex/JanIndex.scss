@@ -1,4 +1,5 @@
 $gray: #858585;
+$lightGray: #fafafa;
 $brown: #a59583;
 $lightBrown: #decdbb;
 $skin: #f7ede2;
@@ -13,34 +14,76 @@ $deepYello: #f5a016;
   padding: 0 !important;
 }
 
-.box {
+.jan-fake-nav {
   width: 144rem;
   height: 10rem;
   background-color: #fff;
 }
 
+// 標題宋體樣式
+.jan-feature-title {
+  font-size: 3.2rem;
+  font-family: 'Noto Serif TC', serif;
+  color: $gray;
+  margin: 0.5rem 1rem 1rem 1rem;
+}
+
+// 共用元件按鈕大小修改
+.jan-index-button button {
+  width: 15rem;
+  height: 5rem;
+  font-size: 1.8rem;
+}
+
+// 線上客服
+.jan-chat {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+  background-color: #f5a0168e;
+  bottom: 3rem;
+  right: 4rem;
+  z-index: 2000;
+  cursor: pointer;
+  .jan-chat-icon {
+    background: url('./Images/Svg/chat.svg') center center no-repeat;
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
 // 輪播牆
 .jan-index-carousel {
   width: 100%;
-  height: 68rem;
+  height: 70rem;
   background: url('./Images/Images/banner1.jpg') center center no-repeat;
   background-size: cover;
+  // 滾動提示
+  .jan-mouse-scroll {
+    width: 3rem;
+    height: 5rem;
+    background: url('./Images/Svg/mouse-scroll.svg') center center no-repeat;
+    bottom: 2.5rem;
+    cursor: pointer;
+  }
+  // 切換鈕
   .jan-carousel-dots {
     bottom: 2.5rem;
-    right: 13.5rem;
+    right: 15rem;
     li {
       list-style: none;
       width: 5.8rem;
-      height: 1.3rem;
+      height: 1.2rem;
       margin: 0 1rem;
       background-color: $skin;
       cursor: pointer;
     }
   }
+  // 下載應用程式div的樣式
   .jan-download-area {
-    margin-top: 55rem;
-    width: 27rem;
-    height: 9rem;
+    bottom: 2.5rem;
+    width: 28rem;
+    height: 10rem;
     border-radius: 20px;
     background-color: #f5a0168e;
     margin-left: 5rem;
@@ -48,6 +91,7 @@ $deepYello: #f5a016;
     .jan-app-logo {
       background: url('./Images/Images/appLogo.png') center center no-repeat;
       background-size: cover;
+      margin: auto;
       width: 7rem;
       height: 7rem;
     }
@@ -55,6 +99,7 @@ $deepYello: #f5a016;
       p {
         color: $skin;
         font-size: 1.6rem;
+        font-weight: 400;
       }
       width: 18rem;
       height: 8rem;
@@ -63,115 +108,114 @@ $deepYello: #f5a016;
         background-size: cover;
         height: 2.5rem;
         width: 8rem;
+        border-radius: 5px;
+        cursor: pointer;
       }
       .jan-android {
         background: url('./Images/Images/android.png') center center no-repeat;
         background-size: cover;
         width: 8rem;
         height: 2.5rem;
+        border-radius: 5px;
+        cursor: pointer;
       }
     }
   }
 }
 
+// 特色專區
+// 切換區域容器的大小
 .jan-index-feature {
   width: 117rem;
   height: 20rem;
   background-color: #fff;
+  // 圓圈們
+  .jan-circles {
+    width: 117rem;
+    // 分隔橘色小圓圈
+    .jan-index-feature-smcircle {
+      background-color: $orange;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50vw;
+    }
+    // skin底色
+    .jan-index-feature-circle {
+      background-color: $skin;
+      width: 13rem;
+      height: 13rem;
+      border-radius: 50%;
+      // 特色文字樣式
+      .jan-circle-title {
+        font-size: 2rem;
+        font-family: 'Noto Sans TC', sans-serif;
+        color: $brown;
+        margin-bottom: 0;
+      }
+      // 在地小農
+      .jan-farmer-icon {
+        background: url('./Images/Svg/farmer.svg') center center no-repeat;
+        background-size: 8rem 8rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        margin: 1.5rem 0 0.5rem 0;
+        cursor: pointer;
+      }
+      .jan-farmer-icon:hover {
+        background-size: 9.5rem 9.5rem;
+      }
+      // 產銷履歷
+      .jan-diet-icon {
+        background: url('./Images/Svg/diet.svg') center center no-repeat;
+        background-size: 8rem 8rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        margin: 1.5rem 0 0.5rem 0.5rem;
+        cursor: pointer;
+      }
+      .jan-diet-icon:hover {
+        background-size: 9.5rem 9.5rem;
+      }
+      // 客製化便當
+      .jan-choices-icon {
+        background: url('./Images/Svg/choices.svg') center center no-repeat;
+        background-size: 7.5rem 7.5rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        margin: 2rem 0 0 0;
+        cursor: pointer;
+      }
+      .jan-choices-icon:hover {
+        background-size: 9rem 9rem;
+      }
+      // 揪團訂餐
+      .jan-network-icon {
+        background: url('./Images/Svg/network.svg') center center no-repeat;
+        background-size: 8rem 8rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        margin: 1.8rem 0 0.2rem 0.2rem;
+        cursor: pointer;
+      }
+      .jan-network-icon:hover {
+        background-size: 9.5rem 9.5rem;
+      }
+      // 卡路里計算
+      .jan-kcal-icon {
+        background: url('./Images/Svg/kcal.svg') center center no-repeat;
+        background-size: 8rem 8rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        margin: 2rem 0 0 0;
+        cursor: pointer;
+      }
+      .jan-kcal-icon:hover {
+        background-size: 9.5rem 9.5rem;
+      }
+    }
+  }
 }
-
-.jan-feature-title {
-  font-size: 3.2rem;
-  font-family: 'Noto Serif TC', serif;
-  color: $gray;
-  margin: 0.5rem 1rem 1rem 1rem;
-}
-
-.jan-circle-title {
-  font-size: 2rem;
-  font-family: 'Noto Sans TC', sans-serif;
-  color: $brown;
-  margin-bottom: 0;
-}
-
-.jan-circles {
-  width: 117rem;
-}
-
-.jan-index-feature-circle {
-  background-color: $skin;
-  width: 13rem;
-  height: 13rem;
-  border-radius: 50%;
-}
-
-.jan-index-feature-smcircle {
-  background-color: $orange;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50vw;
-}
-
-.jan-farmer-icon {
-  background: url('./Images/Svg/farmer.svg') center center no-repeat;
-  background-size: 8rem 8rem;
-  width: 9.5rem;
-  height: 9.5rem;
-  margin: 1.5rem 0 0.5rem 0;
-  cursor: pointer;
-}
-.jan-farmer-icon:hover {
-  background-size: 9.5rem 9.5rem;
-}
-
-.jan-diet-icon {
-  background: url('./Images/Svg/diet.svg') center center no-repeat;
-  background-size: 8rem 8rem;
-  width: 9.5rem;
-  height: 9.5rem;
-  margin: 1.5rem 0 0.5rem 0.5rem;
-  cursor: pointer;
-}
-.jan-diet-icon:hover {
-  background-size: 9.5rem 9.5rem;
-}
-
-.jan-choices-icon {
-  background: url('./Images/Svg/choices.svg') center center no-repeat;
-  background-size: 7.5rem 7.5rem;
-  width: 9.5rem;
-  height: 9.5rem;
-  margin: 2rem 0 0 0;
-  cursor: pointer;
-}
-.jan-choices-icon:hover {
-  background-size: 9rem 9rem;
-}
-
-.jan-network-icon {
-  background: url('./Images/Svg/network.svg') center center no-repeat;
-  background-size: 8rem 8rem;
-  width: 9.5rem;
-  height: 9.5rem;
-  margin: 1.8rem 0 0.2rem 0.2rem;
-  cursor: pointer;
-}
-.jan-network-icon:hover {
-  background-size: 9.5rem 9.5rem;
-}
-
-.jan-kcal-icon {
-  background: url('./Images/Svg/kcal.svg') center center no-repeat;
-  background-size: 8rem 8rem;
-  width: 9.5rem;
-  height: 9.5rem;
-  margin: 2rem 0 0 0;
-  cursor: pointer;
-}
-.jan-kcal-icon:hover {
-  background-size: 9.5rem 9.5rem;
-}
-
+// 切換指示的三角形
 .jan-index-feature-triangle {
   width: 0;
   height: 0;
@@ -180,27 +224,78 @@ $deepYello: #f5a016;
   border-color: transparent transparent $skin transparent;
   margin-top: 2rem;
 }
-
+// 特色內容
 .jan-index-feature-cards {
   width: 100%;
   height: 55rem;
   background-color: $skin;
 }
 
+// 今日推薦
 .jan-recommend {
   background: url('./Images/Svg/rice.svg') center center no-repeat;
   background-size: cover;
   width: 100%;
   height: 78rem;
+  .jan-recommend-wrap {
+    margin-top: 6rem;
+    width: 100%;
+    height: 100%;
+  }
+  .jan-recommend-cards {
+    .jan-card-container {
+      box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+      background-color: $lightGray;
+      border-radius: 20px;
+      width: 30rem;
+      height: 45rem;
+      .jan-card-img-warp {
+        height: 30rem;
+        position: relative;
+        .jan-card-img {
+          border-radius: 20px 20px 0 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('../../../Share/Components/Card/Images/item1.jpg');
+          background-size: cover;
+          background-position: 70% center;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+    .jan-card-info {
+      h3 {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 400;
+        text-align: center;
+        margin: 2.5rem 0;
+      }
+      .jan-card-hr {
+        width: 25rem;
+        height: 100%;
+        border-top: 1px solid $lightBrown;
+        p {
+          color: $gray;
+          font-family: 'Noto Sans TC', sans-serif;
+          margin: 0 1rem;
+        }
+        .jan-card-star {
+          margin: 0px 2px;
+          width: 1.4rem;
+        }
+      }
+    }
+  }
 }
 
+// 專屬優惠
 .jan-discount {
   background-color: $skin;
   width: 100%;
   height: 78rem;
 }
 
-// 購物流程
+// 購物流程背景樣式
 .jan-shopping-process {
   background: url('./Images/Images/bentos.jpg') center center no-repeat;
   background-size: cover;
@@ -219,7 +314,7 @@ $deepYello: #f5a016;
     }
   }
 }
-// 購物步驟
+// 購物五步驟
 .jan-step-circle {
   margin-top: 6rem;
   p {
@@ -262,12 +357,14 @@ $deepYello: #f5a016;
 }
 
 // 地圖
+// 米粒底圖
 .jan-map {
   background: url('./Images/Svg/rice.svg') center center no-repeat;
   background-size: cover;
   width: 100%;
   height: 75rem;
   position: relative;
+  // 表單背景色
   .jan-map-form {
     background-color: $skin;
     width: 70%;
@@ -280,6 +377,12 @@ $deepYello: #f5a016;
       margin-left: 15rem;
       margin-top: 5rem;
     }
+    .jan-adress-form {
+      background-color: #ccc;
+      width: 50rem;
+      height: 52rem;
+    }
+    // 地圖區域
     .jan-map-view {
       width: 60%;
       height: 70%;
