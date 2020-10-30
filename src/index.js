@@ -11,7 +11,7 @@ import IrisAppTest from './IrisAppTest';
 // import RuAppTest from './RuAppTest';
 ReactDOM.render(
   <React.StrictMode>
-    <ClaudiaAppTest />
+    {/* <ClaudiaAppTest /> */}
     {/* <JanAppTest /> */}
 
     {/* <JessAppTest /> */}
