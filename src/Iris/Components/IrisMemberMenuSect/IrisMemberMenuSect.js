@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import './IrisMemberMenu.scss';
+import './IrisMemberMenuSect.scss';
 import { ReactComponent as UserProfileIcon } from './Images/user_profile.svg';
 import { ReactComponent as BeastieIcon } from './Images/beastie_icon.svg';
 import { ReactComponent as OrderIcon } from './Images/order_icon.svg';

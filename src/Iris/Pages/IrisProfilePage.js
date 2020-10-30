@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import IrisMemberMenu from '../Components/IrisMemberMenu/IrisMemberMenu';
-import IrisDataEdit from '../Components/IrisDataEdit/IrisDataEdit';
+import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect';
+import IrisDataEditSect from '../Components/IrisDataEditSect/IrisDataEditSect';
 import './IrisMemberPage.scss';
 
 function IrisProfilePage() {
   return (
     <>
       <div className="container iris-memberpage-container">
-        <IrisMemberMenu />
-        <IrisDataEdit />
+        <IrisMemberMenuSect />
+        <IrisDataEditSect />
       </div>
     </>
   );

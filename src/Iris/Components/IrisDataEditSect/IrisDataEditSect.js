@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import './IrisDataEdit.scss';
+import './IrisDataEditSect.scss';
 import { ReactComponent as WaveLine } from './Images/wave_line.svg';
 import InputH40 from './../../../Share/Components/Input/InputH40';
 // import SelectBox from './../../../Share/Components/Input/SelectBox';
