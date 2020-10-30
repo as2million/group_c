@@ -1,0 +1,199 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+/* 清除內外邊距 */
+* {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$white: #ffffff;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
+
+.jess-proC-bg {
+  padding: 0 !important;
+  width: 100%;
+  height: 75rem;
+  background-color: $brown;
+}
+.jess-proC-grace {
+  background: url('./images/jess-productlistC-768x457.jpg') no-repeat;
+  background-size: cover;
+  width: 144.6rem;
+  height: 33.7rem;
+  position: relative;
+}
+.jess-proC-farm {
+  background: url('./images/jess-proC-farm.png') no-repeat;
+  background-size: cover;
+  width: 22rem;
+  height: 22rem;
+}
+.jess-text-30white {
+  font-size: 3rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  color: $white;
+}
+.jess-text-15white {
+  font-size: 1.6rem;
+  font-family: 'Noto Sans TC';
+  color: $white;
+}
+.jess-bento {
+  background: url('./images/jess-proC-bento.png') no-repeat;
+  background-size: contain;
+  width: 60rem;
+  height: 50rem;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 360rem;
+}
+.jess-text-24brown {
+  font-size: 2.4rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  color: $darkBrown;
+}
+.jess-text-20white {
+  font-size: 2rem;
+  font-family: 'Noto Sans TC';
+
+  color: $white;
+}
+.jess-text-15Gray {
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $darkGary;
+  line-height: 3rem;
+}
+
+.jess-proC-vegChange {
+  padding: 0 !important;
+  width: 100%;
+  height: 80rem;
+  background-color: $lightBrown;
+  // & .active {
+  //   background-color: $orange;
+  // }
+}
+// .jess-proC-vegChange .jess-proC-vegChange2 .active {
+//   background-color: $orange;
+// }
+
+.tab-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.tab-menu__item1 {
+  color: #858585;
+  text-align: center;
+  width: 10rem;
+  padding: 0.8rem 1.2rem;
+  position: relative;
+}
+.tab-menu__item1 .active {
+  color: $orange;
+}
+.tab-menu__item2 {
+  color: #858585;
+  text-align: center;
+  width: 10rem;
+  padding: 0.8rem 1.2rem;
+  position: relative;
+}
+.tab-menu__item1 .active {
+  color: $orange;
+}
+
+.jess-proC-vegPic1 {
+  width: 18rem;
+  height: 13rem;
+  background-color: $brown;
+  top: -13rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80%;
+}
+
+.jess-proC-vegPic2 {
+  width: 18rem;
+  height: 13rem;
+  background-color: $lightBrown;
+  top: -13rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 95%;
+}
+
+// .jess-proC-vegPic1 {
+//   width: 18rem;
+//   height: 13rem;
+//   background-color: $brown;
+//   top: -13rem;
+//   background-image: url('./images/jess-onion.png');
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   background-size: 80%;
+// }
+
+// .jess-proC-vegPic2 {
+//   width: 18rem;
+//   height: 13rem;
+//   background-color: $lightBrown;
+//   top: -13rem;
+//   background-image: url('./images/jess-veg1.png');
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   background-size: 95%;
+// }
+
+// .jess-proC-vegPic3 {
+//   width: 18rem;
+//   height: 13rem;
+//   background-color: $lightBrown;
+//   top: -13rem;
+//   background-image: url('./images/jess-carrot.png');
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   background-size: 95%;
+// }
+// .jess-proC-vegPic4 {
+//   width: 18rem;
+//   height: 13rem;
+//   background-color: $lightBrown;
+//   top: -13rem;
+//   background-image: url('./images/jess-gugu.png');
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   background-size: 80%;
+// }
+// .jess-proC-vegPic5 {
+//   width: 18rem;
+//   height: 13rem;
+//   background-color: $lightBrown;
+//   top: -13rem;
+//   background-image: url('./images/jess-chicken.png');
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   background-size: 95%;
+// }
+@media screen and (max-width: 480px) {
+}
