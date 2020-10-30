@@ -1,0 +1,56 @@
+.cha-group-menu-fake-navbar {
+  width: 100%;
+  background-color: #faf;
+  height: 15rem;
+}
+.cha-group-menu-fake-navbar2 {
+  width: 100%;
+  background-color: #faa;
+  height: 8rem;
+}
+
+.cha-group-menu-prompt-container {
+  display: flex;
+  justify-content: center;
+}
+.cha-group-menu-prompt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 53rem;
+}
+.cha-group-menu-lack-prompt {
+  border: 0.2rem solid #e5e5e5;
+  color: #858585;
+  font-size: 2rem;
+  border-radius: 6rem;
+  width: 11.4rem;
+  height: 11.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cha-group-menu-search-icon {
+  background: url('./Images/group-search-yellow.svg') no-repeat;
+  background-size: 100% 100%;
+  width: 6.4rem;
+  height: 6.4rem;
+}
+.cha-group-menu-arrow-one{
+  background: url('./Images/group-arrow.svg');
+  background-size: 100% 100%;
+  width: 1.9rem;
+  height: 3.3rem;
+  margin-top: 1.5rem;
+}
+  .cha-group-menu-lack-prompt
+  .cha-group-menu-arrow-two
+  .cha-group-menu-group-success{
+    background: url('./Images/group-success.svg');
+    background-size: cover;
+    width: 7.4rem;
+    height: 7.4rem;
+  }
+  * {
+  outline: 1px solid red;
+}

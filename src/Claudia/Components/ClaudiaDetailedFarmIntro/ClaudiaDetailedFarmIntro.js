@@ -28,7 +28,12 @@ function ClaudiaDetailedFarmIntro() {
                                 <div className="claudia-detailed-farm-silder-bar"></div>
                                 <div className="claudia-detailed-farm-silder-bar"></div>
                             </div>
-                            <img alt="" src={Farm1} />
+                            <div className="claudia-detailed-farm-silder-img-container">
+                                <img alt="" src={Farm1} />
+                                <img alt="" src={Farm1} />
+                                <img alt="" src={Farm1} />
+                            </div>
+
                         </div>
                     </div>
                     <div className="claudia-detailed-farm-card">

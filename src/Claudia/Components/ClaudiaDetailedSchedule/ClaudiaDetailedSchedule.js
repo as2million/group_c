@@ -1,5 +1,4 @@
 import React from 'react';
-import Timeline from './Images/SVG/timeline.svg';
 import './ClaudiaDetailedSchedule.scss';
 import Schedule1 from './Images/JPG/schedule1.jpg';
 import Schedule2 from './Images/JPG/schedule2.jpg';
@@ -14,7 +13,6 @@ function ClaudiaDetailedSchedule() {
                 <h1><b>活動行程</b></h1>
                 <div className="claudia-detailed-schedule-container">
                     <div className="claudia-detailed-schedule-timeline"></div>
-                    {/* <img alt="timeline" src={Timeline} /> */}
                     <div className="claudia-detailed-schedule-card1">
                         <div className="claudia-detailed-schedule-card1-text">
                             <h2>9:30</h2>

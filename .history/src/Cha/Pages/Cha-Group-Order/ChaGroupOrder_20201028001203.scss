@@ -1,0 +1,42 @@
+.cha-group-wrap {
+  margin-top: 0rem;
+  background-color: #f7ede2;
+}
+
+.cha-group-create-card {
+  width: 70rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #e5e5e5;
+  background-color: #fff;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 3rem;
+  box-sizing: border-box;
+  margin: auto;
+}
+.cha-group-create-header {
+  color: #858585;
+  font-size: 3rem;
+}
+.cha-group-create-header-div {
+  display: flex;
+  justify-content: center;
+}
+
+.group-left-monster{
+  background: url('./Images/group-left-monster.svg')no-repeat;
+  background-size: 100% 100%;
+  width: 12.5rem;
+  height: 14.2rem;
+}
+.group-right-monster{
+  background: url('./Images/group-right-monster.svg') no-repeat;
+  background-size: 100% 100%;
+  width: 141px;
+  height: 129px;
+}
+.group-monster-row{
+  display: flex;
+  justify-content: center;
+  300
+}

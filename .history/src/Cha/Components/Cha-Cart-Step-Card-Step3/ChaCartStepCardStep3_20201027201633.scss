@@ -1,0 +1,167 @@
+html {
+  font-size: 10rem;
+  font-style: 微軟正黑體;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  background-color: #f7ede2;
+}
+
+.cha-main-card {
+  width: 800rem;
+  border-radius: 5rem;
+  border: 1rem solid #e5e5e5;
+  background-color: #fff;
+  margin-right: 5rem;
+  margin-bottom: 10rem;
+  padding: 30rem;
+  box-sizing: border-box;
+}
+// .cha-main-card-step2 {
+//   height: 500rem;
+// }
+
+.cha-aside-card {
+  width: 360rem;
+  /* height: 30rem; */
+  border-radius: 5rem;
+  border: 1rem solid #e5e5e5;
+  background-color: #fff;
+  margin-left: 5rem;
+  padding: 30rem;
+  box-sizing: border-box;
+}
+
+.cha-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20rem;
+  margin-top: 80rem;
+}
+
+.cha-step-header {
+  font-size: 24rem;
+  border-bottom: 1rem solid #8585853a;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+  margin-top: 15rem;
+  margin-bottom: 15rem;
+}
+
+// .cha-step1-total-price {
+//   display: flex;
+//   justify-content: flex-end;
+//   margin-top: 10rem;
+// }
+// .cha-step1-total-price-word {
+//   font-size: 15rem;
+//   color: #858585;
+//   margin-right: 5rem;
+//   margin-top: 10rem;
+// }
+
+// .cha-step1-total-price-number {
+//   font-size: 36rem;
+//   color: #f48145;
+// }
+
+.cha-step-check-btn {
+  height: 45rem;
+  width: 170rem;
+  border-radius: 50rem;
+  background-color: #fff;
+  border: solid 1rem #e0611e;
+  outline: none;
+  color: #e0611e;
+  font-size: 18rem;
+  &:hover {
+    background-color: #e0611e;
+    color: #fff;
+  }
+}
+.cha-step-check-btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20rem;
+  margin-bottom: 40rem;
+}
+
+.cha-horizontal-line {
+  border-bottom: 1rem solid #8585853a;
+}
+
+.cha-Cha-Credit-Card {
+  width: 420rem;
+}
+
+.cha-Cha-Credit-Card-div {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 40rem;
+}
+
+.cha-Cha-Credit-Card-flip {
+  width: 420rem;
+  height: 240rem;
+  transform-style: preserve-3d;
+}
+.cha-Cha-Credit-Card-all {
+  position: absolute;
+  left: 0;
+  top: 0;
+  backface-visibility: hidden;
+}
+.cha-Cha-Credit-Card-flip .cha-Cha-Credit-Card-all:nth-of-type(1) {
+  // background: blue;
+  transition: 0.5s transform;
+}
+
+.cha-Cha-Credit-Card-flip .cha-Cha-Credit-Card-all:nth-of-type(2) {
+  // background: red;
+  transform: rotateY(-180deg);
+  transition: 0.5s transform;
+}
+
+.cha-Cha-Credit-Card-flip:hover .cha-Cha-Credit-Card-all:nth-of-type(1) {
+  transform: rotateY(180deg);
+}
+.cha-Cha-Credit-Card-flip:hover .cha-Cha-Credit-Card-all:nth-of-type(2) {
+  transform: rotateY(0deg);
+}
+
+.cha-step3-5-receipt-div {
+  display: flex;
+}
+.cha-step3-5-receipt-div div{
+  margin-right: 20rem;
+}
+.cha-card-number-on-picture {
+  position: absolute;
+  left: 50rem;
+  top: 100rem;
+  font-size: 30rem;
+}
+.cha-card-MONTH-YEAR-on-picture {
+  position: absolute;
+  left: 120rem;
+  top: 170rem;
+  font-size: 24rem;
+}
+.cha-card-3number-on-picture{
+  position: absolute;
+  left: 310rem;
+  top: 125rem;
+  font-size: 24rem;
+  background-color: rgba(49, 0, 0, 0);
+  border: none;
+}
+.cha-step3-receipt-alert {
+  color: #e0611e;
+  font-size: 15rem;
+}

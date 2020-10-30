@@ -13,9 +13,12 @@
     padding-bottom: 70px;
 }
 
+//Left
+
 .claudia-detailed-farm-adr-info {
     width: 560px;
 }
+
 .claudia-detailed-farm-adr-info p {
     font-size: 20px;
     color: #858585;
@@ -25,18 +28,109 @@
     margin-top: 20px;
 }
 
-.claudia-detailed-farm-adr-transport {
-    width: auto;
-}
+//Right
 
-.claudia-detailed-farm-adr-transport p {
-    font-size: 18px;
-    color: #858585;
+.claudia-detailed-farm-adr-transport {
+    padding-left: 20px;
 }
 
 .claudia-detailed-farm-adr-transport-container {
-    width: 85%;
+    width: 90%;
     margin: 150px auto;
+}
+
+.claudia-detailed-farm-adr-transport-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.claudia-detailed-farm-adr-transport-buttons button{
+    width: 150px;
+    height: 45px;
+    margin: 0px 2px 30px 2px;
+    background-color: transparent;
+}
+
+.claudia-detailed-farm-adr-transport-text {
+    margin-top: 20px;
+}
+
+.claudia-detailed-farm-adr-transport-text p{
+    font-size: 18px;
+    color: #858585;
+    margin: 40px 0px;
+}
+
+@media only screen and (max-width: 375px) {
+    .claudia-detailed-farm-adr {
+        width: 375px;
+        height: 800px;
+
+    }
+
+    .claudia-detailed-farm-adr h1 {
+        font-size: 24px;
+        margin: 40px auto;
+    }
+
+    .claudia-detailed-farm-adr-container {
+        width: 375px;
+        display: block;
+        padding-bottom: 30px;
+    }
+
+    //Left
+
+    .claudia-detailed-farm-adr-info-container { 
+        width: 375px;
+        height: 370px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .claudia-detailed-farm-adr-info {
+        width: 335px;
+        height: 350px;
+        margin: 0px auto;
+        
+    }
+
+    .claudia-detailed-farm-adr-info p {
+        width: 310px;
+        font-size: 18px;
+        margin: 0px auto;
+    }
+
+    .claudia-detailed-farm-adr-info iframe {
+        width: 335px;
+        height: 255px;
+    }
+
+    //Right
+
+    .claudia-detailed-farm-adr-transport {
+        width: 375px;
+        height: 320px;
+        padding: 0px;
+    }
+
+    .claudia-detailed-farm-adr-transport-container {
+        width: 296px;
+        height: 320px;
+        margin: 0px auto;
+    }
+
+    .claudia-detailed-farm-adr-transport-buttons button{
+        width: 125px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+
+    .claudia-detailed-farm-adr-transport-text p{
+        margin: 20px 0px;
+    }
 }
 
 

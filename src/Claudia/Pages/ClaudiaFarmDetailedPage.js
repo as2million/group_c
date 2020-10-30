@@ -19,10 +19,10 @@ function ClaudiaFarmIntroPage() {
                 <ClaudiaDetailedMainText />
                 <ClaudiaDetailedSilder />
                 <ClaudiaDetailedSchedule />
-                {/* <ClaudiaDetailedFarmIntro />
+                <ClaudiaDetailedFarmIntro />
                 <ClaudiaDetailedFarmAdr />
                 <ClaudiaDetailedNavButtons />
-                <ClaudiaDetailedRecommended /> */}
+                <ClaudiaDetailedRecommended />
             </ClaudiaMainContent>
             <Footer />
         </>
