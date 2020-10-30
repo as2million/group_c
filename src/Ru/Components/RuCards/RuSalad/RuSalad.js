@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import 'Ru/Components/RuSalad/Style.scss';
+import 'Ru/Components/RuCards/Style.scss';
 
 // 引用共用元件
 import Card from 'Share/Components/Card/Card';
 
 // 引用圖片
-import line from 'Ru/Components/Ru-component/Images/line.png';
-import background from 'Ru/Components/Ru-component/Images/background.png';
+import background from './Images/background.png';
 
 function RuSalad() {
   return (

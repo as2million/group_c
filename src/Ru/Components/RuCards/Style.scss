@@ -50,6 +50,14 @@
   @include flex($df, $fdr, space-between, $als);
 }
 
+.ru-itemWarp3{
+  margin-bottom: 60px;
+}
+
+// .ru-itemWarp3 {
+  // margin-bottom: 60px;
+// }
+
 // 切換商品區 ----------
 
 .ru-item-containerA {
@@ -116,6 +124,10 @@
 
   .ru-itemWarp5 .card-container:nth-child(2) {
     visibility: hidden;
+  }
+
+  .ru-itemWarp5{
+    margin-bottom: 60px;
   }
 
   // 切換商品區 ----------
@@ -198,6 +210,10 @@
     visibility: hidden;
   }
 
+  .ru-itemWarp5{
+    margin-bottom: 60px;
+  }
+
   // 切換商品區 ----------
 
   .ru-item-containerA {
@@ -254,6 +270,10 @@
 
   .ru-itemWarp #card-margin {
     margin: 0px;
+  }
+
+  .ru-itemWarp9{
+    margin-bottom: 60px;
   }
 
   // 切換商品區 ----------

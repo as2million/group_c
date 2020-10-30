@@ -19,6 +19,8 @@ import Footer from 'Share/Components/Footer/Footer';
 // import ChaGroupOrder from "Cha/Pages/ChaGroupOrder"
 // import ChaOrderManagement from "Cha/Pages/OrderManagement"
 import RuProudctList from 'Ru/Pages/RuProudctList';
+import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad';
+import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom';
 // import ClaudiaFarmIndex from "Claudia/Pages/ClaudiaFarmIndex"
 // import ClaudiaFarmDetailedPage from "Claudia/Pages/ClaudiaFarmDetailedPage"
 
@@ -77,10 +79,10 @@ function App() {
             <RuProudctList />
           </Route>
           <Route exact path="/productListSalad">
-            <RuProudctList />
+            <RuProudctListSalad />
           </Route>
           <Route exact path="/productListCustom">
-            <RuProudctList />
+            <RuProudctListCustom />
           </Route>
 
           {/* cha */}

@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
-import 'Ru/Components/RuCustom/Style.scss';
+import 'Ru/Components/RuCards/Style.scss';
 
 // 引用共用元件
 import Card from 'Share/Components/Card/Card';
 
 // 引用圖片
-import line from 'Ru/Components/Ru-component/Images/line.png';
-import background from 'Ru/Components/Ru-component/Images/background.png';
+import background from './Images/background.png';
 
-function RuCustom() {
+function RuBento() {
   return (
     <>
-      <h1 style={{ textAlign: 'center', fontSize: '80px' }}>
-        ----- 這頁是客製化便當 -----
-      </h1>
       {/* 商品區 - 網頁版 / 手機板s */}
       <div className="ru-item-containerA">
         {/* 卡片區 s */}
@@ -352,4 +348,4 @@ function RuCustom() {
   );
 }
 
-export default RuCustom;
+export default RuBento;
