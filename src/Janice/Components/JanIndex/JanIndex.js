@@ -42,6 +42,9 @@ function JanIndex(props) {
               </div>
             </div>
 
+            {/* 滾動提示 */}
+            <div className="position-absolute jan-mouse-scroll d-flex justify-content-center w-100"></div>
+
             {/* 切換鈕 */}
             <ul class="position-absolute jan-carousel-dots d-flex justify-content-center">
               <li class="jan-carousel-dot1"></li>
@@ -108,7 +111,7 @@ function JanIndex(props) {
       {/* 今日推薦 */}
       <div className="container-fluid jan-p0 jan-recommend ">
         <div className="jan-recommend-wrap">
-          <div className="container mt-5 flex-column jan-p0">
+          <div className="container flex-column jan-p0">
             {/* 今日推薦 */}
             <div className="row col-6">
               <img alt="" src={recommend1} />
@@ -120,9 +123,9 @@ function JanIndex(props) {
           </div>
 
           {/* 商品卡片 */}
-          <div className="mt-5 container jan-recommend-cards d-flex justify-content-around">
-            {/* <Card1 /> */}
-            <div className="row">
+          <div className="mt-5 container jan-recommend-cards">
+            <div className="d-flex justify-content-between">
+              {/* <Card1 /> */}
               <div className="jan-card-container">
                 {/* item圖片 */}
                 <section className="jan-card-img-warp">
@@ -153,9 +156,7 @@ function JanIndex(props) {
                   </div>
                 </section>
               </div>
-            </div>
-            {/* <Card2 /> */}
-            <div className="row">
+              {/* <Card2 /> */}
               <div className="jan-card-container">
                 {/* item圖片 */}
                 <section className="jan-card-img-warp">
@@ -186,9 +187,7 @@ function JanIndex(props) {
                   </div>
                 </section>
               </div>
-            </div>
-            {/* Card3 */}
-            <div className="row">
+              {/* Card3 */}
               <div className="jan-card-container">
                 {/* item圖片 */}
                 <section className="jan-card-img-warp">
@@ -329,7 +328,7 @@ function JanIndex(props) {
         {/* 橘色底色 */}
         <div className="container flex-column jan-p0 jan-map-form">
           {/* 標題 */}
-          <div className="container mt-5 flex-column jan-p0 jan-map-title">
+          <div className="flex-column jan-p0 jan-map-title">
             <br />
             {/* 將餐桌上的美味 */}
             <div className="row mt-5">
