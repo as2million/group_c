@@ -4,7 +4,7 @@ import { ReactComponent as WaveLine } from './Images/wave_line.svg';
 import { ReactComponent as IrisMemberLine } from './Images/iris_member_line.svg';
 import star from './Images/star.svg';
 
-function IrisUserComment() {
+function IrisUserCommentSect() {
   return (
     <>
       <div className="container col-9">
@@ -76,4 +76,4 @@ function IrisUserComment() {
     </>
   );
 }
-export default IrisUserComment;
+export default IrisUserCommentSect;

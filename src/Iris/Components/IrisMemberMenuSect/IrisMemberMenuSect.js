@@ -9,7 +9,7 @@ import { ReactComponent as GroupOrderIcon } from './Images/group_order.svg';
 import { ReactComponent as MyFavIcon } from './Images/my_fav.svg';
 import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg';
 
-function IrisMemberMenu() {
+function IrisMemberMenuSect() {
   return (
     <>
       <div class="container iris-membermenu-container col-3 ">
@@ -80,4 +80,4 @@ function IrisMemberMenu() {
   );
 }
 
-export default IrisMemberMenu;
+export default IrisMemberMenuSect;

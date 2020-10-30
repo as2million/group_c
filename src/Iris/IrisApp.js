@@ -8,6 +8,7 @@ import Test from './Pages/Test';
 import Test2 from './Pages/Test2';
 import IrisProfilePage from './Pages/IrisProfilePage';
 import IrisOrderComment from './Pages/IrisOrderComment';
+import IrisMyFav from './Pages/IrisMyFav';
 import MainContent from './Components/MainContent';
 import './IrisApp.scss';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
@@ -35,6 +36,9 @@ function IrisApp() {
             </Route>
             <Route path="/orderComment">
               <IrisOrderComment />
+            </Route>
+            <Route path="/MyFav">
+              <IrisMyFav />
             </Route>
           </Switch>
         </MainContent>

@@ -6,11 +6,12 @@ import InputH40 from './../../../Share/Components/Input/InputH40';
 // import SelectBox from './../../../Share/Components/Input/SelectBox';
 import Button from './../../../Share/Components/Button/Button';
 
-function IrisDataEdit() {
+function IrisDataEditSect() {
   return (
     <>
-      <div className="container iris-content-title-container col-9">
-        <div className="row justify-content-center">
+      <div className="container col-9">
+        {/* <div className="row justify-content-center"> */}
+        <div className="row justify-content-center iris-content-title-container ">
           <h2 className="iris-profile-title">會員資料修改</h2>
           <WaveLine />
           <h6 className="iris-profile-note">
@@ -65,4 +66,4 @@ function IrisDataEdit() {
   );
 }
 
-export default IrisDataEdit;
+export default IrisDataEditSect;
