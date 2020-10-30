@@ -5,6 +5,7 @@ import JessListA from '../Components/JessListA/JessListA';
 import JessListB from '../Components/JessListB/JessListB';
 import JessListC from '../Components/JessListC/JessListC';
 import JessListD from '../Components/JessListD/JessListD';
+import JessListE from '../Components/JessListE/JessListE';
 
 function JessBento() {
   return (
@@ -15,6 +16,7 @@ function JessBento() {
       <JessListB />
       <JessListC />
       <JessListD />
+      <JessListE />
     </>
   );
 }

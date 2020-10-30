@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './JessListC.scss';
 import { Parallax } from 'rc-scroll-anim';
+import Slide from 'react-reveal/Slide';
+import vegChoice1 from './images/jess-onion.png';
 
 function JessListC() {
   // A-Veg
@@ -40,7 +42,21 @@ function JessListC() {
       </div>
     );
   };
-
+  const ComponentA2 = (props) => {
+    return (
+      <Slide bottom cascade>
+        <div className="col-7">
+          <p className="jess-text-24brown">哈囉台中新社</p>
+          <p className="jess-text-20white">菇香厚實黑早冬菇</p>
+          <p className="jess-text-15Gray">
+            嚴選生長期在12月至6月的黑早冬菇，將於寒冷氣候栽種的第一及第二水冬菇，經人工挑選出蘊含豐富養分的菇種，
+            由於風味濃郁、肉質肥厚因而被稱之「厚實」冬菇，而佔總產量30%的精選性更展現其珍貴與稀少
+            不僅馥郁香氣讓人為之陶醉，飽滿厚實的口感更猶如鮑魚般紮實彈牙，搭配各式食材料理皆能展現最佳風味
+          </p>
+        </div>
+      </Slide>
+    );
+  };
   // B
   const ComponentB = (props) => {
     return (
@@ -62,6 +78,19 @@ function JessListC() {
             <h2>朝敏果菜行</h2>
           </div>
         </div>
+      </div>
+    );
+  };
+  const ComponentB2 = (props) => {
+    return (
+      <div className="col-7">
+        <p className="jess-text-24brown">哈囉我是B2</p>
+        <p className="jess-text-20white">菇香厚實黑早冬菇</p>
+        <p className="jess-text-15Gray">
+          嚴選生長期在12月至6月的黑早冬菇，將於寒冷氣候栽種的第一及第二水冬菇，經人工挑選出蘊含豐富養分的菇種，
+          由於風味濃郁、肉質肥厚因而被稱之「厚實」冬菇，而佔總產量30%的精選性更展現其珍貴與稀少
+          不僅馥郁香氣讓人為之陶醉，飽滿厚實的口感更猶如鮑魚般紮實彈牙，搭配各式食材料理皆能展現最佳風味
+        </p>
       </div>
     );
   };
@@ -151,26 +180,29 @@ function JessListC() {
 
   const TabMenu = () => {
     const [component, setComponent] = React.useState(<ComponentA />);
+    const [component2, setComponent2] = React.useState(<ComponentA2 />);
 
     const vegA = (e) => {
-      setTabActive(e.target, '.jess-proC-vegPic1');
+      setTabActive(e.target, '.a');
       setComponent(<ComponentA />);
+      setComponent2(<ComponentA2 />);
     };
 
     const vegB = (e) => {
-      setTabActive(e.target, '.jess-proC-vegPic2');
+      setTabActive(e.target, '.jess-a');
       setComponent(<ComponentB />);
+      setComponent2(<ComponentB2 />);
     };
     const vegC = (e) => {
-      setTabActive(e.target, '.jess-proC-vegPic3');
+      setTabActive(e.target, '.jess-a');
       setComponent(<ComponentC />);
     };
     const vegD = (e) => {
-      setTabActive(e.target, '.jess-proC-vegPic4');
+      setTabActive(e.target, '.jess-a');
       setComponent(<ComponentD />);
     };
     const vegE = (e) => {
-      setTabActive(e.target, '.jess-proC-vegPic5');
+      setTabActive(e.target, '.jess-a');
       setComponent(<ComponentE />);
     };
     return (
@@ -195,8 +227,11 @@ function JessListC() {
           </div>
 
           <div className="container pt-5">
-            <div className=" row">
-              <div className="col-7">
+            <div className="jess-bento float-right"></div>
+            <div className="jess-coverbg">
+              <div className=" row jess-zindex">
+                {component2}
+                {/* <div className="col-7">
                 <p className="jess-text-24brown">台中新社</p>
                 <p className="jess-text-20white">菇香厚實黑早冬菇</p>
                 <p className="jess-text-15Gray">
@@ -204,8 +239,9 @@ function JessListC() {
                   由於風味濃郁、肉質肥厚因而被稱之「厚實」冬菇，而佔總產量30%的精選性更展現其珍貴與稀少
                   不僅馥郁香氣讓人為之陶醉，飽滿厚實的口感更猶如鮑魚般紮實彈牙，搭配各式食材料理皆能展現最佳風味
                 </p>
+              </div> */}
+                {/* <div className="jess-bento float-right"></div> */}
               </div>
-              <div className="jess-bento float-right"></div>
             </div>
           </div>
         </div>
@@ -213,23 +249,23 @@ function JessListC() {
           <ul className="row justify-content-around  align-items-end jess-proC-vegbox">
             <li className="col-2 "></li>
             <li
-              className="col mx-4 rounded jess-proC-vegPic1 active"
+              className="col mx-4 rounded jess-proC-vegPic1 jess-a active"
               onClick={vegA}
             ></li>
             <li
-              className="col mx-4 rounded jess-proC-vegPic2"
+              className="col mx-4 rounded jess-proC-vegPic2 jess-a"
               onClick={vegB}
             ></li>
             <li
-              className="col mx-4 rounded jess-proC-vegPic3"
+              className="col mx-4 rounded jess-proC-vegPic3 jess-a"
               onClick={vegC}
             ></li>
             <li
-              className="col mx-4 rounded jess-proC-vegPic4"
+              className="col mx-4 rounded jess-proC-vegPic4 jess-a"
               onClick={vegD}
             ></li>
             <li
-              className="col mx-4 rounded jess-proC-vegPic5"
+              className="col mx-4 rounded jess-proC-vegPic5 jess-a"
               onClick={vegE}
             ></li>
             <li className="col-2 "></li>

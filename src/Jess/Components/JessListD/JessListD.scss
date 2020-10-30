@@ -25,7 +25,7 @@ $white: #ffffff;
 
 .jess-proD-bg {
   width: 100%;
-  height: 85rem;
+  height: 75rem;
   background-color: $white;
 }
 .jess-text-30orange {
@@ -39,6 +39,9 @@ $white: #ffffff;
   background-color: #f6f6f6;
   height: 9rem;
 }
+// .jess-ul {
+//   list-style: none;
+// }
 .jess-msg-todo button {
   width: 13rem;
   height: 3.5rem;
@@ -64,5 +67,12 @@ $white: #ffffff;
   background-color: $white;
   height: 9rem;
 }
+.jess-productTabBorder {
+  background: url('../images/SVG/border.svg') no-repeat;
+  width: 114rem;
+  height: 1rem;
+  margin-top: 10rem;
+}
+
 @media screen and (max-width: 576px) {
 }
