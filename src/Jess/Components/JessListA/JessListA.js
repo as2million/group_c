@@ -81,7 +81,7 @@ function JessListA() {
   const ComponentB = (props) => {
     return (
       <div className="container component  mt-5 row flex-row justify-content-around  px-5  ">
-        <table class="table table-striped jess-table2 col-sm-7 my-5 ">
+        <table class="table table-striped jess-table2 col-sm-6 my-5 ">
           <thead>
             <tr>
               <th colspan="2">每一份量含50公克 本包裝含11份</th>
@@ -197,7 +197,7 @@ function JessListA() {
                 營養標示
               </li>
             </ul>
-            <div className="jess-productTabBorder"></div>
+            <div className="jess-productTabBorder mt-5"></div>
             <div className="jess-product-Tab1 d-flex">{component}</div>
           </div>
         </div>

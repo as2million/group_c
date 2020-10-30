@@ -183,7 +183,7 @@ function JessListC() {
     const [component2, setComponent2] = React.useState(<ComponentA2 />);
 
     const vegA = (e) => {
-      setTabActive(e.target, '.a');
+      setTabActive(e.target, '.jess-a');
       setComponent(<ComponentA />);
       setComponent2(<ComponentA2 />);
     };

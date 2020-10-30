@@ -7,14 +7,20 @@ html {
   margin: 0;
   padding: 0;
 }
-$primary: #f48145;
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$green: #66ab8c;
+$white: #ffffff;
 $font-size: 1rem;
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 //引入字體
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap');
 
 .jess-fluidBg {
@@ -27,8 +33,8 @@ $font-size: 1rem;
   margin-top: 17rem;
 }
 
-.jess-productList-chichenPic {
-  background: url('./Images/chickenRice.jpg') no-repeat;
+.jess-productList-VegPic {
+  background: url('./Images/VegBox.jpg') no-repeat;
   background-size: cover;
   background-position: center center;
   width: 87rem;
@@ -37,64 +43,91 @@ $font-size: 1rem;
   margin-top: 4rem;
 }
 .jess-menuList {
-  width: 29rem;
+  width: 32rem;
   margin-top: 4rem;
 }
 .jess-tittle {
-  font-size: $font-size + 1.8;
+  font-size: 2.8rem;
   font-family: 'Noto Serif TC', serif;
   font-weight: 600;
-  color: $primary;
+  color: $orange;
 }
-.jess-content {
+.jess-text20Green {
+  font-size: 2rem;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 600;
+  color: $green;
+}
+.jess-contentVeg {
   font-family: 'Noto Sans TC';
   font-size: $font-size + 0.5;
   color: #858585;
-  margin-top: 3rem;
 }
-.jess-nutrient {
-  margin-top: 3rem;
-  width: 6rem;
-  height: 6rem;
+
+.jess-calendar {
+  width: 5.5rem;
+  height: 5.5rem;
+  background-color: $white;
   border-radius: 0.5rem;
-  border: 0.1rem solid #decdbb;
-  color: #a59583;
-  font-size: 1.5rem;
+  border: 0.1rem solid $green;
+  color: $darkGary;
+  font-size: 1.3rem;
   text-align: center;
   padding: 0.6rem;
   box-sizing: border-box;
-  line-height: 2.5rem;
+  line-height: 2rem;
 }
-.jess-nutrient2 {
-  margin-top: 3rem;
-  width: 6rem;
-  height: 6rem;
+.jess-calendar.active {
+  width: 5.5rem;
+  height: 5.5rem;
+  background-color: $green;
   border-radius: 0.5rem;
-  border: 0.1rem solid #decdbb;
+  border: 0.1rem solid $green;
+  color: $white;
+  font-size: 1.3rem;
   text-align: center;
   padding: 0.6rem;
-  color: #a59583;
+  box-sizing: border-box;
+  line-height: 2rem;
 }
-
-.jess-rateStar {
-  margin-top: 3rem;
-  width: 29rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.jess-rateStarMsgNum {
+.jess-text20GreenTc {
+  font-size: 2rem;
   font-family: 'Noto Sans TC';
-  font-size: $font-size + 0.5;
-  color: #858585;
+  font-weight: 400;
+  color: $green;
+}
+.jess-text-15Gray {
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $darkGary;
+  line-height: 2.5rem;
 }
 hr {
   color: #a59583;
   margin-top: 3rem;
 }
+.jess-size {
+  width: 3rem;
+  height: 3rem;
+  background-color: $white;
+  border-radius: 0.5rem;
+  border: 0.1rem solid $green;
+  color: $darkGary;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 0.6rem;
+  box-sizing: border-box;
+  line-height: 2rem;
+  &.active {
+    background-color: $green;
+
+    border: 0.1rem solid $green;
+    color: $white;
+  }
+}
+
 .jess-productPrice {
-  margin-top: 5rem;
+  margin-top: 3rem;
   width: 29rem;
   display: inline-flex;
   align-items: center;
@@ -103,7 +136,7 @@ hr {
 .jess-productPrice .jess-salePrice {
   font-family: 'Noto Sans TC';
   font-size: 3.6rem;
-  color: $primary;
+  color: $orange;
 }
 .jess-productPrice > .jess-saleTotal {
   font-family: 'Noto Sans TC';
