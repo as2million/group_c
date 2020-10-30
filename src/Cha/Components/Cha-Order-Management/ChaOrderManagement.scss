@@ -8,7 +8,7 @@
 }
 .cha-order-mana-border {
   background: url('./Images/border.svg');
-//   width: 114rem; 
+  //   width: 114rem;
   height: 1rem;
   display: flex;
   justify-content: center;
@@ -29,6 +29,7 @@
   display: flex;
   justify-content: center;
   transition: 0.2s;
+  cursor: pointer;
   &:hover {
     font-size: 2.7rem;
   }
@@ -38,3 +39,7 @@
 //   display: flex;
 //   justify-content: center;
 // }
+
+.cha-order-mana-title-switch.cha-active {
+  color: #e0611e;
+}

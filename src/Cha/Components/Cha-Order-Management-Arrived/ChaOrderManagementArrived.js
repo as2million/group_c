@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import './ChaOrderManagementNotArrived.scss'
-function ChaOrderManagementNotArrived(props) {
+import './ChaOrderManagementArrived.scss'
+function ChaOrderManagementArrived(props) {
   return (
     <>
-      <div className="cha-order-mana-not-arrived-content-row3">
-        <div className="cha-order-mana-not-arrived-row3-picture"></div>
-        <div className="cha-order-mana-not-arrived-content-row3-1">
-          <div className="cha-order-mana-not-arrived-content-row3-1-1">
-            {/* <div className="cha-order-mana-not-arrived-content-row3-1-1-1"> */}
+      <div className="cha-order-mana-arrived-content-row3">
+        <div className="cha-order-mana-arrived-row3-picture"></div>
+        <div className="cha-order-mana-arrived-content-row3-1">
+          <div className="cha-order-mana-arrived-content-row3-1-1">
+            {/* <div className="cha-order-mana-arrived-content-row3-1-1-1"> */}
             <span>
               <span> 訂單編號: </span>
               <span> </span>
@@ -23,10 +23,10 @@ function ChaOrderManagementNotArrived(props) {
             <span>
               <span> 訂單狀態: </span>
               <span> </span>
-              <span>火速運送中</span>
+              <span>已送達</span>
             </span>
           </div>
-          <div className="cha-order-mana-not-arrived-content-row3-1-2">
+          <div className="cha-order-mana-arrived-content-row3-1-2">
             <span> 訂購時間: </span>
             <span> 2020/07/16 </span>
             <span> 11:23:40 </span>
@@ -36,22 +36,22 @@ function ChaOrderManagementNotArrived(props) {
             <span> 11:23:40 </span>
           </div>
 
-          <div className="cha-order-mana-not-arrived-content-row3-1-3">
+          <div className="cha-order-mana-arrived-content-row3-1-3">
             <span> 取餐地址: </span>
             <span> 台北市大安區復興南路一段390號2樓 </span>
           </div>
-          <div className="cha-order-mana-not-arrived-content-row3-1-4">
+          <div className="cha-order-mana-arrived-content-row3-1-4">
             <span> 訂單明細 </span>
-            {/* <span> 用餐評價 </span>
-            <span> 查閱發票 </span> */}
+            <span> 用餐評價 </span>
+            <span> 查閱發票 </span>
           </div>
         </div>
 
-        <div className="cha-order-mana-not-arrived-content-row3-2">
-          <input type="button" value="取消/退費" />
+        <div className="cha-order-mana-arrived-content-row3-2">
+          <input type="button" value="再次訂購" />
         </div>
       </div>
     </>
   )
 }
-export default ChaOrderManagementNotArrived
+export default ChaOrderManagementArrived

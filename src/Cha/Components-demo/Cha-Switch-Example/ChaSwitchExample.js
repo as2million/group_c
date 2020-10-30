@@ -43,7 +43,7 @@ function ChaSwitchExample() {
   };
 
   const TabMenu = () => {
-    const [component, setComponent] = React.useState(<ComponentA />);
+    const [component, setComponent] = useState(<ComponentA />);
 
     const tabContentA = (e) => {
       setTabActive(e.target, '.jess-productTabMenu__item');

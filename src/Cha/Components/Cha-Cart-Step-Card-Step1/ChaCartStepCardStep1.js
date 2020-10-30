@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import ChaOrder from 'Cha/Components/Cha-Cart-Step-Card-Step1/Cha-Order/ChaOrder'
-import './ChaCartStepCardStep1.scss'
+import React, { useState, useEffect } from 'react';
+import ChaOrder from 'Cha/Components/Cha-Cart-Step-Card-Step1/Cha-Order/ChaOrder';
+import './ChaCartStepCardStep1.scss';
 
 function ChaCartStepCardStep1(props) {
   return (
@@ -43,6 +43,6 @@ function ChaCartStepCardStep1(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
-export default ChaCartStepCardStep1
+export default ChaCartStepCardStep1;

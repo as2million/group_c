@@ -69,34 +69,6 @@ function Home(props) {
             訂單管理
           </button>
         </Link>
-        <Link to="/orderManagement">
-          <button
-            type="button"
-            class="btn btn-primary
-           btn-lg mr-5"
-          >
-            未送達
-          </button>
-        </Link>
-
-        <Link to="/">
-          <button
-            type="button"
-            class="btn btn-secondary
-           btn-lg mr-5"
-          >
-            已送達
-          </button>
-        </Link>
-        <Link to="/">
-          <button
-            type="button"
-            class="btn btn-secondary
-           btn-lg mr-5"
-          >
-            揪團中
-          </button>
-        </Link>
         <Link to="/">
           <button
             type="button"
@@ -124,16 +96,6 @@ function Home(props) {
            btn-lg mr-5"
           >
             外送
-          </button>
-        </Link>
-        <hr />
-        <Link to="/chaSwitchExample">
-          <button
-            type="button"
-            class="btn btn-secondary
-           btn-lg mr-5"
-          >
-            Switch參考
           </button>
         </Link>
       </div>

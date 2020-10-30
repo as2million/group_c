@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
+import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss'
 
 function ChaCartSubmitCard(props) {
   return (
@@ -72,6 +72,6 @@ function ChaCartSubmitCard(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
-export default ChaCartSubmitCard;
+export default ChaCartSubmitCard
