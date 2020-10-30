@@ -60,7 +60,7 @@ function RuCustom() {
               </div>
               <div className="ru-species-container">
                 {/* 副食 / 主食 / 配菜 / 蛋 的元件 s*/}
-                <div className="ru-species-warp">
+                <div className="ru-species-warp ru-species-warp1">
                   <div className="ru-species ru-species1">AAA</div>
                   <div className="ru-species ru-species2">BBB</div>
                   <div className="ru-species ru-species3">CCC</div>
