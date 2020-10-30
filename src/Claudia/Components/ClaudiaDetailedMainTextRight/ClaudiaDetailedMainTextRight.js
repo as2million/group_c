@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ClaudiaDetailedMainTextRight.scss';
 import Location from './Images/location.svg';
 import Button from '../../../Share/Components/Button/Button';
+import ClaudiaModalFrame from '../ClaudiaModalFrame/ClaudiaModalFrame';
 
 function ClaudiaDetailedMainTextRight() {
+    const [status, setStatus] = useState(false);
+
     return (
         <>
+            { status && (<ClaudiaModalFrame closeModal={() => setStatus(false)}> <p>The content of the modal</p></ClaudiaModalFrame>)}
             <div className="claudia-detailed-maintext-signup">
                 <div className="claudia-detailed-maintext-signup-box">
                     <h1><b>可選擇團體報名或自行前往</b></h1>
@@ -21,7 +25,11 @@ function ClaudiaDetailedMainTextRight() {
                         <img alt="location-icon" src={Location} />
                         <a href="#farm-adr">點我看地圖</a>
                     </div>
-                    <div className="claudia-signup-date-button"><Button className="button-btn-g" text="查看可預訂日期" /></div>
+                    <div
+                        onClick={() => setStatus(true)}
+                        className="claudia-signup-date-button">
+                        <Button className="button-btn-g" text="查看可預訂日期" />
+                    </div>
                 </div>
             </div>
         </>

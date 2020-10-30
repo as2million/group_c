@@ -53,9 +53,9 @@ function ClaudiaDetailedSilder() {
 
         let siblings = getSiblings(triangleIcon.parentNode)
 
-        siblings.forEach(e => {
-            const siblingsTriangles = e.children[0]
-            // console.log('loop', e.children[0]);
+        siblings.forEach(el => {
+            const siblingsTriangles = el.children[0]
+            // console.log('loop', el.children[0]);
             console.log('siblingsTriangles', siblingsTriangles)
             siblingsTriangles.style.visibility = 'hidden';
 

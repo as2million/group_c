@@ -15,19 +15,53 @@ function ClaudiaDetailedFarmIntro() {
     const changeImage = (e) => {
 
         //change color to green
-        console.log(e.target);
+        const selectedSliderBar = e.target
+        console.log('slider-bar', e.target);
         e.target.style.backgroundColor = '#66AB8C';
-        console.log(document.getElementsByClassName('claudia-detailed-farm-silder-img-container')[0])
+        console.log('container', document.getElementsByClassName('claudia-detailed-farm-silder-img-container')[0])
 
         //find siblings
 
+        const getSiblings = function (e) {
+            let siblings = [];
+
+            if (!e.parentNode) {
+                return siblings;
+            }
+
+            let sibling = e.parentNode.firstChild;
+
+            while (sibling) {
+                if (sibling.nodeType === 1 && sibling !== e) {
+                    siblings.push(sibling);
+                }
+                sibling = sibling.nextSibling;
+            }
+            return siblings;
+
+        }
+
+        let siblings = getSiblings(selectedSliderBar);
+        console.log('siblings', siblings);
+
+        siblings.forEach(el => {
+            console.log('element', el);
+            el.style.backgroundColor = '#fff';
+        });
+
         //find index
 
-        document.getElementsByClassName('claudia-detailed-farm-silder-img-container')[0].style.right = '425px';
+        const child = e.target;
+        const parent = child.parentNode;
+        console.log('child', child);
+        console.log('parent', parent);
+        //0, 1, 2
+        const index = Array.prototype.indexOf.call(parent.children, child);
+        console.log('index', index);
+
+        //change image
+        document.getElementsByClassName('claudia-detailed-farm-silder-img-container')[0].style.right = `${index * 425}px`;
     }
-
-
-
 
 
     return (
