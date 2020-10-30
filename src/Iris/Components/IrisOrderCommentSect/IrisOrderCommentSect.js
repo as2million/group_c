@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './IrisUserCommentSect.scss';
+import './IrisOrderCommentSect.scss';
 import { ReactComponent as WaveLine } from './Images/wave_line.svg';
 import { ReactComponent as IrisMemberLine } from './Images/iris_member_line.svg';
 import star from './Images/star.svg';
