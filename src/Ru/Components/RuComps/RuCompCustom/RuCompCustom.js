@@ -10,7 +10,7 @@ import SearchBar from 'Share/Components/Input/SearchBar';
 import line from './Images/line.png';
 
 function RuCompCustom(props) {
-  console.log(props)
+  console.log(props);
   const [searchInput, setSearchInput] = useState('');
 
   // JSX

@@ -15,26 +15,6 @@ function RuButton(props) {
     setIsShowRuCustom,
   } = props;
 
-  // 換頁邏輯
-  function handleCardArea(e) {
-    console.log(props);
-    if (id === 'button-btn-1') {
-      setIsShowRuBento(true);
-      setIsShowRuSalad(false);
-      setIsShowRuCustom(false);
-    } else if (id === 'button-btn-2') {
-      setIsShowRuBento(false);
-      setIsShowRuSalad(true);
-      setIsShowRuCustom(false);
-    } else if (id === 'button-btn-3') {
-      setIsShowRuBento(false);
-      setIsShowRuSalad(false);
-      setIsShowRuCustom(true);
-    } else if (id === 'button-btn-4') {
-      props.history.push('/vegBox');
-    }
-  }
-
   // 路由方法
   function handleCardArea(e) {
     console.log(props);
