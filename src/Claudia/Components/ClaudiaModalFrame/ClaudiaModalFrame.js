@@ -7,8 +7,8 @@ const ClaudiaModalFrame = (props) => {
 
     return (
         <div className="overlay">
-            <div onClick={closeModal} className="content">
-                <img alt="" src={Cross} />
+            <div onClick={closeModal} className="claudia-modal-cross">
+                <img className="claudia-modal-cross-img" alt="" src={Cross} />
                 {props.children}
             </div>
         </div>

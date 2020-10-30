@@ -12,12 +12,18 @@
   z-index: 999; 
 }
 
-.content {
+.claudia-modal-cross {
       margin: 90px auto 0px auto;
       background-color: white;
       border-radius: 0.25rem;
       width: 800px;
       height: 600px;
-      padding: 2rem;
+      padding: 6.5rem 8.5rem;
       position: relative;
 }
+
+.claudia-modal-cross-img {
+  cursor: pointer;
+  float: right;
+}
+

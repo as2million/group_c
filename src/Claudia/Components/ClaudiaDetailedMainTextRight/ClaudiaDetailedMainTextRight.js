@@ -3,13 +3,21 @@ import './ClaudiaDetailedMainTextRight.scss';
 import Location from './Images/location.svg';
 import Button from '../../../Share/Components/Button/Button';
 import ClaudiaModalFrame from '../ClaudiaModalFrame/ClaudiaModalFrame';
+import ClaudiaModalContent from '../ClaudiaModalContent/ClaudiaModalContent';
 
 function ClaudiaDetailedMainTextRight() {
     const [status, setStatus] = useState(false);
 
     return (
         <>
-            { status && (<ClaudiaModalFrame closeModal={() => setStatus(false)}> <p>The content of the modal</p></ClaudiaModalFrame>)}
+            {/* Modal */}
+            { status &&
+                (<ClaudiaModalFrame
+                    closeModal={() => setStatus(false)}>
+                    <ClaudiaModalContent />
+                </ClaudiaModalFrame>)}
+
+            {/* Page Content */}
             <div className="claudia-detailed-maintext-signup">
                 <div className="claudia-detailed-maintext-signup-box">
                     <h1><b>可選擇團體報名或自行前往</b></h1>
