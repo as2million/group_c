@@ -3,11 +3,14 @@
 .iris-cards-container {
   padding-left: 5%;
   padding-right: 5%;
-  margin-top: 3.6rem;
+  margin-top: 6rem;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .iris-cards-container .card-container {
+  margin-top: -2rem;
+  margin-bottom: 5rem;
   width: 21rem;
   height: 31.5rem;
 }
