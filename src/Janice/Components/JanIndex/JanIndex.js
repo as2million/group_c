@@ -10,9 +10,9 @@ import map1 from './Images/Svg/map1.svg';
 import map2 from './Images/Svg/map2.svg';
 import stepArrow from './Images/Svg/stepArrow.svg';
 import Button from '../../../Share/Components/Button/Button';
-import star from './Images/Svg/star.svg';
 import starO from './Images/Svg/star-o.svg';
-import Card from '../../../Share/Components/Card/Card';
+import MainPageSelectBox from '../../../Share/Components/Input/MainPageSelectBox';
+import InputH50 from '../../../Share/Components/Input/InputH50';
 
 function JanIndex(props) {
   return (
@@ -54,7 +54,7 @@ function JanIndex(props) {
         </div>
       </div>
 
-      {/* 品牌特色 */}
+      {/* 品牌特色 參考jess list a*/}
       <div className="container jan-p0">
         <div className="row jan-index-feature d-flex align-items-center justify-content-center">
           {/* 標題 */}
@@ -339,18 +339,36 @@ function JanIndex(props) {
             <div className="row ">
               <img alt="" src={map2} />
             </div>
-          </div>
-          {/* 表單 */}
-          <div className="container jan-p0 jan-adress-form">
-            <div className="container jan-p0">
+            {/* 表單 */}
+            <div className="row jan-p0 jan-adress-form">
+              <form>
+                <div className="jan-adress-radio">
+                  <input type="radio" name="location" value="tv" /> 台北市
+                  <input type="radio" name="location" value="ntc" /> 新北市
+                </div>
+                <br />
+                <div className="jan-adress-select">
+                  <MainPageSelectBox />
+                </div>
+                <br />
+                <div className="jan-adress-input">
+                  <InputH50 />
+                </div>
+
+                <br />
+                <div className="jan-index-button">
+                  <Button className="button-btn " text="確認送出" />
+                </div>
+              </form>
               <p>所在地點，符合滿</p>
               <p>元免運費</p>
               <p>最近的自取門市是</p>
-              <div className="jan-map-buttons d-flex justify-content-around">
-                <div className="row jan-index-button">
+              <div className="jan-map-buttons d-flex justify-content-between">
+                <div className="jan-index-button">
                   <Button className="button-btn " text="商品列表" />
                 </div>
-                <div className="row jan-index-button">
+
+                <div className="jan-index-button">
                   <Button className="button-btn " text="揪團訂購" />
                 </div>
               </div>
@@ -364,45 +382,82 @@ function JanIndex(props) {
 
       {/* 好文推薦 */}
       <div className="container-fluid jan-p0 jan-article">
-        <div className="container jan-p0 d-flex justify-content-center">
+        <div className="jan-p0 flex-colunm justify-content-center">
           {/* 標題 */}
-          <div className="d-flex align-items-center">
+          <div className="row ml-1 d-flex justify-content-center">
             <img alt="" src={titleLeft} />
-            <p className="jan-feature-title">好文推薦</p>
+            <p className="m-5 jan-feature-title">好文推薦</p>
             <img alt="" src={titleRight} />
           </div>
 
-          <div>
-            <div className="row">
-              <div className="jan-card-container">
-                {/* item圖片 */}
-                <section className="jan-card-img-warp">
-                  <a href="/" className="jan-card-link">
-                    <img alt="" className="jan-card-img"></img>
-                  </a>
-                </section>
+          {/* 推薦文章卡片 */}
 
-                <section className="jan-card-info-warp d-flex justify-content-center">
-                  <div className="jan-card-info d-flex flex-column">
-                    <h3>慢煮嫩雞胸-蒜味香草</h3>
-                    {/* 分隔線 */}
-                    <section>
-                      <div className="jan-card-hr d-flex flex-column justify-content-center align-items-center">
-                        <div className="mt-3  mb-2 jan-card-star-warp">
-                          <img alt="" className="jan-card-star" src={starO} />
-                          <img alt="" className="jan-card-star" src={starO} />
-                          <img alt="" className="jan-card-star" src={starO} />
-                          <img alt="" className="jan-card-star" src={starO} />
-                          <img alt="" className="jan-card-star" src={starO} />
-                        </div>
-                        <span className="d-flex justify-content-center">
-                          <p>232 則評論 </p>
-                          <p>250 已購買</p>
-                        </span>
-                      </div>
-                    </section>
+          <div className="row d-flex justify-content-center">
+            {/* 左邊模糊卡片 */}
+            <div className="col-3 jan-article-left-blur">
+              <div className="jan-p0">
+                <div className=" jan-p0 d-flex justify-content-center flex-wrap jan-article-bcc">
+                  {/* 圖片 */}
+                  <div className="jan-article-img1"></div>
+                  {/* 文字 */}
+                  <div className="jan-article-text-area">
+                    <p className="jan-article-name">Alice Yong</p>
+                    <p className="jan-article-text">
+                      以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
+                    </p>
                   </div>
-                </section>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-6 d-flex justify-content-center">
+              <div className="container jan-p0">
+                <div className="row jan-p0 d-flex justify-content-center flex-wrap jan-article-bcc">
+                  {/* 圖片 */}
+                  <div className="jan-article-img1"></div>
+                  {/* 文字 */}
+                  <div className="jan-article-text-area">
+                    <p className="jan-article-name">Alice Yong</p>
+                    <p className="jan-article-text">
+                      以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="container jan-p0">
+                <div className="row jan-p0 d-flex justify-content-center flex-wrap jan-article-bcc">
+                  {/* 圖片 */}
+                  <div className="jan-article-img2"></div>
+                  {/* 文字 */}
+                  <div className="jan-article-text-area">
+                    <p className="jan-article-name">小傑</p>
+                    <p className="jan-article-text">
+                      我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
+                      吃得飽又吃得健康，現在的人太常外食很硬攝取到高熱量、高油脂的食物，會造成身體負擔。
+                      但有了這樣的餐盒產生，就可以減少這一些麻煩了！
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 右邊模糊卡片 */}
+            <div className="col-3 jan-article-right-blur">
+              <div className="container jan-p0">
+                <div className="row jan-p0 d-flex justify-content-center flex-wrap jan-article-bcc">
+                  {/* 圖片 */}
+                  <div className="jan-article-img2"></div>
+                  {/* 文字 */}
+                  <div className="jan-article-text-area">
+                    <p className="jan-article-name">小傑</p>
+                    <p className="jan-article-text">
+                      我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
+                      吃得飽又吃得健康，現在的人太常外食很硬攝取到高熱量、高油脂的食物，會造成身體負擔。
+                      但有了這樣的餐盒產生，就可以減少這一些麻煩了！
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

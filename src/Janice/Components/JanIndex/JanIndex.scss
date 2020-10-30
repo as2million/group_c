@@ -379,14 +379,15 @@ $deepYello: #f5a016;
     }
     .jan-adress-form {
       background-color: #ccc;
-      width: 50rem;
+      width: 42rem;
       height: 52rem;
     }
     // 地圖區域
     .jan-map-view {
       width: 60%;
       height: 70%;
-      background-color: $yellow;
+      // background-color: $yellow;
+      border: 0.1rem solid $yellow;
       right: 0;
       bottom: 0;
       position: absolute;
@@ -397,5 +398,53 @@ $deepYello: #f5a016;
 .jan-article {
   background-color: #fff;
   width: 100%;
-  height: 55rem;
+  height: 65rem;
+  .jan-article-left-blur {
+    width: 70%;
+    height: 70%;
+  }
+  .jan-article-bcc {
+    background-color: $lightGray;
+    width: 30rem;
+    height: 45rem;
+    border-radius: 20px;
+    box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+    .jan-article-img1 {
+      background: url('./Images/Images/article-img1.jpg') center center
+        no-repeat;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      margin: 2rem auto 1rem auto;
+    }
+    .jan-article-img2 {
+      background: url('./Images/Images/article-img2.jpg') center center
+        no-repeat;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      margin: 2rem auto 1rem auto;
+    }
+    .jan-article-text-area {
+      width: 25rem;
+      height: 25rem;
+      border-top: 1px solid $lightBrown;
+      margin: 0 auto;
+      .jan-article-name {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $gray;
+        margin: 1rem auto;
+        text-align: center;
+      }
+      .jan-article-text {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: $brown;
+        text-align: center;
+      }
+    }
+  }
 }
