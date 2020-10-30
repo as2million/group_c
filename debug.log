@@ -13,3 +13,4 @@
 =======
 [1023/151058.790:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
 >>>>>>> cha
+[1030/123042.151:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
