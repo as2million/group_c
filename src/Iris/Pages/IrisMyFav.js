@@ -4,7 +4,7 @@ import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuS
 import IrisMyFavSect from '../Components/IrisMyFavSect/IrisMyFavSect';
 import './IrisMemberPage.scss';
 
-function IrirsMyFav() {
+function IrirsMyFav(props) {
   return (
     <>
       <div className="container iris-memberpage-container">

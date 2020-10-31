@@ -1,0 +1,23 @@
+.iris-login-mask {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: none;
+  z-index: 100;
+}
+
+.iris-change {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: #faf;
+  z-index: 200;
+}

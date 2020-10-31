@@ -4,7 +4,7 @@ import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuS
 import IrisDataEditSect from '../Components/IrisDataEditSect/IrisDataEditSect';
 import './IrisMemberPage.scss';
 
-function IrisProfilePage() {
+function IrisProfilePage(props) {
   return (
     <>
       <div className="container iris-memberpage-container">

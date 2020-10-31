@@ -11,6 +11,7 @@ import IrisOrderComment from './Pages/IrisOrderComment';
 import IrisMyFav from './Pages/IrisMyFav';
 import IrisBeastiePoint from './Pages/IrisBeastiePoint';
 import MainContent from './Components/MainContent';
+import IrisLoginModal from './Components/IrisLoginModal/IrisLoginModal';
 import './IrisApp.scss';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
@@ -18,10 +19,17 @@ function IrisApp() {
   // test
   const [name, setName] = useState('iris');
 
+  // login modal
+  const [isLogin, setIsLogin] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
   return (
     <Router>
       <>
-        <NavBar />
+        <NavBar
+          setShowLoginModal={setShowLoginModal}
+          showLoginModal={showLoginModal}
+        />
         <VNavbar />
         <MainContent>
           {/* ------------ route----------- */}
@@ -29,11 +37,11 @@ function IrisApp() {
             <Route path="/test">
               <Test setName={setName} />
             </Route>
-            <Route path="/login">
+            {/* <Route path="/login">
               <Test2 name={name} />
-            </Route>
+            </Route> */}
             <Route path="/memberUserprofile">
-              <IrisProfilePage name={name} />
+              <IrisProfilePage isLogin={isLogin} />
             </Route>
             <Route path="/orderComment">
               <IrisOrderComment />
@@ -48,6 +56,10 @@ function IrisApp() {
         </MainContent>
         <Footer />
       </>
+      <IrisLoginModal
+        showLoginModal={showLoginModal}
+        setShowLoginModal={setShowLoginModal}
+      />
     </Router>
   );
 }
