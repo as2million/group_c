@@ -24,7 +24,7 @@
 }
 
 .ru-item-containerA {
-  // background-color: seagreen;
+  background-color: seagreen;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -57,17 +57,16 @@
 // ******** 便當 / 沙拉 e ********
 
 // ******** 客製化便當 s ********
-.ru-custom-container {
+.ru-custom-containerA {
   // 超過設計稿部份
-  // background-color: rgb(0, 185, 71);
+  background-color: rgb(0, 185, 71);
   width: 100%;
-  height: 810px;
   margin-bottom: 60px;
 }
 
 .ru-custom-warp {
   // 1440區
-  // background-color: rgb(255, 208, 0);
+  background-color: rgb(255, 208, 0);
   width: 100%;
   height: 100%;
   @include page();
@@ -75,20 +74,20 @@
 
 .ru-drop-container {
   // 1170區
-  // background-color: rgb(65, 141, 240);
+  background-color: rgb(65, 141, 240);
   height: 500px;
   @include flex($df, $fdr, $jcc, $alc);
 }
 
 .ru-drop-warp {
-  // background-color: #ee82ee55;
+  background-color: #ee82ee55;
   width: 1200px;
   height: 100%;
   display: flex;
 }
 
 .ru-box-container {
-  // background-color: #9acd3288;
+  background-color: #9acd3288;
   width: 66.185%;
   height: 100%;
   @include flex($df, $fdr, $jcc, $als);
@@ -99,14 +98,14 @@
 }
 
 .ru-detail-container {
-  // background-color: #ff00bf44;
+  background-color: #ff00bf44;
   width: 33.8165%;
   height: 100%;
   margin-left: 50px;
 }
 
 .ru-switchBtn-container {
-  // background-color: #a0522d;
+  background-color: #a0522d;
   height: 35px;
   border-bottom: 1px solid $customBorder;
   @include flex($df, $fdr, $jcc, $alc);
@@ -141,18 +140,18 @@
 }
 
 .ru-info-container {
-  // background-color: palegoldenrod;
+  background-color: palegoldenrod;
   height: 300px;
 }
 
 .ru-info-item-container {
-  // background-color: purple;
+  background-color: purple;
   height: 255px;
   @include flex($df, $fdc, $jcc, $alc);
 }
 
 .ru-info-item-warp {
-  // background-color: #00ff7f55;
+  background-color: #00ff7f55;
   width: 90%;
   height: 100%;
   padding: 0px;
@@ -161,7 +160,7 @@
 }
 
 .ru-info-item {
-  // background-color: #0077ff55;
+  background-color: #0077ff55;
   width: 100%;
   height: 22px;
   margin-top: 20px;
@@ -205,13 +204,13 @@
 }
 
 .ru-info-total-container {
-  // background-color: #80002b22;
+  background-color: #80002b22;
   height: 45px;
   @include flex($df, $fdr, $jcc, $ale);
 }
 
 .ru-info-total-warp {
-  // background-color: rgb(130, 229, 238);
+  background-color: rgb(130, 229, 238);
   height: 30px;
   width: 90%;
   @include flex($df, $fdr, $jce, $ale);
@@ -231,67 +230,67 @@
 }
 
 .ru-info-total {
-  // background-color: seagreen;
+  background-color: seagreen;
   height: 30px;
   margin-top: 15px;
 }
 
 .ru-checkout-container {
-  // background-color: powderblue;
+  background-color: powderblue;
   height: 165px;
   @include flex($df, $fdc, $jcc, $alc);
 }
 
 .ru-checkout-warp {
-  // background-color: rgb(239, 255, 92);
+  background-color: rgb(239, 255, 92);
   height: 100%;
   @include flex($df, $fdc, $jcc, $alc);
 }
 
 .ru-drag-container {
   // 1170區
-  // background-color: #f0504155;
+  background-color: #f0504155;
   height: 260px;
   @include flex($df, $fdr, $jcc, $alc);
 }
 
 .ru-drag-warp {
-  // background-color: rgb(29, 198, 240);
+  background-color: rgb(29, 198, 240);
   width: 100%;
   height: 100%;
   border-top: 1px solid $customBorder;
 }
 
 .ru-selection-container {
-  // background-color: rgb(126, 71, 255);
+  background-color: rgb(126, 71, 255);
   width: 100%;
   height: 100px;
   @include flex($df, $fdr, $jcc, $alc);
 }
 
 .ru-selection-warp {
-  // background-color: rgb(255, 194, 89);
+  background-color: rgb(255, 194, 89);
   width: 44.444444444%;
   height: 100%;
   @include flex($df, $fdr, space-between, $alc);
 }
 
 .ru-species-container {
-  // background-color: thistle;
+  background-color: thistle;
   width: 100%;
   height: 160px;
   @include flex($df, $fdr, space-between, $alc);
 }
 
 .ru-species-warp {
-  // background-color: blue;
+  background-color: blue;
   height: 100%;
   width: 80.34188%;
   overflow: hidden;
 }
 
 .ru-species-warp ul {
-  // background-color: #a52a2a88;
+  background-color: #a52a2a88;
   // 寬度數值 = 340 * n個li px => 再把px換成百分比
   width: 180.8510638%;
   height: 100%;
@@ -301,7 +300,7 @@
 }
 
 .ru-species-warp li {
-  // background-color: yellow;
+  background-color: yellow;
   flex-basis: 300px;
   height: 100%;
   margin-right: 30px;
@@ -310,26 +309,26 @@
 }
 
 .ru-species-img {
-  // background-color: darkolivegreen;
+  background-color: darkolivegreen;
   width: 43.33333336%;
   height: 100%;
 }
 
 .ru-species-info {
-  // background-color: darkorange;
+  background-color: darkorange;
   width: 56.66666664%;
   height: 100%;
   margin-left: 15px;
 }
 
 .ru-species-info ul {
-  // background-color: deepskyblue;
+  background-color: deepskyblue;
   width: 100%;
   @include flex($df, $fdc, $jcs, $als);
 }
 
 .ru-species-info ul h4 {
-  // background-color: hotpink;
+  background-color: hotpink;
   width: 100%;
   height: 50px;
   margin: 0px;
@@ -347,7 +346,7 @@
 }
 
 .ru-species-info ul li {
-  // background-color: deeppink;
+  background-color: deeppink;
   width: 100%;
   margin: 0px;
   @include font($notoSansTC, $content, $regular, 1.25px, $grey);
@@ -372,6 +371,12 @@
   display: flex;
 }
 .ru-buttonWarpB {
+  display: none;
+}
+.ru-custom-containerA {
+  display: block;
+}
+.ru-custom-containerC {
   display: none;
 }
 // ------------------------------------------- 網頁版 e -------------------------------------------
@@ -580,6 +585,325 @@
   // ******** 便當 / 沙拉 e ********
 
   // ******** 客製化便當 s ********
+  .ru-custom-containerC {
+    // 超過設計稿部份
+    background-color: rgb(0, 185, 71);
+    width: 100%;
+    height: 810px;
+    margin-bottom: 60px;
+  }
+
+  .ru-custom-warp {
+    // 375區
+    background-color: rgb(255, 208, 0);
+    width: 100%;
+    height: 100%;
+    @include page-phone();
+  }
+
+  .ru-drop-container {
+    // 335區
+    background-color: rgb(65, 141, 240);
+    height: 235px;
+    @include flex($df, $fdr, $jcc, $alc);
+  }
+
+  .ru-drop-warp {
+    background-color: #ee82ee55;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .ru-box-container {
+    background-color: #9acd3288;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid $customBorder;
+    @include flex($df, $fdr, $jcc, $als);
+  }
+
+  .ru-box-warp {
+    width: 100%;
+  }
+
+  .ru-detail-container {
+    background-color: #ff00bf44;
+    width: 33.8165%;
+    height: 100%;
+    margin-left: 50px;
+  }
+
+  .ru-switchBtn-container {
+    background-color: #a0522d;
+    height: 35px;
+    border-bottom: 1px solid $customBorder;
+    @include flex($df, $fdr, $jcc, $alc);
+  }
+
+  .ru-switchBtn-container button:focus {
+    outline: none;
+  }
+
+  .ru-switchBtn-container button:nth-child(1) {
+    background-color: #ffffff00;
+    border: none;
+    text-align: right;
+    margin-right: 15px;
+    padding: 0px;
+    @include font($notoSansTC, $minor-heading, $bold, 0px, $light-orange);
+  }
+
+  .ru-switchBtn-container button:nth-child(2) {
+    background-color: #ffffff00;
+    border: none;
+    text-align: left;
+    margin-left: 15px;
+    padding: 0px;
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $bold,
+      0px,
+      $customSelection-color
+    );
+  }
+
+  .ru-info-container {
+    background-color: palegoldenrod;
+    height: 300px;
+  }
+
+  .ru-info-item-container {
+    background-color: purple;
+    height: 255px;
+    @include flex($df, $fdc, $jcc, $alc);
+  }
+
+  .ru-info-item-warp {
+    background-color: #00ff7f55;
+    width: 90%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    @include flex($df, $fdc, $jce, $alc);
+  }
+
+  .ru-info-item {
+    background-color: #0077ff55;
+    width: 100%;
+    height: 22px;
+    margin-top: 20px;
+    @include flex($df, $fdr, $jcc, $alc);
+  }
+
+  .ru-category-container {
+    border: 1px solid $customSelection-color;
+    width: 14%;
+    height: 100%;
+    margin-right: 20px;
+    @include flex($df, $fdr, $jcc, $alc);
+  }
+
+  .ru-category {
+    margin: 0px;
+    @include font($notoSansTC, $content, $regular, 0px, $customSelection-color);
+    // 字體, 字體大小, 字重, 字距, 字色
+  }
+
+  .ru-selectionName {
+    width: 62.5%;
+    height: 100%;
+    margin: 0px;
+    @include font($notoSansTC, $productName-size, $regular, 1.25px, $grey);
+    @include flex($df, $fdr, $jcs, $alc);
+  }
+
+  .ru-number {
+    width: 18.52%;
+    height: 100%;
+    margin: 0px;
+    @include font(
+      $notoSansTC,
+      $productName-size,
+      $regular,
+      1.25px,
+      $light-orange
+    );
+    @include flex($df, $fdr, $jce, $alc);
+  }
+
+  .ru-info-total-container {
+    background-color: #80002b22;
+    height: 45px;
+    @include flex($df, $fdr, $jcc, $ale);
+  }
+
+  .ru-info-total-warp {
+    background-color: rgb(130, 229, 238);
+    height: 30px;
+    width: 90%;
+    @include flex($df, $fdr, $jce, $ale);
+  }
+
+  .ru-info-total-warp > h3 {
+    width: 62%;
+    margin: 0px;
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $medium,
+      0px,
+      $productName-Color
+    );
+  }
+
+  .ru-info-total-warp > p {
+    width: 18.52%;
+    margin: 0px;
+    @include font($notoSansTC, $minor-heading, $bold, 0px, $light-orange);
+    @include flex($df, $fdr, $jce, $ale);
+  }
+
+  .ru-info-total {
+    background-color: seagreen;
+    height: 30px;
+    margin-top: 15px;
+  }
+
+  .ru-checkout-container {
+    background-color: powderblue;
+    height: 165px;
+    @include flex($df, $fdc, $jcc, $alc);
+  }
+
+  .ru-checkout-warp {
+    background-color: rgb(239, 255, 92);
+    height: 100%;
+    @include flex($df, $fdc, $jcc, $alc);
+  }
+
+  .ru-drag-container {
+    // 1170區
+    background-color: #f0504155;
+    height: 260px;
+    margin-top: 25px;
+    @include flex($df, $fdr, $jcc, $alc);
+  }
+
+  .ru-drag-warp {
+    background-color: rgb(29, 198, 240);
+    width: 100%;
+    height: 100%;
+    // border-top: 1px solid $customBorder;
+  }
+
+  .ru-selection-container {
+    background-color: rgb(126, 71, 255);
+    width: 100%;
+    height: 100px;
+    display: block;
+  }
+
+  .ru-selection-warp {
+    background-color: rgb(255, 194, 89);
+    width: 100%;
+    height: 100%;
+    @include flex($df, $fdc, space-between, $alc);
+  }
+
+  .ru-selectionBtn-warp1 .ru-buttonB:nth-child(1) {
+    margin-right: 15px;
+  }
+
+  .ru-selectionBtn-warp1 .ru-buttonB:nth-child(2) {
+    margin-left: 15px;
+  }
+
+  .ru-selectionBtn-warp2 .ru-buttonB:nth-child(1) {
+    margin-right: 15px;
+  }
+
+  .ru-selectionBtn-warp2 .ru-buttonB:nth-child(2) {
+    margin-left: 15px;
+  }
+
+  .ru-species-container {
+    background-color: thistle;
+    width: 100%;
+    height: 160px;
+    @include flex($df, $fdr, $jcc, $alc);
+  }
+
+  .ru-species-warp {
+    background-color: blue;
+    height: 100%;
+    width: 65.675%;
+    overflow: hidden;
+  }
+
+  .ru-species-warp ul {
+    background-color: #a52a2a88;
+    // 寬度數值 = 340 * n個li px => 再把px換成百分比
+    width: 180.8510638%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    @include flex($df, $fdr, $jcs, $alc);
+  }
+
+  .ru-species-warp li {
+    background-color: yellow;
+    flex-basis: 300px;
+    height: 100%;
+    margin-right: 30px;
+    list-style: none;
+    @include flex($df, $fdr, $jcs, $alc);
+  }
+
+  .ru-species-img {
+    background-color: darkolivegreen;
+    width: 43.33333336%;
+    height: 100%;
+  }
+
+  .ru-species-info {
+    background-color: darkorange;
+    width: 56.66666664%;
+    height: 100%;
+    margin-left: 15px;
+  }
+
+  .ru-species-info ul {
+    background-color: deepskyblue;
+    width: 100%;
+    @include flex($df, $fdc, $jcs, $als);
+  }
+
+  .ru-species-info ul h4 {
+    background-color: hotpink;
+    width: 100%;
+    height: 50px;
+    margin: 0px;
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $regular,
+      1.25px,
+      $productName-Color
+    );
+  }
+
+  .ru-species-info ul h4 span {
+    @include font($notoSansTC, $minor-heading, $bold, 1.25px, $light-orange);
+  }
+
+  .ru-species-info ul li {
+    background-color: deeppink;
+    width: 100%;
+    margin: 0px;
+    @include font($notoSansTC, $content, $regular, 1.25px, $grey);
+  }
   // ******** 客製化便當 e ********
 
   // 切換商品區 ----------
@@ -596,6 +920,12 @@
     display: none;
   }
   .ru-buttonWarpB {
+    display: block;
+  }
+  .ru-custom-containerA {
+    display: none;
+  }
+  .ru-custom-containerC {
     display: block;
   }
 }

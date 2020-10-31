@@ -10,7 +10,7 @@ import background from './Images/background.png';
 function RuBento() {
   return (
     <>
-      {/* 商品區 - 網頁版 / 手機板s */}
+      {/* 商品區 - 網頁版 s */}
       <div className="ru-item-containerA">
         {/* 卡片區 s */}
         <div className="ru-card-warp">
@@ -112,7 +112,7 @@ function RuBento() {
         <img src={background}></img>
         {/* 背景米圖 e */}
       </div>
-      {/* 商品區 - 網頁版 / 手機板e */}
+      {/* 商品區 - 網頁版 e */}
       {/* 商品區 - ipad版 s */}
       <div className="ru-item-containerB">
         {/* 卡片區 s */}

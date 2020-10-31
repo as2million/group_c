@@ -22,13 +22,13 @@ function RuCustom() {
         ----- 這頁是客製化便當 -----
       </h1> */}
 
-      <div className="ru-custom-container">
+      {/* 商品區 - 網頁版 s */}
+      <div className="ru-custom-containerA">
         <div className="ru-custom-warp">
           <div className="ru-drop-container">
             <div className="ru-drop-warp">
               <div className="ru-box-container">
                 <div className="ru-box-warp">
-                  {/* <img src={lunchBox}></img> */}
                   <LunchBox />
                 </div>
               </div>
@@ -50,7 +50,7 @@ function RuCustom() {
                       </li>
                       {/* 詳細資料品項1 e */}
 
-                      {/* 詳細資料品項1 s */}
+                      {/* 詳細資料品項2 s */}
                       <li className="ru-info-item ru-info-item2">
                         <div className="ru-category-container">
                           <p className="ru-category">主食</p>
@@ -58,9 +58,9 @@ function RuCustom() {
                         <p className="ru-selectionName">慢煮嫩雞胸-蒜味香草</p>
                         <p className="ru-number">$55</p>
                       </li>
-                      {/* 詳細資料品項1 e */}
+                      {/* 詳細資料品項2 e */}
 
-                      {/* 詳細資料品項1 s */}
+                      {/* 詳細資料品項3 s */}
                       <li className="ru-info-item ru-info-item3">
                         <div className="ru-category-container">
                           <p className="ru-category">配菜</p>
@@ -68,9 +68,9 @@ function RuCustom() {
                         <p className="ru-selectionName">清炒高麗菜</p>
                         <p className="ru-number">$10</p>
                       </li>
-                      {/* 詳細資料品項1 e */}
+                      {/* 詳細資料品項3 e */}
 
-                      {/* 詳細資料品項1 s */}
+                      {/* 詳細資料品項4 s */}
                       <li className="ru-info-item ru-info-item4">
                         <div className="ru-category-container">
                           <p className="ru-category">配菜</p>
@@ -78,9 +78,9 @@ function RuCustom() {
                         <p className="ru-selectionName">綠色嫩花椰</p>
                         <p className="ru-number">$10</p>
                       </li>
-                      {/* 詳細資料品項1 e */}
+                      {/* 詳細資料品項4 e */}
 
-                      {/* 詳細資料品項1 s */}
+                      {/* 詳細資料品項5 s */}
                       <li className="ru-info-item ru-info-item5">
                         <div className="ru-category-container">
                           <p className="ru-category">配菜</p>
@@ -88,9 +88,9 @@ function RuCustom() {
                         <p className="ru-selectionName">黃金玉米</p>
                         <p className="ru-number">$15</p>
                       </li>
-                      {/* 詳細資料品項1 e */}
+                      {/* 詳細資料品項5 e */}
 
-                      {/* 詳細資料品項1 s */}
+                      {/* 詳細資料品項6 s */}
                       <li className="ru-info-item ru-info-item6">
                         <div className="ru-category-container">
                           <p className="ru-category">蛋</p>
@@ -98,7 +98,7 @@ function RuCustom() {
                         <p className="ru-selectionName">水煮蛋</p>
                         <p className="ru-number">$10</p>
                       </li>
-                      {/* 詳細資料品項1 e */}
+                      {/* 詳細資料品項 e */}
                     </ul>
                   </div>
                   <div className="ru-info-total-container">
@@ -302,10 +302,58 @@ function RuCustom() {
           </div>
         </div>
       </div>
+      {/* 商品區 - 網頁版 e */}
 
-      {/* <div className="ru-species-container"> */}
-      {/* <div className="ru-species-warp"></div> */}
-      {/* </div> */}
+      {/* 商品區 - 手機版 s */}
+      <div className="ru-custom-containerC">
+        <div className="ru-custom-warp">
+          <div className="ru-drop-container">
+            <div className="ru-drop-warp">
+              <div className="ru-box-container">
+                <div className="ru-box-warp">
+                  <LunchBox />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="ru-drag-container">
+            <div className="ru-drag-warp">
+              <div className="ru-selection-container">
+                <div className="ru-selection-warp">
+                  <div className="ru-selectionBtn-warp ru-selectionBtn-warp1">
+                    <RuButtonB
+                      text={'副食'}
+                      className={'ru-buttonB'} // id={'ru-buttonB-3'}
+                    />
+                    <RuButtonB
+                      text={'主食'}
+                      className={'ru-buttonB'} // id={'ru-buttonB-3'}
+                    />
+                  </div>
+                  <div className="ru-selectionBtn-warp ru-selectionBtn-warp2">
+                    <RuButtonB
+                      text={'配菜'}
+                      className={'ru-buttonB'} // id={'ru-buttonB-3'}
+                    />
+                    <RuButtonB
+                      text={'蛋'}
+                      className={'ru-buttonB'} // id={'ru-buttonB-3'}
+                    />
+                  </div>
+                </div>
+
+                <div className="ru-species-container">
+                  {/* <RuArrowLeft /> */}
+                  <div className="ru-species-warp"></div>
+                  {/* <RuArrowRight /> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* 商品區 - 網頁版 e */}
 
       {/* 背景米圖 s */}
       {/* <img src={background}></img> */}
