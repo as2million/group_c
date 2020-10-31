@@ -2,6 +2,7 @@ import React from 'react';
 import './ClaudiaModalContent.scss';
 import Reset from './Images/reset.svg';
 import Calender from './Images/calender.svg';
+import Counter from '../../../Share/Components/Counter/Counter'
 
 function ClaudaiModalContent() {
 
@@ -24,7 +25,7 @@ function ClaudaiModalContent() {
                 </div>
                 <div className="claudia-modal-middle">
                     <div className="claudia-modal-middle-transport">
-                        <h3>前往方式</h3>
+                        <h3><b>前往方式</b></h3>
                         <div className="claudia-modal-middle-transport-buttons">
                             <button>團體報名*</button>
                             <button>自行前往</button>
@@ -41,19 +42,33 @@ function ClaudaiModalContent() {
                     </div>
                 </div>
                 <div className="claudia-modal-signup-num">
-                    <h3>數量</h3>
+                    <h3><b>數量</b></h3>
                     <div className="claudia-modal-signup-num-box">
-                        <span>成人</span>
+                        <div className="claudia-modal-signup-num-box-left"><b>成人</b></div>
+                        <div className="claudia-modal-signup-num-box-right">
+                            <span><del><b>$1000</b></del></span>
+                            <span><b>$800</b></span>
+                            {/* <h6>Counter</h6> */}
+                        </div>
                     </div>
                     <div className="claudia-modal-signup-num-box">
-                        <span>兒童</span>
+                        <div className="claudia-modal-signup-num-box-left"><b>兒童</b></div>
+                        <div className="claudia-modal-signup-num-box-right">
+                            <span><del><b>$700</b></del></span>
+                            <span><b>$500</b></span>
+                            {/* <h6>Counter</h6> */}
+                        </div>
                     </div>
                 </div>
-                <div className="claudia-modal-total-price">
-                    <span>總金額：</span>
-                    <span>$2600</span>
+                <div className="claudia-modal-last-block">
+                    <div className="claudia-modal-total-price">
+                        <span><b>總金額：</b></span>
+                        <span className="claudia-modal-total-price-orange"><b>$2600</b></span>
+                    </div>
+                    <div className="claudia-modal-cart-button"><button>加入購物車</button></div>
+
                 </div>
-                <div className="claudia-modal-total-price">Button</div>
+
 
             </div>
 
