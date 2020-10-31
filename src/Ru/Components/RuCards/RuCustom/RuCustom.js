@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import 'Ru/Components/RuCards/Style.scss';
 import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft';
 import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight';
+import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
+import RuCounter from 'Ru/Components/RuCounter/RuCounter';
+import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
 
 // 引用共用元件
 import Card from 'Share/Components/Card/Card';
 
 // 引用圖片
 import background from './Images/background.png';
+import lunchBox from './Images/lunchBox.svg';
+import { ReactComponent as LunchBox } from './Images/lunchBox.svg'; // 將svg以元件方式引入
+import cauliflower from './Images/cauliflower.svg';
 
 function RuCustom() {
   return (
@@ -20,9 +26,17 @@ function RuCustom() {
         <div className="ru-custom-warp">
           <div className="ru-drop-container">
             <div className="ru-drop-warp">
-              <div className="ru-box-container"></div>
+              <div className="ru-box-container">
+                <div className="ru-box-warp">
+                  {/* <img src={lunchBox}></img> */}
+                  <LunchBox />
+                </div>
+              </div>
               <div className="ru-detail-container">
-                <div className="ru-switchBtn-container"></div>
+                <div className="ru-switchBtn-container">
+                  <button>今日菜色</button>
+                  <button>營養標示</button>
+                </div>
                 <div className="ru-info-container">
                   <div className="ru-info-item-container">
                     {/* 詳細資料品項1 s */}
@@ -89,40 +103,202 @@ function RuCustom() {
                   </div>
                   <div className="ru-info-total-container">
                     <div className="ru-info-total-warp">
-                    <h3>總金額</h3>
-                    <p>$110</p>
+                      <h3>總金額</h3>
+                      <p>$110</p>
                     </div>
                   </div>
                 </div>
                 <div className="ru-checkout-container">
-                  <div className="ru-checkout-warp"></div>
+                  <div className="ru-checkout-warp">
+                    <RuCounter />
+                    <RuAddCart />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="ru-drag-container">
-            <span>
-              <RuArrowLeft />
-            </span>
             <div className="ru-drag-warp">
               <div className="ru-selection-container">
-                <div className="ru-selection-warp"></div>
+                <div className="ru-selection-warp">
+                  <RuButtonB
+                    text={'副食'}
+                    className={'ru-buttonB'}
+                    // id={'ru-buttonB-3'}
+                  />
+                  <RuButtonB
+                    text={'主食'}
+                    className={'ru-buttonB'}
+                    // id={'ru-buttonB-3'}
+                  />
+                  <RuButtonB
+                    text={'配菜'}
+                    className={'ru-buttonB'}
+                    // id={'ru-buttonB-3'}
+                  />
+                  <RuButtonB
+                    text={'蛋'}
+                    className={'ru-buttonB'}
+                    // id={'ru-buttonB-3'}
+                  />
+                </div>
               </div>
+
               <div className="ru-species-container">
+                <RuArrowLeft />
                 {/* 副食 / 主食 / 配菜 / 蛋 的元件 s*/}
-                <div className="ru-species-warp ru-species-warp1">
-                  <div className="ru-species ru-species1">AAA</div>
-                  <div className="ru-species ru-species2">BBB</div>
-                  <div className="ru-species ru-species3">CCC</div>
-                  <div className="ru-species ru-species4">DDD</div>
-                  <div className="ru-species ru-species5">EEE</div>
+                <div className="ru-species-warp">
+                  <ul>
+                    {/* 品項1 s*/}
+                    <li>
+                      <div className="ru-species-img">
+                        <img src={cauliflower}></img>
+                      </div>
+                      <div className="ru-species-info">
+                        <ul>
+                          <li>
+                            <h4>
+                              綠色嫩花椰: <span>$10</span>
+                            </h4>
+                          </li>
+                          <li className="ru-species-calories">
+                            熱量: <span>25大卡</span>
+                          </li>
+                          <li className="ru-species-carbohydrates">
+                            碳水化合物: <span>$10</span>
+                          </li>
+                          <li className="ru-species-protein">
+                            蛋白質: <span>$10</span>
+                          </li>
+                          <li className="ru-species-fat">
+                            脂肪: <span>$10</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    {/* 品項1 e*/}
+
+                    {/* 品項2 s*/}
+                    <li>
+                      <div className="ru-species-img">
+                        <img src={cauliflower}></img>
+                      </div>
+                      <div className="ru-species-info">
+                        <ul>
+                          <li>
+                            <h4>
+                              綠色嫩花椰: <span>$10</span>
+                            </h4>
+                          </li>
+                          <li className="ru-species-calories">
+                            熱量: <span>25大卡</span>
+                          </li>
+                          <li className="ru-species-carbohydrates">
+                            碳水化合物: <span>$10</span>
+                          </li>
+                          <li className="ru-species-protein">
+                            蛋白質: <span>$10</span>
+                          </li>
+                          <li className="ru-species-fat">
+                            脂肪: <span>$10</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    {/* 品項2 e*/}
+
+                    {/* 品項3 s*/}
+                    <li>
+                      <div className="ru-species-img">
+                        <img src={cauliflower}></img>
+                      </div>
+                      <div className="ru-species-info">
+                        <ul>
+                          <li>
+                            <h4>
+                              綠色嫩花椰: <span>$10</span>
+                            </h4>
+                          </li>
+                          <li className="ru-species-calories">
+                            熱量: <span>25大卡</span>
+                          </li>
+                          <li className="ru-species-carbohydrates">
+                            碳水化合物: <span>$10</span>
+                          </li>
+                          <li className="ru-species-protein">
+                            蛋白質: <span>$10</span>
+                          </li>
+                          <li className="ru-species-fat">
+                            脂肪: <span>$10</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    {/* 品項3 e*/}
+
+                    {/* 品項4 s*/}
+                    <li>
+                      <div className="ru-species-img">
+                        <img src={cauliflower}></img>
+                      </div>
+                      <div className="ru-species-info">
+                        <ul>
+                          <li>
+                            <h4>
+                              綠色嫩花椰: <span>$10</span>
+                            </h4>
+                          </li>
+                          <li className="ru-species-calories">
+                            熱量: <span>25大卡</span>
+                          </li>
+                          <li className="ru-species-carbohydrates">
+                            碳水化合物: <span>$10</span>
+                          </li>
+                          <li className="ru-species-protein">
+                            蛋白質: <span>$10</span>
+                          </li>
+                          <li className="ru-species-fat">
+                            脂肪: <span>$10</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    {/* 品項4 e*/}
+
+                    {/* 品項5 s*/}
+                    <li>
+                      <div className="ru-species-img">
+                        <img src={cauliflower}></img>
+                      </div>
+                      <div className="ru-species-info">
+                        <ul>
+                          <li>
+                            <h4>
+                              綠色嫩花椰:<span>$10</span>
+                            </h4>
+                          </li>
+                          <li className="ru-species-calories">
+                            熱量:<span>25大卡</span>
+                          </li>
+                          <li className="ru-species-carbohydrates">
+                            碳水化合物:<span>$10</span>
+                          </li>
+                          <li className="ru-species-protein">
+                            蛋白質:<span>$10</span>
+                          </li>
+                          <li className="ru-species-fat">
+                            脂肪:<span>$10</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    {/* 品項5 e*/}
+                  </ul>
                 </div>
                 {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
+                <RuArrowRight />
               </div>
             </div>
-            <span>
-              <RuArrowRight />
-            </span>
           </div>
         </div>
       </div>

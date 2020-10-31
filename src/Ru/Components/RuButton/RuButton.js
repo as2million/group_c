@@ -10,9 +10,6 @@ function RuButton(props) {
     text,
     className,
     id,
-    setIsShowRuBento,
-    setIsShowRuSalad,
-    setIsShowRuCustom,
   } = props;
 
   // 路由方法
