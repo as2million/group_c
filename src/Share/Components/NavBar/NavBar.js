@@ -13,7 +13,7 @@ import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNu
 // 選單連結要使用NavLink取代Link
 import { NavLink } from 'react-router-dom';
 
-function MyNavbar(props) {
+function NavBar(props) {
   const [count, setCount] = useState(0);
   const [shoppingList, setShoppingList] = useState('0');
   const [showNav, setShowNav] = useState(true);
@@ -161,4 +161,4 @@ function MyNavbar(props) {
 
 // 輸出元件(函式)
 
-export default MyNavbar;
+export default NavBar;
