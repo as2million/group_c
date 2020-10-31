@@ -127,7 +127,7 @@ function JessVegC() {
               <div className="col col-sm-3 jess-vegC-border"></div>
             </div>
             <div className="row d-flex mt-3">
-              <div className="col-12 col-sm-3 align-self-end">
+              <div className="col-12 col-sm-3 align-self-end jess-VegC-text">
                 <Fade left cascade>
                   <p className="jess-text-24Green ">這是冬季蔬菜的季節”</p>
                   <p className="jess-text-15Gray align-self-end offset-3">
@@ -141,8 +141,8 @@ function JessVegC() {
                 <div className="jess-svg"></div>
               </div>
             </div>
-            <div className="row ">
-              <div className="col-12 d-flex justify-content-center mt-5">
+            <div className="row jess-VegC-colorRow">
+              <div className="col-12 d-flex justify-content-center mt-5 jess-VegC-colors">
                 <div
                   className="jess-vegC-red jess-color mx-5"
                   onClick={vegColorA}

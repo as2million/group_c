@@ -40,7 +40,7 @@ $lightBrown: #f7ede2;
 // }
 
 // 第1張
-.jess-view-first .jess-proE-pic1 {
+.jessListE-view-first .jess-proE-pic1 {
   /*2*/
   background: url('../images/images/bento-1.jpg') no-repeat;
   background-size: cover;
@@ -49,7 +49,7 @@ $lightBrown: #f7ede2;
   // position: relative;
 }
 
-.jess-view-first .mask {
+.jessListE-view-first .mask {
   opacity: 0;
   transform: translateY(20px);
   // background-color: rgba(228, 228, 228, 0.5);
@@ -61,7 +61,7 @@ $lightBrown: #f7ede2;
   overflow: hidden;
 }
 
-.jess-view-first h2 {
+.jessListE-view-first h2 {
   transform: translateY(-180px);
   opacity: 1;
   transition: all 0.5s ease-in-out;
@@ -73,7 +73,7 @@ $lightBrown: #f7ede2;
   // position: absolute;
 }
 
-.jess-view-first p {
+.jessListE-view-first p {
   transform: translateY(100px);
   opacity: 1;
   transition: all 0.5s ease-in-out;
@@ -85,14 +85,14 @@ $lightBrown: #f7ede2;
   // position: absolute;
 }
 
-.jess-view-first:hover .mask {
+.jessListE-view-first:hover .mask {
   opacity: 1;
   transform: translateY(20px);
   background-color: rgba(77, 77, 77, 0.5);
   height: 8rem;
 }
-.jess-view-first:hover h2,
-.jess-view-first:hover p {
+.jessListE-view-first:hover h2,
+.jessListE-view-first:hover p {
   color: #f48145;
   transform: translateY(20px);
   opacity: 1;
@@ -104,7 +104,7 @@ $lightBrown: #f7ede2;
 }
 
 // 第2張
-.jess-view-first .jess-proE-pic2 {
+.jessListE-view-first .jess-proE-pic2 {
   /*2*/
   background: url('../images/images/bento-2.jpg') no-repeat;
   background-size: cover;
@@ -113,7 +113,7 @@ $lightBrown: #f7ede2;
   // position: relative;
 }
 
-.jess-view-first .mask {
+.jessListE-view-first .mask {
   opacity: 0;
   transform: translateY(20px);
   // background-color: rgba(228, 228, 228, 0.5);
@@ -125,7 +125,7 @@ $lightBrown: #f7ede2;
   overflow: hidden;
 }
 
-.jess-view-first h2 {
+.jessListE-view-first h2 {
   transform: translateY(-180px);
   opacity: 1;
   transition: all 0.5s ease-in-out;
@@ -137,7 +137,7 @@ $lightBrown: #f7ede2;
   // position: absolute;
 }
 
-.jess-view-first p {
+.jessListE-view-first p {
   transform: translateY(100px);
   opacity: 1;
   transition: all 0.5s ease-in-out;
@@ -149,14 +149,14 @@ $lightBrown: #f7ede2;
   // position: absolute;
 }
 
-// .jess-view-first:hover .mask {
+// .jessListE-view-first:hover .mask {
 //   opacity: 1;
 //   transform: translateY(20px);
 //   background-color: rgba(77, 77, 77, 0.5);
 //   height: 8rem;
 // }
-.jess-view-first:hover h2,
-.jess-view-first:hover p {
+.jessListE-view-first:hover h2,
+.jessListE-view-first:hover p {
   color: #f48145;
   transform: translateY(20px);
   opacity: 1;
@@ -169,7 +169,7 @@ $lightBrown: #f7ede2;
 
 /*第三張圖3*/
 
-.jess-view-first .jess-proE-pic3 {
+.jessListE-view-first .jess-proE-pic3 {
   /*1*/
   background: url('../images/images/bento-3.jpg') no-repeat;
   background-size: cover;
@@ -178,7 +178,7 @@ $lightBrown: #f7ede2;
   // position: relative;
 }
 
-.jess-view-first .mask {
+.jessListE-view-first .mask {
   opacity: 0;
   transform: translateY(20px);
   // background-color: rgba(228, 228, 228, 0.5);
@@ -190,7 +190,7 @@ $lightBrown: #f7ede2;
   overflow: hidden;
 }
 
-.jess-view-first h2 {
+.jessListE-view-first h2 {
   transform: translateY(-180px);
   opacity: 1;
   transition: all 0.5s ease-in-out;
@@ -202,7 +202,7 @@ $lightBrown: #f7ede2;
   // position: absolute;
 }
 
-.jess-view-first p {
+.jessListE-view-first p {
   transform: translateY(100px);
   opacity: 1;
   transition: all 0.5s ease-in-out;
@@ -214,14 +214,14 @@ $lightBrown: #f7ede2;
   // position: absolute;
 }
 
-.jess-view-first:hover .mask {
+.jessListE-view-first:hover .mask {
   opacity: 1;
   transform: translateY(20px);
   background-color: rgba(77, 77, 77, 0.5);
   height: 8rem;
 }
-.jess-view-first:hover h2,
-.jess-view-first:hover p {
+.jessListE-view-first:hover h2,
+.jessListE-view-first:hover p {
   color: #f48145;
   transform: translateY(20px);
   opacity: 1;
@@ -234,16 +234,16 @@ $lightBrown: #f7ede2;
 
 /* */
 
-// .jess-view-first:hover .jess-proE-pic1 {
+// .jessListE-view-first:hover .jess-proE-pic1 {
 //   transform: scale(1.1);
 // }
 
-// .jess-view-first:hover .mask {
+// .jessListE-view-first:hover .mask {
 //   opacity: 1;
 // }
 
-// .jess-view-first:hover h2,
-// .jess-view-first:hover p {
+// .jessListE-view-first:hover h2,
+// .jessListE-view-first:hover p {
 //   opacity: 1;
 //   transform: translateY(10rem);
 //   color: #ffffff;
@@ -251,7 +251,7 @@ $lightBrown: #f7ede2;
 //   // top: 0;
 // }
 
-// .jess-view-first:hover p {
+// .jessListE-view-first:hover p {
 //   transition-delay: 0.1s;
 // }
 
@@ -301,5 +301,11 @@ $lightBrown: #f7ede2;
 //   transition-delay: 0.2s;
 // }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 576px) {
+  .jess-proE-bg {
+    width: 100%;
+    height: 118rem;
+    background-color: $white;
+    position: relative;
+  }
 }

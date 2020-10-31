@@ -7,7 +7,7 @@ function JessMenuD() {
       <div className="container-fluid jess-MenuD-container-fluid ">
         <div className="container">
           <p className="jess-text-30orange text-center  ">好康優惠</p>
-          <div className="row mt-5 d-flex justify-content-between">
+          <div className="row mt-5 d-flex justify-content-between jess-MenuD-RWD">
             <div class="col-12 col-sm-3">
               <div class="jess-view jess-view-first">
                 <div className="jess-menuD-groupon1 "></div>

@@ -47,7 +47,7 @@ $white: #ffffff;
 .jess-menuB-pic1 {
   background: url('./images/jess-menuB-pic1.jpg') no-repeat;
   background-size: contain;
-  width: 50rem;
+  width: 100%;
   height: 50rem;
   position: relative;
 }
@@ -55,25 +55,25 @@ $white: #ffffff;
 .jess-menuB-pic3 {
   background: url('./images/menu-paprika-chicken.jpg') no-repeat;
   background-size: contain;
-  width: 23rem;
+  width: 100%;
   height: 23rem;
 }
 .jess-menuB-pic4 {
   background: url('./images/menu-salt-pork.jpg') no-repeat;
   background-size: contain;
-  width: 23.5rem;
+  width: 100%;
   height: 23.5rem;
 }
 .jess-menuB-pic5 {
   background: url('./images/menu-shrimp.jpg') no-repeat;
   background-size: contain;
-  width: 23.5rem;
+  width: 100%;
   height: 23.5rem;
 }
 /*1*/
 .view .mask,
 .view .content {
-  width: 300px;
+  width: 100%;
   height: 200px;
   position: absolute;
   overflow: hidden;
@@ -306,5 +306,52 @@ $white: #ffffff;
   height: 1rem;
   margin-top: 10rem;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 576px) {
+  .jess-MenuB-container-fluid {
+    width: 100%;
+    height: 110rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .jess-MenuB-RWD {
+    width: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+    margin-top: -15rem;
+    justify-content: center;
+  }
+  .jess-menuB-pic1 {
+    width: 100%;
+  }
+  .jess-menuB-pic1::before {
+    content: '客製化便當';
+    color: #ffffff;
+    font-size: 3rem;
+    font-family: 'Noto Serif TC';
+    font-weight: 600;
+    letter-spacing: 1rem;
+    position: relative;
+    text-shadow: #000 1px 1px 5px;
+    top: 30%;
+    left: 10%;
+  }
+
+  .jess-menuB-pic2 {
+    width: 37.5rem;
+    margin: 2rem;
+  }
+  .jess-menuB-pic3 {
+    width: 37.5rem;
+    margin: 2rem;
+  }
+  .jess-menuB-pic4 {
+    display: none;
+  }
+  .jess-menuB-pic5 {
+    display: none;
+  }
+  .jess-Menu-bottomBorder {
+    display: none;
+  }
 }

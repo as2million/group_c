@@ -15,7 +15,7 @@ function JessListD() {
                 <li class="jess-text-15Gray">來自 180 則評分，滿分5顆星</li>
               </ul>
             </div>
-            <div className="col-2 jess-msg-todo d-flex align-items-center">
+            <div className="col-6 col-sm-2 jess-msg-todo d-flex align-items-center">
               <Button className="button-btn" text="我要評論"></Button>
             </div>
           </div>

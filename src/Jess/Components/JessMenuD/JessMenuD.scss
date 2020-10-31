@@ -238,5 +238,26 @@ $white: #ffffff;
   transition-delay: 0.1s;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 576px) {
+  .jess-MenuD-container-fluid {
+    background-color: $white;
+    width: 100%;
+    height: 70rem;
+    padding: 0;
+    margin-top: 3rem;
+  }
+  .jess-MenuD-RWD {
+    width: 100%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+  }
+  .jess-menuD-groupon1 {
+    display: block;
+  }
+  .jess-menuD-groupon2 {
+    display: none;
+  }
 }

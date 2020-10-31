@@ -15,7 +15,7 @@ function JessMenuC() {
           </p>
           <div className="row mt-5">
             <div className="col-12 col-sm-6 d-flex ">
-              <div className="row d-flex  align-content-between">
+              <div className="row d-flex align-content-between jess-MenuC-RWD">
                 <div className="jess-view-menuCpic1">
                   <div className="jess-menuC-pic1"></div>
                   <div class="mask">

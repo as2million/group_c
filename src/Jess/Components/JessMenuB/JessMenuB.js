@@ -13,12 +13,12 @@ function JessMenuB() {
             <br />
             熱量完整揭露輕鬆計算、詳細的食材來源
           </p>
-          <div className="row mt-5">
+          <div className="row mt-5 ">
             <div class="col-12 col-sm-6 ">
               {/* <p className="jess-menuB-BentoText">客製化便當</p> */}
               <div className="jess-menuB-pic1"></div>
             </div>
-            <div className="col-12 col-sm-6 d-flex ">
+            <div className="col-12 col-sm-6 d-flex jess-MenuB-RWD">
               <div className="row d-flex  align-content-between">
                 <div className="jess-view-menuBpic2">
                   <div className="jess-menuB-pic2"></div>

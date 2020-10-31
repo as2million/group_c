@@ -10,7 +10,7 @@ function JessListB() {
       <div className="container-fluid jess-proB-container-fluid mx-auto">
         <div className="container jess-proB-container">
           <div className="row">
-            <div className="jess-ListB-cheif col-3 col-md-12">
+            <div className="jess-ListB-cheif col-12 col-md-12 ">
               <Fade top>
                 <h1>產銷履歷安心雞肉，餐桌上肉品的首選</h1>
                 <p>

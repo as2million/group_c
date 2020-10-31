@@ -48,7 +48,7 @@ function JessVegHeader() {
             </div>
           </div>
           <p className="jess-text20GreenTc mt-3">・尺寸</p>
-          <div className="row mt-3 ">
+          <div className="row mt-3 jess-VegSize ">
             <div className="col-2">
               <button className="jess-size active">S</button>
             </div>

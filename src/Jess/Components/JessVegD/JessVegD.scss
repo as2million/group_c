@@ -60,5 +60,11 @@ $white: #ffffff;
   width: 33rem;
   height: 33rem;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 576px) {
+  .jess-VegD-container-fluid {
+    padding: 0;
+    height: 180rem;
+    margin-top: 3rem;
+    background-color: $white;
+  }
 }

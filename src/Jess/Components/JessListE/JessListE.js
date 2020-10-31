@@ -22,21 +22,21 @@ function JessListE() {
                 </div>
               </div>
             </div> */}
-            <div className="col-xs-6 col-sm-4 mt-5 jess-view-first">
+            <div className="col-xs-6 col-sm-4 mt-5 jessListE-view-first">
               <div className="jess-proE-pic1"></div>
               <div class="mask">
                 <h2>醬烤厚切豬菲力</h2>
                 <p>$120</p>
               </div>
             </div>
-            <div className="col-xs-6 col-sm-4 mt-5 jess-view-first">
+            <div className="col-xs-6 col-sm-4 mt-5 jessListE-view-first">
               <div className="jess-proE-pic2"></div>
               <div class="mask">
                 <h2>日式燒雞腿</h2>
                 <p>$130</p>
               </div>
             </div>
-            <div className="col-xs-6 col-sm-4 mt-5 jess-view-first">
+            <div className="col-xs-6 col-sm-4 mt-5 jessListE-view-first">
               <div className="jess-proE-pic3"></div>
               <div class="mask">
                 <h2 className="jess-text-18white">醬烤厚切1983黑豚</h2>
