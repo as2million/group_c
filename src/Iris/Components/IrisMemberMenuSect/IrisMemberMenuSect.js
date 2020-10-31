@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './IrisMemberMenuSect.scss';
 import { ReactComponent as UserProfileIcon } from './Images/user_profile.svg';
 import { ReactComponent as BeastieIcon } from './Images/beastie_icon.svg';
@@ -9,7 +10,7 @@ import { ReactComponent as GroupOrderIcon } from './Images/group_order.svg';
 import { ReactComponent as MyFavIcon } from './Images/my_fav.svg';
 import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg';
 
-function IrisMemberMenuSect() {
+function IrisMemberMenuSect(props) {
   return (
     <>
       <div class="container iris-membermenu-container col-3 ">
@@ -37,38 +38,84 @@ function IrisMemberMenuSect() {
               </div>
             </div>
             {/* ---------- menu ----------- */}
-            <div class="iris-mune-item-wrapper d-flex d-flex flex-wrap">
-              <div class="iris-menu-item d-flex">
+            <div class="iris-mune-item-wrapper d-flex flex-wrap">
+              <div
+                class="iris-menu-item d-flex"
+                onClick={() => {
+                  props.history.push('/memberUserprofile');
+                }}
+              >
                 <UserProfileIcon class="iris-menu-icon" />
-                <div class="iris-menu-text">個人資料</div>
+                <div class="iris-menu-text">個人資料</div>{' '}
               </div>
+
               <div class="iris-menu-hr"></div>
-              <div class="iris-menu-item d-flex">
+              <div
+                class="iris-menu-item d-flex"
+                onClick={() => {
+                  props.history.push('/beastiePoint');
+                }}
+              >
                 <BeastieIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">怪獸幣</div>
               </div>
+
               <div class="iris-menu-hr"></div>
-              <div class="iris-menu-item d-flex">
+
+              <div
+                class="iris-menu-item d-flex"
+                onClick={() => {
+                  props.history.push('/orderManagement');
+                }}
+              >
                 <OrderIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">小農訂單</div>
               </div>
+
               <div class="iris-menu-hr"></div>
-              <div class="iris-menu-item d-flex">
+
+              <div
+                class="iris-menu-item d-flex"
+                onClick={() => {
+                  props.history.push('/orderManagement');
+                }}
+              >
                 <PlateIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">便當訂單</div>
               </div>
+
               <div class="iris-menu-hr"></div>
-              <div class="iris-menu-item d-flex">
+
+              <div
+                class="iris-menu-item d-flex"
+                onClick={() => {
+                  props.history.push('/groupOrder');
+                }}
+              >
                 <GroupOrderIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">揪團</div>
               </div>
+
               <div class="iris-menu-hr"></div>
-              <div class="iris-menu-item d-flex">
+
+              <div
+                class="iris-menu-item d-flex"
+                onClick={() => {
+                  props.history.push('/myFav');
+                }}
+              >
                 <MyFavIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">我的最愛</div>
               </div>
+
               <div class="iris-menu-hr"></div>
-              <div class="iris-menu-item d-flex">
+
+              <div
+                class="iris-menu-item d-flex"
+                onClick={() => {
+                  props.history.push('/myComment');
+                }}
+              >
                 <MyCommentIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">我的投稿</div>
               </div>
@@ -80,4 +127,4 @@ function IrisMemberMenuSect() {
   );
 }
 
-export default IrisMemberMenuSect;
+export default withRouter(IrisMemberMenuSect);

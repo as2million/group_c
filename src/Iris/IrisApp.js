@@ -29,7 +29,7 @@ function IrisApp() {
             <Route path="/test">
               <Test setName={setName} />
             </Route>
-            <Route path="/test2">
+            <Route path="/login">
               <Test2 name={name} />
             </Route>
             <Route path="/memberUserprofile">
