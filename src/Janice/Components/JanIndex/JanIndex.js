@@ -102,9 +102,89 @@ function JanIndex(props) {
         <div className="jan-index-feature-triangle"></div>
       </div>
 
-      <div className="container-fluid jan-p0">
-        <div className="row jan-p0 ">
-          <div className="jan-index-feature-cards"></div>
+      {/* intros */}
+      <div className="container-fluid jan-p0 jan-intro-area">
+        <div className="container jan-intro1 jan-p0">
+          {/* 在地小農 */}
+          <div className="jan-intro1 align-items-center d-flex justify-content-between">
+            {/* 介紹欄位 */}
+            <div className="jan-intro1-wrap flex-column">
+              <div className="jan-intro1-title"></div>
+              <div className="jan-intro1-text"></div>
+              <div className="jan-index-button float-right mt-3">
+                <Button className="button-btn-g" text="小農地圖" />
+              </div>
+            </div>
+            {/* 小農欄位 */}
+            <div className="jan-intro1-cards d-flex justify-content-around align-items-center">
+              {/* 萱草園．農友張武增 */}
+              <div className="jan-intro1-card1">
+                <div className="jan-intro1-farmer1 d-flex justify-content-center"></div>
+                <div className="jan-intro1-card1-wrap flex-column">
+                  <div className="jan-intro1-fake-farmer1"></div>
+                  <p className="jan-card1-title">萱草園．農友張武增</p>
+                  <p className="jan-card1-text ">
+                    張武增張大哥，生於花蓮赤柯山 田地保育山羌，通過綠色保育標章
+                    「安心金針」甘甜風味受好評 友善耕種，堅持不使用農藥、化肥
+                    熱風烘乾，堅持提供無硫金針。
+                  </p>
+                  <div className="jan-card-arrow float-right"></div>
+                  <br />
+                  <p className="jan-card1-viewmore float-right">view more</p>
+                </div>
+              </div>
+
+              {/* 青翠園有機農場・農友莊翠蘭 */}
+              <div className="jan-intro1-card2">
+                <div className="jan-intro1-card2">
+                  <div className="jan-intro1-farmer2 d-flex justify-content-center"></div>
+                  <div className="jan-intro1-card2-wrap flex-column">
+                    <div className="jan-intro1-fake-farmer2"></div>
+                    <p className="jan-card2-title">
+                      青翠園有機農場・農友莊翠蘭
+                    </p>
+                    <p className="jan-card2-text ">
+                      堅持至今的信念是個好： 「對自己身體好，對消費者的身體好，
+                      對土地好，對天地萬物好」。 她的心願是，「如果土地會說話，
+                      希望他們會說：『嗯，我很舒服』， 這樣就太好了！」
+                    </p>
+                    <div className="jan-card-arrow float-right"></div>
+                    <br />
+                    <p className="jan-card2-viewmore float-right">view more</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 產銷履歷 */}
+          {/* <div className="jan-intro2">
+            <p>農產品產銷履歷制度是一種農產品從農場到餐桌，在生產、加工、運輸、銷售過程完整記錄的安心保證制度，自1985年起歐洲國家積極投入調查研究並決定導入食品訊息可追溯系統，歐盟自2005年１月１日起規範所有食品的銷售與販賣，均必須具備可追溯生產者或加工者之資訊，並設定2008年境內食品產銷履歷制度全面法制化，規範輸入歐盟農產品的各國生產者必須事先取得EurepGAP認證。</p>
+          </div> */}
+          {/* 客製化便當 */}
+          <div className="jan-intro3 align-items-center d-flex justify-content-between">
+            <div className="jan-intro3-wrap flex-column">
+              <div className="jan-intro3-title"></div>
+              <div className="jan-intro3-text">
+                <p>親愛的，是不是有那些日子，看著菜單卻覺得無從下手，</p>
+                <p>想吃照燒雞肉配玉米炒蛋，</p>
+                <p>可偏偏照燒雞肉的配菜卻是最討厭的菜色呢？</p>
+                <p>照過來，照過來!</p>
+                <p className="jan-intro1-large-text">“拾餐”客製化便當</p>
+                <p>幫你實現午餐到晚餐的美味想法；</p>
+                <p>自由組合，隨心搭配，</p>
+                <p>別再讓你的想法受限於制式的菜單上了！</p>
+              </div>
+              <div className="jan-index-button float-right mt-3">
+                <Button className="button-btn" text="客製化便當" />
+              </div>
+            </div>
+            <div className="jan-intro3-cards"></div>
+          </div>
+          {/* 揪團訂購 */}
+          <div className="jan-intro4"></div>
+          {/* 營養標示 */}
+          <div className="jan-intro5"></div>
         </div>
       </div>
 

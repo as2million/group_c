@@ -123,8 +123,7 @@ $deepYello: #f5a016;
   }
 }
 
-// 特色專區
-// 切換區域容器的大小
+// 特色專區-切換區域
 .jan-index-feature {
   width: 117rem;
   height: 20rem;
@@ -225,10 +224,228 @@ $deepYello: #f5a016;
   margin-top: 2rem;
 }
 // 特色內容
-.jan-index-feature-cards {
+.jan-intro-area {
   width: 100%;
   height: 55rem;
   background-color: $skin;
+  .jan-intro1 {
+    // background-color: #ddd;
+    width: 100%;
+    height: 55rem;
+    display: none;
+    .jan-intro1-wrap {
+      background-color: #bbb;
+      width: 44rem;
+      height: 50rem;
+      .jan-intro1-title {
+        background: url('./Images/Svg/intro1.svg') center center no-repeat;
+        background-size: cover;
+        width: 38rem;
+        height: 11rem;
+      }
+      .jan-intro1-text {
+        width: 38rem;
+        height: 30rem;
+        color: $gray;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 1.4rem;
+        margin-top: 2rem;
+        margin-left: 5rem;
+        .jan-intro1-large-text {
+          color: $deepYello;
+          font-family: 'Noto Sans TC', sans-serif;
+          font-size: 2rem;
+          font-weight: 600;
+        }
+      }
+    }
+    .jan-intro1-cards {
+      // background-color: #ccc;
+      width: 68rem;
+      height: 50rem;
+      .jan-intro1-card1 {
+        background-color: $lightGray;
+        width: 30rem;
+        height: 45rem;
+        border-radius: 20px;
+        box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+        position: relative;
+        overflow: hidden;
+        .jan-intro1-farmer1 {
+          border-radius: 50%;
+          background: url('./Images/Images/farmer1.jpg') center center no-repeat;
+          background-size: 40rem;
+          background-position: -5rem -1.5rem;
+          width: 15rem;
+          height: 15rem;
+          margin: 3rem auto 0 auto;
+        }
+        .jan-intro1-card1-wrap {
+          width: 25rem;
+          height: 45rem;
+          top: 0;
+          right: 2.5rem;
+          position: absolute;
+          .jan-intro1-fake-farmer1 {
+            width: 15rem;
+            height: 15rem;
+            margin: 3rem auto 2rem auto;
+          }
+          .jan-card1-title {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+          }
+          .jan-card1-text {
+            width: 25rem;
+            height: 15rem;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 0 auto;
+          }
+          .jan-card-arrow {
+            background: url('./Images/Svg/intro1-arrow.svg') center center
+              no-repeat;
+            background-size: cover;
+            width: 3rem;
+            height: 2.2rem;
+            cursor: pointer;
+          }
+          .jan-card1-viewmore {
+            font-family: 'Noto Sans TC', sans-serif;
+            color: $gray;
+            font-size: 1rem;
+            // margin-right: 2.5rem;
+          }
+        }
+      }
+      .jan-intro1-card1:hover {
+        .jan-intro1-farmer1 {
+          margin-left: -15rem;
+          margin-top: -7.5rem;
+          background: url('./Images/Images/farmer1.jpg') center center no-repeat;
+          background-size: 80rem;
+          background-position: -2rem 6rem;
+          transition: 0.5s;
+          border-radius: 50rem;
+          opacity: 0.3;
+          width: 60rem;
+          height: 60rem;
+        }
+      }
+
+      .jan-intro1-card2 {
+        background-color: $lightGray;
+        width: 30rem;
+        height: 45rem;
+        border-radius: 20px;
+        box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+        position: relative;
+        overflow: hidden;
+        .jan-intro1-farmer2 {
+          border-radius: 50%;
+          background: url('./Images/Images/farmer2.jpg') center center no-repeat;
+          background-size: 24rem;
+          background-position: -8rem 0rem;
+          width: 15rem;
+          height: 15rem;
+          margin: 3rem auto 0 auto;
+        }
+        .jan-intro1-card2-wrap {
+          width: 25rem;
+          height: 45rem;
+          top: 0;
+          right: 2.5rem;
+          position: absolute;
+          .jan-intro1-fake-farmer2 {
+            width: 15rem;
+            height: 15rem;
+            margin: 3rem auto 2rem auto;
+          }
+          .jan-card2-title {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+          }
+          .jan-card2-text {
+            width: 25rem;
+            height: 15rem;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 0 auto;
+          }
+          .jan-card-arrow {
+            background: url('./Images/Svg/intro1-arrow.svg') center center
+              no-repeat;
+            background-size: cover;
+            width: 3rem;
+            height: 2.2rem;
+            cursor: pointer;
+          }
+          .jan-card2-viewmore {
+            font-family: 'Noto Sans TC', sans-serif;
+            color: $gray;
+            font-size: 1rem;
+            // margin-right: 2.5rem;
+          }
+        }
+        .jan-intro1-card2:hover {
+          .jan-intro1-farmer2 {
+            margin-left: -15rem;
+            margin-top: -7.5rem;
+            background: url('./Images/Images/farmer2.jpg') center center
+              no-repeat;
+            background-size: 80rem;
+            background-position: -30rem 3rem;
+            transition: 0.5s;
+            border-radius: 50rem;
+            opacity: 0.3;
+            width: 60rem;
+            height: 60rem;
+          }
+        }
+      }
+    }
+  }
+  .jan-intro3 {
+    z-index: 3000;
+    background-color: #ddd;
+    width: 100%;
+    height: 55rem;
+    .jan-intro3-wrap {
+      background-color: #bbb;
+      width: 44rem;
+      height: 50rem;
+      .jan-intro3-title {
+        background: url('./Images/Svg/intro3.svg') center center no-repeat;
+        background-size: cover;
+        width: 35rem;
+        height: 11rem;
+      }
+      .jan-intro3-text {
+        width: 38rem;
+        height: 30rem;
+        color: $gray;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 1.4rem;
+        margin-top: 2rem;
+        margin-left: 5rem;
+        .jan-intro3-large-text {
+          color: $deepYello;
+          font-family: 'Noto Sans TC', sans-serif;
+          font-size: 2rem;
+          font-weight: 600;
+        }
+      }
+    }
+    .jan-intro3-cards {
+      background-color: #ccc;
+      width: 68rem;
+      height: 50rem;
+    }
+  }
 }
 
 // 今日推薦
@@ -395,6 +612,7 @@ $deepYello: #f5a016;
   }
 }
 
+// 好文推薦
 .jan-article {
   background-color: #fff;
   width: 100%;
