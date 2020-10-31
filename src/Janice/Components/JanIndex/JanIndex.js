@@ -377,7 +377,7 @@ function JanIndex(props) {
         <div className="container jan-p0">
           <div className="row jan-p0  d-flex justify-content-center">
             {/* 專屬優惠標題 */}
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center mt-5 mb-5">
               <img alt="" src={titleLeft} />
               <p className="jan-feature-title">專屬優惠</p>
               <img alt="" src={titleRight} />
@@ -470,49 +470,56 @@ function JanIndex(props) {
       {/* 地圖 */}
       <div className="container-fluid jan-p0 jan-map mt-5">
         {/* 橘色底色 */}
-        <div className="container flex-column jan-p0 jan-map-form">
-          {/* 標題 */}
-          <div className="flex-column jan-p0 jan-map-title">
+        <div className="container flex-column align-items-center jan-map-form-bcc">
+          <div className="flex-column jan-map-form-wrap">
             <br />
-            {/* 將餐桌上的美味 */}
-            <div className="row mt-5">
+            {/* 標題 */}
+            <div className="mt-5">
               <img alt="" src={map1} />
-            </div>
-            {/* 外送給你 */}
-            <div className="row ">
               <img alt="" src={map2} />
             </div>
+
             {/* 表單 */}
-            <div className="row jan-p0 jan-adress-form">
-              <form>
-                <div className="jan-adress-radio">
-                  <input type="radio" name="location" value="tv" /> 台北市
-                  <input type="radio" name="location" value="ntc" /> 新北市
-                </div>
-                <br />
-                <div className="jan-adress-select">
-                  <MainPageSelectBox />
-                </div>
-                <br />
-                <div className="jan-adress-input">
-                  <InputH50 />
-                </div>
+            <div className="jan-adress-form-wrap d-flex justify-content-center align-items-center">
+              <div className="jan-form-wrap2 d-flex flex-column m-0">
+                <div className="mb-4">
+                  <form name="jan-adreaa-form" id="jan-adress-form">
+                    <p className="jan-form-announce">
+                      請填寫地址，查看免運金額
+                    </p>
+                    <div className="jan-adress-radio">
+                      <input type="radio" name="location" value="tc" /> 台北市
+                      <input type="radio" name="location" value="ntc" /> 新北市
+                    </div>
+                    <br />
+                    <div className="jan-adress-select">
+                      <MainPageSelectBox />
+                    </div>
+                    <br />
+                    <div className="jan-adress-input">
+                      <InputH50 />
+                    </div>
 
-                <br />
-                <div className="jan-index-button">
-                  <Button className="button-btn " text="確認送出" />
+                    <br />
+                    <div className="jan-index-button float-right">
+                      <Button className="button-btn-y " text="確認送出" />
+                    </div>
+                  </form>
                 </div>
-              </form>
-              <p>所在地點，符合滿</p>
-              <p>元免運費</p>
-              <p>最近的自取門市是</p>
-              <div className="jan-map-buttons d-flex justify-content-between">
-                <div className="jan-index-button">
-                  <Button className="button-btn " text="商品列表" />
+                <div className="jan-map-results mt-4">
+                  <p>
+                    所在地點，符合滿<span>500元</span>免運費
+                  </p>
+                  <p>最近的自取門市是大安門市</p>
                 </div>
-
-                <div className="jan-index-button">
-                  <Button className="button-btn " text="揪團訂購" />
+                <div className="jan-map-buttons d-flex justify-content-between mt-4">
+                  <div className="jan-index-button">
+                    <Button className="button-btn" text="商品列表" />
+                  </div>
+                  <br />
+                  <div className="jan-index-button">
+                    <Button className="button-btn" text="揪團訂購" />
+                  </div>
                 </div>
               </div>
             </div>

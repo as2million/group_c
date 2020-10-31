@@ -726,7 +726,7 @@ $deepYello: #f5a016;
   height: 75rem;
   position: relative;
   // 表單背景色
-  .jan-map-form {
+  .jan-map-form-bcc {
     background-color: $skin;
     width: 70%;
     height: 75rem;
@@ -734,26 +734,51 @@ $deepYello: #f5a016;
     margin-top: -3rem;
     left: 0;
     top: 0;
-    .jan-map-title {
+    .jan-map-form-wrap {
       margin-left: 15rem;
-      // margin-top: 5rem;
     }
-    .jan-adress-form {
-      background-color: #ccc;
-      width: 42rem;
+    .jan-adress-form-wrap {
+      // background-color: #ccc;
+      border: 1px solid #ccc;
+      margin-left: 2rem;
+      width: 38rem;
       height: 52rem;
+      .jan-form-announce {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 2rem;
+        font-weight: 400;
+        color: $deepYello;
+      }
+      .jan-adress-radio {
+        color: $brown;
+        font-size: 1.6rem;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 400;
+      }
+      .jan-map-results {
+        color: $brown;
+        font-size: 1.6rem;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 400;
+      }
+      // .jan-map-buttons {
+      //   text-align: right;
+      //   margin: 0px 0 0px auto;
+      // }
     }
     // 地圖區域
     .jan-map-view {
       width: 60%;
       height: 70%;
-      // background-color: $yellow;
       border: 0.1rem solid $yellow;
       right: 0;
       bottom: 3rem;
       position: absolute;
     }
   }
+}
+.jan-form-wrap2 {
+  width: 38rem;
 }
 
 // 好文推薦
