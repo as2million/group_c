@@ -1,11 +1,159 @@
+//Title - first line
+
+.claudia-modal h1 {
+    font-size: 2rem;
+    color: #438B6B;
+}
+
+//FRIST BLOCK
+
+//second line
+
 .claudia-modal-inline {
     display: flex;
     justify-content: space-between;
-
+    margin-top: 20px;
 }
+
+.claudia-modal-inline h2 {
+    font-size: 1.5rem;
+    color: #858585
+}
+
+//second line - reset button
 
 .claudia-modal-inline-reset-button {
     width: 100px;
     height: 30px;
     display: flex;
+    border: 1px solid #66AB8C;
+    padding: 2px 2px 2px 10px;
+    cursor: pointer;
+    background-color: #fff;
 }
+
+.claudia-modal-inline-reset-button h3 {
+    padding-top: 2.5px;
+    margin: 0px 5px 0px 0px;
+    color: #66AB8C;
+    font-size: 1.5rem;
+}
+
+//third line
+
+.claudia-modal-calender-button {
+    display: flex;
+    width: 175px;
+    height: 40px;
+    background-color:  #438B6B;
+    padding: 10px 0px 0px 22px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.claudia-modal-calender-button img {
+    width: 20px;
+    height: 20px;
+
+}
+ 
+.claudia-modal-calender-button h3 {
+    margin: 0px 0px 0px 8px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+//SECOND BLOCK
+
+.claudia-modal-middle-transport h3 {
+    font-size: 1.5rem;
+    color: #858585;
+    margin-bottom: 10px;
+}
+
+.claudia-modal-middle {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+//left - select transportation options
+
+.claudia-modal-middle-transport {
+    width: 235px;
+    height: 105px;
+    margin-right: 50px;
+}
+
+.claudia-modal-middle-transport-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.claudia-modal-middle-transport-buttons button {
+    width: 105px;
+    height: 40px;
+    border: 1px solid #438B6B;
+    background-color: #fff;
+    font-size: 1.5rem;
+    color: #438B6B;
+}
+
+.claudia-modal-middle-transport-buttons button:hover {
+    background-color:  #438B6B;
+    color: #fff;
+}
+
+//right - signup notes
+
+.claudia-modal-middle-group-notes {
+    width: 315px;
+    height: 105px;
+    background-color: #F7EDE2;
+    color: #858585; 
+    padding: 10px 15px;
+
+}
+
+
+.claudia-modal-middle-group-notes h4 {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.claudia-modal-middle-group-notes-title {
+    margin-bottom: 8px;
+}
+
+.claudia-modal-middle-group-notes-second {
+    margin-bottom: 0px;
+}
+
+.claudia-modal-middle-group-nums {
+    display: flex;
+    margin-bottom: 5px;
+
+}
+
+.claudia-modal-middle-group-nums h5 {
+    font-size: 1.2rem;
+    width: 70px;
+    height: 23px;
+    background-color: #F6BD60;
+    color: #fff;
+    margin-left: 10px;
+    padding: 5px 0px 0px 10px;
+    
+}
+
+
+//THRID BLOCK
+
+.claudia-modal-signup-num-box {
+    width: 630px;
+    height: 50px;
+    background-color: #F7EDE2;
+}
+
+
