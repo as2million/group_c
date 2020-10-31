@@ -1,4 +1,4 @@
-.claudia-index-content {
+.claudia-index-content-container {
     display: flex;
     width: 80%;
     margin: 0px auto;
@@ -18,7 +18,7 @@
 }
 
 @media only screen and (max-width: 375px) {
-    .claudia-index-content {
+    .claudia-index-content-container {
         display: block;
         padding-bottom: 0px;
     }

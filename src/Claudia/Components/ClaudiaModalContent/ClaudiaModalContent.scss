@@ -54,9 +54,10 @@
     width: 175px;
     height: 40px;
     background-color:  #438B6B;
-    padding: 10px 0px 0px 22px;
+    padding: 10px 0px 0px 30px;
     cursor: pointer;
     margin-bottom: 2rem;
+    border: 1px solid #438B6B;
 }
 
 .claudia-modal-calender-button img {
@@ -98,7 +99,7 @@
     align-items: center;
 }
 
-.claudia-modal-middle-transport-buttons button {
+.claudia-modal-middle-transport-buttons-toggle {
     width: 105px;
     height: 40px;
     border: 1px solid #438B6B;
@@ -111,6 +112,11 @@
     background-color:  #438B6B;
     color: #fff;
 }
+
+.claudia-modal-middle-transport-buttons button:focus {
+    outline:0;
+}
+
 
 //right - signup notes
 
@@ -175,7 +181,7 @@
 }
 
 .claudia-modal-signup-num-box-left {
-    width: 60px;
+    width: 80px;
     height: 50px;
     display: flex;
     align-items: center;
@@ -274,6 +280,7 @@
 .claudia-modal-cart-button button:active::after {
     background-color: #438b6b;
   }
+
 
 @media only screen and (max-width: 576px) {
 

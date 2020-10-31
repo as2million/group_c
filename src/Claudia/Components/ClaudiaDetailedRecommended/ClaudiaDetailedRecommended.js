@@ -40,9 +40,10 @@ function ClaudiaDetailedRecommended() {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="claudia-detailed-recommanded-wave-bg">
                     <img className="claudia-detailed-recommanded-wave" alt="" src={Wave} />
                 </div>
+                <div className="claudia-fake-footer"></div>
 
             </div>
         </>

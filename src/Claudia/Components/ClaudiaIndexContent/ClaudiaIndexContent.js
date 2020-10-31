@@ -8,10 +8,13 @@ function ClaudiaIndexContent() {
     return (
         <>
             <div className="claudia-index-content">
-                <div id="claudia-index-map"><ClaudiaIndexMap /></div>
-                <div id="claudia-index-card"><ClaudiaIndexCard /></div>
-
+                <div className="claudia-index-content-container">
+                    <div id="claudia-index-map"><ClaudiaIndexMap /></div>
+                    <div id="claudia-index-card"><ClaudiaIndexCard /></div>
+                </div>
+                <div className="claudia-fake-footer"></div>
             </div>
+
         </>
     )
 }

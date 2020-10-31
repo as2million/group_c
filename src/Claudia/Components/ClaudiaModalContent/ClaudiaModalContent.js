@@ -1,10 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ClaudiaModalContent.scss';
 import Reset from './Images/reset.svg';
 import Calender from './Images/calender.svg';
-import Counter from '../../../Share/Components/Counter/Counter'
+import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css';
 
-function ClaudaiModalContent() {
+function ClaudiaModalContent() {
+
+    //datepicker
+    const [startDate, setStartDate] = useState(new Date());
+    const ExampleCustomInput = ({ value, onClick }) => (
+        <button className="claudia-modal-calender-button" onClick={onClick}>
+            <img alt="" src={Calender} />
+            <h3>{value}</h3>
+        </button>
+    );
+
+    const isWeekday = (date) => {
+        const day = date.getDay();
+        return day == 0 || day == 6;
+    };
+
+    //change button color
+
+    const activeButtonColor = (e) => {
+
+        //change button to green
+        const selectedButton = e.target
+        console.log(selectedButton);
+        selectedButton.style.backgroundColor = "#438B6B";
+        selectedButton.style.color = "#fff";
+
+        //change another button to default
+
+        const getSiblings = function (e) {
+            let siblings = [];
+
+            if (!e.parentNode) {
+                return siblings;
+            }
+
+            let sibling = e.parentNode.firstChild;
+
+            while (sibling) {
+                if (sibling.nodeType === 1 && sibling !== e) {
+                    siblings.push(sibling);
+                }
+                sibling = sibling.nextSibling;
+            }
+            return siblings;
+
+        }
+
+        let siblings = getSiblings(selectedButton);
+        console.log('siblings', siblings);
+
+        siblings.forEach(el => {
+            console.log('element', el);
+            el.style.backgroundColor = "#fff";
+            el.style.color = "#438B6B";
+        });
+
+
+
+
+
+
+    }
 
     return (
 
@@ -19,16 +81,28 @@ function ClaudaiModalContent() {
                     </button>
 
                 </div>
-                <div className="claudia-modal-calender-button">
-                    <img alt="" src={Calender} />
-                    <h3>查看可預訂日期</h3>
-                </div>
+                <DatePicker
+                    selected={startDate}
+                    onChange={date => setStartDate(date)}
+                    customInput={<ExampleCustomInput />}
+                    filterDate={isWeekday}
+                    dateFormat="yyyy-MM-dd"
+                    minDate={Date.now()}
+                />
                 <div className="claudia-modal-middle">
                     <div className="claudia-modal-middle-transport">
                         <h3><b>前往方式</b></h3>
                         <div className="claudia-modal-middle-transport-buttons">
-                            <button>團體報名*</button>
-                            <button>自行前往</button>
+                            <button
+                                className="claudia-modal-middle-transport-buttons-toggle"
+                                onClick={activeButtonColor}>
+                                團體報名*
+                                </button>
+                            <button
+                                className="claudia-modal-middle-transport-buttons-toggle"
+                                onClick={activeButtonColor}>
+                                自行前往
+                                </button>
                         </div>
                     </div>
                     <div className="claudia-modal-middle-group-notes">
@@ -76,4 +150,4 @@ function ClaudaiModalContent() {
     )
 }
 
-export default ClaudaiModalContent;
+export default ClaudiaModalContent;

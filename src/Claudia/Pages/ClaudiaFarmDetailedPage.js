@@ -25,7 +25,6 @@ function ClaudiaFarmIntroPage() {
                 <ClaudiaDetailedNavButtons />
                 <ClaudiaDetailedRecommended />
             </ClaudiaMainContent>
-            <Footer />
             <ScrollButtonGreen />
         </>
     )
