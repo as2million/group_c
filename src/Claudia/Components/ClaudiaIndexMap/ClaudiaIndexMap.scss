@@ -1,7 +1,70 @@
 
 .claudia-index-map svg {
-    width: 90%;
+    width: 505px;
+    height: 715px;
+    position: absolute;
 }
+
+//placeholder
+
+.claudia-icon {
+    z-index: 100;
+    cursor: pointer;
+}
+
+//taipei
+
+.claudia-taipei {
+    position: relative;
+    top: 40px;
+    left: 390px;
+    display: none;
+}
+
+//new-taipei
+
+#claudia-new-taipei1 {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: inline;
+}
+
+#claudia-new-taipei2 {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: inline;
+}
+
+#claudia-new-taipei3 {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: inline;
+
+}
+
+#claudia-new-taipei4 {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: inline;
+}
+
+//keelung1
+
+#claudia-keelung1 {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: block;
+
+
+}
+
+
+//map
 
 .claudia-index-map path {
     stroke: white;
@@ -15,13 +78,16 @@
     transform: translate(-5px,-5px)
 }
 
-@media only screen and (max-width: 375px) {
+.claudia-index-map path:hover ~ .claudia-taipei {
+    transform: scale(2);
+
+}
+
+@media only screen and (max-width: 576px) {
 
     .claudia-index-map {
         width: 325px;
         height: 470px;
-
-
     }
 
 }

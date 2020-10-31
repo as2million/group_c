@@ -2,6 +2,9 @@ import React from 'react';
 import './ClaudiaIndexInducText.scss'
 
 function ClaudiaIndexInducText() {
+    const test = () => {
+        console.log('test');
+    }
 
     return (
         <>
