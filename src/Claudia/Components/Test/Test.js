@@ -1,35 +1,45 @@
-import React, { useState } from 'react';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import Calender from './Images/calender.svg'
+import React, { useState, useEffect } from 'react'
+import './Test.scss'
 
-function Test() {
+function Counter(props) {
+    const [count, setCount] = useState(1)
 
-    const [startDate, setStartDate] = useState(new Date());
-    const ExampleCustomInput = ({ value, onClick }) => (
-        <button className="claudia-modal-calender-button" onClick={onClick}>
-            <img alt="" src={Calender} />
-            <h3>{value}</h3>
-        </button>
-    );
-
-    const isWeekday = (date) => {
-        const day = date.getDay();
-        return day == 0 || day == 6;
-    };
+    const handleClick = (type) => {
+        if (type === 'increment') {
+            setCount(count + 1)
+        }
+        if (type === 'decrement' && count > 1) {
+            setCount(count - 1)
+        }
+    }
 
     return (
         <>
-            <DatePicker
-                selected={startDate}
-                onChange={date => setStartDate(date)}
-                customInput={<ExampleCustomInput />}
-                filterDate={isWeekday}
-                dateFormat="yyyy-MM-dd"
-                minDate={Date.now()}
-            />
+            <div className="counter-box">
+                <div
+                    onClick={() => {
+                        handleClick('decrement')
+                    }}
+                    className={
+                        count === 1
+                            ? 'counter-decrement cursor-default'
+                            : 'counter-decrement counter-hover'
+                    }
+                >
+                    <p>-</p>
+                </div>
+                <div className="counter-count">
+                    <p>{count}</p>
+                </div>
+                <div
+                    onClick={() => handleClick('increment')}
+                    className="counter-increment"
+                >
+                    <p>+</p>
+                </div>
+            </div>
         </>
     )
 }
 
-export default Test;
+export default Counter

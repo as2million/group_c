@@ -60,12 +60,32 @@ function ClaudiaModalContent() {
             el.style.backgroundColor = "#fff";
             el.style.color = "#438B6B";
         });
+    }
 
+    //counter1
 
+    const [count1, setCount1] = useState(1)
 
+    const handleClick1 = (type) => {
+        if (type === 'increment') {
+            setCount1(count1 + 1)
+        }
+        if (type === 'decrement' && count1 > 1) {
+            setCount1(count1 - 1)
+        }
+    }
 
+    //counter2
 
+    const [count2, setCount2] = useState(1)
 
+    const handleClick2 = (type) => {
+        if (type === 'increment') {
+            setCount2(count2 + 1)
+        }
+        if (type === 'decrement' && count2 > 1) {
+            setCount2(count2 - 1)
+        }
     }
 
     return (
@@ -120,17 +140,66 @@ function ClaudiaModalContent() {
                     <div className="claudia-modal-signup-num-box">
                         <div className="claudia-modal-signup-num-box-left"><b>成人</b></div>
                         <div className="claudia-modal-signup-num-box-right">
-                            <span><del><b>$1000</b></del></span>
-                            <span><b>$800</b></span>
-                            {/* <h6>Counter</h6> */}
+                            <div className="claudia-modal-signup-num-box-price-inline">
+                                <span><del><b>$900</b></del></span>
+                                <span><b>$800</b></span>
+                            </div>
+
+                            <div className="claudia-modal-counter-box">
+                                <div
+                                    onClick={() => {
+                                        handleClick1('decrement')
+                                    }}
+                                    className={
+                                        count1 === 1
+                                            ? 'claudia-modal-counter-decrement claudia-modal-cursor-default'
+                                            : 'claudia-modal-counter-decrement claudia-modal-counter-hover'
+                                    }
+                                >
+                                    <p>-</p>
+                                </div>
+                                <div className="claudia-modal-counter-count">
+                                    <p>{count1}</p>
+                                </div>
+                                <div
+                                    onClick={() => handleClick1('increment')}
+                                    className="claudia-modal-counter-increment"
+                                >
+                                    <p>+</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="claudia-modal-signup-num-box">
                         <div className="claudia-modal-signup-num-box-left"><b>兒童</b></div>
                         <div className="claudia-modal-signup-num-box-right">
-                            <span><del><b>$700</b></del></span>
-                            <span><b>$500</b></span>
-                            {/* <h6>Counter</h6> */}
+                            <div className="claudia-modal-signup-num-box-price-inline">
+                                <span><del><b>$700</b></del></span>
+                                <span><b>$500</b></span>
+                            </div>
+                            <div className="claudia-modal-counter-box">
+                                <div
+                                    onClick={() => {
+                                        handleClick2('decrement')
+                                    }}
+                                    className={
+                                        count2 === 1
+                                            ? 'claudia-modal-counter-decrement claudia-modal-cursor-default'
+                                            : 'claudia-modal-counter-decrement claudia-modal-counter-hover'
+                                    }
+                                >
+                                    <p>-</p>
+                                </div>
+                                <div className="claudia-modal-counter-count">
+                                    <p>{count2}</p>
+                                </div>
+                                <div
+                                    onClick={() => handleClick2('increment')}
+                                    className="claudia-modal-counter-increment"
+                                >
+                                    <p>+</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
