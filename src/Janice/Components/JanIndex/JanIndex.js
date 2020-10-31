@@ -385,77 +385,69 @@ function JanIndex(props) {
           {/* 標題 */}
           <div className="row ml-1 d-flex justify-content-center">
             <img alt="" src={titleLeft} />
-            <p className="m-5 jan-feature-title">好文推薦</p>
+            <p className="mt-5 jan-feature-title">好文推薦</p>
             <img alt="" src={titleRight} />
           </div>
 
           {/* 推薦文章卡片 */}
-
-          <div className="row d-flex justify-content-center">
+          <div className="row d-flex justify-content-center align-items-center">
             {/* 左邊模糊卡片 */}
-            <div className="col-3 jan-article-left-blur">
-              <div className="jan-p0">
-                <div className=" jan-p0 d-flex justify-content-center flex-wrap jan-article-bcc">
-                  {/* 圖片 */}
-                  <div className="jan-article-img1"></div>
-                  {/* 文字 */}
-                  <div className="jan-article-text-area">
-                    <p className="jan-article-name">Alice Yong</p>
-                    <p className="jan-article-text">
-                      以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
-                    </p>
-                  </div>
+            <div className="col-3">
+              <div className="m-auto d-flex justify-content-center flex-wrap jan-article-bcc  jan-article-left-blur">
+                {/* 圖片 */}
+                <div className="jan-article-img"></div>
+                {/* 文字 */}
+                <div className="jan-article-text-area">
+                  <p className="jan-article-name">Alice Yong</p>
+                  <p className="jan-article-text">
+                    以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="col-6 d-flex justify-content-center">
-              <div className="container jan-p0">
-                <div className="row jan-p0 d-flex justify-content-center flex-wrap jan-article-bcc">
-                  {/* 圖片 */}
-                  <div className="jan-article-img1"></div>
-                  {/* 文字 */}
-                  <div className="jan-article-text-area">
-                    <p className="jan-article-name">Alice Yong</p>
-                    <p className="jan-article-text">
-                      以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
-                    </p>
-                  </div>
+            {/* 中間兩張卡片 */}
+            <div className="col-6 d-flex justify-content-around">
+              <div className="d-flex justify-content-center flex-wrap jan-article-bcc">
+                {/* 圖片 */}
+                <div className="jan-article-img1"></div>
+                {/* 文字 */}
+                <div className="jan-article-text-area">
+                  <p className="jan-article-name">Alice Yong</p>
+                  <p className="jan-article-text">
+                    以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
+                  </p>
                 </div>
               </div>
 
-              <div className="container jan-p0">
-                <div className="row jan-p0 d-flex justify-content-center flex-wrap jan-article-bcc">
-                  {/* 圖片 */}
-                  <div className="jan-article-img2"></div>
-                  {/* 文字 */}
-                  <div className="jan-article-text-area">
-                    <p className="jan-article-name">小傑</p>
-                    <p className="jan-article-text">
-                      我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
-                      吃得飽又吃得健康，現在的人太常外食很硬攝取到高熱量、高油脂的食物，會造成身體負擔。
-                      但有了這樣的餐盒產生，就可以減少這一些麻煩了！
-                    </p>
-                  </div>
+              <div className="d-flex justify-content-center flex-wrap jan-article-bcc">
+                {/* 圖片 */}
+                <div className="jan-article-img2"></div>
+                {/* 文字 */}
+                <div className="jan-article-text-area">
+                  <p className="jan-article-name">小傑</p>
+                  <p className="jan-article-text">
+                    我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
+                    吃得飽又吃得健康，現在的人太常外食很硬攝取到高熱量、高油脂的食物，會造成身體負擔。
+                    但有了這樣的餐盒產生，就可以減少這一些麻煩了！
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* 右邊模糊卡片 */}
-            <div className="col-3 jan-article-right-blur">
-              <div className="container jan-p0">
-                <div className="row jan-p0 d-flex justify-content-center flex-wrap jan-article-bcc">
-                  {/* 圖片 */}
-                  <div className="jan-article-img2"></div>
-                  {/* 文字 */}
-                  <div className="jan-article-text-area">
-                    <p className="jan-article-name">小傑</p>
-                    <p className="jan-article-text">
-                      我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
-                      吃得飽又吃得健康，現在的人太常外食很硬攝取到高熱量、高油脂的食物，會造成身體負擔。
-                      但有了這樣的餐盒產生，就可以減少這一些麻煩了！
-                    </p>
-                  </div>
+            <div className="col-3">
+              <div className="m-auto d-flex justify-content-center flex-wrap jan-article-bcc jan-article-right-blur">
+                {/* 圖片 */}
+                <div className="jan-article-img"></div>
+                {/* 文字 */}
+                <div className="jan-article-text-area">
+                  <p className="jan-article-name">小傑</p>
+                  <p className="jan-article-text">
+                    我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
+                    吃得飽又吃得健康，現在的人太常外食很硬攝取到高熱量、高油脂的食物，會造成身體負擔。
+                    但有了這樣的餐盒產生，就可以減少這一些麻煩了！
+                  </p>
                 </div>
               </div>
             </div>
