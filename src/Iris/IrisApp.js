@@ -56,6 +56,7 @@ function IrisApp() {
         </MainContent>
         <Footer />
       </>
+      {/* login modal每頁都用到，放外面 */}
       <IrisLoginModal
         showLoginModal={showLoginModal}
         setShowLoginModal={setShowLoginModal}
