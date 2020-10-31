@@ -8,9 +8,9 @@ function JessVegB() {
   return (
     <>
       <div className="container-fluid jess-VegB-container-fluid mx-auto">
-        <div className="container jess-VegB-container mx-auto">
+        <div className="container jess-VegB-container">
           <div className="row">
-            <div className="jess-VegB-farm col-12 col-md-12 text-center mt-5">
+            <div className="jess-VegB-farm col-12 col-sm-12 text-center text-sm-center mt-5">
               <Fade top>
                 <h1>有愛大地理念</h1>
                 <p>
@@ -23,8 +23,32 @@ function JessVegB() {
                 <p>傳遞在地故事</p>
                 <p>屬於這塊土地的脈絡與感動</p>
               </div>
-              <div className="jess-VegBox "></div>
+              <div className="jess-VegBox col-12 "></div>
             </div>
+          </div>
+          <div className="row mt-5 justify-content-between">
+            <div className="col-12 col-sm-7">
+              <div className="row">
+                <p className="jess-text-18Green col-12 col-sm-10">
+                  由農場主人精心栽種，挑選當令食材，
+                  動手烹調出風味餐點。伴隨著自然美景，
+                  吃一口，感受人情溫度，季節的美味。
+                </p>
+              </div>
+              <div className="row align-items-center mt-5">
+                <div className="col-12 col-sm-5">
+                  <div className="jess-farmPic2 justify-content-center "></div>
+                </div>
+                <div className="col-12 col-sm-6">
+                  <div className="jess-greenBorder"></div>
+                  <p className="jess-text-15Gray text-left text-sm-center mt-5">
+                    農藥殘留經SGS檢驗310種合格。 等級和純度(DNA)委託工會檢驗。
+                    取得生產履歷認證， 可讓消費者進行產品生產過程追朔。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-4 jess-farmPic align-self-end"></div>
           </div>
         </div>
       </div>
