@@ -44,18 +44,18 @@ function IrisMemberMenuSect() {
               </div>
               <div class="iris-menu-hr"></div>
               <div class="iris-menu-item d-flex">
-                <UserProfileIcon class="iris-menu-icon" />
+                <BeastieIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">怪獸幣</div>
               </div>
               <div class="iris-menu-hr"></div>
               <div class="iris-menu-item d-flex">
                 <OrderIcon class="iris-menu-icon" />
-                <div class="iris-menu-text">訂單管理</div>
+                <div class="iris-menu-text">小農訂單</div>
               </div>
               <div class="iris-menu-hr"></div>
               <div class="iris-menu-item d-flex">
                 <PlateIcon class="iris-menu-icon" />
-                <div class="iris-menu-text">購買紀錄</div>
+                <div class="iris-menu-text">便當訂單</div>
               </div>
               <div class="iris-menu-hr"></div>
               <div class="iris-menu-item d-flex">
@@ -64,7 +64,7 @@ function IrisMemberMenuSect() {
               </div>
               <div class="iris-menu-hr"></div>
               <div class="iris-menu-item d-flex">
-                <UserProfileIcon class="iris-menu-icon" />
+                <MyFavIcon class="iris-menu-icon" />
                 <div class="iris-menu-text">我的最愛</div>
               </div>
               <div class="iris-menu-hr"></div>
