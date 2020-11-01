@@ -10,7 +10,6 @@
 .claudia-detailed-farm-intro-grice {
     width: 1440px;
     height: 1480px;
-    transform: scale(1.1);
     // display: none;
 }
 
@@ -187,10 +186,11 @@
         height: 210px;
         display: flex;
         justify-content: center;
+        overflow: visible;
     }
 
     .claudia-detailed-farm-silder-img-container {
-        width: 425px;
+        width: 375px;
         height: 700px;
         display: flex;
         flex-wrap: wrap;

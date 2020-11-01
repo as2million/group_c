@@ -34,6 +34,7 @@
     padding: 2px 2px 2px 10px;
     cursor: pointer;
     background-color: #fff;
+    color: #66AB8C;
 }
 
 .claudia-modal-inline-reset-button img {
@@ -43,8 +44,12 @@
 .claudia-modal-inline-reset-button h3 {
     padding-top: 2.5px;
     margin: 0px 5px 0px 0px;
-    color: #66AB8C;
+    
     font-size: 1.5rem;
+}
+
+.claudia-modal-inline-reset-button:focus {
+    outline: 0;
 }
 
 //third line
@@ -278,6 +283,12 @@
   .claudia-modal-counter-increment p {
     user-select: none;
   }
+
+  //counter rwd display none
+
+  .claudia-modal-signup-num-box-right-rwd {
+      display: none;
+  }
   
 
 //FOURTH BLOCK
@@ -417,22 +428,93 @@
         width: 295px;
     }
 
-
-    .claudia-modal-signup-num-box-right {
-        width: 185px;
-    }
-
     .claudia-modal-signup-num-box-left {
         font-size: 1.4rem;
         width: 6rem;
     }
 
-    .claudia-modal-signup-num-box-right span {
-        font-size: 1.4rem;
+    //counter display none
+
+    .claudia-modal-signup-num-box-right {
+        display: none;
     }
 
-    .claudia-modal-counter-box {
-        display: none;
+    // selection list display 
+
+    .claudia-modal-signup-num-box-right-rwd {
+        display: block;
+        width: 185px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .claudia-modal-signup-num-box-right-rwd span {
+        font-size: 1.4rem;
+        color: #F48145;
+        display: flex;
+        align-items: flex-start;
+    }
+
+
+    .claudia-modal-signup-num-box-right-rwd del{
+        font-size: 1.2rem;
+        color: #858585;
+        margin-right: 10px;
+    }
+
+    .claudia-modal-signup-num-box-price-inline-rwd {
+        width: 85px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    //selection list shared component custom css
+
+    .claudia-selection-container {
+        background-color: #66AB8C;
+        width: 75px;
+        position: relative;
+    }
+
+    .claudia-selection-container select {
+        width: 100%;
+        height: 28px;
+        border: 1px solid #66AB8C;
+        border-radius: 0px;
+        font-size: 1.4rem;
+        color: #858585;
+        padding-right: 30px;
+        text-align-last: center;
+        appearance: none;
+    }
+
+    .claudia-selection-container select:focus {
+        outline: none;
+    }
+
+    .claudia-selection-container button:focus {
+        outline: none;
+    }
+
+    .claudia-selection-container button {
+        pointer-events: none; // 穿透元素
+        background-color: #66AB8C;
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .claudia-selection-container button img {
+        width: 10px;
     }
 
     //FOURTH BLOCK
@@ -456,18 +538,6 @@
         width: 143px;
         height: 37px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
