@@ -1,13 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1170" height="492.014" viewBox="0 0 1170 492.014">
-  <defs>
-    <filter id="享受美食_不需要理由" x="766" y="332.246" width="230" height="45" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="1170" height="492.014" viewBox="0 0 1170 492.014">
   <g id="Group_6205" data-name="Group 6205" transform="translate(-135 -304.754)">
     <path id="sign_up_box_back" data-name="sign up box back" d="M0,0H1170V492.014H0v-272.9" transform="translate(135 304.754)" fill="#66ab8c"/>
     <g id="chicken" transform="translate(603.542 -27)">
@@ -66,9 +57,6 @@
           <path id="Path_223" data-name="Path 223" d="M745.676,596.538a.679.679,0,0,1-.679-.679V582.674a.679.679,0,1,1,1.359,0v13.184A.679.679,0,0,1,745.676,596.538Z" transform="translate(-744.997 -581.995)" fill="#f6bd60"/>
         </g>
       </g>
-    </g>
-    <g transform="matrix(1, 0, 0, 1, 135, 304.75)" filter="url(#享受美食_不需要理由)">
-      <text id="享受美食_不需要理由-2" data-name="享受美食  不需要理由" transform="translate(775 360.25)" fill="#fff" font-size="20" font-family="YuGothicUI-Bold, Yu Gothic UI" font-weight="700" letter-spacing="0.1em"><tspan x="0" y="0">享受美食</tspan><tspan y="0" xml:space="preserve" font-family="SegoeUI-Bold, Segoe UI">  </tspan><tspan y="0">不需要理由</tspan></text>
     </g>
   </g>
 </svg>
