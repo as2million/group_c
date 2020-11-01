@@ -351,7 +351,7 @@
   }
 
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 57.6rem) {
 
     //Title
     .claudia-modal h1 {
@@ -417,6 +417,7 @@
         width: 295px;
     }
 
+
     .claudia-modal-signup-num-box-right {
         width: 185px;
     }
@@ -428,6 +429,10 @@
 
     .claudia-modal-signup-num-box-right span {
         font-size: 1.4rem;
+    }
+
+    .claudia-modal-counter-box {
+        display: none;
     }
 
     //FOURTH BLOCK

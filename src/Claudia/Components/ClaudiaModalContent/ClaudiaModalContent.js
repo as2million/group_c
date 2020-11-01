@@ -144,7 +144,6 @@ function ClaudiaModalContent() {
                                 <span><del><b>$900</b></del></span>
                                 <span><b>$800</b></span>
                             </div>
-
                             <div className="claudia-modal-counter-box">
                                 <div
                                     onClick={() => {
