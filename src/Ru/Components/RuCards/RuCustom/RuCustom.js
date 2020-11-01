@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import 'Ru/Components/RuCards/Style.scss';
+import 'Ru/Components/RuCards/RuCustom/Style.scss';
 import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft';
 import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight';
 import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
@@ -164,16 +164,16 @@ function RuCustom() {
                             </h4>
                           </li>
                           <li className="ru-species-calories">
-                            熱量: <span>50大卡</span>
+                            熱量: 50大卡
                           </li>
                           <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>10大卡</span>
+                            碳水化合物: 10大卡
                           </li>
                           <li className="ru-species-protein">
-                            蛋白質: <span>10大卡</span>
+                            蛋白質: 10大卡
                           </li>
                           <li className="ru-species-fat">
-                            脂肪: <span>10大卡</span>
+                            脂肪: 10大卡
                           </li>
                         </ul>
                       </div>
@@ -193,16 +193,16 @@ function RuCustom() {
                             </h4>
                           </li>
                           <li className="ru-species-calories">
-                            熱量: <span>50大卡</span>
+                            熱量: 50大卡
                           </li>
                           <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>10大卡</span>
+                            碳水化合物: 10大卡
                           </li>
                           <li className="ru-species-protein">
-                            蛋白質: <span>10大卡</span>
+                            蛋白質: 10大卡
                           </li>
                           <li className="ru-species-fat">
-                            脂肪: <span>10大卡</span>
+                            脂肪: 10大卡
                           </li>
                         </ul>
                       </div>
@@ -222,16 +222,16 @@ function RuCustom() {
                             </h4>
                           </li>
                           <li className="ru-species-calories">
-                            熱量: <span>50大卡</span>
+                            熱量: 50大卡
                           </li>
                           <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>10大卡</span>
+                            碳水化合物: 10大卡
                           </li>
                           <li className="ru-species-protein">
-                            蛋白質: <span>10大卡</span>
+                            蛋白質: 10大卡
                           </li>
                           <li className="ru-species-fat">
-                            脂肪: <span>10大卡</span>
+                            脂肪: 10大卡
                           </li>
                         </ul>
                       </div>
@@ -251,16 +251,16 @@ function RuCustom() {
                             </h4>
                           </li>
                           <li className="ru-species-calories">
-                            熱量: <span>50大卡</span>
+                            熱量: 50大卡
                           </li>
                           <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>10大卡</span>
+                            碳水化合物: 10大卡
                           </li>
                           <li className="ru-species-protein">
-                            蛋白質: <span>10大卡</span>
+                            蛋白質: 10大卡
                           </li>
                           <li className="ru-species-fat">
-                            脂肪: <span>10大卡</span>
+                            脂肪: 10大卡
                           </li>
                         </ul>
                       </div>
@@ -276,20 +276,20 @@ function RuCustom() {
                         <ul>
                           <li>
                             <h4>
-                              綠色嫩花椰:<span>$10</span>
+                              綠色嫩花椰:$10
                             </h4>
                           </li>
                           <li className="ru-species-calories">
-                            熱量:<span>25大卡</span>
+                            熱量:25大卡
                           </li>
                           <li className="ru-species-carbohydrates">
-                            碳水化合物:<span>10大卡</span>
+                            碳水化合物:10大卡
                           </li>
                           <li className="ru-species-protein">
-                            蛋白質:<span>10大卡</span>
+                            蛋白質:10大卡
                           </li>
                           <li className="ru-species-fat">
-                            脂肪:<span>10大卡</span>
+                            脂肪:10大卡
                           </li>
                         </ul>
                       </div>

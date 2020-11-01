@@ -4,10 +4,10 @@ import "./Style.scss";
 function RuButtonB(props) {
   // text 按鈕文字
   // className 橘色樣式為button-btn 綠色樣式為button-btn-g
-  const { text, className } = props;
+  const { text } = props;
   return (
     <>
-      <button className={className}>{text}</button>
+      <button className='ru-buttonB'>{text}</button>
     </>
   );
 }
