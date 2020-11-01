@@ -73,7 +73,7 @@ html {
     .claudia-detailed-recommanded {
         width: 375px;
         height: 773px;
-        overflow: hidden;
+        // overflow: hidden;
     }
 
     .claudia-detailed-recommanded h1 {
@@ -90,9 +90,9 @@ html {
 
     .claudia-detailed-recommanded-card-container {
         width: 290px;
-        height: 410px;
-        padding-left: 40px;
-        // overflow: hidden;
+        height: 450px;
+        margin-left: 40px;
+        overflow: scroll;
     }
 
     .claudia-detailed-recommanded-card{

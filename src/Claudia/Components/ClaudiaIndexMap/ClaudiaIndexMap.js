@@ -10,12 +10,14 @@ function ClaudiaIndexMap() {
 
         selectedCity.addEventListener('mouseover', () => {
             console.log(document.getElementsByClassName('claudia-taipei')[0]);
-            document.getElementsByClassName('claudia-taipei')[0].style.display = 'inline';
+            document.getElementsByClassName('claudia-taipei')[0].style.visibility = 'visible';
+            document.getElementsByClassName('claudia-taipei')[0].style.opacity = 1;
         })
 
         selectedCity.addEventListener('mouseout', () => {
             console.log(document.getElementsByClassName('claudia-taipei')[0]);
-            document.getElementsByClassName('claudia-taipei')[0].style.display = 'none';
+            document.getElementsByClassName('claudia-taipei')[0].style.visibility = 'hidden';
+            document.getElementsByClassName('claudia-taipei')[0].style.opacity = 0;
         })
     }
 
@@ -30,13 +32,21 @@ function ClaudiaIndexMap() {
                 {/* taipei */}
                 <img className="claudia-icon claudia-taipei" alt="" src={Icon} />
                 {/* new taipei city */}
-                {/* <img className="claudia-icon" id="claudia-new-taipei1" alt="" src={Icon} />
+                <img className="claudia-icon" id="claudia-new-taipei1" alt="" src={Icon} />
                 <img className="claudia-icon" id="claudia-new-taipei2" alt="" src={Icon} />
                 <img className="claudia-icon" id="claudia-new-taipei3" alt="" src={Icon} />
                 <img className="claudia-icon" id="claudia-new-taipei4" alt="" src={Icon} />
-                <img className="claudia-icon" id="claudia-new-taipei4" alt="" src={Icon} /> */}
                 {/* keelung */}
-                {/* <img className="claudia-icon" id="claudia-keelung1" alt="" src={Icon} /> */}
+                <img className="claudia-icon" id="claudia-keelung1" alt="" src={Icon} />
+                {/* yilan */}
+                <img className="claudia-icon" id="claudia-yilan1" alt="" src={Icon} />
+                <img className="claudia-icon" id="claudia-yilan2" alt="" src={Icon} />
+                {/* hualien */}
+                <img className="claudia-icon" id="claudia-hualien1" alt="" src={Icon} />
+                <img className="claudia-icon" id="claudia-hualien2" alt="" src={Icon} />
+
+                <img className="claudia-icon" id="claudia-hualien2" alt="" src={Icon} />
+                <img className="claudia-icon" id="claudia-hualien2" alt="" src={Icon} />
 
 
 

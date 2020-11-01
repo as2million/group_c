@@ -9,7 +9,6 @@
 
 .claudia-icon {
     z-index: 100;
-    cursor: pointer;
 }
 
 //taipei
@@ -18,49 +17,81 @@
     position: relative;
     top: 40px;
     left: 390px;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s
 }
 
 //new-taipei
 
 #claudia-new-taipei1 {
     position: relative;
-    top: 0px;
-    left: 0px;
-    display: inline;
+    top: 78px;
+    left: 338px;
+    visibility: visible;
 }
 
 #claudia-new-taipei2 {
     position: relative;
-    top: 0px;
-    left: 0px;
-    display: inline;
+    top: 98px;
+    left: 325px;
+    visibility: visible;
 }
 
 #claudia-new-taipei3 {
     position: relative;
-    top: 0px;
-    left: 0px;
-    display: inline;
+    top: 85px;
+    left: 320px;
+    visibility: visible;
 
 }
 
 #claudia-new-taipei4 {
     position: relative;
-    top: 0px;
-    left: 0px;
-    display: inline;
+    top: 66px;
+    left: 310px;
+    visibility: visible;
 }
 
 //keelung1
 
 #claudia-keelung1 {
     position: relative;
-    top: 0px;
-    left: 0px;
-    display: block;
+    top: 40px;
+    left: 264px;
+    visibility: visible;
+}
 
+//yilan1
 
+#claudia-yilan1 {
+    position: relative;
+    top: 125px;
+    left: 236px;
+    visibility: visible;
+
+}
+
+#claudia-yilan2 {
+    position: relative;
+    top: 160px;
+    left: 179px;
+    visibility: visible;
+
+}
+
+#claudia-hualien1 {
+    position: relative;
+    top: 230px;
+    left: 144px;
+    visibility: visible;
+}
+
+#claudia-hualien2 {
+    position: relative;
+    top: 328px;
+    left: 78px;
+    visibility: visible;
 }
 
 
@@ -85,7 +116,7 @@
 
 @media only screen and (max-width: 57.6rem) {
 
-    .claudia-index-map {
+    .claudia-index-map svg {
         width: 325px;
         height: 470px;
     }

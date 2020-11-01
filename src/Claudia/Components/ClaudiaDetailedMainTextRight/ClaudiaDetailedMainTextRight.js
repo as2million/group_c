@@ -4,6 +4,7 @@ import Location from './Images/location.svg';
 import Button from '../../../Share/Components/Button/Button';
 import ClaudiaModalFrame from '../ClaudiaModalFrame/ClaudiaModalFrame';
 import ClaudiaModalContent from '../ClaudiaModalContent/ClaudiaModalContent';
+import { Link, withRouter } from 'react-router-dom'
 
 function ClaudiaDetailedMainTextRight() {
     const [status, setStatus] = useState(false);
