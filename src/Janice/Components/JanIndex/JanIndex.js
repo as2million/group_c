@@ -15,10 +15,13 @@ import MainPageSelectBox from '../../../Share/Components/Input/MainPageSelectBox
 import InputH50 from '../../../Share/Components/Input/InputH50';
 import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft';
 import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight';
+import VNavbar from '../../../Share/Components/VNavbar/VNavbar';
 
 function JanIndex(props) {
   return (
     <>
+      <VNavbar />
+
       {/* 線上客服 */}
       <div className="jan-chat position-absolute d-flex justify-content-center align-items-center position-fixed">
         <div className="jan-chat-icon"></div>
@@ -514,7 +517,7 @@ function JanIndex(props) {
             <div className="jan-adress-form-wrap d-flex justify-content-center align-items-center">
               <div className="jan-form-wrap2 d-flex flex-column m-0">
                 <div className="mb-4">
-                  <form name="jan-adreaa-form" id="jan-adress-form">
+                  <form name="jan-adress-form" id="jan-adress-form">
                     <p className="jan-form-announce">
                       請填寫地址，查看免運金額
                     </p>
@@ -548,7 +551,7 @@ function JanIndex(props) {
                     所在地點，符合滿<span>500元</span>免運費
                   </p>
                   <p>
-                    最近的自取門市是大安門市<span>（查看其他門市）</span>
+                    最近的自取地點是大安門市<span>（查看其他門市）</span>
                   </p>
                 </div>
                 <div className="jan-map-buttons d-flex justify-content-between mt-4">

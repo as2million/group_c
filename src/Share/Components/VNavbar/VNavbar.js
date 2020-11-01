@@ -8,6 +8,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { addDays, setHours, setMinutes } from 'date-fns';
 import { registerLocale } from 'react-datepicker';
 import { zhTW } from 'date-fns/esm/locale';
+import AdressTabs from '../AdressTabs/AdressTabs';
 registerLocale('zh-TW', zhTW);
 
 function VNavbar(props) {
@@ -42,19 +43,18 @@ function VNavbar(props) {
 
           <div className="d-flex align-items-center">
             <img alt="" src={mapLocator} className="icons-jan" />
-            <p className="titles-jan">外送地址：</p>
+            <p className="titles-jan">取餐地址：</p>
             <input className="address-input-jan" placeholder="點我填寫地址" />
-            {/* <Button className="address-btn-jan" onClick={() => {}}>
-            外送取餐
-          </Button> */}
           </div>
           <div className="d-flex justify-content-end">
             <Button className="shop-btn-jan" onClick={() => {}}>
-              門市取餐
+              修改地址
             </Button>
           </div>
         </div>
       </Navbar>
+
+      <AdressTabs />
     </>
   );
 }

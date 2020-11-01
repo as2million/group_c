@@ -26,6 +26,7 @@ $deepYello: #f5a016;
   font-family: 'Noto Serif TC', serif;
   color: $gray;
   margin: 0.5rem 1rem 1rem 1rem;
+  font-weight: 600;
 }
 
 // 共用元件按鈕大小修改
@@ -125,7 +126,7 @@ $deepYello: #f5a016;
 
 // 特色專區-切換區域
 .jan-index-feature {
-  width: 117rem;
+  max-width: 117rem;
   height: 20rem;
   background-color: #fff;
   // 圓圈們
