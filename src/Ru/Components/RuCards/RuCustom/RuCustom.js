@@ -164,16 +164,16 @@ function RuCustom() {
                             </h4>
                           </li>
                           <li className="ru-species-calories">
-                            熱量: <span>25大卡</span>
+                            熱量: <span>50大卡</span>
                           </li>
                           <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>$10</span>
+                            碳水化合物: <span>10大卡</span>
                           </li>
                           <li className="ru-species-protein">
-                            蛋白質: <span>$10</span>
+                            蛋白質: <span>10大卡</span>
                           </li>
                           <li className="ru-species-fat">
-                            脂肪: <span>$10</span>
+                            脂肪: <span>10大卡</span>
                           </li>
                         </ul>
                       </div>
@@ -193,16 +193,16 @@ function RuCustom() {
                             </h4>
                           </li>
                           <li className="ru-species-calories">
-                            熱量: <span>25大卡</span>
+                            熱量: <span>50大卡</span>
                           </li>
                           <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>$10</span>
+                            碳水化合物: <span>10大卡</span>
                           </li>
                           <li className="ru-species-protein">
-                            蛋白質: <span>$10</span>
+                            蛋白質: <span>10大卡</span>
                           </li>
                           <li className="ru-species-fat">
-                            脂肪: <span>$10</span>
+                            脂肪: <span>10大卡</span>
                           </li>
                         </ul>
                       </div>
@@ -222,16 +222,16 @@ function RuCustom() {
                             </h4>
                           </li>
                           <li className="ru-species-calories">
-                            熱量: <span>25大卡</span>
+                            熱量: <span>50大卡</span>
                           </li>
                           <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>$10</span>
+                            碳水化合物: <span>10大卡</span>
                           </li>
                           <li className="ru-species-protein">
-                            蛋白質: <span>$10</span>
+                            蛋白質: <span>10大卡</span>
                           </li>
                           <li className="ru-species-fat">
-                            脂肪: <span>$10</span>
+                            脂肪: <span>10大卡</span>
                           </li>
                         </ul>
                       </div>
@@ -251,16 +251,16 @@ function RuCustom() {
                             </h4>
                           </li>
                           <li className="ru-species-calories">
-                            熱量: <span>25大卡</span>
+                            熱量: <span>50大卡</span>
                           </li>
                           <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>$10</span>
+                            碳水化合物: <span>10大卡</span>
                           </li>
                           <li className="ru-species-protein">
-                            蛋白質: <span>$10</span>
+                            蛋白質: <span>10大卡</span>
                           </li>
                           <li className="ru-species-fat">
-                            脂肪: <span>$10</span>
+                            脂肪: <span>10大卡</span>
                           </li>
                         </ul>
                       </div>
@@ -283,13 +283,13 @@ function RuCustom() {
                             熱量:<span>25大卡</span>
                           </li>
                           <li className="ru-species-carbohydrates">
-                            碳水化合物:<span>$10</span>
+                            碳水化合物:<span>10大卡</span>
                           </li>
                           <li className="ru-species-protein">
-                            蛋白質:<span>$10</span>
+                            蛋白質:<span>10大卡</span>
                           </li>
                           <li className="ru-species-fat">
-                            脂肪:<span>$10</span>
+                            脂肪:<span>10大卡</span>
                           </li>
                         </ul>
                       </div>
@@ -303,6 +303,9 @@ function RuCustom() {
             </div>
           </div>
         </div>
+        {/* 背景米圖 s */}
+        <img src={background}></img>
+        {/* 背景米圖 e */}
       </div>
       {/* 商品區 - 網頁版 e */}
 
@@ -350,7 +353,7 @@ function RuCustom() {
                 <div className="ru-species-warp">
                   <ul>
                     {/* 品項1 s*/}
-                    <li>
+                    <li className="ru-species-item ru-species-item1">
                       <div className="ru-species-img">
                         <img src={cauliflower}></img>
                       </div>
@@ -362,7 +365,71 @@ function RuCustom() {
                             </h4>
                           </li>
                           <li className="ru-species-calories">
-                            熱量: <span>25大卡</span>
+                            熱量: <span>50大卡</span>
+                          </li>
+                          <li className="ru-species-carbohydrates">
+                            碳水化合物: <span>10大卡</span>
+                          </li>
+                          <li className="ru-species-protein">
+                            蛋白質: <span>10大卡</span>
+                          </li>
+                          <li className="ru-species-fat">
+                            脂肪: <span>10大卡</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="ru-species-btn">
+                        <RuButtonC text={'選擇'} />
+                      </div>
+                    </li>
+                    {/* 品項1 e*/}
+
+                    {/* 品項2 s*/}
+                    <li className="ru-species-item ru-species-item2">
+                      <div className="ru-species-img">
+                        <img src={cauliflower}></img>
+                      </div>
+                      <div className="ru-species-info">
+                        <ul>
+                          <li>
+                            <h4>
+                              綠色嫩花椰<span>$10</span>
+                            </h4>
+                          </li>
+                          <li className="ru-species-calories">
+                            熱量: <span>50大卡</span>
+                          </li>
+                          <li className="ru-species-carbohydrates">
+                            碳水化合物: <span>$10</span>
+                          </li>
+                          <li className="ru-species-protein">
+                            蛋白質: <span>$10</span>
+                          </li>
+                          <li className="ru-species-fat">
+                            脂肪: <span>$10</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="ru-species-btn">
+                        <RuButtonC text={'選擇'} />
+                      </div>
+                    </li>
+                    {/* 品項2 e*/}
+
+                    {/* 品項3 s*/}
+                    <li className="ru-species-item ru-species-item3">
+                      <div className="ru-species-img">
+                        <img src={cauliflower}></img>
+                      </div>
+                      <div className="ru-species-info">
+                        <ul>
+                          <li>
+                            <h4>
+                              綠色嫩花椰: <span>$10</span>
+                            </h4>
+                          </li>
+                          <li className="ru-species-calories">
+                            熱量: <span>50大卡</span>
                           </li>
                           <li className="ru-species-carbohydrates">
                             碳水化合物: <span>$10</span>
@@ -376,126 +443,66 @@ function RuCustom() {
                         </ul>
                       </div>
                     </li>
-                    {/* 品項1 e*/}
-
-                    {/* 品項2 s*/}
-                    {/* <li>
-                                <div className="ru-species-img">
-                                    <img src={cauliflower}></img>
-                                </div>
-                                <div className="ru-species-info">
-                                    <ul>
-                                        <li>
-                                            <h4>
-                                                綠色嫩花椰: <span>$10</span>
-                                            </h4>
-                                        </li>
-                                        <li className="ru-species-calories">
-                                            熱量: <span>25大卡</span>
-                                        </li>
-                                        <li className="ru-species-carbohydrates">
-                                            碳水化合物: <span>$10</span>
-                                        </li>
-                                        <li className="ru-species-protein">
-                                            蛋白質: <span>$10</span>
-                                        </li>
-                                        <li className="ru-species-fat">
-                                            脂肪: <span>$10</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li> */}
-                    {/* 品項2 e*/}
-
-                    {/* 品項3 s*/}
-                    {/* <li>
-                                <div className="ru-species-img">
-                                    <img src={cauliflower}></img>
-                                </div>
-                                <div className="ru-species-info">
-                                    <ul>
-                                        <li>
-                                            <h4>
-                                                綠色嫩花椰: <span>$10</span>
-                                            </h4>
-                                        </li>
-                                        <li className="ru-species-calories">
-                                            熱量: <span>25大卡</span>
-                                        </li>
-                                        <li className="ru-species-carbohydrates">
-                                            碳水化合物: <span>$10</span>
-                                        </li>
-                                        <li className="ru-species-protein">
-                                            蛋白質: <span>$10</span>
-                                        </li>
-                                        <li className="ru-species-fat">
-                                            脂肪: <span>$10</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li> */}
                     {/* 品項3 e*/}
 
                     {/* 品項4 s*/}
-                    {/* <li>
-                                <div className="ru-species-img">
-                                    <img src={cauliflower}></img>
-                                </div>
-                                <div className="ru-species-info">
-                                    <ul>
-                                        <li>
-                                            <h4>
-                                                綠色嫩花椰: <span>$10</span>
-                                            </h4>
-                                        </li>
-                                        <li className="ru-species-calories">
-                                            熱量: <span>25大卡</span>
-                                        </li>
-                                        <li className="ru-species-carbohydrates">
-                                            碳水化合物: <span>$10</span>
-                                        </li>
-                                        <li className="ru-species-protein">
-                                            蛋白質: <span>$10</span>
-                                        </li>
-                                        <li className="ru-species-fat">
-                                            脂肪: <span>$10</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li> */}
+                    <li className="ru-species-item ru-species-item4">
+                      <div className="ru-species-img">
+                        <img src={cauliflower}></img>
+                      </div>
+                      <div className="ru-species-info">
+                        <ul>
+                          <li>
+                            <h4>
+                              綠色嫩花椰: <span>$10</span>
+                            </h4>
+                          </li>
+                          <li className="ru-species-calories">
+                            熱量: <span>50大卡</span>
+                          </li>
+                          <li className="ru-species-carbohydrates">
+                            碳水化合物: <span>$10</span>
+                          </li>
+                          <li className="ru-species-protein">
+                            蛋白質: <span>$10</span>
+                          </li>
+                          <li className="ru-species-fat">
+                            脂肪: <span>$10</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
                     {/* 品項4 e*/}
 
                     {/* 品項5 s*/}
-                    {/* <li>
-                                <div className="ru-species-img">
-                                    <img src={cauliflower}></img>
-                                </div>
-                                <div className="ru-species-info">
-                                    <ul>
-                                        <li>
-                                            <h4>
-                                                綠色嫩花椰:<span>$10</span>
-                                            </h4>
-                                        </li>
-                                        <li className="ru-species-calories">
-                                            熱量:<span>25大卡</span>
-                                        </li>
-                                        <li className="ru-species-carbohydrates">
-                                            碳水化合物:<span>$10</span>
-                                        </li>
-                                        <li className="ru-species-protein">
-                                            蛋白質:<span>$10</span>
-                                        </li>
-                                        <li className="ru-species-fat">
-                                            脂肪:<span>$10</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li> */}
+                    <li className="ru-species-item ru-species-item5">
+                      <div className="ru-species-img">
+                        <img src={cauliflower}></img>
+                      </div>
+                      <div className="ru-species-info">
+                        <ul>
+                          <li>
+                            <h4>
+                              綠色嫩花椰:<span>$10</span>
+                            </h4>
+                          </li>
+                          <li className="ru-species-calories">
+                            熱量:<span>50大卡</span>
+                          </li>
+                          <li className="ru-species-carbohydrates">
+                            碳水化合物:<span>$10</span>
+                          </li>
+                          <li className="ru-species-protein">
+                            蛋白質:<span>$10</span>
+                          </li>
+                          <li className="ru-species-fat">
+                            脂肪:<span>$10</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
                     {/* 品項5 e*/}
                   </ul>
-
-                  <RuButtonC text={'選擇'} />
                 </div>
                 <RuArrowRight />
               </div>
@@ -588,6 +595,7 @@ function RuCustom() {
             </div>
           </div>
         </div>
+        <img src={background}></img>
       </div>
       {/* 商品區 - 網頁版 e */}
       {/* <Selecton /> */}
