@@ -64,6 +64,7 @@ function IrisApp() {
       <IrisLoginModal
         showLoginModal={showLoginModal}
         setShowLoginModal={setShowLoginModal}
+        setIsLogin={setIsLogin}
       />
     </Router>
   );

@@ -3,7 +3,7 @@ import './IrisLoginModal.scss';
 import IrisLoginCard from './../IrisLoginCard/IrisLoginCard';
 
 function IrisLoginModal(props) {
-  const { showLoginModal, setShowLoginModal } = props;
+  const { showLoginModal, setShowLoginModal, setIsLogin } = props;
 
   // 若ShowLoginModal是true，就秀登入畫面
   if (document.querySelector('.iris-login-mask')) {
@@ -35,7 +35,7 @@ function IrisLoginModal(props) {
           }}
         ></div> */}
 
-        <IrisLoginCard />
+        <IrisLoginCard setIsLogin={setIsLogin} />
       </div>
     </>
   );

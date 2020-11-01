@@ -4,8 +4,11 @@ import { ReactComponent as LoginCardBg } from './Images/login_card.svg';
 import { ReactComponent as RegisterCardBg } from './Images/register_card.svg';
 import InputH44 from './../../../Share/Components/Input/InputH44.js';
 import Button from './Button/Button';
+import ButtonLogin from './Button/ButtonLogin';
 
 function IrisLoginCard(props) {
+  const { setIsLogin } = props;
+
   // 變成註冊表單
   const ToRegisterForm = () => {
     // 白底移動
@@ -97,7 +100,12 @@ function IrisLoginCard(props) {
               <div className="iris-login-forget-pw">忘記密碼</div>
             </div>
             <div className="iris-login-button">
-              <Button className="button-btn-g" text="登入" />
+              <ButtonLogin
+                className="button-btn-g"
+                id="iris-login-btn"
+                text="登入"
+                setIsLogin={setIsLogin}
+              />
             </div>
             <div className="d-flex">
               <div className="iris-no-account">還沒有帳號嗎?</div>
@@ -132,7 +140,11 @@ function IrisLoginCard(props) {
             </div>
 
             <div className="iris-register-button">
-              <Button className="button-btn" text="送出" />
+              <Button
+                className="button-btn"
+                id="iris-register-btn"
+                text="送出"
+              />
             </div>
             <div className="d-flex">
               <div className="iris-no-account">已經有帳號了嗎?</div>
