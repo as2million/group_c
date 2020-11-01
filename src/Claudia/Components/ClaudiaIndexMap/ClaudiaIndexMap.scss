@@ -8,91 +8,197 @@
 //placeholder
 
 .claudia-icon {
+    position: relative;
+    visibility: hidden;
     z-index: 100;
+    opacity: 0;
+    transition: .3s;
+    cursor: pointer;
+    
 }
 
 //taipei
 
-.claudia-taipei {
-    position: relative;
+#claudia-taipei1 {
     top: 40px;
     left: 390px;
-    visibility: hidden;
-    opacity: 0;
-    transition: .3s
 }
 
 //new-taipei
 
 #claudia-new-taipei1 {
-    position: relative;
     top: 78px;
     left: 338px;
-    visibility: visible;
+    
 }
 
 #claudia-new-taipei2 {
-    position: relative;
     top: 98px;
     left: 325px;
-    visibility: visible;
 }
 
 #claudia-new-taipei3 {
-    position: relative;
     top: 85px;
     left: 320px;
-    visibility: visible;
-
 }
 
 #claudia-new-taipei4 {
-    position: relative;
     top: 66px;
     left: 310px;
-    visibility: visible;
 }
 
 //keelung1
 
 #claudia-keelung1 {
-    position: relative;
     top: 40px;
     left: 264px;
-    visibility: visible;
 }
 
 //yilan1
 
 #claudia-yilan1 {
-    position: relative;
     top: 125px;
     left: 236px;
-    visibility: visible;
-
 }
 
 #claudia-yilan2 {
-    position: relative;
     top: 160px;
     left: 179px;
-    visibility: visible;
-
 }
 
+// hualien
+
 #claudia-hualien1 {
-    position: relative;
     top: 230px;
     left: 144px;
-    visibility: visible;
 }
 
 #claudia-hualien2 {
-    position: relative;
     top: 328px;
     left: 78px;
-    visibility: visible;
 }
+
+// taitung
+
+#claudia-taitung1 {
+    top: 456px;
+    left: 18px;
+}
+
+#claudia-taitung2 {
+    top: 509px;
+    left: -50px;
+}
+
+#claudia-taoyuan1 {
+    top: 63px;
+    left: -36px;
+}
+
+#claudia-taoyuan2 {
+    top: 93px;
+    left: -60px;
+}
+
+// hsinchu
+
+#claudia-hsinchu1 {
+    top: 125px;
+    left: -117px;
+
+}
+//miaoli
+
+#claudia-miaoli1 {
+    top: 164px;
+    left: -168px;
+}
+
+// taichung
+
+#claudia-taichung1 {
+    top: 200px;
+    left: -168px;
+}
+
+#claudia-taichung2 {
+    top: 224px;
+    left: -268px;
+}
+
+// changhua
+
+#claudia-changhua1 {
+    top: 219px;
+    left: 208px;
+}
+
+#claudia-changhua2 {
+    top: 249px;
+    left: 182px;
+}
+
+// yunlin
+
+#claudia-yunlin1 {
+    top: 280px;
+    left: 107px;
+}
+
+#claudia-yunlin2 {
+    top: 283px;
+    left: 123px;
+}
+
+// chiayi
+
+#claudia-chiayi1 {
+    top: 318px;
+    left: 123px;
+}
+
+#claudia-chiayi2 {
+    top: 328px;
+    left: 14px;
+}
+
+#claudia-tainan1 {
+    top: 377px;
+    left: 14px;
+}
+
+
+// nantou
+
+#claudia-nantou1 {
+    top: 285px;
+    left: 80px;
+}
+
+// kaohsiung
+
+#claudia-kaohsiung1 {
+    top: 400px;
+    left: 0px;
+}
+
+#claudia-kaohsiung2 {
+    top: 425px;
+    left: -60px;
+}
+
+// pingtung
+
+#claudia-pingtung1 {
+    top: 487px;
+    left: -82px;
+}
+
+
+
+
+
+
 
 
 //map
