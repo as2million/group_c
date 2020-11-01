@@ -655,6 +655,54 @@ $deepYello: #f5a016;
   width: 100%;
   height: 78rem;
 }
+.jan-event {
+  width: 85rem;
+  height: 40rem;
+  background-color: $lightGray;
+  border-radius: 20px;
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+  overflow: hidden;
+  .jan-event-img {
+    width: 40rem;
+    height: 40rem;
+    background: url('./Images/Images/event1.png') center center no-repeat;
+    background-size: cover;
+  }
+}
+.jan-event-text {
+  width: 35rem;
+  height: 30rem;
+}
+.jan-event-title {
+  font-size: 1.8rem;
+  font-family: 'Noto Serif TC', serif;
+  color: $orange;
+  line-height: 10px;
+}
+.jan-event-content {
+  font-size: 1.3rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: $gray;
+  line-height: 10px;
+  .jan-call-to-action {
+    color: $orange;
+  }
+}
+.jan-event-date {
+  font-size: 1rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: $gray;
+}
+.jan-img-select {
+  width: 85rem;
+  height: 17rem;
+  .img-row {
+    width: 17rem;
+    height: 17rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+}
 
 // 購物流程背景樣式
 .jan-shopping-process {

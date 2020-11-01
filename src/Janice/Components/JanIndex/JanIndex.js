@@ -377,34 +377,65 @@ function JanIndex(props) {
         <div className="container jan-p0">
           <div className="row jan-p0  d-flex justify-content-center">
             {/* 專屬優惠標題 */}
-            <div className="d-flex align-items-center mt-5 mb-5">
+            <div className="d-flex align-items-center mt-4 mb-3">
               <img alt="" src={titleLeft} />
               <p className="jan-feature-title">專屬優惠</p>
               <img alt="" src={titleRight} />
             </div>
+            {/* 活動卡片 */}
             <div class="container">
               <div class="row">
-                <div class="col-12">
-                  <div class="img-demo">
-                    <img src="./imgs/product1.jpg" alt="" />
+                <div class="col-12 d-flex justify-content-center">
+                  <div class="jan-event d-flex ">
+                    <div className="jan-event-img">
+                      <img src="" alt="" />
+                    </div>
+                    <div className="jan-event-text text-center m-auto">
+                      <div className="jan-event-title mb-5">
+                        <p>現在訂購</p>
+                        <p>就送 Blender Bottle 搖搖杯</p>
+                      </div>
+                      <div className="jan-event-content mt-3">
+                        <p>環保，才是歷久不衰的流行。</p>
+                        <p>現在訂購，就送Blender Bottle搖搖杯</p>
+                        <br />
+                        <br />
+                        <p>你可以這樣做，輕鬆拿到限量搖搖杯！</p>
+                        <br />
+                        <br />
+                        <p>訂20個 期間限定百元餐盒</p>
+                        <p>包兩週 外送宅配到公司</p>
+                        <br />
+                        <br />
+                        <p className="jan-call-to-action">馬上訂購</p>
+                      </div>
+                      <div className="jan-event-date">
+                        活動日期：2020.11.1~2020.12.31
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-12">
-                  <div class="img-wrap d-flex">
-                    <div class="img-row">
-                      <img src="" alt="" />
+                <div class="col-12 mt-5 ">
+                  <div class="img-wrap d-flex justify-content-between align-items-center">
+                    <div className="jan-event-arrowL">
+                      <ArrowLeft />
                     </div>
-                    <div class="img-row">
-                      <img src="" alt="" />
+                    <div className="jan-img-select d-flex justify-content-between">
+                      <div class="img-row">
+                        <img src="" alt="" />
+                      </div>
+                      <div class="img-row">
+                        <img src="" alt="" />
+                      </div>
+                      <div class="img-row">
+                        <img src="" alt="" />
+                      </div>
+                      <div class="img-row">
+                        <img src="" alt="" />
+                      </div>
                     </div>
-                    <div class="img-row">
-                      <img src="" alt="" />
-                    </div>
-                    <div class="img-row">
-                      <img src="" alt="" />
-                    </div>
-                    <div class="img-row">
-                      <img src="" alt="" />
+                    <div className="jan-event-arrowR">
+                      <ArrowRight />
                     </div>
                   </div>
                 </div>
@@ -489,7 +520,13 @@ function JanIndex(props) {
                     </p>
                     <div className="jan-adress-radio">
                       <input type="radio" name="location" value="tc" /> 台北市
-                      <input type="radio" name="location" value="ntc" /> 新北市
+                      <input
+                        className="ml-5"
+                        type="radio"
+                        name="location"
+                        value="ntc"
+                      />{' '}
+                      新北市
                     </div>
                     <br />
                     <div className="jan-adress-select">
@@ -510,7 +547,9 @@ function JanIndex(props) {
                   <p>
                     所在地點，符合滿<span>500元</span>免運費
                   </p>
-                  <p>最近的自取門市是大安門市</p>
+                  <p>
+                    最近的自取門市是大安門市<span>（查看其他門市）</span>
+                  </p>
                 </div>
                 <div className="jan-map-buttons d-flex justify-content-between mt-4">
                   <div className="jan-index-button">
