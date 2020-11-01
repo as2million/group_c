@@ -10,6 +10,7 @@ import IrisProfilePage from './Pages/IrisProfilePage';
 import IrisOrderComment from './Pages/IrisOrderComment';
 import IrisMyFav from './Pages/IrisMyFav';
 import IrisBeastiePoint from './Pages/IrisBeastiePoint';
+import IrisGetCoupon from './Pages/IrisGetCoupon';
 import MainContent from './Components/MainContent';
 import IrisLoginModal from './Components/IrisLoginModal/IrisLoginModal';
 import './IrisApp.scss';
@@ -51,6 +52,9 @@ function IrisApp() {
             </Route>
             <Route path="/beastiePoint">
               <IrisBeastiePoint />
+            </Route>
+            <Route path="/getCoupon">
+              <IrisGetCoupon />
             </Route>
           </Switch>
         </MainContent>

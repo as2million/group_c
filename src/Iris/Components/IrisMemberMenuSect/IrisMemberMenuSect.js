@@ -65,11 +65,11 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/orderManagement');
+                  props.history.push('/getCoupon');
                 }}
               >
                 <OrderIcon class="iris-menu-icon" />
-                <div class="iris-menu-text">小農訂單</div>
+                <div class="iris-menu-text">專屬優惠</div>
               </div>
 
               <div class="iris-menu-hr"></div>
@@ -81,7 +81,7 @@ function IrisMemberMenuSect(props) {
                 }}
               >
                 <PlateIcon class="iris-menu-icon" />
-                <div class="iris-menu-text">便當訂單</div>
+                <div class="iris-menu-text">訂單管理</div>
               </div>
 
               <div class="iris-menu-hr"></div>
@@ -113,7 +113,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/myComment');
+                  props.history.push('/orderComment');
                 }}
               >
                 <MyCommentIcon class="iris-menu-icon" />

@@ -65,10 +65,12 @@ function IrisLoginCard(props) {
       <div className="iris-login-card-container d-flex align-items-center">
         <div className="iris-card-background">
           <div className="iris-login-background">
-            <LoginCardBg />
+            {/* <LoginCardBg /> */}
+            <img src={require('./Images/login_card.png')} />
           </div>
           <div className="iris-register-background">
-            <RegisterCardBg />
+            {/* <RegisterCardBg /> */}
+            <img src={require('./Images/register_card.png')} />
           </div>
         </div>
         <div className="iris-login-form">
