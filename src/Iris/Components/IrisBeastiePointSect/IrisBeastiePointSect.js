@@ -12,6 +12,24 @@ import { ReactComponent as BeastieCoupon20Grey } from './Images/beastie-coupon20
 import { ReactComponent as CouponVerticalLine } from './Images/coupon_vertical_line.svg';
 
 function IrisBeastiePointSect() {
+  const changeBeastieName = () => {
+    // 點擊icon後名字消失，顯示輸入框
+    document.querySelector('.iris-beastie-name').style.display = 'none';
+    document.querySelector('.iris-beastie-name-input').style.display = 'block';
+  };
+  const recordNewName = (e) => {
+    // 按下ENTER
+    let keypress = e.keyCode;
+    if (keypress === 13) {
+      // 讓名字等於INPUT裡的值，input消失，名字出現
+      document.querySelector(
+        '.iris-beastie-name'
+      ).innerText = document.querySelector('.iris-beastie-name-input').value;
+      document.querySelector('.iris-beastie-name-input').style.display = 'none';
+
+      document.querySelector('.iris-beastie-name').style.display = 'block';
+    }
+  };
   return (
     <>
       <div className="container col-9">
@@ -33,9 +51,20 @@ function IrisBeastiePointSect() {
 
             <div className="iris-beastie-box ">
               <div className="iris-beastie-name-box d-flex align-items-center justify-content-center">
-                <PencilIcon />
+                <PencilIcon
+                  className="iris-pencil-icon"
+                  onClick={() => {
+                    changeBeastieName();
+                  }}
+                />
                 &nbsp;&nbsp;
                 <div className="iris-beastie-name">小Q怪</div>
+                <input
+                  className="form-control iris-beastie-name-input"
+                  onKeyDown={(e) => {
+                    recordNewName(e);
+                  }}
+                />
               </div>
               <BesatieQ />
             </div>
