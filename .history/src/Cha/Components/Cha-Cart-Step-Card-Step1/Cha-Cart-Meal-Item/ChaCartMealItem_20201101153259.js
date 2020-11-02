@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Counter from 'Share/Components/Counter/Counter'
-import './ChaOrder.scss'
-function ChaOrder(props) {
+import './ChaCartMealItem.scss'
+function ChaCartMealItem(props) {
+  const { productName, productPrice, productAmount, setTodos } = props  
   return (
     <>
       <div className="cha-order">
@@ -20,4 +21,10 @@ function ChaOrder(props) {
     </>
   )
 }
-export default ChaOrder
+export default ChaCartMealItem
+
+
+// {cartMealItem.map((value, index) =>
+//   <ChaCartMealItem key={value.text} productName={value.productName} productPrice={value.productPrice} productAmount={value.productAmount}/>
+// )
+// }
