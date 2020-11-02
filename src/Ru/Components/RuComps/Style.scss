@@ -1,5 +1,26 @@
-@import 'Ru/Pages/variable.scss';
+@import "Ru/Pages/variable.scss";
 // 以下開始自訂CSS
+.ru-buttonWarpA {
+  // background-color: rgb(30, 236, 255);
+  width: 80.8%;
+  height: 64px;
+  margin-top: 50px;
+  @include flex($df, $fdr, space-between, $alc);
+}
+
+.ru-buttonWarpA .button-btn:nth-child(1) {
+  margin-right: 10px;
+}
+
+.ru-buttonWarpA .button-btn:nth-child(2),
+.button-btn:nth-child(3) {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.ru-buttonWarpA .button-btn-g {
+  margin-left: 10px;
+}
 
 button:focus,
 input {
@@ -28,7 +49,7 @@ input {
 
 .ru-mainImg {
   height: 362px;
-  background-image: url('./Images/mainImg.jpg');
+  background-image: url("./Images/mainImg.jpg");
   background-repeat: no-repeat;
   background-position: center 30%;
   background-size: cover;
@@ -111,7 +132,7 @@ input {
 
   .ru-mainImg {
     height: 362px;
-    background-image: url('./Images/mainImg.jpg');
+    background-image: url("./Images/mainImg.jpg");
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size: cover;
@@ -216,7 +237,7 @@ input {
 
   .ru-mainImg {
     height: 362px;
-    background-image: url('./Images/mainImg.jpg');
+    background-image: url("./Images/mainImg.jpg");
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size: cover;
@@ -327,7 +348,7 @@ input {
 
   .ru-mainImg {
     height: 365px;
-    background-image: url('./Images/mainImg.jpg');
+    background-image: url("./Images/mainImg.jpg");
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size: cover;

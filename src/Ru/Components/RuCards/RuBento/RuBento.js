@@ -85,7 +85,8 @@ function RuBento(props) {
       <div className="ru-item-containerA">
         {/* 卡片區 s */}
         <div className="ru-card-warp">
-          <div className="ru-itemWarp ru-itemWarp1">
+          <div className="ru-itemWarp">
+            
             {itemWarp1 && (
               <Card
                 title={'慢煮嫩雞胸-蒜味香草'}
@@ -106,7 +107,6 @@ function RuBento(props) {
                 id={'addCart-btn-2'}
                 parentId={'addCart-btn-warp-2'}
                 imgId={'card-img-2'}
-                cardMargin={'card-margin'}
               />
             )}
             {itemWarp3 && (
@@ -120,9 +120,7 @@ function RuBento(props) {
                 imgId={'card-img-3'}
               />
             )}
-          </div>
-
-          <div className="ru-itemWarp ru-itemWarp2">
+        
             {itemWarp4 && (
               <Card
                 title={'熱帶火烤萊姆蝦'}
@@ -143,7 +141,6 @@ function RuBento(props) {
                 id={'addCart-btn-5'}
                 parentId={'addCart-btn-warp-5'}
                 imgId={'card-img-5'}
-                cardMargin={'card-margin'}
               />
             )}
             {itemWarp6 && (
@@ -157,9 +154,7 @@ function RuBento(props) {
                 imgId={'card-img-6'}
               />
             )}
-          </div>
-
-          <div className="ru-itemWarp ru-itemWarp3">
+          
             {itemWarp7 && (
               <Card
                 title={'頂級熟成菲力牛排'}
@@ -180,7 +175,7 @@ function RuBento(props) {
                 id={'addCart-btn-8'}
                 parentId={'addCart-btn-warp-8'}
                 imgId={'card-img-8'}
-                cardMargin={'card-margin'}
+
               />
             )}
             {itemWarp9 && (
@@ -317,7 +312,7 @@ function RuBento(props) {
         <img src={background}></img>
         {/* 背景米圖 e */}
       </div>
-      ;{/* 商品區- ipad版e */}
+      {/* 商品區- ipad版e */}
       {/* 商品區 - 手機版 s */}
       <div className="ru-item-containerC">
         {/* 卡片區 s */}
@@ -432,7 +427,7 @@ function RuBento(props) {
         <img src={background}></img>
         {/* 背景米圖 e */}
       </div>
-      ;{/* 商品區- 手機版e */}
+      {/* 商品區- 手機版e */}
     </>
   )
 }
