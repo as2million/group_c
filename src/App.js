@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 // 引入 共用元件
-import Navbar from "Share/Components/Navbar/Navbar";
+import Navbar from "Share/Components/NavBar/NavBar";
 import Footer from "Share/Components/Footer/Footer";
 // import NotFoundPage from "Share/Components/NotFoundPage/NotFoundPage";
 
@@ -12,7 +12,7 @@ import JessMenu from "Jess/Pages/JessMenu"
 import JessBento from "Jess/Pages/JessBento"
 import JessVegBox from "Jess/Pages/JessVegBox"
 import IrisUserprofile from "Iris/Pages/IrisUserprofile"
-import IrisOrderComment  from "Iris/Pages/IrisOrderComment "
+import IrisOrderComment from "Iris/Pages/IrisOrderComment "
 import IrisMyFav from "Iris/Pages/IrisMyFav"
 import IrisBeastiePoint from "Iris/Pages/IrisBeastiePoint"
 import ChaCart from "Cha/Pages/ChaCart"
