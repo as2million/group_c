@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import IrisUserComment from '../../Iris/Components/IrisUserComment/IrisUserComment';
 import IrisMemberMenu from '../../Iris/Components/IrisMemberMenu/IrisMemberMenu';
-import JessCommentInput from '../Components/JessCommentInput/JessCommentInput';
-import JessCommentList from '../Components/JessCommentInput/JessCommentList';
 
 function JessComment(props) {
   const [textInput, setTextInput] = useState('');
@@ -56,21 +54,8 @@ function JessComment(props) {
     <>
       <div className="container-fluid d-flex">
         <IrisMemberMenu />
-        <JessCommentList
-          handleCompleted={handleCompleted}
-          handleEditedToggle={handleEditedToggle}
-          handleDelete={handleDelete}
-          handleEditedSave={handleEditedSave}
-          comments={comments}
-          // viewFilter={viewFilter}
-        />
+
         <hr />
-        <JessCommentInput
-          textInput={textInput}
-          setTextInput={setTextInput}
-          comments={comments}
-          setComments={setComments}
-        />
       </div>
     </>
   );

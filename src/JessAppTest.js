@@ -15,7 +15,7 @@ function JessAppTest() {
     <Router>
       <>
         <NavBar />
-        <VNavbar />
+        {/* <VNavbar /> */}
         <JessBento />
         {/* <testInput /> */}
         {/* <JessCommentMsg /> */}
