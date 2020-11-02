@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Tabs, Sonnet, Tab, Container } from 'react-bootstrap';
 import './AdressTabs.scss';
 import MainPageSelectBox from 'Share/Components/Input/MainPageSelectBox';
-import InputH50 from 'Share/Components/Input/InputH50';
 import Button from 'Share/Components/Button/Button';
 
 function AdressTabs(props) {

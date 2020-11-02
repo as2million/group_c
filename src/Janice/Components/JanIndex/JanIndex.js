@@ -538,6 +538,14 @@ function JanIndex(props) {
                             className="form-control iris-mainpage-select"
                             id="exampleFormControlSelect1"
                           >
+                            <option
+                              value="1"
+                              style={{ color: '#b6b6b6', fontSize: '1rem' }}
+                              disabled
+                              selected
+                            >
+                              請選擇區域
+                            </option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
