@@ -27,7 +27,7 @@ function ChaAppTest() {
           <Route path="/cart">
             <ChaCart />
           </Route>
-          <Route path="/groupOrder/groupOrderCreate">
+          <Route path="/groupOrder">
             <ChaGroupOrder />
           </Route>
           <Route path="/orderManagement">

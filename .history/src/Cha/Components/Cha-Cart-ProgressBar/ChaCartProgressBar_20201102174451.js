@@ -15,6 +15,22 @@ function moveBar(color = '#fff') {
       (document.body.scrollHeight - window.innerHeight)) *
       100
   )
+  bar.style.width = w + '%'
+  bar.style.background = color
+}
+
+window.addEventListener('scroll', () => {
+  moveBar('#f6bd60')
+})
+
+// main code
+function D(color = '#fff') {
+  let bar = document.querySelector('.cha-progress-bar-yellow')
+  let w = Math.ceil(
+    (Math.round(window.pageYOffset) /
+      (document.body.scrollHeight - window.innerHeight)) *
+      100
+  )
   if (bar) {
     bar.style.width = w + '%'
     bar.style.background = color

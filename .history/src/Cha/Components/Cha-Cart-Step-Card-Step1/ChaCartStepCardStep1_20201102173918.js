@@ -117,6 +117,6 @@ function ChaCartStepCardStep1(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
-export default ChaCartStepCardStep1
+export default ChaCartStepCardStep1;
