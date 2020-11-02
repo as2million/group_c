@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import IrisMemberMenu from '../../Iris/Components/IrisMemberMenu/IrisMemberMenu';
+import IrisMemberMenu from '../../Iris/Components/IrisMemberMenuSect/IrisMemberMenuSect';
 // import JessMenuA from '../Components/JessMenuA/JessMenuA';
 import JessCommentInput from '../Components/JessCommentMsg/JessCommentInput';
 

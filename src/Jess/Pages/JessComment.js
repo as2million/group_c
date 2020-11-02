@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import IrisUserComment from '../../Iris/Components/IrisUserComment/IrisUserComment';
-import IrisMemberMenu from '../../Iris/Components/IrisMemberMenu/IrisMemberMenu';
+// import IrisUserComment from '../../Iris/Components/IrisUserComment/IrisUserComment';
+import IrisMemberMenu from '../../Iris/Components/IrisMemberMenuSect/IrisMemberMenuSect';
 
 function JessComment(props) {
   const [textInput, setTextInput] = useState('');
