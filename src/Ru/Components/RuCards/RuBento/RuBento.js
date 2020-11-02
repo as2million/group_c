@@ -19,6 +19,7 @@ function RuBento(props) {
   const [itemWarp7, setItemWarp7] = useState(false)
   const [itemWarp8, setItemWarp8] = useState(false)
   const [itemWarp9, setItemWarp9] = useState(false)
+  const [isShowNothing, setIsShowNothing] = useState(false)
   // console.log(searchInput);
 
   let title1 = '慢煮嫩雞胸-蒜味香草'
@@ -31,12 +32,15 @@ function RuBento(props) {
   let title8 = '炙燒干貝'
   let title9 = '會議雙拼組合'
 
+  const $containerA = document.querySelector('.ru-itemWarp')
+
   // if (searchInput === '慢煮嫩雞胸-蒜味香草') {
   // setItemWarp1(true);
   // }
 
   // 搜尋功能 s
   useEffect(() => {
+    // 第一次掛載DOM 與 每次state改變時 都會觸發
     console.log(searchInput)
     setItemWarp1(true)
     setItemWarp2(true)
@@ -47,6 +51,7 @@ function RuBento(props) {
     setItemWarp7(true)
     setItemWarp8(true)
     setItemWarp9(true)
+    setIsShowNothing(false)
 
     if (title1.indexOf(searchInput) == -1) {
       setItemWarp1(false)
@@ -75,6 +80,19 @@ function RuBento(props) {
     if (title9.indexOf(searchInput) == -1) {
       setItemWarp9(false)
     }
+    if (
+      title1.indexOf(searchInput) == -1 &&
+      title2.indexOf(searchInput) == -1 &&
+      title3.indexOf(searchInput) == -1 &&
+      title4.indexOf(searchInput) == -1 &&
+      title5.indexOf(searchInput) == -1 &&
+      title6.indexOf(searchInput) == -1 &&
+      title7.indexOf(searchInput) == -1 &&
+      title8.indexOf(searchInput) == -1 &&
+      title9.indexOf(searchInput) == -1
+    ) {
+      setIsShowNothing(true)
+    }
     return () => {}
   }, [searchInput]) // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
   // 搜尋功能 e
@@ -86,7 +104,7 @@ function RuBento(props) {
         {/* 卡片區 s */}
         <div className="ru-card-warp">
           <div className="ru-itemWarp">
-            
+            {isShowNothing && '暫無資料'}
             {itemWarp1 && (
               <Card
                 title={'慢煮嫩雞胸-蒜味香草'}
@@ -120,7 +138,7 @@ function RuBento(props) {
                 imgId={'card-img-3'}
               />
             )}
-        
+
             {itemWarp4 && (
               <Card
                 title={'熱帶火烤萊姆蝦'}
@@ -154,7 +172,7 @@ function RuBento(props) {
                 imgId={'card-img-6'}
               />
             )}
-          
+
             {itemWarp7 && (
               <Card
                 title={'頂級熟成菲力牛排'}
@@ -175,7 +193,6 @@ function RuBento(props) {
                 id={'addCart-btn-8'}
                 parentId={'addCart-btn-warp-8'}
                 imgId={'card-img-8'}
-
               />
             )}
             {itemWarp9 && (
