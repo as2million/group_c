@@ -14,6 +14,7 @@ import ChaGroupOrder from 'Cha/Pages/Cha-Group-Order/ChaGroupOrder'
 import IrisProfilePageDemo from 'Cha/Pages/Iris-Profile-Page-Demo/IrisProfilePageDemo'
 
 import ChaOrderManagement from 'Cha/Components/Cha-Order-Management/ChaOrderManagement'
+import ScrollApp from 'Share/Components/ToTopButton/ScrollApp'
 
 function ChaAppTest() {
   return (
@@ -26,7 +27,7 @@ function ChaAppTest() {
           <Route path="/cart">
             <ChaCart />
           </Route>
-          <Route path="/groupOrder">
+          <Route path="/groupOrder/groupOrderCreate">
             <ChaGroupOrder />
           </Route>
           <Route path="/orderManagement">
@@ -35,7 +36,9 @@ function ChaAppTest() {
           <Route path="/irisProfilePageDemo">
             <IrisProfilePageDemo />
           </Route>
-          <Route path="/scrollApp"></Route>
+          <Route path="/scrollApp">
+            <ScrollApp />
+          </Route>
         </Switch>
       </>
     </Router>
