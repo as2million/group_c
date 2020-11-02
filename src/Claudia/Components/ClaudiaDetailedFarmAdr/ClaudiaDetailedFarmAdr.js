@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ClaudiaDetailedFarmAdr.scss';
 import Button from '../../../Share/Components/Button/Button';
 
+
 function ClaudiaDetailedFarmAdr() {
+
+    const changeTextPublic = () => {
+        document.getElementsByClassName('claudia-detailed-farm-adr-transport-text')[0].innerHTML =
+            `<p>1. 捷運市政府站→轉小2路公車→白石湖社區同心池下車，即到農場。</p>
+            <p>2. 捷運內湖站→下車步行至「成功路4段182巷口」（約160公尺）→轉小2路公車或小2路區間車→白石湖社區同心池下車，即抵農場。</p>`
+
+    }
+
+    const changeTextPrivate = () => {
+        document.getElementsByClassName('claudia-detailed-farm-adr-transport-text')[0].innerHTML =
+            `<p>1. 中山高速公路→成功交流道成功4段→金龍路→內湖路→碧山路</p>
+            <p>2. 基隆路或市民大道→環東快速道路→舊宗路→民權東路 6段→成功路4段→金龍路→內湖路→碧山路</p>
+            <p>3.中山北路→北安路→內湖路→碧山路</p>`
+
+    }
+
     return (
         <>
             <div className="claudia-detailed-farm-adr" id="farm-adr">
@@ -19,15 +36,21 @@ function ClaudiaDetailedFarmAdr() {
                     <div className="claudia-detailed-farm-adr-transport">
                         <div className="claudia-detailed-farm-adr-transport-container">
                             <div className="claudia-detailed-farm-adr-transport-buttons">
-                                <div><Button className="button-btn-g" text="開車前往" /></div>
-                                <div><Button className="button-btn-g" text="大眾運輸" /></div>
+                                <div className="claudia-detailed-farm-adr-transport-buttons-i"
+                                    onClick={changeTextPublic}>
+                                    <Button className="button-btn-g" text="大眾運輸" />
+                                </div>
+                                <div className="claudia-detailed-farm-adr-transport-buttons-i"
+                                    onClick={changeTextPrivate}>
+                                    <Button className="button-btn-g" text="開車前往" />
+                                </div>
                             </div>
                             <div className="claudia-detailed-farm-adr-transport-text">
-                                {/* <p>1. 捷運市政府站→轉小2路公車→白石湖社區同心池下車，即到農場。</p>
-                                <p>2. 捷運內湖站→下車步行至「成功路4段182巷口」（約160公尺）→轉小2路公車或小2路區間車→白石湖社區同心池下車，即抵農場。</p> */}
-                                <p>1. 中山高速公路→成功交流道成功4段→金龍路→內湖路→碧山路</p>
+                                <p>1. 捷運市政府站→轉小2路公車→白石湖社區同心池下車，即到農場。</p>
+                                <p>2. 捷運內湖站→下車步行至「成功路4段182巷口」（約160公尺）→轉小2路公車或小2路區間車→白石湖社區同心池下車，即抵農場。</p>
+                                {/* <p>1. 中山高速公路→成功交流道成功4段→金龍路→內湖路→碧山路</p>
                                 <p>2. 基隆路或市民大道→環東快速道路→舊宗路→民權東路 6段→成功路4段→金龍路→內湖路→碧山路</p>
-                                <p>3.中山北路→北安路→內湖路→碧山路</p>
+                                <p>3.中山北路→北安路→內湖路→碧山路</p> */}
                             </div>
                         </div>
                     </div>

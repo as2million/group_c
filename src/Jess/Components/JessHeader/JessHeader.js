@@ -3,16 +3,28 @@ import { Row, Col } from 'react-bootstrap';
 import { Rate } from 'antd';
 import 'antd/dist/antd.css';
 import './JessHeader.scss';
+import Counter from '../../../Share/Components/Counter/Counter';
+import AddCart from 'Share/Components/AddCart/AddCart';
+import BreadCrumb from '../JessBreadCrumb/BreadCrumb';
+import AddFavorite from 'Share/Components/AddFavorite/AddFavorite';
 
 function JessProdoctList() {
   return (
     <>
+      {/* <div className="container jess-breadCrumb">
+        <BreadCrumb />
+      </div> */}
+      {/* <BreadCrumb className="jess-breadCrumb" /> */}
       <div className="jess-fluidBg">
+        <div className="container jess-breadCrumb">
+          <BreadCrumb />
+        </div>
         {/* <container className="jess-container"></container> */}
         <div className="jess-productList-chichenPic">
           {/* <img src={ChickenRice} alt="Background" />; */}
         </div>
-        <div className="jess-menuList">
+        <div className="jess-menuList ">
+          <AddFavorite />
           <h1 className="jess-tittle">慢煮嫩雞胸-蒜味香草</h1>
           <p className="jess-content">
             以奧勒岡、紅甜椒等歐洲香料為主角，經冷油烹調加以醃製，清香純樸的風味，是一款嘗試香料魔法的好選擇！
@@ -41,6 +53,12 @@ function JessProdoctList() {
             <p className="jess-saleTotal">今日已售出58個</p>
           </div>
           <hr />
+          <div className=" mt-5 d-flex justify-content-center">
+            <Counter />
+          </div>
+          <div className=" mt-5 d-flex justify-content-center">
+            <AddCart />
+          </div>
         </div>
       </div>
     </>

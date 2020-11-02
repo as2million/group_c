@@ -1,10 +1,10 @@
 import React from "react";
-import RuComponent from "Ru/Components/Ru-component/RuComponents";
+import RuCompBento from "Ru/Components/RuComps/RuCompBento/RuCompBento";
 
 function RuProudctList() {
   return (
     <>
-      <RuComponent />
+      <RuCompBento />
     </>
   );
 }

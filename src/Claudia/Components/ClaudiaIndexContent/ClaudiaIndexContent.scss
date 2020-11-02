@@ -1,8 +1,8 @@
-.claudia-index-content {
+.claudia-index-content-container {
     display: flex;
     width: 80%;
     margin: 0px auto;
-    padding-bottom: 50px;
+    padding-bottom: 6rem;
 }
 
 #claudia-index-card {
@@ -17,8 +17,8 @@
     height: 690px;
 }
 
-@media only screen and (max-width: 375px) {
-    .claudia-index-content {
+@media only screen and (max-width: 57.6rem) {
+    .claudia-index-content-container {
         display: block;
         padding-bottom: 0px;
     }
