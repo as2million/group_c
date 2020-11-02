@@ -27,7 +27,7 @@ function ScrollButton(props) {
     // let intervalId = setInterval(scrollStep, props.delayInMs)
     // setIntervalIds(intervalId)
     // setIntervalIds(setInterval(scrollStep, props.delayInMs))
-    let A = setInterval(scrollStep, 17)
+    let A = setInterval(scrollStep, props.delayInMs)
     function scrollStep() {
       if (window.pageYOffset === 0) {
         // console.log('david logger intervalId', intervalId)
