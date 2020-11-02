@@ -11,13 +11,12 @@ import map2 from './Images/Svg/map2.svg';
 import stepArrow from './Images/Svg/stepArrow.svg';
 import Button from '../../../Share/Components/Button/Button';
 import starO from './Images/Svg/star-o.svg';
-import MainPageSelectBox from '../../../Share/Components/Input/MainPageSelectBox';
-import InputH50 from '../../../Share/Components/Input/InputH50';
 import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft';
 import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight';
 import VNavbar from '../../../Share/Components/VNavbar/VNavbar';
 
 function JanIndex(props) {
+  const { placeholder, type, id } = props;
   return (
     <>
       <VNavbar />
@@ -533,11 +532,30 @@ function JanIndex(props) {
                     </div>
                     <br />
                     <div className="jan-adress-select">
-                      <MainPageSelectBox />
+                      <div className="iris-mainpage-select-wrapper d-flex">
+                        <div className="iris-selectbar-wrapper">
+                          <select
+                            className="form-control iris-mainpage-select"
+                            id="exampleFormControlSelect1"
+                          >
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                          </select>
+                          <div className="iris-mainpage-whitebox"></div>
+                          <div className="iris-mainpage-trianglearrow" />
+                        </div>
+                      </div>
                     </div>
+
                     <br />
                     <div className="jan-adress-input">
-                      <InputH50 />
+                      <input
+                        className="form-control iris-inputH50"
+                        type={type}
+                        placeholder={placeholder}
+                        id={id}
+                      />
                     </div>
 
                     <br />

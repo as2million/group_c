@@ -15,10 +15,11 @@ function VNavbar(props) {
   const [startDate, setStartDate] = useState(
     setHours(setMinutes(new Date(), 30), 11)
   );
-  const [showVn, setShowVn] = useState(true);
+  const [status, setStatus] = useState(false);
 
   return (
     <>
+      {status && <AdressTabs closeModal={() => setStatus(false)}></AdressTabs>}
       <Navbar className="vnavbar-jan d-flex flex-wrap justify-content-between fixed-top">
         <div className="container d-flex flex-wrap justify-content-between align-content-center">
           <div className="d-flex align-items-center calendar-jan">
@@ -44,17 +45,19 @@ function VNavbar(props) {
           <div className="d-flex align-items-center">
             <img alt="" src={mapLocator} className="icons-jan" />
             <p className="titles-jan">取餐地址：</p>
-            <input className="address-input-jan" placeholder="點我填寫地址" />
+            <input
+              onClick={() => setStatus(true)}
+              className="address-input-jan"
+              placeholder="點我填寫地址"
+            />
           </div>
           <div className="d-flex justify-content-end">
-            <Button className="shop-btn-jan" onClick={() => {}}>
+            <Button className="shop-btn-jan" onClick={() => setStatus(true)}>
               修改地址
             </Button>
           </div>
         </div>
       </Navbar>
-
-      <AdressTabs />
     </>
   );
 }

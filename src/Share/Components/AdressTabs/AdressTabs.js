@@ -5,7 +5,9 @@ import MainPageSelectBox from 'Share/Components/Input/MainPageSelectBox';
 import InputH50 from 'Share/Components/Input/InputH50';
 import Button from 'Share/Components/Button/Button';
 
-function AdressTabs() {
+function AdressTabs(props) {
+  const { placeholder, type, id } = props;
+  const { closeModal } = props;
   // 使用的時候，
   // 幫我在你原本頁面中最外面容器，
   // 加上position-relative，
@@ -31,11 +33,30 @@ function AdressTabs() {
               </div>
               <br />
               <div className="jan-adress-select">
-                <MainPageSelectBox />
+                <div className="iris-mainpage-select-wrapper d-flex">
+                  <div className="iris-selectbar-wrapper">
+                    <select
+                      className="form-control iris-mainpage-select"
+                      id="exampleFormControlSelect1"
+                    >
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                    <div className="iris-mainpage-whitebox"></div>
+                    <div className="iris-mainpage-trianglearrow" />
+                  </div>
+                </div>
               </div>
+
               <br />
               <div className="jan-adress-input">
-                <InputH50 />
+                <input
+                  className="form-control iris-inputH50"
+                  type={type}
+                  placeholder={placeholder}
+                  id={id}
+                />
               </div>
 
               <br />
@@ -111,10 +132,11 @@ function AdressTabs() {
       setTabActive(e.target, '.jan-adress-tab-menu__item');
       setComponent(<ComponentB name="B" />);
     };
+
     return (
       <div className="position-absolute position-fixed jan-tabs-bcc">
         <div className="jan-tabs">
-          <div className="jan-tabs-close"></div>
+          <div onClick={closeModal} className="jan-tabs-close"></div>
           <div className="jan-adress-tab">
             <ul className="jan-adress-tab-menu">
               <li
