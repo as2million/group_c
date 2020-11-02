@@ -44,6 +44,13 @@
   height: 9.3rem;
 }
 
+.iris-text-area {
+  position: absolute;
+  bottom: -1rem;
+  width: 30rem;
+  display: none;
+}
+
 // comment images
 .comment-img-1 {
   background-image: url('./Images/item1.jpg');
@@ -145,6 +152,21 @@
   color: #f5a016;
   cursor: pointer;
 }
+
+.iris-comment-update {
+  color: #a59583;
+  font-size: 1.5rem;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.iris-comment-update:hover {
+  color: #f5a016;
+  cursor: pointer;
+}
+
 .iris-comment-date {
   // background-color: #afa;
   color: #a59583;
