@@ -24,6 +24,7 @@ $lightBrown: #f7ede2;
 
 .jess-proB-container-fluid {
   background: url('./SVG/bg.svg') repeat;
+  background-size: contain;
   padding: 0;
 }
 .jess-proB-container {
@@ -32,7 +33,7 @@ $lightBrown: #f7ede2;
 }
 .jess-ListB-cheif {
   width: 114rem;
-  padding-top: 10rem;
+  padding-top: 5rem;
   margin: 0 auto;
   text-align: center;
 }
@@ -114,6 +115,54 @@ $lightBrown: #f7ede2;
   // margin-top: 11rem;
   // margin-right: 3rem;
 }
+.jess-proB-container-fluid {
+  background: url('./SVG/bg.svg') repeat;
+  background-size: contain;
+  padding: 0;
+}
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 576px) {
+  .jess-ListB-cheif {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .jess-ListB-cheif > p {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .jess-ListB-chicken {
+    background: url('./Images/chichen.jpg');
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    margin: 0;
+  }
+  .jess-ListB-word {
+    display: none;
+  }
+  .jess-ListB-word > h2 {
+    writing-mode: horizontal-tb;
+    text-align: center;
+    justify-content: center;
+  }
+  .jess-ListB-word > p {
+    writing-mode: horizontal-tb;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex: w;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .jessListBpic1 {
+    display: none;
+  }
 }

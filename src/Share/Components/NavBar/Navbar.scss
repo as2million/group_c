@@ -256,6 +256,10 @@ html {
   top: 0;
 }
 
+.ant-popover.ant-popover-placement-bottomLeft {
+  z-index: 2000 !important;
+}
+
 /*mobile styles*/
 @media screen and (max-width: 57.6rem) {
   .nav .navBar-jess-container {
@@ -363,4 +367,23 @@ html {
     left: 16rem;
     top: 20rem;
   }
+}
+
+// 10/31 iris新增
+// 會員下拉式選單的登入/登出 文字樣式
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item {
+  color: rgb(255, 255, 255);
+  line-height: 2.5rem;
+  font-size: 1.8rem;
+}
+// 10/31 iris新增
+//會員下拉式選單的登入/登出 hover後效果
+.nav
+  .navBar-jess-navigation_item
+  .navBar-jess-dropdown2
+  .navBar-jess-dropdown_item:hover {
+  cursor: pointer;
 }

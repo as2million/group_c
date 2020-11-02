@@ -1,0 +1,188 @@
+.iris-content-title-container {
+  margin-top: 15rem;
+  width: 100;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.iris-comment-title {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  color: #a59583;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.iris-comment-note {
+  color: #858585;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.iris-comment-quantity {
+  color: #f48145;
+}
+
+.iris-member-line {
+  width: auto;
+  height: 0.1rem;
+  background-color: #decdbb;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.iris-comment-list-container {
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-top: 3.6rem;
+}
+
+.iris-comment-img {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  width: 9.8rem;
+  height: 9.3rem;
+}
+
+.iris-text-area {
+  position: absolute;
+  bottom: -1rem;
+  width: 30rem;
+  display: none;
+}
+
+// comment images
+.comment-img-1 {
+  background-image: url('./Images/item1.jpg');
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+}
+
+.comment-img-2 {
+  background-image: url('./Images/item2.jpg');
+  background-size: cover;
+  background-position: 45% center;
+  background-repeat: no-repeat;
+}
+
+.comment-img-3 {
+  background-image: url('./Images/item3.jpg');
+  background-size: cover;
+  background-position: 62.5% center;
+  background-repeat: no-repeat;
+}
+
+.comment-img-4 {
+  background-image: url('./Images/item4.jpg');
+  background-size: cover;
+  background-position: 57.5% center;
+  background-repeat: no-repeat;
+}
+
+.comment-img-5 {
+  background-image: url('./Images/item5.jpg');
+  background-size: cover;
+  background-position: 60% center;
+  background-repeat: no-repeat;
+}
+
+.comment-img-6 {
+  background-image: url('./Images/item6.jpg');
+  background-size: cover;
+  background-position: 17.5% center;
+  background-repeat: no-repeat;
+}
+
+.comment-img-7 {
+  background-image: url('./Images/item7.jpg');
+  background-size: cover;
+  background-position: 17.5% center;
+  background-repeat: no-repeat;
+}
+
+.comment-img-8 {
+  background-image: url('./Images/item8.jpg');
+  background-size: cover;
+  background-position: 65% center;
+  background-repeat: no-repeat;
+}
+
+.comment-img-9 {
+  background-image: url('./Images/item9.jpg');
+  background-size: cover;
+  background-position: 62.5% center;
+  background-repeat: no-repeat;
+}
+
+.iris-comment-section-wrapper {
+  width: 100%;
+  position: relative;
+  margin-left: 1.7rem;
+}
+.iris-comment-text-wrapper {
+  // background-color: #ffa;
+  color: #858585;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.iris-comment-text {
+  // background-color: #faa;
+  color: #a59583;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.iris-comment-edit-delete {
+  // background-color: #aff;
+  color: #a59583;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.iris-comment-edit-delete .comment-edit:hover {
+  color: #f5a016;
+  cursor: pointer;
+}
+.iris-comment-edit-delete .comment-delete:hover {
+  color: #f5a016;
+  cursor: pointer;
+}
+
+.iris-comment-update {
+  color: #a59583;
+  font-size: 1.5rem;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.iris-comment-update:hover {
+  color: #f5a016;
+  cursor: pointer;
+}
+
+.iris-comment-date {
+  // background-color: #afa;
+  color: #a59583;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.card-star-warp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.card-star {
+  margin: 0px 2px;
+  width: 14px;
+}
