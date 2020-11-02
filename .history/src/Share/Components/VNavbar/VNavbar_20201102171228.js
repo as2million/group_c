@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import './VNavbar.scss'
-import { Navbar, Button } from 'react-bootstrap'
-import calendar from './calendar.svg'
-import mapLocator from './mapLocator.svg'
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
-import { addDays, setHours, setMinutes } from 'date-fns'
-import { registerLocale } from 'react-datepicker'
-import { zhTW } from 'date-fns/esm/locale'
-registerLocale('zh-TW', zhTW)
+import React, { useState, useEffect } from 'react';
+import './VNavbar.scss';
+import { Navbar, Button } from 'react-bootstrap';
+import calendar from './calendar.svg';
+import mapLocator from './mapLocator.svg';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { addDays, setHours, setMinutes } from 'date-fns';
+import { registerLocale } from 'react-datepicker';
+import { zhTW } from 'date-fns/esm/locale';
+registerLocale('zh-TW', zhTW);
 
-function VNavbar(props) {
+function VNavbar(props) {~
   const [startDate, setStartDate] = useState(
     setHours(setMinutes(new Date(), 30), 11)
-  )
-  const [showVn, setShowVn] = useState(true)
+  );
+  const [showVn, setShowVn] = useState(true);
 
   return (
     <>
@@ -56,7 +56,7 @@ function VNavbar(props) {
         </div>
       </Navbar>
     </>
-  )
+  );
 }
 
-export default VNavbar
+export default VNavbar;
