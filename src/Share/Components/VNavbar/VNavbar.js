@@ -21,7 +21,7 @@ function VNavbar(props) {
     <>
       {status && <AdressTabs closeModal={() => setStatus(false)}></AdressTabs>}
       <Navbar className="vnavbar-jan d-flex flex-wrap justify-content-between fixed-top">
-        <div className="container d-flex flex-wrap justify-content-between align-content-center">
+        <div className="jan-vnav-container d-flex flex-wrap justify-content-around align-content-center">
           <div className="d-flex align-items-center calendar-jan">
             <img alt="" src={calendar} className="icons-jan " />
             <p className="titles-jan">選擇日期/時間：</p>
