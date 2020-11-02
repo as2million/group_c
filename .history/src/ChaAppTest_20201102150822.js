@@ -14,7 +14,6 @@ import ChaGroupOrder from 'Cha/Pages/Cha-Group-Order/ChaGroupOrder'
 import IrisProfilePageDemo from 'Cha/Pages/Iris-Profile-Page-Demo/IrisProfilePageDemo'
 
 import ChaOrderManagement from 'Cha/Components/Cha-Order-Management/ChaOrderManagement'
-import ScrollApp from 'Share/ToTopButton/ScrollApp'
 
 function ChaAppTest() {
   return (
@@ -35,9 +34,6 @@ function ChaAppTest() {
           </Route>
           <Route path="/irisProfilePageDemo">
             <IrisProfilePageDemo />
-          </Route>
-          <Route path="/scrollApp">
-            <ScrollApp />
           </Route>
         </Switch>
       </>

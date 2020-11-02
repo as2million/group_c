@@ -36,8 +36,8 @@ function ChaAppTest() {
           <Route path="/irisProfilePageDemo">
             <IrisProfilePageDemo />
           </Route>
-          <Route path="/scrollApp">
-            <ScrollApp />
+          <Route path="/irisProfilePageDemo">
+            <IrisProfilePageDemo />
           </Route>
         </Switch>
       </>
