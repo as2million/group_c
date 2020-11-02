@@ -3,18 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import JanAppTest from './JanAppTest';
 import * as serviceWorker from './serviceWorker';
-// import ClaudiaAppTest from './ClaudiaAppTest'
-// import JessAppTest from './JessAppTest'
-// import IrisAppTest from './IrisAppTest';
+import ClaudiaAppTest from './ClaudiaAppTest';
+import JessAppTest from './JessAppTest';
+import IrisAppTest from './IrisAppTest';
 
 // import ChaAppTest from './ChaAppTest';
 // import RuAppTest from './RuAppTest';
 ReactDOM.render(
   <React.StrictMode>
     {/* <ClaudiaAppTest /> */}
-    <JanAppTest />
+    {/* <JanAppTest /> */}
 
-    {/* <JessAppTest /> */}
+    <JessAppTest />
     {/* <IrisAppTest /> */}
 
     {/* <ChaAppTest /> */}

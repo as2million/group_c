@@ -1,0 +1,75 @@
+// 覆蓋掉原本的預設bootstrap樣式要放在這下面 _variables.scss
+
+html {
+  font-size: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$white: #ffffff;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+//引入字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap');
+
+.jess-comment-bg {
+  width: 100%;
+  margin-top: 15rem;
+  // display: flex;
+  // flex-wrap: wrap;
+}
+.jess-commentBox {
+  width: 80rem;
+  // height: 10rem;
+
+  font-size: 1.5rem;
+  list-style: none;
+  // display: flex;
+  // flex-direction: column-reverse;
+}
+.jess-commentList > li {
+  height: 7rem;
+  background-color: #f0f0f0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: $darkGary;
+  list-style: none;
+  border-bottom: 0.1rem solid $darkBrown;
+  padding: 1rem;
+}
+.jess-input {
+  width: 80rem;
+  height: 10rem;
+}
+.jess-inputText {
+  font-size: 3rem;
+}
+.jess-input-button:focus {
+  outline: none;
+}
+.jess-input-button {
+  background-color: $orange;
+  height: 3rem;
+  width: 11rem;
+  border: 1px solid $orange;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.jess-inputBorder {
+  background: url('../images/SVG/brownBorder.svg') no-repeat;
+  background-size: contain;
+  width: 80rem;
+  height: 1rem;
+  margin-top: 2rem;
+}
