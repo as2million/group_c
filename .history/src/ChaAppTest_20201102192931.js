@@ -26,7 +26,7 @@ function ChaAppTest() {
           <Route path="/cart">
             <ChaCart />
           </Route>
-          <Route path="/groupOrder">
+          <Route path="/groupOrder/groupOrderCreate">
             <ChaGroupOrder />
           </Route>
           <Route path="/orderManagement">
@@ -35,7 +35,9 @@ function ChaAppTest() {
           <Route path="/irisProfilePageDemo">
             <IrisProfilePageDemo />
           </Route>
-          <Route path="/scrollApp"></Route>
+          <Route path="/scrollApp">
+            <ScrollApp />
+          </Route>
         </Switch>
       </>
     </Router>
