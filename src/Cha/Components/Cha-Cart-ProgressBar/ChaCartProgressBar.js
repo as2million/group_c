@@ -19,6 +19,24 @@ function moveBar(color = '#fff') {
   bar.style.background = color
 }
 
+window.addEventListener('scroll', () => {
+  moveBar('#f6bd60')
+})
+
+// main code
+function moveBar(color = '#fff') {
+  let bar = document.querySelector('.cha-progress-bar-yellow')
+  let w = Math.ceil(
+    (Math.round(window.pageYOffset) /
+      (document.body.scrollHeight - window.innerHeight)) *
+      100
+  )
+  if (bar) {
+    bar.style.width = w + '%'
+    bar.style.background = color
+    console.log(bar)
+  }
+}
 function ChaCartProgressBar(props) {
   return (
     <>

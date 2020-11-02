@@ -12,8 +12,10 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <ClaudiaAppTest /> */}
     {/* <JanAppTest /> */}
+
     {/* <JessAppTest /> */}
     {/* <IrisAppTest /> */}
+
     <ChaAppTest />
     {/* <RuAppTest /> */}
   </React.StrictMode>,
