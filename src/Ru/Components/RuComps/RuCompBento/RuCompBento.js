@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
 import RuBento from 'Ru/Components/RuCards/RuBento/RuBento';
 import RuButton from 'Ru/Components/RuButton/RuButton';
+import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar';
 import 'Ru/Components/RuComps/Style.scss';
 
 // 引用共用元件
-import SearchBar from 'Share/Components/Input/SearchBar';
 import ScrollButton from 'Share/ToTopButton/ScrollButton';
 // 引用圖片
 import line from './Images/line.png';
 
 function RuCompRuBento(props) {
-  console.log(props);
+  // console.log(props);
+  
   const [searchInput, setSearchInput] = useState('');
+  // console.log(searchInput);
 
   // JSX
   return (
@@ -53,7 +55,10 @@ function RuCompRuBento(props) {
       <div className="ru-productList-container">
         <div className="ru-optionWarp">
           {/* 搜尋欄s */}
-          <SearchBar />
+          <RuSearchBar
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
+          />
           {/* 搜尋欄e */}
 
           {/* 選項按鈕 s */}
@@ -117,13 +122,13 @@ function RuCompRuBento(props) {
       </div>
 
       {/* 商品卡片區 s */}
-      <RuBento />
+      <RuBento searchInput={searchInput} />
       {/* 商品卡片區 e */}
 
       {/* to top s */}
       <ScrollButton />
       {/* to top e */}
-      
+
       {/* <div style={{ height: '222px', backgroundColor: '#FF5151' }}>
         我是footer
       </div> */}

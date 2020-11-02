@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
 import RuSalad from 'Ru/Components/RuCards/RuSalad/RuSalad';
 import RuButton from 'Ru/Components/RuButton/RuButton';
+import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar';
 import 'Ru/Components/RuComps/Style.scss';
 
 // 引用共用元件
@@ -53,7 +54,10 @@ function RuCompSalad(props) {
       <div className="ru-productList-container">
         <div className="ru-optionWarp">
           {/* 搜尋欄s */}
-          <SearchBar />
+          <RuSearchBar
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
+          />
           {/* 搜尋欄e */}
 
           {/* 選項按鈕 s */}

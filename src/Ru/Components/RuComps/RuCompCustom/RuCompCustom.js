@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
 import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom';
 import RuButton from 'Ru/Components/RuButton/RuButton';
+import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar';
 import 'Ru/Components/RuComps/Style.scss';
 
 // 引用共用元件
@@ -53,7 +54,10 @@ function RuCompCustom(props) {
       <div className="ru-productList-container">
         <div className="ru-optionWarp">
           {/* 搜尋欄s */}
-          <SearchBar />
+          <RuSearchBar
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
+          />
           {/* 搜尋欄e */}
 
           {/* 選項按鈕 s */}
@@ -123,7 +127,7 @@ function RuCompCustom(props) {
       {/* to top s */}
       <ScrollButton />
       {/* to top e */}
-      
+
       {/* <div style={{ height: '222px', backgroundColor: '#FF5151' }}>
         我是footer
       </div> */}
