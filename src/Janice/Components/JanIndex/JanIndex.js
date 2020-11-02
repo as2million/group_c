@@ -14,6 +14,7 @@ import starO from './Images/Svg/star-o.svg';
 import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft';
 import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight';
 import VNavbar from '../../../Share/Components/VNavbar/VNavbar';
+import ToToop from '../../../Share/ToTopButton/ScrollButton';
 
 function JanIndex(props) {
   const { placeholder, type, id } = props;
@@ -672,6 +673,7 @@ function JanIndex(props) {
             </div>
           </div>
 
+          <ToToop />
           <div className="jan-article-arrowR">
             <ArrowRight />
           </div>
