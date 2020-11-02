@@ -20,7 +20,11 @@ $font-size: 1rem;
 .jess-fluidBg {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   position: relative;
+}
+.jess-breadCrumb {
+  margin-top: 17rem;
 }
 
 .jess-productList-chichenPic {
@@ -29,12 +33,12 @@ $font-size: 1rem;
   background-position: center center;
   width: 87rem;
   height: 65rem;
-  margin-top: 30rem;
   margin-right: 13.5rem;
+  margin-top: 4rem;
 }
 .jess-menuList {
-  margin-top: 30rem;
   width: 29rem;
+  margin-top: 4rem;
 }
 .jess-tittle {
   font-size: $font-size + 1.8;
@@ -107,18 +111,17 @@ hr {
   color: #858585;
 }
 
-@media (min-width: 480px) and (max-width: 680px) {
+@media screen and (max-width: 576px) {
   .jess-fluidBg {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
   }
   .jess-productList-chichenPic {
-    background: url('./Images/chickenRice.jpg') no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background: url('./Images/chickenRice.jpg') no-repeat center;
+    background-size: contain;
     width: 100%;
-    margin: 0;
+    height: 35rem;
   }
   .jess-menuList {
     margin: 0 auto;

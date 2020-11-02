@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Tabs, Sonnet, Tab, Container } from 'react-bootstrap';
-import './AdressTabs.scss';
-import MainPageSelectBox from 'Share/Components/Input/MainPageSelectBox';
-import Button from 'Share/Components/Button/Button';
+import React, { useState, useEffect } from 'react'
+import { Tabs, Sonnet, Tab, Container } from 'react-bootstrap'
+import './AdressTabs.scss'
+import MainPageSelectBox from 'Share/Components/Input/MainPageSelectBox'
+import Button from 'Share/Components/Button/Button'
 
 function AdressTabs(props) {
-  const { placeholder, type, id } = props;
-  const { closeModal } = props;
+  const { placeholder, type, id } = props
+  const { closeModal } = props
   // 使用的時候，
   // 幫我在你原本頁面中最外面容器，
   // 加上position-relative，
@@ -72,8 +72,8 @@ function AdressTabs(props) {
         </div>
         <div className="jan-tab-adress-map"></div>
       </div>
-    );
-  };
+    )
+  }
 
   // B
   const ComponentB = (props) => {
@@ -106,31 +106,31 @@ function AdressTabs(props) {
         </div>
         <div className="jan-tab-shops-map"></div>
       </div>
-    );
-  };
+    )
+  }
 
   //
   const setTabActive = (addElem, removeName) => {
-    let removeTargets = document.querySelectorAll(removeName);
+    let removeTargets = document.querySelectorAll(removeName)
     removeTargets.forEach((target) => {
-      target.classList.remove('active');
-    });
+      target.classList.remove('active')
+    })
 
-    addElem.classList.add('active');
-  };
+    addElem.classList.add('active')
+  }
 
   const TabMenu = () => {
-    const [component, setComponent] = React.useState(<ComponentA />);
+    const [component, setComponent] = React.useState(<ComponentA />)
 
     const tabContentA = (e) => {
-      setTabActive(e.target, '.jan-adress-tab-menu__item');
-      setComponent(<ComponentA />);
-    };
+      setTabActive(e.target, '.jan-adress-tab-menu__item')
+      setComponent(<ComponentA />)
+    }
 
     const tabContentB = (e) => {
-      setTabActive(e.target, '.jan-adress-tab-menu__item');
-      setComponent(<ComponentB name="B" />);
-    };
+      setTabActive(e.target, '.jan-adress-tab-menu__item')
+      setComponent(<ComponentB name="B" />)
+    }
 
     return (
       <div className="position-absolute position-fixed jan-tabs-bcc">
@@ -152,14 +152,14 @@ function AdressTabs(props) {
           </div>
         </div>
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <>
       <TabMenu />
     </>
-  );
+  )
 }
 
-export default AdressTabs;
+export default AdressTabs

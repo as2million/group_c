@@ -17,6 +17,7 @@ function NavBar(props) {
   const [count, setCount] = useState(0);
   const [shoppingList, setShoppingList] = useState('0');
   const [showNav, setShowNav] = useState(true);
+  const { isLogin, setShowLoginModal } = props;
 
   function myFunction() {
     const x = document.getElementById('NavBar');
@@ -124,10 +125,16 @@ function NavBar(props) {
                       </Nav.Link>
                       <Monster className="navBar-jess-monster4" />
                     </li>
-                    <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/login">
-                        登入/登出
-                      </Nav.Link>
+                    {/* 10/31 iris修改(把route拿掉) */}
+                    <li
+                      className="navBar-jess-dropdown_item"
+                      onClick={() => {
+                        setShowLoginModal(true);
+                      }}
+                    >
+                      {/* <Nav.Link as={NavLink} to="/login"> */}
+                      登入/登出
+                      {/* </Nav.Link> */}
                     </li>
                   </ul>
                 </div>

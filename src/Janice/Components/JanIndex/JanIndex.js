@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import './JanIndex.scss';
-import titleLeft from './Images/Svg/titleLeft.svg';
-import titleRight from './Images/Svg/titleRight.svg';
-import titleLeftLight from './Images/Svg/titleLeft-light.svg';
-import titleRightLight from './Images/Svg/titleRight-light.svg';
-import recommend1 from './Images/Svg/recommend1.svg';
-import recommend2 from './Images/Svg/recommend2.svg';
-import map1 from './Images/Svg/map1.svg';
-import map2 from './Images/Svg/map2.svg';
-import stepArrow from './Images/Svg/stepArrow.svg';
-import Button from '../../../Share/Components/Button/Button';
-import starO from './Images/Svg/star-o.svg';
-import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft';
-import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight';
-import VNavbar from '../../../Share/Components/VNavbar/VNavbar';
-import ToToop from '../../../Share/ToTopButton/ScrollButton';
+import React, { useState, useEffect } from 'react'
+import './JanIndex.scss'
+import titleLeft from './Images/Svg/titleLeft.svg'
+import titleRight from './Images/Svg/titleRight.svg'
+import titleLeftLight from './Images/Svg/titleLeft-light.svg'
+import titleRightLight from './Images/Svg/titleRight-light.svg'
+import recommend1 from './Images/Svg/recommend1.svg'
+import recommend2 from './Images/Svg/recommend2.svg'
+import map1 from './Images/Svg/map1.svg'
+import map2 from './Images/Svg/map2.svg'
+import stepArrow from './Images/Svg/stepArrow.svg'
+import Button from '../../../Share/Components/Button/Button'
+import starO from './Images/Svg/star-o.svg'
+import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft'
+import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
+import VNavbar from '../../../Share/Components/VNavbar/VNavbar'
+import ToToop from '../../../Share/Components/ToTopButton/ScrollButton'
 
 function JanIndex(props) {
-  const { placeholder, type, id } = props;
+  const { placeholder, type, id } = props
   return (
     <>
       <VNavbar />
@@ -685,7 +685,7 @@ function JanIndex(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default JanIndex;
+export default JanIndex
