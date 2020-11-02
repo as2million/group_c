@@ -5,6 +5,7 @@ import Schedule2 from './Images/JPG/schedule2.jpg';
 import Schedule3 from './Images/JPG/schedule3.jpg';
 import Schedule4 from './Images/JPG/schedule4.jpg';
 import Home from './Images/SVG/home.svg';
+import { Parallax } from 'rc-scroll-anim';
 
 function ClaudiaDetailedSchedule() {
     return (
@@ -18,7 +19,7 @@ function ClaudiaDetailedSchedule() {
                             <h2>9:30</h2>
                             <h3>有機農場五感體驗</h3>
                         </div>
-                        <img alt="" src={Schedule1} />
+                        <img className="claudia-img" alt="" src={Schedule1} />
                     </div>
                     <div className="claudia-detailed-schedule-card2">
                         <div className="claudia-detailed-schedule-card2-text">
