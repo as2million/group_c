@@ -88,7 +88,7 @@ function NavBar(props) {
               </Nav.Link>
 
               <li className="navBar-jess-navigation_item">
-                <Nav.Link as={NavLink} to="/">
+                <Nav.Link as={NavLink} to="/getcoupon">
                   專屬優惠
                 </Nav.Link>
               </li>
@@ -105,7 +105,7 @@ function NavBar(props) {
                   <ul className="navBar-jess-dropdown2">
                     <div className="navBar-jess-triangle2"></div>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/orderComment">
+                      <Nav.Link as={NavLink} to="/orderManagement">
                         訂單管理
                       </Nav.Link>
                     </li>
