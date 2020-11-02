@@ -12,7 +12,7 @@ function IrisDataEditSect() {
       <div className="container col-9">
         {/* <div className="row justify-content-center"> */}
         <div className="row justify-content-center iris-content-title-container ">
-          <h2 className="iris-profile-title">會員資料修改</h2>
+          <h2 className="iris-profile-title">會員資料</h2>
           <WaveLine />
           <div />
           <div className="row justify-content-center">
