@@ -322,6 +322,7 @@ $deepYello: #f5a016;
           height: 2.2rem;
           cursor: pointer;
         }
+
         .jan-card1-viewmore {
           font-family: 'Noto Sans TC', sans-serif;
           color: $gray;
@@ -342,6 +343,17 @@ $deepYello: #f5a016;
         opacity: 0.3;
         width: 60rem;
         height: 60rem;
+      }
+      .jan-card-arrow {
+        animation: myCustomAnimate 0.7s infinite;
+      }
+      @keyframes myCustomAnimate {
+        from {
+          margin-right: 3rem;
+        }
+        to {
+          margin-right: 0rem;
+        }
       }
     }
 
@@ -415,6 +427,17 @@ $deepYello: #f5a016;
           opacity: 0.3;
           width: 60rem;
           height: 60rem;
+        }
+        .jan-card-arrow {
+          animation: myCustomAnimate 0.7s infinite;
+        }
+        @keyframes myCustomAnimate {
+          from {
+            margin-right: 3rem;
+          }
+          to {
+            margin-right: 0rem;
+          }
         }
       }
     }
