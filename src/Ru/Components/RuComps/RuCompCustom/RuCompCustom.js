@@ -6,6 +6,7 @@ import 'Ru/Components/RuComps/Style.scss';
 
 // 引用共用元件
 import SearchBar from 'Share/Components/Input/SearchBar';
+import ScrollButton from 'Share/ToTopButton/ScrollButton';
 // 引用圖片
 import line from './Images/line.png';
 
@@ -119,6 +120,10 @@ function RuCompCustom(props) {
       <RuCustom />
       {/* 商品卡片區 e */}
 
+      {/* to top s */}
+      <ScrollButton />
+      {/* to top e */}
+      
       {/* <div style={{ height: '222px', backgroundColor: '#FF5151' }}>
         我是footer
       </div> */}
