@@ -4,21 +4,15 @@ import { Link } from 'react-router-dom'
 import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss'
 
 function ChaCartSubmitCard(props) {
-  const { subtotal, totalAmount } = props
   const [shipping, setShipping] = useState(0)
+  const { subtotal, totalAmount } = props
 
-  // let shippingResult = totalAmount === 1 ? 50 : 0
-  // setShipping(shippingResult)
-  // function shippingResult() {
-  //   console(totalAmount)
-  //   if (totalAmount === 1) {
-  //     setShipping(50)
-  //   } else if (totalAmount > 1) {
-  //     setShipping(0)
-  //   }
-  // }
-  // shippingResult()
-  return (
+  if (subtotal > 0) {
+    setShipping(50)
+  } else if (subtotal > 1) {
+    setShipping(0)
+  }
+  return (y
     <>
       <div className="cha-aside-card-fake"></div>
       <div className="cha-aside-card">

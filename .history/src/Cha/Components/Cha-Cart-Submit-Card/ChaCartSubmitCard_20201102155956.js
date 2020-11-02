@@ -6,18 +6,12 @@ import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss'
 function ChaCartSubmitCard(props) {
   const { subtotal, totalAmount } = props
   const [shipping, setShipping] = useState(0)
-
-  // let shippingResult = totalAmount === 1 ? 50 : 0
-  // setShipping(shippingResult)
-  // function shippingResult() {
-  //   console(totalAmount)
-  //   if (totalAmount === 1) {
-  //     setShipping(50)
-  //   } else if (totalAmount > 1) {
-  //     setShipping(0)
-  //   }
+  function(){}
+  // if (subtotal === 1) {
+  //   setShipping(50)
+  // } else if (subtotal > 1) {
+  //   setShipping(0)
   // }
-  // shippingResult()
   return (
     <>
       <div className="cha-aside-card-fake"></div>

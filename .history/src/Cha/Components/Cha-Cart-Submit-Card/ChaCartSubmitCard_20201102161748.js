@@ -7,8 +7,7 @@ function ChaCartSubmitCard(props) {
   const { subtotal, totalAmount } = props
   const [shipping, setShipping] = useState(0)
 
-  // let shippingResult = totalAmount === 1 ? 50 : 0
-  // setShipping(shippingResult)
+  let 
   // function shippingResult() {
   //   console(totalAmount)
   //   if (totalAmount === 1) {

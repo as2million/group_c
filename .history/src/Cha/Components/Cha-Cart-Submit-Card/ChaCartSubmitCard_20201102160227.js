@@ -7,17 +7,13 @@ function ChaCartSubmitCard(props) {
   const { subtotal, totalAmount } = props
   const [shipping, setShipping] = useState(0)
 
-  // let shippingResult = totalAmount === 1 ? 50 : 0
-  // setShipping(shippingResult)
-  // function shippingResult() {
-  //   console(totalAmount)
-  //   if (totalAmount === 1) {
-  //     setShipping(50)
-  //   } else if (totalAmount > 1) {
-  //     setShipping(0)
-  //   }
-  // }
-  // shippingResult()
+  function shippingResult() {
+    if (shippingResult === 1) {
+      setShipping(50)
+    } else if (subtotal > 1) {
+      setShipping(0)
+    }
+  }
   return (
     <>
       <div className="cha-aside-card-fake"></div>
@@ -54,7 +50,7 @@ function ChaCartSubmitCard(props) {
             />
             <labe htmlFor="cha-monster-coin">使用怪獸幣</labe>
           </div>
-          <div>-$50</div>
+          <div>-${shippingResult}</div>
         </div>
         <div className="cha-horizontal-line"></div>
         <div className="cha-tableware">

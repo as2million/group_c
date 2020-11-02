@@ -7,17 +7,14 @@ function ChaCartSubmitCard(props) {
   const { subtotal, totalAmount } = props
   const [shipping, setShipping] = useState(0)
 
-  // let shippingResult = totalAmount === 1 ? 50 : 0
-  // setShipping(shippingResult)
-  // function shippingResult() {
-  //   console(totalAmount)
-  //   if (totalAmount === 1) {
-  //     setShipping(50)
-  //   } else if (totalAmount > 1) {
-  //     setShipping(0)
-  //   }
-  // }
-  // shippingResult()
+  function shippingResult() {
+    totalAmount
+    if (totalAmount === 1) {
+      setShipping(50)
+    } else if (totalAmount > 1) {
+      setShipping(0)
+    }
+  }
   return (
     <>
       <div className="cha-aside-card-fake"></div>
@@ -42,7 +39,8 @@ function ChaCartSubmitCard(props) {
 
         <div className="cha-shipping">
           <div>運費</div>
-          <div>${shipping}</div>
+          {/* <div>${shippingResult()}</div> */}
+          <div>$</div>
         </div>
         <div className="cha-shipping">
           <div className="form-group">
