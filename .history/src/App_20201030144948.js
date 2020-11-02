@@ -1,30 +1,30 @@
-import React from 'react'
-import './App.css'
+import React from "react";
+import "./App.css";
 // 引入 共用元件
-import Navbar from 'Share/Components/Navbar/Navbar'
-import Footer from 'Share/Components/Footer/Footer'
+import Navbar from "Share/Components/Navbar/Navbar";
+import Footer from "Share/Components/Footer/Footer";
 // import NotFoundPage from "Share/Components/NotFoundPage/NotFoundPage";
 
 // 引入 所有人的總元件
 // import NameApp from "Name/NameApp";
-import JanIndex from 'Janice/Pages/JanIndex'
-import JessMenu from 'Jess/Pages/JessMenu'
-import JessBento from 'Jess/Pages/JessBento'
-import JessVegBox from 'Jess/Pages/JessVegBox'
-import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
-import IrisOrderComment from 'Iris/Pages/IrisOrderComment '
-import IrisMyFav from 'Iris/Pages/IrisMyFav'
-import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
-import ChaCart from 'Cha/Pages/ChaCart'
-import ChaGroupOrder from 'Cha/Pages/ChaGroupOrder'
-import ChaOrderManagement from 'Cha/Pages/OrderManagement'
-import RuProudctList from 'Ru/Pages/ProudctList'
-import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
-import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
+import JanIndex from "Janice/Pages/JanIndex"
+import JessMenu from "Jess/Pages/JessMenu"
+import JessBento from "Jess/Pages/JessBento"
+import JessVegBox from "Jess/Pages/JessVegBox"
+import IrisUserprofile from "Iris/Pages/IrisUserprofile"
+import IrisOrderComment  from "Iris/Pages/IrisOrderComment "
+import IrisMyFav from "Iris/Pages/IrisMyFav"
+import IrisBeastiePoint from "Iris/Pages/IrisBeastiePoint"
+import ChaCart from "Cha/Pages/ChaCart"
+import ChaGroupOrder from "Cha/Pages/ChaGroupOrder"
+import ChaOrderManagement from "Cha/Pages/OrderManagement"
+import RuProudctList from "Ru/Pages/ProudctList"
+import ClaudiaFarmIndex from "Claudia/Pages/ClaudiaFarmIndex"
+import ClaudiaFarmDetailedPage from "Claudia/Pages/ClaudiaFarmDetailedPage"
 
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // 路由表
 function App() {
@@ -38,6 +38,7 @@ function App() {
 
         {/* 路由設定開始 */}
         <Switch>
+
           {/* janice */}
           {/* 放"page資料夾"內的元件 */}
           <Route exact path="/">
@@ -82,7 +83,7 @@ function App() {
           <Route exact path="/cart">
             <ChaCart />
           </Route>
-          <Route exact path="/groupOrder/groupOrderCreate">
+          <Route exact path="/groupOrder">
             <ChaGroupOrder />
           </Route>
           <Route exact path="/orderManagement">
@@ -111,7 +112,7 @@ function App() {
         {/* 放切頁時不重新渲染的部份 e*/}
       </>
     </Router>
-  )
+  );
 }
 
 export default App
