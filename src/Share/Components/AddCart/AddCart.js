@@ -7,7 +7,7 @@ function AddCart(props) {
   // id 不同元件id
   // parentId 不同元件父母id
   const { id, parentId } = props;
-  console.log(id, parentId);
+  // console.log(id, parentId);
 
   const addToCart = (e) => {
     const $addBtn = document.getElementById(`${id}`);
@@ -21,24 +21,24 @@ function AddCart(props) {
     let distanceY = Math.abs(targetY - addBtnY);
     let finalX = addBtnX + distanceX;
     let finalY = targetY;
-    console.log(
-      "按鈕X座標",
-      addBtnX,
-      "按鈕Y座標",
-      addBtnY,
-      "目標X座標",
-      targetX,
-      "目標Y座標",
-      targetY,
-      "距離X",
-      distanceX,
-      "距離Y",
-      distanceY,
-      "最終距離X",
-      finalX,
-      "最終距離Y",
-      finalY
-    );
+    // console.log(
+    //   "按鈕X座標",
+    //   addBtnX,
+    //   "按鈕Y座標",
+    //   addBtnY,
+    //   "目標X座標",
+    //   targetX,
+    //   "目標Y座標",
+    //   targetY,
+    //   "距離X",
+    //   distanceX,
+    //   "距離Y",
+    //   distanceY,
+    //   "最終距離X",
+    //   finalX,
+    //   "最終距離Y",
+    //   finalY
+    // );
 
     const newEl = document.createElement("img");
     let url = require("./Images/littleQ.svg"); // require() => 在react內 img的src可以用這個函式引入

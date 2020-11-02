@@ -56,7 +56,7 @@ function NavBar(props) {
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/productList">
+                      <Nav.Link as={NavLink} to="/productListSalad">
                         美味沙拉
                       </Nav.Link>
                     </li>
@@ -66,7 +66,7 @@ function NavBar(props) {
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/productList">
+                      <Nav.Link as={NavLink} to="/productListCustom">
                         客製化便當
                       </Nav.Link>
                     </li>

@@ -3,6 +3,7 @@ import './Selection.scss';
 import selectArrow from 'Share/Components/Selection/Images/selectArrow.svg';
 
 function Selection(props) {
+  // width值在 .selection-container 這個選擇器下
   return (
     <>
       <div className="selection-container">
