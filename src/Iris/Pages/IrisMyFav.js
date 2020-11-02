@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect';
-import IrisOrderCommentSect from '../Components/IrisOrderCommentSect/IrisOrderCommentSect';
+import IrisMyFavSect from '../Components/IrisMyFavSect/IrisMyFavSect';
 import './IrisMemberPage.scss';
 
-function IrisOrderComment() {
+function IrirsMyFav(props) {
   return (
     <>
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect />
-        <IrisOrderCommentSect />
+        <IrisMyFavSect />
       </div>
     </>
   );
 }
 
-export default IrisOrderComment;
+export default IrirsMyFav;

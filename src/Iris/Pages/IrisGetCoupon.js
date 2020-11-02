@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect';
-import IrisOrderCommentSect from '../Components/IrisOrderCommentSect/IrisOrderCommentSect';
+import IrisGetCouponSect from '../Components/IrisGetCouponSect/IrisGetCouponSect';
 import './IrisMemberPage.scss';
 
-function IrisOrderComment() {
+function IrisGetCoupon(props) {
   return (
     <>
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect />
-        <IrisOrderCommentSect />
+        <IrisGetCouponSect />
       </div>
     </>
   );
 }
 
-export default IrisOrderComment;
+export default IrisGetCoupon;

@@ -15,9 +15,6 @@ function Test2(props) {
   return (
     <>
       <div className="container iris-content-container">
-        <h1>會員資料</h1>
-        <h1>{name}</h1>
-
         <SearchBar searchInput={searchInput} setSearchInput={setSearchInput} />
         <br />
         <InputH50 />
@@ -35,6 +32,8 @@ function Test2(props) {
         <InputAdd />
         <br />
         <InputAddress />
+        <h1>會員資料</h1>
+        <h1>{name}</h1>
       </div>
     </>
   );
