@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 // 引入 共用元件
 import Navbar from 'Share/Components/NavBar/NavBar'
@@ -11,16 +11,18 @@ import Footer from 'Share/Components/Footer/Footer'
 // import JessMenu from 'Jess/Pages/JessMenu'
 // import JessBento from 'Jess/Pages/JessBento'
 // import JessVegBox from 'Jess/Pages/JessVegBox'
-// import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
-// import IrisOrderComment from 'Iris/Pages/IrisOrderComment '
-// import IrisMyFav from 'Iris/Pages/IrisMyFav'
-// import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
+import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
+import IrisOrderComment from 'Iris/Pages/IrisOrderComment'
+import IrisMyFav from 'Iris/Pages/IrisMyFav'
+import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
+import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon'
+import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal'
 // import ChaCart from 'Cha/Pages/ChaCart'
 // import ChaGroupOrder from 'Cha/Pages/ChaGroupOrder'
 // import ChaOrderManagement from 'Cha/Pages/OrderManagement'
-import RuProudctList from 'Ru/Pages/RuProudctList';
-import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad';
-import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom';
+import RuProudctList from 'Ru/Pages/RuProudctList'
+import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'
+import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'
 // import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
 // import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
 
@@ -30,12 +32,19 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // 路由表
 function App() {
+  // login modal
+  const [isLogin, setIsLogin] = useState(false)
+  const [showLoginModal, setShowLoginModal] = useState(false)
+
   return (
     // <Router>元件一定要放在最外層
     <Router>
       <>
         {/* 放切頁時不重新渲染的部份 s*/}
-        <Navbar />
+        <Navbar
+          setShowLoginModal={setShowLoginModal}
+          showLoginModal={showLoginModal}
+        />
         {/* 放切頁時不重新渲染的部份 e*/}
 
         {/* 路由設定開始 */}
@@ -60,18 +69,21 @@ function App() {
 
           {/* iris */}
           {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/memberUserprofile">
-            <IrisUserprofile />
+          <Route exact path="/memberUserprofile">
+            <IrisUserprofile isLogin={isLogin} />
           </Route>
           <Route exact path="/orderComment">
-            <IrisOrderComment />
+            <IrisOrderComment isLogin={isLogin} />
           </Route>
           <Route exact path="/myFav">
-            <IrisMyFav />
+            <IrisMyFav isLogin={isLogin} />
           </Route>
           <Route exact path="/beastiePoint">
-            <IrisBeastiePoint />
-          </Route> */}
+            <IrisBeastiePoint isLogin={isLogin} />
+          </Route>
+          <Route path="/getCoupon">
+            <IrisGetCoupon isLogin={isLogin} />
+          </Route>
 
           {/* ru */}
           {/* 放"page資料夾"內的元件 */}
@@ -117,9 +129,16 @@ function App() {
         {/* 放切頁時不重新渲染的部份 s*/}
         <Footer />
         {/* 放切頁時不重新渲染的部份 e*/}
+
+        {/* login modal每頁都用到，放外面 */}
+        <IrisLoginModal
+          showLoginModal={showLoginModal}
+          setShowLoginModal={setShowLoginModal}
+          setIsLogin={setIsLogin}
+        />
       </>
     </Router>
   )
 }
 
-export default App;
+export default App
