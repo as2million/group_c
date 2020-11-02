@@ -9,7 +9,7 @@ function ClaudiaAppTest() {
     <>
       <ClaudiaFarmDetailedPage />
     </>
-  );
+  )
 }
 
-export default ClaudiaAppTest;
+export default ClaudiaAppTest
