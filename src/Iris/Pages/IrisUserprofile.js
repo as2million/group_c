@@ -5,7 +5,7 @@ import IrisDataEditSect from '../Components/IrisDataEditSect/IrisDataEditSect';
 import './IrisMemberPage.scss';
 import { Redirect } from 'react-router-dom';
 
-function IrisProfilePage(props) {
+function IrisUserprofile(props) {
   const { isLogin } = props;
   if (isLogin === false) return <Redirect to="/" />;
   return (
@@ -18,4 +18,4 @@ function IrisProfilePage(props) {
   );
 }
 
-export default IrisProfilePage;
+export default IrisUserprofile;
