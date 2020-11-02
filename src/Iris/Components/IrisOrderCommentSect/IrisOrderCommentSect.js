@@ -7,6 +7,12 @@ import IrisTextArea from './IrisTextArea/IrisTextArea';
 // import InputH40 from './../../../Share/Components/Input/InputH40';
 
 function IrisUserCommentSect() {
+  const userComment = [
+    { id: 1, text: '好吃1', date: '2020/01/21' },
+    { id: 2, text: '好吃2', date: '2020/01/22' },
+    { id: 3, text: '好吃3', date: '2020/01/23' },
+  ];
+
   // 改留言
   const changeComment = (e) => {
     // 測試: 得到top parent的id
@@ -41,7 +47,8 @@ function IrisUserCommentSect() {
     editAndDelete.style.display = 'block';
     commentUpdate.style.display = 'none';
   };
-  // 留言框
+
+  // 留言框內容Template
   const commentDisplay = (
     <>
       <div className="iris-comment-box d-flex" id="comment1">
