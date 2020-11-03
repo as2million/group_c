@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Link, Switch } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link, Switch } from 'react-router-dom';
 
-import MyNavbar from 'Cha/Components-demo/MyNavbar'
+import MyNavbar from 'Cha/Components-demo/MyNavbar';
 
 function Home(props) {
   return (
@@ -101,6 +101,6 @@ function Home(props) {
         </Link>
       </div>
     </>
-  )
+  );
 }
-export default Home
+export default Home;
