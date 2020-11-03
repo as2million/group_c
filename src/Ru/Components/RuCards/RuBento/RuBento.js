@@ -6,6 +6,7 @@ import Card from 'Share/Components/Card/Card'
 
 // 引用圖片
 import background from './Images/background.png'
+import littleQ from './Images/littleQ.svg'
 
 function RuBento(props) {
   const { searchInput } = props
@@ -104,7 +105,41 @@ function RuBento(props) {
         {/* 卡片區 s */}
         <div className="ru-card-warp">
           <div className="ru-itemWarp">
-            {isShowNothing && '暫無資料'}
+            {isShowNothing && (
+              <div
+                style={{
+                  // backgroundColor: 'red',
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <section
+                  style={{
+                    // backgroundColor: 'yellow',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexBasis: '50%',
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontSize: '50px',
+                      fontFamily: 'Noto Sans TC',
+                      marginRight: '10px',
+                      color: '#999999',
+                    }}
+                  >
+                    請再搜尋看看
+                  </h3>
+                  <img
+                    src={littleQ}
+                    style={{ width: '50px', opacity: '0.5' }}
+                  ></img>
+                </section>
+              </div>
+            )}
             {itemWarp1 && (
               <Card
                 title={'慢煮嫩雞胸-蒜味香草'}
