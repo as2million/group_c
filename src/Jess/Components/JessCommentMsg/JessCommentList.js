@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import './JessCommentList.scss';
-import Button from '../../../Share/Components/Button/Button';
-import { InputGroup } from 'react-bootstrap';
-import JessCommentItem from './JessCommentItem';
-import JessCommentEdit from './JessCommentEdit';
+import React, { useState, useEffect } from 'react'
+import './JessCommentInput.scss'
+import JessCommentItems from './JessCommentItems'
+import JessCommentEdit from './JessCommentEdit'
 
 function JessCommentList(props) {
-  const { id, comments } = props;
+  const { comments } = props
   return (
     <>
-      <InputGroup className="inputForm">
-        {comments.map((item, index) => {
-          return item.edited ? (
-            <JessCommentEdit key={item.id} comment={item} {...props} />
-          ) : (
-            <JessCommentItem key={item.id} comment={item} {...props} />
-          );
-        })}
-      </InputGroup>
+      <div className="jess-commentBox">
+        <ul>
+          {comments.map((item, index) =>
+            item.edited ? (
+              <JessCommentEdit key={item.id} comment={item} {...props} />
+            ) : (
+              <JessCommentItems key={item.id} comment={item} {...props} />
+            )
+          )}
+        </ul>
+      </div>
     </>
-  );
+  )
 }
 
-export default JessCommentList;
+export default JessCommentList
