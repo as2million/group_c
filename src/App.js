@@ -17,9 +17,10 @@ import IrisMyFav from 'Iris/Pages/IrisMyFav'
 import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
 import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon'
 import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal'
+import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement'
 // import ChaCart from 'Cha/Pages/ChaCart'
 // import ChaGroupOrder from 'Cha/Pages/ChaGroupOrder'
-// import ChaOrderManagement from 'Cha/Pages/OrderManagement'
+// import ChaOrderManagement from 'Cha/Pages/Iris-Profile-Page-Demo/IrisProfilePageDemo'
 import RuProudctList from 'Ru/Pages/RuProudctList'
 import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'
 import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'
@@ -84,6 +85,9 @@ function App() {
           <Route path="/getCoupon">
             <IrisGetCoupon isLogin={isLogin} />
           </Route>
+          <Route path="/orderManagement">
+            <IrisOrderManagement isLogin={isLogin} />
+          </Route>
 
           {/* ru */}
           {/* 放"page資料夾"內的元件 */}
@@ -104,8 +108,8 @@ function App() {
           </Route>
           <Route exact path="/groupOrder/groupOrderCreate">
             <ChaGroupOrder />
-          </Route>
-          <Route exact path="/orderManagement">
+          </Route> */}
+          {/* <Route exact path="/orderManagement">
             <ChaOrderManagement />
           </Route> */}
 
