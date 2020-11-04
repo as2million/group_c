@@ -89,65 +89,6 @@
     // background-color: palegoldenrod;
   }
 
-  .ru-info-item-container {
-    // background-color: purple;
-    @include flex($df, $fdc, $jcc, $alc);
-  }
-
-  .ru-info-item-warp {
-    // background-color: #75ffba;
-    width: 90%;
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
-    @include flex($df, $fdc, $jce, $alc);
-  }
-
-  .ru-info-item {
-    // background-color: #9bcaff;
-    width: 100%;
-    height: 25px;
-    margin-top: 20px;
-    @include flex($df, $fdr, $jcs, $alc);
-  }
-
-  .ru-category-container {
-    // background-color: rgb(255, 203, 255);
-    border: 1px solid $customSelection-color;
-    width: 14%;
-    height: 100%;
-    margin-right: 20px;
-    @include flex($df, $fdr, $jcc, $alc);
-  }
-
-  .ru-hold {
-    visibility: hidden;
-  }
-
-  .ru-category {
-    margin: 0px;
-    @include font($notoSansTC, $content, $regular, 0px, $customSelection-color);
-    // 字體, 字體大小, 字重, 字距, 字色
-  }
-
-  .ru-selectionName {
-    // background-color: yellow;
-    width: 62.5%;
-    height: 100%;
-    margin: 0px;
-    @include font($notoSansTC, $productName-size, $regular, 1.25px, $grey);
-    @include flex($df, $fdr, $jcs, $alc);
-  }
-
-  .ru-number {
-    // background-color: rgb(255, 197, 187);
-    width: 18.5%;
-    height: 100%;
-    margin: 0px;
-    @include font($notoSansTC, $productName-size, $regular, 1.25px, $light-orange);
-    @include flex($df, $fdr, $jce, $alc);
-  }
-
   .ru-info-total-container {
     // background-color: #ff4683;
     height: 45px;
