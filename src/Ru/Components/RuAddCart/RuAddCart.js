@@ -11,7 +11,7 @@ function RuAddCart(props) {
 
   const addToCart = (e) => {
     const $addBtn = document.getElementById(`${id}`);
-    const $target = document.getElementById("target");
+    const $target = document.getElementById("ru-target");
     // getBoundingClientRect() 取得元素相對於瀏覽器視窗的位置
     let addBtnX = $addBtn.getBoundingClientRect().left + 75; // +75(button寬度的一半) 才會在正中心
     let addBtnY = $addBtn.getBoundingClientRect().top + 22.5;
@@ -47,7 +47,7 @@ function RuAddCart(props) {
     // newEl.appendChild(newContent);
     newEl.setAttribute(
       "style",
-      `width:30px; position: fixed; z-index:500; left:${addBtnX}; top: ${addBtnY}px; transform:translate(-50%,-50%);`
+      `width:50px; position: fixed; z-index:9999; left:${addBtnX}; top: ${addBtnY}px; transform:translate(-50%,-50%);`
     );
     newEl.setAttribute("id", `obj`);
     const $currentEl = document.getElementById(`${id}`);

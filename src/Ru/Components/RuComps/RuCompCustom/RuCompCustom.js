@@ -12,7 +12,7 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import line from './Images/line.png';
 
 function RuCompCustom(props) {
-  console.log(props);
+  // console.log(props);
   const [searchInput, setSearchInput] = useState('');
 
   // JSX

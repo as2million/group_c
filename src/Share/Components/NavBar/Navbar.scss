@@ -34,7 +34,6 @@ html {
   height: 10rem;
   margin: 0 auto;
   text-align: center;
-  position: relative;
 }
 //logo
 .nav .navBar-jess-nav_brand {
@@ -143,7 +142,6 @@ html {
   position: absolute;
   top: -1.5rem;
   left: 7.5rem;
-
   text-align: center;
 }
 
@@ -223,29 +221,36 @@ html {
   position: absolute;
   top: -1.5rem;
   right: 7.5rem;
-
   text-align: center;
 }
+
+.navbar-tag-wrap {
+  transform: translate(30px, -50px);
+}
+
+.navbar-tag {
+  position: absolute;
+}
+
 .navbar-jess-ShopingCart {
   z-index: 1050;
 }
 
 //shopping cart number
 .nav .jess-navbarCartAmount {
-  position: absolute;
-  top: 2rem;
-  right: 11.5rem;
+  position: relative;
 }
 
 .nav .jess-navbarCartNum {
   font-family: 'Noto Sans TC';
   font-weight: bold;
-  position: absolute;
-  top: 2rem;
-  right: 12.4rem;
   font-size: 1.3rem;
   color: #ffffff;
+  position: absolute;
+  top: 7px;
+  left: 6.75px;
 }
+
 .nav .nav_toggle {
   // float: right;
   clear: both;

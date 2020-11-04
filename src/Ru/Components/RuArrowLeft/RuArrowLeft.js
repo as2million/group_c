@@ -1,5 +1,5 @@
 import React from 'react';
-import './RuArrowLeft.scss';
+import './Style.scss';
 import ArrowL from './Images/ArrowLeft.svg';
 
 function RuArrowLeft(props) {

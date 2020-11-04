@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'Ru/Components/RuCards/Style.scss';
+import RuNothing from 'Ru/Components/RuNothing/RuNothing'
+import RuCard from 'Ru/Components/RuCard/RuCard'
 
 // 引用共用元件
 import Card from 'Share/Components/Card/Card';
@@ -18,7 +20,7 @@ function RuSalad() {
         {/* 卡片區 s */}
         <div className="ru-card-warp">
           <div className="ru-itemWarp ru-itemWarp1">
-            <Card
+            <RuCard
               title={'慢煮嫩雞胸-蒜味香草'}
               comment={'1180'}
               buy={'234'}
@@ -27,7 +29,7 @@ function RuSalad() {
               parentId={'addCart-btn-warp-1'}
               imgId={'card-img-1'}
             />
-            <Card
+            <RuCard
               title={'慢煮嫩雞胸-中歐香料'}
               comment={'1180'}
               buy={'234'}
@@ -37,7 +39,7 @@ function RuSalad() {
               imgId={'card-img-2'}
               cardMargin={'card-margin'}
             />
-            <Card
+            <RuCard
               title={'醬烤厚切1983黑豚'}
               comment={'1180'}
               buy={'234'}
@@ -49,7 +51,7 @@ function RuSalad() {
           </div>
 
           <div className="ru-itemWarp ru-itemWarp2">
-            <Card
+            <RuCard
               title={'熱帶火烤萊姆蝦'}
               comment={'1180'}
               buy={'234'}
@@ -58,7 +60,7 @@ function RuSalad() {
               parentId={'addCart-btn-warp-4'}
               imgId={'card-img-4'}
             />
-            <Card
+            <RuCard
               title={'麴塩五香松阪豬'}
               comment={'1180'}
               buy={'234'}
@@ -68,7 +70,7 @@ function RuSalad() {
               imgId={'card-img-5'}
               cardMargin={'card-margin'}
             />
-            <Card
+            <RuCard
               title={'美式熟成烤牛肋條'}
               comment={'1180'}
               buy={'234'}
@@ -80,7 +82,7 @@ function RuSalad() {
           </div>
 
           <div className="ru-itemWarp ru-itemWarp3">
-            <Card
+            <RuCard
               title={'頂級熟成菲力牛排'}
               comment={'1180'}
               buy={'234'}
@@ -89,7 +91,7 @@ function RuSalad() {
               parentId={'addCart-btn-warp-7'}
               imgId={'card-img-7'}
             />
-            <Card
+            <RuCard
               title={'炙燒干貝'}
               comment={'1180'}
               buy={'234'}
@@ -99,7 +101,7 @@ function RuSalad() {
               imgId={'card-img-8'}
               cardMargin={'card-margin'}
             />
-            <Card
+            <RuCard
               title={'會議雙拼組合'}
               comment={'1180'}
               buy={'234'}
@@ -115,13 +117,13 @@ function RuSalad() {
         <img src={background}></img>
         {/* 背景米圖 e */}
       </div>
-      ;{/* 商品區 - 網頁版 / 手機板e */}
+      {/* 商品區 - 網頁版 / 手機板e */}
       {/* 商品區 - ipad版 s */}
       <div className="ru-item-containerB">
         {/* 卡片區 s */}
         <div className="ru-card-warp">
           <div className="ru-itemWarp ru-itemWarp1">
-            <Card
+            <RuCard
               title={'慢煮嫩雞胸-蒜味香草'}
               comment={'1180'}
               buy={'234'}
@@ -130,7 +132,7 @@ function RuSalad() {
               parentId={'addCart-btn-warp-1'}
               imgId={'card-img-1'}
             />
-            <Card
+            <RuCard
               title={'慢煮嫩雞胸-中歐香料'}
               comment={'1180'}
               buy={'234'}
@@ -143,7 +145,7 @@ function RuSalad() {
           </div>
 
           <div className="ru-itemWarp ru-itemWarp2">
-            <Card
+            <RuCard
               title={'醬烤厚切1983黑豚'}
               comment={'1180'}
               buy={'234'}
@@ -152,7 +154,7 @@ function RuSalad() {
               parentId={'addCart-btn-warp-3'}
               imgId={'card-img-3'}
             />
-            <Card
+            <RuCard
               title={'熱帶火烤萊姆蝦'}
               comment={'1180'}
               buy={'234'}
@@ -164,7 +166,7 @@ function RuSalad() {
           </div>
 
           <div className="ru-itemWarp ru-itemWarp3">
-            <Card
+            <RuCard
               title={'麴塩五香松阪豬'}
               comment={'1180'}
               buy={'234'}
@@ -174,7 +176,7 @@ function RuSalad() {
               imgId={'card-img-5'}
               cardMargin={'card-margin'}
             />
-            <Card
+            <RuCard
               title={'美式熟成烤牛肋條'}
               comment={'1180'}
               buy={'234'}
@@ -185,7 +187,7 @@ function RuSalad() {
             />
           </div>
           <div className="ru-itemWarp ru-itemWarp4">
-            <Card
+            <RuCard
               title={'頂級熟成菲力牛排'}
               comment={'1180'}
               buy={'234'}
@@ -194,7 +196,7 @@ function RuSalad() {
               parentId={'addCart-btn-warp-7'}
               imgId={'card-img-7'}
             />
-            <Card
+            <RuCard
               title={'炙燒干貝'}
               comment={'1180'}
               buy={'234'}
@@ -206,7 +208,7 @@ function RuSalad() {
             />
           </div>
           <div className="ru-itemWarp ru-itemWarp5">
-            <Card
+            <RuCard
               title={'會議雙拼組合'}
               comment={'1180'}
               buy={'234'}
@@ -215,7 +217,7 @@ function RuSalad() {
               parentId={'addCart-btn-warp-9'}
               imgId={'card-img-9'}
             />
-            <Card
+            <RuCard
               title={'這是用於排版的'}
               comment={'xxxx'}
               buy={'xxx'}
@@ -237,7 +239,7 @@ function RuSalad() {
         {/* 卡片區 s */}
         <div className="ru-card-warp">
           <div className="ru-itemWarp ru-itemWarp1">
-            <Card
+            <RuCard
               title={'慢煮嫩雞胸-蒜味香草'}
               comment={'1180'}
               buy={'234'}
@@ -249,7 +251,7 @@ function RuSalad() {
           </div>
 
           <div className="ru-itemWarp ru-itemWarp2">
-            <Card
+            <RuCard
               title={'慢煮嫩雞胸-中歐香料'}
               comment={'1180'}
               buy={'234'}
@@ -262,7 +264,7 @@ function RuSalad() {
           </div>
 
           <div className="ru-itemWarp ru-itemWarp3">
-            <Card
+            <RuCard
               title={'醬烤厚切1983黑豚'}
               comment={'1180'}
               buy={'234'}
@@ -273,7 +275,7 @@ function RuSalad() {
             />
           </div>
           <div className="ru-itemWarp ru-itemWarp4">
-            <Card
+            <RuCard
               title={'熱帶火烤萊姆蝦'}
               comment={'1180'}
               buy={'234'}
@@ -284,7 +286,7 @@ function RuSalad() {
             />
           </div>
           <div className="ru-itemWarp ru-itemWarp5">
-            <Card
+            <RuCard
               title={'麴塩五香松阪豬'}
               comment={'1180'}
               buy={'234'}
@@ -296,7 +298,7 @@ function RuSalad() {
             />
           </div>
           <div className="ru-itemWarp ru-itemWarp6">
-            <Card
+            <RuCard
               title={'美式熟成烤牛肋條'}
               comment={'1180'}
               buy={'234'}
@@ -307,7 +309,7 @@ function RuSalad() {
             />
           </div>
           <div className="ru-itemWarp ru-itemWarp7">
-            <Card
+            <RuCard
               title={'頂級熟成菲力牛排'}
               comment={'1180'}
               buy={'234'}
@@ -318,7 +320,7 @@ function RuSalad() {
             />
           </div>
           <div className="ru-itemWarp ru-itemWarp8">
-            <Card
+            <RuCard
               title={'炙燒干貝'}
               comment={'1180'}
               buy={'234'}
@@ -330,7 +332,7 @@ function RuSalad() {
             />
           </div>
           <div className="ru-itemWarp ru-itemWarp9">
-            <Card
+            <RuCard
               title={'會議雙拼組合'}
               comment={'1180'}
               buy={'234'}

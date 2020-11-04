@@ -1,23 +1,31 @@
-import React, { useState } from 'react';
-import 'Ru/Components/RuCards/RuCustom/Style.scss';
-import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft';
-import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight';
-import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
-import RuButtonC from 'Ru/Components/RuButtonC/RuButtonC';
-import RuCounter from 'Ru/Components/RuCounter/RuCounter';
-import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
-import RuSelection from 'Ru/Components/RuSelection/RuSelection';
+import React, { useState, useEffect } from 'react'
+import 'Ru/Components/RuCards/RuCustom/Style.scss'
+import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft'
+import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight'
+import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB'
+import RuButtonC from 'Ru/Components/RuButtonC/RuButtonC'
+import RuCounter from 'Ru/Components/RuCounter/RuCounter'
+import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart'
+import RuSelection from 'Ru/Components/RuSelection/RuSelection'
 
 // 引用共用元件
-import Card from 'Share/Components/Card/Card';
+import Card from 'Share/Components/Card/Card'
 
 // 引用圖片
-import background from './Images/background.png';
-import lunchBox from './Images/lunchBox.svg';
-import { ReactComponent as LunchBox } from './Images/lunchBox.svg'; // 將svg以元件方式引入
-import cauliflower from './Images/cauliflower.svg';
+import background from './Images/background.png'
+import lunchBox from './Images/lunchBox.svg'
+import { ReactComponent as LunchBox } from './Images/lunchBox.svg' // 將svg以元件方式引入
+import cauliflower from './Images/cauliflower.svg'
 
 function RuCustom() {
+  const [moveArea1, setMoveArea1] = useState('') // 傳遞DOM給<RuArrowRight/>
+  const [moveX, setMaveX] = useState(0)
+
+  useEffect(() => {
+    setMoveArea1(document.getElementById('moveArea1'))
+    // return () => {}
+  }, [])
+
   return (
     <>
       {/* <h1 style={{ textAlign: 'center', fontSize: '80px' }}>
@@ -153,7 +161,11 @@ function RuCustom() {
                 <RuArrowLeft />
                 {/* 副食 / 主食 / 配菜 / 蛋 的元件 s*/}
                 <div className="ru-species-warp">
-                  <ul>
+                  {/* 移動區 s */}
+                  <ul
+                    id="moveArea1"
+                    style={{ transform: `translateX(${moveX}px)` }}
+                  >
                     {/* 品項1 s*/}
                     <li className="ru-species-item ru-species-item1">
                       <div className="ru-species-img">
@@ -267,9 +279,10 @@ function RuCustom() {
                     </li>
                     {/* 品項5 e*/}
                   </ul>
+                  {/* 移動區 e */}
                 </div>
                 {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
-                <RuArrowRight />
+                <RuArrowRight moveArea1={moveArea1} />
               </div>
             </div>
           </div>
@@ -575,7 +588,7 @@ function RuCustom() {
       {/* <img src={background}></img> */}
       {/* 背景米圖 e */}
     </>
-  );
+  )
 }
 
-export default RuCustom;
+export default RuCustom
