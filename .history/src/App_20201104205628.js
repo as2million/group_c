@@ -95,7 +95,7 @@ function App() {
           {/* 放"page資料夾"內的元件 */}
           {/* 購物車 */}
           <Route exact path="/cart">
-            <ChaCart setShowBar={setShowBar} />
+            <ChaCart />
           </Route>
           {/* 揪團 */}
           <Route exact path="/groupOrder/groupOrderCreate">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 // 引入 共用元件
 import NavBar from 'Share/Components/NavBar/NavBar';
@@ -35,16 +35,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // 路由表
 function App() {
-  const [showBar, setShowBar] = useState(true);
+  const [showB, setCount] = useState(1)
   return (
     // <Router>元件一定要放在最外層
     <Router>
       <>
         {/* 放切頁時不重新渲染的部份 s*/}
-        <div style={{ display: !showBar && 'none' }}>
-          <NavBar setShowBar={setShowBar} />
-          <VNavbar />
-        </div>
+        <NavBar />
+        <VNavbar />
         {/* 放切頁時不重新渲染的部份 e*/}
 
         {/* 路由設定開始 */}
@@ -95,7 +93,7 @@ function App() {
           {/* 放"page資料夾"內的元件 */}
           {/* 購物車 */}
           <Route exact path="/cart">
-            <ChaCart setShowBar={setShowBar} />
+            <ChaCart />
           </Route>
           {/* 揪團 */}
           <Route exact path="/groupOrder/groupOrderCreate">

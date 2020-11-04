@@ -42,7 +42,7 @@ function App() {
       <>
         {/* 放切頁時不重新渲染的部份 s*/}
         <div style={{ display: !showBar && 'none' }}>
-          <NavBar setShowBar={setShowBar} />
+          <NavBar />
           <VNavbar />
         </div>
         {/* 放切頁時不重新渲染的部份 e*/}
@@ -95,7 +95,7 @@ function App() {
           {/* 放"page資料夾"內的元件 */}
           {/* 購物車 */}
           <Route exact path="/cart">
-            <ChaCart setShowBar={setShowBar} />
+            <ChaCart />
           </Route>
           {/* 揪團 */}
           <Route exact path="/groupOrder/groupOrderCreate">

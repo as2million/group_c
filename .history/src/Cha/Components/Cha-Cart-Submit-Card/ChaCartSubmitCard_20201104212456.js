@@ -13,8 +13,17 @@ function ChaCartSubmitCard(props) {
       setShipping(0);
     }
   }, [totalAmount]);
-
-  let totalPrice = subtotal + shipping - 50;
+  // let shippingResult = totalAmount === 1 ? 50 : 0
+  // setShipping(shippingResult)
+  // function shippingResult() {
+  //   console(totalAmount)
+  //   if (totalAmount === 1) {
+  //     setShipping(50)
+  //   } else if (totalAmount > 1) {
+  //     setShipping(0)
+  //   }
+  // }
+  // shippingResult()
   return (
     <>
       <div className="cha-aside-card-fake"></div>
@@ -69,7 +78,7 @@ function ChaCartSubmitCard(props) {
         <div className="cha-horizontal-line"></div>
         <div className="cha-shopping-list-total">
           <div>總計</div>
-          <div className="cha-shopping-list-total-number">${totalPrice}</div>
+          <div className="cha-shopping-list-total-number">${subtotal}</div>
         </div>
         {/* 提交按鈕 */}
         <div className="cha-shopping-cart-btn-div">

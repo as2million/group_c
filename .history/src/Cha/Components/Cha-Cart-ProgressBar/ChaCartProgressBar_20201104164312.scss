@@ -34,8 +34,9 @@
   color: #fff;
   position: relative;
   display: inline-block;
-  left: 66.5rem;
+  left:50%;
   top: 17px;
+  // z-index: 10;
 }
 .cha-progress-bar {
   width: 100%;
@@ -49,22 +50,22 @@
 .cha-progress-bar-header {
   font-size: 2.4rem;
 }
-.cha-right-arrow-fff,
+// .cha-right-arrow {
+//   width: 1.5rem;
+//   position: absolute;
+//   left: 4rem;
+//   cursor: pointer;
+// }
 .cha-right-arrow {
+  background: url('./Images/right-arrow-gray.svg') no-repeat;
   // background-position: center center;
   height: 2.5rem;
   width: 1.5rem;
   position: absolute;
-  top: 2rem;
   left: 4rem;
   cursor: pointer;
-}
-.cha-right-arrow {
-  background: url('./Images/right-arrow-gray.svg') no-repeat;
-}
-.cha-right-arrow-fff {
-  background: url('./Images/right-arrow-white.svg') no-repeat;
 }
 // .cha-right-arrow:hover {
 //   background: url('./Images/right-arrow-gray.svg') no-repeat;
 // }
+

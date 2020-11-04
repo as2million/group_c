@@ -69,7 +69,7 @@ function ChaCartSubmitCard(props) {
         <div className="cha-horizontal-line"></div>
         <div className="cha-shopping-list-total">
           <div>總計</div>
-          <div className="cha-shopping-list-total-number">${totalPrice}</div>
+          <div className="cha-shopping-list-total-number">${subtotal}</div>
         </div>
         {/* 提交按鈕 */}
         <div className="cha-shopping-cart-btn-div">

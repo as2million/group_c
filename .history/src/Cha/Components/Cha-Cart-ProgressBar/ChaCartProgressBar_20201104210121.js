@@ -30,7 +30,7 @@ function ChaCartProgressBar(props) {
         <Link to="/">
           <div
             className="cha-right-arrow"
-            onClick={() => props.setShowBar(true)}
+            onClick={() => props.setShowBar(false)}
           ></div>
         </Link>
         <div className="cha-progress-bar-header">建立訂單</div>
@@ -40,7 +40,7 @@ function ChaCartProgressBar(props) {
           <Link to="/">
             <div
               className="cha-right-arrow-fff"
-              onClick={() => props.setShowBar(true)}
+              onClick={() => props.setShowBar(false)}
             ></div>
           </Link>
           <div className="cha-progress-bar-header-fff">建立訂單</div>
