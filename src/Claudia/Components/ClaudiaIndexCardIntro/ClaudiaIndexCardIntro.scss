@@ -8,7 +8,7 @@ html {
     height: 620px;
     background-color: #fff;
     border-radius: 40px;
-    padding: 45px 40px 10px 50px;
+    padding: 45px 40px 10px 40px;
     box-shadow: 0px 3px 6px #D1C5B8;
     position: absolute;
     transition: 1s;
@@ -34,20 +34,20 @@ html {
 
 .claudia-index-card-intro-box hr {
     border: 1px solid #66AB8C;
-    width: 294px;
+    width: 304px;
     margin-bottom: 30px;
     margin-left: 0px;
 }
 
 .claudia-index-card-intro-outside img {
-    width: 294px;
+    width: 304px;
     border-radius: 10px;
 
 }
 
 #claudia-index-card-intro-intro {
     color: #858585;
-    width: 294px;
+    width: 304px;
     height: 100px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -56,7 +56,7 @@ html {
 }
 
 .claudia-index-card-intro-button button{
-    width: 294px;
+    width: 304px;
     height: 50px;
     font-size: 20px;
     background-color: transparent;
@@ -64,6 +64,40 @@ html {
 
 .claudia-index-card-intro-button button::after {
     width: 320px;
+}
+
+
+@media only screen and (max-width: 57.6rem) {
+
+    .claudia-index-card-intro-box{
+        width: 335px;
+        height: 590px;
+    }
+
+    .claudia-index-card-intro-box hr {
+        width: 255px;
+    }
+
+    .claudia-index-card-intro-outside img {
+        width: 255px;
+    }
+
+    #claudia-index-card-intro-intro {
+        width: 255px;
+    }
+
+    .claudia-index-card-intro-button button {
+        width: 255px;
+        height: 45px;
+    }
+
+    
+
+
+
+
+
+
 }
 
 

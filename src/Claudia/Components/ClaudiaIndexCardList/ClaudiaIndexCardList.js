@@ -1,7 +1,11 @@
 import React from 'react';
 import './ClaudiaIndexCardList.scss'
+import Cross from './Images/cross.svg';
 
 function ClaudiaIndexCardList() {
+
+    //show farm intro
+
     const showFarmIntro = () => {
         // console.log('test')
         // console.log(document.getElementsByClassName('claudia-index-card-list-box')[0]);

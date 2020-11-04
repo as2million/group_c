@@ -15,6 +15,12 @@ function ClaudiaIndexMap() {
         if (document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display !== 'block') {
             document.getElementsByClassName('claudia-index-card-list-box')[0].style.display = 'block';
             document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 1;
+        } else {
+            document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display = 'none';
+            document.getElementsByClassName('claudia-index-card-intro-box')[0].style.opacity = 0;
+            document.getElementsByClassName('claudia-index-card-list-box')[0].style.display = 'block';
+            document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 1;
+
         }
     }
 
