@@ -24,6 +24,7 @@
     .claudia-index-content-container {
         display: block;
         padding-bottom: 0px;
+        margin: 0px 20px;
     }
 
     .claudia-index-map {
@@ -33,7 +34,7 @@
     }
 
     .claudia-index-card {
-        display: none;
+        height: 0px;
     }
 
 }

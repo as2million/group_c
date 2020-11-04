@@ -3,12 +3,14 @@ import './ClaudiaIndexCardList.scss'
 
 function ClaudiaIndexCardList() {
     const showFarmIntro = () => {
-        console.log('test')
-        console.log(document.getElementsByClassName('claudia-index-card-list-box')[0]);
+        // console.log('test')
+        // console.log(document.getElementsByClassName('claudia-index-card-list-box')[0]);
         document.getElementsByClassName('claudia-index-card-list-box')[0].style.display = 'none';
         document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 0;
         document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display = 'block';
         document.getElementsByClassName('claudia-index-card-intro-box')[0].style.opacity = 1;
+
+        // console.log('TorF', document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display)
     }
 
     return (
@@ -20,12 +22,6 @@ function ClaudiaIndexCardList() {
                     <button
                         onClick={showFarmIntro}
                         className="claudia-index-card-list-box-button">
-                        <div className="claudia-index-card-list-box-name-text">
-                            <p><b>小小城市農夫</b></p>
-                            <p><b>－台北內湖農驛棧有機農園</b></p>
-                        </div>
-                    </button>
-                    <button className="claudia-index-card-list-box-button">
                         <div className="claudia-index-card-list-box-name-text">
                             <p><b>小小城市農夫</b></p>
                             <p><b>－台北內湖農驛棧有機農園</b></p>
