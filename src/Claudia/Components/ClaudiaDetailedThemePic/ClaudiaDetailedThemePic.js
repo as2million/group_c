@@ -6,7 +6,7 @@ function ClaudiaDetailedThemePic() {
     return (
         <>
             <div className="claudia-detailed-background">
-                <div className="claudia-fake-navbar"></div>
+                {/* <div className="claudia-fake-navbar"></div> */}
                 <div className="claudia-detailed-background-image">
                     <div className="claudia-detailed-text">
                         <h1 className="claudia-detailed-text-1"><b>小小城市農夫</b></h1>

@@ -18,11 +18,11 @@ import Footer from 'Share/Components/Footer/Footer'
 // import ChaCart from 'Cha/Pages/ChaCart'
 // import ChaGroupOrder from 'Cha/Pages/ChaGroupOrder'
 // import ChaOrderManagement from 'Cha/Pages/OrderManagement'
-import RuProudctList from 'Ru/Pages/RuProudctList';
-import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad';
-import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom';
-// import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
-// import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
+// import RuProudctList from 'Ru/Pages/RuProudctList';
+// import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad';
+// import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom';
+import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
+import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
 
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
@@ -75,7 +75,7 @@ function App() {
 
           {/* ru */}
           {/* 放"page資料夾"內的元件 */}
-          <Route exact path="/productList">
+          {/* <Route exact path="/productList">
             <RuProudctList />
           </Route>
           <Route exact path="/productListSalad">
@@ -83,7 +83,7 @@ function App() {
           </Route>
           <Route exact path="/productListCustom">
             <RuProudctListCustom />
-          </Route>
+          </Route> */}
 
           {/* cha */}
           {/* 放"page資料夾"內的元件 */}
@@ -99,12 +99,12 @@ function App() {
 
           {/* claudia */}
           {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/farmMap">
+          <Route exact path="/farmMap">
             <ClaudiaFarmIndex />
           </Route>
           <Route exact path="/farmIntro">
             <ClaudiaFarmDetailedPage />
-          </Route> */}
+          </Route>
 
           {/* 404 */}
 
