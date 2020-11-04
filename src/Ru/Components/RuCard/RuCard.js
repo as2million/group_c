@@ -1,8 +1,8 @@
-import React from "react";
-import "./Style.scss";
-import star from "./Images/star.svg";
-import RuAddCart from "Ru/Components/RuAddCart/RuAddCart";
-import RuAddFavorite from "Ru/Components/RuAddFavorite/RuAddFavorite";
+import React from 'react'
+import './Style.scss'
+import star from './Images/star.svg'
+import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart'
+import RuAddFavorite from 'Ru/Components/RuAddFavorite/RuAddFavorite'
 
 function RuCard(props) {
   // title 品名
@@ -13,7 +13,7 @@ function RuCard(props) {
   // id 不同元件id => addCart-btn-n n為自訂數
   // parentId 不同元件父母id => addCart-btn-warp-n n為自訂數
   // imgId 產品圖片 => card-img-n n為1~9
-  const { title, comment, buy, price, cardMargin, id, parentId, imgId } = props;
+  const { title, comment, buy, price, cardMargin, id, parentId, imgId } = props
 
   return (
     <>
@@ -26,10 +26,10 @@ function RuCard(props) {
           <div className="card-abs">
             <RuAddFavorite />
           </div>
-        </section> 
+        </section>
         {/* item圖片e */}
         {/* item資訊s */}
-        <section className="card-info-warp"> 
+        <section className="card-info-warp">
           <div className="card-none">
             <h3>{price}</h3>
           </div>
@@ -59,13 +59,19 @@ function RuCard(props) {
         {/* 加入購物車按鈕s */}
         <section className="card-addCartWarp">
           <div className="card-hr">
-            <RuAddCart target={"target"} id={id} parentId={parentId} />
+            <RuAddCart
+              target={'target'}
+              id={id}
+              parentId={parentId}
+              price={price}
+              title={title}
+            />
           </div>
         </section>
         {/* 加入購物車按鈕e */}
       </div>
     </>
-  );
+  )
 }
 
-export default RuCard;
+export default RuCard

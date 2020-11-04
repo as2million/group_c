@@ -19,12 +19,7 @@ import cauliflower from './Images/cauliflower.svg'
 
 function RuCustom() {
   const [moveArea1, setMoveArea1] = useState('') // 傳遞DOM給<RuArrowRight/>
-  const [moveX, setMaveX] = useState(0)
-
-  useEffect(() => {
-    setMoveArea1(document.getElementById('moveArea1'))
-    // return () => {}
-  }, [])
+  const [moveX, setMoveX] = useState(0)
 
   return (
     <>
@@ -124,7 +119,10 @@ function RuCustom() {
                 <div className="ru-checkout-container">
                   <div className="ru-checkout-warp">
                     <RuCounter />
-                    <RuAddCart />
+                    <RuAddCart
+                      id={'addCart-btn-custom'}
+                      parentId={'addCart-btn-warp-custom'}
+                    />
                   </div>
                 </div>
               </div>
@@ -282,7 +280,7 @@ function RuCustom() {
                   {/* 移動區 e */}
                 </div>
                 {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
-                <RuArrowRight moveArea1={moveArea1} />
+                <RuArrowRight moveX={moveX} setMoveX={setMoveX} />
               </div>
             </div>
           </div>
@@ -572,7 +570,10 @@ function RuCustom() {
                 <div className="ru-checkout-container">
                   <div className="ru-checkout-warp">
                     <RuSelection />
-                    <RuAddCart />
+                    <RuAddCart
+                      id={'addCart-btn-custom'}
+                      parentId={'addCart-btn-warp-custom'}
+                    />
                   </div>
                 </div>
               </div>
