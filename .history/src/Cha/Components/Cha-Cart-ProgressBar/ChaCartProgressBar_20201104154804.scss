@@ -25,19 +25,13 @@
   width: 100%;
   height: 7rem;
   top: 0rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: #faf;
   font-weight: 500;
   font-size: 2.4rem;
   overflow: hidden;
-}
-.cha-progress-bar-header-fff {
-  color: #fff;
-  position: relative;
-  color: red;
-  position: relative;
-  left: 380px;
-  top: 17px;
-  z-index: 10;
 }
 .cha-progress-bar {
   width: 100%;
@@ -70,3 +64,12 @@
 //   background: url('./Images/right-arrow-gray.svg') no-repeat;
 // }
 
+.cha-progress-bar-header-fff {
+  color: #fff;
+  position: relative;
+  color: red;
+  position: relative;
+  left: 380px;
+  top: 17px;
+  z-index: 10;
+}

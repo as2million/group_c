@@ -1,13 +1,13 @@
-.cha-counter-box {
-  outline: 0rem;
+.counter-box {
+  outline: 0rem ;
   width: 16rem;
   height: 3.5rem;
   display: flex;
   justify-content: space-between;
 }
 
-.cha-counter-increment,
-.cha-counter-decrement {
+.counter-increment,
+.counter-decrement {
   border: 0.1rem solid #858585;
   height: 3.5rem;
   width: 3.5rem;
@@ -19,22 +19,20 @@
   justify-content: center;
   cursor: pointer;
 }
-.cha-counter-increment {
+.counter-increment {
   font-size: 3rem;
   padding-top: 0.2rem;
 }
 
-.cha-cursor-default {
-  cursor: default;
-}
-.cha-counter-hover:hover,
-// .cha-counter-decrement:hover,
-.cha-counter-increment:hover {
+.cursor-default{cursor: default;}
+.counter-hover:hover,
+// .counter-decrement:hover,
+.counter-increment:hover {
   color: #fff;
   background-color: #f6bd60;
 }
 
-.cha-counter-count {
+.counter-count {
   border-top: 0.1rem solid #858585;
   border-bottom: 0.1rem solid #858585;
   width: 9rem;
@@ -47,20 +45,12 @@
   color: #858585;
 }
 
-.cha-counter-count p {
+.counter-count p {
   margin: 0;
   user-select: none;
 }
 
-.cha-counter-decrement p,
-.cha-counter-increment p {
-    margin-bottom: 1rem;
-  // height: 1rem;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // flex-direction: column;
-  // line-height: 3.5rem;
-  // margin-bottom: 0!important;
+.counter-decrement p,
+.counter-increment p {
   user-select: none;
 }

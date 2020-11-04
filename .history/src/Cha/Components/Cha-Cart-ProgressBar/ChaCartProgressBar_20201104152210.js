@@ -25,18 +25,17 @@ function ChaCartProgressBar(props) {
   return (
     <>
       <div className="cha-progress-bar"></div>
-
-      <div className="cha-progress-bar-arrow-header">
-        <Link to="/">
-          <div className="cha-right-arrow"></div>
-        </Link>
-        <div className="cha-progress-bar-header">建立訂單</div>
-      </div>
       <div className="cha-progress-bar-yellow">
         <div className="cha-progress-bar-arrow-header-white">
           <div className="cha-right-arrow"></div>
           <div className="cha-progress-bar-header-fff">建立訂單</div>
         </div>
+      </div>
+      <div className="cha-progress-bar-arrow-header">
+        <Link to="/">
+          <div className="cha-right-arrow"></div>
+        </Link>
+        <div className="cha-progress-bar-header">建立訂單</div>
       </div>
     </>
   );

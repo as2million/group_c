@@ -14,30 +14,26 @@
 .cha-progress-bar-yellow {
   width: 100%;
   height: 7rem;
-  background-color: #f6bd60;
+  background-color:  #f6bd60;
   position: fixed;
   top: 0rem;
-  z-index: 6;
+  z-index: 4;
   overflow: hidden;
   white-space: nowrap;
 }
 .cha-progress-bar-arrow-header-white {
   width: 100%;
   height: 7rem;
+  position: fixed;
   top: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: #faf;
   font-weight: 500;
   font-size: 2.4rem;
   overflow: hidden;
-}
-.cha-progress-bar-header-fff {
-  color: #fff;
-  position: relative;
-  color: red;
-  position: relative;
-  left: 380px;
-  top: 17px;
-  z-index: 10;
 }
 .cha-progress-bar {
   width: 100%;
@@ -70,3 +66,8 @@
 //   background: url('./Images/right-arrow-gray.svg') no-repeat;
 // }
 
+.cha-progress-bar-header-fff{
+  color: #fff;
+  position: relative;
+  z-index: 10s;
+}
