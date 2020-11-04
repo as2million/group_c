@@ -71,7 +71,19 @@ function ChaCartStepCardStep1(props) {
     return total;
   };
   let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
+  // 點選你可能還想來點，新增品項
+  const updateCartToLocalStorage = (value) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    const newCart = [...currentCart, value];
+    localStorage.setItem('cart', JSON.stringify(newCart));
+
+    // 設定資料
+    setMeals(newCart);
+  };
+  useEffect(() => {
+    updateCartToLocalStorage();
+  }, []);
   return (
     <>
       <div className="cha-main-card cha-main-card-step1">
@@ -103,14 +115,14 @@ function ChaCartStepCardStep1(props) {
           <div
             className="cha-step1-promotion-picture"
             style={{ cursor: 'pointer' }}
-            // onClick={() => {
-            //   updateCartToLocalStorage({
-            //     id: 8,
-            //     productName: '哈妮BBQ烤雞腿',
-            //     productPrice: 130,
-            //     productAmount: 1,
-            //   });
-            // }}
+            onClick={() => {
+              updateCartToLocalStorage({
+                id: 8,
+                productName: '哈妮BBQ烤雞腿',
+                productPrice: 130,
+                productAmount: 1,
+              });
+            }}
           ></div>
           <div className="cha-step1-promotion-picture"></div>
         </div>

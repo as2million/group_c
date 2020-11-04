@@ -71,7 +71,6 @@ function ChaCartStepCardStep1(props) {
     return total;
   };
   let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
-
   return (
     <>
       <div className="cha-main-card cha-main-card-step1">
@@ -103,14 +102,14 @@ function ChaCartStepCardStep1(props) {
           <div
             className="cha-step1-promotion-picture"
             style={{ cursor: 'pointer' }}
-            // onClick={() => {
-            //   updateCartToLocalStorage({
-            //     id: 8,
-            //     productName: '哈妮BBQ烤雞腿',
-            //     productPrice: 130,
-            //     productAmount: 1,
-            //   });
-            // }}
+            {() => {
+                updateCartToLocalStorage({
+                  id: 8,
+                  productName: '哈妮BBQ烤雞腿',
+                  productPrice: 130,
+                  productAmount: 1,
+                });
+              }}
           ></div>
           <div className="cha-step1-promotion-picture"></div>
         </div>

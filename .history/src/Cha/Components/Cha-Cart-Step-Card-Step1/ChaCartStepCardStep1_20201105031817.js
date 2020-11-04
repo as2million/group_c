@@ -3,7 +3,7 @@ import ChaCartMealList from 'Cha/Components/Cha-Cart-Step-Card-Step1/Cha-Cart-Me
 import './ChaCartStepCardStep1.scss';
 
 function ChaCartStepCardStep1(props) {
-  const { mealsDisplay, setMealsDisplay } = props;
+  const { mealsDisplay, setMealsDisplay, getCartFromLocalStorage } = props;
   const [defaultMeals, setDefaultMeals] = useState([]);
   // const updateCartToLocalStorage = (items) => {
   //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -71,7 +71,6 @@ function ChaCartStepCardStep1(props) {
     return total;
   };
   let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
-
   return (
     <>
       <div className="cha-main-card cha-main-card-step1">
@@ -103,14 +102,14 @@ function ChaCartStepCardStep1(props) {
           <div
             className="cha-step1-promotion-picture"
             style={{ cursor: 'pointer' }}
-            // onClick={() => {
-            //   updateCartToLocalStorage({
-            //     id: 8,
-            //     productName: '哈妮BBQ烤雞腿',
-            //     productPrice: 130,
-            //     productAmount: 1,
-            //   });
-            // }}
+            onClick={() => {
+              updateCartToLocalStorage({
+                id: 8,
+                productName: '哈妮BBQ烤雞腿',
+                productPrice: 130,
+                productAmount: 1,
+              });
+            }}
           ></div>
           <div className="cha-step1-promotion-picture"></div>
         </div>

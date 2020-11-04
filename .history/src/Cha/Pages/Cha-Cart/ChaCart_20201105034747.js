@@ -14,6 +14,10 @@ function ChaCart(props) {
   const [meals, setMeals] = useState([]);
   // 餐點資料(已處理)
   const [mealsDisplay, setMealsDisplay] = useState([]);
+  // 小計
+  const [subtotal, setSubtotal] = useState(0);
+  // 總量
+  const [totalAmount, setTotalAmount] = useState(0);
   // 指示器
   // const [dataLoading, setDataLoading] = useState(false);
 
@@ -49,7 +53,7 @@ function ChaCart(props) {
       //有的話就數量+1
       if (index !== -1) {
         //每次只有加1個數量
-        // newMealsDisplay[index].productAmount++;
+        newMealsDisplay[index].amount++;
         //假設是加數量的
         newMealsDisplay[index].productAmount += meals[i].productAmount;
       } else {
@@ -62,6 +66,15 @@ function ChaCart(props) {
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
 
+  // 計算總價用的函式
+  const sum = (items) => {
+    let total = 0;
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].productAmount * items[i].productPrice;
+    }
+    return total;
+  };
+
   return (
     <>
       <ChaCartProgressBar {...props} />
@@ -71,7 +84,10 @@ function ChaCart(props) {
           {/* 步驟一*/}
           <ChaCartStepCardStep1
             mealsDisplay={mealsDisplay}
-            setMealsDisplay={setMealsDisplay}
+            subtotal={subtotal}
+            setSubtotal={setSubtotal}
+            totalAmount={totalAmount}
+            setTotalAmount={setTotalAmount}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2 />
@@ -80,7 +96,7 @@ function ChaCart(props) {
         </main>
         {/* 購物清單欄*/}
         <aside>
-          <ChaCartSubmitCard mealsDisplay={mealsDisplay} />
+          <ChaCartSubmitCard subtotal={subtotal} totalAmount={totalAmount} />
         </aside>
       </div>
     </>

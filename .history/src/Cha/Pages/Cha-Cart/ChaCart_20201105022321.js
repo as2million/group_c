@@ -14,6 +14,10 @@ function ChaCart(props) {
   const [meals, setMeals] = useState([]);
   // 餐點資料(已處理)
   const [mealsDisplay, setMealsDisplay] = useState([]);
+  // 小計
+  const [subtotal, setSubtotal] = useState(0);
+  // 總量
+  const [totalAmount, setTotalAmount] = useState(0);
   // 指示器
   // const [dataLoading, setDataLoading] = useState(false);
 
@@ -40,20 +44,12 @@ function ChaCart(props) {
 
     //尋找mealsDisplay
     for (let i = 0; i < meals.length; i++) {
-      //尋找mealsDisplay中有沒有此meals[i].id
-      //有找到會返回陣列成員的索引值
-      //沒找到會返回-1
       const index = newMealsDisplay.findIndex(
         (value) => value.id === meals[i].id
       );
-      //有的話就數量+1
       if (index !== -1) {
-        //每次只有加1個數量
-        // newMealsDisplay[index].productAmount++;
-        //假設是加數量的
         newMealsDisplay[index].productAmount += meals[i].productAmount;
       } else {
-        //沒有的話就把項目加入，數量為1
         const newItem = { ...meals[i] };
         newMealsDisplay = [...newMealsDisplay, newItem];
       }
@@ -61,6 +57,15 @@ function ChaCart(props) {
     // console.log(newMealsDisplay);
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
+
+  // 計算總價用的函式
+  const sum = (items) => {
+    let total = 0;
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].productAmount * items[i].productPrice;
+    }
+    return total;
+  };
 
   return (
     <>
@@ -71,7 +76,11 @@ function ChaCart(props) {
           {/* 步驟一*/}
           <ChaCartStepCardStep1
             mealsDisplay={mealsDisplay}
-            setMealsDisplay={setMealsDisplay}
+            DefaultMeals={DefaultMeals}
+            subtotal={subtotal}
+            setSubtotal={setSubtotal}
+            totalAmount={totalAmount}
+            setTotalAmount={setTotalAmount}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2 />
@@ -80,7 +89,7 @@ function ChaCart(props) {
         </main>
         {/* 購物清單欄*/}
         <aside>
-          <ChaCartSubmitCard mealsDisplay={mealsDisplay} />
+          <ChaCartSubmitCard subtotal={subtotal} totalAmount={totalAmount} />
         </aside>
       </div>
     </>

@@ -24,7 +24,6 @@ function ChaCartSubmitCard(props) {
     }
     return total;
   };
-  let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
   // 運費商業邏輯
   useEffect(() => {
     if (totalAmount > 0 && totalAmount <= 2) {
@@ -34,7 +33,7 @@ function ChaCartSubmitCard(props) {
     }
   }, [totalAmount]);
   // 計算總價
-  let totalPrice = subtotalPrice + shipping - 50;
+  let totalPrice = subtotal + shipping - 50;
   return (
     <>
       <div className="cha-aside-card-fake"></div>
@@ -54,7 +53,7 @@ function ChaCartSubmitCard(props) {
           <div>
             小計 X <span>{totalAmount}</span>
           </div>
-          <div>${subtotalPrice}</div>
+          <div>${subtotal}</div>
         </div>
 
         <div className="cha-shipping">

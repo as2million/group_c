@@ -14,8 +14,12 @@ function ChaCart(props) {
   const [meals, setMeals] = useState([]);
   // 餐點資料(已處理)
   const [mealsDisplay, setMealsDisplay] = useState([]);
+  // 小計
+  const [subtotal, setSubtotal] = useState(0);
+  // 總量
+  const [totalAmount, setTotalAmount] = useState(0);
   // 指示器
-  // const [dataLoading, setDataLoading] = useState(false);
+  const [dataLoading, setDataLoading] = useState(false);
 
   function getCartFromLocalStorage() {
     // 開啟載入的指示圖示
@@ -49,7 +53,7 @@ function ChaCart(props) {
       //有的話就數量+1
       if (index !== -1) {
         //每次只有加1個數量
-        // newMealsDisplay[index].productAmount++;
+        //newsetMealsDisplay[index].amount++
         //假設是加數量的
         newMealsDisplay[index].productAmount += meals[i].productAmount;
       } else {
@@ -62,6 +66,50 @@ function ChaCart(props) {
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
 
+  // 計算總價用的函式
+  const sum = (items) => {
+    let total = 0;
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].productAmount * items[i].productPrice;
+    }
+    return total;
+  };
+
+  const loading = (
+    <>
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    </>
+  );
+  const display = (
+    <>
+      <ul className="list-group">
+        {mealsDisplay.map((value, index) => {
+          return (
+            <li className="list-group-item" key={value.id}>
+              產品：{value.productName}/數量：{value.productAmount}/單價：
+              {value.productPrice}/ 小計：
+              {value.productAmount * value.productPrice}
+            </li>
+          );
+        })}
+      </ul>
+      <h3>總價：{sum(mealsDisplay)}</h3>
+    </>
+  );
+  // 以資料載入的指示狀態來切換要出現的畫面
+  // return (
+  //   <>
+  //     <div style={{ width: '100%', height: '15rem' }}></div>
+  //     <main className="flex-shrink-0">
+  //       <div className="container">{dataLoading ? loading : display}</div>
+  //     </main>
+  //   </>
+  // );
+
   return (
     <>
       <ChaCartProgressBar {...props} />
@@ -70,8 +118,10 @@ function ChaCart(props) {
         <main>
           {/* 步驟一*/}
           <ChaCartStepCardStep1
-            mealsDisplay={mealsDisplay}
-            setMealsDisplay={setMealsDisplay}
+            subtotal={subtotal}
+            setSubtotal={setSubtotal}
+            totalAmount={totalAmount}
+            setTotalAmount={setTotalAmount}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2 />
@@ -80,7 +130,7 @@ function ChaCart(props) {
         </main>
         {/* 購物清單欄*/}
         <aside>
-          <ChaCartSubmitCard mealsDisplay={mealsDisplay} />
+          <ChaCartSubmitCard subtotal={subtotal} totalAmount={totalAmount} />
         </aside>
       </div>
     </>

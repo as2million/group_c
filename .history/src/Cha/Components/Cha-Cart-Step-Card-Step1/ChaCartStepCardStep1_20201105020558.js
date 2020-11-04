@@ -3,7 +3,7 @@ import ChaCartMealList from 'Cha/Components/Cha-Cart-Step-Card-Step1/Cha-Cart-Me
 import './ChaCartStepCardStep1.scss';
 
 function ChaCartStepCardStep1(props) {
-  const { mealsDisplay, setMealsDisplay } = props;
+  const { setSubtotal, setTotalAmount } = props;
   const [defaultMeals, setDefaultMeals] = useState([]);
   // const updateCartToLocalStorage = (items) => {
   //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -40,44 +40,54 @@ function ChaCartStepCardStep1(props) {
 
   // 刪除商品選項
   const handleDelete = (id) => {
-    const newMealsDisplay = mealsDisplay.filter(
+    const newDefaultMeals = defaultMeals.filter(
       (item, index) => item.id !== id
     );
-    setMealsDisplay(newMealsDisplay);
+    setDefaultMeals(newDefaultMeals);
   };
   // 計數器加減功能
   const handleCount = (id, type) => {
-    const newMealsDisplay = [...mealsDisplay];
-    const todoItemIndex = newMealsDisplay.findIndex((item) => item.id === id);
+    const newDefaultMeals = [...defaultMeals];
+    const todoItemIndex = newDefaultMeals.findIndex((item) => item.id === id);
     if (todoItemIndex !== -1) {
       if (type === 'increment') {
-        newMealsDisplay[todoItemIndex].productAmount += 1;
+        newDefaultMeals[todoItemIndex].productAmount += 1;
       }
       if (
         type === 'decrement' &&
-        newMealsDisplay[todoItemIndex].productAmount > 1
+        newDefaultMeals[todoItemIndex].productAmount > 1
       ) {
-        newMealsDisplay[todoItemIndex].productAmount -= 1;
+        newDefaultMeals[todoItemIndex].productAmount -= 1;
       }
-      setMealsDisplay(newMealsDisplay);
+      setDefaultMeals(newDefaultMeals);
     }
   };
   // 計算商品價格小計
-  const calcuSubtotalPrice = (items) => {
+  const subSum = (items) => {
     let total = 0;
     for (let i = 0; i < items.length; i++) {
       total += items[i].productAmount * items[i].productPrice;
     }
+    setSubtotal(total);
     return total;
   };
-  let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
+  const totalAmount = (items) => {
+    let total = 0;
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].productAmount;
+    }
+    return total;
+  };
+  setTotalAmount(totalAmount(defaultMeals));
 
   return (
     <>
       <div className="cha-main-card cha-main-card-step1">
-        <div className="cha-step-header">步驟1：餐點明細</div>
+        <div className="cha-step-header" onClick={handleDefaultMeals}>
+          步驟1：餐點明細
+        </div>
         {/* 餐點項目 */}
-        {mealsDisplay.map((item, index) => (
+        {defaultMeals.map((item, index) => (
           <ChaCartMealList
             key={item.id}
             mealsItem={item}
@@ -88,7 +98,9 @@ function ChaCartStepCardStep1(props) {
         <div className="cha-horizontal-line"></div>
         <div className="cha-step1-total-price">
           <div className="cha-step1-total-price-word">小計</div>
-          <div className="cha-step1-total-price-number">${subtotalPrice}</div>
+          <div className="cha-step1-total-price-number">
+            ${subSum(defaultMeals)}
+          </div>
         </div>
         {/* 確認按鈕 */}
         {/* <div className="cha-step-check-btn-div">
@@ -100,18 +112,7 @@ function ChaCartStepCardStep1(props) {
         </div>
         <div className="cha-step1-promotion-row">
           <div className="cha-step1-promotion-picture"></div>
-          <div
-            className="cha-step1-promotion-picture"
-            style={{ cursor: 'pointer' }}
-            // onClick={() => {
-            //   updateCartToLocalStorage({
-            //     id: 8,
-            //     productName: '哈妮BBQ烤雞腿',
-            //     productPrice: 130,
-            //     productAmount: 1,
-            //   });
-            // }}
-          ></div>
+          <div className="cha-step1-promotion-picture"></div>
           <div className="cha-step1-promotion-picture"></div>
         </div>
       </div>

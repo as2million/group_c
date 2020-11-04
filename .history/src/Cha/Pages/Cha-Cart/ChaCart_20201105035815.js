@@ -69,10 +69,7 @@ function ChaCart(props) {
         {/* 訂單步驟欄*/}
         <main>
           {/* 步驟一*/}
-          <ChaCartStepCardStep1
-            mealsDisplay={mealsDisplay}
-            setMealsDisplay={setMealsDisplay}
-          />
+          <ChaCartStepCardStep1 mealsDisplay={mealsDisplay} />
           {/* 步驟二 */}
           <ChaCartStepCardStep2 />
           {/* 步驟三 */}
@@ -80,7 +77,10 @@ function ChaCart(props) {
         </main>
         {/* 購物清單欄*/}
         <aside>
-          <ChaCartSubmitCard mealsDisplay={mealsDisplay} />
+          <ChaCartSubmitCard
+            mealsDisplay={mealsDisplay}
+            setMealsDisplay={setMealsDisplay}
+          />
         </aside>
       </div>
     </>

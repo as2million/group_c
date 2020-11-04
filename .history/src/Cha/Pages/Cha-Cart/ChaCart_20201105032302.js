@@ -14,13 +14,12 @@ function ChaCart(props) {
   const [meals, setMeals] = useState([]);
   // 餐點資料(已處理)
   const [mealsDisplay, setMealsDisplay] = useState([]);
+  // 小計
+  const [subtotal, setSubtotal] = useState(0);
   // 指示器
   // const [dataLoading, setDataLoading] = useState(false);
 
   function getCartFromLocalStorage() {
-    // 開啟載入的指示圖示
-    // setDataLoading(true);
-
     const newCart = localStorage.getItem('cart') || '[]';
     // console.log(JSON.parse(newCart));
     setMeals(JSON.parse(newCart));
@@ -30,6 +29,15 @@ function ChaCart(props) {
     getCartFromLocalStorage();
   }, []);
 
+  const updateCartToLocalStorage = (value) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const newCart = [...currentCart, value];
+    localStorage.setItem('cart', JSON.stringify(newCart));
+    useEffect(() => {
+      updateCartToLocalStorage();
+    }, []);
+  
   // 每次meals資料有改變，1秒後關閉載入指示
   // componentDidUpdate
   useEffect(() => {
@@ -40,20 +48,12 @@ function ChaCart(props) {
 
     //尋找mealsDisplay
     for (let i = 0; i < meals.length; i++) {
-      //尋找mealsDisplay中有沒有此meals[i].id
-      //有找到會返回陣列成員的索引值
-      //沒找到會返回-1
       const index = newMealsDisplay.findIndex(
         (value) => value.id === meals[i].id
       );
-      //有的話就數量+1
       if (index !== -1) {
-        //每次只有加1個數量
-        // newMealsDisplay[index].productAmount++;
-        //假設是加數量的
         newMealsDisplay[index].productAmount += meals[i].productAmount;
       } else {
-        //沒有的話就把項目加入，數量為1
         const newItem = { ...meals[i] };
         newMealsDisplay = [...newMealsDisplay, newItem];
       }
@@ -70,8 +70,11 @@ function ChaCart(props) {
         <main>
           {/* 步驟一*/}
           <ChaCartStepCardStep1
+            updateCartToLocalStorage={updateCartToLocalStorage}
             mealsDisplay={mealsDisplay}
             setMealsDisplay={setMealsDisplay}
+            subtotal={subtotal}
+            setSubtotal={setSubtotal}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2 />
@@ -80,7 +83,7 @@ function ChaCart(props) {
         </main>
         {/* 購物清單欄*/}
         <aside>
-          <ChaCartSubmitCard mealsDisplay={mealsDisplay} />
+          <ChaCartSubmitCard subtotal={subtotal} mealsDisplay={mealsDisplay} />
         </aside>
       </div>
     </>

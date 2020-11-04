@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
 
 function ChaCartSubmitCard(props) {
-  const { mealsDisplay } = props;
+  const { subtotal, mealsDisplay } = props;
   const [shipping, setShipping] = useState(0);
 
   // 計算商品總量
+
   const calcuTotalAmount = (items) => {
     let total = 0;
     for (let i = 0; i < items.length; i++) {
@@ -16,15 +17,7 @@ function ChaCartSubmitCard(props) {
     return total;
   };
   let totalAmount = calcuTotalAmount(mealsDisplay);
-  // 計算商品價格小計
-  const calcuSubtotalPrice = (items) => {
-    let total = 0;
-    for (let i = 0; i < items.length; i++) {
-      total += items[i].productAmount * items[i].productPrice;
-    }
-    return total;
-  };
-  let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
+
   // 運費商業邏輯
   useEffect(() => {
     if (totalAmount > 0 && totalAmount <= 2) {
@@ -34,7 +27,7 @@ function ChaCartSubmitCard(props) {
     }
   }, [totalAmount]);
   // 計算總價
-  let totalPrice = subtotalPrice + shipping - 50;
+  let totalPrice = subtotal + shipping - 50;
   return (
     <>
       <div className="cha-aside-card-fake"></div>
@@ -52,9 +45,9 @@ function ChaCartSubmitCard(props) {
         </div>
         <div className="cha-little-total">
           <div>
-            小計 X <span>{totalAmount}</span>
+            小計 X <span>{totalAmount(mealsDisplay)}</span>
           </div>
-          <div>${subtotalPrice}</div>
+          <div>${subtotal}</div>
         </div>
 
         <div className="cha-shipping">

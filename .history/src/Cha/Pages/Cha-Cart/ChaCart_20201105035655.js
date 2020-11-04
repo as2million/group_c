@@ -43,7 +43,7 @@ function ChaCart(props) {
       //尋找mealsDisplay中有沒有此meals[i].id
       //有找到會返回陣列成員的索引值
       //沒找到會返回-1
-      const index = newMealsDisplay.findIndex(
+      let index = newMealsDisplay.findIndex(
         (value) => value.id === meals[i].id
       );
       //有的話就數量+1
@@ -69,10 +69,7 @@ function ChaCart(props) {
         {/* 訂單步驟欄*/}
         <main>
           {/* 步驟一*/}
-          <ChaCartStepCardStep1
-            mealsDisplay={mealsDisplay}
-            setMealsDisplay={setMealsDisplay}
-          />
+          <ChaCartStepCardStep1 mealsDisplay={mealsDisplay} />
           {/* 步驟二 */}
           <ChaCartStepCardStep2 />
           {/* 步驟三 */}
@@ -80,7 +77,10 @@ function ChaCart(props) {
         </main>
         {/* 購物清單欄*/}
         <aside>
-          <ChaCartSubmitCard mealsDisplay={mealsDisplay} />
+          <ChaCartSubmitCard
+            mealsDisplay={mealsDisplay}
+            setMealsDisplay={setMealsDisplay}
+          />
         </aside>
       </div>
     </>

@@ -103,14 +103,14 @@ function ChaCartStepCardStep1(props) {
           <div
             className="cha-step1-promotion-picture"
             style={{ cursor: 'pointer' }}
-            // onClick={() => {
-            //   updateCartToLocalStorage({
-            //     id: 8,
-            //     productName: '哈妮BBQ烤雞腿',
-            //     productPrice: 130,
-            //     productAmount: 1,
-            //   });
-            // }}
+            onClick={() => {
+              updateCartToLocalStorage({
+                id: 8,
+                productName: '哈妮BBQ烤雞腿',
+                productPrice: 130,
+                productAmount: 1,
+              });
+            }}
           ></div>
           <div className="cha-step1-promotion-picture"></div>
         </div>
