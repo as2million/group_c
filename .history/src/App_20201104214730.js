@@ -23,9 +23,8 @@ import ChaGroupOrderSearch from 'Cha/Components/Cha-Group-Order-Search/ChaGroupO
 import ChaGroupOrderSignIn from 'Cha/Components/Cha-Group-Order-SignIn/ChaGroupOrderSignIn';
 import ChaGroupOrderConfirm from 'Cha/Components/Cha-Group-Order-Confirm/ChaGroupOrderConfirm';
 import ChaGroupOrderMenu from 'Cha/Components/Cha-Group-Order-Menu/ChaGroupOrderMenu';
+
 import ChaCheckpoint from 'Cha/Pages/ChaCheckpoint';
-import ChaProductList from 'Cha/Components-demo/ChaProductList';
-import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 // import RuProudctList from 'Ru/Pages/ProudctList'
 // import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
 // import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
@@ -115,17 +114,10 @@ function App() {
             <ChaGroupOrderMenu />
           </Route>
           {/* 訂單管理已置入<IrisOrderManagement /> */}
-          {/* 測試用：中繼站、商品清單 */}
+          {/* 偷設中繼站 */}
           <Route exact path="/checkpoint">
             <ChaCheckpoint />
           </Route>
-          <Route exact path="/chaProductList">
-            <ChaProductList />
-          </Route>
-          <Route exact path="/chaCartTest">
-            <ChaCartTest />
-          </Route>
-
           {/* claudia */}
           {/* 放"page資料夾"內的元件 */}
           {/* <Route exact path="/farmMap">

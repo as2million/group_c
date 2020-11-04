@@ -16,14 +16,10 @@ function ChaCheckpoint(props) {
             餐點購物車
           </button>
         </Link>
+        <h3>假商品列表</h3>
         <Link to="/chaProductList">
           <button type="button" class="btn btn-primary btn-lg mr-5">
             假商品列表
-          </button>
-        </Link>
-        <Link to="/chaCartTest">
-          <button type="button" class="btn btn-primary btn-lg mr-5">
-            假購物車
           </button>
         </Link>
         <hr />

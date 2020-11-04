@@ -25,7 +25,6 @@ import ChaGroupOrderConfirm from 'Cha/Components/Cha-Group-Order-Confirm/ChaGrou
 import ChaGroupOrderMenu from 'Cha/Components/Cha-Group-Order-Menu/ChaGroupOrderMenu';
 import ChaCheckpoint from 'Cha/Pages/ChaCheckpoint';
 import ChaProductList from 'Cha/Components-demo/ChaProductList';
-import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 // import RuProudctList from 'Ru/Pages/ProudctList'
 // import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
 // import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
@@ -121,9 +120,6 @@ function App() {
           </Route>
           <Route exact path="/chaProductList">
             <ChaProductList />
-          </Route>
-          <Route exact path="/chaCartTest">
-            <ChaCartTest />
           </Route>
 
           {/* claudia */}

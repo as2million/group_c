@@ -6,21 +6,39 @@ function ChaCartStepCardStep1(props) {
   const [cartMeals, setCartMeals] = useState([
     {
       id: 1,
-      productName: '慢煮嫩雞胸-蒜味香草',
+      productName: '慢煮嫩雞胸-蒜味香草1',
       productPrice: 150,
       productAmount: 1,
     },
     {
       id: 2,
-      productName: '玫瑰岩鹽烤雞',
+      productName: '慢煮嫩雞胸-蒜味香草2',
       productPrice: 160,
-      productAmount: 3,
+      productAmount: 2,
     },
     {
       id: 3,
-      productName: '乾煎功夫鱸魚',
+      productName: '慢煮嫩雞胸-蒜味香草3',
       productPrice: 170,
       productAmount: 3,
+    },
+    {
+      id: 4,
+      productName: '慢煮嫩雞胸-蒜味香草4',
+      productPrice: 180,
+      productAmount: 4,
+    },
+    {
+      id: 5,
+      productName: '慢煮嫩雞胸-蒜味香草5',
+      productPrice: 190,
+      productAmount: 5,
+    },
+    {
+      id: 6,
+      productName: '慢煮嫩雞胸-蒜味香草6',
+      productPrice: 200,
+      productAmount: 6,
     },
   ]);
   const { setSubtotal, setTotalAmount } = props;
