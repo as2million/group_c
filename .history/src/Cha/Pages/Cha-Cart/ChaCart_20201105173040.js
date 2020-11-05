@@ -12,17 +12,13 @@ import 'Cha/Pages/Cha-Cart/ChaCart.scss';
 function ChaCart(props) {
   // 餐點資料(未處理)
   const [meals, setMeals] = useState([]);
-  const { setShowBar } = props;
-
   // 餐點資料(已處理)
   const [mealsDisplay, setMealsDisplay] = useState([]);
   // 指示器
   // const [dataLoading, setDataLoading] = useState(false);
-
-  // 掛載就設定
   useEffect(() => {
-    setShowBar(false);
-  }, []);
+    props.setShowBar(true);
+  }, [props.showBar]);
 
   // 讀取LocalStorage
   function getCartFromLocalStorage() {

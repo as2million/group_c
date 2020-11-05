@@ -18,9 +18,8 @@ function ChaCartStepCardStep2(props) {
     const response = await fetch(request);
     const data = await response.json();
     // data會是一個物件值
-    // console.log(data);
-    // console.log(memberData);
-    setMemberData(data[0]);
+    console.log(data);
+    setMemberData(data);
   }
 
   // componentDidMount，一開始會載入資料(在元件初始化完成後)
@@ -42,7 +41,6 @@ function ChaCartStepCardStep2(props) {
               id="cha-step2-1-name"
               name="cha-step2-1-name"
               placeholder="請填寫姓名"
-              value={memberData.name}
             />
           </div>
           {/* 手機號碼 */}

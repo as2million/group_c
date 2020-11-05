@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ChaCartStepCardStep2.scss';
 
 function ChaCartStepCardStep2(props) {
-  const [memberData, setMemberData] = useState([]);
+  // const [total, setTotal] = useState(0);
 
   // 載入資料用
   async function getMemberDataFromServer() {
@@ -15,12 +15,13 @@ function ChaCartStepCardStep2(props) {
         'Content-Type': 'application/json',
       }),
     });
+
     const response = await fetch(request);
     const data = await response.json();
     // data會是一個物件值
-    // console.log(data);
-    // console.log(memberData);
-    setMemberData(data[0]);
+    console.log(data);
+
+    // setTotal(data.total);
   }
 
   // componentDidMount，一開始會載入資料(在元件初始化完成後)
@@ -42,7 +43,6 @@ function ChaCartStepCardStep2(props) {
               id="cha-step2-1-name"
               name="cha-step2-1-name"
               placeholder="請填寫姓名"
-              value={memberData.name}
             />
           </div>
           {/* 手機號碼 */}

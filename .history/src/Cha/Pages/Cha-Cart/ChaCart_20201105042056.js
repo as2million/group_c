@@ -12,25 +12,21 @@ import 'Cha/Pages/Cha-Cart/ChaCart.scss';
 function ChaCart(props) {
   // 餐點資料(未處理)
   const [meals, setMeals] = useState([]);
-  const { setShowBar } = props;
-
   // 餐點資料(已處理)
   const [mealsDisplay, setMealsDisplay] = useState([]);
   // 指示器
   // const [dataLoading, setDataLoading] = useState(false);
 
-  // 掛載就設定
-  useEffect(() => {
-    setShowBar(false);
-  }, []);
-
   // 讀取LocalStorage
   function getCartFromLocalStorage() {
+    // 開啟載入的指示圖示
+    // setDataLoading(true);
+
     const newCart = localStorage.getItem('cart') || '[]';
     // console.log(JSON.parse(newCart));
     setMeals(JSON.parse(newCart));
   }
-  // componentDidMount，一開始會載入資料(在元件初始化完成後)
+
   useEffect(() => {
     getCartFromLocalStorage();
   }, []);
@@ -67,15 +63,6 @@ function ChaCart(props) {
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
 
-  const updateCartToLocalStorage = (value) => {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    const newCart = [...currentCart, value];
-    localStorage.setItem('cart', JSON.stringify(newCart));
-
-    // // 設定資料
-    setMeals(newCart);
-  };
   const handleUpdateToLocalStorage = () => {
     updateCartToLocalStorage({
       id: 4,
@@ -83,37 +70,6 @@ function ChaCart(props) {
       productPrice: 110,
       productAmount: 1,
     });
-  };
-  const demoMealsToLocalStorage = (items) => {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    const newCart = [...currentCart, ...items];
-    localStorage.setItem('cart', JSON.stringify(newCart));
-
-    // // 設定資料
-    setMeals(newCart);
-  };
-  const handleDemoMeals = () => {
-    demoMealsToLocalStorage([
-      {
-        id: 1,
-        productName: '慢煮嫩雞胸-蒜味香草',
-        productPrice: 150,
-        productAmount: 1,
-      },
-      {
-        id: 2,
-        productName: '玫瑰岩鹽烤雞',
-        productPrice: 160,
-        productAmount: 3,
-      },
-      {
-        id: 3,
-        productName: '乾煎功夫鱸魚',
-        productPrice: 170,
-        productAmount: 3,
-      },
-    ]);
   };
 
   // const handleCount = (id, type) => {
@@ -142,8 +98,6 @@ function ChaCart(props) {
           <ChaCartStepCardStep1
             mealsDisplay={mealsDisplay}
             setMealsDisplay={setMealsDisplay}
-            handleUpdateToLocalStorage={handleUpdateToLocalStorage}
-            handleDemoMeals={handleDemoMeals}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2 />

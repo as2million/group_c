@@ -12,20 +12,16 @@ import 'Cha/Pages/Cha-Cart/ChaCart.scss';
 function ChaCart(props) {
   // 餐點資料(未處理)
   const [meals, setMeals] = useState([]);
-  const { setShowBar } = props;
-
   // 餐點資料(已處理)
   const [mealsDisplay, setMealsDisplay] = useState([]);
   // 指示器
   // const [dataLoading, setDataLoading] = useState(false);
 
-  // 掛載就設定
-  useEffect(() => {
-    setShowBar(false);
-  }, []);
-
   // 讀取LocalStorage
   function getCartFromLocalStorage() {
+    // 開啟載入的指示圖示
+    // setDataLoading(true);
+
     const newCart = localStorage.getItem('cart') || '[]';
     // console.log(JSON.parse(newCart));
     setMeals(JSON.parse(newCart));

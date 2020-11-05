@@ -2,11 +2,15 @@ import React, { useState, useEffect } from 'react';
 import './ChaCartStepCardStep2.scss';
 
 function ChaCartStepCardStep2(props) {
-  const [memberData, setMemberData] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [dataLoading, setDataLoading] = useState(false);
 
   // 載入資料用
-  async function getMemberDataFromServer() {
-    const url = 'http://localhost:5000/cart-api/get-member';
+  async function getTotalFromServer() {
+    // 開啟載入的指示圖示
+    setDataLoading(true);
+
+    const url = 'http://localhost:5555/counter/1';
 
     const request = new Request(url, {
       method: 'GET',
@@ -15,18 +19,24 @@ function ChaCartStepCardStep2(props) {
         'Content-Type': 'application/json',
       }),
     });
+
     const response = await fetch(request);
     const data = await response.json();
     // data會是一個物件值
-    // console.log(data);
-    // console.log(memberData);
-    setMemberData(data[0]);
+    //console.log(data)
+
+    setTotal(data.total);
   }
 
   // componentDidMount，一開始會載入資料(在元件初始化完成後)
   useEffect(() => {
-    getMemberDataFromServer();
+    getTotalFromServer();
   }, []);
+
+  // 每次total資料有改變，2秒後關閉載入指示
+  useEffect(() => {
+    setTimeout(() => setDataLoading(false), 2000);
+  }, [total]);
 
   return (
     <>
@@ -42,7 +52,6 @@ function ChaCartStepCardStep2(props) {
               id="cha-step2-1-name"
               name="cha-step2-1-name"
               placeholder="請填寫姓名"
-              value={memberData.name}
             />
           </div>
           {/* 手機號碼 */}
@@ -124,45 +133,3 @@ function ChaCartStepCardStep2(props) {
   );
 }
 export default ChaCartStepCardStep2;
-{
-  /* <table className="table table-striped">
-<thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">姓名</th>
-    <th scope="col">帳號</th>
-    <th scope="col">操作</th>
-  </tr>
-</thead>
-<tbody>
-  {users.map((value, index) => {
-    return (
-      <tr key={value.id}>
-        <td>{value.id}</td>
-        <td>{value.name}</td>
-        <td>{value.username}</td>
-        <td>
-          <Button
-            variant="success"
-            onClick={() => {
-              props.history.push('/user-edit/' + value.id)
-            }}
-          >
-            <MdModeEdit /> 編輯
-          </Button>
-          {'  '}
-          <Button
-            onClick={() => {
-              deletcUserFromServer(value.id)
-            }}
-            variant="danger"
-          >
-            <MdDelete /> 刪除
-          </Button>
-        </td>
-      </tr>
-    )
-  })}
-</tbody>
-</table> */
-}

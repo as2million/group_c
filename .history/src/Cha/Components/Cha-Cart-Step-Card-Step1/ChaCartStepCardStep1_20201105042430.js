@@ -3,12 +3,40 @@ import ChaCartMealList from 'Cha/Components/Cha-Cart-Step-Card-Step1/Cha-Cart-Me
 import './ChaCartStepCardStep1.scss';
 
 function ChaCartStepCardStep1(props) {
-  const {
-    mealsDisplay,
-    setMealsDisplay,
-    handleUpdateToLocalStorage,
-    handleDemoMeals,
-  } = props;
+  const { mealsDisplay, setMealsDisplay, handleUpdateToLocalStorage } = props;
+  const [defaultMeals, setDefaultMeals] = useState([]);
+  // const updateCartToLocalStorage = (items) => {
+  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  //   const newCart = [...currentCart, ...items];
+  //   localStorage.setItem('cart', JSON.stringify(newCart));
+
+  //   // 設定資料
+  //   setDefaultMeals(newCart);
+  // };
+  // // DEMO加入購物車
+  // const handleDefaultMeals = () => {
+  //   updateCartToLocalStorage([
+  //     {
+  //       id: 1,
+  //       productName: '慢煮嫩雞胸-蒜味香草',
+  //       productPrice: 150,
+  //       productAmount: 1,
+  //     },
+  //     {
+  //       id: 2,
+  //       productName: '玫瑰岩鹽烤雞',
+  //       productPrice: 160,
+  //       productAmount: 3,
+  //     },
+  //     {
+  //       id: 3,
+  //       productName: '乾煎功夫鱸魚',
+  //       productPrice: 170,
+  //       productAmount: 3,
+  //     },
+  //   ]);
+  // };
 
   // 刪除商品選項
   const handleDelete = (id) => {
@@ -47,9 +75,7 @@ function ChaCartStepCardStep1(props) {
   return (
     <>
       <div className="cha-main-card cha-main-card-step1">
-        <div className="cha-step-header" onClick={handleDemoMeals}>
-          步驟1：餐點明細
-        </div>
+        <div className="cha-step-header">步驟1：餐點明細</div>
         {/* 餐點項目 */}
         {mealsDisplay.map((item, index) => (
           <ChaCartMealList
@@ -57,7 +83,6 @@ function ChaCartStepCardStep1(props) {
             mealsItem={item}
             deleteMethod={() => handleDelete(item.id)}
             handleCount={handleCount}
-            handleUpdateToLocalStorage={handleUpdateToLocalStorage}
           />
         ))}
         <div className="cha-horizontal-line"></div>

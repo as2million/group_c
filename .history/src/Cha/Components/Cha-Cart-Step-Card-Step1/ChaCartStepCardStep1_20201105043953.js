@@ -9,6 +9,39 @@ function ChaCartStepCardStep1(props) {
     handleUpdateToLocalStorage,
     handleDemoMeals,
   } = props;
+  const [defaultMeals, setDefaultMeals] = useState([]);
+  // const updateCartToLocalStorage = (items) => {
+  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  //   const newCart = [...currentCart, ...items];
+  //   localStorage.setItem('cart', JSON.stringify(newCart));
+
+  //   // 設定資料
+  //   setDefaultMeals(newCart);
+  // };
+  // // DEMO加入購物車
+  // const handleDefaultMeals = () => {
+  //   updateCartToLocalStorage([
+  //     {
+  //       id: 1,
+  //       productName: '慢煮嫩雞胸-蒜味香草',
+  //       productPrice: 150,
+  //       productAmount: 1,
+  //     },
+  //     {
+  //       id: 2,
+  //       productName: '玫瑰岩鹽烤雞',
+  //       productPrice: 160,
+  //       productAmount: 3,
+  //     },
+  //     {
+  //       id: 3,
+  //       productName: '乾煎功夫鱸魚',
+  //       productPrice: 170,
+  //       productAmount: 3,
+  //     },
+  //   ]);
+  // };
 
   // 刪除商品選項
   const handleDelete = (id) => {

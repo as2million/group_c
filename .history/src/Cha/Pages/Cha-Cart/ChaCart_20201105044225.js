@@ -12,20 +12,16 @@ import 'Cha/Pages/Cha-Cart/ChaCart.scss';
 function ChaCart(props) {
   // 餐點資料(未處理)
   const [meals, setMeals] = useState([]);
-  const { setShowBar } = props;
-
   // 餐點資料(已處理)
   const [mealsDisplay, setMealsDisplay] = useState([]);
   // 指示器
   // const [dataLoading, setDataLoading] = useState(false);
 
-  // 掛載就設定
-  useEffect(() => {
-    setShowBar(false);
-  }, []);
-
   // 讀取LocalStorage
   function getCartFromLocalStorage() {
+    // 開啟載入的指示圖示
+    // setDataLoading(true);
+
     const newCart = localStorage.getItem('cart') || '[]';
     // console.log(JSON.parse(newCart));
     setMeals(JSON.parse(newCart));
@@ -84,17 +80,8 @@ function ChaCart(props) {
       productAmount: 1,
     });
   };
-  const demoMealsToLocalStorage = (items) => {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    const newCart = [...currentCart, ...items];
-    localStorage.setItem('cart', JSON.stringify(newCart));
-
-    // // 設定資料
-    setMeals(newCart);
-  };
   const handleDemoMeals = () => {
-    demoMealsToLocalStorage([
+    updateCartToLocalStorage(
       {
         id: 1,
         productName: '慢煮嫩雞胸-蒜味香草',
@@ -112,8 +99,8 @@ function ChaCart(props) {
         productName: '乾煎功夫鱸魚',
         productPrice: 170,
         productAmount: 3,
-      },
-    ]);
+      }
+    );
   };
 
   // const handleCount = (id, type) => {

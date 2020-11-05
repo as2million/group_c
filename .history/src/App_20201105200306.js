@@ -37,6 +37,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // 路由表
 function App() {
   const [showBar, setShowBar] = useState(true);
+  // 掛載就設定
+  useEffect(() => {
+    setShowBar(true);
+  }, [showBar]);
   return (
     // <Router>元件一定要放在最外層
     <Router>

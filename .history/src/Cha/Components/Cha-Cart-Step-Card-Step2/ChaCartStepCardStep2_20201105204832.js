@@ -19,8 +19,7 @@ function ChaCartStepCardStep2(props) {
     const data = await response.json();
     // data會是一個物件值
     // console.log(data);
-    // console.log(memberData);
-    setMemberData(data[0]);
+    console.log(setMemberData(data[0]));
   }
 
   // componentDidMount，一開始會載入資料(在元件初始化完成後)
