@@ -17,7 +17,7 @@ function VNavbar(props) {
   )
   const [status, setStatus] = useState(false)
 
-  const [adress, setAdress] = useState(false)
+  const [adress, setAdress] = useState([])
 
   const adressData = (e) => {
     //未登入=>顯示input框
@@ -32,7 +32,14 @@ function VNavbar(props) {
       .then((r) => r.json())
 
       .then((obj) => {
+        // const newAdress = [...obj, ...adress]
+        // setAdress(newAdress)
+        // console.log(adress[0])
+
         console.log(obj)
+        setAdress(obj[0].address)
+
+        // console.log(obj[0].address)
       })
   }
 
@@ -42,7 +49,12 @@ function VNavbar(props) {
 
   return (
     <>
-      {status && <AdressTabs closeModal={() => setStatus(false)}></AdressTabs>}
+      {status && (
+        <AdressTabs
+          adress={adress}
+          closeModal={() => setStatus(false)}
+        ></AdressTabs>
+      )}
       <Navbar className="vnavbar-jan d-flex flex-wrap justify-content-between fixed-top">
         <div className="jan-vnav-container d-flex flex-wrap justify-content-around align-content-center">
           <div className="d-flex align-items-center calendar-jan">
@@ -71,7 +83,7 @@ function VNavbar(props) {
             <input
               onClick={() => setStatus(true)}
               className="address-input-jan"
-              placeholder="點我填寫地址"
+              placeholder={adress}
             />
           </div>
           <div className="d-flex justify-content-end">

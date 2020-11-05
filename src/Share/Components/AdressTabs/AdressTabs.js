@@ -7,6 +7,7 @@ import Button from 'Share/Components/Button/Button'
 function AdressTabs(props) {
   const { placeholder, type, id } = props
   const { closeModal } = props
+  const { adress } = props
   // 使用的時候，
   // 幫我在你原本頁面中最外面容器，
   // 加上position-relative，
@@ -55,6 +56,7 @@ function AdressTabs(props) {
                   type={type}
                   placeholder={placeholder}
                   id={id}
+                  value={adress}
                 />
               </div>
 
