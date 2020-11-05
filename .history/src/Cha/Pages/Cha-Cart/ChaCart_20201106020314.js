@@ -130,47 +130,47 @@ function ChaCart(props) {
   //     setMealsDisplay(newMealsDisplay);
   //   }
   // };
-  //   async function addUserToSever() {
+  async function addUserToSever() {
 
-  //     const tep2Data =  {
-  //         member_sid: memberSid,
-  //         order_state: "未送達",
-  //         order_name: name,
-  //         mobile:mobile,
-  //         take_way: takeWay,
-  //         take_address: address,
-  //         beastie_coin: beastieCoin,
-  //       };
-  // ///////////////   "toal_amount": 10,
-  // ///////////////   "subtoal_price": 1300,
-  // ///////////////   "shipping": 0,
-  // ///////////////   "beastie_coin": 10,
-  // ///////////////   "tableware": "是",
-  // ///////////////   "total_price": 1290,
-  // ///////////////   "take_date": "2020-11-02T16:00:00.000Z",
-  // ///////////////   "take_time": "12:00:00",
-  // ///////////////   "receipt": "二聯式發票",
-  // // },
-  //     // 連接的伺服器資料網址
-  //     const url = 'http://localhost:5555/users/';
+    const tep2Data =  {
+        member_sid: memberSid,
+        order_state: "未送達",
+        order_name: name,
+        mobile:mobile,
+        take_way: takeWay,
+        take_address: address,
+        beastie_coin: beastieCoin,
+      };
+///////////////   "toal_amount": 10,
+///////////////   "subtoal_price": 1300,
+///////////////   "shipping": 0,
+///////////////   "beastie_coin": 10,
+///////////////   "tableware": "是",
+///////////////   "total_price": 1290,
+///////////////   "take_date": "2020-11-02T16:00:00.000Z",
+///////////////   "take_time": "12:00:00",
+///////////////   "receipt": "二聯式發票",
+// },
+    // 連接的伺服器資料網址
+    const url = 'http://localhost:5555/users/';
 
-  //     // 注意資料格式要設定，伺服器才知道是json格式
-  //     const request = new Request(url, {
-  //       method: 'POST',
-  //       body: JSON.stringify(tep2Data),
-  //       headers: new Headers({
-  //         Accept: 'application/json',
-  //         'Content-Type': 'application/json',
-  //       }),
-  //     });
+    // 注意資料格式要設定，伺服器才知道是json格式
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(tep2Data),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    });
 
-  //     console.log(JSON.stringify(tep2Data));
+    console.log(JSON.stringify(tep2Data));
 
-  //     const response = await fetch(request);
-  //     const data = await response.json();
+    const response = await fetch(request);
+    const data = await response.json();
 
-  //     console.log('伺服器回傳的json資料', data);
-  //     // 要等驗証過，再設定資料(簡單的直接設定)
+    console.log('伺服器回傳的json資料', data);
+    // 要等驗証過，再設定資料(簡單的直接設定)
   return (
     <>
       <ChaCartProgressBar {...props} />

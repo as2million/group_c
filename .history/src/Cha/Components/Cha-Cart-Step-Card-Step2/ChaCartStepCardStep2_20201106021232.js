@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './ChaCartStepCardStep2.scss';
 
 function ChaCartStepCardStep2(props) {
+  const [memberData, setMemberData] = useState([]);
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
-  const [takeWay, setTakeWay] = useState('');
   const [address, setAddress] = useState('');
-  const [memberSid, setMemberSid] = useState('');
-  const [beastieCoin, setBeastieCoin] = useState('');
+  const [password, setPassword] = useState('');
   // GET會員資料
   async function getMemberDataFromServer() {
     const url = 'http://localhost:5000/cart-api/get-member';
@@ -27,24 +26,14 @@ function ChaCartStepCardStep2(props) {
     // setMemberData(data[0]);
     setName(data[0].name);
     setMobile(data[0].mobile);
-    setTakeWay(data[0].take_way);
     setAddress(data[0].address);
-    setMemberSid(data[0].member_sid);
-    setBeastieCoin(data[0].beastie_coin);
   }
 
   // componentDidMount，一掛載就GET會員資料表
   useEffect(() => {
     getMemberDataFromServer();
   }, []);
-  const step2Data = {
-    member_sid: memberSid,
-    name: name,
-    mobile: mobile,
-    address: address,
-    beastie_coin: beastieCoin,
-    take_way: takeWay,
-  };
+
   return (
     <>
       <div className="cha-main-card cha-main-card-step2">
@@ -159,6 +148,41 @@ function ChaCartStepCardStep2(props) {
   );
 }
 export default ChaCartStepCardStep2;
+// const a = {
+//   member_sid: 1,
+//   account: 'kate1234',
+//   password: 'kk1234',
+//   name: '林凱特',
+//   birthday: '1990-04-06T16:00:00.000Z',
+//   mobile: '0910123456',
+//   email: 'kate.lin1234@test.com',
+//   address: '忠孝東路一段50號',
+//   beastie_coin: 0,
+//   take_way: 1,
+// };
+
+// 我的訂單
+// {
+//   "sid": 1,
+///////////////   "member_sid": 0,
+//   "order_state": "已送達",
+//   "order_name": "aaa",
+///////////////   "toal_amount": 10,
+///////////////   "subtoal_price": 1300,
+///////////////   "shipping": 0,
+///////////////   "beastie_coin": 10,
+///////////////   "tableware": "是",
+///////////////   "total_price": 1290,
+///////////////   "take_date": "2020-11-02T16:00:00.000Z",
+///////////////   "take_time": "12:00:00",
+///////////////   "take_way": "自取",
+///////////////   "take_address": "台北市大安區復興南路一段390號",
+///////////////   "take_person": "王小明",
+///////////////   "mobile": "0900-000-000",
+///////////////   "receipt": "二聯式發票",
+//   "created_at": null
+// },
+
 // {
 //   "sid": 8,
 /////////////////   "order_sid": 1,

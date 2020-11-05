@@ -37,14 +37,7 @@ function ChaCartStepCardStep2(props) {
   useEffect(() => {
     getMemberDataFromServer();
   }, []);
-  const step2Data = {
-    member_sid: memberSid,
-    name: name,
-    mobile: mobile,
-    address: address,
-    beastie_coin: beastieCoin,
-    take_way: takeWay,
-  };
+
   return (
     <>
       <div className="cha-main-card cha-main-card-step2">

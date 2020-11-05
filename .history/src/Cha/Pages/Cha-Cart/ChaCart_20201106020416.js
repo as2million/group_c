@@ -132,15 +132,7 @@ function ChaCart(props) {
   // };
   //   async function addUserToSever() {
 
-  //     const tep2Data =  {
-  //         member_sid: memberSid,
-  //         order_state: "未送達",
-  //         order_name: name,
-  //         mobile:mobile,
-  //         take_way: takeWay,
-  //         take_address: address,
-  //         beastie_coin: beastieCoin,
-  //       };
+  //     const tep2Data =  {};
   // ///////////////   "toal_amount": 10,
   // ///////////////   "subtoal_price": 1300,
   // ///////////////   "shipping": 0,
@@ -170,7 +162,7 @@ function ChaCart(props) {
   //     const data = await response.json();
 
   //     console.log('伺服器回傳的json資料', data);
-  //     // 要等驗証過，再設定資料(簡單的直接設定)
+  // 要等驗証過，再設定資料(簡單的直接設定)
   return (
     <>
       <ChaCartProgressBar {...props} />
