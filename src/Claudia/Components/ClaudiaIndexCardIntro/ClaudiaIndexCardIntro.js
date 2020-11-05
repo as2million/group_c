@@ -10,6 +10,14 @@ function ClaudiaIndexCardIntro(props) {
     const { data, buttonNum } = props;
     console.log('buttonNum', buttonNum)
 
+    //goback button
+
+    const goBackButton = () => {
+        document.getElementsByClassName('claudia-index-card-list-box')[0].style.display = 'block';
+        document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 1;
+        document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display = 'none';
+        document.getElementsByClassName('claudia-index-card-intro-box')[0].style.opacity = 0;
+    }
 
     if (data[buttonNum]) {
 
@@ -31,7 +39,11 @@ function ClaudiaIndexCardIntro(props) {
         <>
             <div className="claudia-index-card-intro-outside">
                 <div className="claudia-index-card-intro-box">
-                    <h1 id="claudia-index-card-intro-city"><b>台北市</b></h1>
+                    <div className="claudia-index-card-intro-box-first-line">
+                        <h1 id="claudia-index-card-intro-city"><b>台北市</b></h1>
+                        <button onClick={goBackButton} id="claudia-index-card-intro-goback">&#8592; 回列表</button>
+                    </div>
+
                     <h2 id="claudia-index-card-intro-title"><b>小小城市農夫－台北內湖農驛棧有機農園</b></h2>
                     <hr />
                     <img alt="farm_intro_pic" src={farm_intro_pic} />
@@ -41,9 +53,7 @@ function ClaudiaIndexCardIntro(props) {
                             <Button className="button-btn-g" text="閱讀更多" />
                         </div>
                     </Link>
-
                 </div>
-
             </div>
 
         </>

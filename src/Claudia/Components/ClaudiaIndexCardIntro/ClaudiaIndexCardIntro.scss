@@ -18,6 +18,30 @@ html {
     display: none;
 }
 
+.claudia-index-card-intro-box-first-line {
+    display:flex;
+    justify-content: space-between;
+}
+
+//goback button
+
+#claudia-index-card-intro-goback{
+    font-size: 1.8rem;
+    border: 0px;
+    background-color: transparent;
+    color: #858585;
+}
+
+#claudia-index-card-intro-goback:focus{
+    outline: none;
+}
+
+#claudia-index-card-intro-goback:hover {
+    color: black;
+}
+
+// box content
+
 #claudia-index-card-intro-city {
     color: #F6BD60;
 }
@@ -37,7 +61,6 @@ html {
 .claudia-index-card-intro-outside img {
     width: 304px;
     border-radius: 10px;
-
 }
 
 #claudia-index-card-intro-intro {
@@ -48,7 +71,6 @@ html {
     margin-bottom: 20px;
     line-height: 2.5rem;
     overflow: hidden;
-
 }
 
 .claudia-index-card-intro-button button{
@@ -86,13 +108,6 @@ html {
         width: 255px;
         height: 45px;
     }
-
-    
-
-
-
-
-
 
 }
 
