@@ -10,6 +10,25 @@ import Card from './../../../Share/Components/Card/Card'
 function IrisDataEditSect() {
   const [myFav, setMyFav] = useState([])
 
+  // async function getMyFavFromServer() {
+  //   const url = 'http://localhost:5000/member/try-db'
+
+  //   const request = new Request(url, {
+  //     method: 'GET',
+  //     headers: new Headers({
+  //       Accept: 'application/json',
+  //       'Content-Type': 'appliaction/json',
+  //     }),
+  //   })
+
+  //   const response = await fetch(request)
+  //   const data = await response.json()
+  //   console.log(data)
+  //   // 設定資料
+  //   setMyFav(data)
+  //   console.log(myFav[0])
+  // }
+
   function getMyFavFromServer() {
     fetch('http://localhost:5000/member/try-db', {
       method: 'GET',
@@ -25,6 +44,10 @@ function IrisDataEditSect() {
       })
   }
 
+  // useEffect(() => {
+  //   console.log(myFav)
+  // }, [myFav])
+
   return (
     <>
       <div className="container col-9">
@@ -34,7 +57,7 @@ function IrisDataEditSect() {
         </div>
         <div className="iris-cards-container d-flex">
           <Card
-            title={myFav.product_sid}
+            title="慢煮嫩雞胸-蒜味香草"
             comment="100"
             buy="280"
             price="$130"
