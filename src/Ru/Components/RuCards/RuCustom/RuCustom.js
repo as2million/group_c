@@ -20,7 +20,6 @@ import { ReactComponent as LunchBox } from './Images/lunchBox.svg' // 將svg以�
 import cauliflower from './Images/cauliflower.svg'
 
 function RuCustom() {
-  const [moveArea1, setMoveArea1] = useState('') // 傳遞DOM給<RuArrowRight/>
   const [moveX, setMoveX] = useState(0)
   const [isPrice, setIsPrice] = useState(true)
   const [isCal, setIsCal] = useState(false)

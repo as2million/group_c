@@ -1,34 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Style.scss'
 import ArrowR from './Images/ArrowRight.svg'
 
 function RuArrowRight(props) {
   const { moveX, setMoveX } = props
-  const [ isStop, setIsStop ] = useState(false)
+  const [isMoving, setIstMoving] = useState(false)
 
-  
+  function start() {
+    setIstMoving(true)
+  }
+
   function stop() {
-    // clearInterval(moving)
+    setIstMoving(false)
   }
 
-  function moveRight() {
+  useEffect(() => {
+    console.log('A')
     let movement = 0
-    let moving = setInterval(() => {
-      movement -= 50
-      setMoveX(movement)
-      // if (isStop === true) {
-      // clearInterval(moving)
-      // }
-    }, 500)
-  }
+    let moving
+    if (isMoving === true) {
+      moving = setInterval(() => {
+        movement -= 5
+        setMoveX(movement)
+      }, 20)
+    } else {
+      clearInterval(moving)
+    }
+    return () => {
+      
+    }
+  }, [isMoving])
 
   return (
     <>
-      <button
-        className="arrowRight-warp"
-        onMouseDown={moveRight}
-        onMouseUp={stop}
-      >
+      <button className="arrowRight-warp" onMouseDown={start} onMouseUp={stop}>
         <img src={ArrowR} draggable="false" />
       </button>
     </>
