@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './JanIndex.scss'
+import './JanIndexx.scss'
 import titleLeft from './Images/Svg/titleLeft.svg'
 import titleRight from './Images/Svg/titleRight.svg'
 import titleLeftLight from './Images/Svg/titleLeft-light.svg'
@@ -16,7 +16,7 @@ import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
 import VNavbar from '../../../Share/Components/VNavbar/VNavbar'
 import ToToop from '../../../Share/Components/ToTopButton/ScrollButton'
 
-function JanIndex(props) {
+function JanIndexx(props) {
   const { placeholder, type, id } = props
   return (
     <>
@@ -31,35 +31,36 @@ function JanIndex(props) {
       </div>
       {/* 輪播牆 */}
       <div className="container-fluid jan-p0">
-        <div className="row">
-          <div className="jan-index-carousel position-relative">
-            {/* 應用程式下載 */}
-            {/* 橘底 */}
-            <div className="position-absolute jan-download-area d-flex justify-content-center">
-              {/* AppLogo＋應用程式icon */}
-              <div className="jan-app-logo"></div>
-              <div className="d-flex flex-column align-items-center jan-app-info">
-                <p className="mt-1">點擊此處下載應用程式</p>
-                <div className="jan-download-buttonsm d-flex justify-content-center">
-                  <div className="jan-ios mr-3"></div>
-                  <div className="jan-android"></div>
-                </div>
+        {/* <div className="row"> */}
+        <div className="jan-index-carousel position-relative">
+          {/* 應用程式下載 */}
+          {/* 橘底 */}
+          <div className="position-absolute jan-download-area d-flex justify-content-center">
+            {/* AppLogo＋應用程式icon */}
+            <div className="jan-app-logo"></div>
+            <div className="d-flex flex-column align-items-center jan-app-info">
+              <p className="mt-1">點擊此處下載應用程式</p>
+              <div className="jan-download-buttonsm d-flex justify-content-center">
+                <div className="jan-ios mr-3"></div>
+                <div className="jan-android"></div>
               </div>
             </div>
-
-            {/* 滾動提示 */}
-            <div className="position-absolute jan-mouse-scroll d-flex justify-content-center w-100"></div>
-
-            {/* 切換鈕 */}
-            <ul class="position-absolute jan-carousel-dots d-flex justify-content-center">
-              <li class="jan-carousel-dot1"></li>
-              <li class="jan-carousel-dot2"></li>
-              <li class="jan-carousel-dot3"></li>
-              <li class="jan-carousel-dot4"></li>
-              <li class="jan-carousel-dot5"></li>
-            </ul>
           </div>
+
+          {/* 滾動提示 */}
+          <div className="position-absolute jan-mouse d-flex justify-content-center w-100"></div>
+          <div className="position-absolute jan-mouse-arrow d-flex justify-content-center w-100"></div>
+
+          {/* 切換鈕 */}
+          <ul class="position-absolute jan-carousel-dots d-flex justify-content-center">
+            <li class="jan-carousel-dot1"></li>
+            <li class="jan-carousel-dot2"></li>
+            <li class="jan-carousel-dot3"></li>
+            <li class="jan-carousel-dot4"></li>
+            <li class="jan-carousel-dot5"></li>
+          </ul>
         </div>
+        {/* </div> */}
       </div>
 
       {/* 品牌特色 參考jess list a*/}
@@ -536,16 +537,12 @@ function JanIndex(props) {
                       <div className="iris-mainpage-select-wrapper d-flex">
                         <div className="iris-selectbar-wrapper">
                           <select
+                            style={{ fontSize: '1.5rem' }}
                             className="form-control iris-mainpage-select"
                             id="exampleFormControlSelect1"
                           >
-                            <option
-                              value="1"
-                              style={{ color: '#b6b6b6', fontSize: '1rem' }}
-                              disabled
-                              selected
-                            >
-                              請選擇區域
+                            <option value="1" disabled selected>
+                              點我選擇區域
                             </option>
                             <option>1</option>
                             <option>2</option>
@@ -560,16 +557,17 @@ function JanIndex(props) {
                     <br />
                     <div className="jan-adress-input">
                       <input
+                        style={{ fontSize: '1.5rem' }}
                         className="form-control iris-inputH50"
                         type={type}
-                        placeholder={placeholder}
+                        placeholder="請輸入地址"
                         id={id}
                       />
                     </div>
 
                     <br />
                     <div className="jan-index-button float-right">
-                      <Button className="button-btn-y " text="確認送出" />
+                      <Button className="button-btn-y " text="查詢結果" />
                     </div>
                   </form>
                 </div>
@@ -603,7 +601,7 @@ function JanIndex(props) {
       <div className="container-fluid jan-p0 jan-article">
         <div className="jan-p0 flex-colunm justify-content-center">
           {/* 標題 */}
-          <div className="row ml-1 mb-5 d-flex justify-content-center">
+          <div className="row mb-5 d-flex justify-content-center">
             <img alt="" src={titleLeft} />
             <p className="mt-2 jan-feature-title">好文推薦</p>
             <img alt="" src={titleRight} />
@@ -688,4 +686,4 @@ function JanIndex(props) {
   )
 }
 
-export default JanIndex
+export default JanIndexx

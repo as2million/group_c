@@ -60,12 +60,28 @@ $deepYello: #f5a016;
   background: url('./Images/Images/banner1.jpg') center center no-repeat;
   background-size: cover;
   // 滾動提示
-  .jan-mouse-scroll {
+  .jan-mouse {
     width: 3rem;
     height: 5rem;
-    background: url('./Images/Svg/mouse-scroll.svg') center center no-repeat;
-    bottom: 2.5rem;
+    background: url('./Images/Svg/mouse.svg') center center no-repeat;
+    bottom: 6rem;
     cursor: pointer;
+  }
+  .jan-mouse-arrow {
+    width: 1rem;
+    height: 1rem;
+    background: url('./Images/Svg/mouse-arrow.svg') center center no-repeat;
+    bottom: 2rem;
+    cursor: pointer;
+    animation: mouse-arrow 0.7s infinite;
+  }
+  @keyframes mouse-arrow {
+    from {
+      bottom: 4.5rem;
+    }
+    to {
+      bottom: 2rem;
+    }
   }
   // 切換鈕
   .jan-carousel-dots {
