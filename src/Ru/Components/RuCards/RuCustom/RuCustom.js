@@ -40,41 +40,67 @@ function RuCustom() {
   }
 
   useEffect(() => {
-    let $dragSource = document.getElementById('ru-item1')
+    let $dragSource = document.getElementById('ru-dragger1')
     let $dropTarget = document.getElementById('ru-areaA')
-    console.log($dragSource)
-    console.log($dropTarget)
+    let cloneArea = document.querySelector('.ru-species-item1')
+    let son = document.querySelector('.ru-species-info')
+    // console.log($dragSource)
+    // console.log($dropTarget)
 
     $dragSource.addEventListener('dragstart', dragStart) // drag
-    $dropTarget.addEventListener('drop', dropped) // drop
-    $dropTarget.addEventListener('dragenter', cancelDefault) // drop
-    $dropTarget.addEventListener('dragover', cancelDefault) // drag
+    $dragSource.addEventListener('drag', drag) // drag
+    $dragSource.addEventListener('dragend', dragend) // drag
+    $dropTarget.addEventListener('dragenter', dragenter) // drop
+    $dropTarget.addEventListener('dragover', dragover) // drop
     $dropTarget.addEventListener('dragleave', dragleave) // drag
+    $dropTarget.addEventListener('drop', dropped) // drop
 
-    function cancelDefault(e) {
-      e.preventDefault()
-      e.stopPropagation()
-      return false
-    }
-
+    // 來源 - 開始拖曳時
     function dragStart(e) {
-      console.log('dragStart')
+      // console.log('dragStart')
       e.dataTransfer.setData('text/plain', e.target.id)
     }
 
+    // 來源 - 拖曳中時
+    function drag(e) {}
+
+    // 來源 - 拖曳結束時
+    function dragend(e) {}
+
+    // 目的地 - 進到放置區時
+    function dragenter(e) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+
+    // 目的地 - 進到放置區時拖動(反覆觸發)
+    function dragover(e) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+
+    // 目的地 - 離開放置區時
+    function dragleave(e) {}
+
+    // 目的地 - 放下時
     function dropped(e) {
+      // 加元素
       console.log('dropped')
-      cancelDefault(e)
       let id = e.dataTransfer.getData('text/plain')
       e.target.appendChild(document.querySelector('#' + id))
+
+      // 補元素
+      // let A = $dragSource.cloneNode(true)
+      // console.log(A)
+      let B = document.createElement('div')
+      // // console.log(A, B)
+      cloneArea.insertBefore(B, son)
     }
 
     function dragleave(e) {
       console.log('dragleave')
-      e.preventDefault()
-      e.stopPropagation()
-      let id = e.dataTransfer.getData('text/plain')
-      e.target.removeChild(document.querySelector('#' + id))
+      // let id = e.dataTransfer.getData('text/plain')
+      // e.target.removeChild(document.querySelector('#' + id))
     }
     return () => {}
   }, [])

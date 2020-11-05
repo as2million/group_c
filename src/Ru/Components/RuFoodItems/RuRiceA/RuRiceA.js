@@ -9,8 +9,8 @@ function RuRiceA() {
     <>
       1{/* 品項1 s*/}
       <li className="ru-species-item ru-species-item1">
-        <div className="ru-species-img" id="ru-item1" draggable="true">
-          <img src={cauliflower} draggable="false"></img>
+        <div className="ru-species-img" id="ru-item1">
+          <img className="ru-dragger" id="ru-dragger1" src={cauliflower} draggable="true"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -29,8 +29,8 @@ function RuRiceA() {
       {/* 品項1 e*/}
       {/* 品項2 s*/}
       <li className="ru-species-item ru-species-item2">
-        <div className="ru-species-img" id="ru-item2" draggable="true">
-          <img src={cauliflower} draggable="false"></img>
+        <div className="ru-species-img" id="ru-item2">
+          <img className="ru-dragger" id="ru-dragger2" src={cauliflower} draggable="true"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -49,8 +49,8 @@ function RuRiceA() {
       {/* 品項2 e*/}
       {/* 品項3 s*/}
       <li className="ru-species-item ru-species-item3">
-        <div className="ru-species-img" id="ru-item3" draggable="true">
-          <img src={cauliflower} draggable="false"></img>
+        <div className="ru-species-img" id="ru-item3">
+          <img className="ru-dragger" id="ru-dragger3" src={cauliflower} draggable="true"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -69,8 +69,8 @@ function RuRiceA() {
       {/* 品項3 e*/}
       {/* 品項4 s*/}
       <li className="ru-species-item ru-species-item4">
-        <div className="ru-species-img" id="ru-item4" draggable="true">
-          <img src={cauliflower} draggable="false"></img>
+        <div className="ru-species-img" id="ru-item4">
+          <img className="ru-dragger" id="ru-dragger4" src={cauliflower} draggable="true"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -89,8 +89,8 @@ function RuRiceA() {
       {/* 品項4 e*/}
       {/* 品項5 s*/}
       <li className="ru-species-item ru-species-item5">
-        <div className="ru-species-img" id="ru-item5" draggable="true">
-          <img src={cauliflower} draggable="false"></img>
+        <div className="ru-species-img" id="ru-item5">
+          <img className="ru-dragger" id="ru-dragger5" src={cauliflower} draggable="true"></img>
         </div>
         <div className="ru-species-info">
           <ul>
