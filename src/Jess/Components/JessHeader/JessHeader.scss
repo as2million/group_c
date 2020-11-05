@@ -71,6 +71,7 @@ $font-size: 1rem;
 }
 .jess-nutrient2 {
   margin-top: 3rem;
+  font-size: 1.4rem;
   width: 6rem;
   height: 6rem;
   border-radius: 0.5rem;
@@ -78,6 +79,18 @@ $font-size: 1rem;
   text-align: center;
   padding: 0.6rem;
   color: #a59583;
+}
+.jess-nutrient3 {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #decdbb;
+  text-align: center;
+  padding: 0.6rem;
+  color: #a59583;
+  letter-spacing: 0.1rem;
 }
 
 .jess-rateStar {

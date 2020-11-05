@@ -1,35 +1,36 @@
 // 導入其它的模組
-import React, { useState } from 'react';
-import { Nav } from 'react-bootstrap';
-import './Navbar.scss';
-import 'antd/dist/antd.css';
-import { Popover } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
-import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg';
-import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg';
-import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg';
-import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg';
-import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg';
+import React, { useState } from 'react'
+import { Nav } from 'react-bootstrap'
+import './Navbar.scss'
+import 'antd/dist/antd.css'
+import { Popover } from 'antd'
+import { MenuOutlined } from '@ant-design/icons'
+import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg'
+import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg'
+import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg'
+import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg'
+import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg'
 // 選單連結要使用NavLink取代Link
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 function NavBar(props) {
-  const [count, setCount] = useState(0);
-  const [shoppingList, setShoppingList] = useState('0');
-  const [showNav, setShowNav] = useState(true);
-  const { isLogin, setShowLoginModal } = props;
+  const [count, setCount] = useState(0)
+  const [shoppingList, setShoppingList] = useState('0')
+  const [showNav, setShowNav] = useState(true)
+  const { isLogin, setShowLoginModal } = props
 
   function myFunction() {
-    const x = document.getElementById('NavBar');
+    const x = document.getElementById('NavBar')
     if (x.className === 'nav') {
-      x.className += ' responsive';
+      x.className += ' responsive'
     } else {
-      x.className = 'nav';
+      x.className = 'nav'
     }
   }
   return (
     <>
       <div className="nav" id="NavBar">
+        {/* <span id="ru-target">123</span> */}
         <div className="navBar-jess-container">
           <div className="navBar-jess-navCollapse ">
             <ul className="navBar-jess-navigation">
@@ -56,7 +57,7 @@ function NavBar(props) {
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/productList">
+                      <Nav.Link as={NavLink} to="/productListSalad">
                         美味沙拉
                       </Nav.Link>
                     </li>
@@ -66,7 +67,7 @@ function NavBar(props) {
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/productList">
+                      <Nav.Link as={NavLink} to="/productListCustom">
                         客製化便當
                       </Nav.Link>
                     </li>
@@ -129,7 +130,7 @@ function NavBar(props) {
                     <li
                       className="navBar-jess-dropdown_item"
                       onClick={() => {
-                        setShowLoginModal(true);
+                        setShowLoginModal(true)
                       }}
                     >
                       {/* <Nav.Link as={NavLink} to="/login"> */}
@@ -140,7 +141,10 @@ function NavBar(props) {
                 </div>
               </li>
 
-              <li>
+              <li id="ru-target">
+                <span className="jess-navbarCartNum" id="jess-navbarCartNum">
+                  {count}
+                </span>
                 <Popover
                   placement="bottomLeft"
                   content={shoppingList}
@@ -149,10 +153,17 @@ function NavBar(props) {
                   className="navbar-jess-popover"
                 >
                   <ShoppingCart className="navbar-jess-ShopingCart" />
-                  <ShoppingAmount className="jess-navbarCartAmount" />
-                  <span className="jess-navbarCartNum" id="jess-navbarCartNum">
-                    {count}
-                  </span>
+                  <div className="navbar-tag-wrap">
+                    <div className="navbar-tag">
+                      <ShoppingAmount className="jess-navbarCartAmount" />
+                      <span
+                        className="jess-navbarCartNum"
+                        id="jess-navbarCartNum"
+                      >
+                        {count}
+                      </span>
+                    </div>
+                  </div>
                 </Popover>
               </li>
             </ul>
@@ -163,9 +174,9 @@ function NavBar(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 // 輸出元件(函式)
 
-export default NavBar;
+export default NavBar
