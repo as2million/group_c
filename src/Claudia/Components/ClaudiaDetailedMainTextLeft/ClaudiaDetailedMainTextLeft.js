@@ -8,7 +8,7 @@ function ClaudiaDetailedMainTextLeft() {
             <div className="claudia-detailed-maintext-left-i">
                 <div className="claudia-detailed-maintext-left-i-h1">
                     <h1><b>小小城市農夫－</b></h1>
-                    <h1><b>台北內湖農驛棧有機農園</b></h1>
+                    <h1><b>台北內湖農驛有機農園</b></h1>
                 </div>
                 <div className="claudia-detailed-maintext-left-i-p">
                     <p>想體驗自然風光，採新鮮有機草莓、享用草莓特餐嗎？一起品嘗農園特製—草莓蔬果捲、草莓蜜雞，各種DIY任你玩！</p>

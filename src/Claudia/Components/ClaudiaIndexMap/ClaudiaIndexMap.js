@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './ClaudiaIndexMap.scss';
 import '../ClaudiaIndexCardList/ClaudiaIndexCardList.scss'
 import Icon from './Images/placeholder.svg';
-import { set } from 'date-fns';
 
 function ClaudiaIndexMap(props) {
 
-    const { setCity, setData } = props;
-
+    const { setCity, setData, data } = props;
 
     //show card list
 
@@ -21,12 +19,12 @@ function ClaudiaIndexMap(props) {
             .then(data => {
                 // console.log(data[0].city);
                 let dataResult = data;
+
                 setCity(dataResult[0].city);
                 setData(dataResult);
 
             })
             .catch(err => console.log(err));
-
 
 
 

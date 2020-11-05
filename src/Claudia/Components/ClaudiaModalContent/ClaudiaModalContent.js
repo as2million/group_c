@@ -8,35 +8,8 @@ import selectArrow from './Images/selectArrow.svg';
 
 function ClaudiaModalContent() {
 
-    //adult total price
-
     const [total, setTotal] = useState(0);
 
-    const handleAdultTotal = (type) => {
-
-        if ((total - 800) >= 0
-            // && counter>0
-            && type === 'decrement') {
-            setTotal(total - 800);
-        }
-        if (type === 'increment') {
-            setTotal(total + 800);
-        }
-
-    }
-
-    //child total price
-
-    const handleChildTotal = (type) => {
-        if ((total - 500) >= 0
-            // && counter>0
-            && type === 'decrement') {
-            setTotal(total - 500);
-        }
-        if (type === 'increment') {
-            setTotal(total + 500);
-        }
-    }
 
     //datepicker
     const [startDate, setStartDate] = useState(new Date());
@@ -132,6 +105,33 @@ function ClaudiaModalContent() {
 
     const rwdTotal = () => {
         console.log('rwd')
+    }
+
+    //adult total price
+
+    const handleAdultTotal = (type) => {
+
+        if ((total - 800) >= 0
+            && count1 > 0
+            && type === 'decrement') {
+            setTotal(total - 800);
+        }
+        if (type === 'increment') {
+            setTotal(total + 800);
+        }
+    }
+
+    //child total price
+
+    const handleChildTotal = (type) => {
+        if ((total - 500) >= 0
+            && count2 > 0
+            && type === 'decrement') {
+            setTotal(total - 500);
+        }
+        if (type === 'increment') {
+            setTotal(total + 500);
+        }
     }
 
     return (

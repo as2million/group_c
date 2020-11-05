@@ -14,7 +14,7 @@ function ClaudiaIndexContent() {
         <>
             <div className="claudia-index-content">
                 <div className="claudia-index-content-container">
-                    <div className="claudia-index-map"><ClaudiaIndexMap setCity={setCity} setData={setData} /></div>
+                    <div className="claudia-index-map"><ClaudiaIndexMap setCity={setCity} setData={setData} data={data} /></div>
                     <div className="claudia-index-card">
                         <ClaudiaIndexCardList city={city} data={data} setButtonNum={setButtonNum} />
                         <ClaudiaIndexCardIntro data={data} buttonNum={buttonNum} />
