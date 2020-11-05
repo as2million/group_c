@@ -1,16 +1,16 @@
 import React from 'react'
-import './Style.scss'
+import './Style.scss' // 單獨
+import '../Style.scss' // 共用
 import cauliflower from './Images/cauliflower.svg'
 
-// 網頁版 主食 選項
-function RuMeetA() {
+// 網頁版 白飯 選項
+function RuRiceA() {
   return (
     <>
-    2
-      {/* 品項1 s*/}
+      1{/* 品項1 s*/}
       <li className="ru-species-item ru-species-item1">
-        <div className="ru-species-img">
-          <img src={cauliflower}></img>
+        <div className="ru-species-img" id="ru-item1" draggable="true">
+          <img src={cauliflower} draggable="false"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -27,11 +27,10 @@ function RuMeetA() {
         </div>
       </li>
       {/* 品項1 e*/}
-
       {/* 品項2 s*/}
       <li className="ru-species-item ru-species-item2">
-        <div className="ru-species-img">
-          <img src={cauliflower}></img>
+        <div className="ru-species-img" id="ru-item2" draggable="true">
+          <img src={cauliflower} draggable="false"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -48,11 +47,10 @@ function RuMeetA() {
         </div>
       </li>
       {/* 品項2 e*/}
-
       {/* 品項3 s*/}
       <li className="ru-species-item ru-species-item3">
-        <div className="ru-species-img">
-          <img src={cauliflower}></img>
+        <div className="ru-species-img" id="ru-item3" draggable="true">
+          <img src={cauliflower} draggable="false"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -69,11 +67,10 @@ function RuMeetA() {
         </div>
       </li>
       {/* 品項3 e*/}
-
       {/* 品項4 s*/}
       <li className="ru-species-item ru-species-item4">
-        <div className="ru-species-img">
-          <img src={cauliflower}></img>
+        <div className="ru-species-img" id="ru-item4" draggable="true">
+          <img src={cauliflower} draggable="false"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -90,11 +87,10 @@ function RuMeetA() {
         </div>
       </li>
       {/* 品項4 e*/}
-
       {/* 品項5 s*/}
       <li className="ru-species-item ru-species-item5">
-        <div className="ru-species-img">
-          <img src={cauliflower}></img>
+        <div className="ru-species-img" id="ru-item5" draggable="true">
+          <img src={cauliflower} draggable="false"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -113,4 +109,4 @@ function RuMeetA() {
   )
 }
 
-export default RuMeetA
+export default RuRiceA

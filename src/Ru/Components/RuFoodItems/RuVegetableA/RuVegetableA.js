@@ -1,12 +1,13 @@
 import React from 'react'
-import './Style.scss'
+import './Style.scss' // 單獨
+import '../Style.scss' // 共用
 import cauliflower from './Images/cauliflower.svg'
 
-// 網頁版 蛋 選項
-function RuEggA() {
+// 網頁版 配菜 選項
+function RuVegetableA() {
   return (
     <>
-    4
+      3{/* 品項1 s*/}
       <li className="ru-species-item ru-species-item1">
         <div className="ru-species-img">
           <img src={cauliflower}></img>
@@ -26,7 +27,6 @@ function RuEggA() {
         </div>
       </li>
       {/* 品項1 e*/}
-
       {/* 品項2 s*/}
       <li className="ru-species-item ru-species-item2">
         <div className="ru-species-img">
@@ -47,7 +47,6 @@ function RuEggA() {
         </div>
       </li>
       {/* 品項2 e*/}
-
       {/* 品項3 s*/}
       <li className="ru-species-item ru-species-item3">
         <div className="ru-species-img">
@@ -68,7 +67,6 @@ function RuEggA() {
         </div>
       </li>
       {/* 品項3 e*/}
-
       {/* 品項4 s*/}
       <li className="ru-species-item ru-species-item4">
         <div className="ru-species-img">
@@ -89,7 +87,6 @@ function RuEggA() {
         </div>
       </li>
       {/* 品項4 e*/}
-
       {/* 品項5 s*/}
       <li className="ru-species-item ru-species-item5">
         <div className="ru-species-img">
@@ -112,4 +109,4 @@ function RuEggA() {
   )
 }
 
-export default RuEggA
+export default RuVegetableA

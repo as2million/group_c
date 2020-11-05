@@ -1,12 +1,13 @@
 import React from 'react'
-import './Style.scss'
+import './Style.scss' // 單獨
+import '../Style.scss' // 共用
 import cauliflower from './Images/cauliflower.svg'
 
-// 網頁版 配菜 選項
-function RuVegetableA() {
+// 網頁版 主食 選項
+function RuMeetA() {
   return (
     <>
-    3
+    2
       {/* 品項1 s*/}
       <li className="ru-species-item ru-species-item1">
         <div className="ru-species-img">
@@ -113,4 +114,4 @@ function RuVegetableA() {
   )
 }
 
-export default RuVegetableA
+export default RuMeetA

@@ -9,10 +9,10 @@ import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart'
 import RuSelection from 'Ru/Components/RuSelection/RuSelection'
 import RuPriceA from 'Ru/Components/RuPriceA/RuPriceA' // 資訊區價格 網頁版
 import RuCalA from 'Ru/Components/RuCalA/RuCalA' // 資訊區熱量 網頁版
-import RuRiceA from 'Ru/Components/RuRiceA/RuRiceA'
-import RuMeetA from 'Ru/Components/RuMeetA/RuMeetA'
-import RuVegetableA from 'Ru/Components/RuVegetableA/RuVegetableA'
-import RuEggA from 'Ru/Components/RuEggA/RuEggA'
+import RuRiceA from 'Ru/Components/RuFoodItems/RuRiceA/RuRiceA'
+import RuMeetA from 'Ru/Components/RuFoodItems/RuMeetA/RuMeetA'
+import RuVegetableA from 'Ru/Components/RuFoodItems/RuVegetableA/RuVegetableA'
+import RuEggA from 'Ru/Components/RuFoodItems/RuEggA/RuEggA'
 
 // 引用共用元件
 import Card from 'Share/Components/Card/Card'
@@ -27,7 +27,7 @@ function RuCustom() {
   const [isPrice, setIsPrice] = useState(true) // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false) // 是否開啟營養標示
   const [selection, setSelection] = useState('rice') // 選擇開啟哪個菜色選區
-  const [limitX, setLimitX] = useState(0) // 右滑極限值(RuButtonB可以調不同選項區的極限值)
+  const [limitX, setLimitX] = useState() // 右滑極限值(RuButtonB可以調不同選項區的極限值)
 
   function switchPrice() {
     setIsPrice(true)
@@ -38,6 +38,46 @@ function RuCustom() {
     setIsPrice(false)
     setIsCal(true)
   }
+
+  useEffect(() => {
+    let $dragSource = document.getElementById('ru-item1')
+    let $dropTarget = document.getElementById('ru-areaA')
+    console.log($dragSource)
+    console.log($dropTarget)
+
+    $dragSource.addEventListener('dragstart', dragStart) // drag
+    $dropTarget.addEventListener('drop', dropped) // drop
+    $dropTarget.addEventListener('dragenter', cancelDefault) // drop
+    $dropTarget.addEventListener('dragover', cancelDefault) // drag
+    $dropTarget.addEventListener('dragleave', dragleave) // drag
+
+    function cancelDefault(e) {
+      e.preventDefault()
+      e.stopPropagation()
+      return false
+    }
+
+    function dragStart(e) {
+      console.log('dragStart')
+      e.dataTransfer.setData('text/plain', e.target.id)
+    }
+
+    function dropped(e) {
+      console.log('dropped')
+      cancelDefault(e)
+      let id = e.dataTransfer.getData('text/plain')
+      e.target.appendChild(document.querySelector('#' + id))
+    }
+
+    function dragleave(e) {
+      console.log('dragleave')
+      e.preventDefault()
+      e.stopPropagation()
+      let id = e.dataTransfer.getData('text/plain')
+      e.target.removeChild(document.querySelector('#' + id))
+    }
+    return () => {}
+  }, [])
 
   return (
     <>
@@ -51,18 +91,30 @@ function RuCustom() {
           <div className="ru-drop-container">
             <div className="ru-drop-warp">
               <div className="ru-box-container">
-                <div className="ru-box-warp">
+                <div className="ru-box-warp" style={{ position: 'relative' }}>
+                  <div
+                    id="ru-areaA"
+                    style={{
+                      width: '26.5%',
+                      height: '34.65%',
+                      top: '7.5%',
+                      left: '6.5%',
+                      backgroundColor: 'red',
+                      position: 'absolute',
+                      opacity: 0.5,
+                    }}
+                  ></div>
                   <LunchBox />
                 </div>
               </div>
               <div className="ru-detail-container">
                 <div className="ru-switchBtn-container">
-                 {/* 是否開啟價格標示 */}
+                  {/* 是否開啟價格標示 */}
                   <button id={isPrice && 'ru-active'} onClick={switchPrice}>
                     今日菜色
                   </button>
                   {/* 是否開啟營養標示 */}
-                  <button id={isCal && 'ru-active'} onClick={switchCal}> 
+                  <button id={isCal && 'ru-active'} onClick={switchCal}>
                     營養標示
                   </button>
                 </div>
@@ -150,7 +202,7 @@ function RuCustom() {
                   moveX={moveX}
                   setMoveX={setMoveX}
                   limitX={limitX}
-                  setLimitX={setLimitX} 
+                  setLimitX={setLimitX}
                 />
               </div>
             </div>
