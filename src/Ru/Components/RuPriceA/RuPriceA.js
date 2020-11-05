@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Style.scss'
 
 function RuPriceA(props) {
+  const [price, setPrice] = useState(0)
+
+  useEffect(() => {
+    const $numbers = document.querySelectorAll(
+      '.ru-custom-containerA .ru-number'
+    )
+    const numberArr = [...$numbers]
+    // console.log($numbers, numberArr)
+    let total = 0
+    numberArr.map((item, i) => {
+      total += parseInt(item.innerHTML.replace('$', ''))
+    })
+    // console.log(total)
+    setPrice(total)
+    return () => {}
+  }, [])
+
   return (
     <>
       <div className="ru-info-item-container">
@@ -66,6 +83,15 @@ function RuPriceA(props) {
           </li>
           {/* 詳細資料品項 e */}
         </ul>
+      </div>
+      <div className="ru-info-total-container">
+        <div className="ru-info-total-warp">
+          <div className="ru-category-container ru-hold">
+            <p className="ru-category">佔寬</p>
+          </div>
+          <h3>總金額</h3>
+          <p>${price}</p>
+        </div>
       </div>
     </>
   )

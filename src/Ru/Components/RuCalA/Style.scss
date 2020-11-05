@@ -1,4 +1,4 @@
-@import 'Ru/Pages/variable.scss';
+@import "Ru/Pages/variable.scss";
 
 .ru-info-item-container {
   // background-color: purple;
@@ -31,10 +31,6 @@
   @include flex($df, $fdr, $jcc, $alc);
 }
 
-.ru-hold {
-  visibility: hidden;
-}
-
 .ru-category {
   margin: 0px;
   @include font($notoSansTC, $content, $regular, 0px, $customSelection-color);
@@ -55,12 +51,37 @@
   width: 18.5%;
   height: 100%;
   margin: 0px;
-  @include font(
-    $notoSansTC,
-    $productName-size,
-    $regular,
-    1.25px,
-    $light-orange
-  );
+  @include font($notoSansTC, $productName-size, $regular, 1.25px, $light-orange);
   @include flex($df, $fdr, $jce, $alc);
+}
+
+.ru-info-total-container {
+  // background-color: #ff4683;
+  height: 45px;
+  @include flex($df, $fdr, $jcc, $ale);
+}
+
+.ru-info-total-warp {
+  // background-color: rgb(130, 229, 238);
+  width: 90%;
+  @include flex($df, $fdr, $jcs, $ale);
+}
+
+.ru-hold {
+  visibility: hidden;
+}
+
+.ru-info-total-warp > h3 {
+  // background-color: tomato;
+  width: 62.5%;
+  margin: 0px;
+  @include font($notoSansTC, $minor-heading, $medium, 0px, $productName-Color);
+}
+
+.ru-info-total-warp > p {
+  // background-color: royalblue;
+  width: 18.5%;
+  margin: 0px;
+  @include font($notoSansTC, $minor-heading, $bold, 0px, $light-orange);
+  @include flex($df, $fdr, $jce, $ale);
 }

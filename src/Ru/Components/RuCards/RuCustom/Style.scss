@@ -66,14 +66,14 @@
   .ru-switchBtn-container button:focus {
     outline: none;
   }
-
+ 
   .ru-switchBtn-container button:nth-child(1) {
     background-color: #ffffff00; // 無背景色
     border: none;
     text-align: right;
     margin-right: 15px;
     padding: 0px;
-    @include font($notoSansTC, $minor-heading, $bold, 0px, $light-orange);
+    @include font($notoSansTC, $minor-heading, $bold, 0px, $customSelection-color);
   }
 
   .ru-switchBtn-container button:nth-child(2) {
@@ -85,36 +85,14 @@
     @include font($notoSansTC, $minor-heading, $bold, 0px, $customSelection-color);
   }
 
-  .ru-info-container {
-    // background-color: palegoldenrod;
-  }
-
-  .ru-info-total-container {
-    // background-color: #ff4683;
-    height: 45px;
-    @include flex($df, $fdr, $jcc, $ale);
-  }
-
-  .ru-info-total-warp {
-    // background-color: rgb(130, 229, 238);
-    width: 90%;
-    @include flex($df, $fdr, $jcs, $ale);
-  }
-
-  .ru-info-total-warp > h3 {
-    // background-color: tomato;
-    width: 62.5%;
-    margin: 0px;
-    @include font($notoSansTC, $minor-heading, $medium, 0px, $productName-Color);
-  }
-
-  .ru-info-total-warp > p {
-    // background-color: royalblue;
-    width: 18.5%;
-    margin: 0px;
+  // 開關開啟
+  .ru-switchBtn-container #ru-active {
     @include font($notoSansTC, $minor-heading, $bold, 0px, $light-orange);
-    @include flex($df, $fdr, $jce, $ale);
   }
+
+  // .ru-info-container {
+    // background-color: palegoldenrod;
+  // }
 
   .ru-checkout-container {
     // background-color: powderblue;
@@ -123,7 +101,7 @@
 
   .ru-checkout-warp {
     // background-color: rgb(239, 255, 92);
-    margin-top: 28px; 
+    margin-top: 28px;
     @include flex($df, $fdc, $jcc, $alc);
   }
 

@@ -81,6 +81,7 @@ html {
   .navBar-jess-navigation
   .navBar-jess-navigation_item {
   display: inline-block;
+  position: relative;
 }
 .nav .navBar-jess-navigation_item:hover .navBar-jess-dropdown {
   display: block;
@@ -103,7 +104,7 @@ html {
   margin-top: 1rem;
   border-radius: 0.5rem;
   text-align: center;
-  left: 32rem;
+  left: -4rem;
   backdrop-filter: blur(3px);
 }
 
@@ -150,12 +151,12 @@ html {
   display: none;
   position: absolute;
   width: 17rem;
-  height: 22.5rem;
+  height: 21.7rem;
   background-color: rgba(0, 0, 0, 0.3);
   margin-top: 1rem;
   border-radius: 0.5rem;
   text-align: center;
-  right: 15rem;
+  right: 0rem;
   backdrop-filter: blur(3px);
 }
 .nav .navBar-jess-navigation_item:hover .navBar-jess-dropdown2 {
@@ -329,6 +330,7 @@ html {
     display: block;
     position: relative;
     padding: 10px 0;
+
     // text-align: center;
     &:hover {
       background-color: rgba(0, 0, 0, 0.3);
@@ -349,7 +351,7 @@ html {
   .nav.responsive .navBar-jess-nav_brand {
     position: fixed;
     top: 3rem;
-    left: 5rem;
+    left: 4rem;
     width: 20rem;
     display: block;
   }
@@ -362,15 +364,15 @@ html {
   //選單文字
   .nav.responsive .navBar-jess-navCollapse li {
     font-size: 2rem;
-    line-height: 2rem;
-    left: 0rem;
-    top: -10rem;
+    line-height: 1.5rem;
+    left: -17rem;
+    top: 2rem;
   }
   .navbar-jess-ShopingCart {
     z-index: 1000;
     position: absolute;
-    left: 16rem;
-    top: 20rem;
+    left: 17rem;
+    top: 30rem;
   }
 }
 

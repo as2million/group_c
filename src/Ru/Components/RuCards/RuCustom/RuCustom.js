@@ -53,23 +53,16 @@ function RuCustom() {
               </div>
               <div className="ru-detail-container">
                 <div className="ru-switchBtn-container">
-                  <button onClick={switchPrice}>今日菜色</button>
-                  <button onClick={switchCal}>營養標示</button>
+                  <button id={isPrice && 'ru-active'} onClick={switchPrice}>
+                    今日菜色
+                  </button>
+                  <button id={isCal && 'ru-active'} onClick={switchCal}>
+                    營養標示
+                  </button>
                 </div>
                 <div className="ru-info-container">
-                
                   {isPrice && <RuPriceA />}
                   {isCal && <RuCalA />}
-
-                  <div className="ru-info-total-container">
-                    <div className="ru-info-total-warp">
-                      <div className="ru-category-container ru-hold">
-                        <p className="ru-category">佔寬</p>
-                      </div>
-                      <h3>總金額</h3>
-                      <p>$110</p>
-                    </div>
-                  </div>
                 </div>
                 <div className="ru-checkout-container">
                   <div className="ru-checkout-warp">
