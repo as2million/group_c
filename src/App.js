@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 // 引入 共用元件
 import Navbar from 'Share/Components/NavBar/NavBar'
@@ -12,6 +12,7 @@ import JanIndex from 'Janice/Pages/JanIndex'
 // import JessBento from 'Jess/Pages/JessBento'
 // import JessVegBox from 'Jess/Pages/JessVegBox'
 // import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
+import IrisLoginModal from './Iris/Components/IrisLoginModal/IrisLoginModal'
 // import IrisOrderComment from 'Iris/Pages/IrisOrderComment '
 // import IrisMyFav from 'Iris/Pages/IrisMyFav'
 // import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
@@ -28,12 +29,19 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // 路由表
 function App() {
+  const [isLogin, setIsLogin] = useState(false)
+  const [showLoginModal, setShowLoginModal] = useState(false)
+
   return (
     // <Router>元件一定要放在最外層
     <Router>
       <>
         {/* 放切頁時不重新渲染的部份 s*/}
-        <Navbar />
+        <Navbar
+          isLogin={isLogin}
+          showLoginModal={showLoginModal}
+          setShowLoginModal={setShowLoginModal}
+        />
         {/* 放切頁時不重新渲染的部份 e*/}
 
         {/* 路由設定開始 */}
@@ -58,16 +66,16 @@ function App() {
 
           {/* iris */}
           {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/memberUserprofile">
+          {/* <Route path="/memberUserprofile">
             <IrisUserprofile />
           </Route>
-          <Route exact path="/orderComment">
+          <Route path="/orderComment">
             <IrisOrderComment />
           </Route>
-          <Route exact path="/myFav">
+          <Route path="/myFav">
             <IrisMyFav />
           </Route>
-          <Route exact path="/beastiePoint">
+          <Route path="/beastiePoint">
             <IrisBeastiePoint />
           </Route> */}
 
@@ -109,6 +117,12 @@ function App() {
         {/* 放切頁時不重新渲染的部份 s*/}
         <Footer />
         {/* 放切頁時不重新渲染的部份 e*/}
+
+        <IrisLoginModal
+          showLoginModal={showLoginModal}
+          setShowLoginModal={setShowLoginModal}
+          setIsLogin={setIsLogin}
+        />
       </>
     </Router>
   )

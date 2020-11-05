@@ -17,6 +17,29 @@ function VNavbar(props) {
   )
   const [status, setStatus] = useState(false)
 
+  const [adress, setAdress] = useState(false)
+
+  const adressData = (e) => {
+    //未登入=>顯示input框
+    //已登入=>顯示member.id的地址
+    fetch('http://localhost:5000/index/member_list', {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+      .then((r) => r.json())
+
+      .then((obj) => {
+        console.log(obj)
+      })
+  }
+
+  useEffect(() => {
+    adressData()
+  }, [])
+
   return (
     <>
       {status && <AdressTabs closeModal={() => setStatus(false)}></AdressTabs>}
