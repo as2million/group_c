@@ -3,7 +3,7 @@ import './Style.scss'
 import ArrowR from './Images/ArrowRight.svg'
 
 function RuArrowRight(props) {
-  const { moveX, setMoveX } = props
+  const { moveX, setMoveX, limitX, setLimitX } = props
   const [isMoving, setIstMoving] = useState(false)
 
   function start() {
@@ -15,19 +15,20 @@ function RuArrowRight(props) {
   }
 
   useEffect(() => {
-    console.log('A')
-    let movement = 0
+    // console.log(isMoving)
+    let movement = moveX
     let moving
     if (isMoving === true) {
       moving = setInterval(() => {
-        movement -= 5
-        setMoveX(movement)
+        // 右邊到底就停下
+        if (movement !== limitX) {
+          movement -= 10
+          setMoveX(movement)
+        }
       }, 20)
-    } else {
-      clearInterval(moving)
     }
     return () => {
-      
+      clearInterval(moving)
     }
   }, [isMoving])
 

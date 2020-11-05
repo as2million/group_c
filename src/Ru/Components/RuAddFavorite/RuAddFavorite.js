@@ -1,7 +1,7 @@
 import React from 'react'
 import './Style.scss'
 
-function RuAddFavorite() {
+function RuRiceA() {
   return (
     <>
       <button className="addFavorite-btn addFavorite-btn-n"></button>
@@ -9,4 +9,4 @@ function RuAddFavorite() {
   )
 }
 
-export default RuAddFavorite
+export default RuRiceA
