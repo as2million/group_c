@@ -14,16 +14,14 @@ function ClaudiaIndexCardList(props) {
         for (let i = 0; i < data.length; i++) {
             const temp = `
             <button>
-                <div>
-                    <p><b>${data[i].farm}</b></p>
-                </div>
+                    ${data[i].farm}
             </button>
             `
             document.getElementsByClassName('claudia-index-card-list-box-buttons')[0].innerHTML += temp;
 
             //addClassName
             document.getElementsByClassName('claudia-index-card-list-box-buttons')[0].children[i].className += "claudia-index-card-list-box-button";
-            document.getElementsByClassName('claudia-index-card-list-box-buttons')[0].children[i].children[0].className += "claudia-index-card-list-box-name-text";
+            // document.getElementsByClassName('claudia-index-card-list-box-buttons')[0].children[i].children[0].className += "claudia-index-card-list-box-name-text";
 
             //add data-id
             document.getElementsByClassName('claudia-index-card-list-box-buttons')[0].children[i].setAttribute('data-id', i);

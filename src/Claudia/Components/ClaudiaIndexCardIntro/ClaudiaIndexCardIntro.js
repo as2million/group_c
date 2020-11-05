@@ -11,21 +11,20 @@ function ClaudiaIndexCardIntro(props) {
     console.log('buttonNum', buttonNum)
 
 
-    if (data) {
-        // console.log('test', data[buttonNum].city)
-        // console.log(document.getElementById('claudia-index-card-intro-city'))
+    if (data[buttonNum]) {
 
-        // city
+        //city
         document.getElementById('claudia-index-card-intro-city').innerHTML = `<b>${data[buttonNum].city}</b>`
 
         //title
         document.getElementById('claudia-index-card-intro-title').innerHTML = `<b>${data[buttonNum].farm}</b>`
 
+        //img
+
+        //intro
+        document.getElementById('claudia-index-card-intro-intro').innerHTML = `<b>${data[buttonNum].introduction}</b>`
+
     }
-
-
-
-
 
 
     return (

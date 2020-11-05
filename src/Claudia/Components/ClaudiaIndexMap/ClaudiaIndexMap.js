@@ -20,8 +20,9 @@ function ClaudiaIndexMap(props) {
             .then(res => res.json())
             .then(data => {
                 // console.log(data[0].city);
-                setCity(data[0].city);
-                setData(data);
+                let dataResult = data;
+                setCity(dataResult[0].city);
+                setData(dataResult);
 
             })
             .catch(err => console.log(err));
