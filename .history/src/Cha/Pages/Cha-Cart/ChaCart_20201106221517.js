@@ -133,13 +133,16 @@ function ChaCart(props) {
             updateCartToLocalStorage={updateCartToLocalStorage}
           />
           {/* 步驟二 */}
-          <ChaCartStepCardStep2 />
+          <ChaCartStepCardStep2 setStep2Data={setStep2Data} />
           {/* 步驟三 */}
           <ChaCartStepCardStep3 />
         </main>
         {/* 購物清單欄*/}
         <aside>
-          <ChaCartSubmitCard mealsDisplay={mealsDisplay} />
+          <ChaCartSubmitCard
+            mealsDisplay={mealsDisplay}
+            step2Data={step2Data}
+          />
         </aside>
       </div>
     </>

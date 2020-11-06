@@ -4,7 +4,7 @@ import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
 import RequestToServer from 'Cha/RequestToServer';
 
 function ChaCartSubmitCard(props) {
-  const { mealsDisplay } = props;
+  const { mealsDisplay, step2Data } = props;
   const [shipping, setShipping] = useState(0);
   const [beastieCoin, setBeastieCoin] = useState(60);
   const [tableware, setTableware] = useState('');
@@ -70,18 +70,6 @@ function ChaCartSubmitCard(props) {
   //   failCallback = () => {},
   //   debug = false
   // )
-
-  // 彙整要POST的資料
-  // setStep2Data({
-  //   member_sid: memberSid,
-  //   name: name,
-  //   mobile: mobile,
-  //   address: address,
-  //   beastie_coin: beastieCoin,
-  //   take_date: startDate,
-  //   take_time: takeTime,
-  // });
-
   // 載入資料用
   async function updateTotalToServer(value) {
     const bodyData = {};

@@ -16,8 +16,19 @@ function ChaCart(props) {
   const [mealsDisplay, setMealsDisplay] = useState([]);
   // 控制navbar
   const { setShowBar } = props;
-  // 表單資料
-  // const [step2Data, setStep2Data] = useState({});
+// 資料，準備傳送給「我的訂單」
+const [memberSid, setMemberSid] = useState('');
+const [name, setName] = useState('');
+const [mobile, setMobile] = useState('');
+// const [takeWay, setTakeWay] = useState('');
+const [address, setAddress] = useState('');
+const [beastieCoin, setBeastieCoin] = useState('');
+const [startDate, setStartDate] = useState(
+  setHours(setMinutes(new Date(), 30), 11)
+);
+const [takeTime, setTakeTime] = useState('');
+const { setStep2Data } = props;
+  const [step2Data, setStep2Data] = useState({});
   // 掛載就設定隱藏navbar
   useEffect(() => {
     setShowBar(false);
@@ -133,13 +144,16 @@ function ChaCart(props) {
             updateCartToLocalStorage={updateCartToLocalStorage}
           />
           {/* 步驟二 */}
-          <ChaCartStepCardStep2 />
+          <ChaCartStepCardStep2 setStep2Data={setStep2Data} />
           {/* 步驟三 */}
           <ChaCartStepCardStep3 />
         </main>
         {/* 購物清單欄*/}
         <aside>
-          <ChaCartSubmitCard mealsDisplay={mealsDisplay} />
+          <ChaCartSubmitCard
+            mealsDisplay={mealsDisplay}
+            step2Data={step2Data}
+          />
         </aside>
       </div>
     </>

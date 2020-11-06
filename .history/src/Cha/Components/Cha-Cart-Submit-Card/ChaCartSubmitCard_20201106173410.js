@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
-import RequestToServer from 'Cha/RequestToServer';
 
 function ChaCartSubmitCard(props) {
-  const { mealsDisplay } = props;
+  const { mealsDisplay, step2Data } = props;
   const [shipping, setShipping] = useState(0);
   const [beastieCoin, setBeastieCoin] = useState(60);
   const [tableware, setTableware] = useState('');
-  // const [submitData, setSubmitData] = useState({});
-  const [error, setError] = useState(null);
+  const [submitData, setSubmitData] = useState({});
+
   // 計算商品總量
   const calcuTotalAmount = (items) => {
     let total = 0;
@@ -38,74 +38,27 @@ function ChaCartSubmitCard(props) {
       setShipping(0);
     }
   }, [totalAmount]);
+
   // 計算總價
   let totalPrice =
     subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0);
 
   // 彙整要POST的資料
-  const aa = {
-    total_amount: totalAmount,
-    subtotal_price: subtotalPrice,
-    total_price: totalPrice,
-    shipping: shipping,
-    beastie_coin: beastieCoin,
-    tableware: tableware,
-  };
-
-  // 要給訂單明細的資料
-  const bb = {
-    sid: 8,
-    order_sid: 1,
-    product_sid: 111,
-    product_amount: 11,
-    product_name: '玫瑰岩鹽烤雞',
-    product_price: 150,
-  };
-  // RequestToServer(
-  //   url,
-  //   method = 'GET',
-  //   bodyData = '', //bodyData 必需為 json 字串
-  //   verify = () => true,
-  //   successCallback = () => {},
-  //   failCallback = () => {},
-  //   debug = false
-  // )
-
-  // 彙整要POST的資料
-  // setStep2Data({
-  //   member_sid: memberSid,
-  //   name: name,
-  //   mobile: mobile,
-  //   address: address,
+  // setSubmitData({
+  //   total_amount: totalAmount,
+  //   subtotal_price: subtotalPrice,
+  //   total_price: totalPrice,
+  //   shipping: shipping,
   //   beastie_coin: beastieCoin,
-  //   take_date: startDate,
-  //   take_time: takeTime,
+  //   tableware: 'a',
   // });
 
-  // 載入資料用
-  async function updateTotalToServer(value) {
-    const bodyData = {};
-
-    const url = 'http://localhost:5555/counter/1';
-
-    const request = new Request(url, {
-      method: 'POST',
-      body: JSON.stringify(bodyData),
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    });
-
-    try {
-      const response = await fetch(request);
-      const data = await response.json();
-      // data會是一個物件值
-      console.log(data);
-    } catch (error) {
-      setError(error);
-    }
-  }
+  //   "sid": 8,
+  /////////////////   "order_sid": 1,
+  /////////////////   "product_sid": 111,
+  /////////////////   "product_amount": 11,
+  //   "product_name": "玫瑰岩鹽烤雞",
+  //   "product_price": 150
   return (
     <>
       <div className="cha-aside-card-fake"></div>

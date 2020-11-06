@@ -4,7 +4,7 @@ import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
 import RequestToServer from 'Cha/RequestToServer';
 
 function ChaCartSubmitCard(props) {
-  const { mealsDisplay } = props;
+  const { mealsDisplay, step2Data } = props;
   const [shipping, setShipping] = useState(0);
   const [beastieCoin, setBeastieCoin] = useState(60);
   const [tableware, setTableware] = useState('');

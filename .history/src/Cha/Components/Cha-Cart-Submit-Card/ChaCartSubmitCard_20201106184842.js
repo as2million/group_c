@@ -4,11 +4,11 @@ import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
 import RequestToServer from 'Cha/RequestToServer';
 
 function ChaCartSubmitCard(props) {
-  const { mealsDisplay } = props;
+  const { mealsDisplay, step2Data } = props;
   const [shipping, setShipping] = useState(0);
   const [beastieCoin, setBeastieCoin] = useState(60);
   const [tableware, setTableware] = useState('');
-  // const [submitData, setSubmitData] = useState({});
+  const [submitData, setSubmitData] = useState({});
   const [error, setError] = useState(null);
   // 計算商品總量
   const calcuTotalAmount = (items) => {
@@ -70,27 +70,18 @@ function ChaCartSubmitCard(props) {
   //   failCallback = () => {},
   //   debug = false
   // )
-
-  // 彙整要POST的資料
-  // setStep2Data({
-  //   member_sid: memberSid,
-  //   name: name,
-  //   mobile: mobile,
-  //   address: address,
-  //   beastie_coin: beastieCoin,
-  //   take_date: startDate,
-  //   take_time: takeTime,
-  // });
-
   // 載入資料用
   async function updateTotalToServer(value) {
-    const bodyData = {};
+    // 開啟載入的指示圖示
+    setDataLoading(true);
+
+    const newTotal = { total: total + value };
 
     const url = 'http://localhost:5555/counter/1';
 
     const request = new Request(url, {
-      method: 'POST',
-      body: JSON.stringify(bodyData),
+      method: 'PUT',
+      body: JSON.stringify(newTotal),
       headers: new Headers({
         Accept: 'application/json',
         'Content-Type': 'application/json',
