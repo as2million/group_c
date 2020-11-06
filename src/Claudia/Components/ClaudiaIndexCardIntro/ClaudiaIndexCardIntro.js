@@ -1,14 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ClaudiaIndexCardIntro.scss'
-import farm_intro_pic from './Images/farm_index_intro_pic.jpg';
+import Pic1 from './Images/1.jpg';
+import Pic2 from './Images/2.jpg';
 import Button from '../../../Share/Components/Button/Button';
 import { Link } from 'react-router-dom';
 
 
 function ClaudiaIndexCardIntro(props) {
 
+    const [imgPath, setImgPath] = useState('')
+
     const { data, buttonNum } = props;
     console.log('buttonNum', buttonNum)
+
 
     //goback button
 
@@ -27,7 +31,9 @@ function ClaudiaIndexCardIntro(props) {
         //title
         document.getElementById('claudia-index-card-intro-title').innerHTML = `<b>${data[buttonNum].farm}</b>`
 
-        //img
+        //img //need to fix path
+        let imgNum = data[buttonNum].sid;
+        document.getElementById('claudia-index-card-farm-intro-pic').src = `require(./Images/${imgNum}.jpg)`
 
         //intro
         document.getElementById('claudia-index-card-intro-intro').innerHTML = `<b>${data[buttonNum].introduction}</b>`
@@ -46,7 +52,7 @@ function ClaudiaIndexCardIntro(props) {
 
                     <h2 id="claudia-index-card-intro-title"><b>小小城市農夫－台北內湖農驛棧有機農園</b></h2>
                     <hr />
-                    <img alt="farm_intro_pic" src={farm_intro_pic} />
+                    <img id="claudia-index-card-farm-intro-pic" alt="farm_intro_pic" src={require(`./Images/1.jpg`)} />
                     <h3 id="claudia-index-card-intro-intro">想體驗自然風光，採新鮮有機草莓、享用草莓特餐嗎？一起品嘗農園特製—草莓蔬果捲、草莓蜜雞，各種DIY任你玩！</h3>
                     <Link to="/farmIntro">
                         <div className="claudia-index-card-intro-button">
