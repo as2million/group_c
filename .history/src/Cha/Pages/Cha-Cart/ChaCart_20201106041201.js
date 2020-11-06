@@ -34,8 +34,10 @@ function ChaCart(props) {
   useEffect(() => {
     getCartFromLocalStorage();
   }, []);
-  // componentDidUpdate// 只要meals改變，就處理meals
+  // componentDidUpdate
   useEffect(() => {
+    //   setTimeout(() => setDataLoading(false), 1000);
+
     // mealsDisplay運算
     let newMealsDisplay = [];
 
@@ -59,12 +61,8 @@ function ChaCart(props) {
         newMealsDisplay = [...newMealsDisplay, newItem];
       }
     }
-    // // 刪掉數量為0的物件
-    newMealsDisplay = newMealsDisplay.filter(
-      (item, index) => item.productAmount !== 0
-    );
     // console.log(newMealsDisplay);
-    // 只要meals改變，就處理meals
+    只要meals改變，就處理meals
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
 
@@ -78,6 +76,32 @@ function ChaCart(props) {
     setMeals(newCart);
   };
 
+  // const demoMealsToLocalStorage = (items) => {
+  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  //   const newCart = [...currentCart, ...items];
+  //   localStorage.setItem('cart', JSON.stringify(newCart));
+
+  //   // // 設定資料
+  //   setMeals(newCart);
+  // };
+
+  // const handleCount = (id, type) => {
+  //   const newMealsDisplay = [...mealsDisplay];
+  //   const todoItemIndex = newMealsDisplay.findIndex((item) => item.id === id);
+  //   if (todoItemIndex !== -1) {
+  //     if (type === 'increment') {
+  //       newMealsDisplay[todoItemIndex].productAmount += 1;
+  //     }
+  //     if (
+  //       type === 'decrement' &&
+  //       newMealsDisplay[todoItemIndex].productAmount > 1
+  //     ) {
+  //       newMealsDisplay[todoItemIndex].productAmount -= 1;
+  //     }
+  //     setMealsDisplay(newMealsDisplay);
+  //   }
+  // };
   //   async function addUserToSever() {
 
   //     const tep2Data =  {

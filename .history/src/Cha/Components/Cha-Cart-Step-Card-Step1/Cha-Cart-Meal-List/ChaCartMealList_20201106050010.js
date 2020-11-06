@@ -5,8 +5,12 @@ function ChaCartMealList(props) {
   const {
     mealsItem,
     deleteMethod,
-    // updateCartToLocalStorage,
+    updateCartToLocalStorage,
+    mealsDisplay,
   } = props;
+  useEffect(() => {
+    mealsItem.productAmount === 0 && getCartFromLocalStorage();
+  }, [mealsDisplay]);
   return (
     <>
       <div className="cha-order">

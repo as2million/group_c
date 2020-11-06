@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Counter from 'Cha/Components/Cha-Cart-Step-Card-Step1/Counter/Counter';
 import './ChaCartMealList.scss';
 function ChaCartMealList(props) {
-  const {
-    mealsItem,
-    deleteMethod,
-    // updateCartToLocalStorage,
-  } = props;
+  const { mealsItem, deleteMethod, updateCartToLocalStorage } = props;
   return (
     <>
       <div className="cha-order">

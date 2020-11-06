@@ -34,8 +34,10 @@ function ChaCart(props) {
   useEffect(() => {
     getCartFromLocalStorage();
   }, []);
-  // componentDidUpdate// 只要meals改變，就處理meals
+  // componentDidUpdate
   useEffect(() => {
+    //   setTimeout(() => setDataLoading(false), 1000);
+
     // mealsDisplay運算
     let newMealsDisplay = [];
 
@@ -59,12 +61,7 @@ function ChaCart(props) {
         newMealsDisplay = [...newMealsDisplay, newItem];
       }
     }
-    // // 刪掉數量為0的物件
-    newMealsDisplay = newMealsDisplay.filter(
-      (item, index) => item.productAmount !== 0
-    );
     // console.log(newMealsDisplay);
-    // 只要meals改變，就處理meals
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
 
@@ -77,7 +74,62 @@ function ChaCart(props) {
     // // 設定資料
     setMeals(newCart);
   };
+  // const handleUpdateToLocalStorage = () => {
+  //   updateCartToLocalStorage({
+  //     id: 4,
+  //     productName: '超健康蔬果沙拉',
+  //     productPrice: 110,
+  //     productAmount: 1,
+  //   });
+  // };
+  // const demoMealsToLocalStorage = (items) => {
+  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
 
+  //   const newCart = [...currentCart, ...items];
+  //   localStorage.setItem('cart', JSON.stringify(newCart));
+
+  //   // // 設定資料
+  //   setMeals(newCart);
+  // };
+  // const handleDemoMeals = () => {
+  //   demoMealsToLocalStorage([
+  //     {
+  //       id: 1,
+  //       productName: '慢煮嫩雞胸-蒜味香草',
+  //       productPrice: 150,
+  //       productAmount: 1,
+  //     },
+  //     {
+  //       id: 2,
+  //       productName: '玫瑰岩鹽烤雞',
+  //       productPrice: 160,
+  //       productAmount: 3,
+  //     },
+  //     {
+  //       id: 3,
+  //       productName: '乾煎功夫鱸魚',
+  //       productPrice: 170,
+  //       productAmount: 3,
+  //     },
+  //   ]);
+  // };
+
+  // const handleCount = (id, type) => {
+  //   const newMealsDisplay = [...mealsDisplay];
+  //   const todoItemIndex = newMealsDisplay.findIndex((item) => item.id === id);
+  //   if (todoItemIndex !== -1) {
+  //     if (type === 'increment') {
+  //       newMealsDisplay[todoItemIndex].productAmount += 1;
+  //     }
+  //     if (
+  //       type === 'decrement' &&
+  //       newMealsDisplay[todoItemIndex].productAmount > 1
+  //     ) {
+  //       newMealsDisplay[todoItemIndex].productAmount -= 1;
+  //     }
+  //     setMealsDisplay(newMealsDisplay);
+  //   }
+  // };
   //   async function addUserToSever() {
 
   //     const tep2Data =  {
@@ -129,9 +181,8 @@ function ChaCart(props) {
           <ChaCartStepCardStep1
             mealsDisplay={mealsDisplay}
             setMealsDisplay={setMealsDisplay}
-            // handleUpdateToLocalStorage={handleUpdateToLocalStorage}
-            // handleDemoMeals={handleDemoMeals}
-            updateCartToLocalStorage={updateCartToLocalStorage}
+            handleUpdateToLocalStorage={handleUpdateToLocalStorage}
+            handleDemoMeals={handleDemoMeals}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2 />

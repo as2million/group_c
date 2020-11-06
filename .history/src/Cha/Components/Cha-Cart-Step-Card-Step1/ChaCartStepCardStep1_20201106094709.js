@@ -96,13 +96,13 @@ function ChaCartStepCardStep1(props) {
           <div className="cha-step1-total-price">
             <div className="cha-step1-total-price-word">小計</div>
             <div className="cha-step1-total-price-number">${subtotalPrice}</div>
-            <div className="cha-horizontal-line"></div>
           </div>
         </div>
         {/* 確認按鈕 */}
         {/* <div className="cha-step-check-btn-div">
           <input type="button" value="確認" className="cha-step-check-btn" />
         </div> */}
+        <div className="cha-horizontal-line"></div>
         <div className="cha-step1-promotion-header-div">
           <div className="cha-step1-promotion-header">你可能還想來點</div>
         </div>

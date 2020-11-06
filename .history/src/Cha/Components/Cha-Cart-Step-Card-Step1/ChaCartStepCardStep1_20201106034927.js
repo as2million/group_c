@@ -7,6 +7,7 @@ function ChaCartStepCardStep1(props) {
     mealsDisplay,
     setMealsDisplay,
     // handleUpdateToLocalStorage,
+    // handleDemoMeals,
     updateCartToLocalStorage,
   } = props;
 
@@ -20,16 +21,16 @@ function ChaCartStepCardStep1(props) {
   // 計數器加減功能
   const handleCount = (id, type) => {
     const newMealsDisplay = [...mealsDisplay];
-    const mealsItemIndex = newMealsDisplay.findIndex((item) => item.id === id);
-    if (mealsItemIndex !== -1) {
+    const todoItemIndex = newMealsDisplay.findIndex((item) => item.id === id);
+    if (todoItemIndex !== -1) {
       if (type === 'increment') {
-        newMealsDisplay[mealsItemIndex].productAmount += 1;
+        newMealsDisplay[todoItemIndex].productAmount += 1;
       }
       if (
         type === 'decrement' &&
-        newMealsDisplay[mealsItemIndex].productAmount > 1
+        newMealsDisplay[todoItemIndex].productAmount > 1
       ) {
-        newMealsDisplay[mealsItemIndex].productAmount -= 1;
+        newMealsDisplay[todoItemIndex].productAmount -= 1;
       }
       setMealsDisplay(newMealsDisplay);
     }
@@ -67,6 +68,11 @@ function ChaCartStepCardStep1(props) {
     productPrice: 110,
     productAmount: 1,
   };
+  // const handleUpdateToLocalStorage = () => {
+  //   updateCartToLocalStorage({
+
+  //   });
+  // };
   return (
     <>
       <div className="cha-main-card cha-main-card-step1">
@@ -87,22 +93,19 @@ function ChaCartStepCardStep1(props) {
             mealsItem={item}
             deleteMethod={() => handleDelete(item.id)}
             handleCount={handleCount}
-            updateCartToLocalStorage={updateCartToLocalStorage}
             // handleUpdateToLocalStorage={handleUpdateToLocalStorage}
           />
         ))}
-        <div style={{ display: subtotalPrice === 0 && 'none' }}>
-          <div className="cha-horizontal-line"></div>
-          <div className="cha-step1-total-price">
-            <div className="cha-step1-total-price-word">小計</div>
-            <div className="cha-step1-total-price-number">${subtotalPrice}</div>
-            <div className="cha-horizontal-line"></div>
-          </div>
+        <div className="cha-horizontal-line"></div>
+        <div className="cha-step1-total-price">
+          <div className="cha-step1-total-price-word">小計</div>
+          <div className="cha-step1-total-price-number">${subtotalPrice}</div>
         </div>
         {/* 確認按鈕 */}
         {/* <div className="cha-step-check-btn-div">
           <input type="button" value="確認" className="cha-step-check-btn" />
         </div> */}
+        <div className="cha-horizontal-line"></div>
         <div className="cha-step1-promotion-header-div">
           <div className="cha-step1-promotion-header">你可能還想來點</div>
         </div>
@@ -110,9 +113,7 @@ function ChaCartStepCardStep1(props) {
           <div className="cha-step1-promotion-picture cha-salad-01"></div>
           <div
             className="cha-step1-promotion-picture cha-salad-02"
-            onClick={() => {
-              updateCartToLocalStorage(promotion2);
-            }}
+            // onClick={handleUpdateToLocalStorage}
           ></div>
           <div className="cha-step1-promotion-picture cha-salad-03"></div>
         </div>

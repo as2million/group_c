@@ -4,6 +4,7 @@ import './ChaCartStepCardStep1.scss';
 
 function ChaCartStepCardStep1(props) {
   const {
+    meals,
     mealsDisplay,
     setMealsDisplay,
     // handleUpdateToLocalStorage,
@@ -65,7 +66,7 @@ function ChaCartStepCardStep1(props) {
     id: 4,
     productName: '超健康蔬果沙拉',
     productPrice: 110,
-    productAmount: 1,
+    productAmount: 0,
   };
   return (
     <>
@@ -88,21 +89,20 @@ function ChaCartStepCardStep1(props) {
             deleteMethod={() => handleDelete(item.id)}
             handleCount={handleCount}
             updateCartToLocalStorage={updateCartToLocalStorage}
+            meals={meals}
             // handleUpdateToLocalStorage={handleUpdateToLocalStorage}
           />
         ))}
-        <div style={{ display: subtotalPrice === 0 && 'none' }}>
-          <div className="cha-horizontal-line"></div>
-          <div className="cha-step1-total-price">
-            <div className="cha-step1-total-price-word">小計</div>
-            <div className="cha-step1-total-price-number">${subtotalPrice}</div>
-            <div className="cha-horizontal-line"></div>
-          </div>
+        <div className="cha-horizontal-line"></div>
+        <div className="cha-step1-total-price">
+          <div className="cha-step1-total-price-word">小計</div>
+          <div className="cha-step1-total-price-number">${subtotalPrice}</div>
         </div>
         {/* 確認按鈕 */}
         {/* <div className="cha-step-check-btn-div">
           <input type="button" value="確認" className="cha-step-check-btn" />
         </div> */}
+        <div className="cha-horizontal-line"></div>
         <div className="cha-step1-promotion-header-div">
           <div className="cha-step1-promotion-header">你可能還想來點</div>
         </div>

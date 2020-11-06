@@ -78,6 +78,32 @@ function ChaCart(props) {
     setMeals(newCart);
   };
 
+  // const demoMealsToLocalStorage = (items) => {
+  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  //   const newCart = [...currentCart, ...items];
+  //   localStorage.setItem('cart', JSON.stringify(newCart));
+
+  //   // // 設定資料
+  //   setMeals(newCart);
+  // };
+
+  // const handleCount = (id, type) => {
+  //   const newMealsDisplay = [...mealsDisplay];
+  //   const todoItemIndex = newMealsDisplay.findIndex((item) => item.id === id);
+  //   if (todoItemIndex !== -1) {
+  //     if (type === 'increment') {
+  //       newMealsDisplay[todoItemIndex].productAmount += 1;
+  //     }
+  //     if (
+  //       type === 'decrement' &&
+  //       newMealsDisplay[todoItemIndex].productAmount > 1
+  //     ) {
+  //       newMealsDisplay[todoItemIndex].productAmount -= 1;
+  //     }
+  //     setMealsDisplay(newMealsDisplay);
+  //   }
+  // };
   //   async function addUserToSever() {
 
   //     const tep2Data =  {

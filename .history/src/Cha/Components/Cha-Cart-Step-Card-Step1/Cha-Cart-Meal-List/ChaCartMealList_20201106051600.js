@@ -6,7 +6,12 @@ function ChaCartMealList(props) {
     mealsItem,
     deleteMethod,
     // updateCartToLocalStorage,
+    meals,
   } = props;
+  // 當mealsDisplay裡出現productAmount為0的物件，刪掉這個白癡的物件
+  useEffect(() => {
+    return mealsItem.productAmount === 0 && deleteMethod;
+  }, [meals]);
   return (
     <>
       <div className="cha-order">

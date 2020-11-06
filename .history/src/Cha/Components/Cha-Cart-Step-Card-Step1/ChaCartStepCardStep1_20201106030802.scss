@@ -23,8 +23,7 @@
 .cha-step1-total-price {
   display: flex;
   justify-content: flex-end;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
 }
 .cha-step1-total-price-word {
   font-size: 1.5rem;
@@ -73,41 +72,32 @@
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
-  height: 16rem;
 }
 .cha-step1-promotion-picture {
   background-color: #faf;
-  width: 15rem;
-  height: 15rem;
+  width: 13.3rem;
+  height: 13.3rem;
   margin: 1rem 2rem 1rem 2rem;
-  cursor: pointer;
-  transition: 0.5s;
-}
-.cha-step1-promotion-picture:hover {
-  width: 16rem;
-  height: 16rem;
-  transition: 0.5s;
 }
 .cha-salad-01 {
   background: url('./Images/salad-01.jpg');
-  background-size: 150%;
-  background-position: center;
-  width: 15rem;
-  height: 15rem;
+  background-position: cover;
+  background-size: 100% 100%;
+  width: 13.3rem;
+  height: 13.3rem;
 }
 .cha-salad-02 {
-  background: url('./Images/salad-02.jpg');
-  background-size: 120% 120%;
-  background-position: center;
-  width: 15rem;
-  height: 15rem;
+  // background: url('./Images/salad-02.jpg');
+  // // background-position: cover;
+  // background-size: 100% 100%;
+  // width: 13.3rem;
+  // height: 13.3rem;
 }
 .cha-salad-03 {
-  background: url('./Images/salad-03.jpg');
-  background-size: 150%;
-  background-position: center;
-  width: 15rem;
-  height: 15rem;
+  // background: url('./Images/salad-03.jpg');
+  // // background-position: cover;
+  // background-size: cover;
+  // width: 13.3rem;
   // height: 13.3rem;
 }
 .cha-horizontal-line {

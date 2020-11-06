@@ -5,8 +5,10 @@ function ChaCartMealList(props) {
   const {
     mealsItem,
     deleteMethod,
-    // updateCartToLocalStorage,
+    updateCartToLocalStorage,
+    mealsDisplay,
   } = props;
+
   return (
     <>
       <div className="cha-order">
