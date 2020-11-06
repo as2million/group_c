@@ -55,6 +55,8 @@ function RuCustom() {
     // 品項置入便當盒 邏輯
     const items = document.querySelectorAll('.ru-items')
     console.log(items)
+    const puts = document.querySelectorAll('.ru-put')
+    console.log(puts)
     const $dropTarget = document.getElementById('ru-dropArea')
     const dropOutAreaA = document.getElementById('ru-dropOutAreaA')
     const dropOutAreaB = document.getElementById('ru-dropOutAreaB')
@@ -156,9 +158,11 @@ function RuCustom() {
         }
       } else if (e.target === boxC) {
         // 如果放開滑鼠的地方是在 boxC 身上
-        switch (e.dataTransfer.getData('text/plain', e.target.id)) { // 當source的id是 
+        switch (
+          e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
+        ) {
           case 'ru-veg-1': // 'ru-veg-1'
-            setImgC(cauliflowerAfter)  // 就改變STATE值
+            setImgC(cauliflowerAfter) // 就改變STATE值
             break
           case 'ru-veg-2':
             setImgC(cabageAfter)
