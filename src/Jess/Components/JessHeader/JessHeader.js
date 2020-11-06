@@ -24,7 +24,7 @@ function JessProdoctList() {
   //     })
   // }
   const [menu, setMenu] = useState([])
-  async function adressData() {
+  async function bentoData() {
     const url = 'http://localhost:5000/product/bento'
 
     const request = new Request(url, {
@@ -48,7 +48,7 @@ function JessProdoctList() {
   }
 
   useEffect(() => {
-    adressData()
+    bentoData()
   }, [])
 
   return (
@@ -62,9 +62,15 @@ function JessProdoctList() {
           <BreadCrumb />
         </div>
         {/* <container className="jess-container"></container> */}
+
         <div className="jess-productList-chichenPic">
-          {/* <img src={ChickenRice} alt="Background" />; */}
+          <img
+            className="jess-HeadPic"
+            src={'/productImages/Bento/' + menu.img_id + '.jpg'}
+          ></img>
         </div>
+        {/* <p>/productImages/Bento/{menu.img_id}.jpg</p> */}
+
         <div className="jess-menuList ">
           <AddFavorite />
           <h1 className="jess-tittle">{menu.productname}</h1>
