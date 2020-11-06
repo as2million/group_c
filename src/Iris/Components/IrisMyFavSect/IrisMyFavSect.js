@@ -7,7 +7,8 @@ import './IrisMyFavSect.scss'
 import Card from './../../../Share/Components/Card/Card'
 // import Star123 from './Images/star_orange.svg';
 
-function IrisDataEditSect() {
+function IrisDataEditSect(props) {
+  const { currentUser } = props
   const [myFav, setMyFav] = useState([])
 
   function getMyFavFromServer() {
