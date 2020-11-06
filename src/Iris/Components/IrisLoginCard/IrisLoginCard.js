@@ -66,7 +66,7 @@ function IrisLoginCard(props) {
   let userinfo = []
   // 拿資料庫會員資料
   async function getData() {
-    const url = 'http://localhost:5000/member/login'
+    const url = 'http://localhost:5000/member/allUserProfile'
     const request = new Request(url, {
       method: 'GET',
       headers: new Headers({
@@ -110,7 +110,7 @@ function IrisLoginCard(props) {
       mobile: mobile,
     }
 
-    fetch('http://localhost:5000/member//userRegister', {
+    fetch('http://localhost:5000/member/userRegister', {
       method: 'POST',
       body: JSON.stringify(newRegister),
       headers: new Headers({
