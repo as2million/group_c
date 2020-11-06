@@ -24,11 +24,16 @@ $lightBrown: #f7ede2;
 
 .jess-proE-bg {
   width: 100%;
-  height: 52rem;
+  height: 58rem;
   background-color: $white;
   position: relative;
 }
-
+.jess-productTabBorder {
+  background: url('../images/SVG/border.svg') no-repeat;
+  width: 114rem;
+  height: 1rem;
+  margin: 4rem 0;
+}
 // .jess-proE-pic1 {
 //   background: url('../images/images/bento-1.jpg') no-repeat;
 //   background-size: cover;

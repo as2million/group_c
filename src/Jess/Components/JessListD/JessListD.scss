@@ -67,11 +67,9 @@ $white: #ffffff;
   background-color: $white;
   height: 9rem;
 }
-.jess-productTabBorder {
-  background: url('../images/SVG/border.svg') no-repeat;
-  width: 114rem;
-  height: 1rem;
-  margin-top: 10rem;
+.jess-contentBorder {
+  width: 100%;
+  border-bottom: 0.1rem solid $brown;
 }
 
 @media screen and (max-width: 576px) {

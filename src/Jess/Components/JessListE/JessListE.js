@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import Fade from 'react-reveal/Fade';
-import 'antd/dist/antd.css';
-import './JessListE.scss';
-import { Parallax } from 'rc-scroll-anim';
+import React, { useState, useEffect } from 'react'
+import Fade from 'react-reveal/Fade'
+import 'antd/dist/antd.css'
+import './JessListE.scss'
+import { Parallax } from 'rc-scroll-anim'
 
 function JessListE() {
   return (
     <>
       <div className="container-fluid">
         <div className="container jess-proE-bg">
+          <div className="jess-productTabBorder"></div>
           <h2 className="jess-text-30orange text-center ">你可能也想來點</h2>
           <div className="row d-flex justify-content-center mt-5">
             {/* <div class="col-xs-6 col-sm-3">
@@ -48,7 +49,7 @@ function JessListE() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default JessListE;
+export default JessListE
