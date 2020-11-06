@@ -22,6 +22,10 @@ import cabage from './Images/cabage.svg'
 import cabageAfter from './Images/cabageAfter.svg'
 import corn from './Images/corn.svg'
 import cornAfter from './Images/cornAfter.svg'
+import egg from './Images/egg.svg'
+import eggAfter from './Images/eggAfter.svg'
+import poachedEgg from './Images/poachedEgg.svg'
+import poachedEggAfter from './Images/poachedEggAfter.svg'
 
 // 引用圖片
 import background from './Images/background.png'
@@ -31,7 +35,7 @@ function RuCustom() {
   const [moveX, setMoveX] = useState(0) // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true) // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false) // 是否開啟營養標示
-  const [selection, setSelection] = useState('vegetable') // 選擇開啟哪個菜色選區
+  const [selection, setSelection] = useState('egg') // 選擇開啟哪個菜色選區
   const [limitX, setLimitX] = useState() // 右滑極限值(RuButtonB可以調不同選項區的極限值)
   const [imgA, setImgA] = useState()
   const [imgB, setImgB] = useState()
@@ -54,13 +58,10 @@ function RuCustom() {
     console.log('執行useEffect')
     // 品項置入便當盒 邏輯
     const items = document.querySelectorAll('.ru-items')
-    console.log(items)
+    // console.log(items)
     const puts = document.querySelectorAll('.ru-put')
-    console.log(puts)
+    // console.log(puts)
     const $dropTarget = document.getElementById('ru-dropArea')
-    const dropOutAreaA = document.getElementById('ru-dropOutAreaA')
-    const dropOutAreaB = document.getElementById('ru-dropOutAreaB')
-    const dropOutAreaC = document.getElementById('ru-dropOutAreaC')
     const boxA = document.getElementById('ru-areaA')
     const boxB = document.getElementById('ru-areaB')
     const boxC = document.getElementById('ru-areaC')
@@ -73,6 +74,9 @@ function RuCustom() {
     items.forEach((i) => {
       i.addEventListener('dragstart', dragStart) // drag
     })
+    puts.forEach((i) => {
+      i.addEventListener('dragstart', dragStart) // drag
+    })
     // $dragSource.addEventListener('drag', drag) // drag
     // $dragSource.addEventListener('dragend', dragend) // drag
     $dropTarget.addEventListener('dragenter', dragenter) // drop
@@ -82,7 +86,7 @@ function RuCustom() {
 
     // 來源 - 開始拖曳時
     function dragStart(e) {
-      console.log('dragStart', e.target.id)
+      // console.log('dragStart', e.target.id)
       e.dataTransfer.setData('text/plain', e.target.id) // 把 source 的id往drop事件傳遞
     }
 
@@ -110,26 +114,38 @@ function RuCustom() {
     // 目的地 - 放下時
     function dropped(e) {
       // console.log('dropped')
-      // console.log(e.target)
+      // console.log(e.target, e.dataTransfer.getData('text/plain', e.target.id))
       //增刪元素
       console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
       if (
         // 放到這些區域可以丟棄該品項
-        e.target === $dropTarget ||
-        e.target === dropOutAreaA ||
-        e.target === dropOutAreaB ||
-        e.target === dropOutAreaC
+        e.target !== boxA &&
+        e.target !== boxB &&
+        e.target !== boxC &&
+        e.target !== boxD &&
+        e.target !== boxE &&
+        e.target !== boxF
       ) {
-        // switch (e.target) {
-        //   case boxA:
-        //     setImgA()
-        //     break
-        //   case 'ru-veg-2':
-        //     setImgA(cabageAfter)
-        //     break
-        //   case 'ru-veg-3':
-        //     setImgA(cornAfter)
-        // }
+        switch (e.dataTransfer.getData('text/plain', e.target.id)) {
+          case 'ru-put1':
+            setImgA()
+            break
+          case 'ru-put2':
+            setImgB()
+            break
+          case 'ru-put3':
+            setImgC()
+            break
+          case 'ru-put4':
+            setImgD()
+            break
+          case 'ru-put5':
+            setImgE()
+            break
+          case 'ru-put6':
+            setImgF()
+            break
+        }
       } else if (e.target === boxA) {
         // 如果放開滑鼠的地方是在 boxA 身上
         switch (e.dataTransfer.getData('text/plain', e.target.id)) {
@@ -174,7 +190,17 @@ function RuCustom() {
       } else if (e.target === boxD) {
         // 邏輯同上 待補
       } else if (e.target === boxE) {
-        // 邏輯同上 待補
+        // // 邏輯同上 待補
+        switch (
+          e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
+        ) {
+          case 'ru-egg-1': // 'ru-veg-1'
+            setImgE(eggAfter) // 就放入放置後圖片
+            break
+          case 'ru-egg-2':
+            setImgE(poachedEggAfter)
+            break
+        }
       } else if (e.target === boxF) {
         // 邏輯同上 待補
       }
@@ -186,7 +212,7 @@ function RuCustom() {
     }
 
     return () => {}
-  }, [imgA, imgB, imgC, imgD, imgE, imgF])
+  }, [imgA, imgB, imgC, imgD, imgE, imgF, selection]) // 要加入selection, 不然切換菜色選區後抓不到真實DOM
 
   return (
     <>
@@ -264,7 +290,7 @@ function RuCustom() {
                   <LunchBox />
                 </div>
               </div>
-              <div className="ru-detail-container">
+              <div className="ru-detail-container" id="ru-dropOutAreaD">
                 <div className="ru-switchBtn-container">
                   {/* 是否開啟價格標示 */}
                   <button id={isPrice && 'ru-active'} onClick={switchPrice}>

@@ -12,13 +12,13 @@ function RuVegetableA() {
       3{/* 品項1 s*/}
       <li className="ru-species-item ru-species-item1">
         <div className="ru-species-img">
-          <img src={cauliflower} class="ru-items" id="ru-veg-1"></img>
+          <img src={cauliflower} className="ru-items" id="ru-veg-1"></img>
         </div>
         <div className="ru-species-info">
           <ul>
             <li>
               <h4>
-                綠色嫩花椰: <span>$10</span>
+                綠色嫩花椰 <span>$10</span>
               </h4>
             </li>
             <li className="ru-species-calories">熱量: 50大卡</li>
@@ -32,13 +32,13 @@ function RuVegetableA() {
       {/* 品項2 s*/}
       <li className="ru-species-item ru-species-item2">
         <div className="ru-species-img">
-          <img src={cabage} class="ru-items" id="ru-veg-2"></img>
+          <img src={cabage} className="ru-items" id="ru-veg-2"></img>
         </div>
         <div className="ru-species-info">
           <ul>
             <li>
               <h4>
-                清炒高麗菜: <span>$10</span>
+                清炒高麗菜 <span>$10</span>
               </h4>
             </li>
             <li className="ru-species-calories">熱量: 50大卡</li>
@@ -52,13 +52,13 @@ function RuVegetableA() {
       {/* 品項3 s*/}
       <li className="ru-species-item ru-species-item3">
         <div className="ru-species-img">
-          <img src={corn} class="ru-items" id="ru-veg-3"></img>
+          <img src={corn} className="ru-items" id="ru-veg-3"></img>
         </div>
         <div className="ru-species-info">
           <ul>
             <li>
               <h4>
-                黃金玉米粒: <span>$10</span>
+                黃金玉米粒 <span>$10</span>
               </h4>
             </li>
             <li className="ru-species-calories">熱量: 50大卡</li>
@@ -72,13 +72,13 @@ function RuVegetableA() {
       {/* 品項4 s*/}
       <li className="ru-species-item ru-species-item4">
         <div className="ru-species-img">
-          <img src={cauliflower} class="ru-items" id="ru-veg-4"></img>
+          <img src={cauliflower} className="ru-items" id="ru-veg-4"></img>
         </div>
         <div className="ru-species-info">
           <ul>
             <li>
               <h4>
-                綠色嫩花椰: <span>$10</span>
+                綠色嫩花椰 <span>$10</span>
               </h4>
             </li>
             <li className="ru-species-calories">熱量: 50大卡</li>
@@ -92,12 +92,14 @@ function RuVegetableA() {
       {/* 品項5 s*/}
       <li className="ru-species-item ru-species-item5">
         <div className="ru-species-img">
-          <img src={cauliflower} class="ru-items" id="ru-veg-5"></img>
+          <img src={cauliflower} className="ru-items" id="ru-veg-5"></img>
         </div>
         <div className="ru-species-info">
           <ul>
             <li>
-              <h4>綠色嫩花椰:$10</h4>
+              <h4>
+                綠色嫩花椰 <span>$10</span>
+              </h4>
             </li>
             <li className="ru-species-calories">熱量:25大卡</li>
             <li className="ru-species-carbohydrates">碳水化合物:10大卡</li>
