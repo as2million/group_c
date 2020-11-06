@@ -17,6 +17,11 @@ import RuEggA from 'Ru/Components/RuFoodItems/RuEggA/RuEggA'
 // 引用共用元件
 import Card from 'Share/Components/Card/Card'
 import cauliflower from './Images/cauliflower.svg'
+import cauliflowerAfter from './Images/cauliflowerAfter.svg'
+import cabage from './Images/cabage.svg'
+import cabageAfter from './Images/cabageAfter.svg'
+import corn from './Images/corn.svg'
+import cornAfter from './Images/cornAfter.svg'
 
 // 引用圖片
 import background from './Images/background.png'
@@ -26,8 +31,14 @@ function RuCustom() {
   const [moveX, setMoveX] = useState(0) // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true) // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false) // 是否開啟營養標示
-  const [selection, setSelection] = useState('rice') // 選擇開啟哪個菜色選區
+  const [selection, setSelection] = useState('vegetable') // 選擇開啟哪個菜色選區
   const [limitX, setLimitX] = useState() // 右滑極限值(RuButtonB可以調不同選項區的極限值)
+  const [imgA, setImgA] = useState()
+  const [imgB, setImgB] = useState()
+  const [imgC, setImgC] = useState()
+  const [imgD, setImgD] = useState()
+  const [imgE, setImgE] = useState()
+  const [imgF, setImgF] = useState()
 
   function switchPrice() {
     setIsPrice(true)
@@ -40,16 +51,28 @@ function RuCustom() {
   }
 
   useEffect(() => {
-    let $dragSource = document.getElementById('ru-dragger1')
-    let $dropTarget = document.getElementById('ru-areaA')
-    let cloneArea = document.querySelector('.ru-species-item1')
-    let son = document.querySelector('.ru-species-info')
+    console.log('執行useEffect')
+    // 品項置入便當盒 邏輯
+    const items = document.querySelectorAll('.ru-items')
+    console.log(items)
+    const $dropTarget = document.getElementById('ru-dropArea')
+    const dropOutAreaA = document.getElementById('ru-dropOutAreaA')
+    const dropOutAreaB = document.getElementById('ru-dropOutAreaB')
+    const dropOutAreaC = document.getElementById('ru-dropOutAreaC')
+    const boxA = document.getElementById('ru-areaA')
+    const boxB = document.getElementById('ru-areaB')
+    const boxC = document.getElementById('ru-areaC')
+    const boxD = document.getElementById('ru-areaD')
+    const boxE = document.getElementById('ru-areaE')
+    const boxF = document.getElementById('ru-areaF')
     // console.log($dragSource)
     // console.log($dropTarget)
 
-    $dragSource.addEventListener('dragstart', dragStart) // drag
-    $dragSource.addEventListener('drag', drag) // drag
-    $dragSource.addEventListener('dragend', dragend) // drag
+    items.forEach((i) => {
+      i.addEventListener('dragstart', dragStart) // drag
+    })
+    // $dragSource.addEventListener('drag', drag) // drag
+    // $dragSource.addEventListener('dragend', dragend) // drag
     $dropTarget.addEventListener('dragenter', dragenter) // drop
     $dropTarget.addEventListener('dragover', dragover) // drop
     $dropTarget.addEventListener('dragleave', dragleave) // drag
@@ -57,8 +80,9 @@ function RuCustom() {
 
     // 來源 - 開始拖曳時
     function dragStart(e) {
-      // console.log('dragStart')
+      console.log('dragStart', e.target.id)
       e.dataTransfer.setData('text/plain', e.target.id)
+      console.log(e.dataTransfer.setData('text/plain', e.target.id))
     }
 
     // 來源 - 拖曳中時
@@ -84,26 +108,38 @@ function RuCustom() {
 
     // 目的地 - 放下時
     function dropped(e) {
-      // 加元素
       console.log('dropped')
-      let id = e.dataTransfer.getData('text/plain')
-      e.target.appendChild(document.querySelector('#' + id))
-
-      // 補元素
-      // let A = $dragSource.cloneNode(true)
-      // console.log(A)
-      let B = document.createElement('div')
-      // // console.log(A, B)
-      cloneArea.insertBefore(B, son)
+      console.log(e.target)
+      //增刪元素
+      if (
+        e.target === $dropTarget ||
+        e.target === dropOutAreaA ||
+        e.target === dropOutAreaB ||
+        e.target === dropOutAreaC
+      ) {
+        setImgA()
+      } else if (e.target === boxA) {
+        setImgA(cauliflowerAfter)
+      } else if (e.target === boxB) {
+        setImgB(cauliflowerAfter)
+      } else if (e.target === boxC) {
+        setImgC(cauliflowerAfter)
+      } else if (e.target === boxD) {
+        setImgD(cauliflowerAfter)
+      } else if (e.target === boxE) {
+        setImgE(cauliflowerAfter)
+      } else if (e.target === boxF) {
+        setImgF(cauliflowerAfter)
+      }
+      // let id = e.dataTransfer.getData('text/plain')
     }
 
     function dragleave(e) {
-      console.log('dragleave')
-      // let id = e.dataTransfer.getData('text/plain')
-      // e.target.removeChild(document.querySelector('#' + id))
+      // console.log('dragleave')
     }
+
     return () => {}
-  }, [])
+  }, [imgA, imgB, imgC, imgD, imgE, imgF])
 
   return (
     <>
@@ -112,24 +148,72 @@ function RuCustom() {
       </h1> */}
 
       {/* 商品區 - 網頁版 s */}
-      <div className="ru-custom-containerA">
-        <div className="ru-custom-warp">
-          <div className="ru-drop-container">
-            <div className="ru-drop-warp">
+      <div className="ru-custom-containerA" id="ru-dropArea">
+        <div className="ru-custom-warp" id="ru-dropOutAreaA">
+          <div className="ru-drop-container" id="ru-dropOutAreaB">
+            <div className="ru-drop-warp" id="ru-dropOutAreaC">
               <div className="ru-box-container">
-                <div className="ru-box-warp" style={{ position: 'relative' }}>
-                  <div
-                    id="ru-areaA"
-                    style={{
-                      width: '26.5%',
-                      height: '34.65%',
-                      top: '7.5%',
-                      left: '6.5%',
-                      backgroundColor: 'red',
-                      position: 'absolute',
-                      opacity: 0.5,
-                    }}
-                  ></div>
+                <div className="ru-box-warp">
+                  {/* 放置菜色A區 s*/}
+                  <div id="ru-areaA">
+                    <img
+                      src={imgA}
+                      draggable="true"
+                      className="ru-put"
+                      id="ru-put1"
+                    ></img>
+                  </div>
+                  {/* 放置菜色A區 e*/}
+                  {/* 放置菜色B區 s*/}
+                  <div id="ru-areaB">
+                    <img
+                      src={imgB}
+                      draggable="true"
+                      className="ru-put"
+                      id="ru-put2"
+                    ></img>
+                  </div>
+                  {/* 放置菜色B區 e*/}
+                  {/* 放置菜色C區 s*/}
+                  <div id="ru-areaC">
+                    <img
+                      src={imgC}
+                      draggable="true"
+                      className="ru-put"
+                      id="ru-put3"
+                    ></img>
+                  </div>
+                  {/* 放置菜色C區 e*/}
+                  {/* 放置菜色D區 s*/}
+                  <div id="ru-areaD">
+                    <img
+                      src={imgD}
+                      draggable="true"
+                      className="ru-put"
+                      id="ru-put4"
+                    ></img>
+                  </div>
+                  {/* 放置菜色D區 e*/}
+                  {/* 放置菜色E區 s*/}
+                  <div id="ru-areaE">
+                    <img
+                      src={imgE}
+                      draggable="true"
+                      className="ru-put"
+                      id="ru-put5"
+                    ></img>
+                  </div>
+                  {/* 放置菜色E區 e*/}
+                  {/* 放置菜色F區 s*/}
+                  <div id="ru-areaF">
+                    <img
+                      src={imgF}
+                      draggable="true"
+                      className="ru-put"
+                      id="ru-put6"
+                    ></img>
+                  </div>
+                  {/* 放置菜色F區 e*/}
                   <LunchBox />
                 </div>
               </div>

@@ -1,4 +1,4 @@
-@import "Ru/Pages/variable.scss";
+@import 'Ru/Pages/variable.scss';
 
 // ------------------------------------------- 網頁版 s -------------------------------------------
 // @media screen and (min-width: 1201px) {
@@ -7,6 +7,7 @@
     // 超過設計稿部份
     // background-color: rgb(0, 185, 71);
     overflow: hidden; // 遮蔽背景圖
+    padding-top: 90px;
     margin-bottom: 60px; // footer距離
     position: relative;
   }
@@ -47,6 +48,71 @@
   .ru-box-warp {
     // background-color: aqua;
     width: 100%;
+    position: relative;
+  }
+
+  #ru-areaA {
+    background-color: red;
+    width: 29.5%;
+    height: 38.5%;
+    top: 4%;
+    left: 4.5%;
+    position: absolute;
+    opacity: 0.5;
+  }
+
+  #ru-areaB {
+    background-color: rgb(255, 217, 0);
+    width: 29.5%;
+    height: 38.5%;
+    top: 4%;
+    left: 35.25%;
+    position: absolute;
+    opacity: 0.5;
+  }
+
+  #ru-areaC {
+    background-color: rgb(38, 255, 0);
+    width: 29.5%;
+    height: 38.5%;
+    top: 4%;
+    left: 66.25%;
+    position: absolute;
+    opacity: 0.5;
+  }
+
+  #ru-areaD {
+    background-color: rgb(0, 204, 255);
+    width: 91.25%;
+    height: 50%;
+    top: 45.5%;
+    left: 4.5%;
+    position: absolute;
+    opacity: 0.5;
+  }
+
+  #ru-areaE {
+    background-color: rgb(98, 0, 255);
+    width: 58.5%;
+    height: 34.65%;
+    top: 50%;
+    left: 35.25%;
+    position: absolute;
+    opacity: 0.5;
+  }
+
+  #ru-areaF {
+    background-color: rgb(217, 0, 255);
+    width: 26.5%;
+    height: 34.65%;
+    top: 50%;
+    left: 6.5%;
+    position: absolute;
+    opacity: 0.5;
+  }
+
+  .ru-put {
+    cursor: grab;
   }
 
   .ru-detail-container {
@@ -66,14 +132,20 @@
   .ru-switchBtn-container button:focus {
     outline: none;
   }
- 
+
   .ru-switchBtn-container button:nth-child(1) {
     background-color: #ffffff00; // 無背景色
     border: none;
     text-align: right;
     margin-right: 15px;
     padding: 0px;
-    @include font($notoSansTC, $minor-heading, $bold, 0px, $customSelection-color);
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $bold,
+      0px,
+      $customSelection-color
+    );
   }
 
   .ru-switchBtn-container button:nth-child(2) {
@@ -82,7 +154,13 @@
     text-align: left;
     margin-left: 15px;
     padding: 0px;
-    @include font($notoSansTC, $minor-heading, $bold, 0px, $customSelection-color);
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $bold,
+      0px,
+      $customSelection-color
+    );
   }
 
   // 開關開啟
@@ -91,7 +169,7 @@
   }
 
   // .ru-info-container {
-    // background-color: palegoldenrod;
+  // background-color: palegoldenrod;
   // }
 
   .ru-checkout-container {
@@ -269,7 +347,13 @@
     text-align: left;
     margin-left: 15px;
     padding: 0px;
-    @include font($notoSansTC, $minor-heading, $bold, 0px, $customSelection-color);
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $bold,
+      0px,
+      $customSelection-color
+    );
   }
 
   .ru-info-container {
@@ -327,7 +411,13 @@
     width: 18.52%;
     height: 100%;
     margin: 0px;
-    @include font($notoSansTC, $productName-size, $regular, 1.25px, $light-orange);
+    @include font(
+      $notoSansTC,
+      $productName-size,
+      $regular,
+      1.25px,
+      $light-orange
+    );
     @include flex($df, $fdr, $jce, $alc);
   }
 
@@ -347,7 +437,13 @@
   .ru-info-total-warp > h3 {
     width: 62%;
     margin: 0px;
-    @include font($notoSansTC, $minor-heading, $medium, 0px, $productName-Color);
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $medium,
+      0px,
+      $productName-Color
+    );
   }
 
   .ru-info-total-warp > p {
@@ -516,7 +612,13 @@
     margin: 0px;
     text-align: center;
     @include flex($df, $fdc, $jcc, $alc);
-    @include font($notoSansTC, $minor-heading, $regular, 1.25px, $productName-Color);
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $regular,
+      1.25px,
+      $productName-Color
+    );
   }
 
   .ru-species-info ul h4 span {

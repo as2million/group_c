@@ -1,4 +1,4 @@
-@import "Ru/Pages/variable.scss";
+@import 'Ru/Pages/variable.scss';
 // 以下開始自訂CSS
 .ru-buttonWarpA {
   // background-color: rgb(30, 236, 255);
@@ -49,7 +49,7 @@ input {
 
 .ru-mainImg {
   height: 362px;
-  background-image: url("./Images/mainImg.jpg");
+  background-image: url('./Images/mainImg.jpg');
   background-repeat: no-repeat;
   background-position: center 30%;
   background-size: cover;
@@ -89,7 +89,6 @@ input {
 .ru-line {
   // background-color: red;
   width: 100%;
-  height: 90px;
   @include flex($df, $fdr, $jcc, $als);
   overflow: hidden;
 }
@@ -132,7 +131,7 @@ input {
 
   .ru-mainImg {
     height: 362px;
-    background-image: url("./Images/mainImg.jpg");
+    background-image: url('./Images/mainImg.jpg');
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size: cover;
@@ -237,7 +236,7 @@ input {
 
   .ru-mainImg {
     height: 362px;
-    background-image: url("./Images/mainImg.jpg");
+    background-image: url('./Images/mainImg.jpg');
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size: cover;
@@ -348,7 +347,7 @@ input {
 
   .ru-mainImg {
     height: 365px;
-    background-image: url("./Images/mainImg.jpg");
+    background-image: url('./Images/mainImg.jpg');
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size: cover;

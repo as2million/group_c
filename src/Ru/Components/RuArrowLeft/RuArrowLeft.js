@@ -15,7 +15,6 @@ function RuArrowLeft(props) {
   }
 
   useEffect(() => {
-    console.log('A')
     // console.log(isMoving)
     let movement = moveX
     let moving
