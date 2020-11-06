@@ -77,7 +77,7 @@ function IrisLoginCard(props) {
     const response = await fetch(request)
     userinfo = await response.json()
   }
-  
+
   // 比對帳密
   async function handleLogin() {
     await getData()
@@ -93,6 +93,35 @@ function IrisLoginCard(props) {
         alert(useraccount + '登入成功')
       }
     }
+  }
+
+  // 註冊
+  const handleRegister = () => {
+    const account = document.querySelector('#createaccount').value
+    const password = document.querySelector('#createpassword').value
+    const email = document.querySelector('#createmail').value
+    const mobile = document.querySelector('#createmobile').value
+
+    // 把輸入的內容包成物件傳出去
+    const newRegister = {
+      account: account,
+      password: password,
+      email: email,
+      mobile: mobile,
+    }
+
+    fetch('http://localhost:5000/member//userRegister', {
+      method: 'POST',
+      body: JSON.stringify(newRegister),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+      .then((r) => r.json())
+      .then((o) => {
+        console.log(o)
+      })
   }
 
   return (
@@ -160,22 +189,27 @@ function IrisLoginCard(props) {
             <div className="iris-register-title">會員註冊</div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">帳號</div>
-              <InputH44 type="text" />
+              <InputH44 type="text" id="createaccount" />
             </div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">密碼</div>
-              <InputH44 type="password" />
+              <InputH44 type="password" id="createpassword" />
             </div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">信箱</div>
-              <InputH44 type="text" />
+              <InputH44 type="text" id="createmail" />
             </div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">手機</div>
-              <InputH44 type="text" />
+              <InputH44 type="text" id="createmobile" />
             </div>
 
-            <div className="iris-register-button">
+            <div
+              className="iris-register-button"
+              onClick={() => {
+                handleRegister()
+              }}
+            >
               <Button
                 className="button-btn"
                 id="iris-register-btn"

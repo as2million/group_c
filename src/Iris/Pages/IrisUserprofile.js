@@ -12,7 +12,7 @@ function IrisUserprofile(props) {
     <>
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect currentUser={currentUser} />
-        <IrisDataEditSect />
+        <IrisDataEditSect currentUser={currentUser} />
       </div>
     </>
   )
