@@ -88,7 +88,7 @@ function IrisLoginCard(props) {
         userpassword === userinfo[i].password
       ) {
         setIsLogin(true)
-        setCurrentUser(useraccount)
+        setCurrentUser(userinfo[i].member_sid)
         alert(useraccount + '登入成功')
       }
     }
