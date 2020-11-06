@@ -1,67 +1,97 @@
-import React, { useState, useEffect } from 'react';
-import './IrisLoginCard.scss';
-import { ReactComponent as LoginCardBg } from './Images/login_card.svg';
-import { ReactComponent as RegisterCardBg } from './Images/register_card.svg';
-import InputH44 from './../../../Share/Components/Input/InputH44.js';
-import Button from './Button/Button';
-import ButtonLogin from './Button/ButtonLogin';
+import React, { useState, useEffect } from 'react'
+import './IrisLoginCard.scss'
+import { ReactComponent as LoginCardBg } from './Images/login_card.svg'
+import { ReactComponent as RegisterCardBg } from './Images/register_card.svg'
+import InputH44 from './../../../Share/Components/Input/InputH44.js'
+import Button from './Button/Button'
+import ButtonLogin from './Button/ButtonLogin'
 
 function IrisLoginCard(props) {
-  const { setIsLogin } = props;
+  const { setIsLogin } = props
 
   // 變成註冊表單
   const ToRegisterForm = () => {
     // 白底移動
-    const loginEnrollCard = document.querySelector('.iris-login-form');
-    loginEnrollCard.style.transform = 'translate(0%, 0)';
-    loginEnrollCard.style.transition = '1.3s';
+    const loginEnrollCard = document.querySelector('.iris-login-form')
+    loginEnrollCard.style.transform = 'translate(0%, 0)'
+    loginEnrollCard.style.transition = '1.3s'
     // -------------登入卡消失效果
-    document.querySelector('.iris-login-content').style.display = 'none';
-    document.querySelector('.iris-login-background').style.opacity = '0';
+    document.querySelector('.iris-login-content').style.display = 'none'
+    document.querySelector('.iris-login-background').style.opacity = '0'
     document.querySelector('.iris-login-background').style.transition =
-      'opacity 2s';
+      'opacity 2s'
     setTimeout(function () {
-      document.querySelector('.iris-login-background').style.display = 'none';
-    }, 900);
+      document.querySelector('.iris-login-background').style.display = 'none'
+    }, 900)
     //------------ 註冊卡出現效果
     setTimeout(function () {
       document.querySelector('.iris-register-background').style.display =
-        'block';
-    }, 990);
-    document.querySelector('.iris-register-content').style.display = 'flex';
+        'block'
+    }, 990)
+    document.querySelector('.iris-register-content').style.display = 'flex'
     setTimeout(function () {
-      document.querySelector('.iris-register-background').style.opacity = '1';
+      document.querySelector('.iris-register-background').style.opacity = '1'
       document.querySelector('.iris-register-background').style.transition =
-        'opacity 1.1s';
-    }, 1100);
-  };
+        'opacity 1.1s'
+    }, 1100)
+  }
 
   // 變成登入表單
   const ToLoginForm = () => {
     // 白底移動
-    const loginEnrollCard = document.querySelector('.iris-login-form');
-    loginEnrollCard.style.transform = 'translate(-85%, 0)';
-    loginEnrollCard.style.transition = '1.3s';
+    const loginEnrollCard = document.querySelector('.iris-login-form')
+    loginEnrollCard.style.transform = 'translate(-85%, 0)'
+    loginEnrollCard.style.transition = '1.3s'
     // -------------註冊卡消失效果
-    document.querySelector('.iris-register-content').style.display = 'none';
-    document.querySelector('.iris-register-background').style.opacity = '0';
+    document.querySelector('.iris-register-content').style.display = 'none'
+    document.querySelector('.iris-register-background').style.opacity = '0'
     document.querySelector('.iris-register-background').style.transition =
-      'opacity 2s';
+      'opacity 2s'
     setTimeout(function () {
-      document.querySelector('.iris-register-background').style.display =
-        'none';
-    }, 900);
+      document.querySelector('.iris-register-background').style.display = 'none'
+    }, 900)
     //------------ 登入卡出現效果
     setTimeout(function () {
-      document.querySelector('.iris-login-background').style.display = 'block';
-    }, 990);
-    document.querySelector('.iris-login-content').style.display = 'flex';
+      document.querySelector('.iris-login-background').style.display = 'block'
+    }, 990)
+    document.querySelector('.iris-login-content').style.display = 'flex'
     setTimeout(function () {
-      document.querySelector('.iris-login-background').style.opacity = '1';
+      document.querySelector('.iris-login-background').style.opacity = '1'
       document.querySelector('.iris-login-background').style.transition =
-        'opacity 1.1s';
-    }, 1100);
-  };
+        'opacity 1.1s'
+    }, 1100)
+  }
+
+  // 登入
+  let userinfo = []
+  // 拿資料庫會員資料
+  async function getData() {
+    const url = 'http://localhost:5000/member/login'
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'appliaction/json',
+      }),
+    })
+    const response = await fetch(request)
+    userinfo = await response.json()
+  }
+  // 比對帳密
+  async function handleLogin() {
+    await getData()
+    const useraccount = document.querySelector('#useraccount').value
+    const userpassword = document.querySelector('#userpassword').value
+    for (let i = 0; i < userinfo.length; i++) {
+      if (
+        useraccount === userinfo[i].account &&
+        userpassword === userinfo[i].password
+      ) {
+        setIsLogin(true)
+        alert('登入成功')
+      }
+    }
+  }
 
   return (
     <>
@@ -82,11 +112,11 @@ function IrisLoginCard(props) {
             <div className="iris-login-title">會員登入</div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">帳號</div>
-              <InputH44 type="text" />
+              <InputH44 type="text" id="useraccount" />
             </div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">密碼</div>
-              <InputH44 type="password" />
+              <InputH44 type="password" id="userpassword" />
             </div>
             <div className="iris-login-other d-flex">
               <div class="form-check">
@@ -99,12 +129,16 @@ function IrisLoginCard(props) {
               </div>
               <div className="iris-login-forget-pw">忘記密碼</div>
             </div>
-            <div className="iris-login-button">
+            <div
+              className="iris-login-button"
+              onClick={() => {
+                handleLogin()
+              }}
+            >
               <ButtonLogin
                 className="button-btn-g"
                 id="iris-login-btn"
                 text="登入"
-                setIsLogin={setIsLogin}
               />
             </div>
             <div className="d-flex">
@@ -112,7 +146,7 @@ function IrisLoginCard(props) {
               <div
                 className="iris-no-account-register"
                 onClick={() => {
-                  ToRegisterForm();
+                  ToRegisterForm()
                 }}
               >
                 註冊訂餐
@@ -151,7 +185,7 @@ function IrisLoginCard(props) {
               <div
                 className="iris-login-now"
                 onClick={() => {
-                  ToLoginForm();
+                  ToLoginForm()
                 }}
               >
                 立即登入
@@ -161,7 +195,7 @@ function IrisLoginCard(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default IrisLoginCard;
+export default IrisLoginCard

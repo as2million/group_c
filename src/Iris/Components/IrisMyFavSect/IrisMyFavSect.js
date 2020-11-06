@@ -20,8 +20,7 @@ function IrisDataEditSect() {
       .then((r) => r.json())
       .then((data) => {
         console.log(data)
-        setMyFav(data)
-        console.log(myFav[0])
+        setMyFav(data[0])
       })
   }
 
@@ -38,8 +37,9 @@ function IrisDataEditSect() {
             comment="100"
             buy="280"
             price="$130"
-            imgId="card-img-5"
+            imgId={myFav.img_id}
             // cardMargin="card-margin"
+            // 01_bento-chicken-breast
           />
           <Card
             title="慢煮嫩雞胸-蒜味香草"
