@@ -20,7 +20,7 @@ function ChaCart(props) {
   // 指示器
   // const [dataLoading, setDataLoading] = useState(false);
 
-  // 掛載就設定隱藏navbar
+  // 掛載就設定
   useEffect(() => {
     setShowBar(false);
   }, []);
@@ -68,7 +68,7 @@ function ChaCart(props) {
     // 只要meals改變，就處理meals
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
-  // 新增LocalStorage
+
   const updateCartToLocalStorage = (value) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -135,16 +135,13 @@ function ChaCart(props) {
             updateCartToLocalStorage={updateCartToLocalStorage}
           />
           {/* 步驟二 */}
-          <ChaCartStepCardStep2 setStep2Data={setStep2Data} />
+          <ChaCartStepCardStep2 setStep2={setStep2} />
           {/* 步驟三 */}
           <ChaCartStepCardStep3 />
         </main>
         {/* 購物清單欄*/}
         <aside>
-          <ChaCartSubmitCard
-            mealsDisplay={mealsDisplay}
-            step2Data={step2Data}
-          />
+          <ChaCartSubmitCard mealsDisplay={mealsDisplay} />
         </aside>
       </div>
     </>

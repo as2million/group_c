@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import CartHandler from 'Cha/CartHandler';
 
 import ChaCartProgressBar from 'Cha/Components/Cha-Cart-ProgressBar/ChaCartProgressBar';
 // import ChaOrder from 'Cha/Components/Cha-Order/ChaOrder'
@@ -20,20 +21,22 @@ function ChaCart(props) {
   // 指示器
   // const [dataLoading, setDataLoading] = useState(false);
 
-  // 掛載就設定隱藏navbar
+  // 掛載就設定
   useEffect(() => {
     setShowBar(false);
   }, []);
 
   // 讀取LocalStorage
   function getCartFromLocalStorage() {
-    const newCart = localStorage.getItem('cart') || '[]';
+    // const newCart = localStorage.getItem('cart') || '[]';
     // console.log(JSON.parse(newCart));
-    setMeals(JSON.parse(newCart));
+    // setMeals(JSON.parse(newCart));
+    setMeals(CartHandler.getCart());
   }
   // componentDidMount，一開始會載入資料(在元件初始化完成後)
   useEffect(() => {
     getCartFromLocalStorage();
+    CartHandler.getCart();
   }, []);
   // componentDidUpdate// 只要meals改變，就處理meals
   useEffect(() => {

@@ -7,7 +7,7 @@ function ChaCartSubmitCard(props) {
   const { mealsDisplay, step2Data } = props;
   const [shipping, setShipping] = useState(0);
   const [beastieCoin, setBeastieCoin] = useState(60);
-  const [tableware, setTableware] = useState('');
+  const [tableware, setTableware] = useState();
   const [submitData, setSubmitData] = useState({});
 
   // 計算商品總量
@@ -106,9 +106,8 @@ function ChaCartSubmitCard(props) {
                 name="tableware"
                 value="yes"
                 onChange={(e) => {
-                  setTableware(e.target.value);
+                  setGender(e.target.value);
                 }}
-                checked={tableware === 'yes'}
               />
               附餐具
             </lab>
@@ -118,12 +117,29 @@ function ChaCartSubmitCard(props) {
                 name="tableware"
                 value="no"
                 onChange={(e) => {
-                  setTableware(e.target.value);
+                  setGender(e.target.value);
                 }}
-                checked={tableware === 'no'}
               />
               不附餐具
             </lab>
+            <input
+              type="radio"
+              value="male"
+              onChange={(e) => {
+                setGender(e.target.value);
+              }}
+              checked={gender === 'male'}
+            />
+            <label>Female</label>
+            <input
+              type="radio"
+              value="female"
+              onChange={(e) => {
+                setGender(e.target.value);
+              }}
+              checked={gender === 'female'}
+            />{' '}
+            */}
           </div>
         </div>
         <div className="cha-horizontal-line"></div>

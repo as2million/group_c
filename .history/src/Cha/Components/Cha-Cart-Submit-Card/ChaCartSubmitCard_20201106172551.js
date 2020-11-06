@@ -7,7 +7,7 @@ function ChaCartSubmitCard(props) {
   const { mealsDisplay, step2Data } = props;
   const [shipping, setShipping] = useState(0);
   const [beastieCoin, setBeastieCoin] = useState(60);
-  const [tableware, setTableware] = useState('');
+  const [tableware, setTableware] = useState();
   const [submitData, setSubmitData] = useState({});
 
   // 計算商品總量

@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
 
 function ChaCartSubmitCard(props) {
-  const { mealsDisplay, step2Data } = props;
+  const { mealsDisplay } = props;
   const [shipping, setShipping] = useState(0);
   const [beastieCoin, setBeastieCoin] = useState(60);
-  const [tableware, setTableware] = useState('');
-  const [submitData, setSubmitData] = useState({});
 
   // 計算商品總量
   const calcuTotalAmount = (items) => {
@@ -37,21 +35,24 @@ function ChaCartSubmitCard(props) {
     } else {
       setShipping(0);
     }
+    // 優惠的商業邏輯
+    if (totalAmount <= 0) {
+      setBeastieCoin(50);
+    }
   }, [totalAmount]);
 
   // 計算總價
-  let totalPrice =
-    subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0);
+  let totalPrice = subtotalPrice + shipping - beastieCoin;
 
   // 彙整要POST的資料
-  setSubmitData({
+  const submitDataObject = {
     total_amount: totalAmount,
     subtotal_price: subtotalPrice,
     total_price: totalPrice,
     shipping: shipping,
     beastie_coin: beastieCoin,
     tableware: 'a',
-  });
+  };
 
   //   "sid": 8,
   /////////////////   "order_sid": 1,
@@ -95,33 +96,17 @@ function ChaCartSubmitCard(props) {
             />
             <labe htmlFor="cha-monster-coin">使用怪獸幣</labe>
           </div>
-          <div>-${beastieCoin}</div>
+          <div>-$50</div>
         </div>
         <div className="cha-horizontal-line"></div>
         <div className="cha-tableware">
           <div>
             <lab>
-              <input
-                type="radio"
-                name="tableware"
-                value="yes"
-                onChange={(e) => {
-                  setTableware(e.target.value);
-                }}
-                checked={tableware === 'yes'}
-              />
+              <input type="radio" name="tableware" value="tableware-yes" />
               附餐具
             </lab>
             <lab>
-              <input
-                type="radio"
-                name="tableware"
-                value="no"
-                onChange={(e) => {
-                  setTableware(e.target.value);
-                }}
-                checked={tableware === 'no'}
-              />
+              <input type="radio" name="tableware" value="tableware-no" />
               不附餐具
             </lab>
           </div>

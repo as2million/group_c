@@ -4,11 +4,8 @@ import { Link } from 'react-router-dom';
 import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
 
 function ChaCartSubmitCard(props) {
-  const { mealsDisplay, step2Data } = props;
+  const { mealsDisplay } = props;
   const [shipping, setShipping] = useState(0);
-  const [beastieCoin, setBeastieCoin] = useState(60);
-  const [tableware, setTableware] = useState('');
-  const [submitData, setSubmitData] = useState({});
 
   // 計算商品總量
   const calcuTotalAmount = (items) => {
@@ -30,8 +27,8 @@ function ChaCartSubmitCard(props) {
   };
   let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
 
+  // 運費商業邏輯
   useEffect(() => {
-    // 運費的商業邏輯
     if (totalAmount > 0 && totalAmount <= 2) {
       setShipping(50);
     } else {
@@ -40,19 +37,27 @@ function ChaCartSubmitCard(props) {
   }, [totalAmount]);
 
   // 計算總價
-  let totalPrice =
-    subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0);
+  let totalPrice = subtotalPrice + shipping - 50;
 
   // 彙整要POST的資料
-  setSubmitData({
-    total_amount: totalAmount,
-    subtotal_price: subtotalPrice,
-    total_price: totalPrice,
-    shipping: shipping,
-    beastie_coin: beastieCoin,
+  const submitDataObject = {
+    total_amount: 'a',
+    subtotal_price: 'a',
+    total_price: 'a',
+    shipping: 'a',
+    // beastie_coin: 'a',
     tableware: 'a',
-  });
-
+  };
+  // ///////////////   "toal_amount": 10,
+  // ///////////////   "subtoal_price": 1300,
+  // ///////////////   "shipping": 0,
+  // ///////////////   "beastie_coin": 10,
+  // ///////////////   "tableware": "是",
+  // ///////////////   "total_price": 1290,
+  // ///////////////   "take_date": "2020-11-02T16:00:00.000Z",
+  // ///////////////   "take_time": "12:00:00",
+  // ///////////////   "receipt": "二聯式發票",
+  // {
   //   "sid": 8,
   /////////////////   "order_sid": 1,
   /////////////////   "product_sid": 111,
@@ -95,33 +100,17 @@ function ChaCartSubmitCard(props) {
             />
             <labe htmlFor="cha-monster-coin">使用怪獸幣</labe>
           </div>
-          <div>-${beastieCoin}</div>
+          <div>-$50</div>
         </div>
         <div className="cha-horizontal-line"></div>
         <div className="cha-tableware">
           <div>
             <lab>
-              <input
-                type="radio"
-                name="tableware"
-                value="yes"
-                onChange={(e) => {
-                  setTableware(e.target.value);
-                }}
-                checked={tableware === 'yes'}
-              />
+              <input type="radio" name="tableware" value="tableware-yes" />
               附餐具
             </lab>
             <lab>
-              <input
-                type="radio"
-                name="tableware"
-                value="no"
-                onChange={(e) => {
-                  setTableware(e.target.value);
-                }}
-                checked={tableware === 'no'}
-              />
+              <input type="radio" name="tableware" value="tableware-no" />
               不附餐具
             </lab>
           </div>

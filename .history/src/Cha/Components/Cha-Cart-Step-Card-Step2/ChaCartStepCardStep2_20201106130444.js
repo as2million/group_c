@@ -50,15 +50,15 @@ function ChaCartStepCardStep2(props) {
   }, []);
 
   // 彙整要POST的資料
-  // setStep2Data({
-  //   member_sid: memberSid,
-  //   name: name,
-  //   mobile: mobile,
-  //   address: address,
-  //   beastie_coin: beastieCoin,
-  //   take_date: startDate,
-  //   take_time: takeTime,
-  // });
+  setStep2Data({
+    member_sid: memberSid,
+    name: name,
+    mobile: mobile,
+    address: address,
+    beastie_coin: beastieCoin,
+    take_date: startDate,
+    take_time: takeTime,
+  });
 
   return (
     <>

@@ -20,7 +20,7 @@ function ChaCart(props) {
   // 指示器
   // const [dataLoading, setDataLoading] = useState(false);
 
-  // 掛載就設定隱藏navbar
+  // 掛載就設定
   useEffect(() => {
     setShowBar(false);
   }, []);

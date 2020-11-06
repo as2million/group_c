@@ -17,8 +17,6 @@ function ChaCartStepCardStep2(props) {
   const [startDate, setStartDate] = useState(
     setHours(setMinutes(new Date(), 30), 11)
   );
-  const [takeTime, setTakeTime] = useState('');
-  const { setStep2Data } = props;
   // GET會員資料
   async function getMemberDataFromServer() {
     const url = 'http://localhost:5000/cart-api/get-member';
@@ -40,7 +38,7 @@ function ChaCartStepCardStep2(props) {
     setMobile(data[0].mobile);
     // setTakeWay(data[0].take_way);
     setAddress(data[0].address);
-    setMemberSid(data[0].sid);
+    setMemberSid(data[0].member_sid);
     setBeastieCoin(data[0].beastie_coin);
   }
 
@@ -48,18 +46,15 @@ function ChaCartStepCardStep2(props) {
   useEffect(() => {
     getMemberDataFromServer();
   }, []);
-
-  // 彙整要POST的資料
-  // setStep2Data({
-  //   member_sid: memberSid,
-  //   name: name,
-  //   mobile: mobile,
-  //   address: address,
-  //   beastie_coin: beastieCoin,
-  //   take_date: startDate,
-  //   take_time: takeTime,
-  // });
-
+  const step2Data = {
+    member_sid: memberSid,
+    name: name,
+    mobile: mobile,
+    address: address,
+    beastie_coin: beastieCoin,
+    take_date: startDate,
+    take_time: 'a',
+  };
   return (
     <>
       <div className="cha-main-card cha-main-card-step2">
@@ -98,7 +93,6 @@ function ChaCartStepCardStep2(props) {
         <div className="form-row">
           <div className="form-group col">
             <label htmlFor="cha-step2-3-take-date">取餐日期</label>
-            <br />
             {/* <input
               type="text"
               className="form-control cha-step2-3-take-date"
@@ -130,18 +124,28 @@ function ChaCartStepCardStep2(props) {
             <select
               id="cha-step2-4-take-time"
               className="form-control cha-step2-4-take-time"
-              value={takeTime}
-              onChange={(e) => {
-                setTakeTime(e.target.value);
-              }}
+              // placeholder="請填寫姓名"
+              // value={name}
+              // onChange={(e) => {
+              //   setName(e.target.value);
+              // }}
             >
-              <option selected>請選擇時間</option>
+              <option selected>請選擇</option>
               <option>11:00 ~ 11:30</option>
               <option>11:30 ~ 12:00</option>
               <option>12:30 ~ 13:00</option>
               <option>13:30 ~ 13:00</option>
             </select>
           </div>
+          <label>
+            Pick your favorite flavor:
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option value="grapefruit">Grapefruit</option>
+              <option value="lime">Lime</option>
+              <option value="coconut">Coconut</option>
+              <option value="mango">Mango</option>
+            </select>
+          </label>
         </div>
 
         {/* handleChange(event) {
@@ -192,3 +196,32 @@ function ChaCartStepCardStep2(props) {
   );
 }
 export default ChaCartStepCardStep2;
+// {
+//   "sid": 8,
+/////////////////   "order_sid": 1,
+/////////////////   "product_sid": 111,
+/////////////////   "product_amount": 11,
+//   "product_name": "玫瑰岩鹽烤雞",
+//   "product_price": 150
+// },
+
+//   /*
+//   <select
+// className=
+// value={country}
+// onChange={(e) => {
+//   // 將字串轉成數字
+//   setCountry(+e.target.value);
+//   // 重置township的值
+//   setTownship(-1);
+// }}
+// >
+// <option value={-1}>選擇縣市</option>
+
+// {countries.map((v, i) => (
+//   <option key={i} value={i}>
+//     {v}
+
+//   </option>
+// ))}
+// </select>

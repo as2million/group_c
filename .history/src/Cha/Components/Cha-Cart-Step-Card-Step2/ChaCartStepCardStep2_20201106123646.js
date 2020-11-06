@@ -18,7 +18,7 @@ function ChaCartStepCardStep2(props) {
     setHours(setMinutes(new Date(), 30), 11)
   );
   const [takeTime, setTakeTime] = useState('');
-  const { setStep2Data } = props;
+  const { setStep2 } = props;
   // GET會員資料
   async function getMemberDataFromServer() {
     const url = 'http://localhost:5000/cart-api/get-member';
@@ -40,7 +40,7 @@ function ChaCartStepCardStep2(props) {
     setMobile(data[0].mobile);
     // setTakeWay(data[0].take_way);
     setAddress(data[0].address);
-    setMemberSid(data[0].sid);
+    setMemberSid(data[0].member_sid);
     setBeastieCoin(data[0].beastie_coin);
   }
 
@@ -48,18 +48,15 @@ function ChaCartStepCardStep2(props) {
   useEffect(() => {
     getMemberDataFromServer();
   }, []);
-
-  // 彙整要POST的資料
-  // setStep2Data({
-  //   member_sid: memberSid,
-  //   name: name,
-  //   mobile: mobile,
-  //   address: address,
-  //   beastie_coin: beastieCoin,
-  //   take_date: startDate,
-  //   take_time: takeTime,
-  // });
-
+  const step2Data = {
+    member_sid: memberSid,
+    name: name,
+    mobile: mobile,
+    address: address,
+    beastie_coin: beastieCoin,
+    take_date: startDate,
+    take_time: takeTime,
+  };
   return (
     <>
       <div className="cha-main-card cha-main-card-step2">

@@ -7,7 +7,7 @@ function ChaCartSubmitCard(props) {
   const { mealsDisplay, step2Data } = props;
   const [shipping, setShipping] = useState(0);
   const [beastieCoin, setBeastieCoin] = useState(60);
-  const [tableware, setTableware] = useState('');
+  const [tableware, setTableware] = useState();
   const [submitData, setSubmitData] = useState({});
 
   // 計算商品總量
@@ -108,7 +108,7 @@ function ChaCartSubmitCard(props) {
                 onChange={(e) => {
                   setTableware(e.target.value);
                 }}
-                checked={tableware === 'yes'}
+                checked={yes === 'female'}
               />
               附餐具
             </lab>
@@ -120,7 +120,7 @@ function ChaCartSubmitCard(props) {
                 onChange={(e) => {
                   setTableware(e.target.value);
                 }}
-                checked={tableware === 'no'}
+                checked={no === 'female'}
               />
               不附餐具
             </lab>
