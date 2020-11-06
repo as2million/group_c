@@ -7,7 +7,7 @@ import Button from './Button/Button'
 import ButtonLogin from './Button/ButtonLogin'
 
 function IrisLoginCard(props) {
-  const { setIsLogin } = props
+  const { setIsLogin, setCurrentUser } = props
 
   // 變成註冊表單
   const ToRegisterForm = () => {
@@ -88,7 +88,8 @@ function IrisLoginCard(props) {
         userpassword === userinfo[i].password
       ) {
         setIsLogin(true)
-        alert('登入成功')
+        setCurrentUser(useraccount)
+        alert(useraccount + '登入成功')
       }
     }
   }

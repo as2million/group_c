@@ -36,6 +36,7 @@ function App() {
   // login modal
   const [isLogin, setIsLogin] = useState(false)
   const [showLoginModal, setShowLoginModal] = useState(false)
+  const [currentUser, setCurrentUser] = useState()
 
   return (
     // <Router>元件一定要放在最外層
@@ -71,22 +72,22 @@ function App() {
           {/* iris */}
           {/* 放"page資料夾"內的元件 */}
           <Route exact path="/memberUserprofile">
-            <IrisUserprofile isLogin={isLogin} />
+            <IrisUserprofile isLogin={isLogin} currentUser={currentUser} />
           </Route>
           <Route exact path="/orderComment">
-            <IrisOrderComment isLogin={isLogin} />
+            <IrisOrderComment isLogin={isLogin} currentUser={currentUser} />
           </Route>
           <Route exact path="/myFav">
-            <IrisMyFav isLogin={isLogin} />
+            <IrisMyFav isLogin={isLogin} currentUser={currentUser} />
           </Route>
           <Route exact path="/beastiePoint">
-            <IrisBeastiePoint isLogin={isLogin} />
+            <IrisBeastiePoint isLogin={isLogin} currentUser={currentUser} />
           </Route>
           <Route path="/getCoupon">
-            <IrisGetCoupon isLogin={isLogin} />
+            <IrisGetCoupon isLogin={isLogin} currentUser={currentUser} />
           </Route>
           <Route path="/orderManagement">
-            <IrisOrderManagement isLogin={isLogin} />
+            <IrisOrderManagement isLogin={isLogin} currentUser={currentUser} />
           </Route>
 
           {/* ru */}
@@ -139,6 +140,7 @@ function App() {
           showLoginModal={showLoginModal}
           setShowLoginModal={setShowLoginModal}
           setIsLogin={setIsLogin}
+          setCurrentUser={setCurrentUser}
         />
       </>
     </Router>
