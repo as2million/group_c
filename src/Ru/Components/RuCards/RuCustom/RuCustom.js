@@ -81,8 +81,7 @@ function RuCustom() {
     // 來源 - 開始拖曳時
     function dragStart(e) {
       console.log('dragStart', e.target.id)
-      e.dataTransfer.setData('text/plain', e.target.id)
-      console.log(e.dataTransfer.setData('text/plain', e.target.id))
+      e.dataTransfer.setData('text/plain', e.target.id) // 把 source 的id往drop事件傳遞
     }
 
     // 來源 - 拖曳中時
@@ -108,28 +107,72 @@ function RuCustom() {
 
     // 目的地 - 放下時
     function dropped(e) {
-      console.log('dropped')
-      console.log(e.target)
+      // console.log('dropped')
+      // console.log(e.target)
       //增刪元素
+      console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
       if (
+        // 放到這些區域可以丟棄該品項
         e.target === $dropTarget ||
         e.target === dropOutAreaA ||
         e.target === dropOutAreaB ||
         e.target === dropOutAreaC
       ) {
-        setImgA()
+        // switch (e.target) {
+        //   case boxA:
+        //     setImgA()
+        //     break
+        //   case 'ru-veg-2':
+        //     setImgA(cabageAfter)
+        //     break
+        //   case 'ru-veg-3':
+        //     setImgA(cornAfter)
+        // }
       } else if (e.target === boxA) {
-        setImgA(cauliflowerAfter)
+        // 如果放開滑鼠的地方是在 boxA 身上
+        switch (e.dataTransfer.getData('text/plain', e.target.id)) {
+          case 'ru-veg-1':
+            setImgA(cauliflowerAfter)
+            break
+          case 'ru-veg-2':
+            setImgA(cabageAfter)
+            break
+          case 'ru-veg-3':
+            setImgA(cornAfter)
+            break
+        }
       } else if (e.target === boxB) {
-        setImgB(cauliflowerAfter)
+        // 如果放開滑鼠的地方是在 boxB 身上
+        switch (e.dataTransfer.getData('text/plain', e.target.id)) {
+          case 'ru-veg-1':
+            setImgB(cauliflowerAfter)
+            break
+          case 'ru-veg-2':
+            setImgB(cabageAfter)
+            break
+          case 'ru-veg-3':
+            setImgB(cornAfter)
+            break
+        }
       } else if (e.target === boxC) {
-        setImgC(cauliflowerAfter)
+        // 如果放開滑鼠的地方是在 boxC 身上
+        switch (e.dataTransfer.getData('text/plain', e.target.id)) { // 當source的id是 
+          case 'ru-veg-1': // 'ru-veg-1'
+            setImgC(cauliflowerAfter)  // 就改變STATE值
+            break
+          case 'ru-veg-2':
+            setImgC(cabageAfter)
+            break
+          case 'ru-veg-3':
+            setImgC(cornAfter)
+            break
+        }
       } else if (e.target === boxD) {
-        setImgD(cauliflowerAfter)
+        // 邏輯同上 待補
       } else if (e.target === boxE) {
-        setImgE(cauliflowerAfter)
+        // 邏輯同上 待補
       } else if (e.target === boxF) {
-        setImgF(cauliflowerAfter)
+        // 邏輯同上 待補
       }
       // let id = e.dataTransfer.getData('text/plain')
     }
