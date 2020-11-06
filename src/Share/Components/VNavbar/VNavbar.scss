@@ -41,8 +41,9 @@ $deepYello: #f5a016;
 
 .calendar-jan {
   input {
-    border: 1px solid $gray;
+    border: 1px solid #dcdcdc;
     border-radius: 3px;
+    height: 2.2rem;
   }
   input:focus {
     outline: none;
@@ -52,17 +53,9 @@ $deepYello: #f5a016;
 .react-datepicker {
   border-radius: 0.5px;
 }
-.react-datepicker__header.react-datepicker__header--has-time-select {
-  background-color: $skin;
-}
-.react-datepicker__header.react-datepicker__header--time {
-  background-color: $skin;
-}
-.react-datepicker__day--selected {
-  background-color: $orange;
-}
-li.react-datepicker__time-list-item--selected {
-  background-color: $orange;
+
+.form-control.select-time-jan {
+  width: 14rem;
 }
 
 .icons-jan {
@@ -77,8 +70,9 @@ li.react-datepicker__time-list-item--selected {
 }
 
 .address-input-jan {
-  height: 2.5rem;
-  width: 25rem;
+  font-size: 1.5rem;
+  color: #858585;
+  margin: 0;
 }
 .address-input-jan:focus {
   border: 1px solid $gray;

@@ -61,11 +61,11 @@ $lightBrown: #f7ede2;
   margin: 1.5rem;
   cursor: pointer;
 }
-.jan-adress-tab {
+.jan-address-tab {
   width: 85rem;
   height: 60rem;
 }
-.jan-adress-tab-menu {
+.jan-address-tab-menu {
   display: flex;
   list-style: none;
   text-align: center;
@@ -83,7 +83,7 @@ $lightBrown: #f7ede2;
     font-size: 2rem;
   }
 }
-.jan-tab-adress-form-wrap {
+.jan-tab-address-form-wrap {
   width: 30rem;
   height: 50rem;
   // border: 1px solid $orange;
@@ -94,7 +94,7 @@ $lightBrown: #f7ede2;
   font-weight: 500;
   color: $deepYello;
 }
-.jan-adress-radio {
+.jan-address-radio {
   color: $gray;
   font-size: 1.4rem;
   font-family: 'Noto Sans TC', sans-serif;
@@ -109,14 +109,14 @@ $lightBrown: #f7ede2;
 }
 
 @media screen and (max-width: 376px) {
-  .jan-adress-select select {
+  .jan-address-select select {
     font-size: 1.4rem;
     border-radius: 1.5rem;
     height: 3rem;
   }
 }
 
-.jan-adress-select .iris-mainpage-whitebox {
+.jan-address-select .iris-mainpage-whitebox {
   border-radius: 2.5rem;
   height: 4.6rem;
   width: 4.6rem;
@@ -129,7 +129,7 @@ $lightBrown: #f7ede2;
 }
 
 @media screen and (max-width: 376px) {
-  .jan-adress-select .iris-mainpage-whitebox {
+  .jan-address-select .iris-mainpage-whitebox {
     border-radius: 1.5rem;
     height: 2.6rem;
     width: 2.7rem;
@@ -142,7 +142,7 @@ $lightBrown: #f7ede2;
   }
 }
 
-.jan-adress-select .iris-selectbar-wrapper .iris-mainpage-trianglearrow {
+.jan-address-select .iris-selectbar-wrapper .iris-mainpage-trianglearrow {
   background: url('../../../Share/image/triangleArrow.svg') cover center
     no-repeat;
   background-size: auto;
@@ -153,7 +153,7 @@ $lightBrown: #f7ede2;
   fill: #c9c9c9;
 }
 @media screen and (max-width: 376px) {
-  .jan-adress-select
+  .jan-address-select
     > .iris-mainpage-select-wrapper
     > .iris-selectbar-wrapper
     > .iris-mainpage-trianglearrow {
@@ -165,26 +165,26 @@ $lightBrown: #f7ede2;
   }
 }
 
-.jan-adress-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper {
+.jan-address-select > .iris-mainpage-select-wrapper > .iris-selectbar-wrapper {
   width: 16.7rem;
   position: relative;
 }
 
-.jan-adress-input .iris-inputH50 {
+.jan-address-input .iris-inputH50 {
   font-size: 2rem;
   border-radius: 2.5rem;
   height: 5rem;
 }
 
 @media screen and (max-width: 376px) {
-  .jan-adress-input > .iris-inputH50 {
+  .jan-address-input > .iris-inputH50 {
     font-size: 1.4rem;
     border-radius: 1.5rem;
     height: 3rem;
   }
 }
 
-.jan-adress-button button {
+.jan-address-button button {
   width: 12rem;
   height: 4.5rem;
   font-size: 1.5rem;
@@ -195,7 +195,7 @@ $lightBrown: #f7ede2;
   font-weight: 400;
   color: $gray;
 }
-.jan-tab-adress-map {
+.jan-tab-address-map {
   width: 60rem;
   height: 53.5rem;
   border: 1px solid #ccc;

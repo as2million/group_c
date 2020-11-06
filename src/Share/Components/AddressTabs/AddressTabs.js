@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { Tabs, Sonnet, Tab, Container } from 'react-bootstrap'
-import './AdressTabs.scss'
-import MainPageSelectBox from 'Share/Components/Input/MainPageSelectBox'
+import './AddressTabs.scss'
 import Button from 'Share/Components/Button/Button'
 
-function AdressTabs(props) {
-  const { placeholder, type, id } = props
-  const { closeModal } = props
-  const { adress } = props
-  // 使用的時候，
-  // 幫我在你原本頁面中最外面容器，
-  // 加上position-relative，
-  // 切換選單就會正常出現～～
+function AddressTabs(props) {
+  const { placeholder, closeModal } = props
+  const { address, setAddress } = props
 
   // Acomponent
   const ComponentA = (props) => {
+    const [tabInput, setTabInput] = useState(address)
+    setAddress(tabInput)
     return (
       <div className="component d-flex justify-content-between align-items-center ">
-        <div className="jan-tab-adress-form-wrap">
+        <div className="jan-tab-address-form-wrap">
           <div className="p-5">
-            <form name="jan-adress-form" id="jan-adress-form">
+            <form name="jan-address-form" id="jan-address-form">
               <p className="jan-form-announce">請填寫地址，查看免運金額</p>
-              <div className="jan-adress-radio">
+              <div className="jan-address-radio">
                 <input type="radio" name="location" value="tc" /> 台北市
                 <input
                   className="ml-5"
@@ -32,7 +28,7 @@ function AdressTabs(props) {
                 新北市
               </div>
               <br />
-              <div className="jan-adress-select">
+              <div className="jan-address-select">
                 <div className="iris-mainpage-select-wrapper d-flex">
                   <div className="iris-selectbar-wrapper">
                     <select
@@ -50,19 +46,19 @@ function AdressTabs(props) {
               </div>
 
               <br />
-              <div className="jan-adress-input">
+              <div className="jan-address-input">
                 <input
                   className="form-control iris-inputH50"
-                  type={type}
+                  type="text"
                   placeholder={placeholder}
-                  id={id}
-                  value={adress}
+                  value={tabInput}
+                  onChange={(e) => setTabInput(e.target.value)}
                 />
               </div>
 
               <br />
-              <div className="jan-adress-button float-right">
-                <Button className="button-btn-y " text="確認送出" />
+              <div className="jan-address-button float-right">
+                <Button className="button-btn-y " text="查詢結果" />
               </div>
             </form>
           </div>
@@ -72,7 +68,7 @@ function AdressTabs(props) {
             </p>
           </div>
         </div>
-        <div className="jan-tab-adress-map"></div>
+        <div className="jan-tab-address-map"></div>
       </div>
     )
   }
@@ -111,7 +107,6 @@ function AdressTabs(props) {
     )
   }
 
-  //
   const setTabActive = (addElem, removeName) => {
     let removeTargets = document.querySelectorAll(removeName)
     removeTargets.forEach((target) => {
@@ -125,12 +120,12 @@ function AdressTabs(props) {
     const [component, setComponent] = React.useState(<ComponentA />)
 
     const tabContentA = (e) => {
-      setTabActive(e.target, '.jan-adress-tab-menu__item')
+      setTabActive(e.target, '.jan-address-tab-menu__item')
       setComponent(<ComponentA />)
     }
 
     const tabContentB = (e) => {
-      setTabActive(e.target, '.jan-adress-tab-menu__item')
+      setTabActive(e.target, '.jan-address-tab-menu__item')
       setComponent(<ComponentB name="B" />)
     }
 
@@ -138,15 +133,15 @@ function AdressTabs(props) {
       <div className="position-absolute position-fixed jan-tabs-bcc">
         <div className="jan-tabs">
           <div onClick={closeModal} className="jan-tabs-close"></div>
-          <div className="jan-adress-tab">
-            <ul className="jan-adress-tab-menu">
+          <div className="jan-address-tab">
+            <ul className="jan-address-tab-menu">
               <li
-                className="jan-adress-tab-menu__item active"
+                className="jan-address-tab-menu__item active"
                 onClick={tabContentA}
               >
                 我要外送
               </li>
-              <li className="jan-adress-tab-menu__item" onClick={tabContentB}>
+              <li className="jan-address-tab-menu__item" onClick={tabContentB}>
                 我要自取
               </li>
             </ul>
@@ -164,4 +159,4 @@ function AdressTabs(props) {
   )
 }
 
-export default AdressTabs
+export default AddressTabs

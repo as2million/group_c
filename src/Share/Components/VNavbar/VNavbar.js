@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import './VNavbar.scss'
 import { Navbar, Button } from 'react-bootstrap'
 import calendar from './calendar.svg'
+import clock from './clock.svg'
 import mapLocator from './mapLocator.svg'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { addDays, setHours, setMinutes } from 'date-fns'
 import { registerLocale } from 'react-datepicker'
 import { zhTW } from 'date-fns/esm/locale'
-import AdressTabs from '../AdressTabs/AdressTabs'
+import AddressTabs from '../AddressTabs/AddressTabs'
 registerLocale('zh-TW', zhTW)
 
 function VNavbar(props) {
@@ -17,9 +18,11 @@ function VNavbar(props) {
   )
   const [status, setStatus] = useState(false)
 
-  const [adress, setAdress] = useState([])
+  const [county, setCounty] = useState('')
+  const [district, setDistrict] = useState('')
+  const [address, setAddress] = useState('')
 
-  const adressData = (e) => {
+  const addressData = (e) => {
     //未登入=>顯示input框
     //已登入=>顯示member.id的地址
     fetch('http://localhost:5000/index/member_list', {
@@ -32,60 +35,70 @@ function VNavbar(props) {
       .then((r) => r.json())
 
       .then((obj) => {
-        // const newAdress = [...obj, ...adress]
-        // setAdress(newAdress)
-        // console.log(adress[0])
+        // const newAddress = [...obj, ...adress]
+        // setAddress(newAddress)
+        // console.log(address[0])
 
         console.log(obj)
-        setAdress(obj[0].address)
+        setAddress(obj[0].address)
+        setCounty(obj[0].county)
+        setDistrict(obj[0].district)
 
         // console.log(obj[0].address)
       })
   }
 
   useEffect(() => {
-    adressData()
+    addressData()
   }, [])
 
   return (
     <>
       {status && (
-        <AdressTabs
-          adress={adress}
+        <AddressTabs
+          address={address}
+          setAddress={setAddress}
+          // closeModal={setStatus(false)}
           closeModal={() => setStatus(false)}
-        ></AdressTabs>
+        ></AddressTabs>
       )}
       <Navbar className="vnavbar-jan d-flex flex-wrap justify-content-between fixed-top">
         <div className="jan-vnav-container d-flex flex-wrap justify-content-around align-content-center">
           <div className="d-flex align-items-center calendar-jan">
             <img alt="" src={calendar} className="icons-jan " />
-            <p className="titles-jan">選擇日期/時間：</p>
+            <p className="titles-jan">取餐日期：</p>
             <DatePicker
-              dateFormat="yyyy-MM-dd / HH:mm"
+              dateFormat="yyyy-MM-dd"
               selected={startDate}
               onChange={(date) => setStartDate(date)}
               minDate={Date.now()}
               maxDate={addDays(new Date(), 13)}
               locale="zh-TW"
-              showTimeSelect
-              timeFormat="HH:mm"
-              timeIntervals={30}
-              minTime={setHours(setMinutes(new Date(), 30), 11)}
-              maxTime={setHours(setMinutes(new Date(), 30), 19)}
-              timeCaption="time"
-              showDisabledMonthNavigation
             />
+          </div>
+
+          <div className="d-flex align-items-center time-jan">
+            <img alt="" src={clock} className="icons-jan " />
+            <p className="titles-jan">取餐時間：</p>
+            <select className="form-control select-time-jan">
+              <option selected>請選擇</option>
+              <option>11:00 ~ 11:30</option>
+              <option>11:30 ~ 12:00</option>
+              <option>12:30 ~ 13:00</option>
+              <option>13:30 ~ 13:00</option>
+            </select>
           </div>
 
           <div className="d-flex align-items-center">
             <img alt="" src={mapLocator} className="icons-jan" />
             <p className="titles-jan">取餐地址：</p>
-            <input
-              onClick={() => setStatus(true)}
-              className="address-input-jan"
-              placeholder={adress}
-            />
+            <p onClick={() => setStatus(true)} className="address-input-jan">
+              {county}
+              {district}
+              {address}
+            </p>
           </div>
+
           <div className="d-flex justify-content-end">
             <Button className="shop-btn-jan" onClick={() => setStatus(true)}>
               修改地址
