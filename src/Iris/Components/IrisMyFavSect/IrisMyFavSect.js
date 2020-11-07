@@ -1,3 +1,5 @@
+// correct
+
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { ReactComponent as WaveLine } from './Images/wave_line.svg'
@@ -43,8 +45,6 @@ function IrisDataEditSect(props) {
 
   // 新增最愛
   const addFav = (e) => {
-    console.log('!23')
-
     // 得到 product_sid
     const product_sid = e.target.className
     // console.log(product_sid)
@@ -58,6 +58,34 @@ function IrisDataEditSect(props) {
     fetch('http://localhost:5000/member/addMyFav', {
       method: 'POST',
       body: JSON.stringify(newFavItem),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+      .then((r) => r.json())
+      .then((o) => {
+        console.log(o)
+      })
+  }
+
+  // 刪除最愛
+  const deleteFav = (e) => {
+    console.log('delete')
+
+    // 得到 product_sid
+    const product_sid = e.target.className
+    // console.log(product_sid)
+
+    const itemToBeDelete = {
+      currentUser: currentUser,
+      product_sid: product_sid,
+    }
+    // console.log(newProfile)
+
+    fetch('http://localhost:5000/member/deleteMyFav', {
+      method: 'POST',
+      body: JSON.stringify(itemToBeDelete),
       headers: new Headers({
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -88,7 +116,15 @@ function IrisDataEditSect(props) {
                   imgId={item.img_classname}
                   // productSid={item.product_sid}
                 />
-                <div id="iris-card-delete">delete</div>
+                <div
+                  id="iris-card-delete"
+                  className={item.product_sid}
+                  onClick={(e) => {
+                    deleteFav(e)
+                  }}
+                >
+                  delete
+                </div>
                 <div
                   id="iris-card-add"
                   className={item.product_sid}
