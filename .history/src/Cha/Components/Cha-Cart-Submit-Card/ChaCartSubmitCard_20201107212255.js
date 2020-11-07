@@ -165,14 +165,14 @@ function ChaCartSubmitCard(props) {
               value="cha-monster-coin"
               id="cha-monster-coin"
             />
-            <label htmlFor="cha-monster-coin">使用怪獸幣</label>
+            <labe htmlFor="cha-monster-coin">使用怪獸幣</labe>
           </div>
           <div>-${beastieCoin}</div>
         </div>
         <div className="cha-horizontal-line"></div>
         <div className="cha-tableware">
           <div>
-            <label>
+            <lab>
               <input
                 type="radio"
                 name="tableware"
@@ -183,8 +183,8 @@ function ChaCartSubmitCard(props) {
                 checked={tableware === 'yes'}
               />
               附餐具
-            </label>
-            <label>
+            </lab>
+            <lab>
               <input
                 type="radio"
                 name="tableware"
@@ -195,7 +195,7 @@ function ChaCartSubmitCard(props) {
                 checked={tableware === 'no'}
               />
               不附餐具
-            </label>
+            </lab>
           </div>
         </div>
         <div className="cha-horizontal-line"></div>

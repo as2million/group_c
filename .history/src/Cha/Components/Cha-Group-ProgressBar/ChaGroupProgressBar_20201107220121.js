@@ -1,4 +1,4 @@
-import React from 'react';
+import Reactc from 'react';
 // import RightArrowWhite from 'Cha/Components/Cha-Group-ProgressBar/Images/right-arrow-white.svg'
 import './ChaGroupProgressBar.scss';
 import { Link } from 'react-router-dom';

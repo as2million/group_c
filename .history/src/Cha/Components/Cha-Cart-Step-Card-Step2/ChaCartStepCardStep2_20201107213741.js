@@ -113,13 +113,12 @@ function ChaCartStepCardStep2(props) {
             <select
               id="cha-step2-4-take-time"
               className="form-control cha-step2-4-take-time"
-              // defaultValue=""
-              value={takeTime}
+              // value={takeTime}
               onChange={(e) => {
                 setTakeTime(e.target.value);
               }}
             >
-              {/* <option selected>請選擇時間</option> */}
+              <option selected>請選擇時間</option>
               <option>11:00 ~ 11:30</option>
               <option>11:30 ~ 12:00</option>
               <option>12:30 ~ 13:00</option>
