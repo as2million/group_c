@@ -1,28 +1,22 @@
 import React, { useState, useEffect } from 'react'
+import { withRouter, useParams } from 'react-router-dom'
 import { Row, Col } from 'react-bootstrap'
 import { Rate } from 'antd'
 import 'antd/dist/antd.css'
 import './JessHeader.scss'
+import chickenpic from './Images/chickenRice02.jpg'
 import Counter from '../../../Share/Components/Counter/Counter'
 import AddCart from 'Share/Components/AddCart/AddCart'
 import BreadCrumb from '../JessBreadCrumb/BreadCrumb'
 import AddFavorite from 'Share/Components/AddFavorite/AddFavorite'
-import { data } from 'jquery'
 
-function JessProdoctList() {
-  // const adressData = (e) => {
-  //   fetch('http://localhost:5000/product/bento', {
-  //     method: 'GET',
-  //     headers: new Headers({
-  //       'Content-Type': 'application/json',
-  //     }),
-  //   })
-  //     .then((r) => r.json())
-
-  //     .then((obj) => {
-  //       console.log('test', obj)
-  //     })
-  // }
+function JessProdoctList(props) {
+  const [count, setCount] = useState(1)
+  const [total, setTotal] = useState(170)
+  console.log(props)
+  //useParams 設定id
+  let { id } = useParams()
+  // const { menu } = props
   const [menu, setMenu] = useState([])
   async function bentoData() {
     const url = 'http://localhost:5000/product/bento'
@@ -37,26 +31,36 @@ function JessProdoctList() {
 
     const response = await fetch(request)
     const data = await response.json()
-    // data會是一個array
-    // console.log(data)
-    // console.log(data[0].productname)
 
-    // setTotal(total.push(data))
-    // setTotal(data)
-    setMenu(data[0])
-    console.log()
+    // setMenu(data[0])
+    //這邊id值可以設定分頁
+    setMenu(data[id])
+    console.log(data)
   }
 
   useEffect(() => {
     bentoData()
   }, [])
 
+  const handleClick = (type) => {
+    if (type === 'increment') {
+      setCount(count + 1)
+    }
+    if (type === 'decrement' && count > 1) {
+      setCount(count - 1)
+    }
+  }
+  const handleTotal = (type) => {
+    if (total - 170 >= 0 && count > 0 && type === 'decrement') {
+      setTotal(total - 170)
+    }
+    if (type === 'increment') {
+      setTotal(total + 170)
+    }
+  }
+
   return (
     <>
-      {/* <div className="container jess-breadCrumb">
-        <BreadCrumb />
-      </div> */}
-      {/* <BreadCrumb className="jess-breadCrumb" /> */}
       <div className="jess-fluidBg">
         <div className="container jess-breadCrumb">
           <BreadCrumb />
@@ -68,6 +72,7 @@ function JessProdoctList() {
             className="jess-HeadPic"
             src={'/productImages/Bento/' + menu.img_id + '.jpg'}
           ></img>
+          <img className="jess-HeadPic" src={chickenpic}></img>
         </div>
         {/* <p>/productImages/Bento/{menu.img_id}.jpg</p> */}
 
@@ -99,12 +104,42 @@ function JessProdoctList() {
           </div>
           <hr />
           <div className="jess-productPrice">
-            <p className="jess-salePrice">{menu.price}</p>
+            <p className="jess-salePrice">${total}</p>
             <p className="jess-saleTotal">今日已售出58個</p>
           </div>
           <hr />
           <div className=" mt-5 d-flex justify-content-center">
-            <Counter />
+            <div className="counter-box">
+              <div
+                onClick={() => {
+                  handleClick('decrement')
+                  handleTotal('decrement')
+                  // if (count === 2) {
+                  //   setHoverBackgroundColor('white')
+                  //   setHoverMinusColor('#858585')
+                  // }
+                }}
+                className={
+                  count === 1
+                    ? 'counter-decrement cursor-default'
+                    : 'counter-decrement counter-hover'
+                }
+              >
+                <p>-</p>
+              </div>
+              <div className="counter-count">
+                <p>{count}</p>
+              </div>
+              <div
+                onClick={() => {
+                  handleClick('increment')
+                  handleTotal('increment')
+                }}
+                className="counter-increment"
+              >
+                <p>+</p>
+              </div>
+            </div>
           </div>
           <div className=" mt-5 d-flex justify-content-center">
             <AddCart />
@@ -115,4 +150,4 @@ function JessProdoctList() {
   )
 }
 
-export default JessProdoctList
+export default withRouter(JessProdoctList)

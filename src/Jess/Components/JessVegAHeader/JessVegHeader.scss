@@ -76,6 +76,7 @@ $font-size: 1rem;
   padding: 0.6rem;
   box-sizing: border-box;
   line-height: 2rem;
+  outline: none !important;
 }
 .jess-calendar.active {
   width: 5.5rem;
@@ -89,7 +90,9 @@ $font-size: 1rem;
   padding: 0.6rem;
   box-sizing: border-box;
   line-height: 2rem;
+  outline: none !important;
 }
+
 .jess-text20GreenTc {
   font-size: 2rem;
   font-family: 'Noto Sans TC';
@@ -116,11 +119,10 @@ hr {
   font-size: 1.3rem;
   text-align: center;
   padding: 0.6rem;
-  box-sizing: border-box;
   line-height: 2rem;
   &.active {
     background-color: $green;
-
+    outline: none !important;
     border: 0.1rem solid $green;
     color: $white;
   }

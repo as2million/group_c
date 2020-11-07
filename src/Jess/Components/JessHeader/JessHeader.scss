@@ -32,14 +32,16 @@ $font-size: 1rem;
 }
 //
 .jess-productList-chichenPic {
-  // background: url('./Images/chickenRice.jpg') no-repeat;
+  // background: url('./Images/chickenRice02.jpg') no-repeat;
   background-size: contain;
   background-position: center center;
   width: 87rem;
   height: 65rem;
   margin-right: 13.5rem;
   margin-top: 4rem;
-  overflow: hidden;
+  overflow: scroll;
+  // background-attachment: local;
+  background-attachment: scroll;
 }
 .jess-HeadPic {
   background-size: cover;

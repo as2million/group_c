@@ -25,6 +25,7 @@ import JessVegBox from 'Jess/Pages/JessVegBox'
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import ScrollToTop from '../src/Jess/Components/ScrollToTop'
 
 // 路由表
 function App() {
@@ -37,28 +38,28 @@ function App() {
         {/* 放切頁時不重新渲染的部份 e*/}
 
         {/* 路由設定開始 */}
-        <Switch>
-          {/* janice */}
-          {/* 放"page資料夾"內的元件 */}
-          <Route exact path="/">
-            {/* <JanIndex /> */}
-          </Route>
+        <ScrollToTop>
+          <Switch>
+            {/* janice */}
+            {/* 放"page資料夾"內的元件 */}
+            <Route exact path="/">
+              {/* <JanIndex /> */}
+            </Route>
 
-          {/* jess */}
-          {/* 放"page資料夾"內的元件 */}
-          <Route path="/menu">
-            <JessMenu />
-          </Route>
-          <Route path="/bento">
-            <JessBento />
-          </Route>
-          <Route path="/vegBox">
-            <JessVegBox />
-          </Route>
+            {/* jess */}
+            {/* 放"page資料夾"內的元件 */}
+            <Route path="/menu">
+              <JessMenu />
+            </Route>
+            <Route path="/bento/:id?" component={JessBento} />
+            {/* <JessBento /> */}
+            <Route path="/vegBox">
+              <JessVegBox />
+            </Route>
 
-          {/* iris */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/memberUserprofile">
+            {/* iris */}
+            {/* 放"page資料夾"內的元件 */}
+            {/* <Route exact path="/memberUserprofile">
             <IrisUserprofile />
           </Route>
           <Route exact path="/orderComment">
@@ -71,15 +72,15 @@ function App() {
             <IrisBeastiePoint />
           </Route> */}
 
-          {/* ru */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/productList">
+            {/* ru */}
+            {/* 放"page資料夾"內的元件 */}
+            {/* <Route exact path="/productList">
             <RuProudctList />
           </Route> */}
 
-          {/* cha */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/cart">
+            {/* cha */}
+            {/* 放"page資料夾"內的元件 */}
+            {/* <Route exact path="/cart">
             <ChaCart />
           </Route>
           <Route exact path="/groupOrder/groupOrderCreate">
@@ -89,21 +90,22 @@ function App() {
             <ChaOrderManagement />
           </Route> */}
 
-          {/* claudia */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/farmMap">
+            {/* claudia */}
+            {/* 放"page資料夾"內的元件 */}
+            {/* <Route exact path="/farmMap">
             <ClaudiaFarmIndex />
           </Route>
           <Route exact path="/farmIntro">
             <ClaudiaFarmDetailedPage />
           </Route> */}
 
-          {/* 404 */}
+            {/* 404 */}
 
-          {/* <Route exact path="*">
+            {/* <Route exact path="*">
             <NotFoundPage />
           </Route> */}
-        </Switch>
+          </Switch>
+        </ScrollToTop>
         {/* 路由設定結束 */}
 
         {/* 放切頁時不重新渲染的部份 s*/}

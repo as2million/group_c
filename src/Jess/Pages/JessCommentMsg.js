@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../Components/JessCommentMsg/JessCommentInput.scss'
 import IrisMemberMenu from '../../Iris/Components/IrisMemberMenuSect/IrisMemberMenuSect'
 import JessCommentInput from '../Components/JessCommentMsg/JessCommentInput'
@@ -6,40 +6,33 @@ import JessCommentList from '../Components/JessCommentMsg/JessCommentList'
 
 function JessMenu(props) {
   const [textInput, setTextInput] = useState('')
-  const [comments, setComments] = useState([
-    { id: 1, text: '買iphone 12', time: '2020/11/02' },
-    { id: 2, text: '學好react', time: '2020/11/02' },
-  ])
-  const handleEditedToggle = (id) => {
-    // 先複製一個新的todos陣列
-    const newComments = [...comments]
-    const commentItemIndex = newComments.findIndex((item) => item.id === id)
+  const [comments, setComments] = useState([])
 
-    if (commentItemIndex !== -1) {
-      newComments[commentItemIndex].edited = !newComments[commentItemIndex]
-        .edited
+  async function messageData() {
+    const url = 'http://localhost:5000/product/member1msg'
 
-      setComments(newComments)
-    }
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    const response = await fetch(request)
+    const data = await response.json()
+    // data會是一個array
+    console.log(data[0].created_at)
+    // console.log(data[0].productname)
+
+    // setTotal(total.push(data))
+    // setTotal(data)
+    setComments(data)
+    // console.log(data)
   }
-
-  const handleEditedSave = (id, newText) => {
-    const newComments = [...comments]
-    const commentItemIndex = newComments.findIndex((item) => item.id === id)
-    if (commentItemIndex !== -1) {
-      newComments[commentItemIndex].text = newText
-      setComments(newComments)
-      handleEditedToggle(id)
-    }
-  }
-
-  const handleDelete = (id) => {
-    //建立一個新的陣列，其中"不包含要被移除的項目(用filter)
-    const newComments = comments.filter((item, index) => item.id !== id)
-
-    // 設定回原本的todos
-    setComments(newComments)
-  }
+  useEffect(() => {
+    messageData()
+  }, [])
 
   return (
     <>
@@ -58,12 +51,7 @@ function JessMenu(props) {
             />
             <div className="jess-inputBorder"></div>
             <div className="jess-commentBox">
-              <JessCommentList
-                comments={comments}
-                handleEditedToggle={handleEditedToggle}
-                handleDelete={handleDelete}
-                handleEditedSave={handleEditedSave}
-              />
+              <JessCommentList comments={comments} />
             </div>
           </div>
         </div>

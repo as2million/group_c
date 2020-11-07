@@ -1,24 +1,43 @@
 import React, { useState, useEffect } from 'react'
 import './JessCommentInput.scss'
 import JessCommentList from '../../../Share/Components/Button/Button'
+import { now } from 'jquery'
 
 function JessCommentInput(props) {
-  const { textInput, setTextInput, comments, setComments } = props
+  const { textInput, setTextInput, comments, setComments, member_sid } = props
   // const [textInput, setTextInput] = useState('')
   // const [comments, setComments] = useState([
 
-  function handleSubmit(v) {
+  async function handleSubmit(v) {
     // e.preventDefault();
     if (textInput === '') {
       return false
     }
     const newItems = {
-      id: +new Date(),
-      text: textInput,
-      time: new Date().toLocaleString(),
+      product_sid: 1,
+      member_sid: 1,
+      content: textInput,
+      // created_at: new Date().format('YYYY-MM-DD HH:mm:ss'),
     }
+
     const newComments = [newItems, ...comments]
     setComments(newComments)
+    const url = 'http://localhost:5000/product/member1msg'
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(newItems),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    console.log(JSON.stringify(newItems))
+
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log('伺服器回傳的json資料', data)
+
     setTextInput('')
   }
 
@@ -36,9 +55,9 @@ function JessCommentInput(props) {
           if (e.key === 'Enter' && e.target.value) {
             // const newComments = [e.target.value, ...comments];
             const newItems = {
-              id: +new Date(),
-              text: e.target.value,
-              time: +new Date().toLocaleString(),
+              product_sid: 1,
+              member_sid: 1,
+              content: textInput,
             }
             const newComments = [newItems, ...comments]
             setComments(newComments)
@@ -53,20 +72,6 @@ function JessCommentInput(props) {
       >
         確認送出
       </button>
-      {/* </div> */}
-      {/* <div className="jess-inputBorder"></div>
-        <div className="jess-commentBox">
-          <ul className="jess-commentList">
-            {comments.map((value, index) => {
-              return (
-                <li key={value.text}>
-                  留言：{value.text}時間：{new Date().toLocaleString()}
-                </li>
-              )
-            })}
-          </ul>
-        </div> */}
-      {/* </div> */}
     </>
   )
 }

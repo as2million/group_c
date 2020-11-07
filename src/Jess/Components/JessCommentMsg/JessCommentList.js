@@ -11,9 +11,9 @@ function JessCommentList(props) {
         <ul>
           {comments.map((item, index) =>
             item.edited ? (
-              <JessCommentEdit key={item.id} comment={item} {...props} />
+              <JessCommentEdit key={item.sid} comment={item} {...props} />
             ) : (
-              <JessCommentItems key={item.id} comment={item} {...props} />
+              <JessCommentItems key={item.sid} comment={item} {...props} />
             )
           )}
         </ul>
