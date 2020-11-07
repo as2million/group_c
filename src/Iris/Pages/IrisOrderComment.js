@@ -12,7 +12,7 @@ function IrisOrderComment(props) {
     <>
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect currentUser={currentUser} />
-        <IrisOrderCommentSect />
+        <IrisOrderCommentSect currentUser={currentUser} />
       </div>
     </>
   )

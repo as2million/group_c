@@ -4,7 +4,6 @@ import { ReactComponent as WaveLine } from './Images/wave_line.svg'
 import { ReactComponent as IrisMemberLine } from './Images/iris_member_line.svg'
 import star from './Images/star.svg'
 import IrisTextArea from './IrisTextArea/IrisTextArea'
-import { id } from 'date-fns/locale'
 // import InputH40 from './../../../Share/Components/Input/InputH40';
 
 function IrisUserCommentSect(props) {
@@ -14,49 +13,31 @@ function IrisUserCommentSect(props) {
   // ---------- 改留言 ---------- //
   const changeComment = (e) => {
     // 測試: 得到top parent的id
-    const thisId = e.target.parentNode.parentNode.parentNode.id
+    // alert(e.target.parentNode.parentNode.parentNode.id);
 
     // 留言,編輯,刪除的字消失，出現輸入框
-    const originalComment = document.querySelector(
-      '#' + thisId + ' ' + '.iris-comment-text'
-    )
-    document.querySelector(
-      '#' + thisId + ' ' + '.iris-text-area .iris-textarea'
-    ).value = originalComment.innerText
+    const originalComment = document.querySelector('.iris-comment-text')
+    document.querySelector('.iris-text-area .iris-textarea').value =
+      originalComment.innerText
     console.log(originalComment.innerText)
-    const commentInput = document.querySelector(
-      '#' + thisId + ' ' + '.iris-text-area'
-    )
-    const editAndDelete = document.querySelector(
-      '#' + thisId + ' ' + '.iris-comment-edit-delete'
-    )
-    const commentUpdate = document.querySelector(
-      '#' + thisId + ' ' + '.iris-comment-update'
-    )
+    const commentInput = document.querySelector('.iris-text-area')
+    const editAndDelete = document.querySelector('.iris-comment-edit-delete')
+    const commentUpdate = document.querySelector('.iris-comment-update')
     originalComment.style.display = 'none'
     commentInput.style.display = 'block'
     editAndDelete.style.display = 'none'
     commentUpdate.style.display = 'block'
   }
 
-  // ------- 點確認讓輸入框消失並更新留言 -------- //
-  const doCommentUpdate = (e) => {
-    const thisId = e.target.parentNode.parentNode.id
-    const originalComment = document.querySelector(
-      '#' + thisId + ' ' + '.iris-comment-text'
-    )
-    const commentInput = document.querySelector(
-      '#' + thisId + ' ' + '.iris-text-area'
-    )
-    const editAndDelete = document.querySelector(
-      '#' + thisId + ' ' + '.iris-comment-edit-delete'
-    )
-    const commentUpdate = document.querySelector(
-      '#' + thisId + ' ' + '.iris-comment-update '
-    )
+  // ------- 輸入框消失，更新留言 -------- //
+  const doCommentUpdate = () => {
+    const originalComment = document.querySelector('.iris-comment-text')
+    const commentInput = document.querySelector('.iris-text-area')
+    const editAndDelete = document.querySelector('.iris-comment-edit-delete')
+    const commentUpdate = document.querySelector('.iris-comment-update ')
     console.log(commentInput.value)
     originalComment.innerText = document.querySelector(
-      '#' + thisId + ' ' + '.iris-text-area .iris-textarea'
+      '.iris-text-area .iris-textarea'
     ).value
     originalComment.style.display = 'block'
     commentInput.style.display = 'none'
@@ -64,7 +45,7 @@ function IrisUserCommentSect(props) {
     commentUpdate.style.display = 'none'
   }
 
-  // ------ 取得目前所有的投稿資料 ------- //
+  // --------- 取得目前所有的投稿資料 --------- //
   async function getAllCommentFromServer() {
     const url = 'http://localhost:5000/member/commetList'
 
@@ -87,30 +68,20 @@ function IrisUserCommentSect(props) {
     getAllCommentFromServer()
   }, [])
 
-  // --------- 過濾出現在使用者的投稿 --------- //
+  // 過濾出現在使用者的投稿
   const currentUserComment = allComment.filter(
     (allComment) => allComment.member === currentUser
   )
   console.log(currentUserComment)
 
-  // --------- 留言框內容Template --------- //
+  // 留言框內容Template
   const commentDisplay = currentUserComment.map((item, index) => {
-    // id不能是純數字，前面加commentId
-    const thisId = 'commentId' + item.sid
     return (
       <>
         <div className="iris-member-line"></div>
-        {/* 用'commentId'+資料庫的sid 當作comment box的id，不會重複 */}
-        <div
-          className="iris-comment-box d-flex"
-          id={thisId}
-          onClick={() => {
-            console.log(thisId)
-          }}
-        >
-          {/* <div className="iris-comment-box d-flex" id="comment1"> */}
+        <div className="iris-comment-box d-flex" id="comment1">
           <div className="iris-comment-img-warpper">
-            <img className="iris-comment-img" id={item.comment_img}></img>
+            <div className="iris-comment-img {item.img_classname}"></div>
           </div>
           <div className="iris-comment-section-wrapper">
             <div className="iris-comment-text-wrapper d-flex">
@@ -144,8 +115,8 @@ function IrisUserCommentSect(props) {
             </div>
             <span
               className="iris-comment-update"
-              onClick={(e) => {
-                doCommentUpdate(e)
+              onClick={() => {
+                doCommentUpdate()
               }}
             >
               確認

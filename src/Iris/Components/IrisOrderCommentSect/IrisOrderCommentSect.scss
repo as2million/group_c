@@ -52,63 +52,63 @@
 }
 
 // comment images
-.comment-img-1 {
+#comment-img-1 {
   background-image: url('./Images/item1.jpg');
   background-size: cover;
   background-position: 70% center;
   background-repeat: no-repeat;
 }
 
-.comment-img-2 {
+#comment-img-2 {
   background-image: url('./Images/item2.jpg');
   background-size: cover;
   background-position: 45% center;
   background-repeat: no-repeat;
 }
 
-.comment-img-3 {
+#comment-img-3 {
   background-image: url('./Images/item3.jpg');
   background-size: cover;
   background-position: 62.5% center;
   background-repeat: no-repeat;
 }
 
-.comment-img-4 {
+#comment-img-4 {
   background-image: url('./Images/item4.jpg');
   background-size: cover;
   background-position: 57.5% center;
   background-repeat: no-repeat;
 }
 
-.comment-img-5 {
+#comment-img-5 {
   background-image: url('./Images/item5.jpg');
   background-size: cover;
   background-position: 60% center;
   background-repeat: no-repeat;
 }
 
-.comment-img-6 {
+#comment-img-6 {
   background-image: url('./Images/item6.jpg');
   background-size: cover;
   background-position: 17.5% center;
   background-repeat: no-repeat;
 }
 
-.comment-img-7 {
+#comment-img-7 {
   background-image: url('./Images/item7.jpg');
   background-size: cover;
   background-position: 17.5% center;
   background-repeat: no-repeat;
 }
 
-.comment-img-8 {
+#comment-img-8 {
   background-image: url('./Images/item8.jpg');
   background-size: cover;
   background-position: 65% center;
   background-repeat: no-repeat;
 }
 
-.comment-img-9 {
+#comment-img-9 {
   background-image: url('./Images/item9.jpg');
   background-size: cover;
   background-position: 62.5% center;
@@ -135,6 +135,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  width: 80%;
 }
 .iris-comment-edit-delete {
   // background-color: #aff;
@@ -144,11 +145,11 @@
   right: 0;
   top: 0;
 }
-.iris-comment-edit-delete .comment-edit:hover {
+.iris-comment-edit-delete #comment-edit:hover {
   color: #f5a016;
   cursor: pointer;
 }
-.iris-comment-edit-delete .comment-delete:hover {
+.iris-comment-edit-delete #comment-delete:hover {
   color: #f5a016;
   cursor: pointer;
 }
