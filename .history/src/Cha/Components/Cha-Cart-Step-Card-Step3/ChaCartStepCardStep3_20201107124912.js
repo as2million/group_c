@@ -53,8 +53,8 @@ function ChaCartStepCardStep3(props) {
           <div className="cha-Credit-Card-flip">
             <div
               className={
-                !creditFlip
-                  ? 'cha-Credit-Card-all cha-Credit-Card-all-b1'
+                creditFlip
+                  ? 'cha-Credit-Card-all'
                   : 'cha-Credit-Card-all cha-Credit-Card-all-a1'
               }
             >
@@ -71,13 +71,7 @@ function ChaCartStepCardStep3(props) {
                 <span>{creditMonth}</span>/<span>{creditYear}</span>
               </div>
             </div>
-            <div
-              className={
-                !creditFlip
-                  ? 'cha-Credit-Card-all cha-Credit-Card-all-b2'
-                  : 'cha-Credit-Card-all cha-Credit-Card-all-a2'
-              }
-            >
+            <div className="cha-Credit-Card-all">
               <img
                 // src={ChaCreditCardFront}
                 src={ChaCreditCardBack}

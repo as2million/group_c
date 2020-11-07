@@ -7,81 +7,39 @@ import TWZipCode from './Cha-Address-Select/TWZipCode';
 import './ChaCartStepCardStep3.scss';
 
 function ChaCartStepCardStep3(props) {
-  const [creditNumber, setCreditNumber] = useState('');
-  const [numberPointText, setNumberPointText] = useState('●●●●●●●●●●●●');
-  const [creditMonth, setCreditMonth] = useState('●●');
-  const [creditYear, setCreditYear] = useState('●●');
-  const [creditFlip, setCreditFlip] = useState(false);
+  const [cardNumber, setCardNumber] = useState('');
+  const [pointText, setPointText] = useState('●●●●●●●●●●●●');
 
   // 信用卡號呈現效果
   function NumberShowInCard() {
-    if (creditNumber.length >= 0) {
-      let p = '';
-      let pl = 12 - creditNumber.length;
-      for (let i = 0; i < pl; i++) {
-        p += '●';
-      }
-      setNumberPointText(creditNumber + p);
+    if (cardNumber.length > 0) {
+      setPointText(pointText.slice(cardNumber.length))
     }
   }
-  useEffect(() => {
-    NumberShowInCard();
-  }, [creditNumber]);
-
-  // 聚焦後三碼輸入框時，翻到信用卡背面
-  let class1 = '';
-  let class2 = '';
-  function cardFlip1() {
-    class1 = ' cha-Credit-Card-all-a:nth-of-type(1)';
-    class2 = ' cha-Credit-Card-all-a:nth-of-type(2)';
-  }
-  function cardFlip2() {
-    class1 = '';
-    class2 = '';
-  }
-  // className={
-  //   mealsItem.productAmount === 1
-  //     ? 'cha-counter-decrement cha-cursor-default'
-  //     : 'cha-counter-decrement cha-counter-hover'
-  // }
   return (
     <>
       <div className="cha-main-card cha-main-card-step3">
         <div className="cha-step-header">步驟3：付費</div>
         {/* 信用卡圖片，開始 */}
-        <div className="cha-Credit-Card-div">
-          <div className="cha-Credit-Card-flip">
-            <div
-              className={
-                !creditFlip
-                  ? 'cha-Credit-Card-all cha-Credit-Card-all-b1'
-                  : 'cha-Credit-Card-all cha-Credit-Card-all-a1'
-              }
-            >
+        <div className="cha-Cha-Credit-Card-div">
+          <div className="cha-Cha-Credit-Card-flip">
+            <div className="cha-Cha-Credit-Card-all">
               <img
                 src={ChaCreditCardFront}
                 // src={ChaCreditCardBack}
-                className="cha-Credit-Card"
+                className="cha-Cha-Credit-Card"
                 alt="ChaCreditCart"
               ></img>
-              <div className="cha-card-number-on-picture">
-                {numberPointText}
-              </div>
+              <div className="cha-card-number-on-picture">{pointText}</div>
               <div className="cha-card-MONTH-YEAR-on-picture">
-                <span>{creditMonth}</span>/<span>{creditYear}</span>
+                <span>●●</span>/<span>●●</span>
               </div>
             </div>
-            <div
-              className={
-                !creditFlip
-                  ? 'cha-Credit-Card-all cha-Credit-Card-all-b2'
-                  : 'cha-Credit-Card-all cha-Credit-Card-all-a2'
-              }
-            >
+            <div className="cha-Cha-Credit-Card-all">
               <img
                 // src={ChaCreditCardFront}
                 src={ChaCreditCardBack}
-                className="cha-Credit-Card"
+                className="cha-Cha-Credit-Card"
                 alt="ChaCreditCart"
               ></img>
               <input
@@ -106,12 +64,13 @@ function ChaCartStepCardStep3(props) {
               type="text"
               className="form-control cha-step3-1-card-number"
               id="cha-step3-1-card-number"
-              maxLength="12"
+              name="cha-step3-1-card-number"
               placeholder="XXXX XXXX XXXX XXXX"
-              value={creditNumber}
+              value={cardNumber}
               onChange={(e) => {
-                setCreditNumber(e.target.value);
-              }}
+                setCardNumber(e.target.value)}
+                ()=>NumberShowInCard()
+              }
             />
           </div>
           {/* 月、年、後三碼 */}
@@ -124,9 +83,6 @@ function ChaCartStepCardStep3(props) {
                 className="form-control cha-step3-2-MONTH"
                 id="cha-step3-2-MONTH"
                 name="cha-step3-2-MONTH"
-                onChange={(e) => {
-                  setCreditMonth(e.target.value);
-                }}
               >
                 <option value="01">01</option>
                 <option value="02">02</option>
@@ -152,9 +108,6 @@ function ChaCartStepCardStep3(props) {
                 className="form-control cha-step3-3-YEAR"
                 id="cha-step3-3-YEAR"
                 name="cha-step3-3-YEAR"
-                onChange={(e) => {
-                  setCreditYear(e.target.value);
-                }}
               >
                 <option value="20">2020</option>
                 <option value="21">2021</option>
@@ -177,12 +130,6 @@ function ChaCartStepCardStep3(props) {
                 id="cha-step3-4-back-3number"
                 name="cha-step3-4-back-3number"
                 placeholder="請填寫後三碼"
-                onFocus={() => {
-                  setCreditFlip(true);
-                }}
-                onBlur={() => {
-                  setCreditFlip(false);
-                }}
               />
             </div>
           </div>

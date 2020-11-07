@@ -51,13 +51,12 @@ function ChaCartStepCardStep3(props) {
         {/* 信用卡圖片，開始 */}
         <div className="cha-Credit-Card-div">
           <div className="cha-Credit-Card-flip">
-            <div
-              className={
-                !creditFlip
-                  ? 'cha-Credit-Card-all cha-Credit-Card-all-b1'
-                  : 'cha-Credit-Card-all cha-Credit-Card-all-a1'
-              }
-            >
+            <div className={creditFlip ?"cha-Credit-Card-all":"cha-Credit-Card-all cha-Credit-Card-all-a1"}>
+            // className={
+  //   mealsItem.productAmount === 1
+  //     ? 'cha-counter-decrement cha-cursor-default'
+  //     : 'cha-counter-decrement cha-counter-hover'
+  // }
               <img
                 src={ChaCreditCardFront}
                 // src={ChaCreditCardBack}
@@ -71,13 +70,7 @@ function ChaCartStepCardStep3(props) {
                 <span>{creditMonth}</span>/<span>{creditYear}</span>
               </div>
             </div>
-            <div
-              className={
-                !creditFlip
-                  ? 'cha-Credit-Card-all cha-Credit-Card-all-b2'
-                  : 'cha-Credit-Card-all cha-Credit-Card-all-a2'
-              }
-            >
+            <div className="cha-Credit-Card-all">
               <img
                 // src={ChaCreditCardFront}
                 src={ChaCreditCardBack}

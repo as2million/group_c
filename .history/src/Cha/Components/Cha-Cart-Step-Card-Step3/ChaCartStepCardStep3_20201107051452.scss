@@ -95,63 +95,45 @@
   border-bottom: 0.1rem solid #8585853a;
 }
 
-.cha-Credit-Card {
+.cha-Cha-Credit-Card {
   width: 42rem;
 }
 
-.cha-Credit-Card-div {
+.cha-Cha-Credit-Card-div {
   display: flex;
   justify-content: center;
 
   margin-bottom: 4rem;
 }
 
-.cha-Credit-Card-flip {
+.cha-Cha-Credit-Card-flip {
   width: 42rem;
   height: 24rem;
   transform-style: preserve-3d;
 }
-.cha-Credit-Card-all {
+.cha-Cha-Credit-Card-all {
   position: absolute;
   left: 0;
   top: 0;
   backface-visibility: hidden;
 }
-.cha-Credit-Card-flip .cha-Credit-Card-all-b1 {
+.cha-Cha-Credit-Card-flip .cha-Cha-Credit-Card-all:nth-of-type(1) {
   // background: blue;
   transition: 0.5s transform;
 }
 
-.cha-Credit-Card-flip .cha-Credit-Card-all-b2 {
+.cha-Cha-Credit-Card-flip .cha-Cha-Credit-Card-all:nth-of-type(2) {
   // background: red;
   transform: rotateY(-180deg);
   transition: 0.5s transform;
 }
-// .cha-Credit-Card-flip .cha-Credit-Card-all:nth-of-type(1) {
-//   // background: blue;
-//   transition: 0.5s transform;
-// }
 
-// .cha-Credit-Card-flip .cha-Credit-Card-all:nth-of-type(2) {
-//   // background: red;
-//   transform: rotateY(-180deg);
-//   transition: 0.5s transform;
-// }
-
-// .cha-Credit-Card-flip:hover .cha-Credit-Card-all:nth-of-type(1) {
-//   transform: rotateY(180deg);
-// }
-// .cha-Credit-Card-flip:hover .cha-Credit-Card-all:nth-of-type(2) {
+.cha-Cha-Credit-Card-flip:hover .cha-Cha-Credit-Card-all:nth-of-type(1) {
+  transform: rotateY(180deg);
+}
+// .cha-Cha-Credit-Card-flip:hover .cha-Cha-Credit-Card-all:nth-of-type(2) {
 //   transform: rotateY(0deg);
 // }
-.cha-Credit-Card-flip .cha-Credit-Card-all-a1 {
-  transform: rotateY(180deg);
-  transition: 0.5s transform;
-}
-.cha-Credit-Card-flip .cha-Credit-Card-all-a2 {
-  transform: rotateY(0deg);
-  transition: 0.5s transform;
-}
 
 .cha-step3-5-receipt-div {
   display: flex;

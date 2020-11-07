@@ -41,7 +41,6 @@ function ChaCart(props) {
   useEffect(() => {
     getCartFromLocalStorage();
   }, []);
-
   // componentDidUpdate// 只要meals改變，就處理meals
   useEffect(() => {
     // mealsDisplay運算
@@ -75,7 +74,6 @@ function ChaCart(props) {
     // 只要meals改變，就處理meals
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
-
   // 新增LocalStorage
   const updateCartToLocalStorage = (value) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -120,8 +118,7 @@ function ChaCart(props) {
         </main>
         {/* 購物清單欄*/}
         <aside>
-          <ChaCartSubmitCard
-            // step1
+          <ChaCartSubmitCard // step1
             mealsDisplay={mealsDisplay}
             // step2
             memberSid={memberSid}

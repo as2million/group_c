@@ -4,20 +4,12 @@ import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
 import RequestToServer from 'Cha/RequestToServer';
 
 function ChaCartSubmitCard(props) {
-  const {
-    mealsDisplay,
-    memberSid,
-    name,
-    mobile,
-    address,
-    beastieCoin,
-    takeDate,
-    takeTime,
-  } = props;
+  const { mealsDisplay } = props;
+
   const [shipping, setShipping] = useState(0);
-  // const [beastieCoin, setBeastieCoin] = useState(60);
+  const [beastieCoin, setBeastieCoin] = useState(60);
   const [tableware, setTableware] = useState('');
-  // const [totalAmount, setTotalAmount] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(0);
   // const [subtotalPrice, setSubtotalPrice] = useState(0);
   // const [totalPrice, setTotalPrice] = useState(0);
   // fetch用
@@ -30,8 +22,8 @@ function ChaCartSubmitCard(props) {
     }
     return total;
   };
-  let totalAmount = calcuTotalAmount(mealsDisplay);
-  // setTotalAmount(calcuTotalAmount(mealsDisplay));
+  // let totalAmount = calcuTotalAmount(mealsDisplay);
+  setTotalAmount(calcuTotalAmount(mealsDisplay));
   // 計算商品價格小計
   const calcuSubtotalPrice = (items) => {
     let total = 0;

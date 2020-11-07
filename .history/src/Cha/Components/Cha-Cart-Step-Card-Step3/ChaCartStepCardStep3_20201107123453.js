@@ -11,7 +11,6 @@ function ChaCartStepCardStep3(props) {
   const [numberPointText, setNumberPointText] = useState('●●●●●●●●●●●●');
   const [creditMonth, setCreditMonth] = useState('●●');
   const [creditYear, setCreditYear] = useState('●●');
-  const [creditFlip, setCreditFlip] = useState(false);
 
   // 信用卡號呈現效果
   function NumberShowInCard() {
@@ -39,11 +38,6 @@ function ChaCartStepCardStep3(props) {
     class1 = '';
     class2 = '';
   }
-  // className={
-  //   mealsItem.productAmount === 1
-  //     ? 'cha-counter-decrement cha-cursor-default'
-  //     : 'cha-counter-decrement cha-counter-hover'
-  // }
   return (
     <>
       <div className="cha-main-card cha-main-card-step3">
@@ -51,17 +45,11 @@ function ChaCartStepCardStep3(props) {
         {/* 信用卡圖片，開始 */}
         <div className="cha-Credit-Card-div">
           <div className="cha-Credit-Card-flip">
-            <div
-              className={
-                !creditFlip
-                  ? 'cha-Credit-Card-all cha-Credit-Card-all-b1'
-                  : 'cha-Credit-Card-all cha-Credit-Card-all-a1'
-              }
-            >
+            <div className={'cha-Credit-Card-all' + class1 + class2}>
               <img
                 src={ChaCreditCardFront}
                 // src={ChaCreditCardBack}
-                className="cha-Credit-Card"
+                className={'cha-Credit-Card' + class1}
                 alt="ChaCreditCart"
               ></img>
               <div className="cha-card-number-on-picture">
@@ -71,13 +59,7 @@ function ChaCartStepCardStep3(props) {
                 <span>{creditMonth}</span>/<span>{creditYear}</span>
               </div>
             </div>
-            <div
-              className={
-                !creditFlip
-                  ? 'cha-Credit-Card-all cha-Credit-Card-all-b2'
-                  : 'cha-Credit-Card-all cha-Credit-Card-all-a2'
-              }
-            >
+            <div className="cha-Credit-Card-all">
               <img
                 // src={ChaCreditCardFront}
                 src={ChaCreditCardBack}
@@ -178,10 +160,10 @@ function ChaCartStepCardStep3(props) {
                 name="cha-step3-4-back-3number"
                 placeholder="請填寫後三碼"
                 onFocus={() => {
-                  setCreditFlip(true);
+                  cardFlip1();
                 }}
                 onBlur={() => {
-                  setCreditFlip(false);
+                  cardFlip2();
                 }}
               />
             </div>

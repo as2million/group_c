@@ -28,7 +28,17 @@ function ChaCart(props) {
 
   // 掛載就設定隱藏navbar
   useEffect(() => {
-    setShowBar(false);
+    setShowBa; // 資料，準備傳送給「我的訂單」
+    const [memberSid, setMemberSid] = useState('');
+    const [name, setName] = useState('');
+    const [mobile, setMobile] = useState('');
+    // const [takeWay, setTakeWay] = useState('');
+    const [address, setAddress] = useState('');
+    const [beastieCoin, setBeastieCoin] = useState('');
+
+    const [takeDate, setTakeDate] = useState('');
+    const [takeTime, setTakeTime] = useState('');
+    r(false);
   }, []);
 
   // 讀取LocalStorage
@@ -41,7 +51,6 @@ function ChaCart(props) {
   useEffect(() => {
     getCartFromLocalStorage();
   }, []);
-
   // componentDidUpdate// 只要meals改變，就處理meals
   useEffect(() => {
     // mealsDisplay運算
@@ -75,7 +84,6 @@ function ChaCart(props) {
     // 只要meals改變，就處理meals
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
-
   // 新增LocalStorage
   const updateCartToLocalStorage = (value) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -86,6 +94,48 @@ function ChaCart(props) {
     // // 設定資料
     setMeals(newCart);
   };
+
+  //   async function addUserToSever() {
+
+  //     const step2Data =  {
+  //         member_sid: memberSid,
+  //         order_state: "未送達",
+  //         order_name: name,
+  //         mobile:mobile,
+  //         take_way: takeWay,
+  //         take_address: address,
+  //         beastie_coin: beastieCoin,
+  //       };
+  // ///////////////   "toal_amount": 10,
+  // ///////////////   "subtoal_price": 1300,
+  // ///////////////   "shipping": 0,
+  // ///////////////   "beastie_coin": 10,
+  // ///////////////   "tableware": "是",
+  // ///////////////   "total_price": 1290,
+  // ///////////////   "take_date": "2020-11-02T16:00:00.000Z",
+  // ///////////////   "take_time": "12:00:00",
+  // ///////////////   "receipt": "二聯式發票",
+  // // },
+  //     // 連接的伺服器資料網址
+  //     const url = 'http://localhost:5555/users/';
+
+  //     // 注意資料格式要設定，伺服器才知道是json格式
+  //     const request = new Request(url, {
+  //       method: 'POST',
+  //       body: JSON.stringify(tep2Data),
+  //       headers: new Headers({
+  //         Accept: 'application/json',
+  //         'Content-Type': 'application/json',
+  //       }),
+  //     });
+
+  //     console.log(JSON.stringify(tep2Data));
+
+  //     const response = await fetch(request);
+  //     const data = await response.json();
+
+  //     console.log('伺服器回傳的json資料', data);
+  //     // 要等驗証過，再設定資料(簡單的直接設定)
   return (
     <>
       <ChaCartProgressBar {...props} />
@@ -96,42 +146,18 @@ function ChaCart(props) {
           <ChaCartStepCardStep1
             mealsDisplay={mealsDisplay}
             setMealsDisplay={setMealsDisplay}
+            // handleUpdateToLocalStorage={handleUpdateToLocalStorage}
+            // handleDemoMeals={handleDemoMeals}
             updateCartToLocalStorage={updateCartToLocalStorage}
           />
           {/* 步驟二 */}
-          <ChaCartStepCardStep2
-            memberSid={memberSid}
-            setMemberSid={setMemberSid}
-            name={name}
-            setName={setName}
-            mobile={mobile}
-            setMobile={setMobile}
-            address={address}
-            setAddress={setAddress}
-            beastieCoin={beastieCoin}
-            setBeastieCoin={setBeastieCoin}
-            takeDate={takeDate}
-            setTakeDate={setTakeDate}
-            takeTime={takeTime}
-            setTakeTime={setTakeTime}
-          />
+          <ChaCartStepCardStep2 />
           {/* 步驟三 */}
           <ChaCartStepCardStep3 />
         </main>
         {/* 購物清單欄*/}
         <aside>
-          <ChaCartSubmitCard
-            // step1
-            mealsDisplay={mealsDisplay}
-            // step2
-            memberSid={memberSid}
-            name={name}
-            mobile={mobile}
-            address={address}
-            beastieCoin={beastieCoin}
-            takeDate={takeDate}
-            takeTime={takeTime}
-          />
+          <ChaCartSubmitCard mealsDisplay={mealsDisplay} />
         </aside>
       </div>
     </>
