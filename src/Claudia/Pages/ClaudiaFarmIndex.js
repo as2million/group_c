@@ -12,13 +12,13 @@ function ClaudiaFarmIndex() {
 
     return (
         <>
-            {/* <ClaudiaMainContent>
+            <ClaudiaMainContent>
                 <ClaudiaIndexThemePic />
                 <ClaudiaIndexInducText />
                 <ClaudiaIndexContent />
             </ClaudiaMainContent>
-            <ScrollButtonGreen /> */}
-            <Test2 />
+            <ScrollButtonGreen />
+            {/* <Test2 /> */}
         </>
     )
 }

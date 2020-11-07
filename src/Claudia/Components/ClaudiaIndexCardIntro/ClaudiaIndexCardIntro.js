@@ -11,7 +11,8 @@ function ClaudiaIndexCardIntro(props) {
     const [imgPath, setImgPath] = useState('')
 
     const { data, buttonNum } = props;
-    console.log('buttonNum', buttonNum)
+
+    // console.log('buttonNum', buttonNum)
 
 
     //goback button
@@ -33,7 +34,7 @@ function ClaudiaIndexCardIntro(props) {
 
         //img //need to fix path
         let imgNum = data[buttonNum].sid;
-        document.getElementById('claudia-index-card-farm-intro-pic').src = `require(./Images/${imgNum}.jpg)`
+        // document.getElementById('claudia-index-card-farm-intro-pic').src = `require(./Images/${imgNum}.jpg)`
 
         //intro
         document.getElementById('claudia-index-card-intro-intro').innerHTML = `<b>${data[buttonNum].introduction}</b>`
