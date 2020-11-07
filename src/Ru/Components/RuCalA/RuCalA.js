@@ -2,22 +2,43 @@ import React, { useEffect, useState } from 'react'
 import './Style.scss'
 
 function RuCalA(props) {
-  const [Cal, setCal] = useState(0)
+  const {
+    riceName,
+    riceCal,
+    meetName,
+    meetCal,
+    eggName,
+    eggCal,
+    vegNameA,
+    vegCalA,
+    vegNameB,
+    vegCalB,
+    vegNameC,
+    vegCalC,
+  } = props
+  const [isShowTotal, setIsShowTotal] = useState(false) // 沒有品項時不出現總熱量
 
   useEffect(() => {
-    const $numbers = document.querySelectorAll(
-      '.ru-custom-containerA .ru-number'
-    )
-    const numberArr = [...$numbers]
-    // console.log($numbers, numberArr)
-    let total = 0
-    numberArr.map((item, i) => {
-      total += parseInt(item.innerHTML.replace('$', ''))
-    })
-    // console.log(total)
-    setCal(total)
-    return () => {}
-  }, [])
+    console.log('執行useEffect')
+    return () => {
+      setIsShowTotal(true) // 價格state變動後才渲染總價
+    }
+  }, [
+    isShowTotal,
+    riceName,
+    riceCal,
+    meetName,
+    meetCal,
+    eggName,
+    eggCal,
+    vegNameA,
+    vegCalA,
+    vegNameB,
+    vegCalB,
+    vegNameC,
+    vegCalC,
+  ])
+
   return (
     <>
       <div className="ru-info-item-container">
@@ -27,8 +48,8 @@ function RuCalA(props) {
             <div className="ru-category-container">
               <p className="ru-category">副食</p>
             </div>
-            <p className="ru-selectionName">香甜白飯</p>
-            <p className="ru-number">108kcal</p>
+            <p className="ru-selectionName">{riceName}</p>
+            <p className="ru-number">{riceCal}kcal</p>
           </li>
           {/* 詳細資料品項1 e */}
 
@@ -37,8 +58,8 @@ function RuCalA(props) {
             <div className="ru-category-container">
               <p className="ru-category">主食</p>
             </div>
-            <p className="ru-selectionName">慢煮嫩雞胸-蒜味香草</p>
-            <p className="ru-number">208kcal</p>
+            <p className="ru-selectionName">{meetName}</p>
+            <p className="ru-number">{meetCal}kcal</p>
           </li>
           {/* 詳細資料品項2 e */}
 
@@ -47,8 +68,8 @@ function RuCalA(props) {
             <div className="ru-category-container">
               <p className="ru-category">配菜</p>
             </div>
-            <p className="ru-selectionName">清炒高麗菜</p>
-            <p className="ru-number">58kcal</p>
+            <p className="ru-selectionName">{vegNameA}</p>
+            <p className="ru-number">{vegCalA}kcal</p>
           </li>
           {/* 詳細資料品項3 e */}
 
@@ -57,8 +78,8 @@ function RuCalA(props) {
             <div className="ru-category-container">
               <p className="ru-category">配菜</p>
             </div>
-            <p className="ru-selectionName">綠色嫩花椰</p>
-            <p className="ru-number">62kcal</p>
+            <p className="ru-selectionName">{vegNameB}</p>
+            <p className="ru-number">{vegCalB}kcal</p>
           </li>
           {/* 詳細資料品項4 e */}
 
@@ -67,8 +88,8 @@ function RuCalA(props) {
             <div className="ru-category-container">
               <p className="ru-category">配菜</p>
             </div>
-            <p className="ru-selectionName">黃金玉米</p>
-            <p className="ru-number">53kcal</p>
+            <p className="ru-selectionName">{vegNameC}</p>
+            <p className="ru-number">{vegCalC}kcal</p>
           </li>
           {/* 詳細資料品項5 e */}
 
@@ -77,8 +98,8 @@ function RuCalA(props) {
             <div className="ru-category-container">
               <p className="ru-category">蛋</p>
             </div>
-            <p className="ru-selectionName">水煮蛋</p>
-            <p className="ru-number">62kcal</p>
+            <p className="ru-selectionName">{eggName}</p>
+            <p className="ru-number">{eggCal}kcal</p>
           </li>
           {/* 詳細資料品項 e */}
         </ul>
@@ -89,7 +110,7 @@ function RuCalA(props) {
             <p className="ru-category">佔寬</p>
           </div>
           <h3>總熱量</h3>
-          <p>{Cal}kcal</p>
+          <p>{riceCal + meetCal + vegCalA + vegCalB + vegCalC + eggCal}kcal</p>
         </div>
       </div>
     </>

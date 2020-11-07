@@ -26,16 +26,21 @@ import egg from './Images/egg.svg'
 import eggAfter from './Images/eggAfter.svg'
 import poachedEgg from './Images/poachedEgg.svg'
 import poachedEggAfter from './Images/poachedEggAfter.svg'
+import rice from './Images/rice.svg'
+import riceAfter from './Images/riceAfter.svg'
+import shrimp from './Images/shrimp.svg'
+import shrimpAfter from './Images/shrimpAfter.svg'
 
 // 引用圖片
 import background from './Images/background.png'
 import { ReactComponent as LunchBox } from './Images/lunchBox.svg' // 將svg以元件方式引入
+import Product from 'Cha/pages-demo/Product'
 
 function RuCustom() {
   const [moveX, setMoveX] = useState(0) // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true) // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false) // 是否開啟營養標示
-  const [selection, setSelection] = useState('egg') // 選擇開啟哪個菜色選區
+  const [selection, setSelection] = useState('rice') // 選擇開啟哪個菜色選區
   const [limitX, setLimitX] = useState() // 右滑極限值(RuButtonB可以調不同選項區的極限值)
   const [imgA, setImgA] = useState()
   const [imgB, setImgB] = useState()
@@ -43,7 +48,37 @@ function RuCustom() {
   const [imgD, setImgD] = useState()
   const [imgE, setImgE] = useState()
   const [imgF, setImgF] = useState()
+  // 設定飯類容器的優先權
+  const [priority, setPriority] = useState('')
 
+  // RuRice資訊
+  const [update, setUpdata] = useState(false)
+  const [data, setData] = useState('')
+  // const [riceName1, setRiceName1] = useState('')
+  // const [ricePrice1, setRicePrice1] = useState('')
+  // const [riceCalories, setRiceCalories1] = useState('')
+  // const [riceCarbohydrate1, setRiceCarbohydrate1] = useState('')
+  // const [riceFat1, setRiceFat1] = useState('')
+
+  // 設定 今日菜色(價格) 資訊
+  const [riceName, setRiceName] = useState('')
+  const [ricePrice, setRicePrice] = useState(0)
+  const [riceCal, setRiceCal] = useState(0)
+  const [meetName, setMeetName] = useState('')
+  const [meetPrice, setMeetPrice] = useState(0)
+  const [meetCal, setMeetCal] = useState(0)
+  const [eggName, setEggName] = useState('')
+  const [eggPrice, setEggPrice] = useState(0)
+  const [eggCal, setEggtCal] = useState(0)
+  const [vegNameA, setVegNameA] = useState('')
+  const [vegPriceA, setVegPriceA] = useState(0)
+  const [vegCalA, setVegCalA] = useState(0)
+  const [vegNameB, setVegNameB] = useState('')
+  const [vegPriceB, setVegPriceB] = useState(0)
+  const [vegCalB, setVegCalB] = useState(0)
+  const [vegNameC, setVegNameC] = useState('')
+  const [vegPriceC, setVegPriceC] = useState(0)
+  const [vegCalC, setVegCalC] = useState(0)
   function switchPrice() {
     setIsPrice(true)
     setIsCal(false)
@@ -54,12 +89,40 @@ function RuCustom() {
     setIsCal(true)
   }
 
+  async function fetchApi() {
+    const url = 'http://localhost:5000/product/custom_list'
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    const response = await fetch(request)
+    const myJson = await response.json()
+    // data會是一個array
+    // console.log(data)
+    // console.log(data[0].productname)
+
+    // setTotal(total.push(data))
+    // setTotal(data)
+    setData(myJson)
+  }
+
   useEffect(() => {
-    console.log('執行useEffect')
+    fetchApi()
+  }, [])
+
+  useEffect(() => {
+    console.log(data)
+    // console.log('執行useEffect')
     // 品項置入便當盒 邏輯
     const items = document.querySelectorAll('.ru-items')
     // console.log(items)
     const puts = document.querySelectorAll('.ru-put')
+    const img = document.querySelector('#ru-areaF .ru-put')
     // console.log(puts)
     const $dropTarget = document.getElementById('ru-dropArea')
     const boxA = document.getElementById('ru-areaA')
@@ -87,6 +150,10 @@ function RuCustom() {
     // 來源 - 開始拖曳時
     function dragStart(e) {
       // console.log('dragStart', e.target.id)
+      if (e.target.classList.contains('ru-rice')) {
+        // 如果是白飯選區內的選項
+        setPriority('100') // 白飯容器就優先
+      }
       e.dataTransfer.setData('text/plain', e.target.id) // 把 source 的id往drop事件傳遞
     }
 
@@ -113,10 +180,12 @@ function RuCustom() {
 
     // 目的地 - 放下時
     function dropped(e) {
+      console.log(e.target)
       // console.log('dropped')
       // console.log(e.target, e.dataTransfer.getData('text/plain', e.target.id))
       //增刪元素
       console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
+      setPriority('0') // 白飯容器優先結束
       if (
         // 放到這些區域可以丟棄該品項
         e.target !== boxA &&
@@ -147,64 +216,115 @@ function RuCustom() {
             break
         }
       } else if (e.target === boxA) {
+        // 配菜A區
         // 如果放開滑鼠的地方是在 boxA 身上
         switch (e.dataTransfer.getData('text/plain', e.target.id)) {
-          case 'ru-veg-1':
+          case 'ru-veg-1': // 'ru-veg-1'
             setImgA(cauliflowerAfter)
+            setVegNameA('鮮綠花椰菜')
+            setVegPriceA(10)
+            // setVegCalA()
             break
           case 'ru-veg-2':
             setImgA(cabageAfter)
+            setVegNameA('清炒高麗菜')
+            setVegPriceA(10)
+            // setVegCalA()
             break
           case 'ru-veg-3':
             setImgA(cornAfter)
+            setVegNameA('黃金玉米粒')
+            setVegPriceA(10)
+            // setVegCalA()
             break
         }
       } else if (e.target === boxB) {
+        // 配菜B區
         // 如果放開滑鼠的地方是在 boxB 身上
         switch (e.dataTransfer.getData('text/plain', e.target.id)) {
-          case 'ru-veg-1':
+          case 'ru-veg-1': // 'ru-veg-1'
             setImgB(cauliflowerAfter)
+            setVegNameB('鮮綠花椰菜')
+            setVegPriceB(10)
+            // setVegCalB()
             break
           case 'ru-veg-2':
             setImgB(cabageAfter)
+            setVegNameB('清炒高麗菜')
+            setVegPriceB(10)
+            // setVegCalB()
             break
           case 'ru-veg-3':
             setImgB(cornAfter)
+            setVegNameB('黃金玉米粒')
+            setVegPriceB(10)
+            // setVegCalB()
             break
         }
       } else if (e.target === boxC) {
+        // 配菜C區
         // 如果放開滑鼠的地方是在 boxC 身上
         switch (
           e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
         ) {
           case 'ru-veg-1': // 'ru-veg-1'
-            setImgC(cauliflowerAfter) // 就改變STATE值
+            setImgC(cauliflowerAfter) // 就改變state值
+            setVegNameC('鮮綠花椰菜')
+            setVegPriceC(10)
+            // setVegCalC()
             break
           case 'ru-veg-2':
             setImgC(cabageAfter)
+            setVegNameC('清炒高麗菜')
+            setVegPriceC(10)
+            // setVegCalC()
             break
           case 'ru-veg-3':
             setImgC(cornAfter)
+            setVegNameC('黃金玉米粒')
+            setVegPriceC(10)
+            // setVegCalC()
             break
         }
-      } else if (e.target === boxD) {
-        // 邏輯同上 待補
-      } else if (e.target === boxE) {
-        // // 邏輯同上 待補
+      } else if (
+        e.target === boxD ||
+        e.target === boxE ||
+        e.target === boxF ||
+        e.target === img
+      ) {
+        // 白飯區
         switch (
           e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
         ) {
-          case 'ru-egg-1': // 'ru-veg-1'
+          case 'ru-rice-1': // 'ru-rice-1'
+            setImgD(riceAfter) // 就放入放置後圖片
+            setRiceName('香甜白飯')
+            setRicePrice(10)
+            setRiceCal(353)
+            break
+          // case 'ru-rice-2':
+          //   setImgD(riceAfter)
+          //   break
+          case 'ru-egg-1': // 'ru-egg-1'
             setImgE(eggAfter) // 就放入放置後圖片
+            setEggName('白煮蛋')
+            setEggPrice(10)
+            // setEggCal()
             break
           case 'ru-egg-2':
             setImgE(poachedEggAfter)
+            setEggName('溏心蛋')
+            setEggPrice(15)
+            // setEggCal()
+            break
+          case 'ru-meet-1': // 'ru-meet-1'
+            setImgF(shrimpAfter) // 就放入放置後圖片
+            setMeetName('火烤萊姆蝦')
+            setMeetPrice(60)
+            // setMeetCal()
             break
         }
-      } else if (e.target === boxF) {
-        // 邏輯同上 待補
       }
-      // let id = e.dataTransfer.getData('text/plain')
     }
 
     function dragleave(e) {
@@ -219,7 +339,7 @@ function RuCustom() {
       {/* <h1 style={{ textAlign: 'center', fontSize: '80px' }}>
         ----- 這頁是客製化便當 -----
       </h1> */}
-
+      {/* <div>123 {data[5].sid}</div> */}
       {/* 商品區 - 網頁版 s */}
       <div className="ru-custom-containerA" id="ru-dropArea">
         <div className="ru-custom-warp" id="ru-dropOutAreaA">
@@ -258,7 +378,7 @@ function RuCustom() {
                   </div>
                   {/* 放置菜色C區 e*/}
                   {/* 放置菜色D區 s*/}
-                  <div id="ru-areaD">
+                  <div id="ru-areaD" style={{ zIndex: priority }}>
                     <img
                       src={imgD}
                       draggable="true"
@@ -302,8 +422,38 @@ function RuCustom() {
                   </button>
                 </div>
                 <div className="ru-info-container">
-                  {isPrice && <RuPriceA />}
-                  {isCal && <RuCalA />}
+                  {isPrice && (
+                    <RuPriceA
+                      riceName={riceName}
+                      ricePrice={ricePrice}
+                      meetName={meetName}
+                      meetPrice={meetPrice}
+                      eggName={eggName}
+                      eggPrice={eggPrice}
+                      vegNameA={vegNameA}
+                      vegPriceA={vegPriceA}
+                      vegNameB={vegNameB}
+                      vegPriceB={vegPriceB}
+                      vegNameC={vegNameC}
+                      vegPriceC={vegPriceC}
+                    />
+                  )}
+                  {isCal && (
+                    <RuCalA
+                      riceName={riceName}
+                      riceCal={riceCal}
+                      meetName={meetName}
+                      meetCal={meetCal}
+                      eggName={eggName}
+                      eggCal={eggCal}
+                      vegNameA={vegNameA}
+                      vegCalA={vegCalA}
+                      vegNameB={vegNameB}
+                      vegCalB={vegCalB}
+                      vegNameC={vegNameC}
+                      vegCalC={vegCalC}
+                    />
+                  )}
                 </div>
                 <div className="ru-checkout-container">
                   <div className="ru-checkout-warp">

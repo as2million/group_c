@@ -12,7 +12,7 @@ function RuVegetableA() {
       3{/* 品項1 s*/}
       <li className="ru-species-item ru-species-item1">
         <div className="ru-species-img">
-          <img src={cauliflower} className="ru-items" id="ru-veg-1"></img>
+          <img src={cauliflower} className="ru-items ru-veg" id="ru-veg-1"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -32,7 +32,7 @@ function RuVegetableA() {
       {/* 品項2 s*/}
       <li className="ru-species-item ru-species-item2">
         <div className="ru-species-img">
-          <img src={cabage} className="ru-items" id="ru-veg-2"></img>
+          <img src={cabage} className="ru-items ru-veg" id="ru-veg-2"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -52,7 +52,7 @@ function RuVegetableA() {
       {/* 品項3 s*/}
       <li className="ru-species-item ru-species-item3">
         <div className="ru-species-img">
-          <img src={corn} className="ru-items" id="ru-veg-3"></img>
+          <img src={corn} className="ru-items ru-veg" id="ru-veg-3"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -72,7 +72,7 @@ function RuVegetableA() {
       {/* 品項4 s*/}
       <li className="ru-species-item ru-species-item4">
         <div className="ru-species-img">
-          <img src={cauliflower} className="ru-items" id="ru-veg-4"></img>
+          <img src={cauliflower} className="ru-items ru-veg" id="ru-veg-4"></img>
         </div>
         <div className="ru-species-info">
           <ul>
@@ -92,7 +92,7 @@ function RuVegetableA() {
       {/* 品項5 s*/}
       <li className="ru-species-item ru-species-item5">
         <div className="ru-species-img">
-          <img src={cauliflower} className="ru-items" id="ru-veg-5"></img>
+          <img src={cauliflower} className="ru-items ru-veg" id="ru-veg-5"></img>
         </div>
         <div className="ru-species-info">
           <ul>

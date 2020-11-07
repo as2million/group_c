@@ -2,22 +2,42 @@ import React, { useState, useEffect } from 'react'
 import './Style.scss'
 
 function RuPriceA(props) {
-  const [price, setPrice] = useState(0)
+  const {
+    riceName,
+    ricePrice,
+    meetName,
+    meetPrice,
+    eggName,
+    eggPrice,
+    vegNameA,
+    vegPriceA,
+    vegNameB,
+    vegPriceB,
+    vegNameC,
+    vegPriceC,
+  } = props
+  const [isShowTotal, setIsShowTotal] = useState(false) // 沒有品項時不出現總價
 
   useEffect(() => {
-    const $numbers = document.querySelectorAll(
-      '.ru-custom-containerA .ru-number'
-    )
-    const numberArr = [...$numbers]
-    // console.log($numbers, numberArr)
-    let total = 0
-    numberArr.map((item, i) => {
-      total += parseInt(item.innerHTML.replace('$', ''))
-    })
-    // console.log(total)
-    setPrice(total)
-    return () => {}
-  }, [])
+    console.log('執行useEffect')
+    return () => {
+      setIsShowTotal(true) // 價格state變動後才渲染總價
+    }
+  }, [
+    isShowTotal,
+    riceName,
+    ricePrice,
+    meetName,
+    meetPrice,
+    eggName,
+    eggPrice,
+    vegNameA,
+    vegPriceA,
+    vegNameB,
+    vegPriceB,
+    vegNameC,
+    vegPriceC,
+  ])
 
   return (
     <>
@@ -28,8 +48,8 @@ function RuPriceA(props) {
             <div className="ru-category-container">
               <p className="ru-category">副食</p>
             </div>
-            <p className="ru-selectionName">香甜白飯</p>
-            <p className="ru-number">$10</p>
+            <p className="ru-selectionName">{riceName}</p>
+            <p className="ru-number">${ricePrice}</p>
           </li>
           {/* 詳細資料品項1 e */}
 
@@ -38,8 +58,8 @@ function RuPriceA(props) {
             <div className="ru-category-container">
               <p className="ru-category">主食</p>
             </div>
-            <p className="ru-selectionName">慢煮嫩雞胸-蒜味香草</p>
-            <p className="ru-number">$55</p>
+            <p className="ru-selectionName">{meetName}</p>
+            <p className="ru-number">${meetPrice}</p>
           </li>
           {/* 詳細資料品項2 e */}
 
@@ -48,8 +68,8 @@ function RuPriceA(props) {
             <div className="ru-category-container">
               <p className="ru-category">配菜</p>
             </div>
-            <p className="ru-selectionName">清炒高麗菜</p>
-            <p className="ru-number">$10</p>
+            <p className="ru-selectionName">{vegNameA}</p>
+            <p className="ru-number">${vegPriceA}</p>
           </li>
           {/* 詳細資料品項3 e */}
 
@@ -58,8 +78,8 @@ function RuPriceA(props) {
             <div className="ru-category-container">
               <p className="ru-category">配菜</p>
             </div>
-            <p className="ru-selectionName">綠色嫩花椰</p>
-            <p className="ru-number">$10</p>
+            <p className="ru-selectionName">{vegNameB}</p>
+            <p className="ru-number">${vegPriceB}</p>
           </li>
           {/* 詳細資料品項4 e */}
 
@@ -68,8 +88,8 @@ function RuPriceA(props) {
             <div className="ru-category-container">
               <p className="ru-category">配菜</p>
             </div>
-            <p className="ru-selectionName">黃金玉米</p>
-            <p className="ru-number">$15</p>
+            <p className="ru-selectionName">{vegNameC}</p>
+            <p className="ru-number">${vegPriceC}</p>
           </li>
           {/* 詳細資料品項5 e */}
 
@@ -78,8 +98,8 @@ function RuPriceA(props) {
             <div className="ru-category-container">
               <p className="ru-category">蛋</p>
             </div>
-            <p className="ru-selectionName">水煮蛋</p>
-            <p className="ru-number">$10</p>
+            <p className="ru-selectionName">{eggName}</p>
+            <p className="ru-number">${eggPrice}</p>
           </li>
           {/* 詳細資料品項 e */}
         </ul>
@@ -90,7 +110,15 @@ function RuPriceA(props) {
             <p className="ru-category">佔寬</p>
           </div>
           <h3>總金額</h3>
-          <p>${price}</p>
+          <p>
+            $
+            {ricePrice +
+              meetPrice +
+              eggPrice +
+              vegPriceA +
+              vegPriceB +
+              vegPriceC}
+          </p>
         </div>
       </div>
     </>

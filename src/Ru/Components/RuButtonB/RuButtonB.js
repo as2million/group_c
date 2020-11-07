@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Style.scss'
 
 function RuButtonB(props) {
@@ -54,6 +54,13 @@ function RuButtonB(props) {
         break
     }
   }
+
+  useEffect(() => {
+    const $rice = document.getElementById('ru-buttonB-rice')
+    $rice.className = 'ru-buttonB ru-buttonB-active'
+    return () => {}
+  }, [])
+
   return (
     <>
       <button className="ru-buttonB" id={id} onClick={handleSelection}>

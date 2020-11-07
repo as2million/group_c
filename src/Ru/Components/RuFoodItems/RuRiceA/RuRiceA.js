@@ -1,22 +1,29 @@
 import React from 'react'
 import './Style.scss' // 單獨
 import '../Style.scss' // 共用
-import cauliflower from './Images/cauliflower.svg'
+import rice from './Images/rice.svg'
+import riceAfter from './Images/riceAfter.svg'
 
 // 網頁版 白飯 選項
-function RuRiceA() {
+function RuRiceA(props) {
+  const { riceName1, ricePrice1 } = props
   return (
     <>
-      1{/* 品項1 s*/}
-      <li className="ru-species-item ru-species-item1">
+      {/* 品項1 s*/}
+      <li className="ru-species-item ru-species-item1" id="">
         <div className="ru-species-img" id="ru-item1">
-          <img className="ru-dragger" id="ru-dragger1" src={cauliflower} draggable="true"></img>
+          <img
+            src={rice}
+            className="ru-items ru-rice"
+            id="ru-rice-1"
+            draggable="true"
+          ></img>
         </div>
         <div className="ru-species-info">
           <ul>
             <li>
               <h4>
-                綠色嫩花椰: <span>$10</span>
+                香甜白飯 <span>$10</span>
               </h4>
             </li>
             <li className="ru-species-calories">熱量: 50大卡</li>
@@ -27,84 +34,6 @@ function RuRiceA() {
         </div>
       </li>
       {/* 品項1 e*/}
-      {/* 品項2 s*/}
-      <li className="ru-species-item ru-species-item2">
-        <div className="ru-species-img" id="ru-item2">
-          <img className="ru-dragger" id="ru-dragger2" src={cauliflower} draggable="true"></img>
-        </div>
-        <div className="ru-species-info">
-          <ul>
-            <li>
-              <h4>
-                綠色嫩花椰: <span>$10</span>
-              </h4>
-            </li>
-            <li className="ru-species-calories">熱量: 50大卡</li>
-            <li className="ru-species-carbohydrates">碳水化合物: 10大卡</li>
-            <li className="ru-species-protein">蛋白質: 10大卡</li>
-            <li className="ru-species-fat">脂肪: 10大卡</li>
-          </ul>
-        </div>
-      </li>
-      {/* 品項2 e*/}
-      {/* 品項3 s*/}
-      <li className="ru-species-item ru-species-item3">
-        <div className="ru-species-img" id="ru-item3">
-          <img className="ru-dragger" id="ru-dragger3" src={cauliflower} draggable="true"></img>
-        </div>
-        <div className="ru-species-info">
-          <ul>
-            <li>
-              <h4>
-                綠色嫩花椰: <span>$10</span>
-              </h4>
-            </li>
-            <li className="ru-species-calories">熱量: 50大卡</li>
-            <li className="ru-species-carbohydrates">碳水化合物: 10大卡</li>
-            <li className="ru-species-protein">蛋白質: 10大卡</li>
-            <li className="ru-species-fat">脂肪: 10大卡</li>
-          </ul>
-        </div>
-      </li>
-      {/* 品項3 e*/}
-      {/* 品項4 s*/}
-      <li className="ru-species-item ru-species-item4">
-        <div className="ru-species-img" id="ru-item4">
-          <img className="ru-dragger" id="ru-dragger4" src={cauliflower} draggable="true"></img>
-        </div>
-        <div className="ru-species-info">
-          <ul>
-            <li>
-              <h4>
-                綠色嫩花椰: <span>$10</span>
-              </h4>
-            </li>
-            <li className="ru-species-calories">熱量: 50大卡</li>
-            <li className="ru-species-carbohydrates">碳水化合物: 10大卡</li>
-            <li className="ru-species-protein">蛋白質: 10大卡</li>
-            <li className="ru-species-fat">脂肪: 10大卡</li>
-          </ul>
-        </div>
-      </li>
-      {/* 品項4 e*/}
-      {/* 品項5 s*/}
-      <li className="ru-species-item ru-species-item5">
-        <div className="ru-species-img" id="ru-item5">
-          <img className="ru-dragger" id="ru-dragger5" src={cauliflower} draggable="true"></img>
-        </div>
-        <div className="ru-species-info">
-          <ul>
-            <li>
-              <h4>綠色嫩花椰:$10</h4>
-            </li>
-            <li className="ru-species-calories">熱量:25大卡</li>
-            <li className="ru-species-carbohydrates">碳水化合物:10大卡</li>
-            <li className="ru-species-protein">蛋白質:10大卡</li>
-            <li className="ru-species-fat">脂肪:10大卡</li>
-          </ul>
-        </div>
-      </li>
-      {/* 品項5 e*/}
     </>
   )
 }
