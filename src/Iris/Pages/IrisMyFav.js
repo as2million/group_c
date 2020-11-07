@@ -12,7 +12,7 @@ function IrirsMyFav(props) {
     <>
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect currentUser={currentUser} />
-        <IrisMyFavSect />
+        <IrisMyFavSect currentUser={currentUser} />
       </div>
     </>
   )

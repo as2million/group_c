@@ -11,17 +11,61 @@ function IrisDataEditSect(props) {
   const { currentUser } = props
   const [myFav, setMyFav] = useState([])
 
-  function getMyFavFromServer() {
-    fetch('http://localhost:5000/member/try-db', {
+  // 得到目前所有的最愛資料
+  async function getMyFavFromServer() {
+    const url = 'http://localhost:5000/member/myFavList'
+
+    const request = new Request(url, {
       method: 'GET',
       headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log(data)
+    setMyFav(data)
+  }
+
+  // 一開始就會開始載入資料
+  useEffect(() => {
+    getMyFavFromServer()
+  }, [])
+
+  // 過濾出現在使用者的最愛
+  const currentUserFav = myFav.filter(
+    (myFav) => myFav.member_sid === currentUser
+  )
+  console.log(currentUserFav)
+
+  // 新增最愛
+  const addFav = (e) => {
+    console.log('!23')
+
+    // 得到 product_sid
+    const product_sid = e.target.className
+    // console.log(product_sid)
+
+    const newFavItem = {
+      currentUser: currentUser,
+      product_sid: product_sid,
+    }
+    // console.log(newProfile)
+
+    fetch('http://localhost:5000/member/addMyFav', {
+      method: 'POST',
+      body: JSON.stringify(newFavItem),
+      headers: new Headers({
+        Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
     })
       .then((r) => r.json())
-      .then((data) => {
-        console.log(data)
-        setMyFav(data[0])
+      .then((o) => {
+        console.log(o)
       })
   }
 
@@ -33,35 +77,44 @@ function IrisDataEditSect(props) {
           <WaveLine />
         </div>
         <div className="iris-cards-container d-flex">
-          <Card
-            title={myFav.product_sid}
-            comment="100"
-            buy="280"
-            price="$130"
-            imgId={myFav.img_id}
-            // cardMargin="card-margin"
-            // 01_bento-chicken-breast
-          />
-          <Card
+          {currentUserFav.map((item, index) => {
+            return (
+              <div>
+                <Card
+                  key={item.sid}
+                  title={item.productname}
+                  comment={item.contentNum}
+                  price={item.price}
+                  imgId={item.img_classname}
+                  // productSid={item.product_sid}
+                />
+                <div id="iris-card-delete">delete</div>
+                <div
+                  id="iris-card-add"
+                  className={item.product_sid}
+                  onClick={(e) => {
+                    addFav(e)
+                  }}
+                >
+                  add
+                </div>
+              </div>
+            )
+          })}
+
+          {/* <Card
             title="慢煮嫩雞胸-蒜味香草"
             comment="100"
             buy="280"
             price="$130"
             imgId="card-img-5"
-          />
-          <Card
-            title="慢煮嫩雞胸-蒜味香草"
-            comment="100"
-            buy="280"
-            price="$130"
-            imgId="card-img-5"
-          />
+          /> */}
         </div>
       </div>
       <button
-        onClick={() => {
-          getMyFavFromServer()
-        }}
+      // onClick={() => {
+      //   checkdata()
+      // }}
       >
         123
       </button>
