@@ -36,7 +36,9 @@ import background from './Images/background.png'
 import { ReactComponent as LunchBox } from './Images/lunchBox.svg' // 將svg以元件方式引入
 import Product from 'Cha/pages-demo/Product'
 
-function RuCustom() {
+function RuCustom(props) {
+  // const { data } = props
+  // console.log(data)
   const [moveX, setMoveX] = useState(0) // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true) // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false) // 是否開啟營養標示
@@ -51,14 +53,8 @@ function RuCustom() {
   // 設定飯類容器的優先權
   const [priority, setPriority] = useState('')
 
-  // RuRice資訊
-  const [update, setUpdata] = useState(false)
-  const [data, setData] = useState('')
-  // const [riceName1, setRiceName1] = useState('')
-  // const [ricePrice1, setRicePrice1] = useState('')
-  // const [riceCalories, setRiceCalories1] = useState('')
-  // const [riceCarbohydrate1, setRiceCarbohydrate1] = useState('')
-  // const [riceFat1, setRiceFat1] = useState('')
+  // 後端請求資料用的state(預設值不要為空值)
+  const [data, setData] = useState('1')
 
   // 設定 今日菜色(價格) 資訊
   const [riceName, setRiceName] = useState('')
@@ -79,6 +75,7 @@ function RuCustom() {
   const [vegNameC, setVegNameC] = useState('')
   const [vegPriceC, setVegPriceC] = useState(0)
   const [vegCalC, setVegCalC] = useState(0)
+
   function switchPrice() {
     setIsPrice(true)
     setIsCal(false)
@@ -89,34 +86,21 @@ function RuCustom() {
     setIsCal(true)
   }
 
-  async function fetchApi() {
-    const url = 'http://localhost:5000/product/custom_list'
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-
-    const response = await fetch(request)
-    const myJson = await response.json()
-    // data會是一個array
-    // console.log(data)
-    // console.log(data[0].productname)
-
-    // setTotal(total.push(data))
-    // setTotal(data)
-    setData(myJson)
-  }
-
+  // 向後端請求資料
   useEffect(() => {
-    fetchApi()
+    fetch('http://localhost:5000/product/custom_list')
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (myJson) {
+        console.log(myJson)
+        setData(myJson)
+      })
+    return () => {}
   }, [])
 
   useEffect(() => {
-    console.log(data)
+    // console.log(data)
     // console.log('執行useEffect')
     // 品項置入便當盒 邏輯
     const items = document.querySelectorAll('.ru-items')
@@ -339,7 +323,8 @@ function RuCustom() {
       {/* <h1 style={{ textAlign: 'center', fontSize: '80px' }}>
         ----- 這頁是客製化便當 -----
       </h1> */}
-      {/* <div>123 {data[5].sid}</div> */}
+      <div>{data[0].productName}</div>
+
       {/* 商品區 - 網頁版 s */}
       <div className="ru-custom-containerA" id="ru-dropArea">
         <div className="ru-custom-warp" id="ru-dropOutAreaA">

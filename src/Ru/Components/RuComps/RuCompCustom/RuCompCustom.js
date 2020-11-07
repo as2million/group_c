@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
-import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom';
-import RuButton from 'Ru/Components/RuButton/RuButton';
-import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar';
-import 'Ru/Components/RuComps/Style.scss';
+import React, { useState, useEffect } from 'react'
+import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth'
+import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom'
+import RuButton from 'Ru/Components/RuButton/RuButton'
+import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar'
+import 'Ru/Components/RuComps/Style.scss'
 
 // 引用共用元件
-import SearchBar from 'Share/Components/Input/SearchBar';
-import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
+import SearchBar from 'Share/Components/Input/SearchBar'
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
 // 引用圖片
-import line from './Images/line.png';
+import line from './Images/line.png'
 
 function RuCompCustom(props) {
   // console.log(props);
-  const [searchInput, setSearchInput] = useState('');
+  const [searchInput, setSearchInput] = useState('')
 
   // JSX
   return (
@@ -132,7 +132,7 @@ function RuCompCustom(props) {
         我是footer
       </div> */}
     </>
-  );
+  )
 }
 
-export default RuCompCustom;
+export default RuCompCustom
