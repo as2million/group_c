@@ -32,9 +32,13 @@ function AddressTabs(props) {
                 <div className="iris-mainpage-select-wrapper d-flex">
                   <div className="iris-selectbar-wrapper">
                     <select
+                      style={{ fontSize: '1.5rem' }}
                       className="form-control iris-mainpage-select"
                       id="exampleFormControlSelect1"
                     >
+                      <option value="1" disabled selected>
+                        點我選擇區域
+                      </option>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -48,9 +52,10 @@ function AddressTabs(props) {
               <br />
               <div className="jan-address-input">
                 <input
+                  style={{ fontSize: '1.5rem' }}
                   className="form-control iris-inputH50"
                   type="text"
-                  placeholder={placeholder}
+                  placeholder="請輸入地址"
                   value={tabInput}
                   onChange={(e) => setTabInput(e.target.value)}
                 />

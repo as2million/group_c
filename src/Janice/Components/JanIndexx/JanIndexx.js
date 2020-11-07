@@ -15,9 +15,15 @@ import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft'
 import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
 import VNavbar from '../../../Share/Components/VNavbar/VNavbar'
 import ToToop from '../../../Share/Components/ToTopButton/ScrollButton'
+import { countries, townships } from './data.js'
+import { Image } from 'react-bootstrap'
 
 function JanIndexx(props) {
   const { placeholder, type, id } = props
+  const [country, setCountry] = useState(-1)
+  const [township, setTownship] = useState(false)
+  const [indexAddress, setIndexAddress] = useState('')
+
   return (
     <>
       <VNavbar />
@@ -522,13 +528,66 @@ function JanIndexx(props) {
                     <p className="jan-form-announce">
                       請填寫地址，查看免運金額
                     </p>
+                    {/* <div>
+                      <select
+                        value={country}
+                        onChange={(e) => {
+                          //將字串轉成數字
+                          setCountry(+e.target.value)
+                          //重置township的值
+                          setTownship(0)
+                          setTownship(-1)
+                        }}
+                      >
+                        <option value={-1}>選擇城市</option>
+                        {countries.map((v, i) => (
+                          <option key={i} value={i}>
+                            {v}
+                          </option>
+                        ))}
+                      </select>
+
+                      <select
+                        value={township}
+                        onChange={(e) => {
+                          // 將字串轉成數字
+                          setTownship(+e.target.value)
+                        }}
+                      >
+                        <option value={-1}>選擇區域</option>
+                        {country > -1 &&
+                          townships[country].map((v, i) => (
+                            <option key={i} value={i}>
+                              {v}
+                            </option>
+                          ))}
+                      </select> */}
+
+                    {/* <span> */}
+                    {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
+                    {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
+                    {/* {country > -1 &&
+                          township > -1 &&
+                          postcodes[country][township]}
+                      </span> */}
+                    {/* </div> */}
                     <div className="jan-adress-radio">
-                      <input type="radio" name="location" value="tc" /> 台北市
+                      <input
+                        type="radio"
+                        name="location"
+                        onClick={(e) => {
+                          setTownship(false)
+                        }}
+                      />{' '}
+                      台北市
                       <input
                         className="ml-5"
                         type="radio"
                         name="location"
                         value="ntc"
+                        onClick={(e) => {
+                          setTownship(true)
+                        }}
                       />{' '}
                       新北市
                     </div>
@@ -541,12 +600,14 @@ function JanIndexx(props) {
                             className="form-control iris-mainpage-select"
                             id="exampleFormControlSelect1"
                           >
-                            <option value="1" disabled selected>
+                            <option value={-1} disabled selected>
                               點我選擇區域
                             </option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                            {townships[township ? 1 : 0].map((v, i) => (
+                              <option key={i} value={i}>
+                                {v}
+                              </option>
+                            ))}
                           </select>
                           <div className="iris-mainpage-whitebox"></div>
                           <div className="iris-mainpage-trianglearrow" />
@@ -562,11 +623,24 @@ function JanIndexx(props) {
                         type={type}
                         placeholder="請輸入地址"
                         id={id}
+                        value={indexAddress}
+                        onChange={(e) => setIndexAddress(e.target.value)}
                       />
                     </div>
 
                     <br />
                     <div className="jan-index-button float-right">
+                      <div
+                        style={{
+                          width: '3rem',
+                          height: '3rem',
+                          cursor: 'pointer',
+                        }}
+                        className="jan-index-hide-demo float-left"
+                        onClick={(e) => setIndexAddress('復興南路一段390號2樓')}
+                      >
+                        demo
+                      </div>
                       <Button className="button-btn-y " text="查詢結果" />
                     </div>
                   </form>
