@@ -21,7 +21,7 @@ function ClaudiaIndexMap(props) {
                 let dataResult = data;
 
                 setCity(dataResult[0].city);
-                setData(data);
+                setData(dataResult);
 
 
             })
