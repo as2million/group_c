@@ -88,6 +88,16 @@ function RuCustom(props) {
   const [vegPriceC, setVegPriceC] = useState(0)
   const [vegCalC, setVegCalC] = useState(0)
 
+  // 配菜區還可否被選擇
+  const [veg1available, setVeg1available] = useState(true)
+  const [veg2available, setVeg2available] = useState(true)
+  const [veg3available, setVeg3available] = useState(true)
+
+  // 標記入box內的是哪種蔬菜
+  const [putAclass, setPutAclass] = useState('ru-put')
+  const [putBclass, setPutBclass] = useState('ru-put')
+  const [putCclass, setPutCclass] = useState('ru-put')
+
   function switchPrice() {
     setIsPrice(true)
     setIsCal(false)
@@ -107,7 +117,7 @@ function RuCustom(props) {
         return response.json()
       })
       .then(function (myJson) {
-        console.log(myJson)
+        // console.log(myJson)
         setData(myJson)
       })
     return () => {}
@@ -178,14 +188,21 @@ function RuCustom(props) {
 
     // 目的地 - 放下時
     function dropped(e) {
-      console.log(e.target)
+      // console.log(cabageAfter)
+      // console.log(puts[0].src === cabageAfter)
+      // console.log(e.target)
       // console.log('dropped')
       // console.log(e.target, e.dataTransfer.getData('text/plain', e.target.id))
       //增刪元素
-      console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
+      // console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
+
       setPriority('0') // 白飯容器優先結束
+      // 宣告已經放在配菜區內的元素
+      const boxer = document.getElementById(
+        e.dataTransfer.getData('text/plain', e.target.id)
+      )
+      // 丟棄邏輯 - 放到這些區域可以丟棄該品項
       if (
-        // 放到這些區域可以丟棄該品項
         e.target !== boxA &&
         e.target !== boxB &&
         e.target !== boxC &&
@@ -194,42 +211,66 @@ function RuCustom(props) {
         e.target !== boxF
       ) {
         switch (e.dataTransfer.getData('text/plain', e.target.id)) {
-          case 'ru-put1':
+          case 'ru-put-1': // 觸發事件在第一個盒子
+            // console.log(e.target.className)
             setImgA()
             setVegNameA()
             setVegPriceA(0)
 
-            // setCalA()
+            // 復原可控物件邏輯
+            // 宣告待會從盒子內取出的目標含有哪些class
+            if (
+              // 如果配菜區內的既有菜色者的classList包含('ru-put-veg-1')
+              boxer.classList.contains('ru-put-veg-1')
+            ) {
+              setVeg1available(true) // 那被丟棄後就讓選菜區變回可控物件
+            } else if (boxer.classList.contains('ru-put-veg-2')) {
+              setVeg2available(true)
+            } else if (boxer.classList.contains('ru-put-veg-3')) {
+              setVeg3available(true)
+            }
             break
-          case 'ru-put2':
+          case 'ru-put-2': // 觸發事件在第二個盒子
             setImgB()
             setVegNameB()
             setVegPriceB(0)
 
-            // setCalB()
+            // 復原可控物件邏輯
+            if (boxer.classList.contains('ru-put-veg-1')) {
+              // 如果目標classList含有'ru-put-veg-1'
+              setVeg1available(true) // 那被丟棄後就讓選菜區變回可控物件
+            } else if (boxer.classList.contains('ru-put-veg-2')) {
+              setVeg2available(true)
+            } else if (boxer.classList.contains('ru-put-veg-3')) {
+              setVeg3available(true)
+            }
             break
-          case 'ru-put3':
+          case 'ru-put-3': // 觸發事件在第三個盒子
             setImgC()
             setVegNameC()
             setVegPriceC(0)
 
-            // setCalC()
+            // 復原可控物件邏輯
+            if (boxer.classList.contains('ru-put-veg-1')) {
+              // 如果目標classList含有'ru-put-veg-1'
+              setVeg1available(true) // 那被丟棄後就讓選菜區變回可控物件
+            } else if (boxer.classList.contains('ru-put-veg-2')) {
+              setVeg2available(true)
+            } else if (boxer.classList.contains('ru-put-veg-3')) {
+              setVeg3available(true)
+            }
             break
-          case 'ru-put4':
+          case 'ru-put-4': // 觸發事件在第四個盒子
             setImgD()
             setRiceName()
             setRicePrice(0)
-
-            // setRiceCal()
             break
-          case 'ru-put5':
+          case 'ru-put-5': // 觸發事件在第五個盒子
             setImgE()
             setEggName()
             setEggPrice(0)
-
-            // setEggCal()
             break
-          case 'ru-put6':
+          case 'ru-put-6': // 觸發事件在第六個盒子
             setImgF()
             setMeetName()
             setMeetPrice(0)
@@ -249,21 +290,24 @@ function RuCustom(props) {
             setVegNameA('綠色嫩花椰')
             setVegPriceA(15)
             setVegCalA(25)
-
+            setVeg1available(false)
+            setPutAclass('ru-put ru-put-veg-1')
             break
           case 'ru-veg-2':
             setImgA(cabageAfter)
             setVegNameA('清炒高麗菜')
             setVegPriceA(15)
             setVegCalA(25)
-
+            setVeg2available(false)
+            setPutAclass('ru-put ru-put-veg-2')
             break
           case 'ru-veg-3':
             setImgA(cornAfter)
             setVegNameA('黃金玉米粒')
             setVegPriceA(15)
             setVegCalA(111)
-
+            setVeg3available(false)
+            setPutAclass('ru-put ru-put-veg-3')
             break
         }
       } else if (e.target === boxB) {
@@ -275,21 +319,24 @@ function RuCustom(props) {
             setVegNameB('鮮綠花椰菜')
             setVegPriceB(15)
             setVegCalB(25)
-
+            setVeg1available(false)
+            setPutBclass('ru-put ru-put-veg-1')
             break
           case 'ru-veg-2':
             setImgB(cabageAfter)
             setVegNameB('清炒高麗菜')
             setVegPriceB(15)
             setVegCalB(25)
-
+            setVeg2available(false)
+            setPutBclass('ru-put ru-put-veg-2')
             break
           case 'ru-veg-3':
             setImgB(cornAfter)
             setVegNameB('黃金玉米粒')
             setVegPriceB(15)
             setVegCalB(111)
-
+            setVeg3available(false)
+            setPutBclass('ru-put ru-put-veg-3')
             break
         }
       } else if (e.target === boxC) {
@@ -303,21 +350,24 @@ function RuCustom(props) {
             setVegNameC('鮮綠花椰菜')
             setVegPriceC(15)
             setVegCalC(25)
-
+            setVeg1available(false)
+            setPutCclass('ru-put ru-put-veg-1')
             break
           case 'ru-veg-2':
             setImgC(cabageAfter)
             setVegNameC('清炒高麗菜')
             setVegPriceC(15)
             setVegCalC(25)
-
+            setVeg2available(false)
+            setPutCclass('ru-put ru-put-veg-2')
             break
           case 'ru-veg-3':
             setImgC(cornAfter)
             setVegNameC('黃金玉米粒')
             setVegPriceC(15)
             setVegCalC(111)
-
+            setVeg3available(false)
+            setPutCclass('ru-put ru-put-veg-3')
             break
         }
       } else if (
@@ -386,8 +436,8 @@ function RuCustom(props) {
                     <img
                       src={imgA}
                       draggable="true"
-                      className="ru-put"
-                      id="ru-put1"
+                      className={putAclass}
+                      id="ru-put-1"
                     ></img>
                   </div>
                   {/* 放置菜色A區vegA e*/}
@@ -400,8 +450,8 @@ function RuCustom(props) {
                     <img
                       src={imgB}
                       draggable="true"
-                      className="ru-put"
-                      id="ru-put2"
+                      className={putBclass}
+                      id="ru-put-2"
                     ></img>
                   </div>
                   {/* 放置菜色B區vegB e*/}
@@ -414,8 +464,8 @@ function RuCustom(props) {
                     <img
                       src={imgC}
                       draggable="true"
-                      className="ru-put"
-                      id="ru-put3"
+                      className={putCclass}
+                      id="ru-put-3"
                     ></img>
                   </div>
                   {/* 放置菜色C區vegC e*/}
@@ -423,12 +473,13 @@ function RuCustom(props) {
                   <div id="ru-hintD">
                     {isShowHintD && <img src={hintD}></img>}
                   </div>
+
                   <div id="ru-areaD" style={{ zIndex: priority }}>
                     <img
                       src={imgD}
                       draggable="true"
                       className="ru-put"
-                      id="ru-put4"
+                      id="ru-put-4"
                     ></img>
                   </div>
                   {/* 放置菜色D區rice e*/}
@@ -436,12 +487,13 @@ function RuCustom(props) {
                   <div id="ru-hintE">
                     {isShowHintE && <img src={hintE}></img>}
                   </div>
+
                   <div id="ru-areaE">
                     <img
                       src={imgE}
                       draggable="true"
                       className="ru-put"
-                      id="ru-put5"
+                      id="ru-put-5"
                     ></img>
                   </div>
                   {/* 放置菜色E區egg e*/}
@@ -449,12 +501,13 @@ function RuCustom(props) {
                   <div id="ru-hintF">
                     {isShowHintF && <img src={hintF}></img>}
                   </div>
+
                   <div id="ru-areaF">
                     <img
                       src={imgF}
                       draggable="true"
                       className="ru-put"
-                      id="ru-put6"
+                      id="ru-put-6"
                     ></img>
                   </div>
                   {/* 放置菜色F區meet e*/}
@@ -624,7 +677,14 @@ function RuCustom(props) {
                   >
                     {selection === 'rice' && <RuRiceA data={data} />}
                     {selection === 'meet' && <RuMeetA data={data} />}
-                    {selection === 'vegetable' && <RuVegetableA data={data} />}
+                    {selection === 'vegetable' && (
+                      <RuVegetableA
+                        data={data}
+                        veg1available={veg1available}
+                        veg2available={veg2available}
+                        veg3available={veg3available}
+                      />
+                    )}
                     {selection === 'egg' && <RuEggA data={data} />}
                     {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
                   </ul>

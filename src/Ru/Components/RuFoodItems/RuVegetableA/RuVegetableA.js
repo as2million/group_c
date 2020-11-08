@@ -7,17 +7,26 @@ import corn from './Images/corn.svg'
 
 // 網頁版 配菜 選項
 function RuVegetableA(props) {
-  const { data } = props
+  const { data, veg1available, veg2available, veg3available } = props
   return (
     <>
       {/* 品項1 s*/}
       <li className="ru-species-item ru-species-item1">
         <div className="ru-species-img">
-          <img
-            src={cauliflower}
-            className="ru-items ru-veg"
-            id="ru-veg-1"
-          ></img>
+          {veg1available ? (
+            <img
+              src={cauliflower}
+              className="ru-items ru-veg"
+              id="ru-veg-1"
+            ></img>
+          ) : (
+            <img
+              src={cauliflower}
+              className="ru-items ru-veg"
+              id="ru-veg-1"
+              style={{ pointerEvents: 'none', filter: 'grayscale(100%)' }}
+            ></img>
+          )}
         </div>
         <div className="ru-species-info">
           <ul>
@@ -41,7 +50,16 @@ function RuVegetableA(props) {
       {/* 品項2 s*/}
       <li className="ru-species-item ru-species-item2">
         <div className="ru-species-img">
-          <img src={cabage} className="ru-items ru-veg" id="ru-veg-2"></img>
+          {veg2available ? (
+            <img src={cabage} className="ru-items ru-veg" id="ru-veg-2"></img>
+          ) : (
+            <img
+              src={cabage}
+              className="ru-items ru-veg"
+              id="ru-veg-2"
+              style={{ pointerEvents: 'none', filter: 'grayscale(100%)' }}
+            ></img>
+          )}
         </div>
         <div className="ru-species-info">
           <ul>
@@ -64,9 +82,19 @@ function RuVegetableA(props) {
       {/* 品項2 e*/}
       {/* 品項3 s*/}
       <li className="ru-species-item ru-species-item3">
-        <div className="ru-species-img">
-          <img src={corn} className="ru-items ru-veg" id="ru-veg-3"></img>
-        </div>
+        {veg3available ? (
+          <div className="ru-species-img">
+            <img src={corn} className="ru-items ru-veg" id="ru-veg-3"></img>
+          </div>
+        ) : (
+          <img
+            src={corn}
+            className="ru-items ru-veg"
+            id="ru-veg-3"
+            style={{ pointerEvents: 'none', filter: 'grayscale(100%)' }}
+          ></img>
+        )}
+
         <div className="ru-species-info">
           <ul>
             <li>
