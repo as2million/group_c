@@ -2,18 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import './IrisDataEditSect.scss'
 import { ReactComponent as WaveLine } from './Images/wave_line.svg'
-import InputH40 from './../../../Share/Components/Input/InputH40'
+import InputH40 from './InputH40/InputH40'
 // import SelectBox from './../../../Share/Components/Input/SelectBox';
 import Button from './../../../Share/Components/Button/Button'
 
 function IrisDataEditSect(props) {
   const { currentUser } = props
-  const updateProfile = () => {
-    // const d = {
-    //   email: document.form1.email.value,
-    //   password: document.form1.password.value,
-    // }
+  const [userInfo, setUserInfo] = useState([])
+  // const [value, setValue] = useState()
 
+  const updateProfile = () => {
     const familyname = document.querySelector('#iris-member-family-name').value
     const givenname = document.querySelector('#iris-member-given-name').value
     const birthday = document.querySelector('#iris-member-birthday').value
@@ -46,6 +44,59 @@ function IrisDataEditSect(props) {
         console.log(o)
       })
   }
+
+  // -------- 取得目前user的資料 ---------- //
+  async function getUserInfoFromServer() {
+    const url = 'http://localhost:5000/member/allUserProfile'
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log(data)
+    setUserInfo(data)
+  }
+
+  // --------- 過濾出現在使用者的資料 --------- //
+  const currentUserInfo = userInfo.filter(
+    (userInfo) => userInfo.member_sid === currentUser
+  )
+  console.log(currentUserInfo[0])
+
+  useEffect(() => {
+    getUserInfoFromServer()
+  }, [])
+
+  // 把user資料代進去
+  currentUserInfo.map((item, index) => {
+    const userFamilyName = item.name.slice(0, 1)
+    const userGivenName = item.name.slice(1, 3)
+    const userBirthday = item.birthday.slice(0, 10)
+    const fullAddress = item.county + item.district + item.address
+    let familyname = document.querySelector('#iris-member-family-name')
+    let givenname = document.querySelector('#iris-member-given-name')
+    let birthday = document.querySelector('#iris-member-birthday')
+    let mobile = document.querySelector('#iris-member-mobile')
+    let oldPassword = document.querySelector('#iris-member-password')
+    // let password = document.querySelector('#iris-member-new-password')
+    let email = document.querySelector('#iris-member-email')
+    let address = document.querySelector('#iris-member-address')
+    familyname.value = userFamilyName
+    givenname.value = userGivenName
+    birthday.value = userBirthday
+    mobile.value = item.mobile
+    oldPassword.value = item.password
+    email.value = item.email
+    address.value = fullAddress
+  })
+
   return (
     <>
       <div className="container col-9">
@@ -61,13 +112,11 @@ function IrisDataEditSect(props) {
             <form className="iris-form-adjust">
               <div className="d-flex  align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box testtest">姓氏</div>
-
                 <InputH40
                   type="text"
                   placeholder=""
                   id="iris-member-family-name"
                 />
-
                 <div className="iris-input-box">名字</div>
 
                 <InputH40
