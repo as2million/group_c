@@ -19,14 +19,14 @@
 .claudia-index-text {
     font-family: 'Noto Serif TC';
     position: absolute;
-    top: 500px;
+    top: 450px;
     right: 200px;
 }
 
 .claudia-index-text h1 {
     color: #FAFAFA;
+    margin-bottom: 10px;
 }
-
 
 
 .claudia-index-text-1 {
@@ -35,6 +35,80 @@
 
 .claudia-index-text-2 {
     font-size: 30px;
+}
+
+//mouse scroll icon
+
+.claudia-center {
+    margin: 0 auto;
+    height: 90px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 48%;
+}
+
+.claudia-mouseLayout {
+    width: 30px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    position: relative;
+}
+
+.claudia-mouseLayout::before {
+    content: '';
+    border: 2px solid #fff;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: drop 1s linear infinite;
+}
+
+.claudia-mouseLayout::after {
+    content: '';
+    border: 2px solid #fff;
+    height: 10px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    transition: all 2s ease;
+}
+
+@keyframes drop {
+    0% {
+        transform: translate(-50%, 10px);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translate(-50%, 15px);
+        opacity: .8;
+    }
+
+    100% {
+        transform: translate(-50%, 20px);
+        opacity: 1;
+    }
+}
+
+
+.claudia-text {
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 57.6rem) {
@@ -60,6 +134,12 @@
 
     .claudia-index-text-2 {
         font-size: 24px;
+    }
+
+    //mouse scroll icon
+
+    .claudia-center {
+        display: none;
     }
 }
 

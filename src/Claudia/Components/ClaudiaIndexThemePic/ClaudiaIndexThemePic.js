@@ -12,6 +12,11 @@ function ClaudiaIndexThemePic() {
                     <h1 className="claudia-index-text-1"><b>哈囉小農！</b></h1>
                     <h1 className="claudia-index-text-2"><b>一日農夫活動體驗</b></h1>
                 </div>
+                <div class="claudia-center">
+                    <div class="claudia-mouseLayout">
+                    </div>
+                    {/* <p class="claudia-text">Scroll Down</p> */}
+                </div>
             </div>
         </>
     )
