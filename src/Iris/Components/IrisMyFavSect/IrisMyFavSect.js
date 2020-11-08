@@ -6,7 +6,7 @@ import { ReactComponent as WaveLine } from './Images/wave_line.svg'
 import { ReactComponent as StarOrange } from './Images/star_orange.svg'
 import { ReactComponent as StarGrey } from './Images/star_grey.svg'
 import './IrisMyFavSect.scss'
-import Card from './../../../Share/Components/Card/Card'
+import Card from './Card/Card'
 // import Star123 from './Images/star_orange.svg';
 
 function IrisDataEditSect(props) {
@@ -106,15 +106,16 @@ function IrisDataEditSect(props) {
         </div>
         <div className="iris-cards-container d-flex">
           {currentUserFav.map((item, index) => {
+            const imageId = 'card-img-' + item.product_sid
+            const price = '$' + item.price
             return (
               <div>
                 <Card
                   key={item.sid}
                   title={item.productname}
                   comment={item.contentNum}
-                  price={item.price}
-                  imgId={item.img_classname}
-                  // productSid={item.product_sid}
+                  price={price}
+                  imgId={imageId}
                 />
                 <div
                   id="iris-card-delete"
@@ -137,23 +138,8 @@ function IrisDataEditSect(props) {
               </div>
             )
           })}
-
-          {/* <Card
-            title="慢煮嫩雞胸-蒜味香草"
-            comment="100"
-            buy="280"
-            price="$130"
-            imgId="card-img-5"
-          /> */}
         </div>
       </div>
-      <button
-      // onClick={() => {
-      //   checkdata()
-      // }}
-      >
-        123
-      </button>
     </>
   )
 }
