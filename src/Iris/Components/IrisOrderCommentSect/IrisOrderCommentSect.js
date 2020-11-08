@@ -13,7 +13,7 @@ function IrisUserCommentSect(props) {
 
   // ---------- 改留言 ---------- //
   const changeComment = (e) => {
-    // 測試: 得到top parent的id
+    // 得到top parent的id
     const thisId = e.target.parentNode.parentNode.parentNode.id
 
     // 留言,編輯,刪除的字消失，出現輸入框
@@ -39,8 +39,9 @@ function IrisUserCommentSect(props) {
     commentUpdate.style.display = 'block'
   }
 
-  // ------- 點確認讓輸入框消失並更新留言 -------- //
+  // ------- 點確認更新留言 -------- //
   const doCommentUpdate = (e) => {
+    // 1. 讓輸入框消失並顯示新留言
     const thisId = e.target.parentNode.parentNode.id
     const originalComment = document.querySelector(
       '#' + thisId + ' ' + '.iris-comment-text'
@@ -62,6 +63,32 @@ function IrisUserCommentSect(props) {
     commentInput.style.display = 'none'
     editAndDelete.style.display = 'block'
     commentUpdate.style.display = 'none'
+
+    // 2. 把新留言寫到資料庫
+    // 準備要送的資料
+    const newComment = document.querySelector(
+      '#' + thisId + ' ' + '.iris-text-area .iris-textarea'
+    ).value
+    const commentSid = e.target.parentNode.parentNode.id.slice(9)
+    const updatedComment = {
+      newComment: newComment,
+      currentUser: currentUser,
+      commentSid: commentSid,
+    }
+
+    // 送出
+    fetch('http://localhost:5000/member/updateComment', {
+      method: 'POST',
+      body: JSON.stringify(updatedComment),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+      .then((r) => r.json())
+      .then((o) => {
+        console.log(o)
+      })
   }
 
   // ------ 取得目前所有的投稿資料 ------- //
@@ -95,8 +122,9 @@ function IrisUserCommentSect(props) {
 
   // --------- 留言框內容Template --------- //
   const commentDisplay = currentUserComment.map((item, index) => {
-    // id不能是純數字，前面加commentId
+    // id用數字抓不到，前面加commentId
     const thisId = 'commentId' + item.sid
+    const commentDate = item.created_at.slice(0, 10)
     return (
       <>
         <div className="iris-member-line"></div>
@@ -150,7 +178,7 @@ function IrisUserCommentSect(props) {
             >
               確認
             </span>
-            <div className="iris-comment-date">{item.created_at}</div>
+            <div className="iris-comment-date">{commentDate}</div>
           </div>
         </div>
       </>
@@ -166,7 +194,11 @@ function IrisUserCommentSect(props) {
         </div>
         <div className="iris-comment-list-container">
           <h6 className="iris-comment-note">
-            您共有 <span className="iris-comment-quantity">6</span> 則投稿
+            您共有{' '}
+            <span className="iris-comment-quantity">
+              {currentUserComment.length}
+            </span>{' '}
+            則投稿
           </h6>
           {/* <IrisMemberLine /> */}
 
