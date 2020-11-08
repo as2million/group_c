@@ -23,7 +23,7 @@ function IrisUserCommentSect(props) {
     document.querySelector(
       '#' + thisId + ' ' + '.iris-text-area .iris-textarea'
     ).value = originalComment.innerText
-    console.log(originalComment.innerText)
+
     const commentInput = document.querySelector(
       '#' + thisId + ' ' + '.iris-text-area'
     )
@@ -55,7 +55,6 @@ function IrisUserCommentSect(props) {
     const commentUpdate = document.querySelector(
       '#' + thisId + ' ' + '.iris-comment-update '
     )
-    console.log(commentInput.value)
     originalComment.innerText = document.querySelector(
       '#' + thisId + ' ' + '.iris-text-area .iris-textarea'
     ).value
@@ -69,6 +68,7 @@ function IrisUserCommentSect(props) {
     const newComment = document.querySelector(
       '#' + thisId + ' ' + '.iris-text-area .iris-textarea'
     ).value
+
     const commentSid = e.target.parentNode.parentNode.id.slice(9)
     const updatedComment = {
       newComment: newComment,
@@ -110,27 +110,66 @@ function IrisUserCommentSect(props) {
     setAllComment(data)
   }
 
+  //
   useEffect(() => {
     getAllCommentFromServer()
   }, [])
+
+  // ------ 刪除投稿資料 ------- //
+  const doCommentDelete = (e) => {
+    // 1. 讓這筆投稿消失
+    // 抓這條comment box的id
+    const thisId = e.target.parentNode.parentNode.parentNode.id
+    const thisComment = document.querySelector('#' + thisId)
+    // 抓這條comment box上面的線
+    const LineAbovethisComment = document.querySelector('#' + thisId)
+      .previousSibling
+    thisComment.style.display = 'none'
+    LineAbovethisComment.style.display = 'none'
+    // 讓您共有x則投稿數量-1
+    let commentNum = document.querySelector('.iris-comment-quantity')
+    commentNum.innerText = commentNum.innerText - 1
+    // console.log(commentNum)
+
+    // 2. 準備要送的資料
+    // 抓要刪除的投稿的資料庫sid
+    const commentSid = e.target.parentNode.parentNode.parentNode.id.slice(9)
+    const commentToBeDelete = {
+      commentSid: commentSid,
+    }
+
+    // 3. 送出
+    fetch('http://localhost:5000/member/deleteComment', {
+      method: 'POST',
+      body: JSON.stringify(commentToBeDelete),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+      .then((r) => r.json())
+      .then((o) => {
+        console.log(o)
+      })
+  }
 
   // --------- 過濾出現在使用者的投稿 --------- //
   const currentUserComment = allComment.filter(
     (allComment) => allComment.member === currentUser
   )
-  console.log(currentUserComment)
 
   // --------- 留言框內容Template --------- //
   const commentDisplay = currentUserComment.map((item, index) => {
     // id用數字抓不到，前面加commentId
     const thisId = 'commentId' + item.sid
+    // 處理從資料庫撈來的日期格式
     const commentDate = item.created_at.slice(0, 10)
     return (
       <>
         <div className="iris-member-line"></div>
         {/* 用'commentId'+資料庫的sid 當作comment box的id，不會重複 */}
         <div
-          className="iris-comment-box d-flex"
+          className="iris-comment-box"
           id={thisId}
           onClick={() => {
             console.log(thisId)
@@ -168,7 +207,14 @@ function IrisUserCommentSect(props) {
                 編輯
               </span>
               &nbsp;<span> | </span>&nbsp;
-              <span className="comment-delete">刪除</span>
+              <span
+                className="comment-delete"
+                onClick={(e) => {
+                  doCommentDelete(e)
+                }}
+              >
+                刪除
+              </span>
             </div>
             <span
               className="iris-comment-update"
