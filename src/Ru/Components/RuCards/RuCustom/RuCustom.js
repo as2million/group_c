@@ -427,6 +427,7 @@ function RuCustom(props) {
   useEffect(() => {
     // console.log(ricePrice !== 0)
     if (
+      // 開啟邏輯
       ricePrice !== 0 &&
       meetPrice !== 0 &&
       eggPrice !== 0 &&
@@ -435,7 +436,18 @@ function RuCustom(props) {
       vegPriceC !== 0
     ) {
       setIsCanBuy(true)
+    } else if (
+      // 關閉邏輯
+      ricePrice === 0 ||
+      meetPrice === 0 ||
+      eggPrice === 0 ||
+      vegPriceA === 0 ||
+      vegPriceB === 0 ||
+      vegPriceC === 0
+    ) {
+      setIsCanBuy(false)
     }
+
     return () => {}
   }, [ricePrice, meetPrice, eggPrice, vegPriceA, vegPriceB, vegPriceC])
 
