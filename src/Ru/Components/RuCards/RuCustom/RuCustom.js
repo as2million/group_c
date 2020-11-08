@@ -41,6 +41,7 @@ import hintF from './Images/hintF.svg'
 import background from './Images/background.png'
 import { ReactComponent as LunchBox } from './Images/lunchBox.svg' // 將svg以元件方式引入
 import Product from 'Cha/pages-demo/Product'
+import { doc } from 'prettier'
 
 function RuCustom(props) {
   const [moveX, setMoveX] = useState(0) // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
@@ -98,11 +99,14 @@ function RuCustom(props) {
   const [putBclass, setPutBclass] = useState('ru-put')
   const [putCclass, setPutCclass] = useState('ru-put')
 
+  // 是否可以購買
+  const [isCanBuy, setIsCanBuy] = useState(false)
+
+  // 切換售價與營養標示
   function switchPrice() {
     setIsPrice(true)
     setIsCal(false)
   }
-
   function switchCal() {
     setIsPrice(false)
     setIsCal(true)
@@ -195,7 +199,6 @@ function RuCustom(props) {
       // console.log(e.target, e.dataTransfer.getData('text/plain', e.target.id))
       //增刪元素
       // console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
-
       setPriority('0') // 白飯容器優先結束
       // 宣告已經放在配菜區內的元素
       const boxer = document.getElementById(
@@ -216,7 +219,7 @@ function RuCustom(props) {
             setImgA()
             setVegNameA()
             setVegPriceA(0)
-
+            setVegCalA(0)
             // 復原可控物件邏輯
             // 宣告待會從盒子內取出的目標含有哪些class
             if (
@@ -234,7 +237,7 @@ function RuCustom(props) {
             setImgB()
             setVegNameB()
             setVegPriceB(0)
-
+            setVegCalB(0)
             // 復原可控物件邏輯
             if (boxer.classList.contains('ru-put-veg-1')) {
               // 如果目標classList含有'ru-put-veg-1'
@@ -249,7 +252,7 @@ function RuCustom(props) {
             setImgC()
             setVegNameC()
             setVegPriceC(0)
-
+            setVegCalC(0)
             // 復原可控物件邏輯
             if (boxer.classList.contains('ru-put-veg-1')) {
               // 如果目標classList含有'ru-put-veg-1'
@@ -264,17 +267,19 @@ function RuCustom(props) {
             setImgD()
             setRiceName()
             setRicePrice(0)
+            setRiceCal(0)
             break
           case 'ru-put-5': // 觸發事件在第五個盒子
             setImgE()
             setEggName()
             setEggPrice(0)
+            setEggCal(0)
             break
           case 'ru-put-6': // 觸發事件在第六個盒子
             setImgF()
             setMeetName()
             setMeetPrice(0)
-
+            setMeetPrice(0)
             // setMeetCal()
             break
         }
@@ -416,7 +421,23 @@ function RuCustom(props) {
     }
 
     return () => {}
-  }, [imgA, imgB, imgC, imgD, imgE, imgF, selection]) // 要加入selection, 不然切換菜色選區後抓不到真實DOM
+  }, [imgA, imgB, imgC, imgD, imgE, imgF, selection, isCanBuy]) // 要加入selection, 不然切換菜色選區後抓不到真實DOM
+
+  // 購物車選購完畢開啟加入購物車按鈕邏輯
+  useEffect(() => {
+    // console.log(ricePrice !== 0)
+    if (
+      ricePrice !== 0 &&
+      meetPrice !== 0 &&
+      eggPrice !== 0 &&
+      vegPriceA !== 0 &&
+      vegPriceB !== 0 &&
+      vegPriceC !== 0
+    ) {
+      setIsCanBuy(true)
+    }
+    return () => {}
+  }, [ricePrice, meetPrice, eggPrice, vegPriceA, vegPriceB, vegPriceC])
 
   return (
     <>
@@ -562,10 +583,26 @@ function RuCustom(props) {
                 <div className="ru-checkout-container">
                   <div className="ru-checkout-warp">
                     <RuCounter />
-                    <RuAddCart
-                      id={'addCart-btn-custom'}
-                      parentId={'addCart-btn-warp-custom'}
-                    />
+                    {isCanBuy ? (
+                      <RuAddCart
+                        id={'addCart-btn-custom'}
+                        parentId={'addCart-btn-warp-custom'}
+                      />
+                    ) : (
+                      <div
+                        class="ru-isCanBuy"
+                        style={{
+                          width: '100%',
+                          pointerEvents: 'none',
+                          filter: 'grayscale(100%)',
+                        }}
+                      >
+                        <RuAddCart
+                          id={'addCart-btn-custom'}
+                          parentId={'addCart-btn-warp-custom'}
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

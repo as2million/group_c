@@ -513,6 +513,12 @@
     @include flex($df, $fdc, $jcc, $alc);
   }
 
+  .ru-isCanBuy {
+    width: 100%;
+    pointer-events: none;
+    filter: "grayscale(100%)";
+  }
+
   .ru-checkout-warp .counter-box {
     width: 100%;
   }
