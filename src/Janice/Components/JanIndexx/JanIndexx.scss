@@ -10,6 +10,9 @@ $deepOrange: #e0611e;
 $yellow: #f6bd60;
 $deepYello: #f5a016;
 
+@import '../../../Share/Components/Button/Variable.scss';
+@import '../../../Share/Components/Button/Button.scss';
+
 .jan-p0 {
   padding: 0 !important;
 }
@@ -59,30 +62,7 @@ $deepYello: #f5a016;
   height: 70rem;
   background: url('./Images/Images/banner1.jpg') center center no-repeat;
   background-size: cover;
-  // 滾動提示
-  .jan-mouse {
-    width: 3rem;
-    height: 5rem;
-    background: url('./Images/Svg/mouse.svg') center center no-repeat;
-    bottom: 6rem;
-    cursor: pointer;
-  }
-  .jan-mouse-arrow {
-    width: 1rem;
-    height: 1rem;
-    background: url('./Images/Svg/mouse-arrow.svg') center center no-repeat;
-    bottom: 2rem;
-    cursor: pointer;
-    animation: mouse-arrow 0.7s infinite;
-  }
-  @keyframes mouse-arrow {
-    from {
-      bottom: 4.5rem;
-    }
-    to {
-      bottom: 2rem;
-    }
-  }
+
   // 切換鈕
   .jan-carousel-dots {
     bottom: 2.5rem;
@@ -96,6 +76,33 @@ $deepYello: #f5a016;
       cursor: pointer;
     }
   }
+
+  // 滾動提示
+  .jan-mouse {
+    width: 3rem;
+    height: 5rem;
+    background: url('./Images/Svg/mouse.svg') center center no-repeat;
+    bottom: 6rem;
+    left: 49vw;
+    cursor: pointer;
+  }
+  .jan-mouse-arrow {
+    width: 3rem;
+    height: 1rem;
+    background: url('./Images/Svg/mouse-arrow.svg') center center no-repeat;
+    bottom: 2rem;
+    left: 49vw;
+    cursor: pointer;
+    animation: mouse-arrow 0.7s infinite;
+  }
+  @keyframes mouse-arrow {
+    from {
+      bottom: 4.5rem;
+    }
+    to {
+      bottom: 2rem;
+    }
+  }
   // 下載應用程式div的樣式
   .jan-download-area {
     bottom: 2.5rem;
@@ -105,6 +112,8 @@ $deepYello: #f5a016;
     background-color: #f5a0168e;
     margin-left: 5rem;
     padding: 1rem;
+    z-index: 900;
+    transition: transform 1s;
     .jan-app-logo {
       background: url('./Images/Images/appLogo.png') center center no-repeat;
       background-size: cover;
@@ -113,13 +122,16 @@ $deepYello: #f5a016;
       height: 7rem;
     }
     .jan-app-info {
+      width: 18rem;
+      height: 8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       p {
         color: $skin;
         font-size: 1.6rem;
         font-weight: 400;
       }
-      width: 18rem;
-      height: 8rem;
       .jan-ios {
         background: url('./Images/Images/ios.png') center center no-repeat;
         background-size: cover;
@@ -136,6 +148,15 @@ $deepYello: #f5a016;
         border-radius: 5px;
         cursor: pointer;
       }
+    }
+    .jan-col-download {
+      background: url('./Images/Svg/downloadIcon.svg') center center no-repeat;
+      background-size: cover;
+      width: 2.5rem;
+      height: 8.5rem;
+      display: none;
+      cursor: pointer;
+      transition: transform 1s;
     }
   }
 }
@@ -635,6 +656,7 @@ $deepYello: #f5a016;
 // 今日推薦
 .jan-recommend {
   background: url('./Images/Svg/rice.svg') center center no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   width: 100%;
   height: 78rem;
@@ -653,14 +675,64 @@ $deepYello: #f5a016;
       .jan-card-img-warp {
         height: 30rem;
         position: relative;
-        .jan-card-img {
+        overflow: hidden;
+        .jan-card-img1 {
           border-radius: 20px 20px 0 0;
           width: 100%;
           height: 100%;
-          background-image: url('../../../Share/Components/Card/Images/item1.jpg');
+          background-image: url('./Images/Images/01_bento-chicken-breast.jpg');
           background-size: cover;
           background-position: 70% center;
           background-repeat: no-repeat;
+          cursor: pointer;
+        }
+        .jan-card-img2 {
+          border-radius: 20px 20px 0 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('./Images/Images/04_bento-shrimp.jpg');
+          background-size: cover;
+          background-position: 70% center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+        }
+        .jan-card-img3 {
+          border-radius: 20px 20px 0 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('./Images/Images/05_bento-porkneck.jpg');
+          background-size: cover;
+          background-position: 70% center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+        }
+        .jan-ingredient {
+          border-radius: 20px 20px 0 0;
+          display: none;
+          width: 100%;
+          height: 100%;
+          backdrop-filter: blur(3px);
+        }
+      }
+      .jan-card-img-warp:hover {
+        transition: 0.5s;
+        .jan-ingredient {
+          border-radius: 20px 20px 0 0;
+          display: block;
+          display: flex;
+          justify-content: center;
+          color: #fff;
+          background-color: #0f0f0f36;
+          font-size: 1.5rem;
+          font-family: 'Noto Sans TC', sans-serif;
+          font-weight: 400;
+          .jan-ingredient-content {
+            margin-top: 5rem;
+            letter-spacing: 5px;
+            line-height: 30px;
+            width: 20rem;
+            height: 8rem;
+          }
         }
       }
     }
@@ -747,10 +819,12 @@ $deepYello: #f5a016;
 // 購物流程背景樣式
 .jan-shopping-process {
   background: url('./Images/Images/bentos.jpg') center center no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   width: 100vw;
   height: 78rem;
   margin: 0 1.5rem;
+  overflow: hidden;
   .jan-blur {
     background-color: rgba(255, 255, 255, 0.235);
     width: 100vw;
@@ -826,8 +900,6 @@ $deepYello: #f5a016;
       margin-left: 15rem;
     }
     .jan-adress-form-wrap {
-      // background-color: #ccc;
-      // border: 1px solid #ccc;
       margin-left: 2rem;
       width: 38rem;
       height: 52rem;
@@ -1079,26 +1151,4 @@ $deepYello: #f5a016;
   position: absolute;
   top: 30rem;
   left: 25rem;
-
-  // .jan-article-blurR {
-  //   background-color: #fff;
-  //   width: 35rem;
-  //   height: 62rem;
-  //   position: absolute;
-  //   margin: 0;
-  //   top: 0;
-  //   right: 0;
-  //   backdrop-filter: blur(50px);
-  // }
-  // .jan-article-blurL {
-  //   background-color: #fff;
-  //   width: 35rem;
-  //   height: 62rem;
-  //   position: absolute;
-  //   margin: 0;
-  //   top: 0;
-  //   left: 0;
-  //   backdrop-filter: blur(5px);
-  //   opacity: 0.2;
-  // }
 }

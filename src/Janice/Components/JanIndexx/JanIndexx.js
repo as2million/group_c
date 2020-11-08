@@ -15,23 +15,59 @@ import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft'
 import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
 import VNavbar from '../../../Share/Components/VNavbar/VNavbar'
 import ToToop from '../../../Share/Components/ToTopButton/ScrollButton'
-import { countries, townships } from './data.js'
+import { countries, townships, price } from './data.js'
 import { Image } from 'react-bootstrap'
 
 function JanIndexx(props) {
-  const { placeholder, type, id } = props
+  const { type, id } = props
   const [country, setCountry] = useState(-1)
-  const [township, setTownship] = useState(false)
+  const [township, setTownship] = useState(-1)
+  const [price, setPrice] = useState(-1)
+
+  //縣市區域連動狀態
+  const [indexTownship, setIndexTownship] = useState(false)
+
+  //radio  台北市或新北市
+  const [indexCounty, setIndexCounty] = useState('')
+
+  //選單區域狀態
+  const [indexDistrict, setIndexDistrict] = useState('')
+
+  //地址狀態
   const [indexAddress, setIndexAddress] = useState('')
+
+  //完整地址
+  const [fromIndex, setFromIndex] = useState(indexCounty + indexAddress)
+
+  // console.log(fromIndex)
+
+  //監聽應用程式滾動
+  function downloadIcon() {
+    const downloadArea = document.querySelector('.jan-download-area')
+    const info = document.querySelector('.jan-app-info')
+    const downloadIcon = document.querySelector('.jan-col-download')
+    if (window.scrollY > 0.1) {
+      downloadArea.style = 'left:-29rem;transition:transform 1s'
+      info.style = 'display:none'
+      downloadIcon.style = 'display:block'
+    }
+    if (window.scrollY === 0) {
+      downloadArea.style = 'left:0rem;transition:transform 1s'
+      info.style = 'display:block'
+      downloadIcon.style = 'display:none'
+    }
+    downloadIcon.addEventListener('click', () => {
+      downloadArea.style = 'left:0rem;transition:transform 1s'
+      info.style = 'display:block'
+      downloadIcon.style = 'display:none'
+    })
+  }
+  window.addEventListener('scroll', downloadIcon)
 
   return (
     <>
-      <VNavbar />
+      <VNavbar fromIndex={fromIndex} setfromIndex={setFromIndex} {...props} />
 
-      {/* 線上客服 */}
-      <div className="jan-chat position-absolute d-flex justify-content-center align-items-center position-fixed">
-        <div className="jan-chat-icon"></div>
-      </div>
       <div className="jan-fake-nav d-flex justify-content-center align-items-center">
         navbar的高度
       </div>
@@ -41,21 +77,22 @@ function JanIndexx(props) {
         <div className="jan-index-carousel position-relative">
           {/* 應用程式下載 */}
           {/* 橘底 */}
-          <div className="position-absolute jan-download-area d-flex justify-content-center">
+          <div className="position-absolute position-fixed jan-download-area d-flex justify-content-center">
             {/* AppLogo＋應用程式icon */}
             <div className="jan-app-logo"></div>
-            <div className="d-flex flex-column align-items-center jan-app-info">
+            <div className="jan-app-info">
               <p className="mt-1">點擊此處下載應用程式</p>
               <div className="jan-download-buttonsm d-flex justify-content-center">
                 <div className="jan-ios mr-3"></div>
                 <div className="jan-android"></div>
               </div>
             </div>
+            <div className="jan-col-download"></div>
           </div>
 
           {/* 滾動提示 */}
-          <div className="position-absolute jan-mouse d-flex justify-content-center w-100"></div>
-          <div className="position-absolute jan-mouse-arrow d-flex justify-content-center w-100"></div>
+          <div className="position-absolute jan-mouse"></div>
+          <div className="position-absolute jan-mouse-arrow"></div>
 
           {/* 切換鈕 */}
           <ul class="position-absolute jan-carousel-dots d-flex justify-content-center">
@@ -69,7 +106,7 @@ function JanIndexx(props) {
         {/* </div> */}
       </div>
 
-      {/* 品牌特色 參考jess list a*/}
+      {/* 品牌特色*/}
       <div className="container jan-p0">
         <div className="row jan-index-feature d-flex align-items-center justify-content-center">
           {/* 標題 */}
@@ -283,9 +320,13 @@ function JanIndexx(props) {
               <div className="jan-card-container">
                 {/* item圖片 */}
                 <section className="jan-card-img-warp">
-                  <a href="/" className="jan-card-link">
-                    <img alt="" className="jan-card-img"></img>
-                  </a>
+                  <div className="jan-card-img1">
+                    <div className="jan-ingredient">
+                      <div className="jan-ingredient-content">
+                        簡單卻迷人的迷迭香風味，經過真空舒肥的肉質軟嫩又Juicy，特別加入研磨風乾大蒜，濃郁香氣，清爽不膩。
+                      </div>
+                    </div>
+                  </div>
                 </section>
 
                 <section className="jan-card-info-warp d-flex justify-content-center">
@@ -314,14 +355,18 @@ function JanIndexx(props) {
               <div className="jan-card-container">
                 {/* item圖片 */}
                 <section className="jan-card-img-warp">
-                  <a href="/" className="jan-card-link">
-                    <img alt="" className="jan-card-img"></img>
-                  </a>
+                  <div className="jan-card-img2">
+                    <div className="jan-ingredient ">
+                      <div className="jan-ingredient-content ">
+                        只用些許香料，黑胡椒昇華鮮蝦甜味，火烤逼出濃郁鮮味，淋上新鮮萊姆汁，不用剝殼，爽脆口感，忍不住一隻接一隻！
+                      </div>
+                    </div>
+                  </div>
                 </section>
 
                 <section className="jan-card-info-warp d-flex justify-content-center">
                   <div className="jan-card-info d-flex flex-column">
-                    <h3>慢煮嫩雞胸-蒜味香草</h3>
+                    <h3>熱帶火烤萊姆蝦</h3>
                     {/* 分隔線 */}
                     <section>
                       <div className="jan-card-hr d-flex flex-column justify-content-center align-items-center">
@@ -345,14 +390,18 @@ function JanIndexx(props) {
               <div className="jan-card-container">
                 {/* item圖片 */}
                 <section className="jan-card-img-warp">
-                  <a href="/" className="jan-card-link">
-                    <img alt="" className="jan-card-img"></img>
-                  </a>
+                  <div className="jan-card-img3">
+                    <div className="jan-ingredient ">
+                      <div className="jan-ingredient-content ">
+                        均勻抹上日本發酵鹽麴醃製，軟化肉質並提出松阪豬本身鮮甜味，慢熟幾小時才噴火烤出香氣，又香又嫩，不同於一般松阪豬，柔嫩而彈牙，一吃上癮！
+                      </div>
+                    </div>
+                  </div>
                 </section>
 
                 <section className="jan-card-info-warp d-flex justify-content-center">
                   <div className="jan-card-info d-flex flex-column">
-                    <h3>慢煮嫩雞胸-蒜味香草</h3>
+                    <h3>麴塩五香松阪豬</h3>
                     {/* 分隔線 */}
                     <section>
                       <div className="jan-card-hr d-flex flex-column justify-content-center align-items-center">
@@ -528,86 +577,83 @@ function JanIndexx(props) {
                     <p className="jan-form-announce">
                       請填寫地址，查看免運金額
                     </p>
-                    {/* <div>
-                      <select
-                        value={country}
-                        onChange={(e) => {
-                          //將字串轉成數字
-                          setCountry(+e.target.value)
-                          //重置township的值
-                          setTownship(0)
-                          setTownship(-1)
-                        }}
-                      >
-                        <option value={-1}>選擇城市</option>
-                        {countries.map((v, i) => (
-                          <option key={i} value={i}>
-                            {v}
-                          </option>
-                        ))}
-                      </select>
-
-                      <select
-                        value={township}
-                        onChange={(e) => {
-                          // 將字串轉成數字
-                          setTownship(+e.target.value)
-                        }}
-                      >
-                        <option value={-1}>選擇區域</option>
-                        {country > -1 &&
-                          townships[country].map((v, i) => (
-                            <option key={i} value={i}>
-                              {v}
-                            </option>
-                          ))}
-                      </select> */}
-
-                    {/* <span> */}
-                    {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
-                    {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
-                    {/* {country > -1 &&
-                          township > -1 &&
-                          postcodes[country][township]}
-                      </span> */}
-                    {/* </div> */}
+                    <div></div>
                     <div className="jan-adress-radio">
-                      <input
+                      <div className="iris-mainpage-select-wrapper d-flex">
+                        <div className="iris-selectbar-wrapper">
+                          <select
+                            value={country}
+                            onClick={(e) => {
+                              setCountry(+e.target.value)
+                              setTownship(0)
+                              setTownship(-1)
+                            }}
+                            style={{ fontSize: '1.5rem' }}
+                            className="form-control iris-mainpage-select"
+                            id="exampleFormControlSelect1"
+                          >
+                            <option value={-1} disabled selected>
+                              點我選擇城市
+                            </option>
+                            {countries.map((v, i) => (
+                              <option key={i} value={i}>
+                                {v}
+                              </option>
+                            ))}
+                          </select>
+                          <div className="iris-mainpage-whitebox"></div>
+                          <div className="iris-mainpage-trianglearrow" />
+                        </div>
+                      </div>
+                      {/* <input
+                        id="taipieCity"
                         type="radio"
-                        name="location"
+                        name="city"
+                        value="台北市"
                         onClick={(e) => {
-                          setTownship(false)
+                          setIndexTownship(false)
+                          setIndexCounty('台北市')
+                          setIndexDistrict(-1)
+                          console.log(fromIndex)
                         }}
-                      />{' '}
-                      台北市
+                        defaultChecked={true}
+                      />
+                      <label for="taipieCity">台北市</label>
                       <input
                         className="ml-5"
+                        id="newTaipieCity"
                         type="radio"
-                        name="location"
-                        value="ntc"
+                        name="city"
+                        value="新北市"
                         onClick={(e) => {
-                          setTownship(true)
+                          setIndexTownship(true)
+                          setIndexCounty('新北市')
+                          console.log(indexCounty)
+                          setIndexDistrict(-1)
                         }}
-                      />{' '}
-                      新北市
+                      />
+                      <label for="newTaipieCity">新北市</label> */}
                     </div>
                     <br />
                     <div className="jan-adress-select">
                       <div className="iris-mainpage-select-wrapper d-flex">
                         <div className="iris-selectbar-wrapper">
                           <select
+                            value={township}
+                            onClick={(e) => {
+                              setTownship(+e.target.value)
+                            }}
                             style={{ fontSize: '1.5rem' }}
                             className="form-control iris-mainpage-select"
                             id="exampleFormControlSelect1"
                           >
-                            <option value={-1} disabled selected>
-                              點我選擇區域
-                            </option>
-                            {townships[township ? 1 : 0].map((v, i) => (
-                              <option key={i} value={i}>
-                                {v}
-                              </option>
-                            ))}
+                            <option value={-1}>點我選擇區域</option>
+                            {country > -1 &&
+                              townships[country].map((v, i) => (
+                                <option key={i} value={i}>
+                                  {v}
+                                </option>
+                              ))}
                           </select>
                           <div className="iris-mainpage-whitebox"></div>
                           <div className="iris-mainpage-trianglearrow" />
@@ -641,13 +687,21 @@ function JanIndexx(props) {
                       >
                         demo
                       </div>
-                      <Button className="button-btn-y " text="查詢結果" />
+                      <button className="button-btn-y " text="查詢結果">
+                        查詢結果
+                      </button>
                     </div>
                   </form>
                 </div>
                 <div className="jan-map-results mt-4">
                   <p>
-                    所在地點，符合滿<span>500元</span>免運費
+                    所在地點，符合滿
+                    <span>
+                      {country > -1 &&
+                        township > -1 &&
+                        price[country][township]}
+                    </span>
+                    元免運費
                   </p>
                   <p>
                     最近的自取地點是大安門市<span>（查看其他門市）</span>
@@ -745,7 +799,6 @@ function JanIndexx(props) {
             </div>
           </div>
 
-          <ToToop />
           <div className="jan-article-arrowR">
             <ArrowRight />
           </div>
@@ -756,6 +809,8 @@ function JanIndexx(props) {
           <div className="jan-article-blurL"></div>
         </div>
       </div>
+
+      <ToToop />
     </>
   )
 }

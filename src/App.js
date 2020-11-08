@@ -31,6 +31,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 function App() {
   const [isLogin, setIsLogin] = useState(false)
   const [showLoginModal, setShowLoginModal] = useState(false)
+  const [currentUser, setCurrentUser] = useState()
 
   return (
     // <Router>元件一定要放在最外層
@@ -49,7 +50,7 @@ function App() {
           {/* janice */}
           {/* 放"page資料夾"內的元件 */}
           <Route exact path="/">
-            <JanIndex />
+            <JanIndex isLogin={isLogin} currentUser={currentUser} />
           </Route>
 
           {/* jess */}

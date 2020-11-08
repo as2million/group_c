@@ -35,6 +35,9 @@ $lightBrown: #f7ede2;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&display=swap');
 
+@import '../../../Share/Components/Button/Variable.scss';
+@import '../../../Share/Components/Button/Button.scss';
+
 .jan-tabs-bcc {
   top: 5rem;
   left: 0;
@@ -77,10 +80,12 @@ $lightBrown: #f7ede2;
     font-weight: 500;
     padding: 2rem 2rem 0rem 3rem;
     justify-content: space-around;
+    cursor: pointer;
   }
   & .active {
     color: $orange;
     font-size: 2rem;
+    cursor: pointer;
   }
 }
 .jan-tab-address-form-wrap {
@@ -96,11 +101,11 @@ $lightBrown: #f7ede2;
 }
 .jan-address-radio {
   color: $gray;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-family: 'Noto Sans TC', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
-// 首頁select box
+// select box
 .iris-mainpage-select-wrapper .iris-mainpage-select {
   font-size: 2rem;
   border-radius: 2.5rem;
@@ -189,6 +194,12 @@ $lightBrown: #f7ede2;
   height: 4.5rem;
   font-size: 1.5rem;
 }
+.jan-put-button button {
+  width: 15rem;
+  height: 4.5rem;
+  font-size: 1.5rem;
+}
+
 .jan-map-results {
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 1.4rem;
@@ -197,7 +208,7 @@ $lightBrown: #f7ede2;
 }
 .jan-tab-address-map {
   width: 60rem;
-  height: 53.5rem;
+  height: 54rem;
   border: 1px solid #ccc;
 }
 .jan-tab-shops-list-wrap {
@@ -219,7 +230,7 @@ $lightBrown: #f7ede2;
 }
 .jan-tab-shops-map {
   width: 60rem;
-  height: 53.5rem;
+  height: 54rem;
   border: 1px solid #ccc;
 }
 
