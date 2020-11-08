@@ -30,7 +30,12 @@ html {
     box-shadow: 0px 3px 6px #D1C5B8;
     padding: 45px 35px;
     cursor: pointer;
+    transition: .5s;
 
+}
+
+.claudia-detailed-recommanded-card:hover {
+    transform: scale(1.05);
 }
 
 .claudia-detailed-recommanded-card-container {

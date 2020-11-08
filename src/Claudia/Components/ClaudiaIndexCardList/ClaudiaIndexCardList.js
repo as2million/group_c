@@ -4,7 +4,8 @@ import Cross from './Images/cross.svg';
 
 function ClaudiaIndexCardList(props) {
 
-    const { city, data, setButtonNum } = props;
+    const { city, data, setButtonNum, setImgNum } = props;
+    console.log('data', data)
 
     //add buttons
     if (data) {
@@ -25,6 +26,9 @@ function ClaudiaIndexCardList(props) {
 
             //add data-id
             document.getElementsByClassName('claudia-index-card-list-box-buttons')[0].children[i].setAttribute('data-id', i);
+
+            //add data-item
+            document.getElementsByClassName('claudia-index-card-list-box-buttons')[0].children[i].setAttribute('data-item', data[i].hash);
         }
 
         //addEventListener
@@ -34,21 +38,29 @@ function ClaudiaIndexCardList(props) {
             item.addEventListener('click', (e) => showFarmIntro(e))
         }
 
-        //show farm intro
-
-        const showFarmIntro = (e) => {
-
-            document.getElementsByClassName('claudia-index-card-list-box')[0].style.display = 'none';
-            document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 0;
-            document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display = 'block';
-            document.getElementsByClassName('claudia-index-card-intro-box')[0].style.opacity = 1;
-
-            // console.log('target', +e.target.dataset.id)
-            let buttonId = +e.target.dataset.id
-            setButtonNum(buttonId);
-        }
 
     }
+
+    //show farm intro
+
+    const showFarmIntro = (e) => {
+
+        document.getElementsByClassName('claudia-index-card-list-box')[0].style.display = 'none';
+        document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 0;
+        document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display = 'block';
+        document.getElementsByClassName('claudia-index-card-intro-box')[0].style.opacity = 1;
+
+        console.log('target', +e.target.dataset.id)
+        console.log('item', +e.target.dataset.item);
+        let buttonId = +e.target.dataset.id
+        let imgId = +e.target.dataset.item
+        setButtonNum(buttonId);
+        setImgNum(imgId);
+    }
+
+
+
+
 
     return (
         <>

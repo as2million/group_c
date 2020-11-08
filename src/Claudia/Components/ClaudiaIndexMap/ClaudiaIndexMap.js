@@ -22,7 +22,7 @@ function ClaudiaIndexMap(props) {
 
                 setCity(dataResult[0].city);
                 setData(dataResult);
-
+                console.log('data', dataResult)
 
             })
             .catch(err => console.log(err));
