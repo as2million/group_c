@@ -280,7 +280,7 @@ function RuCustom(props) {
             setMeetName()
             setMeetPrice(0)
             setMeetPrice(0)
-            // setMeetCal()
+            setMeetCal(0)
             break
         }
       } else if (e.target === boxA) {
