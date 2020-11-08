@@ -198,42 +198,42 @@ function RuCustom(props) {
             setImgA()
             setVegNameA()
             setVegPriceA(0)
-            setIsShowHintA(true)
+
             // setCalA()
             break
           case 'ru-put2':
             setImgB()
             setVegNameB()
             setVegPriceB(0)
-            setIsShowHintB(true)
+
             // setCalB()
             break
           case 'ru-put3':
             setImgC()
             setVegNameC()
             setVegPriceC(0)
-            setIsShowHintC(true)
+
             // setCalC()
             break
           case 'ru-put4':
             setImgD()
             setRiceName()
             setRicePrice(0)
-            setIsShowHintD(true)
+
             // setRiceCal()
             break
           case 'ru-put5':
             setImgE()
             setEggName()
             setEggPrice(0)
-            setIsShowHintE(true)
+
             // setEggCal()
             break
           case 'ru-put6':
             setImgF()
             setMeetName()
             setMeetPrice(0)
-            setIsShowHintF(true)
+
             // setMeetCal()
             break
         }
@@ -249,21 +249,21 @@ function RuCustom(props) {
             setVegNameA('綠色嫩花椰')
             setVegPriceA(15)
             setVegCalA(25)
-            setIsShowHintA(false)
+
             break
           case 'ru-veg-2':
             setImgA(cabageAfter)
             setVegNameA('清炒高麗菜')
             setVegPriceA(15)
             setVegCalA(25)
-            setIsShowHintA(false)
+
             break
           case 'ru-veg-3':
             setImgA(cornAfter)
             setVegNameA('黃金玉米粒')
             setVegPriceA(15)
             setVegCalA(111)
-            setIsShowHintA(false)
+
             break
         }
       } else if (e.target === boxB) {
@@ -275,21 +275,21 @@ function RuCustom(props) {
             setVegNameB('鮮綠花椰菜')
             setVegPriceB(15)
             setVegCalB(25)
-            setIsShowHintB(false)
+
             break
           case 'ru-veg-2':
             setImgB(cabageAfter)
             setVegNameB('清炒高麗菜')
             setVegPriceB(15)
             setVegCalB(25)
-            setIsShowHintB(false)
+
             break
           case 'ru-veg-3':
             setImgB(cornAfter)
             setVegNameB('黃金玉米粒')
             setVegPriceB(15)
             setVegCalB(111)
-            setIsShowHintB(false)
+
             break
         }
       } else if (e.target === boxC) {
@@ -303,21 +303,21 @@ function RuCustom(props) {
             setVegNameC('鮮綠花椰菜')
             setVegPriceC(15)
             setVegCalC(25)
-            setIsShowHintC(false)
+
             break
           case 'ru-veg-2':
             setImgC(cabageAfter)
             setVegNameC('清炒高麗菜')
             setVegPriceC(15)
             setVegCalC(25)
-            setIsShowHintC(false)
+
             break
           case 'ru-veg-3':
             setImgC(cornAfter)
             setVegNameC('黃金玉米粒')
             setVegPriceC(15)
             setVegCalC(111)
-            setIsShowHintC(false)
+
             break
         }
       } else if (
@@ -335,7 +335,6 @@ function RuCustom(props) {
             setRiceName('香甜白飯')
             setRicePrice(10)
             setRiceCal(353)
-            setIsShowHintD(false)
             break
           // case 'ru-rice-2':
           //   setImgD(riceAfter)
@@ -345,21 +344,18 @@ function RuCustom(props) {
             setEggName('白煮蛋')
             setEggPrice(10)
             setEggCal(155)
-            setIsShowHintE(false)
             break
           case 'ru-egg-2':
             setImgE(poachedEggAfter)
             setEggName('溏心蛋')
             setEggPrice(20)
             setEggCal(74)
-            setIsShowHintE(false)
             break
           case 'ru-meet-1': // 'ru-meet-1'
             setImgF(shrimpAfter) // 就放入放置後圖片
             setMeetName('火烤萊姆蝦')
             setMeetPrice(100)
             setMeetCal(103)
-            setIsShowHintF(false)
             break
         }
       }
