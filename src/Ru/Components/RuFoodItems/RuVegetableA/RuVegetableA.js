@@ -6,25 +6,34 @@ import cabage from './Images/cabage.svg'
 import corn from './Images/corn.svg'
 
 // 網頁版 配菜 選項
-function RuVegetableA() {
+function RuVegetableA(props) {
+  const { data } = props
   return (
     <>
-      3{/* 品項1 s*/}
+      {/* 品項1 s*/}
       <li className="ru-species-item ru-species-item1">
         <div className="ru-species-img">
-          <img src={cauliflower} className="ru-items ru-veg" id="ru-veg-1"></img>
+          <img
+            src={cauliflower}
+            className="ru-items ru-veg"
+            id="ru-veg-1"
+          ></img>
         </div>
         <div className="ru-species-info">
           <ul>
             <li>
               <h4>
-                綠色嫩花椰 <span>$10</span>
+                {data[8].productName} <span>${data[8].price}</span>
               </h4>
             </li>
-            <li className="ru-species-calories">熱量: 50大卡</li>
-            <li className="ru-species-carbohydrates">碳水化合物: 10大卡</li>
-            <li className="ru-species-protein">蛋白質: 10大卡</li>
-            <li className="ru-species-fat">脂肪: 10大卡</li>
+            <li className="ru-species-calories">
+              熱量: {data[8].calories}大卡
+            </li>
+            <li className="ru-species-carbohydrates">
+              碳水化合物:{data[8].cabohydrate}g
+            </li>
+            <li className="ru-species-protein">蛋白質: {data[8].protein}g</li>
+            <li className="ru-species-fat">脂肪: {data[8].fat}g</li>
           </ul>
         </div>
       </li>
@@ -38,13 +47,17 @@ function RuVegetableA() {
           <ul>
             <li>
               <h4>
-                清炒高麗菜 <span>$10</span>
+                {data[9].productName} <span>${data[9].price}</span>
               </h4>
             </li>
-            <li className="ru-species-calories">熱量: 50大卡</li>
-            <li className="ru-species-carbohydrates">碳水化合物: 10大卡</li>
-            <li className="ru-species-protein">蛋白質: 10大卡</li>
-            <li className="ru-species-fat">脂肪: 10大卡</li>
+            <li className="ru-species-calories">
+              熱量: {data[9].calories}大卡
+            </li>
+            <li className="ru-species-carbohydrates">
+              碳水化合物:{data[9].cabohydrate}g
+            </li>
+            <li className="ru-species-protein">蛋白質: {data[9].protein}g</li>
+            <li className="ru-species-fat">脂肪: {data[9].fat}g</li>
           </ul>
         </div>
       </li>
@@ -58,57 +71,21 @@ function RuVegetableA() {
           <ul>
             <li>
               <h4>
-                黃金玉米粒 <span>$10</span>
+                {data[10].productName} <span>${data[10].price}</span>
               </h4>
             </li>
-            <li className="ru-species-calories">熱量: 50大卡</li>
-            <li className="ru-species-carbohydrates">碳水化合物: 10大卡</li>
-            <li className="ru-species-protein">蛋白質: 10大卡</li>
-            <li className="ru-species-fat">脂肪: 10大卡</li>
+            <li className="ru-species-calories">
+              熱量: {data[10].calories}大卡
+            </li>
+            <li className="ru-species-carbohydrates">
+              碳水化合物:{data[10].cabohydrate}g
+            </li>
+            <li className="ru-species-protein">蛋白質: {data[10].protein}g</li>
+            <li className="ru-species-fat">脂肪: {data[10].fat}g</li>
           </ul>
         </div>
       </li>
       {/* 品項3 e*/}
-      {/* 品項4 s*/}
-      <li className="ru-species-item ru-species-item4">
-        <div className="ru-species-img">
-          <img src={cauliflower} className="ru-items ru-veg" id="ru-veg-4"></img>
-        </div>
-        <div className="ru-species-info">
-          <ul>
-            <li>
-              <h4>
-                綠色嫩花椰 <span>$10</span>
-              </h4>
-            </li>
-            <li className="ru-species-calories">熱量: 50大卡</li>
-            <li className="ru-species-carbohydrates">碳水化合物: 10大卡</li>
-            <li className="ru-species-protein">蛋白質: 10大卡</li>
-            <li className="ru-species-fat">脂肪: 10大卡</li>
-          </ul>
-        </div>
-      </li>
-      {/* 品項4 e*/}
-      {/* 品項5 s*/}
-      <li className="ru-species-item ru-species-item5">
-        <div className="ru-species-img">
-          <img src={cauliflower} className="ru-items ru-veg" id="ru-veg-5"></img>
-        </div>
-        <div className="ru-species-info">
-          <ul>
-            <li>
-              <h4>
-                綠色嫩花椰 <span>$10</span>
-              </h4>
-            </li>
-            <li className="ru-species-calories">熱量:25大卡</li>
-            <li className="ru-species-carbohydrates">碳水化合物:10大卡</li>
-            <li className="ru-species-protein">蛋白質:10大卡</li>
-            <li className="ru-species-fat">脂肪:10大卡</li>
-          </ul>
-        </div>
-      </li>
-      {/* 品項5 e*/}
     </>
   )
 }

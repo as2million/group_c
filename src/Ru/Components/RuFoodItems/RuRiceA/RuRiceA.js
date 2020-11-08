@@ -6,7 +6,7 @@ import riceAfter from './Images/riceAfter.svg'
 
 // 網頁版 白飯 選項
 function RuRiceA(props) {
-  const { riceName1, ricePrice1 } = props
+  const { data } = props
   return (
     <>
       {/* 品項1 s*/}
@@ -23,13 +23,17 @@ function RuRiceA(props) {
           <ul>
             <li>
               <h4>
-                香甜白飯 <span>$10</span>
+                {data[0].productName} <span>${data[0].price}</span>
               </h4>
             </li>
-            <li className="ru-species-calories">熱量: 50大卡</li>
-            <li className="ru-species-carbohydrates">碳水化合物: 10大卡</li>
-            <li className="ru-species-protein">蛋白質: 10大卡</li>
-            <li className="ru-species-fat">脂肪: 10大卡</li>
+            <li className="ru-species-calories">
+              熱量: {data[0].calories}大卡
+            </li>
+            <li className="ru-species-carbohydrates">
+              碳水化合物:{data[0].cabohydrate}g
+            </li>
+            <li className="ru-species-protein">蛋白質: {data[0].protein}g</li>
+            <li className="ru-species-fat">脂肪: {data[0].fat}g</li>
           </ul>
         </div>
       </li>

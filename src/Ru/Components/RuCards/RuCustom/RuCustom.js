@@ -30,6 +30,12 @@ import rice from './Images/rice.svg'
 import riceAfter from './Images/riceAfter.svg'
 import shrimp from './Images/shrimp.svg'
 import shrimpAfter from './Images/shrimpAfter.svg'
+import hintA from './Images/hintA.svg'
+import hintB from './Images/hintB.svg'
+import hintC from './Images/hintC.svg'
+import hintD from './Images/hintD.svg'
+import hintE from './Images/hintE.svg'
+import hintF from './Images/hintF.svg'
 
 // 引用圖片
 import background from './Images/background.png'
@@ -37,8 +43,6 @@ import { ReactComponent as LunchBox } from './Images/lunchBox.svg' // 將svg以�
 import Product from 'Cha/pages-demo/Product'
 
 function RuCustom(props) {
-  // const { data } = props
-  // console.log(data)
   const [moveX, setMoveX] = useState(0) // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true) // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false) // 是否開啟營養標示
@@ -53,8 +57,16 @@ function RuCustom(props) {
   // 設定飯類容器的優先權
   const [priority, setPriority] = useState('')
 
+  // 開啟提示區
+  const [isShowHintA, setIsShowHintA] = useState(false)
+  const [isShowHintB, setIsShowHintB] = useState(false)
+  const [isShowHintC, setIsShowHintC] = useState(false)
+  const [isShowHintD, setIsShowHintD] = useState(true)
+  const [isShowHintE, setIsShowHintE] = useState(false)
+  const [isShowHintF, setIsShowHintF] = useState(false)
+
   // 後端請求資料用的state(預設值不要為空值)
-  const [data, setData] = useState('1')
+  // const [data, setData] = useState('1234567891011121314151617181920')
 
   // 設定 今日菜色(價格) 資訊
   const [riceName, setRiceName] = useState('')
@@ -65,7 +77,7 @@ function RuCustom(props) {
   const [meetCal, setMeetCal] = useState(0)
   const [eggName, setEggName] = useState('')
   const [eggPrice, setEggPrice] = useState(0)
-  const [eggCal, setEggtCal] = useState(0)
+  const [eggCal, setEggCal] = useState(0)
   const [vegNameA, setVegNameA] = useState('')
   const [vegPriceA, setVegPriceA] = useState(0)
   const [vegCalA, setVegCalA] = useState(0)
@@ -86,6 +98,8 @@ function RuCustom(props) {
     setIsCal(true)
   }
 
+  // const [open, setOpen] = useState(false)
+  const [data, setData] = useState('123456789101112131415')
   // 向後端請求資料
   useEffect(() => {
     fetch('http://localhost:5000/product/custom_list')
@@ -182,21 +196,45 @@ function RuCustom(props) {
         switch (e.dataTransfer.getData('text/plain', e.target.id)) {
           case 'ru-put1':
             setImgA()
+            setVegNameA()
+            setVegPriceA(0)
+            setIsShowHintA(true)
+            // setCalA()
             break
           case 'ru-put2':
             setImgB()
+            setVegNameB()
+            setVegPriceB(0)
+            setIsShowHintB(true)
+            // setCalB()
             break
           case 'ru-put3':
             setImgC()
+            setVegNameC()
+            setVegPriceC(0)
+            setIsShowHintC(true)
+            // setCalC()
             break
           case 'ru-put4':
             setImgD()
+            setRiceName()
+            setRicePrice(0)
+            setIsShowHintD(true)
+            // setRiceCal()
             break
           case 'ru-put5':
             setImgE()
+            setEggName()
+            setEggPrice(0)
+            setIsShowHintE(true)
+            // setEggCal()
             break
           case 'ru-put6':
             setImgF()
+            setMeetName()
+            setMeetPrice(0)
+            setIsShowHintF(true)
+            // setMeetCal()
             break
         }
       } else if (e.target === boxA) {
@@ -205,21 +243,27 @@ function RuCustom(props) {
         switch (e.dataTransfer.getData('text/plain', e.target.id)) {
           case 'ru-veg-1': // 'ru-veg-1'
             setImgA(cauliflowerAfter)
-            setVegNameA('鮮綠花椰菜')
-            setVegPriceA(10)
-            // setVegCalA()
+            // setVegNameA(data[6].productName)
+            // setVegPriceA(data[6].price)
+            // setVegCalA(data[6].calories)
+            setVegNameA('綠色嫩花椰')
+            setVegPriceA(15)
+            setVegCalA(25)
+            setIsShowHintA(false)
             break
           case 'ru-veg-2':
             setImgA(cabageAfter)
             setVegNameA('清炒高麗菜')
-            setVegPriceA(10)
-            // setVegCalA()
+            setVegPriceA(15)
+            setVegCalA(25)
+            setIsShowHintA(false)
             break
           case 'ru-veg-3':
             setImgA(cornAfter)
             setVegNameA('黃金玉米粒')
-            setVegPriceA(10)
-            // setVegCalA()
+            setVegPriceA(15)
+            setVegCalA(111)
+            setIsShowHintA(false)
             break
         }
       } else if (e.target === boxB) {
@@ -229,20 +273,23 @@ function RuCustom(props) {
           case 'ru-veg-1': // 'ru-veg-1'
             setImgB(cauliflowerAfter)
             setVegNameB('鮮綠花椰菜')
-            setVegPriceB(10)
-            // setVegCalB()
+            setVegPriceB(15)
+            setVegCalB(25)
+            setIsShowHintB(false)
             break
           case 'ru-veg-2':
             setImgB(cabageAfter)
             setVegNameB('清炒高麗菜')
-            setVegPriceB(10)
-            // setVegCalB()
+            setVegPriceB(15)
+            setVegCalB(25)
+            setIsShowHintB(false)
             break
           case 'ru-veg-3':
             setImgB(cornAfter)
             setVegNameB('黃金玉米粒')
-            setVegPriceB(10)
-            // setVegCalB()
+            setVegPriceB(15)
+            setVegCalB(111)
+            setIsShowHintB(false)
             break
         }
       } else if (e.target === boxC) {
@@ -254,20 +301,23 @@ function RuCustom(props) {
           case 'ru-veg-1': // 'ru-veg-1'
             setImgC(cauliflowerAfter) // 就改變state值
             setVegNameC('鮮綠花椰菜')
-            setVegPriceC(10)
-            // setVegCalC()
+            setVegPriceC(15)
+            setVegCalC(25)
+            setIsShowHintC(false)
             break
           case 'ru-veg-2':
             setImgC(cabageAfter)
             setVegNameC('清炒高麗菜')
-            setVegPriceC(10)
-            // setVegCalC()
+            setVegPriceC(15)
+            setVegCalC(25)
+            setIsShowHintC(false)
             break
           case 'ru-veg-3':
             setImgC(cornAfter)
             setVegNameC('黃金玉米粒')
-            setVegPriceC(10)
-            // setVegCalC()
+            setVegPriceC(15)
+            setVegCalC(111)
+            setIsShowHintC(false)
             break
         }
       } else if (
@@ -285,6 +335,7 @@ function RuCustom(props) {
             setRiceName('香甜白飯')
             setRicePrice(10)
             setRiceCal(353)
+            setIsShowHintD(false)
             break
           // case 'ru-rice-2':
           //   setImgD(riceAfter)
@@ -293,19 +344,22 @@ function RuCustom(props) {
             setImgE(eggAfter) // 就放入放置後圖片
             setEggName('白煮蛋')
             setEggPrice(10)
-            // setEggCal()
+            setEggCal(155)
+            setIsShowHintE(false)
             break
           case 'ru-egg-2':
             setImgE(poachedEggAfter)
             setEggName('溏心蛋')
-            setEggPrice(15)
-            // setEggCal()
+            setEggPrice(20)
+            setEggCal(74)
+            setIsShowHintE(false)
             break
           case 'ru-meet-1': // 'ru-meet-1'
             setImgF(shrimpAfter) // 就放入放置後圖片
             setMeetName('火烤萊姆蝦')
-            setMeetPrice(60)
-            // setMeetCal()
+            setMeetPrice(100)
+            setMeetCal(103)
+            setIsShowHintF(false)
             break
         }
       }
@@ -320,11 +374,7 @@ function RuCustom(props) {
 
   return (
     <>
-      {/* <h1 style={{ textAlign: 'center', fontSize: '80px' }}>
-        ----- 這頁是客製化便當 -----
-      </h1> */}
-      <div>{data[0].productName}</div>
-
+      {/* <div>{data[6].productName}</div> */}
       {/* 商品區 - 網頁版 s */}
       <div className="ru-custom-containerA" id="ru-dropArea">
         <div className="ru-custom-warp" id="ru-dropOutAreaA">
@@ -332,7 +382,10 @@ function RuCustom(props) {
             <div className="ru-drop-warp" id="ru-dropOutAreaC">
               <div className="ru-box-container">
                 <div className="ru-box-warp">
-                  {/* 放置菜色A區 s*/}
+                  {/* 放置菜色A區vegA s*/}
+                  <div id="ru-hintA">
+                    {isShowHintA && <img src={hintA}></img>}
+                  </div>
                   <div id="ru-areaA">
                     <img
                       src={imgA}
@@ -341,8 +394,12 @@ function RuCustom(props) {
                       id="ru-put1"
                     ></img>
                   </div>
-                  {/* 放置菜色A區 e*/}
-                  {/* 放置菜色B區 s*/}
+                  {/* 放置菜色A區vegA e*/}
+                  {/* 放置菜色B區vegB s*/}
+                  <div id="ru-hintB">
+                    {isShowHintB && <img src={hintB}></img>}
+                  </div>
+
                   <div id="ru-areaB">
                     <img
                       src={imgB}
@@ -351,8 +408,12 @@ function RuCustom(props) {
                       id="ru-put2"
                     ></img>
                   </div>
-                  {/* 放置菜色B區 e*/}
-                  {/* 放置菜色C區 s*/}
+                  {/* 放置菜色B區vegB e*/}
+                  {/* 放置菜色C區vegC s*/}
+                  <div id="ru-hintC">
+                    {isShowHintC && <img src={hintC}></img>}
+                  </div>
+
                   <div id="ru-areaC">
                     <img
                       src={imgC}
@@ -361,8 +422,11 @@ function RuCustom(props) {
                       id="ru-put3"
                     ></img>
                   </div>
-                  {/* 放置菜色C區 e*/}
-                  {/* 放置菜色D區 s*/}
+                  {/* 放置菜色C區vegC e*/}
+                  {/* 放置菜色D區rice s*/}
+                  <div id="ru-hintD">
+                    {isShowHintD && <img src={hintD}></img>}
+                  </div>
                   <div id="ru-areaD" style={{ zIndex: priority }}>
                     <img
                       src={imgD}
@@ -371,8 +435,11 @@ function RuCustom(props) {
                       id="ru-put4"
                     ></img>
                   </div>
-                  {/* 放置菜色D區 e*/}
-                  {/* 放置菜色E區 s*/}
+                  {/* 放置菜色D區rice e*/}
+                  {/* 放置菜色E區egg s*/}
+                  <div id="ru-hintE">
+                    {isShowHintE && <img src={hintE}></img>}
+                  </div>
                   <div id="ru-areaE">
                     <img
                       src={imgE}
@@ -381,8 +448,11 @@ function RuCustom(props) {
                       id="ru-put5"
                     ></img>
                   </div>
-                  {/* 放置菜色E區 e*/}
-                  {/* 放置菜色F區 s*/}
+                  {/* 放置菜色E區egg e*/}
+                  {/* 放置菜色F區meet s*/}
+                  <div id="ru-hintF">
+                    {isShowHintF && <img src={hintF}></img>}
+                  </div>
                   <div id="ru-areaF">
                     <img
                       src={imgF}
@@ -391,7 +461,7 @@ function RuCustom(props) {
                       id="ru-put6"
                     ></img>
                   </div>
-                  {/* 放置菜色F區 e*/}
+                  {/* 放置菜色F區meet e*/}
                   <LunchBox />
                 </div>
               </div>
@@ -465,6 +535,18 @@ function RuCustom(props) {
                     setMoveX={setMoveX}
                     limitX={limitX} // 調配右滑極限值
                     setLimitX={setLimitX} // 調配右滑極限值
+                    isShowHintA={isShowHintA}
+                    setIsShowHintA={setIsShowHintA}
+                    isShowHintB={isShowHintB}
+                    setIsShowHintB={setIsShowHintB}
+                    isShowHintC={isShowHintC}
+                    setIsShowHintC={setIsShowHintC}
+                    isShowHintD={isShowHintD}
+                    setIsShowHintD={setIsShowHintD}
+                    isShowHintE={isShowHintE}
+                    setIsShowHintE={setIsShowHintE}
+                    isShowHintF={isShowHintF}
+                    setIsShowHintF={setIsShowHintF}
                   />
                   <RuButtonB
                     text={'主食'}
@@ -475,6 +557,18 @@ function RuCustom(props) {
                     setMoveX={setMoveX}
                     limitX={limitX} // 調配右滑極限值
                     setLimitX={setLimitX} // 調配右滑極限值
+                    isShowHintA={isShowHintA}
+                    setIsShowHintA={setIsShowHintA}
+                    isShowHintB={isShowHintB}
+                    setIsShowHintB={setIsShowHintB}
+                    isShowHintC={isShowHintC}
+                    setIsShowHintC={setIsShowHintC}
+                    isShowHintD={isShowHintD}
+                    setIsShowHintD={setIsShowHintD}
+                    isShowHintE={isShowHintE}
+                    setIsShowHintE={setIsShowHintE}
+                    isShowHintF={isShowHintF}
+                    setIsShowHintF={setIsShowHintF}
                   />
                   <RuButtonB
                     text={'配菜'}
@@ -485,6 +579,18 @@ function RuCustom(props) {
                     setMoveX={setMoveX}
                     limitX={limitX} // 調配右滑極限值
                     setLimitX={setLimitX} // 調配右滑極限值
+                    isShowHintA={isShowHintA}
+                    setIsShowHintA={setIsShowHintA}
+                    isShowHintB={isShowHintB}
+                    setIsShowHintB={setIsShowHintB}
+                    isShowHintC={isShowHintC}
+                    setIsShowHintC={setIsShowHintC}
+                    isShowHintD={isShowHintD}
+                    setIsShowHintD={setIsShowHintD}
+                    isShowHintE={isShowHintE}
+                    setIsShowHintE={setIsShowHintE}
+                    isShowHintF={isShowHintF}
+                    setIsShowHintF={setIsShowHintF}
                   />
                   <RuButtonB
                     text={'蛋'}
@@ -495,6 +601,18 @@ function RuCustom(props) {
                     setMoveX={setMoveX}
                     limitX={limitX} // 調配右滑極限值
                     setLimitX={setLimitX} // 調配右滑極限值
+                    isShowHintA={isShowHintA}
+                    setIsShowHintA={setIsShowHintA}
+                    isShowHintB={isShowHintB}
+                    setIsShowHintB={setIsShowHintB}
+                    isShowHintC={isShowHintC}
+                    setIsShowHintC={setIsShowHintC}
+                    isShowHintD={isShowHintD}
+                    setIsShowHintD={setIsShowHintD}
+                    isShowHintE={isShowHintE}
+                    setIsShowHintE={setIsShowHintE}
+                    isShowHintF={isShowHintF}
+                    setIsShowHintF={setIsShowHintF}
                   />
                 </div>
               </div>
@@ -508,10 +626,10 @@ function RuCustom(props) {
                     id="moveArea1"
                     style={{ transform: `translateX(${moveX}px)` }}
                   >
-                    {selection === 'rice' && <RuRiceA />}
-                    {selection === 'meet' && <RuMeetA />}
-                    {selection === 'vegetable' && <RuVegetableA />}
-                    {selection === 'egg' && <RuEggA />}
+                    {selection === 'rice' && <RuRiceA data={data} />}
+                    {selection === 'meet' && <RuMeetA data={data} />}
+                    {selection === 'vegetable' && <RuVegetableA data={data} />}
+                    {selection === 'egg' && <RuEggA data={data} />}
                     {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
                   </ul>
                   {/* 移動區 e */}

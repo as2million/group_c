@@ -18,31 +18,6 @@ function RuCompCustom(props) {
   // JSX
   return (
     <>
-      {/* <div
-        className="fix"
-        style={{
-          width: '100%',
-          height: '135px',
-          backgroundColor: '#FF5151',
-          position: 'fixed',
-          zIndex: '300',
-        }}
-      >
-        我是navbar
-        <img
-          className="ru-cart target"
-          id="target"
-          style={{
-            width: '30px',
-            height: '30px',
-            backgroundColor: 'white',
-            position: 'absolute',
-            top: '50%',
-            left: '90%',
-          }}
-          // src={cart}
-        />
-      </div> */}
       <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
       <RuShowWidth />
 

@@ -51,6 +51,78 @@
     position: relative;
   }
 
+  #ru-hintA {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    opacity: 0.3;
+    top: 14.5%;
+    left: 14%;
+    transform-origin: bottom right;
+    transform: scale(1.365);
+    pointer-events: none;
+  }
+
+  #ru-hintB {
+    width: 16.3%;
+    height: 20%;
+    position: absolute;
+    opacity: 0.3;
+    top: 22.1%;
+    left: 47.8%;
+    transform-origin: bottom right;
+    transform: scale(1.73);
+    pointer-events: none;
+  }
+
+  #ru-hintC {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    opacity: 0.3;
+    top: 14.5%;
+    left: 73.65%;
+    transform-origin: bottom right;
+    transform: scale(1.365);
+    pointer-events: none;
+  }
+
+  #ru-hintD {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    opacity: 0.3;
+    top: 113.5%;
+    left: 74%;
+    transform-origin: bottom right;
+    transform: scale(4.38);
+    pointer-events: none;
+  }
+
+  #ru-hintE {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    opacity: 0.3;
+    top: 50.5%;
+    left: 8.25%;
+    transform-origin: bottom right;
+    transform: scale(0.98);
+    pointer-events: none;
+  }
+
+  #ru-hintF {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    opacity: 0.3;
+    top: 97.25%;
+    left: 73.5%;
+    transform-origin: bottom right;
+    transform: scale(3.275);
+    pointer-events: none;
+  }
+
   #ru-areaA {
     // background-color: red;
     width: 29.5%;
@@ -93,10 +165,10 @@
 
   #ru-areaE {
     // background-color: rgb(217, 0, 255);
-    width: 22.5%;
-    height: 30%;
-    top: 55%;
-    left: 7.5%;
+    width: 19.5%;
+    height: 37%;
+    top: 51%;
+    left: 8.5%;
     position: absolute;
     // opacity: 0.5;
   }
@@ -104,7 +176,7 @@
   #ru-areaF {
     // background-color: rgb(98, 0, 255);
     width: 65%;
-    height: 37.5%;
+    height: 33.75%;
     top: 52%;
     left: 28%;
     position: absolute;
