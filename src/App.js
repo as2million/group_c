@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 // 引入 共用元件
 import Navbar from 'Share/Components/NavBar/NavBar'
@@ -29,12 +29,13 @@ import ScrollToTop from '../src/Jess/Components/ScrollToTop'
 
 // 路由表
 function App() {
+  const [count, setCount] = useState(1)
   return (
     // <Router>元件一定要放在最外層
     <Router>
       <>
         {/* 放切頁時不重新渲染的部份 s*/}
-        <Navbar />
+        <Navbar count={count} />
         {/* 放切頁時不重新渲染的部份 e*/}
 
         {/* 路由設定開始 */}
@@ -51,8 +52,10 @@ function App() {
             <Route path="/menu">
               <JessMenu />
             </Route>
-            <Route path="/bento/:id?" component={JessBento} />
-            {/* <JessBento /> */}
+            {/* component={JessBento} */}
+            <Route path="/bento/:id?">
+              <JessBento setCount={setCount} />
+            </Route>
             <Route path="/vegBox">
               <JessVegBox />
             </Route>

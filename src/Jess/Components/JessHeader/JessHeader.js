@@ -4,19 +4,20 @@ import { Row, Col } from 'react-bootstrap'
 import { Rate } from 'antd'
 import 'antd/dist/antd.css'
 import './JessHeader.scss'
-import chickenpic from './Images/chickenRice02.jpg'
+import chickenpic from './Images/02.jpg'
 import Counter from '../../../Share/Components/Counter/Counter'
 import AddCart from 'Share/Components/AddCart/AddCart'
+import cart from '../../../Share/Components/AddCart/Images/cart.svg'
 import BreadCrumb from '../JessBreadCrumb/BreadCrumb'
 import AddFavorite from 'Share/Components/AddFavorite/AddFavorite'
 
 function JessProdoctList(props) {
   const [count, setCount] = useState(1)
   const [total, setTotal] = useState(170)
-  console.log(props)
+  const [mycart, setMycart] = useState([])
+  // console.log(props)
   //useParams 設定id
   let { id } = useParams()
-  // const { menu } = props
   const [menu, setMenu] = useState([])
   async function bentoData() {
     const url = 'http://localhost:5000/product/bento'
@@ -59,11 +60,22 @@ function JessProdoctList(props) {
     }
   }
 
+  function updateCartToLocalStorage(value) {
+    // 從localstorage得到cart(json字串)
+    const currentCart = localStorage.getItem('cart') || '[]'
+    // 把得到的cart(json字串)轉為陣列值，然後和新加入的物件值合併為新陣列
+    const newCart = [...JSON.parse(currentCart), value]
+    // 設定回localstorage中(記得轉回json字串)
+    localStorage.setItem('cart', JSON.stringify(newCart))
+    // 設定至元件的狀態中
+    setMycart(newCart)
+    console.log(cart)
+  }
   return (
     <>
       <div className="jess-fluidBg">
         <div className="container jess-breadCrumb">
-          <BreadCrumb />
+          <BreadCrumb menu={menu} />
         </div>
         {/* <container className="jess-container"></container> */}
 
@@ -77,34 +89,36 @@ function JessProdoctList(props) {
         {/* <p>/productImages/Bento/{menu.img_id}.jpg</p> */}
 
         <div className="jess-menuList ">
-          <AddFavorite />
+          <div className="jess-fav active">
+            <AddFavorite />
+          </div>
           <h1 className="jess-tittle">{menu.productname}</h1>
           <p className="jess-content">{menu.introduction}</p>
-          <Row xs={4} md={4}>
-            <Col>
+          <div className="row mt-1">
+            <div className="col-3 col-md-3">
               <div className="jess-nutrient">蛋白質{menu.Protein}</div>
-            </Col>
-            <Col>
+            </div>
+            <div className="col-3 col-md-3">
               <div className="jess-nutrient">脂肪{menu.Fat}</div>
-            </Col>
-            <Col>
+            </div>
+            <div className="col-3 col-md-3">
               <div className="jess-nutrient2">
                 碳水化合物{menu.carbohydrate}
               </div>
-            </Col>
-            <Col>
+            </div>
+            <div className="col-3 col-md-3">
               <div className="jess-nutrient3">卡路里{menu.calories}</div>
-            </Col>
-          </Row>
+            </div>
+          </div>
           <div className="jess-rateStar">
-            <Rate disabled defaultValue={5} />
+            <Rate disabled defaultValue={4} />
             <span className="jess-rateStarMsgNum">
               {menu.contentNum} 則評論{' '}
             </span>
           </div>
           <hr />
-          <div className="jess-productPrice">
-            <p className="jess-salePrice">${total}</p>
+          <div className="jess-productPrice mt-1">
+            <p className="jess-salePrice mt-2">${total}</p>
             <p className="jess-saleTotal">今日已售出58個</p>
           </div>
           <hr />
@@ -142,8 +156,30 @@ function JessProdoctList(props) {
             </div>
           </div>
           <div className=" mt-5 d-flex justify-content-center">
-            <AddCart />
+            <button
+              className="addCart-btn addCart-btn-n"
+              onClick={() => {
+                updateCartToLocalStorage({
+                  id: 1,
+                  productname: '慢煮嫩雞胸-蒜味香草',
+                  amount: 1,
+                  price: 170,
+                })
+              }}
+            >
+              <img className="addCart-cart addCart-cart-n" src={cart} />
+            </button>
           </div>
+          <AddCart
+            onClick={() => {
+              updateCartToLocalStorage({
+                id: 1,
+                productname: '慢煮嫩雞胸-蒜味香草',
+                amount: 1,
+                price: 170,
+              })
+            }}
+          />
         </div>
       </div>
     </>

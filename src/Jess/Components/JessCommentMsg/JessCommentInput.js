@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import './JessCommentInput.scss'
-import JessCommentList from '../../../Share/Components/Button/Button'
-import { now } from 'jquery'
+// import JessCommentList from '../../../Share/Components/Button/Button'
+import ReactStars from 'react-rating-stars-component'
 
 function JessCommentInput(props) {
-  const { textInput, setTextInput, comments, setComments, member_sid } = props
+  const {
+    textInput,
+    setTextInput,
+    comments,
+    setComments,
+    rating,
+    setRating,
+    member_sid,
+  } = props
   // const [textInput, setTextInput] = useState('')
   // const [comments, setComments] = useState([
 
@@ -16,8 +24,9 @@ function JessCommentInput(props) {
     const newItems = {
       product_sid: 1,
       member_sid: 1,
+      starRating: rating,
       content: textInput,
-      // created_at: new Date().format('YYYY-MM-DD HH:mm:ss'),
+      created_at: new Date().toLocaleString(),
     }
 
     const newComments = [newItems, ...comments]
@@ -31,7 +40,7 @@ function JessCommentInput(props) {
         'Content-Type': 'application/json',
       }),
     })
-    console.log(JSON.stringify(newItems))
+    // console.log(JSON.stringify(newItems))
 
     const response = await fetch(request)
     const data = await response.json()
@@ -40,9 +49,28 @@ function JessCommentInput(props) {
 
     setTextInput('')
   }
+  const ratingChanged = (newRating) => {
+    setRating(newRating)
+    console.log('rating:', rating)
+  }
+  useEffect(() => {
+    handleSubmit()
+  }, [])
+  useEffect(() => {
+    console.log(rating)
+  }, [rating])
 
   return (
     <>
+      <div className="jess-rateStar">
+        <ReactStars
+          count={5}
+          rating={rating}
+          onChange={ratingChanged}
+          size={20}
+          activeColor="#ffd700"
+        />
+      </div>
       <textarea
         className="form-control  form-control-lg mt-3"
         type="text"
@@ -51,13 +79,16 @@ function JessCommentInput(props) {
         onChange={(e) => setTextInput(e.target.value)}
         // onChange={handleChange}
         value={textInput}
+        onSelect={'hi'}
         onKeyPress={(e) => {
           if (e.key === 'Enter' && e.target.value) {
             // const newComments = [e.target.value, ...comments];
             const newItems = {
               product_sid: 1,
               member_sid: 1,
+              starRating: rating,
               content: textInput,
+              created_at: new Date().toLocaleString(),
             }
             const newComments = [newItems, ...comments]
             setComments(newComments)
@@ -72,6 +103,9 @@ function JessCommentInput(props) {
       >
         確認送出
       </button>
+      {/* <button className="jess-input-button" onClick={autoSubmit}>
+        確認送出
+      </button> */}
     </>
   )
 }

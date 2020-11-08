@@ -26,8 +26,8 @@ function JessMenuB() {
                     <div className="jess-menuB-pic2"></div>
                   </Link>
                   <div class="mask">
-                    <h2>醬烤厚切1983黑豚</h2>
-                    <p>$120</p>
+                    <h2>慢煮嫩雞胸-蒜味香草</h2>
+                    <p>$170</p>
                   </div>
                 </div>
                 <div className="jess-view-menuBpic3">
@@ -46,8 +46,8 @@ function JessMenuB() {
                     <div className="jess-menuB-pic4"></div>
                   </Link>
                   <div class="mask">
-                    <h2>麴塩五香松阪豬</h2>
-                    <p>$180</p>
+                    <h2>頂級熟成菲力牛排</h2>
+                    <p>$230</p>
                   </div>
                 </div>
                 <div className="jess-view-menuBpic5">

@@ -6,6 +6,7 @@ import JessVegB from '../Components/JessVegB/JessVegB'
 import JessVegC from '../Components/JessVegC/JessVegC'
 import JessVegD from '../Components/JessVegD/JessVegD'
 import JessVegE from '../Components/JessVegE/JessVegE'
+import ToTop from 'Share/Components/ToTopButton/ScrollButtonGreen'
 
 function JessVegBox() {
   return (
@@ -16,6 +17,7 @@ function JessVegBox() {
       <JessVegC />
       <JessVegD />
       <JessVegE />
+      <ToTop />
     </>
   )
 }

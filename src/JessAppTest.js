@@ -5,7 +5,6 @@ import VNavbar from './Share/Components/VNavbar/VNavbar'
 import JessBento from './Jess/Pages/JessBento'
 import JessVegBox from './Jess/Pages/JessVegBox'
 import JessMenu from './Jess/Pages/JessMenu'
-import JessComment from './Jess/Pages/JessComment'
 import JessCommentMsg from './Jess/Pages/JessCommentMsg'
 import Footer from './Share/Components/Footer/Footer'
 

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
-import { Rate } from 'antd'
 import 'antd/dist/antd.css'
 import './JessVegHeader.scss'
 import Counter from '../../../Share/Components/Counter/Counter'
 import AddCart from 'Share/Components/AddCart/AddCart'
 import BreadCrumb from '../JessBreadCrumb/BreadCrumb'
 import AddFavorite from 'Share/Components/AddFavorite/AddFavorite'
+import vegPic from './Images/vegetableBox_slick_pic2.png'
+import vegPic2 from './Images/VegBox2.jpg'
 
 function JessVegHeader() {
   const [count, setCount] = useState(1)
@@ -54,15 +55,39 @@ function JessVegHeader() {
   useEffect(() => {
     bentoData()
   }, [])
+
+  const calA = (e) => {
+    setTabActive(e.target, '.jess-a')
+  }
+  const setTabActive = (addElem, removeName) => {
+    let removeTargets = document.querySelectorAll(removeName)
+    removeTargets.forEach((target) => {
+      target.classList.remove('active')
+      console.log(target)
+    })
+
+    addElem.classList.add('active')
+  }
+  const sizeA = (e) => {
+    setSizeActive(e.target, '.jess-b')
+  }
+  const setSizeActive = (addElem, removeName) => {
+    let removeTargets = document.querySelectorAll(removeName)
+    removeTargets.forEach((target) => {
+      target.classList.remove('active')
+      console.log(target)
+    })
+
+    addElem.classList.add('active')
+  }
+
   return (
     <>
       <div className="jess-fluidBg">
-        <div className="container jess-breadCrumb">
-          <BreadCrumb />
-        </div>
-        {/* <container className="jess-container"></container> */}
+        <div className="container jess-breadCrumb">{/* <BreadCrumb /> */}</div>
         <div className="jess-productList-VegPic">
-          {/* <img src={ChickenRice} alt="Background" />; */}
+          <img src={vegPic2}></img>
+          <img src={vegPic}></img>
         </div>
         <div className="jess-menuList ">
           <AddFavorite />
@@ -74,35 +99,51 @@ function JessVegHeader() {
           </p>
           <div className="row mt-3 ">
             <div className="col-2">
-              <button className="jess-calendar  active">11/21 星期六</button>
+              <button className="jess-calendar jess-a active" onClick={calA}>
+                11/21 星期六
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-calendar">11/22 星期日</button>
+              <button className="jess-calendar jess-a" onClick={calA}>
+                11/22 星期日
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-calendar">11/23 星期一</button>
+              <button className="jess-calendar jess-a" onClick={calA}>
+                11/23 星期一
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-calendar">11/24 星期二</button>
+              <button className="jess-calendar jess-a" onClick={calA}>
+                11/24 星期二
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-calendar">11/25 星期三</button>
+              <button className="jess-calendar jess-a" onClick={calA}>
+                11/25 星期三
+              </button>
             </div>
           </div>
           <p className="jess-text20GreenTc mt-3">・尺寸</p>
           <div className="row mt-3 jess-VegSize ">
             <div className="col-2">
-              <button className="jess-size active">S</button>
+              <button className="jess-size jess-b active" onClick={sizeA}>
+                S
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-size">M</button>
+              <button className="jess-size jess-b" onClick={sizeA}>
+                M
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-size">L</button>
+              <button className="jess-size jess-b" onClick={sizeA}>
+                L
+              </button>
             </div>
           </div>
           <hr />
-          <div className="jess-productPrice">
+          <div className="jess-productPrice mt-1">
             <p className="jess-salePrice">${total}</p>
             <p className="jess-saleTotal">剩餘2箱</p>
           </div>

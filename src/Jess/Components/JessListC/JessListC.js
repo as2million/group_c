@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import './JessListC.scss';
-import { Parallax } from 'rc-scroll-anim';
-import Slide from 'react-reveal/Slide';
-import vegChoice1 from './images/jess-onion.png';
+import React, { useState, useEffect } from 'react'
+import './JessListC.scss'
+import Fade from 'react-reveal/Fade'
+import Slide from 'react-reveal/Slide'
+import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
 
 function JessListC() {
   // A-Veg
@@ -11,24 +11,13 @@ function JessListC() {
       <div className="container-fluid mt-5 ">
         <div className="row  justify-content-start">
           <div className="col-8 d-flex align-items-center">
-            {/* <Parallax
-              animation={{ x: 0, opacity: 1, playScale: [0.5, 0.8] }}
-              style={{ transform: 'translateX(-100px)', opacity: 0 }}
-              className="jess-vegChoice1  mx-3 col-12 col-md-4"
-            ></Parallax> */}
-            <div className=" jess-vegChoice1 mx-3 col-6 col-md-4"></div>
-            {/* <Parallax
-              animation={{ x: 0, opacity: 1, playScale: [0.5, 0.8] }}
-              style={{ transform: 'translateX(-100px)', opacity: 0 }}
-              className="jess-vegChoice2 mx-3 col-12 col-md-4"
-            ></Parallax> */}
-            <div className=" jess-vegChoice2 mx-3 col-12 col-md-4"></div>
-            {/* <Parallax
-              animation={{ x: 0, opacity: 1, playScale: [0.5, 0.8] }}
-              style={{ transform: 'translateX(-100px)', opacity: 0 }}
-              className="jess-vegChoice3 mx-3 col-12 col-md-4"
-            ></Parallax> */}
-            <div className=" jess-vegChoice3 mx-3 col-12 col-md-4"></div>
+            <Fade>
+              <div className=" jess-vegChoice1 mx-3 col-6 col-md-4"></div>
+
+              <div className=" jess-vegChoice2 mx-3 col-12 col-md-4"></div>
+
+              <div className=" jess-vegChoice3 mx-3 col-12 col-md-4"></div>
+            </Fade>
           </div>
           <div className="col-2  jess-vegChoice-text">
             <p className="jess-text-15Gray">
@@ -40,8 +29,8 @@ function JessListC() {
           </div>
         </div>
       </div>
-    );
-  };
+    )
+  }
   const ComponentA2 = (props) => {
     return (
       <Slide top cascade>
@@ -53,19 +42,21 @@ function JessListC() {
           </p>
         </div>
       </Slide>
-    );
-  };
+    )
+  }
   // B
   const ComponentB = (props) => {
     return (
       <div className="container-fluid mt-5 ">
         <div className="row  justify-content-start">
           <div className="col-8 d-flex align-items-center">
-            <div className=" jess-onion01 mx-3 col-12 col-md-4"></div>
+            <Fade>
+              <div className=" jess-onion01 mx-3 col-12 col-md-4"></div>
 
-            <div className=" jess-onion02 mx-3 col-12 col-md-4"></div>
+              <div className=" jess-onion02 mx-3 col-12 col-md-4"></div>
 
-            <div className=" jess-onion03 mx-3 col-12 col-md-4"></div>
+              <div className=" jess-onion03 mx-3 col-12 col-md-4"></div>
+            </Fade>
           </div>
           <div className="col-2  jess-vegChoice-text">
             <p className="jess-text-15Gray">
@@ -77,8 +68,8 @@ function JessListC() {
           </div>
         </div>
       </div>
-    );
-  };
+    )
+  }
   const ComponentB2 = (props) => {
     return (
       <Slide top cascade>
@@ -91,8 +82,8 @@ function JessListC() {
           </p>
         </div>
       </Slide>
-    );
-  };
+    )
+  }
   // C
   const ComponentC = (props) => {
     return (
@@ -115,8 +106,8 @@ function JessListC() {
           </div>
         </div>
       </div>
-    );
-  };
+    )
+  }
   const ComponentC2 = (props) => {
     return (
       <Slide top cascade>
@@ -128,8 +119,8 @@ function JessListC() {
           </p>
         </div>
       </Slide>
-    );
-  };
+    )
+  }
   // D
   const ComponentD = (props) => {
     return (
@@ -152,8 +143,8 @@ function JessListC() {
           </div>
         </div>
       </div>
-    );
-  };
+    )
+  }
   const ComponentD2 = (props) => {
     return (
       <Slide top cascade>
@@ -167,8 +158,8 @@ function JessListC() {
           </p>
         </div>
       </Slide>
-    );
-  };
+    )
+  }
   // E
   const ComponentE = (props) => {
     return (
@@ -189,8 +180,8 @@ function JessListC() {
           </div>
         </div>
       </div>
-    );
-  };
+    )
+  }
   const ComponentE2 = (props) => {
     return (
       <Slide top cascade>
@@ -202,50 +193,50 @@ function JessListC() {
           </p>
         </div>
       </Slide>
-    );
-  };
+    )
+  }
 
   //
   const setTabActive = (addElem, removeName) => {
-    let removeTargets = document.querySelectorAll(removeName);
+    let removeTargets = document.querySelectorAll(removeName)
     removeTargets.forEach((target) => {
-      target.classList.remove('active');
-      console.log(target);
-    });
+      target.classList.remove('active')
+      console.log(target)
+    })
 
-    addElem.classList.add('active');
-  };
+    addElem.classList.add('active')
+  }
 
   const TabMenu = () => {
-    const [component, setComponent] = React.useState(<ComponentA />);
-    const [component2, setComponent2] = React.useState(<ComponentA2 />);
+    const [component, setComponent] = React.useState(<ComponentA />)
+    const [component2, setComponent2] = React.useState(<ComponentA2 />)
 
     const vegA = (e) => {
-      setTabActive(e.target, '.jess-a');
-      setComponent(<ComponentA />);
-      setComponent2(<ComponentA2 />);
-    };
+      setTabActive(e.target, '.jess-a')
+      setComponent(<ComponentA />)
+      setComponent2(<ComponentA2 />)
+    }
 
     const vegB = (e) => {
-      setTabActive(e.target, '.jess-a');
-      setComponent(<ComponentB />);
-      setComponent2(<ComponentB2 />);
-    };
+      setTabActive(e.target, '.jess-a')
+      setComponent(<ComponentB />)
+      setComponent2(<ComponentB2 />)
+    }
     const vegC = (e) => {
-      setTabActive(e.target, '.jess-a');
-      setComponent(<ComponentC />);
-      setComponent2(<ComponentC2 />);
-    };
+      setTabActive(e.target, '.jess-a')
+      setComponent(<ComponentC />)
+      setComponent2(<ComponentC2 />)
+    }
     const vegD = (e) => {
-      setTabActive(e.target, '.jess-a');
-      setComponent(<ComponentD />);
-      setComponent2(<ComponentD2 />);
-    };
+      setTabActive(e.target, '.jess-a')
+      setComponent(<ComponentD />)
+      setComponent2(<ComponentD2 />)
+    }
     const vegE = (e) => {
-      setTabActive(e.target, '.jess-a');
-      setComponent(<ComponentE />);
-      setComponent2(<ComponentE2 />);
-    };
+      setTabActive(e.target, '.jess-a')
+      setComponent(<ComponentE />)
+      setComponent2(<ComponentE2 />)
+    }
     return (
       <>
         <div className="container-fluid jess-proC-bg ">
@@ -302,18 +293,19 @@ function JessListC() {
 
           <div className="jess-product-Tab1 d-flex ">{component}</div>
           <div className="container d-flex justify-content-end">
+            {/* {ArrowRight} */}
             <div className="jess-proC-rArrow d-flex float-right"></div>
           </div>
         </div>
       </>
-    );
-  };
+    )
+  }
 
   return (
     <>
       <TabMenu />
     </>
-  );
+  )
 }
 
-export default JessListC;
+export default JessListC

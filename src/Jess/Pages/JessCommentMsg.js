@@ -7,6 +7,7 @@ import JessCommentList from '../Components/JessCommentMsg/JessCommentList'
 function JessMenu(props) {
   const [textInput, setTextInput] = useState('')
   const [comments, setComments] = useState([])
+  const [rating, setRating] = useState('0')
 
   async function messageData() {
     const url = 'http://localhost:5000/product/member1msg'
@@ -48,6 +49,8 @@ function JessMenu(props) {
               setTextInput={setTextInput}
               comments={comments}
               setComments={setComments}
+              rating={rating}
+              setRating={setRating}
             />
             <div className="jess-inputBorder"></div>
             <div className="jess-commentBox">

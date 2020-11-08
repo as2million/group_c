@@ -46,6 +46,16 @@ $white: #ffffff;
   display: flex;
   outline: none;
 }
+
+.jess-rateStar div {
+  outline: none;
+}
+.jess-rateStarColor div {
+  outline: none;
+  color: #f48145;
+  width: 14rem;
+  height: 3rem;
+}
 .jess-itemTextBox {
   // text-align: end;
   background-color: transparent;
