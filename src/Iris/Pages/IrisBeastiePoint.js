@@ -12,7 +12,7 @@ function IrisBeastiePoint(props) {
     <>
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect currentUser={currentUser} />
-        <IrisBeastiePointSect />
+        <IrisBeastiePointSect currentUser={currentUser} />
       </div>
     </>
   )

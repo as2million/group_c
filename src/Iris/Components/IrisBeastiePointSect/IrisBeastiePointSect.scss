@@ -41,7 +41,7 @@
   margin-bottom: 1.3rem;
 }
 
-.iris-beastie-name-input{
+.iris-beastie-name-input {
   display: none;
   width: 8rem;
 }
@@ -66,15 +66,22 @@
 }
 
 .iris-coupon-box {
-  margin-top: 3rem;
+  margin-bottom: 3rem;
   height: 13rem;
   border-radius: 2rem;
   border: 1px #bcbcbc solid;
 }
 
 .iris-coupon-icon {
-  padding-right: 3.7rem;
-  padding-left: 3.7rem;
+  padding-right: 3.5rem;
+  padding-left: 3.5rem;
+  height: 8.9rem;
+  width: 21.2rem;
+}
+
+.iris-coupon-img {
+  height: 8.9rem;
+  width: 21.2rem;
 }
 
 .iris-coupon-title {
@@ -125,4 +132,35 @@
   bottom: 0;
   right: 5%;
   opacity: 70%;
+}
+
+#coupon-img-1 {
+  background-image: url('./Images/beastie_coupon10.svg');
+  background-size: contain;
+  // background-position: 70% center;
+  background-repeat: no-repeat;
+}
+#coupon-img-2 {
+  background-image: url('./Images/beastie_coupon20.svg');
+  background-size: contain;
+  // background-position: 70% center;
+  background-repeat: no-repeat;
+}
+#coupon-img-3 {
+  background-image: url('./Images/beastie_coupon30.svg');
+  background-size: contain;
+  // background-position: 70% center;
+  background-repeat: no-repeat;
+}
+#coupon-img-4 {
+  background-image: url('./Images/beastie_coupon40.svg');
+  background-size: contain;
+  // background-position: 70% center;
+  background-repeat: no-repeat;
+}
+#coupon-img-5 {
+  background-image: url('./Images/beastie_coupon50.svg');
+  background-size: contain;
+  // background-position: 70% center;
+  background-repeat: no-repeat;
 }
