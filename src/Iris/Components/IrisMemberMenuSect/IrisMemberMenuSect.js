@@ -9,7 +9,7 @@ import { ReactComponent as PlateIcon } from './Images/plate_icon.svg'
 import { ReactComponent as GroupOrderIcon } from './Images/group_order.svg'
 import { ReactComponent as MyFavIcon } from './Images/my_fav.svg'
 import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg'
-
+import { ReactComponent as ProfileIcon } from './Images/profile_beastie_icon.svg'
 function IrisMemberMenuSect(props) {
   const { currentUser } = props
 
@@ -35,7 +35,9 @@ function IrisMemberMenuSect(props) {
         <div class="row">
           <div class="iris-menu-background d-flex">
             {/* ---------- info ----------- */}
-            <div class="iris-profile-photo"></div>
+            <div class="iris-profile-photo d-flex">
+              <ProfileIcon />
+            </div>
 
             <div class="iris-user-name">{currentUser}</div>
 
