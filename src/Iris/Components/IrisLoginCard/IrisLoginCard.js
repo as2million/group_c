@@ -103,9 +103,9 @@ function IrisLoginCard(props) {
         SetShowLoginCard(false) // 登入表單消失
 
         // Test
-        // setTimeout(() => {
-        //   SetShowLoginCard(true)
-        // }, 2000)
+        setTimeout(() => {
+          SetShowLoginCard(true)
+        }, 10000)
       } else {
         // 若帳密錯誤，顯示錯誤提示
         $('.iris-login-alert').slideDown('slow')

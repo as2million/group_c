@@ -30,6 +30,17 @@ function NavBar(props) {
 
   if (isLogin === true) {
     document.querySelector('.iris-login-option').style.display = 'none'
+  } else {
+    if (document.querySelector('.iris-logout-option')) {
+      document.querySelector('.iris-logout-option').style.display = 'block'
+    }
+  }
+
+  const showLoginOption = () => {
+    document.querySelector('.iris-login-option').style.display = 'block'
+
+    // display = 'none' 沒用
+    document.querySelector('.iris-logout-option').style.display = 'none'
   }
 
   return (
@@ -146,6 +157,7 @@ function NavBar(props) {
                       className="navBar-jess-dropdown_item iris-logout-option"
                       onClick={() => {
                         setIsLogin(false)
+                        showLoginOption()
                       }}
                     >
                       登出
