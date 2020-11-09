@@ -34,9 +34,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // 路由表
 function App() {
   // login modal
-  const [isLogin, setIsLogin] = useState(false)
-  const [showLoginModal, setShowLoginModal] = useState(false)
-  const [currentUser, setCurrentUser] = useState()
+  const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
+  const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀登入光箱
+  const [currentUser, setCurrentUser] = useState() // 目前用戶
 
   return (
     // <Router>元件一定要放在最外層
@@ -72,22 +72,46 @@ function App() {
           {/* iris */}
           {/* 放"page資料夾"內的元件 */}
           <Route exact path="/memberUserprofile">
-            <IrisUserprofile isLogin={isLogin} currentUser={currentUser} />
+            <IrisUserprofile
+              isLogin={isLogin}
+              currentUser={currentUser}
+              setShowLoginModal={setShowLoginModal}
+            />
           </Route>
           <Route exact path="/orderComment">
-            <IrisOrderComment isLogin={isLogin} currentUser={currentUser} />
+            <IrisOrderComment
+              isLogin={isLogin}
+              currentUser={currentUser}
+              setShowLoginModal={setShowLoginModal}
+            />
           </Route>
           <Route exact path="/myFav">
-            <IrisMyFav isLogin={isLogin} currentUser={currentUser} />
+            <IrisMyFav
+              isLogin={isLogin}
+              currentUser={currentUser}
+              setShowLoginModal={setShowLoginModal}
+            />
           </Route>
           <Route exact path="/beastiePoint">
-            <IrisBeastiePoint isLogin={isLogin} currentUser={currentUser} />
+            <IrisBeastiePoint
+              isLogin={isLogin}
+              currentUser={currentUser}
+              setShowLoginModal={setShowLoginModal}
+            />
           </Route>
           <Route path="/getCoupon">
-            <IrisGetCoupon isLogin={isLogin} currentUser={currentUser} />
+            <IrisGetCoupon
+              isLogin={isLogin}
+              currentUser={currentUser}
+              setShowLoginModal={setShowLoginModal}
+            />
           </Route>
           <Route path="/orderManagement">
-            <IrisOrderManagement isLogin={isLogin} currentUser={currentUser} />
+            <IrisOrderManagement
+              isLogin={isLogin}
+              currentUser={currentUser}
+              setShowLoginModal={setShowLoginModal}
+            />
           </Route>
 
           {/* ru */}
