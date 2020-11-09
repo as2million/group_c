@@ -1,32 +1,33 @@
 // 導入其它的模組
-import React, { useState } from 'react';
-import { Nav } from 'react-bootstrap';
-import './Navbar.scss';
-import 'antd/dist/antd.css';
-import { Popover } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
-import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg';
-import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg';
-import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg';
-import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg';
-import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg';
+import React, { useState, useEffect } from 'react'
+import { Nav } from 'react-bootstrap'
+import './Navbar.scss'
+import 'antd/dist/antd.css'
+import { Popover } from 'antd'
+import { MenuOutlined } from '@ant-design/icons'
+import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg'
+import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg'
+import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg'
+import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg'
+import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg'
 // 選單連結要使用NavLink取代Link
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 function NavBar(props) {
-  const [count, setCount] = useState(0);
-  const [shoppingList, setShoppingList] = useState('0');
-  const [showNav, setShowNav] = useState(true);
-  const { isLogin, setShowLoginModal } = props;
+  const [count, setCount] = useState(0)
+  const [shoppingList, setShoppingList] = useState('0')
+  const [showNav, setShowNav] = useState(true)
+  const { isLogin, setShowLoginModal, setIsLogin } = props
 
   function myFunction() {
-    const x = document.getElementById('NavBar');
+    const x = document.getElementById('NavBar')
     if (x.className === 'nav') {
-      x.className += ' responsive';
+      x.className += ' responsive'
     } else {
-      x.className = 'nav';
+      x.className = 'nav'
     }
   }
+
   return (
     <>
       <div className="nav" id="NavBar">
@@ -127,14 +128,23 @@ function NavBar(props) {
                     </li>
                     {/* 10/31 iris修改(把route拿掉) */}
                     <li
-                      className="navBar-jess-dropdown_item"
+                      className="navBar-jess-dropdown_item iris-login-option"
                       onClick={() => {
-                        setShowLoginModal(true);
+                        setShowLoginModal(true)
                       }}
                     >
                       {/* <Nav.Link as={NavLink} to="/login"> */}
-                      登入/登出
+                      登入/註冊
                       {/* </Nav.Link> */}
+                    </li>
+                    {/* 11/9 新增登出選項 */}
+                    <li
+                      className="navBar-jess-dropdown_item iris-logout-option"
+                      onClick={() => {
+                        setIsLogin(false)
+                      }}
+                    >
+                      登出
                     </li>
                   </ul>
                 </div>
@@ -163,9 +173,9 @@ function NavBar(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 // 輸出元件(函式)
 
-export default NavBar;
+export default NavBar

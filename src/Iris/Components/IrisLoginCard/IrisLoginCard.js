@@ -5,9 +5,11 @@ import { ReactComponent as RegisterCardBg } from './Images/register_card.svg'
 import InputH44 from './../../../Share/Components/Input/InputH44.js'
 import Button from './Button/Button'
 import ButtonLogin from './Button/ButtonLogin'
+import $ from 'jquery'
 
 function IrisLoginCard(props) {
-  const { setIsLogin, setCurrentUser } = props
+  const { setIsLogin, setCurrentUser, isLogin } = props
+
 
   // 變成註冊表單
   const ToRegisterForm = () => {
@@ -90,7 +92,15 @@ function IrisLoginCard(props) {
       ) {
         setIsLogin(true)
         setCurrentUser(userinfo[i].member_sid)
-        alert(useraccount + '登入成功')
+        document.querySelector('.iris-login-content').style.display = 'none'
+        document.querySelector('.iris-success-checkmark').style.display =
+          'block'
+      } else {
+        // 若帳密錯誤，顯示錯誤提示
+        $('.iris-login-alert').slideDown('slow')
+        setTimeout(() => {
+          $('.iris-login-alert').slideUp('slow')
+        }, 2000)
       }
     }
   }
@@ -141,6 +151,9 @@ function IrisLoginCard(props) {
           {/* ----------------登入表單----------------- */}
           <div className="iris-login-content">
             <div className="iris-login-title">會員登入</div>
+            <div class="alert alert-danger iris-login-alert" role="alert">
+              帳號或密碼錯誤
+            </div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">帳號</div>
               <InputH44 type="text" id="useraccount" />
@@ -183,6 +196,16 @@ function IrisLoginCard(props) {
                 註冊訂餐
               </div>
             </div>
+          </div>
+
+          <div class="iris-success-checkmark">
+            <div class="iris-check-icon">
+              <span class="icon-line line-tip"></span>
+              <span class="icon-line line-long"></span>
+              <div class="icon-circle"></div>
+              <div class="icon-fix"></div>
+            </div>
+            <div class="iris-login-sucess">登入成功</div>
           </div>
           {/* ----------------註冊表單----------------- */}
           <div className="iris-register-content">

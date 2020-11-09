@@ -8,6 +8,7 @@ function IrisLoginModal(props) {
     setShowLoginModal,
     setIsLogin,
     setCurrentUser,
+    isLogin,
   } = props
 
   // 若ShowLoginModal是true，就秀登入畫面
@@ -43,6 +44,7 @@ function IrisLoginModal(props) {
         <IrisLoginCard
           setIsLogin={setIsLogin}
           setCurrentUser={setCurrentUser}
+          isLogin={isLogin}
         />
       </div>
     </>

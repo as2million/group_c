@@ -46,6 +46,7 @@ function App() {
         <Navbar
           setShowLoginModal={setShowLoginModal}
           showLoginModal={showLoginModal}
+          setIsLogin={setIsLogin}
         />
         {/* 放切頁時不重新渲染的部份 e*/}
 
@@ -165,6 +166,7 @@ function App() {
           setShowLoginModal={setShowLoginModal}
           setIsLogin={setIsLogin}
           setCurrentUser={setCurrentUser}
+          isLogin={isLogin}
         />
       </>
     </Router>
