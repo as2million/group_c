@@ -14,7 +14,7 @@ function ChaCart(props) {
   // 餐點資料(已處理)
   // const [mealsDisplay, setMealsDisplay] = useState([]);
   // 控制navbar
-  const { setShowBar, handleCartNumber } = props;
+  const { setShowBar } = props;
   // 資料，準備傳送給「我的訂單」
   const [memberSid, setMemberSid] = useState('');
   const [name, setName] = useState('');
@@ -203,8 +203,7 @@ function ChaCart(props) {
             beastieCoin={beastieCoin}
             takeDate={takeDate}
             takeTime={takeTime}
-            // handleCartNumber={handleCartNumber}
-            {...props}
+            handleCartNumber={handleCartNumber}
           />
         </aside>
       </div>

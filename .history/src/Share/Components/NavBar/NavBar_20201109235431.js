@@ -32,7 +32,7 @@ function NavBar(props) {
           <div className="navBar-jess-navCollapse ">
             <ul className="navBar-jess-navigation">
               <li className="navBar-jess-navigation_item">
-                <Nav.Link as={NavLink} to="/groupOrder/groupOrderCreate">
+                <Nav.Link as={NavLink} to="/groupOrder">
                   作伙揪團
                 </Nav.Link>
               </li>
