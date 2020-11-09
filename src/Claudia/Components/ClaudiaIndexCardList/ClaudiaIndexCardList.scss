@@ -5,12 +5,14 @@
     border-radius: 40px;
     padding: 35px 40px 10px 40px;
     box-shadow: 0px 3px 6px #D1C5B8;
-    transition: .5s;
-    position: absolute;
-    top: 35px;
-    left: 0px;
     opacity: 0;
     display: none;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
 }
 
 #claudia-index-card-list-city {
@@ -53,16 +55,6 @@
     overflow: hidden;
     transition: color .35s, border 0s;
 }
-
-// .claudia-index-card-list-box-name-text {
-//     margin: 0px auto;
-//     width: 240px;
-// }
-
-// .claudia-index-card-list-box-button p {
-//     font-size: 2rem;
-//     margin-bottom: 0px;
-// }
 
 
 //button hover
@@ -108,6 +100,7 @@
     .claudia-index-card-list-box {
         width: 335px;
         height: 590px;
+        margin: 0px auto;
     }
 
     .claudia-index-card-list-box-button {

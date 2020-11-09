@@ -28,12 +28,18 @@ function ClaudiaIndexMap(props) {
             .catch(err => console.log(err));
 
 
-
-
         //show box
         document.getElementsByClassName('claudia-index-card')[0].style.height = '690px';
 
-        if (document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display !== 'block') {
+        if (document.getElementsByClassName('claudia-index-card-list-box')[0].style.display === 'block') {
+
+            document.getElementsByClassName('claudia-index-card-list-box')[0].style.display = 'none';
+            document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 0;
+            setTimeout(() => {
+                document.getElementsByClassName('claudia-index-card-list-box')[0].style.display = 'block';
+                document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 1;
+            }, 200)
+        } else if (document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display !== 'block') {
             document.getElementsByClassName('claudia-index-card-list-box')[0].style.display = 'block';
             document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 1;
         } else {
@@ -43,6 +49,17 @@ function ClaudiaIndexMap(props) {
             document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 1;
 
         }
+
+        // if (document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display !== 'block') {
+        //     document.getElementsByClassName('claudia-index-card-list-box')[0].style.display = 'block';
+        //     document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 1;
+        // } else {
+        //     document.getElementsByClassName('claudia-index-card-intro-box')[0].style.display = 'none';
+        //     document.getElementsByClassName('claudia-index-card-intro-box')[0].style.opacity = 0;
+        //     document.getElementsByClassName('claudia-index-card-list-box')[0].style.display = 'block';
+        //     document.getElementsByClassName('claudia-index-card-list-box')[0].style.opacity = 1;
+
+        // }
 
     }
 

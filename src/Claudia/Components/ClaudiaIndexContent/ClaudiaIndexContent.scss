@@ -8,10 +8,7 @@
 .claudia-index-card {
     width: 50%;
     height: 690px;
-    margin-left: 30px;
-    // display: flex;
-    // align-items: center;
-    position: relative;
+    padding: 35px 0px 0px 30px;
 
 }
 
@@ -25,7 +22,6 @@
         display: block;
         padding-bottom: 0px;
         width: 100vw;
-        // margin: 0px 20px;
     }
 
     .claudia-index-map {
@@ -37,7 +33,7 @@
     .claudia-index-card {
         height: 0px;
         width: 100%;
-        margin-left: 0px;
+        padding: 30px 0px 0px 0px;
     }
 
 }

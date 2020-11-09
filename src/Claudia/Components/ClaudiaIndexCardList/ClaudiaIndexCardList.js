@@ -64,12 +64,11 @@ function ClaudiaIndexCardList(props) {
 
     return (
         <>
-            <div className="claudia-index-card-list-outside">
-                <div className="claudia-index-card-list-box">
-                    <h1 id="claudia-index-card-list-city"><b>{city}</b></h1>
-                    <h2 id="claudia-index-card-list-text">點選農場名稱，看更多資訊～</h2>
-                    <div className="claudia-index-card-list-box-buttons">
-                        {/* <button
+            <div className="claudia-index-card-list-box">
+                <h1 id="claudia-index-card-list-city"><b>{city}</b></h1>
+                <h2 id="claudia-index-card-list-text">點選農場名稱，看更多資訊～</h2>
+                <div className="claudia-index-card-list-box-buttons">
+                    {/* <button
                             onClick={showFarmIntro}
                             className="claudia-index-card-list-box-button">
                             <div className="claudia-index-card-list-box-name-text">
@@ -97,9 +96,8 @@ function ClaudiaIndexCardList(props) {
                                 <p><b>小小城市農夫－台北內湖農驛棧有機農園</b></p>
                             </div>
                         </button> */}
-                    </div>
-
                 </div>
+
             </div>
         </>
     )

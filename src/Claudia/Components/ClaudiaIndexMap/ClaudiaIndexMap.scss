@@ -239,9 +239,18 @@
 
 @media only screen and (max-width: 57.6rem) {
 
+    .claudia-index-map-inside {
+        width: 100vw;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+    }
+
     .claudia-index-map svg {
         width: 325px;
         height: 470px;
+        margin: 0px auto;
+        position: static;
     }
 
     .claudia-icon {
