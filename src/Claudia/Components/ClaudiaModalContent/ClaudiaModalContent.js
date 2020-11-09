@@ -6,9 +6,10 @@ import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 import selectArrow from './Images/selectArrow.svg';
 
-function ClaudiaModalContent() {
+function ClaudiaModalContent(props) {
 
     const [total, setTotal] = useState(0);
+    const { handleAddCartNumber } = props;
 
 
     //datepicker
@@ -312,7 +313,7 @@ function ClaudiaModalContent() {
                         <span><b>總金額：</b></span>
                         <span className="claudia-modal-total-price-orange"><b>{total}</b></span>
                     </div>
-                    <div className="claudia-modal-cart-button"><button>加入購物車</button></div>
+                    <div className="claudia-modal-cart-button"><button onClick={handleAddCartNumber}>加入購物車</button></div>
 
                 </div>
 
