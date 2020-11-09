@@ -15,12 +15,6 @@ function ChaOrderManagementNotArrived(props) {
             </span>
             <span className="cha-order-mana-divider"> | </span>
             <span>
-              <span> 訂單金額: </span>
-              <span> </span>
-              <span> $999 </span>
-            </span>
-            <span className="cha-order-mana-divider"> | </span>
-            <span>
               <span> 訂單狀態: </span>
               <span> </span>
               <span>火速運送中</span>
@@ -39,6 +33,11 @@ function ChaOrderManagementNotArrived(props) {
             <span>
               <span> 取餐地址: </span>
               <span> 台北市大安區復興南路一段390號2樓 </span>
+            </span>
+            <span className="cha-order-row-1-1">
+              <span>訂單金額:</span>
+              <span> </span>
+              <span> $999 </span>
             </span>
           </div>
           <div className="cha-order-row-1-4">

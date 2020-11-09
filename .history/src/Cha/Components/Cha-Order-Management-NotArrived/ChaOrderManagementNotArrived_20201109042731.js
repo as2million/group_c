@@ -20,7 +20,7 @@ function ChaOrderManagementNotArrived(props) {
               <span> $999 </span>
             </span>
             <span className="cha-order-mana-divider"> | </span>
-            <span>
+            <span>            <span>
               <span> 訂單狀態: </span>
               <span> </span>
               <span>火速運送中</span>

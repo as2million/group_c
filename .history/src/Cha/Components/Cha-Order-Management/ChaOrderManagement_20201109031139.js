@@ -42,7 +42,7 @@ function ChaOrderManagement(props) {
   // 當前登入的會員id
   const [currentMemberSid, setCurrentMemberSid] = useState(0);
 
-  const chaOrderManagements = Array.from({ length: 1 });
+  const chaOrderManagements = Array.from({ length: 10 });
   // 未達成
   const ComponentA = (props) => {
     return (

@@ -42,7 +42,7 @@ function ChaOrderManagement(props) {
   // 當前登入的會員id
   const [currentMemberSid, setCurrentMemberSid] = useState(0);
 
-  const chaOrderManagements = Array.from({ length: 1 });
+  const chaOrderManagements = Array.from({ length: 10 });
   // 未達成
   const ComponentA = (props) => {
     return (
@@ -127,40 +127,40 @@ function ChaOrderManagement(props) {
       const response = await fetch(request);
       const dataAllOrder = await response.json();
 
-      console.log(dataAllOrder[46].order_detail);
+      console.log(dataAllOrder[44].order_detail);
 
       //////////// 我的訂單
       // 訂單編號
-      setOrderSidMyOrder(dataAllOrder[46].sid);
+      setOrderSidMyOrder(dataAllOrder[44].sid);
       // 訂單狀態
-      setOrderStateMyOrder(dataAllOrder[46].order_state);
+      setOrderStateMyOrder(dataAllOrder[44].order_state);
       // 取餐人
-      setTakePersonMyOrder(dataAllOrder[46].take_person);
+      setTakePersonMyOrder(dataAllOrder[44].take_person);
       // 取餐日期
-      setTakeDateMyOrder(dataAllOrder[46].take_date);
+      setTakeDateMyOrder(dataAllOrder[44].take_date);
       // 取餐時間
-      setTakeTimeMyOrder(dataAllOrder[46].take_time);
+      setTakeTimeMyOrder(dataAllOrder[44].take_time);
       //取餐方式
-      setTakeWayMyOrder(dataAllOrder[46].take_way);
+      setTakeWayMyOrder(dataAllOrder[44].take_way);
       // 取餐地址
-      setAddressMyOrder(dataAllOrder[46].take_address);
+      setAddressMyOrder(dataAllOrder[44].take_address);
       // 訂單金額
-      setTotalPriceMyOrder(dataAllOrder[46].total_price);
+      setTotalPriceMyOrder(dataAllOrder[44].total_price);
       //////////// 我的訂單明細
       // 商品編號
-      setProductSidDetail(dataAllOrder[46].order_detail[0].product_sid);
+      setProductSidDetail(dataAllOrder[44].order_detail[0].product_sid);
       // 商品名稱
-      setProductNameDetail(dataAllOrder[46].order_detail[0].product_name);
+      setProductNameDetail(dataAllOrder[44].order_detail[0].product_name);
       // 商品價格
-      setProductPriceDetail(dataAllOrder[46].order_detail[0].product_price);
+      setProductPriceDetail(dataAllOrder[44].order_detail[0].product_price);
       // 商品數量
-      setProductAmountDetail(dataAllOrder[46].order_detail[0].product_amount);
+      setProductAmountDetail(dataAllOrder[44].order_detail[0].product_amount);
       // 訂單小計
-      setSubtotalPriceDetail(dataAllOrder[46].subtotal_price);
+      setSubtotalPriceDetail(dataAllOrder[44].subtotal_price);
       // 怪獸幣
-      setBeastieCoinDetail(dataAllOrder[46].beastie_coin);
+      setBeastieCoinDetail(dataAllOrder[44].beastie_coin);
       // 運費
-      setShippingDetail(dataAllOrder[46].shipping);
+      setShippingDetail(dataAllOrder[44].shipping);
     }
     useEffect(() => {
       getMyOrderAndMyOderDetail(currentMemberSid);
@@ -189,7 +189,7 @@ function ChaOrderManagement(props) {
           {/* <div className="cha-order-mana-content-row2"> */}
           <div className="cha-order-mana-border"></div>
           {/* </div> */}
-          <div>{orderComponent}</div>
+          {/* <div>{orderComponent}</div> */}
 
           <h1>★★我的訂單</h1>
           <h1>訂單編號：AAA{orderSidMyOrder}</h1>

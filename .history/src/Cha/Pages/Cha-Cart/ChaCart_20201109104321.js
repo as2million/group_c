@@ -83,7 +83,7 @@ function ChaCart(props) {
     localStorage.setItem('cart', JSON.stringify(newCart));
 
     // // 設定資料
-    // setMeals(newCart);
+    setMeals(newCart);
   };
   return (
     <>

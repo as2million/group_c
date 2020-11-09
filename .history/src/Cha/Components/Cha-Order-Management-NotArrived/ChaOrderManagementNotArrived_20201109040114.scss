@@ -1,4 +1,4 @@
-.cha-order-row {
+.cha-order-mana-not-arrived-content-row3 {
   height: 22.5rem;
   border-bottom: 0.1rem solid #decdbb;
   display: flex;
@@ -16,27 +16,24 @@
 // * {
 //   outline: 1px solid red;
 // }
-.cha-order-row-1 {
-  height: 17rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.cha-order-row-2 {
+.cha-order-mana-not-arrived-content-row3-1 {
   height: 14rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.cha-order-row-1-1 {
+.cha-order-mana-not-arrived-content-row3-2 {
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cha-order-mana-not-arrived-content-row3-1-1 {
   color: #f48145;
   font-size: 1.8rem;
   font-weight: 600;
 }
-.cha-order-mana-not-arrived-total-price-position {
-  margin-left: 50rem;
-}
-.cha-order-row-2 input {
+.cha-order-mana-not-arrived-content-row3-2 input {
   height: 3rem;
   width: 10rem;
   border-radius: 3rem;
@@ -50,14 +47,14 @@
   }
 }
 
-.cha-order-row-1-2,
-.cha-order-row-1-3,
-.cha-order-row-1-4 {
+.cha-order-mana-not-arrived-content-row3-1-2,
+.cha-order-mana-not-arrived-content-row3-1-3,
+.cha-order-mana-not-arrived-content-row3-1-4 {
   font-size: 1.5rem;
   width: 56rem;
 }
 
-.cha-order-row-1-4 {
+.cha-order-mana-not-arrived-content-row3-1-4 {
   color: #a59583;
   font-weight: 900;
   text-decoration: underline;
