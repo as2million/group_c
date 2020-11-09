@@ -14,6 +14,7 @@ function ClaudiaIndexMap(props) {
         //update data
         let cityId = e.target.dataset.id
 
+        // useEffect(() => {
         fetch(`http://localhost:5000/farm/info/${cityId}`)
             .then(res => res.json())
             .then(data => {
@@ -26,6 +27,9 @@ function ClaudiaIndexMap(props) {
 
             })
             .catch(err => console.log(err));
+        // })
+
+
 
 
         //show box
