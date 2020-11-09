@@ -149,7 +149,7 @@ function IrisBeastiePointSect(props) {
                 {/* <div className="iris-beastie-name">小Q怪</div> */}
                 <div className="iris-beastie-name">{beastieName}</div>
                 <input
-                  className="form-control iris-beastie-name-input"
+                  className="iris-beastie-name-input"
                   onKeyDown={(e) => {
                     recordNewName(e)
                   }}
