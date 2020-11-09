@@ -10,12 +10,11 @@ import $ from 'jquery'
 function IrisLoginCard(props) {
   const { setIsLogin, setCurrentUser, isLogin } = props
 
-
   // 變成註冊表單
   const ToRegisterForm = () => {
     // 白底移動
     const loginEnrollCard = document.querySelector('.iris-login-form')
-    loginEnrollCard.style.transform = 'translate(0%, 0)'
+    loginEnrollCard.style.transform = 'translate(5%, 0)'
     loginEnrollCard.style.transition = '1.3s'
     // -------------登入卡消失效果
     document.querySelector('.iris-login-content').style.display = 'none'
@@ -42,7 +41,7 @@ function IrisLoginCard(props) {
   const ToLoginForm = () => {
     // 白底移動
     const loginEnrollCard = document.querySelector('.iris-login-form')
-    loginEnrollCard.style.transform = 'translate(-85%, 0)'
+    loginEnrollCard.style.transform = 'translate(-90%, 0)'
     loginEnrollCard.style.transition = '1.3s'
     // -------------註冊卡消失效果
     document.querySelector('.iris-register-content').style.display = 'none'
@@ -141,10 +140,12 @@ function IrisLoginCard(props) {
           <div className="iris-login-background">
             {/* <LoginCardBg /> */}
             <img src={require('./Images/login_card.png')} />
+            {/* <img src={require('./Images/login_card.png')} /> */}
           </div>
           <div className="iris-register-background">
             {/* <RegisterCardBg /> */}
             <img src={require('./Images/register_card.png')} />
+            {/* <img src={require('./Images/register_card.png')} /> */}
           </div>
         </div>
         <div className="iris-login-form">

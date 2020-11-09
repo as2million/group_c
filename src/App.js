@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 // 引入 共用元件
 import Navbar from 'Share/Components/NavBar/NavBar'
+import VNavbar from 'Share/Components/VNavbar/VNavbar'
 import Footer from 'Share/Components/Footer/Footer'
 // import NotFoundPage from "Share/Components/NotFoundPage/NotFoundPage";
 
@@ -49,7 +50,7 @@ function App() {
           setIsLogin={setIsLogin}
         />
         {/* 放切頁時不重新渲染的部份 e*/}
-
+        <VNavbar />
         {/* 路由設定開始 */}
         <Switch>
           {/* janice */}
