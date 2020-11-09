@@ -66,13 +66,33 @@ function ChaCartSubmitCard(props) {
   //   subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0)
 
   // 提交訂單後，清除localstorage
-  const handleSubmitCartRemoveLocalStorage = () => {
+  const handleSubitCartRemoveLocalStorage = () => {
     localStorage.removeItem('cart');
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || 0;
     const otherCart = currentCartNumber - totalAmount;
-    localStorage.setItem('cartNumber', JSON.stringify(otherCart));
+    localStorage.removeItem('cartNumber');
+    //   if (type === 'add') {
+    //     const newCartNumber = +cartNumber + amount;
+    //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+    //     setCartNumber(newCartNumber);
+    //   }
+    //   if (type === 'minus') {
+    //     const newCartNumber = +cartNumber - amount;
+    //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+    //     setCartNumber(newCartNumber);
+    //   }
   };
+  // useEffect(() => {
+  //   const currentCartNumber =
+  //     JSON.parse(localStorage.getItem('cartNumber')) || 0;
+  //   setCartNumber(currentCartNumber);
+  // }, []);
+  // 移除 localStorage 內物件的語法如下：
+  // localStorage.removeItem('myCat');
+
+  // 刪除 localStorage 內所有物件的語法如下：// Clear all items
+  // localStorage.clear();
 
   // 要POST給my_order的資料
   // {
@@ -252,7 +272,6 @@ function ChaCartSubmitCard(props) {
           onClick={() => {
             createToMyOrder();
             props.history.push('/');
-            handleSubmitCartRemoveLocalStorage();
           }}
         >
           <ChaCartButton

@@ -14,7 +14,7 @@ function ChaCart(props) {
   // 餐點資料(已處理)
   // const [mealsDisplay, setMealsDisplay] = useState([]);
   // 控制navbar
-  const { setShowBar } = props;
+  const { setShowBar, handleCartNumber } = props;
   // 資料，準備傳送給「我的訂單」
   const [memberSid, setMemberSid] = useState('');
   const [name, setName] = useState('');
@@ -164,7 +164,7 @@ function ChaCart(props) {
             // createCartToLocalStorage={createCartToLocalStorage}
             updateCartToLocalStorage={updateCartToLocalStorage}
             deleteItemToLocalStorage={deleteItemToLocalStorage}
-            {...props}
+            handleCartNumber={handleCartNumber()}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2

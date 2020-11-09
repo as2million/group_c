@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Counter from 'Cha/Components/Cha-Cart-Step-Card-Step1/Counter/Counter';
 import './ChaCartMealList.scss';
 

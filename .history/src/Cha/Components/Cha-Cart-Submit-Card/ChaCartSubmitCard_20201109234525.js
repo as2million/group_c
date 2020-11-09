@@ -66,7 +66,7 @@ function ChaCartSubmitCard(props) {
   //   subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0)
 
   // 提交訂單後，清除localstorage
-  const handleSubmitCartRemoveLocalStorage = () => {
+  const handleSubitCartRemoveLocalStorage = () => {
     localStorage.removeItem('cart');
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || 0;
@@ -252,7 +252,7 @@ function ChaCartSubmitCard(props) {
           onClick={() => {
             createToMyOrder();
             props.history.push('/');
-            handleSubmitCartRemoveLocalStorage();
+            handleSubitCartRemoveLocalStorage;
           }}
         >
           <ChaCartButton

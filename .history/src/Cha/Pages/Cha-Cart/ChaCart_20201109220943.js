@@ -77,39 +77,39 @@ function ChaCart(props) {
   // }, [meals]);
 
   // 新增LocalStorage;
-  // const createCartToLocalStorage = (value) => {
-  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+  const createCartToLocalStorage = (value) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  //   const newCart = [...currentCart, value];
-  //   localStorage.setItem('cart', JSON.stringify(newCart));
+    const newCart = [...currentCart, value];
+    localStorage.setItem('cart', JSON.stringify(newCart));
 
-  //   // // 設定資料
-  //   setMeals(newCart);
-  // };
+    // // 設定資料
+    setMeals(newCart);
+  };
 
-  // const updateCartToLocalStorage1111 = (item) => {
-  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+  const updateCartToLocalStorage1111 = (item) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  //   // find if the product in the localstorage with its id
-  //   const index = currentCart.findIndex((v) => v.id === item.id);
+    // find if the product in the localstorage with its id
+    const index = currentCart.findIndex((v) => v.id === item.id);
 
-  //   // found: index! == -1
-  //   if (index > -1) {
-  //     //currentCart[index].amount++
-  //     setProductName('這個商品已經加過了');
-  //     handleShow();
-  //     return;
-  //   } else {
-  //     currentCart.push(item);
-  //   }
+    // found: index! == -1
+    if (index > -1) {
+      //currentCart[index].amount++
+      setProductName('這個商品已經加過了');
+      handleShow();
+      return;
+    } else {
+      currentCart.push(item);
+    }
 
-  //   localStorage.setItem('cart', JSON.stringify(currentCart));
+    localStorage.setItem('cart', JSON.stringify(currentCart));
 
-  //   // 設定資料
-  //   setMycart(currentCart);
-  //   setProductName('產品：' + item.name + '已成功加入購物車');
-  //   handleShow();
-  // };
+    // 設定資料
+    setMycart(currentCart);
+    setProductName('產品：' + item.name + '已成功加入購物車');
+    handleShow();
+  };
 
   // 更新購物車中的商品數量
   const updateCartToLocalStorage = (item, isAdded = true) => {
@@ -128,9 +128,6 @@ function ChaCart(props) {
       // isAdded &&
       //   ? currentCart[index].productAmount++
       //   : currentCart[index].productAmount--;
-    } else {
-      currentCart.push(item);
-      console.log('currentCart', currentCart);
     }
     localStorage.setItem('cart', JSON.stringify(currentCart));
     // 設定資料
@@ -161,10 +158,9 @@ function ChaCart(props) {
             setMeals={setMeals}
             // mealsDisplay={mealsDisplay}
             // setMealsDisplay={setMealsDisplay}
-            // createCartToLocalStorage={createCartToLocalStorage}
+            createCartToLocalStorage={createCartToLocalStorage}
             updateCartToLocalStorage={updateCartToLocalStorage}
             deleteItemToLocalStorage={deleteItemToLocalStorage}
-            {...props}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2

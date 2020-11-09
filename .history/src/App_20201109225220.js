@@ -40,36 +40,38 @@ function App() {
   const [cartNumber, setCartNumber] = useState(0);
 
   // 購物車商品數量處理器
-  const handleCartNumber = (type = 'add', amount = 1) => {
-    if (type === 'add') {
-      const newCartNumber = +cartNumber + amount;
-      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-      setCartNumber(newCartNumber);
-    }
-    if (type === 'minus') {
-      const newCartNumber = +cartNumber - amount;
-      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-      setCartNumber(newCartNumber);
-    }
-  };
-  useEffect(() => {
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0;
-    setCartNumber(currentCartNumber);
-  }, []);
-
-  // 計算商品總量
-  // const calCuSubtotalAmount = (items) => {
-  //   let total = 0;
-  //   for (let i = 0; i < items.length; i++) {
-  //     total += items[i].productAmount;
+  // const handleCartNumber = (type = 'add', amount = 1) => {
+  //   if (type === 'add') {
+  //     const newCartNumber = +cartNumber + amount;
+  //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+  //     setCartNumber(newCartNumber);
   //   }
-  //   return total;
+  //   if (type === 'minus') {
+  //     const newCartNumber = +cartNumber - amount;
+  //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+  //     setCartNumber(newCartNumber);
+  //   }
   // };
   // useEffect(() => {
-  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || 0;
-  //   setCartNumber(calCuSubtotalAmount(currentCart));
+  //   const currentCartNumber =
+  //     JSON.parse(localStorage.getItem('cartNumber')) || 0;
+  //   setCartNumber(currentCartNumber);
   // }, []);
+
+  // 計算商品價格小計
+  useEffect(() => {
+    const currentCartNumber = JSON.parse(localStorage.getItem('cart')) || 0;
+    const calCuSubtotalAmount = (items) => {
+      let total = 0;
+      for (let i = 0; i < items.length; i++) {
+        total += items[i].productAmount * items[i].productPrice;
+      }
+      return total;
+    };
+    let subtotalAmount = calCuSubtotalAmount(currentCartNumber);
+    setCartNumber(subtotalAmount);
+  }, []);
+
   return (
     // <Router>元件一定要放在最外層
     <Router>

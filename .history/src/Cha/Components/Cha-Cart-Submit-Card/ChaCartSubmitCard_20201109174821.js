@@ -35,6 +35,7 @@ function ChaCartSubmitCard(props) {
     return total;
   };
   let totalAmount = calcuTotalAmount(meals);
+  let totalAmount = calcuTotalAmount(meals);
   // let totalAmount = calcuTotalAmount(mealsDisplay);
   // setTotalAmount(calcuTotalAmount(mealsDisplay));
 
@@ -47,7 +48,7 @@ function ChaCartSubmitCard(props) {
     return total;
   };
   let subtotalPrice = calcuSubtotalPrice(meals);
-  // let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
+  let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
   // setSubtotalPrice(calcuSubtotalPrice(mealsDisplay));
 
   useEffect(() => {
@@ -64,15 +65,6 @@ function ChaCartSubmitCard(props) {
     subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0);
   // setTotalPrice(
   //   subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0)
-
-  // 提交訂單後，清除localstorage
-  const handleSubmitCartRemoveLocalStorage = () => {
-    localStorage.removeItem('cart');
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0;
-    const otherCart = currentCartNumber - totalAmount;
-    localStorage.setItem('cartNumber', JSON.stringify(otherCart));
-  };
 
   // 要POST給my_order的資料
   // {
@@ -251,8 +243,8 @@ function ChaCartSubmitCard(props) {
           className="cha-shopping-cart-btn-div"
           onClick={() => {
             createToMyOrder();
+            // createToMyOrderDetail();
             props.history.push('/');
-            handleSubmitCartRemoveLocalStorage();
           }}
         >
           <ChaCartButton

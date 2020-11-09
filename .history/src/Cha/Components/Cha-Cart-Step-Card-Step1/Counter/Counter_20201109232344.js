@@ -2,12 +2,7 @@ import React from 'react';
 import './Counter.scss';
 
 function Counter(props) {
-  const {
-    handleCount,
-    mealsItem,
-    updateCartToLocalStorage,
-    handleCartNumber,
-  } = props;
+  const { handleCount, mealsItem, updateCartToLocalStorage } = props;
   return (
     <>
       <div className="cha-counter-box">
@@ -33,7 +28,6 @@ function Counter(props) {
           onClick={() => {
             handleCount(mealsItem.id, 'increment');
             updateCartToLocalStorage(mealsItem, true);
-            handleCartNumber();
           }}
           className="cha-counter-increment"
         >

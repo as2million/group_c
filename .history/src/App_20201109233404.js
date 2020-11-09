@@ -41,35 +41,40 @@ function App() {
 
   // 購物車商品數量處理器
   const handleCartNumber = (type = 'add', amount = 1) => {
-    if (type === 'add') {
-      const newCartNumber = +cartNumber + amount;
-      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-      setCartNumber(newCartNumber);
-    }
-    if (type === 'minus') {
-      const newCartNumber = +cartNumber - amount;
-      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-      setCartNumber(newCartNumber);
-    }
+    //   if (type === 'add') {
+    //     const newCartNumber = +cartNumber + amount;
+    //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+    //     setCartNumber(newCartNumber);
+    //   }
+    //   if (type === 'minus') {
+    //     const newCartNumber = +cartNumber - amount;
+    //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+    //     setCartNumber(newCartNumber);
+    //   }
   };
-  useEffect(() => {
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0;
-    setCartNumber(currentCartNumber);
-  }, []);
+  // useEffect(() => {
+  //   const currentCartNumber =
+  //     JSON.parse(localStorage.getItem('cartNumber')) || 0;
+  //   setCartNumber(currentCartNumber);
+  // }, []);
+  // 移除 localStorage 內物件的語法如下：
+  // localStorage.removeItem('myCat');
+
+  // 刪除 localStorage 內所有物件的語法如下：// Clear all items
+  // localStorage.clear();
 
   // 計算商品總量
-  // const calCuSubtotalAmount = (items) => {
-  //   let total = 0;
-  //   for (let i = 0; i < items.length; i++) {
-  //     total += items[i].productAmount;
-  //   }
-  //   return total;
-  // };
-  // useEffect(() => {
-  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || 0;
-  //   setCartNumber(calCuSubtotalAmount(currentCart));
-  // }, []);
+  const calCuSubtotalAmount = (items) => {
+    let total = 0;
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].productAmount;
+    }
+    return total;
+  };
+  useEffect(() => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || 0;
+    setCartNumber(calCuSubtotalAmount(currentCart));
+  }, []);
   return (
     // <Router>元件一定要放在最外層
     <Router>

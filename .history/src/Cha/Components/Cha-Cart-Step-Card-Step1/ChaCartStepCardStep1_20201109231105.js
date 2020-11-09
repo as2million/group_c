@@ -117,8 +117,6 @@ function ChaCartStepCardStep1(props) {
             // createCartToLocalStorage={createCartToLocalStorage}
             updateCartToLocalStorage={updateCartToLocalStorage}
             deleteItemToLocalStorage={deleteItemToLocalStorage}
-            {...props}
-            // handleCartNumber={handleCartNumber}
           />
         ))}
         <div style={{ display: subtotalPrice === 0 && 'none' }}>

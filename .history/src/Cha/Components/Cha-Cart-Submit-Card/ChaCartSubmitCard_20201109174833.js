@@ -65,15 +65,6 @@ function ChaCartSubmitCard(props) {
   // setTotalPrice(
   //   subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0)
 
-  // 提交訂單後，清除localstorage
-  const handleSubmitCartRemoveLocalStorage = () => {
-    localStorage.removeItem('cart');
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0;
-    const otherCart = currentCartNumber - totalAmount;
-    localStorage.setItem('cartNumber', JSON.stringify(otherCart));
-  };
-
   // 要POST給my_order的資料
   // {
   // order_state: "未送達",
@@ -251,8 +242,8 @@ function ChaCartSubmitCard(props) {
           className="cha-shopping-cart-btn-div"
           onClick={() => {
             createToMyOrder();
+            // createToMyOrderDetail();
             props.history.push('/');
-            handleSubmitCartRemoveLocalStorage();
           }}
         >
           <ChaCartButton

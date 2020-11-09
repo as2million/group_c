@@ -8,10 +8,9 @@ function ChaCartStepCardStep1(props) {
     setMeals,
     // mealsDisplay,
     // setMealsDisplay,
-    // createCartToLocalStorage,
+    createCartToLocalStorage,
     updateCartToLocalStorage,
     deleteItemToLocalStorage,
-    handleCartNumber,
   } = props;
 
   // 刪除商品選項
@@ -95,13 +94,10 @@ function ChaCartStepCardStep1(props) {
         <div
           className="cha-step-header"
           onClick={() => {
-            // createCartToLocalStorage(demoMeals1);
-            // createCartToLocalStorage(demoMeals2);
-            // createCartToLocalStorage(demoMeals3);
-            updateCartToLocalStorage(demoMeals1);
-            updateCartToLocalStorage(demoMeals2);
-            updateCartToLocalStorage(demoMeals3);
-            handleCartNumber('add', 3);
+            createCartToLocalStorage(demoMeals1);
+            createCartToLocalStorage(demoMeals2);
+            createCartToLocalStorage(demoMeals3);
+            updateCartToLocalStorage(demoMeals1, true);
           }}
         >
           步驟1：餐點明細
@@ -112,13 +108,11 @@ function ChaCartStepCardStep1(props) {
           <ChaCartMealList
             key={item.id}
             mealsItem={item}
-            handleDelete={handleDelete}
+            deleteMethod={() => handleDelete(item.id)}
             handleCount={handleCount}
-            // createCartToLocalStorage={createCartToLocalStorage}
+            createCartToLocalStorage={createCartToLocalStorage}
             updateCartToLocalStorage={updateCartToLocalStorage}
             deleteItemToLocalStorage={deleteItemToLocalStorage}
-            {...props}
-            // handleCartNumber={handleCartNumber}
           />
         ))}
         <div style={{ display: subtotalPrice === 0 && 'none' }}>
@@ -141,8 +135,7 @@ function ChaCartStepCardStep1(props) {
           <div
             className="cha-step1-promotion-picture cha-salad-02"
             onClick={() => {
-              updateCartToLocalStorage(promotion2);
-              handleCartNumber();
+              createCartToLocalStorage(promotion2);
             }}
           ></div>
           <div className="cha-step1-promotion-picture cha-salad-03"></div>

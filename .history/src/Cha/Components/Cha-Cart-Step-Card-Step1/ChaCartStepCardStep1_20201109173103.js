@@ -8,10 +8,8 @@ function ChaCartStepCardStep1(props) {
     setMeals,
     // mealsDisplay,
     // setMealsDisplay,
-    // createCartToLocalStorage,
+    createCartToLocalStorage,
     updateCartToLocalStorage,
-    deleteItemToLocalStorage,
-    handleCartNumber,
   } = props;
 
   // 刪除商品選項
@@ -27,7 +25,7 @@ function ChaCartStepCardStep1(props) {
   // };
   // 計數器加減功能
   const handleCount = (id, type) => {
-    const newMeals = [...meals];
+    const newMealsDisplay = [...meals];
     const mealsItemIndex = newMeals.findIndex((item) => item.id === id);
     if (mealsItemIndex !== -1) {
       if (type === 'increment') {
@@ -63,8 +61,7 @@ function ChaCartStepCardStep1(props) {
     }
     return total;
   };
-  let subtotalPrice = calcuSubtotalPrice(meals);
-  // let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
+  let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
   const demoMeals1 = {
     id: 1,
     productName: '慢煮嫩雞胸-蒜味香草',
@@ -95,30 +92,23 @@ function ChaCartStepCardStep1(props) {
         <div
           className="cha-step-header"
           onClick={() => {
-            // createCartToLocalStorage(demoMeals1);
-            // createCartToLocalStorage(demoMeals2);
-            // createCartToLocalStorage(demoMeals3);
-            updateCartToLocalStorage(demoMeals1);
-            updateCartToLocalStorage(demoMeals2);
-            updateCartToLocalStorage(demoMeals3);
-            handleCartNumber('add', 3);
+            createCartToLocalStorage(demoMeals1);
+            createCartToLocalStorage(demoMeals2);
+            createCartToLocalStorage(demoMeals3);
           }}
         >
           步驟1：餐點明細
         </div>
         {/* 餐點項目 */}
-        {/* {mealsDisplay.map((item, index) => ( */}
-        {meals.map((item, index) => (
+        {mealsDisplay.map((item, index) => (
           <ChaCartMealList
             key={item.id}
             mealsItem={item}
-            handleDelete={handleDelete}
+            deleteMethod={() => handleDelete(item.id)}
             handleCount={handleCount}
-            // createCartToLocalStorage={createCartToLocalStorage}
+            createCartToLocalStorage={createCartToLocalStorage}
             updateCartToLocalStorage={updateCartToLocalStorage}
-            deleteItemToLocalStorage={deleteItemToLocalStorage}
-            {...props}
-            // handleCartNumber={handleCartNumber}
+            // handleUpdateToLocalStorage={handleUpdateToLocalStorage}
           />
         ))}
         <div style={{ display: subtotalPrice === 0 && 'none' }}>
@@ -141,8 +131,7 @@ function ChaCartStepCardStep1(props) {
           <div
             className="cha-step1-promotion-picture cha-salad-02"
             onClick={() => {
-              updateCartToLocalStorage(promotion2);
-              handleCartNumber();
+              createCartToLocalStorage(promotion2);
             }}
           ></div>
           <div className="cha-step1-promotion-picture cha-salad-03"></div>

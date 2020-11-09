@@ -164,7 +164,6 @@ function ChaCart(props) {
             // createCartToLocalStorage={createCartToLocalStorage}
             updateCartToLocalStorage={updateCartToLocalStorage}
             deleteItemToLocalStorage={deleteItemToLocalStorage}
-            {...props}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2

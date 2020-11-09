@@ -77,15 +77,15 @@ function ChaCart(props) {
   // }, [meals]);
 
   // 新增LocalStorage;
-  // const createCartToLocalStorage = (value) => {
-  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+  const createCartToLocalStorage = (value) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  //   const newCart = [...currentCart, value];
-  //   localStorage.setItem('cart', JSON.stringify(newCart));
+    const newCart = [...currentCart, value];
+    localStorage.setItem('cart', JSON.stringify(newCart));
 
-  //   // // 設定資料
-  //   setMeals(newCart);
-  // };
+    // // 設定資料
+    setMeals(newCart);
+  };
 
   // const updateCartToLocalStorage1111 = (item) => {
   //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -161,10 +161,9 @@ function ChaCart(props) {
             setMeals={setMeals}
             // mealsDisplay={mealsDisplay}
             // setMealsDisplay={setMealsDisplay}
-            // createCartToLocalStorage={createCartToLocalStorage}
+            createCartToLocalStorage={createCartToLocalStorage}
             updateCartToLocalStorage={updateCartToLocalStorage}
             deleteItemToLocalStorage={deleteItemToLocalStorage}
-            {...props}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2

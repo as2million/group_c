@@ -57,18 +57,26 @@ function App() {
       JSON.parse(localStorage.getItem('cartNumber')) || 0;
     setCartNumber(currentCartNumber);
   }, []);
+  // 移除 localStorage 內物件的語法如下：
+  // localStorage.removeItem('myCat');
+
+  // 刪除 localStorage 內所有物件的語法如下：// Clear all items
+  // localStorage.clear();
 
   // 計算商品總量
-  // const calCuSubtotalAmount = (items) => {
-  //   let total = 0;
-  //   for (let i = 0; i < items.length; i++) {
-  //     total += items[i].productAmount;
-  //   }
-  //   return total;
-  // };
+  const calCuSubtotalAmount = (arr) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || 0;
+    let total = 0;
+    for (let i = 0; i < arr.length; i++) {
+      total += arr[i].productAmount;
+    }
+    return total;
+  };
   // useEffect(() => {
-  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || 0;
-  //   setCartNumber(calCuSubtotalAmount(currentCart));
+  //   const currentCart =
+  //   JSON.parse(localStorage.getItem('cart')) || 0;
+
+  // setCartNumber(calCuSubtotalAmount(currentCart));
   // }, []);
   return (
     // <Router>元件一定要放在最外層

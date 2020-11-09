@@ -58,18 +58,20 @@ function App() {
     setCartNumber(currentCartNumber);
   }, []);
 
-  // 計算商品總量
-  // const calCuSubtotalAmount = (items) => {
-  //   let total = 0;
-  //   for (let i = 0; i < items.length; i++) {
-  //     total += items[i].productAmount;
-  //   }
-  //   return total;
-  // };
-  // useEffect(() => {
-  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || 0;
-  //   setCartNumber(calCuSubtotalAmount(currentCart));
-  // }, []);
+  // 計算商品價格小計
+  useEffect(() => {
+    const currentCartNumber = JSON.parse(localStorage.getItem('cart')) || 0;
+    const calcuSubtotalPrice = (items) => {
+      let total = 0;
+      for (let i = 0; i < items.length; i++) {
+        total += items[i].productAmount * items[i].productPrice;
+      }
+      return total;
+    };
+    let subtotalPrice = calcuSubtotalPrice(currentCartNumber);
+    setCartNumber();
+  }, []);
+
   return (
     // <Router>元件一定要放在最外層
     <Router>

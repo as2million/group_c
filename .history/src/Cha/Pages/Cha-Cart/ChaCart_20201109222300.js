@@ -77,15 +77,15 @@ function ChaCart(props) {
   // }, [meals]);
 
   // 新增LocalStorage;
-  // const createCartToLocalStorage = (value) => {
-  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+  const createCartToLocalStorage = (value) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  //   const newCart = [...currentCart, value];
-  //   localStorage.setItem('cart', JSON.stringify(newCart));
+    const newCart = [...currentCart, value];
+    localStorage.setItem('cart', JSON.stringify(newCart));
 
-  //   // // 設定資料
-  //   setMeals(newCart);
-  // };
+    // // 設定資料
+    setMeals(newCart);
+  };
 
   // const updateCartToLocalStorage1111 = (item) => {
   //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -113,24 +113,24 @@ function ChaCart(props) {
 
   // 更新購物車中的商品數量
   const updateCartToLocalStorage = (item, isAdded = true) => {
-    // console.log(item, isAdded);
+    console.log(item, isAdded);
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
     // find if the product in the localstorage with its id
     const index = currentCart.findIndex((v) => v.id === item.id);
-    // console.log('index', index);
+    console.log('index', index);
     // found: index! == -1
     if (index > -1) {
       if (isAdded) {
         currentCart[index].productAmount++;
       } else if (!isAdded && currentCart[index].productAmount > 1) {
         currentCart[index].productAmount--;
+      } else {
+        currentCart.push(item);
+        console.log('currentCart', currentCart);
       }
       // isAdded &&
       //   ? currentCart[index].productAmount++
       //   : currentCart[index].productAmount--;
-    } else {
-      currentCart.push(item);
-      console.log('currentCart', currentCart);
     }
     localStorage.setItem('cart', JSON.stringify(currentCart));
     // 設定資料
@@ -161,10 +161,9 @@ function ChaCart(props) {
             setMeals={setMeals}
             // mealsDisplay={mealsDisplay}
             // setMealsDisplay={setMealsDisplay}
-            // createCartToLocalStorage={createCartToLocalStorage}
+            createCartToLocalStorage={createCartToLocalStorage}
             updateCartToLocalStorage={updateCartToLocalStorage}
             deleteItemToLocalStorage={deleteItemToLocalStorage}
-            {...props}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2
