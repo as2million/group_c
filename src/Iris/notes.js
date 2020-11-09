@@ -11,3 +11,6 @@
 // App.js 傳loginModal狀態到navbar
 // App.js 傳login狀態到會員各頁面(若沒login就導到首頁)
 // App.js loginModal每頁都用到，放外面
+
+// 11/09
+// App.js 要傳login狀態到各頁面(若沒login就導到首頁,秀登入光箱)

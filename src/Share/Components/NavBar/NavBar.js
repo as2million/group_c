@@ -28,6 +28,10 @@ function NavBar(props) {
     }
   }
 
+  if (isLogin === true) {
+    document.querySelector('.iris-login-option').style.display = 'none'
+  }
+
   return (
     <>
       <div className="nav" id="NavBar">

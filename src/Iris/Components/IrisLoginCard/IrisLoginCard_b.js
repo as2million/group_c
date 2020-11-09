@@ -1,3 +1,5 @@
+// 11/9 備份
+
 import React, { useState, useEffect } from 'react'
 import './IrisLoginCard.scss'
 import { ReactComponent as LoginCardBg } from './Images/login_card.svg'
@@ -8,13 +10,7 @@ import ButtonLogin from './Button/ButtonLogin'
 import $ from 'jquery'
 
 function IrisLoginCard(props) {
-  const {
-    setIsLogin,
-    setCurrentUser,
-    isLogin,
-    SetShowSucessBox,
-    SetShowLoginCard,
-  } = props
+  const { setIsLogin, setCurrentUser, isLogin } = props
 
   // 變成註冊表單
   const ToRegisterForm = () => {
@@ -69,7 +65,7 @@ function IrisLoginCard(props) {
     }, 1100)
   }
 
-  // 登入
+  // 登入功能
   let userinfo = []
   // 拿資料庫會員資料
   async function getData() {
@@ -86,7 +82,6 @@ function IrisLoginCard(props) {
   }
 
   // 登入比對帳密
-  // 要用 async await, 先拿到資料再比對
   async function handleLogin() {
     await getData()
     const useraccount = document.querySelector('#useraccount').value
@@ -99,13 +94,10 @@ function IrisLoginCard(props) {
       ) {
         setIsLogin(true)
         setCurrentUser(userinfo[i].member_sid) // 設定目前使用者id
-        SetShowSucessBox(true) // 出現登入成功光箱
-        SetShowLoginCard(false) // 登入表單消失
-
-        // Test
-        // setTimeout(() => {
-        //   SetShowLoginCard(true)
-        // }, 2000)
+        document.querySelector('#useraccount').value = ''
+        document.querySelector('#userpassword').value = ''
+        // document.querySelector('.iris-success-checkmark').style.display =
+        //   'block'
       } else {
         // 若帳密錯誤，顯示錯誤提示
         $('.iris-login-alert').slideDown('slow')
@@ -216,10 +208,12 @@ function IrisLoginCard(props) {
           <div className="iris-login-background">
             {/* <LoginCardBg /> */}
             <img src={require('./Images/login_card.png')} />
+            {/* <img src={require('./Images/login_card.png')} /> */}
           </div>
           <div className="iris-register-background">
             {/* <RegisterCardBg /> */}
             <img src={require('./Images/register_card.png')} />
+            {/* <img src={require('./Images/register_card.png')} /> */}
           </div>
         </div>
         <div className="iris-login-form">

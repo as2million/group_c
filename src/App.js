@@ -48,6 +48,7 @@ function App() {
           setShowLoginModal={setShowLoginModal}
           showLoginModal={showLoginModal}
           setIsLogin={setIsLogin}
+          isLogin={isLogin}
         />
         {/* 放切頁時不重新渲染的部份 e*/}
         <VNavbar />
@@ -161,7 +162,6 @@ function App() {
         <Footer />
         {/* 放切頁時不重新渲染的部份 e*/}
 
-        {/* login modal每頁都用到，放外面 */}
         <IrisLoginModal
           showLoginModal={showLoginModal}
           setShowLoginModal={setShowLoginModal}
