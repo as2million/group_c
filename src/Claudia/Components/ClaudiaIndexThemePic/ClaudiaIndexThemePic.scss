@@ -111,14 +111,16 @@
     font-weight: 700;
 }
 
+
+
 @media only screen and (max-width: 57.6rem) {
     .claudia-fake-navbar {
-        width: 375px;
+        width: 100%;
         height: 100px;
     }
 
     .claudia-index-background-image {
-        width: 375px;
+        width: 100vw;
         height: 667px;
         background-image: url(./Images/rwd_index_bg.jpg);
     }
