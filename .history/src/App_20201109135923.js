@@ -40,23 +40,23 @@ function App() {
   const [cartNumber, setCartNumber] = useState(0);
 
   // 購物車商品數量處理器
-  const handleCartNumber = (type, amount) => {
+  const handleCartNumber = (type, amonut) => {
     if (type === 'add') {
-      const newCartNumber = +cartNumber + amount;
+      const newCartNumber = +cartNumber + amonut;
       localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
       setCartNumber(newCartNumber);
     }
     if (type === 'minus') {
-      const newCartNumber = +cartNumber - amount;
+      const newCartNumber = +cartNumber - amonut;
       localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
       setCartNumber(newCartNumber);
     }
   };
-  useEffect(() => {
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0;
-    setCartNumber(currentCartNumber);
-  }, []);
+  // useEffect(() => {
+  //   const currentCartNumber =
+  //     JSON.parse(localStorage.getItem('cartNumber')) || 0;
+  //   setCartNumber(currentCartNumber);
+  // }, [cartNumber]);
 
   return (
     // <Router>元件一定要放在最外層

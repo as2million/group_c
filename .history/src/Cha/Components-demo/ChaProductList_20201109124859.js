@@ -6,12 +6,12 @@ function ChaProductList(props) {
   const [mycart1, setMycart1] = useState([]);
   const [show, setShow] = useState(false);
   const [productName, setProductName] = useState('');
-  const { handleCartNumber } = props;
+  const { handleAddCartNumber } = props;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const createCartToLocalStorage = (value) => {
+  const updateCartToLocalStorage = (value) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
 
     const newCart = [...currentCart, value];
@@ -65,14 +65,7 @@ function ChaProductList(props) {
             alt="..."
           />
           <div className="card-body">
-            <h5
-              className="card-title"
-              onClick={() => {
-                handleCartNumber('minus', 1);
-              }}
-            >
-              九九特餐-彩椒雞丁
-            </h5>
+            <h5 className="card-title">九九特餐-彩椒雞丁</h5>
             <p className="card-text">
               This is a longer card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
@@ -85,7 +78,7 @@ function ChaProductList(props) {
               type="button"
               className="btn btn-success"
               onClick={() => {
-                handleCartNumber('add', 1);
+                handleAddCartNumber();
                 createCartToLocalStorage({
                   id: 7,
                   productName: '九九特餐-彩椒雞丁',
@@ -117,7 +110,7 @@ function ChaProductList(props) {
               type="button"
               className="btn btn-success"
               onClick={() => {
-                createCartToLocalStorage({
+                updateCartToLocalStorage({
                   id: 8,
                   productName: '哈妮BBQ烤雞腿',
                   productPrice: 130,
@@ -149,7 +142,7 @@ function ChaProductList(props) {
               type="button"
               className="btn btn-success"
               onClick={() => {
-                createCartToLocalStorage({
+                updateCartToLocalStorage({
                   id: 9,
                   productName: '蕃茄慢燉牛腩',
                   productPrice: 140,

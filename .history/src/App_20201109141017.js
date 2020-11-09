@@ -54,7 +54,7 @@ function App() {
   };
   useEffect(() => {
     const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0;
+      JSON.parse(localStorage.getItem('cartNumber')) || '';
     setCartNumber(currentCartNumber);
   }, []);
 

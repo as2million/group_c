@@ -38,25 +38,22 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 function App() {
   const [showBar, setShowBar] = useState(true);
   const [cartNumber, setCartNumber] = useState(0);
-
-  // 購物車商品數量處理器
-  const handleCartNumber = (type, amount) => {
+  const handleCartNumber = (type) => {
     if (type === 'add') {
-      const newCartNumber = +cartNumber + amount;
-      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-      setCartNumber(newCartNumber);
+      const newCartNumber = +cartNumber + 1;
     }
     if (type === 'minus') {
-      const newCartNumber = +cartNumber - amount;
-      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-      setCartNumber(newCartNumber);
+      const newCartNumber = +cartNumber - 1;
     }
+    localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+    setCartNumber(newCartNumber);
   };
+
   useEffect(() => {
     const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0;
+      JSON.parse(localStorage.getItem('cartNumber')) || [];
     setCartNumber(currentCartNumber);
-  }, []);
+  }, [cartNumber]);
 
   return (
     // <Router>元件一定要放在最外層

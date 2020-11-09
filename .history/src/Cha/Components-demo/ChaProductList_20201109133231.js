@@ -68,7 +68,7 @@ function ChaProductList(props) {
             <h5
               className="card-title"
               onClick={() => {
-                handleCartNumber('minus', 1);
+                handleCartNumber('minus');
               }}
             >
               九九特餐-彩椒雞丁
@@ -85,7 +85,7 @@ function ChaProductList(props) {
               type="button"
               className="btn btn-success"
               onClick={() => {
-                handleCartNumber('add', 1);
+                handleCartNumber('add');
                 createCartToLocalStorage({
                   id: 7,
                   productName: '九九特餐-彩椒雞丁',

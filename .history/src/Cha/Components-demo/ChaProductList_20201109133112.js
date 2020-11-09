@@ -65,14 +65,7 @@ function ChaProductList(props) {
             alt="..."
           />
           <div className="card-body">
-            <h5
-              className="card-title"
-              onClick={() => {
-                handleCartNumber('minus', 1);
-              }}
-            >
-              九九特餐-彩椒雞丁
-            </h5>
+            <h5 className="card-title">九九特餐-彩椒雞丁</h5>
             <p className="card-text">
               This is a longer card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
@@ -85,7 +78,7 @@ function ChaProductList(props) {
               type="button"
               className="btn btn-success"
               onClick={() => {
-                handleCartNumber('add', 1);
+                handleAddCartNumber();
                 createCartToLocalStorage({
                   id: 7,
                   productName: '九九特餐-彩椒雞丁',

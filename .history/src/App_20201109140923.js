@@ -52,11 +52,11 @@ function App() {
       setCartNumber(newCartNumber);
     }
   };
-  useEffect(() => {
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0;
-    setCartNumber(currentCartNumber);
-  }, []);
+  // useEffect(() => {
+  //   const currentCartNumber =
+  //     JSON.parse(localStorage.getItem('cartNumber')) ||'';
+  //   setCartNumber(currentCartNumber);
+  // }, [cartNumber]);
 
   return (
     // <Router>元件一定要放在最外層

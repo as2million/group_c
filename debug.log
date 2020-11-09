@@ -16,3 +16,5 @@
 [1028/210732.493:ERROR:directory_reader_win.cc(43)] FindFirstFile: ï¿½tï¿½Î§ä¤£ï¿½ï¿½ï¿½ï¿½wï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½C (0x3)
 [1029/085302.155:ERROR:directory_reader_win.cc(43)] FindFirstFile: ï¿½tï¿½Î§ä¤£ï¿½ï¿½ï¿½ï¿½wï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½C (0x3)
 
+[1109/131659.756:ERROR:directory_reader_win.cc(43)] FindFirstFile: ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C (0x3)
+[1109/134210.936:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\test\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\e171143c-d6c3-4d60-9b34-b5997799f652: ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C (0x3)
