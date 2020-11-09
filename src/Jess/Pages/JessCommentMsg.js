@@ -7,7 +7,7 @@ import JessCommentList from '../Components/JessCommentMsg/JessCommentList'
 function JessMenu(props) {
   const [textInput, setTextInput] = useState('')
   const [comments, setComments] = useState([])
-  const [rating, setRating] = useState('0')
+  const [rating, setRating] = useState(0)
 
   async function messageData() {
     const url = 'http://localhost:5000/product/member1msg'

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter, useParams } from 'react-router-dom'
-import { Row, Col } from 'react-bootstrap'
 import { Rate } from 'antd'
 import 'antd/dist/antd.css'
 import './JessHeader.scss'
@@ -9,12 +8,13 @@ import Counter from '../../../Share/Components/Counter/Counter'
 import AddCart from 'Share/Components/AddCart/AddCart'
 import cart from '../../../Share/Components/AddCart/Images/cart.svg'
 import BreadCrumb from '../JessBreadCrumb/BreadCrumb'
-import AddFavorite from 'Share/Components/AddFavorite/AddFavorite'
+// import AddFavorite from 'Share/Components/AddFavorite/AddFavorite'
 
 function JessProdoctList(props) {
   const [count, setCount] = useState(1)
   const [total, setTotal] = useState(170)
-  const [mycart, setMycart] = useState([])
+  const [mycount, setMycountt] = useState([])
+  const { handleCartNumber } = props
   // console.log(props)
   //useParams 設定id
   let { id } = useParams()
@@ -60,16 +60,24 @@ function JessProdoctList(props) {
     }
   }
 
-  function updateCartToLocalStorage(value) {
-    // 從localstorage得到cart(json字串)
-    const currentCart = localStorage.getItem('cart') || '[]'
-    // 把得到的cart(json字串)轉為陣列值，然後和新加入的物件值合併為新陣列
-    const newCart = [...JSON.parse(currentCart), value]
-    // 設定回localstorage中(記得轉回json字串)
+  function CreateCartToLocalStorage(value) {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+    const newCart = [...currentCart, value]
     localStorage.setItem('cart', JSON.stringify(newCart))
-    // 設定至元件的狀態中
-    setMycart(newCart)
-    console.log(cart)
+  }
+
+  const calA = (e) => {
+    setTabActive(e.target, '.jess-a')
+  }
+  const setTabActive = (addElem, removeName) => {
+    let removeTargets = document.querySelectorAll(removeName)
+    removeTargets.forEach((target) => {
+      target.classList.remove('active')
+      console.log(target)
+    })
+
+    addElem.classList.add('active')
   }
   return (
     <>
@@ -89,8 +97,12 @@ function JessProdoctList(props) {
         {/* <p>/productImages/Bento/{menu.img_id}.jpg</p> */}
 
         <div className="jess-menuList ">
-          <div className="jess-fav active">
-            <AddFavorite />
+          <div className="jess-fav ">
+            <button
+              className="addFavorite-btn addFavorite-btn-n jess-a"
+              onClick={calA}
+            ></button>
+            {/* <AddFavorite /> */}
           </div>
           <h1 className="jess-tittle">{menu.productname}</h1>
           <p className="jess-content">{menu.introduction}</p>
@@ -159,18 +171,19 @@ function JessProdoctList(props) {
             <button
               className="addCart-btn addCart-btn-n"
               onClick={() => {
-                updateCartToLocalStorage({
+                handleCartNumber('add', count)
+                CreateCartToLocalStorage({
                   id: 1,
                   productname: '慢煮嫩雞胸-蒜味香草',
-                  amount: 1,
-                  price: 170,
+                  img_id: '00_bento-chicken-breast',
+                  price: 150,
                 })
               }}
             >
               <img className="addCart-cart addCart-cart-n" src={cart} />
             </button>
           </div>
-          <AddCart
+          {/* <AddCart
             onClick={() => {
               updateCartToLocalStorage({
                 id: 1,
@@ -179,7 +192,7 @@ function JessProdoctList(props) {
                 price: 170,
               })
             }}
-          />
+          /> */}
         </div>
       </div>
     </>

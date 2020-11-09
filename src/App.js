@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 // 引入 共用元件
 import Navbar from 'Share/Components/NavBar/NavBar'
@@ -29,13 +29,32 @@ import ScrollToTop from '../src/Jess/Components/ScrollToTop'
 
 // 路由表
 function App() {
-  const [count, setCount] = useState(1)
+  const [showBar, setShowBar] = useState(true)
+  const [cartNumber, setCartNumber] = useState(0)
+  // 購物車商品數量處理器
+  const handleCartNumber = (type, amount) => {
+    if (type === 'add') {
+      const newCartNumber = +cartNumber + amount
+      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber))
+      setCartNumber(newCartNumber)
+    }
+    if (type === 'minus') {
+      const newCartNumber = +cartNumber - amount
+      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber))
+      setCartNumber(newCartNumber)
+    }
+  }
+  useEffect(() => {
+    const currentCartNumber =
+      JSON.parse(localStorage.getItem('cartNumber')) || 0
+    setCartNumber(currentCartNumber)
+  }, [])
   return (
     // <Router>元件一定要放在最外層
     <Router>
       <>
         {/* 放切頁時不重新渲染的部份 s*/}
-        <Navbar count={count} />
+        <Navbar cartNumber={cartNumber} />
         {/* 放切頁時不重新渲染的部份 e*/}
 
         {/* 路由設定開始 */}
@@ -54,7 +73,8 @@ function App() {
             </Route>
             {/* component={JessBento} */}
             <Route path="/bento/:id?">
-              <JessBento setCount={setCount} />
+              {/* <JessBento /> */}
+              <JessBento handleCartNumber={handleCartNumber} />
             </Route>
             <Route path="/vegBox">
               <JessVegBox />

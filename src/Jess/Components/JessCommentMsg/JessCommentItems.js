@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './JessCommentInput.scss'
-import ReactStars from 'react-rating-stars-component'
+import 'antd/dist/antd.css'
+import { Rate } from 'antd'
 
 function JessCommentList(props) {
   const { comment } = props
@@ -10,7 +11,7 @@ function JessCommentList(props) {
       <div>
         <li key={comment.sid} className="jess-commentItem">
           <div className="jess-rateStarColor">
-            <ReactStars size={20} value={comment.starRating} edit={false} />
+            <Rate count={5} value={comment.starRating} disabled />
           </div>
           <div className="jess-itemTextBox">{comment.content}</div>
           <div className=" jess-btnBox">

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import ReactDOM from 'react-dom'
 import './JessCommentInput.scss'
 // import JessCommentList from '../../../Share/Components/Button/Button'
-import ReactStars from 'react-rating-stars-component'
+// import ReactStars from 'react-rating-stars-component'
+import 'antd/dist/antd.css'
+import { Rate } from 'antd'
 
 function JessCommentInput(props) {
   const {
@@ -13,7 +16,9 @@ function JessCommentInput(props) {
     setRating,
     member_sid,
   } = props
+
   // const [textInput, setTextInput] = useState('')
+  // const [starKey, setStarKey] = useState(Math.random())
   // const [comments, setComments] = useState([
 
   async function handleSubmit(v) {
@@ -26,7 +31,8 @@ function JessCommentInput(props) {
       member_sid: 1,
       starRating: rating,
       content: textInput,
-      created_at: new Date().toLocaleString(),
+      created_at: new Date().toString(),
+      // created_at: null,
     }
 
     const newComments = [newItems, ...comments]
@@ -48,28 +54,28 @@ function JessCommentInput(props) {
     console.log('伺服器回傳的json資料', data)
 
     setTextInput('')
+    setRating(0)
+    // clearStar()
+    console.log(rating)
   }
   const ratingChanged = (newRating) => {
     setRating(newRating)
-    console.log('rating:', rating)
+    // console.log('rating:', rating)
   }
+
+  // const clearStar = () => {
+  //   setStarKey(Math.random())
+  //   setRating(0)
+  // }
+
   useEffect(() => {
     handleSubmit()
   }, [])
-  useEffect(() => {
-    console.log(rating)
-  }, [rating])
 
   return (
     <>
       <div className="jess-rateStar">
-        <ReactStars
-          count={5}
-          rating={rating}
-          onChange={ratingChanged}
-          size={20}
-          activeColor="#ffd700"
-        />
+        <Rate count={5} value={rating} onChange={ratingChanged} />
       </div>
       <textarea
         className="form-control  form-control-lg mt-3"

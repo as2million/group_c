@@ -9,11 +9,12 @@ import JessListD from '../Components/JessListD/JessListD'
 import JessListE from '../Components/JessListE/JessListE'
 import ToTop from 'Share/Components/ToTopButton/ScrollApp'
 
-function JessBento() {
+function JessBento(props) {
+  const { handleCartNumber } = props
   return (
     <>
       <VNavbar />
-      <JessHeader />
+      <JessHeader handleCartNumber={handleCartNumber} />
       <JessListA />
       <JessListB />
       <JessListC />

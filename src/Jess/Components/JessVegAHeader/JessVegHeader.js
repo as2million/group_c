@@ -9,10 +9,11 @@ import AddFavorite from 'Share/Components/AddFavorite/AddFavorite'
 import vegPic from './Images/vegetableBox_slick_pic2.png'
 import vegPic2 from './Images/VegBox2.jpg'
 
-function JessVegHeader() {
+function JessVegHeader(props) {
   const [count, setCount] = useState(1)
   const [total, setTotal] = useState(350)
   const [veg, setVeg] = useState([])
+
   async function bentoData() {
     const url = 'http://localhost:5000/product/bento'
 

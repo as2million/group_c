@@ -1,5 +1,5 @@
 // 導入其它的模組
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Nav } from 'react-bootstrap'
 import './Navbar.scss'
 import 'antd/dist/antd.css'
@@ -15,7 +15,8 @@ import { NavLink } from 'react-router-dom'
 
 function NavBar(props) {
   const [count, setCount] = useState(0)
-  const [shoppingList, setShoppingList] = useState('0')
+  const [mycart, setMycart] = useState([])
+  const { cartNumber } = props
   const [showNav, setShowNav] = useState(true)
   const { isLogin, setShowLoginModal } = props
 
@@ -27,6 +28,7 @@ function NavBar(props) {
       x.className = 'nav'
     }
   }
+
   return (
     <>
       <div className="nav" id="NavBar">
@@ -52,7 +54,7 @@ function NavBar(props) {
                   <ul className="navBar-jess-dropdown">
                     <div className="navBar-jess-triangle"></div>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/productList">
+                      <Nav.Link as={NavLink} to="/bento/0">
                         低GI便當
                       </Nav.Link>
                     </li>
@@ -143,11 +145,11 @@ function NavBar(props) {
 
               <li id="ru-target">
                 <span className="jess-navbarCartNum" id="jess-navbarCartNum">
-                  {count}
+                  {cartNumber}
                 </span>
                 <Popover
                   placement="bottomLeft"
-                  content={shoppingList}
+                  content={mycart}
                   title="我的購買清單"
                   trigger="hover"
                   className="navbar-jess-popover"
@@ -160,7 +162,7 @@ function NavBar(props) {
                         className="jess-navbarCartNum"
                         id="jess-navbarCartNum"
                       >
-                        {count}
+                        {cartNumber}
                       </span>
                     </div>
                   </div>

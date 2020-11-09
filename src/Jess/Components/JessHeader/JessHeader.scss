@@ -7,7 +7,15 @@ html {
   margin: 0;
   padding: 0;
 }
-$primary: #f48145;
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$green: #66ab8c;
+$white: #ffffff;
+$light-yellow: #f6bd60;
+$dark-yellow: #f5a016;
 $font-size: 1rem;
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
@@ -42,7 +50,6 @@ $font-size: 1rem;
   margin-right: 13.5rem;
   margin-top: 4rem;
   overflow: scroll;
-  // background-attachment: local;
   background-attachment: local;
 }
 .jess-HeadPic {
@@ -138,6 +145,46 @@ hr {
   font-family: 'Noto Sans TC';
   font-size: 1.5rem;
   color: #858585;
+}
+// .favorite-btn
+.addFavorite-btn:focus {
+  outline: none;
+}
+
+.addFavorite-btn {
+  background-color: $white;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url('./Images/addFavoriteA.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
+.addFavorite-btn:hover {
+  background-color: $light-yellow;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url('./Images/addFavoriteB.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
+.addFavorite-btn .active {
+  background-color: $dark-yellow;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url('./Images/addFavoriteC.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
 }
 
 @media screen and (max-width: 576px) {
