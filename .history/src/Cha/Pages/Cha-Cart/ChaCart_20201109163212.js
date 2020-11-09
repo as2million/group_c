@@ -70,7 +70,7 @@ function ChaCart(props) {
     // newMealsDisplay = newMealsDisplay.filter(
     //   (item, index) => item.productAmount !== 0
     // );
-    console.log(newMealsDisplay);
+    // console.log(newMealsDisplay);
     // 只要meals改變，就處理meals
     setMealsDisplay(newMealsDisplay);
   }, [meals]);

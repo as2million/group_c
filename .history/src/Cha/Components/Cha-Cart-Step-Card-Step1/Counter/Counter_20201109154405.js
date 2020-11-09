@@ -9,8 +9,8 @@ function Counter(props) {
         <div
           onClick={() => {
             handleCount(mealsItem.id, 'decrement');
-            if (mealsItem.productAmount === 1) return;
-            updateCartToLocalStorage(mealsItem, false);
+            if (item.amount === 1) return;
+            updateCartToLocalStorage(item, false);
           }}
           className={
             mealsItem.productAmount === 1
@@ -24,10 +24,10 @@ function Counter(props) {
           <p>{mealsItem.productAmount}</p>
         </div>
         <div
-          onClick={() => {
-            handleCount(mealsItem.id, 'increment');
-            updateCartToLocalStorage(mealsItem, true);
-          }}
+          onClick={
+            () => handleCount(mealsItem.id, 'increment')
+            // updateCartToLocalStorage(item, true);
+          }
           className="cha-counter-increment"
         >
           <p>+</p>

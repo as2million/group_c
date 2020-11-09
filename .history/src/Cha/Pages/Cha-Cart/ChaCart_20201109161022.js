@@ -70,7 +70,7 @@ function ChaCart(props) {
     // newMealsDisplay = newMealsDisplay.filter(
     //   (item, index) => item.productAmount !== 0
     // );
-    console.log(newMealsDisplay);
+    // console.log(newMealsDisplay);
     // 只要meals改變，就處理meals
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
@@ -85,29 +85,6 @@ function ChaCart(props) {
     // // 設定資料
     setMeals(newCart);
   };
-
-  // 更新購物車中的商品數量
-  const updateCartToLocalStorage = (item, isAdded = true) => {
-    // console.log(item, isAdded);
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // find if the product in the localstorage with its id
-    const index = currentCart.findIndex((v) => v.id === item.id);
-
-    // console.log('index', index);
-    // found: index! == -1
-    if (index > -1) {
-      isAdded
-        ? currentCart[index].productAmount++
-        : currentCart[index].productAmount--;
-    }
-
-    localStorage.setItem('cart', JSON.stringify(currentCart));
-
-    // 設定資料
-    setMeals(currentCart);
-  };
-
   return (
     <>
       <ChaCartProgressBar />
@@ -119,7 +96,6 @@ function ChaCart(props) {
             mealsDisplay={mealsDisplay}
             setMealsDisplay={setMealsDisplay}
             createCartToLocalStorage={createCartToLocalStorage}
-            updateCartToLocalStorage={updateCartToLocalStorage}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2

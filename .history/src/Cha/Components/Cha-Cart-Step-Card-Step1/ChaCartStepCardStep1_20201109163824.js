@@ -3,12 +3,7 @@ import ChaCartMealList from 'Cha/Components/Cha-Cart-Step-Card-Step1/Cha-Cart-Me
 import './ChaCartStepCardStep1.scss';
 
 function ChaCartStepCardStep1(props) {
-  const {
-    mealsDisplay,
-    setMealsDisplay,
-    createCartToLocalStorage,
-    updateCartToLocalStorage,
-  } = props;
+  const { mealsDisplay, setMealsDisplay, createCartToLocalStorage } = props;
 
   // 刪除商品選項
   const handleDelete = (id) => {

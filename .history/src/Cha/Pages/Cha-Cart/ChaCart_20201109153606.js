@@ -66,27 +66,28 @@ function ChaCart(props) {
         newMealsDisplay = [...newMealsDisplay, newItem];
       }
     }
-    // // 刪掉數量為0的物件
+    // // // 刪掉數量為0的物件
     // newMealsDisplay = newMealsDisplay.filter(
     //   (item, index) => item.productAmount !== 0
     // );
-    console.log(newMealsDisplay);
+    // console.log(newMealsDisplay);
+
     // 只要meals改變，就處理meals
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
 
   // 新增LocalStorage
-  const createCartToLocalStorage = (value) => {
+  const createCartToLocalStorage = (item) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    const newCart = [...currentCart, value];
+    const newCart = [...currentCart, item];
     localStorage.setItem('cart', JSON.stringify(newCart));
 
     // // 設定資料
     setMeals(newCart);
   };
 
-  // 更新購物車中的商品數量
+  // // 更新購物車中的商品數量
   const updateCartToLocalStorage = (item, isAdded = true) => {
     // console.log(item, isAdded);
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -105,7 +106,7 @@ function ChaCart(props) {
     localStorage.setItem('cart', JSON.stringify(currentCart));
 
     // 設定資料
-    setMeals(currentCart);
+    setMycart(currentCart);
   };
 
   return (

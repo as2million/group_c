@@ -26,6 +26,7 @@ function Counter(props) {
         <div
           onClick={() => {
             handleCount(mealsItem.id, 'increment');
+
             updateCartToLocalStorage(mealsItem, true);
           }}
           className="cha-counter-increment"

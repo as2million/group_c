@@ -66,11 +66,12 @@ function ChaCart(props) {
         newMealsDisplay = [...newMealsDisplay, newItem];
       }
     }
-    // // 刪掉數量為0的物件
+    // // // 刪掉數量為0的物件
     // newMealsDisplay = newMealsDisplay.filter(
     //   (item, index) => item.productAmount !== 0
     // );
-    console.log(newMealsDisplay);
+    // console.log(newMealsDisplay);
+
     // 只要meals改變，就處理meals
     setMealsDisplay(newMealsDisplay);
   }, [meals]);
@@ -86,27 +87,25 @@ function ChaCart(props) {
     setMeals(newCart);
   };
 
-  // 更新購物車中的商品數量
-  const updateCartToLocalStorage = (item, isAdded = true) => {
-    // console.log(item, isAdded);
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+  // // 更新購物車中的商品數量
+  // const updateCartToLocalStorage = (item, isAdded = true) => {
+  //   console.log(item, isAdded);
+  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // find if the product in the localstorage with its id
-    const index = currentCart.findIndex((v) => v.id === item.id);
+  //   // find if the product in the localstorage with its id
+  //   const index = currentCart.findIndex((v) => v.id === item.id);
 
-    // console.log('index', index);
-    // found: index! == -1
-    if (index > -1) {
-      isAdded
-        ? currentCart[index].productAmount++
-        : currentCart[index].productAmount--;
-    }
+  //   console.log('index', index);
+  //   // found: index! == -1
+  //   if (index > -1) {
+  //     isAdded ? currentCart[index].amount++ : currentCart[index].amount--;
+  //   }
 
-    localStorage.setItem('cart', JSON.stringify(currentCart));
+  //   localStorage.setItem('cart', JSON.stringify(currentCart));
 
-    // 設定資料
-    setMeals(currentCart);
-  };
+  //   // 設定資料
+  //   setMycart(currentCart);
+  // };
 
   return (
     <>
@@ -119,7 +118,6 @@ function ChaCart(props) {
             mealsDisplay={mealsDisplay}
             setMealsDisplay={setMealsDisplay}
             createCartToLocalStorage={createCartToLocalStorage}
-            updateCartToLocalStorage={updateCartToLocalStorage}
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2

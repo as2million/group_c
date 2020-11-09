@@ -87,8 +87,8 @@ function ChaCartStepCardStep1(props) {
             mealsItem={item}
             deleteMethod={() => handleDelete(item.id)}
             handleCount={handleCount}
-            createCartToLocalStorage={createCartToLocalStorage}
             updateCartToLocalStorage={updateCartToLocalStorage}
+            createCartToLocalStorage={createCartToLocalStorage}
             // handleUpdateToLocalStorage={handleUpdateToLocalStorage}
           />
         ))}

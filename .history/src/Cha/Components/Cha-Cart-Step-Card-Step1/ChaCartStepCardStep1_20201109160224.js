@@ -7,7 +7,7 @@ function ChaCartStepCardStep1(props) {
     mealsDisplay,
     setMealsDisplay,
     createCartToLocalStorage,
-    updateCartToLocalStorage,
+    // updateCartToLocalStorage,
   } = props;
 
   // 刪除商品選項
@@ -87,9 +87,7 @@ function ChaCartStepCardStep1(props) {
             mealsItem={item}
             deleteMethod={() => handleDelete(item.id)}
             handleCount={handleCount}
-            createCartToLocalStorage={createCartToLocalStorage}
-            updateCartToLocalStorage={updateCartToLocalStorage}
-            // handleUpdateToLocalStorage={handleUpdateToLocalStorage}
+            // updateCartToLocalStorage={updateCartToLocalStorage}
           />
         ))}
         <div style={{ display: subtotalPrice === 0 && 'none' }}>
