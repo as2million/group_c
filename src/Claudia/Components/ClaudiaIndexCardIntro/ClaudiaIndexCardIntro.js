@@ -47,7 +47,7 @@ function ClaudiaIndexCardIntro(props) {
                 <div className="claudia-index-card-intro-box">
                     <div className="claudia-index-card-intro-box-first-line">
                         <h1 id="claudia-index-card-intro-city"><b>台北市</b></h1>
-                        <button onClick={goBackButton} id="claudia-index-card-intro-goback">&#8592; 回列表</button>
+                        <a onClick={goBackButton} id="claudia-index-card-intro-goback">&#8592; 回列表</a>
                     </div>
 
                     <h2 id="claudia-index-card-intro-title"><b>小小城市農夫－台北內湖農驛棧有機農園</b></h2>
