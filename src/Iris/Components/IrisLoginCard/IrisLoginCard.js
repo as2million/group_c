@@ -63,7 +63,7 @@ function IrisLoginCard(props) {
     }, 1100)
   }
 
-  // 登入
+  // 登入功能
   let userinfo = []
   // 拿資料庫會員資料
   async function getData() {
@@ -86,51 +86,78 @@ function IrisLoginCard(props) {
     const userpassword = document.querySelector('#userpassword').value
     for (let i = 0; i < userinfo.length; i++) {
       if (
+        // 正確
         useraccount === userinfo[i].account &&
         userpassword === userinfo[i].password
       ) {
         setIsLogin(true)
-        setCurrentUser(userinfo[i].member_sid)
+        setCurrentUser(userinfo[i].member_sid) // 設定目前使用者id
         document.querySelector('.iris-login-content').style.display = 'none'
         document.querySelector('.iris-success-checkmark').style.display =
           'block'
       } else {
         // 若帳密錯誤，顯示錯誤提示
         $('.iris-login-alert').slideDown('slow')
+        // 2秒後消失
         setTimeout(() => {
           $('.iris-login-alert').slideUp('slow')
         }, 2000)
+        // 清空input
+        document.querySelector('#useraccount').value = ''
+        document.querySelector('#userpassword').value = ''
       }
     }
   }
 
-  // 註冊
+  // 註冊功能
   const handleRegister = () => {
     const account = document.querySelector('#createaccount').value
     const password = document.querySelector('#createpassword').value
     const email = document.querySelector('#createmail').value
     const mobile = document.querySelector('#createmobile').value
 
-    // 把輸入的內容包成物件傳出去
-    const newRegister = {
-      account: account,
-      password: password,
-      email: email,
-      mobile: mobile,
+    if (account === '') {
+      $('.iris-empty-account').slideDown('slow')
+      // setTimeout(() => {
+      //   $('.iris-empty-account').slideUp('slow')
+      // }, 1000)
     }
+    if (password === '') {
+      $('.iris-empty-password').slideDown('slow')
+    }
+    if (email === '') {
+      $('.iris-empty-email').slideDown('slow')
+    }
+    if (mobile === '') {
+      $('.iris-empty-mobile').slideDown('slow')
+    }
+    // 資料都正確才送出
+    else {
+      $('.iris-empty-account').slideUp('slow')
+      $('.iris-empty-password').slideUp('slow')
+      $('.iris-empty-email').slideUp('slow')
+      $('.iris-empty-mobile').slideUp('slow')
+      // 把輸入的內容包成物件傳出去
+      const newRegister = {
+        account: account,
+        password: password,
+        email: email,
+        mobile: mobile,
+      }
 
-    fetch('http://localhost:5000/member/userRegister', {
-      method: 'POST',
-      body: JSON.stringify(newRegister),
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-      .then((r) => r.json())
-      .then((o) => {
-        console.log(o)
+      fetch('http://localhost:5000/member/userRegister', {
+        method: 'POST',
+        body: JSON.stringify(newRegister),
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }),
       })
+        .then((r) => r.json())
+        .then((o) => {
+          console.log(o)
+        })
+    }
   }
 
   return (
@@ -215,18 +242,25 @@ function IrisLoginCard(props) {
               <div className="iris-login-text">帳號</div>
               <InputH44 type="text" id="createaccount" />
             </div>
+            <div class="iris-empty-account">*此欄位為必填</div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">密碼</div>
               <InputH44 type="password" id="createpassword" />
             </div>
+            <div class="iris-empty-password">*此欄位為必填</div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">信箱</div>
               <InputH44 type="text" id="createmail" />
             </div>
+            <div class="iris-empty-email">*此欄位為必填</div>
+            <div class="iris-wrong-email-format">*請填入正確的信箱格式</div>
+
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">手機</div>
               <InputH44 type="text" id="createmobile" />
             </div>
+            <div class="iris-empty-mobile">*此欄位為必填</div>
+            <div class="iris-wrong-mobile-format">*請填入正確的手機格式</div>
 
             <div
               className="iris-register-button"
