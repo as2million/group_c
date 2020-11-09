@@ -133,7 +133,7 @@ function RuBento(props) {
             )}
             {itemWarp2 && (
               <RuCard
-                title={'慢煮嫩雞胸-中歐香料'}
+                title={data[1].productname}
                 comment={'1180'}
                 buy={'234'}
                 price={'$130'}
