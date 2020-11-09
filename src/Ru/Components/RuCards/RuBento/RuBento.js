@@ -19,26 +19,38 @@ function RuBento(props) {
   const [itemWarp8, setItemWarp8] = useState(false)
   const [itemWarp9, setItemWarp9] = useState(false)
   const [isShowNothing, setIsShowNothing] = useState(false)
-  // console.log(searchInput);
+  // 後端資料
+  const [data, setData] = useState('')
 
-  let title1 = '慢煮嫩雞胸-蒜味香草'
-  let title2 = '慢煮嫩雞胸-中歐香料'
-  let title3 = '醬烤厚切1983黑豚'
-  let title4 = '熱帶火烤萊姆蝦'
-  let title5 = '麴塩五香松阪豬'
-  let title6 = '美式熟成烤牛肋條'
-  let title7 = '頂級熟成菲力牛排'
-  let title8 = '炙燒干貝'
-  let title9 = '會議雙拼組合'
-
-  const $containerA = document.querySelector('.ru-itemWarp')
-
-  // if (searchInput === '慢煮嫩雞胸-蒜味香草') {
-  // setItemWarp1(true);
-  // }
+  // 向後端請求資料
+  useEffect(() => {
+    fetch('http://localhost:5000/product/bento') // 非同步
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (myJson) {
+        // console.log(myJson)
+        const copyJson = [...myJson]
+        setData(copyJson)
+      })
+  }, [])
 
   // 搜尋功能 s
   useEffect(() => {
+    if (!data) {
+      return
+    }
+    let title1 = '慢煮嫩雞胸-蒜味香草'
+    let title2 = '慢煮嫩雞胸-中歐香料'
+    let title3 = '醬烤厚切1983黑豚'
+    let title4 = '熱帶火烤萊姆蝦'
+    let title5 = '麴塩五香松阪豬'
+    let title6 = '美式熟成烤牛肋條'
+    let title7 = '頂級熟成菲力牛排'
+    let title8 = '炙燒干貝'
+    let title9 = '會議雙拼組合'
+    const $containerA = document.querySelector('.ru-itemWarp')
+
     // 第一次掛載DOM 與 每次state改變時 都會觸發
     console.log(searchInput)
     setItemWarp1(true)
@@ -93,9 +105,11 @@ function RuBento(props) {
       setIsShowNothing(true)
     }
     return () => {}
-  }, [searchInput]) // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
+  }, [searchInput, data]) // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
   // 搜尋功能 e
-
+  if (!data) {
+    return <></>
+  }
   return (
     <>
       {/* 商品區 - 網頁版 s */}
@@ -106,7 +120,7 @@ function RuBento(props) {
             {isShowNothing && <RuNothing />}
             {itemWarp1 && (
               <RuCard
-                title={'慢煮嫩雞胸-蒜味香草'}
+                title={data[0].productname}
                 comment={'1180'}
                 buy={'234'}
                 price={'$130'}
