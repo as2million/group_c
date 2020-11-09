@@ -39,13 +39,11 @@ function VNavbar(props) {
         // const newAddress = [...obj, ...adress]
         // setAddress(newAddress)
         // console.log(address[0])
-
+        // console.log(obj[0].address)
         console.log(obj)
         setAddress(obj[0].address)
         setCounty(obj[0].county)
         setDistrict(obj[0].district)
-
-        // console.log(obj[0].address)
       })
   }
   //如果登入的話，fetch會員的地址

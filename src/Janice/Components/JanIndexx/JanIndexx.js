@@ -15,31 +15,95 @@ import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft'
 import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
 import VNavbar from '../../../Share/Components/VNavbar/VNavbar'
 import ToToop from '../../../Share/Components/ToTopButton/ScrollButton'
-import { countries, townships, price } from './data.js'
 import { Image } from 'react-bootstrap'
+import { countries, townships, price } from './data'
+import farmer from './Images/Svg/farmer.svg'
+import farmer2 from './Images/Svg/farmer-o.svg'
+import diet from './Images/Svg/diet.svg'
+import diet2 from './Images/Svg/diet-o.svg'
 
 function JanIndexx(props) {
   const { type, id } = props
   const [country, setCountry] = useState(-1)
   const [township, setTownship] = useState(-1)
-  const [price, setPrice] = useState(-1)
+  const [postcode, setPostcode] = useState(-1)
 
-  //縣市區域連動狀態
-  const [indexTownship, setIndexTownship] = useState(false)
+  //品牌特色切換
+  const intro1 = () => {
+    //點擊農夫，換到橘色圖片變大，其他取消，三角形移動到農夫下面
+    document.querySelector('.jan-farmer-icon').style =
+      'background-size: 9.5rem 9.5rem;transition:0.5s'
+    document.querySelector('.jan-diet-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-choices-icon').style =
+      'background-size: 7.5rem 7.5rem;transition:0.5s'
+    document.querySelector('.jan-network-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-kcal-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-index-feature-triangle').style =
+      'left:5.2%;transition:0.5s'
+  }
+  const intro2 = () => {
+    document.querySelector('.jan-farmer-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-diet-icon').style =
+      'background-size: 9.5rem 9.5rem;transition:0.5s'
+    document.querySelector('.jan-choices-icon').style =
+      'background-size: 7.5rem 7.5rem;transition:0.5s'
+    document.querySelector('.jan-network-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-kcal-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-index-feature-triangle').style =
+      'left:27%;transition:0.5s'
+  }
 
-  //radio  台北市或新北市
-  const [indexCounty, setIndexCounty] = useState('')
-
-  //選單區域狀態
-  const [indexDistrict, setIndexDistrict] = useState('')
+  const intro3 = () => {
+    document.querySelector('.jan-farmer-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-diet-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-choices-icon').style =
+      'background-size: 9rem 9rem;transition:0.5s'
+    document.querySelector('.jan-network-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-kcal-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-index-feature-triangle').style =
+      'left:48.5%;transition:0.5s'
+  }
+  const intro4 = () => {
+    document.querySelector('.jan-farmer-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-diet-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-choices-icon').style =
+      'background-size: 7.5rem 7.5rem;transition:0.5s'
+    document.querySelector('.jan-network-icon').style =
+      'background-size: 9.5rem 9.5rem;transition:0.5s'
+    document.querySelector('.jan-kcal-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-index-feature-triangle').style =
+      'left:70.5%;transition:0.5s'
+  }
+  const intro5 = () => {
+    document.querySelector('.jan-farmer-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-diet-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-choices-icon').style =
+      'background-size: 7.5rem 7.5rem;transition:0.5s'
+    document.querySelector('.jan-network-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-kcal-icon').style =
+      'background-size: 9.5rem 9.5rem;transition:0.5s'
+    document.querySelector('.jan-index-feature-triangle').style =
+      'left:92%;transition:0.5s'
+  }
 
   //地址狀態
   const [indexAddress, setIndexAddress] = useState('')
-
-  //完整地址
-  const [fromIndex, setFromIndex] = useState(indexCounty + indexAddress)
-
-  // console.log(fromIndex)
 
   //監聽應用程式滾動
   function downloadIcon() {
@@ -64,9 +128,17 @@ function JanIndexx(props) {
   }
   window.addEventListener('scroll', downloadIcon)
 
+  //地圖顯示外送金額及自取門市
+  const hideInfo = () => {
+    document.querySelector('.jan-map-results').style = 'visibility: hidden'
+  }
+  const showInfo = () => {
+    document.querySelector('.jan-map-results').style = 'visibility: visible'
+  }
+
   return (
     <>
-      <VNavbar fromIndex={fromIndex} setfromIndex={setFromIndex} {...props} />
+      <VNavbar {...props} />
 
       <div className="jan-fake-nav d-flex justify-content-center align-items-center">
         navbar的高度
@@ -107,7 +179,7 @@ function JanIndexx(props) {
       </div>
 
       {/* 品牌特色*/}
-      <div className="container jan-p0">
+      <div className="container jan-p0 position-relative">
         <div className="row jan-index-feature d-flex align-items-center justify-content-center">
           {/* 標題 */}
           <div className="d-flex align-items-center">
@@ -119,36 +191,36 @@ function JanIndexx(props) {
           <div className="d-flex jan-circles justify-content-around align-items-center">
             {/* circle1 */}
             <div className="jan-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div className="jan-farmer-icon"></div>
+              <div onClick={intro1} className="jan-farmer-icon"></div>
               <p className="jan-circle-title">在地小農</p>
             </div>
             <div className="jan-index-feature-smcircle"></div>
             {/* circle2 */}
             <div className="jan-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div className="jan-diet-icon"></div>
+              <div onClick={intro2} className="jan-diet-icon"></div>
               <p className="jan-circle-title">產銷履歷</p>
             </div>
             <div className="jan-index-feature-smcircle"></div>
             {/* circle3 */}
             <div className="jan-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div className="jan-choices-icon"></div>
+              <div onClick={intro3} className="jan-choices-icon"></div>
               <p className="jan-circle-title">客製化便當</p>
             </div>
             <div className="jan-index-feature-smcircle"></div>
             {/* circle4 */}
             <div className="jan-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div className="jan-network-icon"></div>
+              <div onClick={intro4} className="jan-network-icon"></div>
               <p className="jan-circle-title">揪團訂購</p>
             </div>
             <div className="jan-index-feature-smcircle"></div>
             {/* circle5 */}
             <div className="jan-index-feature-circle d-flex flex-wrap justify-content-center align-items-center">
-              <div className="jan-kcal-icon"></div>
+              <div onClick={intro5} className="jan-kcal-icon"></div>
               <p className="jan-circle-title">營養標示</p>
             </div>
           </div>
         </div>
-        <div className="jan-index-feature-triangle"></div>
+        <div className="jan-index-feature-triangle position-absolute"></div>
       </div>
 
       {/* intros */}
@@ -210,7 +282,9 @@ function JanIndexx(props) {
                     </p>
                     <div className="jan-card-arrow float-right"></div>
                     <br />
-                    <p className="jan-card2-viewmore float-right">view more</p>
+                    <p className="m-0 jan-card2-viewmore float-right">
+                      view more
+                    </p>
                   </div>
                 </div>
               </div>
@@ -577,24 +651,24 @@ function JanIndexx(props) {
                     <p className="jan-form-announce">
                       請填寫地址，查看免運金額
                     </p>
-                    <div></div>
                     <div className="jan-adress-radio">
                       <div className="iris-mainpage-select-wrapper d-flex">
                         <div className="iris-selectbar-wrapper">
                           <select
-                            value={country}
-                            onClick={(e) => {
-                              setCountry(+e.target.value)
-                              setTownship(0)
-                              setTownship(-1)
-                            }}
+                            onClick={hideInfo}
                             style={{ fontSize: '1.5rem' }}
                             className="form-control iris-mainpage-select"
                             id="exampleFormControlSelect1"
+                            value={country}
+                            onChange={(e) => {
+                              //將字串轉成數字
+                              setCountry(+e.target.value)
+                              //重置township的值
+                              setTownship(0)
+                              setTownship(-1)
+                            }}
                           >
-                            <option value={-1} disabled selected>
-                              點我選擇城市
-                            </option>
+                            <option value={-1}>請選擇城市</option>
                             {countries.map((v, i) => (
                               <option key={i} value={i}>
                                 {v}
@@ -605,42 +679,16 @@ function JanIndexx(props) {
                           <div className="iris-mainpage-trianglearrow" />
                         </div>
                       </div>
-                      {/* <input
-                        id="taipieCity"
-                        type="radio"
-                        name="city"
-                        value="台北市"
-                        onClick={(e) => {
-                          setIndexTownship(false)
-                          setIndexCounty('台北市')
-                          setIndexDistrict(-1)
-                          console.log(fromIndex)
-                        }}
-                        defaultChecked={true}
-                      />
-                      <label for="taipieCity">台北市</label>
-                      <input
-                        className="ml-5"
-                        id="newTaipieCity"
-                        type="radio"
-                        name="city"
-                        value="新北市"
-                        onClick={(e) => {
-                          setIndexTownship(true)
-                          setIndexCounty('新北市')
-                          console.log(indexCounty)
-                          setIndexDistrict(-1)
-                        }}
-                      />
-                      <label for="newTaipieCity">新北市</label> */}
                     </div>
                     <br />
                     <div className="jan-adress-select">
                       <div className="iris-mainpage-select-wrapper d-flex">
                         <div className="iris-selectbar-wrapper">
                           <select
+                            onClick={hideInfo}
                             value={township}
-                            onClick={(e) => {
+                            onChange={(e) => {
+                              // 將字串轉成數字
                               setTownship(+e.target.value)
                             }}
                             style={{ fontSize: '1.5rem' }}
@@ -687,7 +735,12 @@ function JanIndexx(props) {
                       >
                         demo
                       </div>
-                      <button className="button-btn-y " text="查詢結果">
+                      <button
+                        onClick={showInfo}
+                        type="button"
+                        className="button-btn-y "
+                        text="查詢結果"
+                      >
                         查詢結果
                       </button>
                     </div>
@@ -696,12 +749,14 @@ function JanIndexx(props) {
                 <div className="jan-map-results mt-4">
                   <p>
                     所在地點，符合滿
-                    <span>
+                    <span className="jan-price">
+                      {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
+                      {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
                       {country > -1 &&
                         township > -1 &&
                         price[country][township]}
                     </span>
-                    元免運費
+                    <span>元</span>免運費
                   </p>
                   <p>
                     最近的自取地點是大安門市<span>（查看其他門市）</span>
@@ -709,11 +764,15 @@ function JanIndexx(props) {
                 </div>
                 <div className="jan-map-buttons d-flex justify-content-between mt-4">
                   <div className="jan-index-button">
-                    <Button className="button-btn" text="商品列表" />
+                    <button className="button-btn" text="商品列表">
+                      商品列表
+                    </button>
                   </div>
                   <br />
                   <div className="jan-index-button">
-                    <Button className="button-btn" text="揪團訂購" />
+                    <button className="button-btn" text="揪團訂購">
+                      揪團訂購
+                    </button>
                   </div>
                 </div>
               </div>
