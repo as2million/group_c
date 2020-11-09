@@ -12,13 +12,13 @@ import Footer from '../../Share/Components/Footer/Footer';
 import ScrollButtonGreen from '../../Share/Components/ToTopButton/ScrollButtonGreen';
 
 function ClaudiaFarmIntroPage(props) {
-    const { handleAddCartNumber } = props;
+    const { handleCartNumber } = props;
 
     return (
         <>
             <ClaudiaMainContent>
                 <ClaudiaDetailedThemePic />
-                <ClaudiaDetailedMainText handleAddCartNumber={handleAddCartNumber} />
+                <ClaudiaDetailedMainText handleCartNumber={handleCartNumber} />
                 <ClaudiaDetailedSilder />
                 <ClaudiaDetailedSchedule />
                 <ClaudiaDetailedFarmIntro />

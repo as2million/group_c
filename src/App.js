@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 // 引入 共用元件
 import Navbar from 'Share/Components/NavBar/NavBar'
@@ -31,23 +31,31 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // 路由表
 function App() {
   const [cartNumber, setCartNumber] = useState(0);
-  const handleAddCartNumber = () => {
-    const newCartNumber = +cartNumber + 1;
-    localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-    setCartNumber(newCartNumber);
+
+  const handleCartNumber = (type, amount) => {
+    if (type === 'add') {
+      const newCartNumber = +cartNumber + amount;
+      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+      setCartNumber(newCartNumber);
+    }
+    if (type === 'minus') {
+      const newCartNumber = +cartNumber - amount;
+      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+      setCartNumber(newCartNumber);
+    }
   };
   useEffect(() => {
     const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || [];
+      JSON.parse(localStorage.getItem('cartNumber')) || 0;
     setCartNumber(currentCartNumber);
-  }, [cartNumber]);
+  }, []);
 
   return (
     // <Router>元件一定要放在最外層
     <Router>
       <>
         {/* 放切頁時不重新渲染的部份 s*/}
-        <Navbar />
+        <Navbar cartNumber={cartNumber} />
         {/* 放切頁時不重新渲染的部份 e*/}
 
         {/* 路由設定開始 */}
@@ -115,7 +123,7 @@ function App() {
             <ClaudiaFarmIndex />
           </Route>
           <Route exact path="/farmIntro">
-            <ClaudiaFarmDetailedPage handleAddCartNumber={handleAddCartNumber} />
+            <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
           </Route>
 
           {/* 404 */}

@@ -9,7 +9,8 @@ import selectArrow from './Images/selectArrow.svg';
 function ClaudiaModalContent(props) {
 
     const [total, setTotal] = useState(0);
-    const { handleAddCartNumber } = props;
+    const { handleCartNumber } = props;
+
 
 
     //datepicker
@@ -101,6 +102,10 @@ function ClaudiaModalContent(props) {
             setCount2(count2 - 1)
         }
     }
+
+    //total count
+
+    const TotalCount = count1 + count2
 
     //rwdTotal
 
@@ -313,7 +318,9 @@ function ClaudiaModalContent(props) {
                         <span><b>總金額：</b></span>
                         <span className="claudia-modal-total-price-orange"><b>{total}</b></span>
                     </div>
-                    <div className="claudia-modal-cart-button"><button onClick={handleAddCartNumber}>加入購物車</button></div>
+                    <div className="claudia-modal-cart-button">
+                        <button onClick={() => handleCartNumber('add', TotalCount)}>加入購物車</button>
+                    </div>
 
                 </div>
 

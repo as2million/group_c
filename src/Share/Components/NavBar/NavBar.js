@@ -14,6 +14,7 @@ import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNu
 import { NavLink } from 'react-router-dom';
 
 function NavBar(props) {
+  const { cartNumber } = props;
   const [count, setCount] = useState(0);
   const [shoppingList, setShoppingList] = useState('0');
   const [showNav, setShowNav] = useState(true);
@@ -151,7 +152,7 @@ function NavBar(props) {
                   <ShoppingCart className="navbar-jess-ShopingCart" />
                   <ShoppingAmount className="jess-navbarCartAmount" />
                   <span className="jess-navbarCartNum" id="jess-navbarCartNum">
-                    {count}
+                    {cartNumber}
                   </span>
                 </Popover>
               </li>
