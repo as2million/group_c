@@ -10,7 +10,7 @@
     position: relative;
     overflow: hidden;
     padding-top: 90px;
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
   }
 
   .ru-item-containerA > img {
@@ -38,7 +38,7 @@
     // @include flex($df, $fdr, space-between, $als);
   }
 
-  .ru-itemWarp .card-container {
+  .ru-itemWarp .ru-card-container {
     margin: 0px 2.59%;
     width: 27.9135%;
     margin-bottom: 80px;
