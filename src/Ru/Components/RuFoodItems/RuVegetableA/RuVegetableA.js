@@ -83,9 +83,7 @@ function RuVegetableA(props) {
       {/* 品項3 s*/}
       <li className="ru-species-item ru-species-item3">
         {veg3available ? (
-          <div className="ru-species-img">
-            <img src={corn} className="ru-items ru-veg" id="ru-veg-3"></img>
-          </div>
+          <img src={corn} className="ru-items ru-veg" id="ru-veg-3"></img>
         ) : (
           <img
             src={corn}

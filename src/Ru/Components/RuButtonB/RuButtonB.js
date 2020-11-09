@@ -43,7 +43,7 @@ function RuButtonB(props) {
     switch (id) {
       case 'ru-buttonB-rice':
         setSelection('rice') // 開啟白飯選區
-        setMoveX(0)
+        setMoveX(0) // 選擇品項按鈕點擊時退回原位
         $rice.className = 'ru-buttonB ru-buttonB-active'
         setLimitX(-1200) // 這邊調配右滑極限值
         setIsShowHintA(false)

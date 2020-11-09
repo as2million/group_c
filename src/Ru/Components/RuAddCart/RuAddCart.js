@@ -6,7 +6,7 @@ function RuAddCart(props) {
   // 目標的id一律用target
   // id 不同元件id
   // parentId 不同元件父母id
-  const { id, parentId, price, title } = props
+  const { id, parentId, price, title, amount, handleAddCartNumber } = props
   // console.log(id, parentId);
 
   const addToCart = (e) => {
@@ -66,7 +66,21 @@ function RuAddCart(props) {
     }
 
     // 執行加入localStorage
-    localStorage.setItem(id, [price, title])
+    handleAddCartNumber('add', amount)
+    updateCartToLocalStorage({
+      // 設定要加入的資料
+      id: 7,
+      productName: '九九特餐-彩椒雞丁',
+      productPrice: 100,
+      productAmount: 1,
+    })
+  }
+
+  const updateCartToLocalStorage = (value) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+    const newCart = [...currentCart, value]
+    localStorage.setItem('cart', JSON.stringify(newCart))
   }
 
   // useEffect(() => {

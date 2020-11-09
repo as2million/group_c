@@ -40,10 +40,9 @@ import hintF from './Images/hintF.svg'
 // 引用圖片
 import background from './Images/background.png'
 import { ReactComponent as LunchBox } from './Images/lunchBox.svg' // 將svg以元件方式引入
-import Product from 'Cha/pages-demo/Product'
-import { doc } from 'prettier'
 
 function RuCustom(props) {
+  const { searchInput, handleAddCartNumber, amount, setAmount } = props
   const [moveX, setMoveX] = useState(0) // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true) // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false) // 是否開啟營養標示
@@ -102,6 +101,9 @@ function RuCustom(props) {
   // 是否可以購買
   const [isCanBuy, setIsCanBuy] = useState(false)
 
+  // 包後端資料的state
+  const [data, setData] = useState('')
+
   // 切換售價與營養標示
   function switchPrice() {
     setIsPrice(true)
@@ -112,18 +114,18 @@ function RuCustom(props) {
     setIsCal(true)
   }
 
-  // const [open, setOpen] = useState(false)
-  const [data, setData] = useState('123456789101112131415')
   // 向後端請求資料
   useEffect(() => {
-    fetch('http://localhost:5000/product/custom_list')
+    fetch('http://localhost:5000/product/custom_list') // 非同步
       .then(function (response) {
         return response.json()
       })
       .then(function (myJson) {
         // console.log(myJson)
-        setData(myJson)
+        const copyJson = [...myJson]
+        setData(copyJson)
       })
+
     return () => {}
   }, [])
 
@@ -131,12 +133,17 @@ function RuCustom(props) {
     // console.log(data)
     // console.log('執行useEffect')
     // 品項置入便當盒 邏輯
+    if (!data) {
+      // 以下都等抓完fetch才執行
+      return
+    }
     const items = document.querySelectorAll('.ru-items')
-    // console.log(items)
+    //  console.log(items)
     const puts = document.querySelectorAll('.ru-put')
     const img = document.querySelector('#ru-areaF .ru-put')
     // console.log(puts)
     const $dropTarget = document.getElementById('ru-dropArea')
+    console.log($dropTarget)
     const boxA = document.getElementById('ru-areaA')
     const boxB = document.getElementById('ru-areaB')
     const boxC = document.getElementById('ru-areaC')
@@ -192,15 +199,11 @@ function RuCustom(props) {
 
     // 目的地 - 放下時
     function dropped(e) {
-      // console.log(cabageAfter)
-      // console.log(puts[0].src === cabageAfter)
-      // console.log(e.target)
-      // console.log('dropped')
-      // console.log(e.target, e.dataTransfer.getData('text/plain', e.target.id))
       //增刪元素
       // console.log(e.dataTransfer.getData('text/plain', e.target.id)) // 拿到dragStart事件的id
       setPriority('0') // 白飯容器優先結束
       // 宣告已經放在配菜區內的元素
+
       const boxer = document.getElementById(
         e.dataTransfer.getData('text/plain', e.target.id)
       )
@@ -292,25 +295,25 @@ function RuCustom(props) {
             // setVegNameA(data[6].productName)
             // setVegPriceA(data[6].price)
             // setVegCalA(data[6].calories)
-            setVegNameA('綠色嫩花椰')
-            setVegPriceA(15)
-            setVegCalA(25)
+            setVegNameA(data[8].productName)
+            setVegPriceA(data[8].price)
+            setVegCalA(data[8].calories)
             setVeg1available(false)
             setPutAclass('ru-put ru-put-veg-1')
             break
           case 'ru-veg-2':
             setImgA(cabageAfter)
-            setVegNameA('清炒高麗菜')
-            setVegPriceA(15)
-            setVegCalA(25)
+            setVegNameA(data[9].productName)
+            setVegPriceA(data[9].price)
+            setVegCalA(data[9].calories)
             setVeg2available(false)
             setPutAclass('ru-put ru-put-veg-2')
             break
           case 'ru-veg-3':
             setImgA(cornAfter)
-            setVegNameA('黃金玉米粒')
-            setVegPriceA(15)
-            setVegCalA(111)
+            setVegNameA(data[10].productName)
+            setVegPriceA(data[10].price)
+            setVegCalA(data[10].calories)
             setVeg3available(false)
             setPutAclass('ru-put ru-put-veg-3')
             break
@@ -321,25 +324,25 @@ function RuCustom(props) {
         switch (e.dataTransfer.getData('text/plain', e.target.id)) {
           case 'ru-veg-1': // 'ru-veg-1'
             setImgB(cauliflowerAfter)
-            setVegNameB('鮮綠花椰菜')
-            setVegPriceB(15)
-            setVegCalB(25)
+            setVegNameB(data[8].productName)
+            setVegPriceB(data[8].price)
+            setVegCalB(data[8].calories)
             setVeg1available(false)
             setPutBclass('ru-put ru-put-veg-1')
             break
           case 'ru-veg-2':
             setImgB(cabageAfter)
-            setVegNameB('清炒高麗菜')
-            setVegPriceB(15)
-            setVegCalB(25)
+            setVegNameB(data[9].productName)
+            setVegPriceB(data[9].price)
+            setVegCalB(data[9].calories)
             setVeg2available(false)
             setPutBclass('ru-put ru-put-veg-2')
             break
           case 'ru-veg-3':
             setImgB(cornAfter)
-            setVegNameB('黃金玉米粒')
-            setVegPriceB(15)
-            setVegCalB(111)
+            setVegNameB(data[10].productName)
+            setVegPriceB(data[10].price)
+            setVegCalB(data[10].calories)
             setVeg3available(false)
             setPutBclass('ru-put ru-put-veg-3')
             break
@@ -352,25 +355,25 @@ function RuCustom(props) {
         ) {
           case 'ru-veg-1': // 'ru-veg-1'
             setImgC(cauliflowerAfter) // 就改變state值
-            setVegNameC('鮮綠花椰菜')
-            setVegPriceC(15)
-            setVegCalC(25)
+            setVegNameC(data[8].productName)
+            setVegPriceC(data[8].price)
+            setVegCalC(data[8].calories)
             setVeg1available(false)
             setPutCclass('ru-put ru-put-veg-1')
             break
           case 'ru-veg-2':
             setImgC(cabageAfter)
-            setVegNameC('清炒高麗菜')
-            setVegPriceC(15)
-            setVegCalC(25)
+            setVegNameC(data[9].productName)
+            setVegPriceC(data[9].price)
+            setVegCalC(data[9].calories)
             setVeg2available(false)
             setPutCclass('ru-put ru-put-veg-2')
             break
           case 'ru-veg-3':
             setImgC(cornAfter)
-            setVegNameC('黃金玉米粒')
-            setVegPriceC(15)
-            setVegCalC(111)
+            setVegNameC(data[10].productName)
+            setVegPriceC(data[10].price)
+            setVegCalC(data[10].calories)
             setVeg3available(false)
             setPutCclass('ru-put ru-put-veg-3')
             break
@@ -387,30 +390,30 @@ function RuCustom(props) {
         ) {
           case 'ru-rice-1': // 'ru-rice-1'
             setImgD(riceAfter) // 就放入放置後圖片
-            setRiceName('香甜白飯')
-            setRicePrice(10)
-            setRiceCal(353)
+            setRiceName(data[0].productName)
+            setRicePrice(data[0].price)
+            setRiceCal(data[0].calories)
             break
           // case 'ru-rice-2':
           //   setImgD(riceAfter)
           //   break
           case 'ru-egg-1': // 'ru-egg-1'
             setImgE(eggAfter) // 就放入放置後圖片
-            setEggName('白煮蛋')
-            setEggPrice(10)
-            setEggCal(155)
+            setEggName(data[6].productName)
+            setEggPrice(data[6].price)
+            setEggCal(data[6].calories)
             break
           case 'ru-egg-2':
             setImgE(poachedEggAfter)
-            setEggName('溏心蛋')
-            setEggPrice(20)
-            setEggCal(74)
+            setEggName(data[7].productName)
+            setEggPrice(data[7].price)
+            setEggCal(data[7].calories)
             break
           case 'ru-meet-1': // 'ru-meet-1'
             setImgF(shrimpAfter) // 就放入放置後圖片
-            setMeetName('火烤萊姆蝦')
-            setMeetPrice(100)
-            setMeetCal(103)
+            setMeetName(data[5].productName)
+            setMeetPrice(data[5].price)
+            setMeetCal(data[5].calories)
             break
         }
       }
@@ -421,7 +424,7 @@ function RuCustom(props) {
     }
 
     return () => {}
-  }, [imgA, imgB, imgC, imgD, imgE, imgF, selection, isCanBuy]) // 要加入selection, 不然切換菜色選區後抓不到真實DOM
+  }, [imgA, imgB, imgC, imgD, imgE, imgF, selection, isCanBuy, data]) // 要加入selection, 不然切換菜色選區後抓不到真實DOM
 
   // 購物車選購完畢開啟加入購物車按鈕邏輯
   useEffect(() => {
@@ -451,9 +454,13 @@ function RuCustom(props) {
     return () => {}
   }, [ricePrice, meetPrice, eggPrice, vegPriceA, vegPriceB, vegPriceC])
 
+  if (!data) {
+    // 以下都等抓完fetch才執行
+    return <></>
+  }
   return (
     <>
-      {/* <div>{data[6].productName}</div> */}
+      {/* <div>{data[3].sid}</div> */}
       {/* 商品區 - 網頁版 s */}
       <div className="ru-custom-containerA" id="ru-dropArea">
         <div className="ru-custom-warp" id="ru-dropOutAreaA">
@@ -594,11 +601,13 @@ function RuCustom(props) {
                 </div>
                 <div className="ru-checkout-container">
                   <div className="ru-checkout-warp">
-                    <RuCounter />
+                    <RuCounter setAmount={setAmount} />
                     {isCanBuy ? (
                       <RuAddCart
                         id={'addCart-btn-custom'}
                         parentId={'addCart-btn-warp-custom'}
+                        handleAddCartNumber={handleAddCartNumber}
+                        amount={amount}
                       />
                     ) : (
                       <div
@@ -612,6 +621,8 @@ function RuCustom(props) {
                         <RuAddCart
                           id={'addCart-btn-custom'}
                           parentId={'addCart-btn-warp-custom'}
+                          handleAddCartNumber={handleAddCartNumber}
+                          amount={amount}
                         />
                       </div>
                     )}
@@ -1037,6 +1048,7 @@ function RuCustom(props) {
                     <RuAddCart
                       id={'addCart-btn-custom'}
                       parentId={'addCart-btn-warp-custom'}
+                      setAmount={setAmount}
                     />
                   </div>
                 </div>

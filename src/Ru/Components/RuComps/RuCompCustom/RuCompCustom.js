@@ -13,6 +13,7 @@ import line from './Images/line.png'
 
 function RuCompCustom(props) {
   // console.log(props);
+  const { handleAddCartNumber, amount, setAmount } = props
   const [searchInput, setSearchInput] = useState('')
 
   // JSX
@@ -96,7 +97,11 @@ function RuCompCustom(props) {
       </div>
 
       {/* 商品卡片區 s */}
-      <RuCustom />
+      <RuCustom
+        handleAddCartNumber={handleAddCartNumber}
+        setAmount={setAmount}
+        amount={amount}
+      />
       {/* 商品卡片區 e */}
 
       {/* to top s */}

@@ -17,7 +17,7 @@ function NavBar(props) {
   const [count, setCount] = useState(0)
   const [shoppingList, setShoppingList] = useState('0')
   const [showNav, setShowNav] = useState(true)
-  const { isLogin, setShowLoginModal } = props
+  const { isLogin, setShowLoginModal, cartNumber } = props
 
   function myFunction() {
     const x = document.getElementById('NavBar')
@@ -160,7 +160,7 @@ function NavBar(props) {
                         className="jess-navbarCartNum"
                         id="jess-navbarCartNum"
                       >
-                        {count}
+                        {cartNumber}
                       </span>
                     </div>
                   </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Style.scss'
 
 function Counter(props) {
+  const { setAmount } = props
   const [count, setCount] = useState(1)
   // const [hoverBackgroundColor, setHoverBackgroundColor] = useState('white')
   // const [hoverMinusColor, setHoverMinusColor] = useState('#858585')
@@ -9,9 +10,11 @@ function Counter(props) {
   const handleClick = (type) => {
     if (type === 'increment') {
       setCount(count + 1)
+      setAmount(count + 1)
     }
     if (type === 'decrement' && count > 1) {
       setCount(count - 1)
+      setAmount(count - 1)
     }
   }
 

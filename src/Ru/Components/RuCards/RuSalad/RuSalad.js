@@ -9,11 +9,12 @@ import Card from 'Share/Components/Card/Card';
 // 引用圖片
 import background from './Images/background.png';
 
-function RuSalad() {
+function RuSalad(props) {
+  const { searchInput, handleAddCartNumber } = props
   return (
     <>
       <h1 style={{ textAlign: 'center', fontSize: '80px' }}>
-        ----- 這頁是沙拉 -----
+        ----- 這頁是沙拉(等待複製) -----
       </h1>
       {/* 商品區 - 網頁版 / 手機板s */}
       <div className="ru-item-containerA">
@@ -28,6 +29,7 @@ function RuSalad() {
               id={'addCart-btn-1'}
               parentId={'addCart-btn-warp-1'}
               imgId={'card-img-1'}
+              handleAddCartNumber={handleAddCartNumber}
             />
             <RuCard
               title={'慢煮嫩雞胸-中歐香料'}
@@ -38,6 +40,7 @@ function RuSalad() {
               parentId={'addCart-btn-warp-2'}
               imgId={'card-img-2'}
               cardMargin={'card-margin'}
+              handleAddCartNumber={handleAddCartNumber}
             />
             <RuCard
               title={'醬烤厚切1983黑豚'}
@@ -47,6 +50,7 @@ function RuSalad() {
               id={'addCart-btn-3'}
               parentId={'addCart-btn-warp-3'}
               imgId={'card-img-3'}
+              handleAddCartNumber={handleAddCartNumber}
             />
           </div>
 
@@ -59,6 +63,7 @@ function RuSalad() {
               id={'addCart-btn-4'}
               parentId={'addCart-btn-warp-4'}
               imgId={'card-img-4'}
+              handleAddCartNumber={handleAddCartNumber}
             />
             <RuCard
               title={'麴塩五香松阪豬'}
@@ -69,6 +74,7 @@ function RuSalad() {
               parentId={'addCart-btn-warp-5'}
               imgId={'card-img-5'}
               cardMargin={'card-margin'}
+              handleAddCartNumber={handleAddCartNumber}
             />
             <RuCard
               title={'美式熟成烤牛肋條'}
@@ -78,6 +84,7 @@ function RuSalad() {
               id={'addCart-btn-6'}
               parentId={'addCart-btn-warp-6'}
               imgId={'card-img-6'}
+              handleAddCartNumber={handleAddCartNumber}
             />
           </div>
 
@@ -90,6 +97,7 @@ function RuSalad() {
               id={'addCart-btn-7'}
               parentId={'addCart-btn-warp-7'}
               imgId={'card-img-7'}
+              handleAddCartNumber={handleAddCartNumber}
             />
             <RuCard
               title={'炙燒干貝'}
@@ -100,6 +108,7 @@ function RuSalad() {
               parentId={'addCart-btn-warp-8'}
               imgId={'card-img-8'}
               cardMargin={'card-margin'}
+              handleAddCartNumber={handleAddCartNumber}
             />
             <RuCard
               title={'會議雙拼組合'}
@@ -109,6 +118,7 @@ function RuSalad() {
               id={'addCart-btn-9'}
               parentId={'addCart-btn-warp-9'}
               imgId={'card-img-9'}
+              handleAddCartNumber={handleAddCartNumber}
             />
           </div>
         </div>

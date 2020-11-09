@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 // 引入 共用元件
 import Navbar from 'Share/Components/NavBar/NavBar'
@@ -18,12 +18,40 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // 路由表
 function App() {
+  const [showBar, setShowBar] = useState(true)
+  const [cartNumber, setCartNumber] = useState(0)
+  const [amount, setAmount] = useState(1)
+  const [currentUser, setCurrentUser] = useState() // 目前用戶
+  
+  const handleAddCartNumber = (type = 'add', amount = 1) => {
+    if (type === 'add') {
+      const newCartNumber = +cartNumber + amount
+      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber))
+      setCartNumber(newCartNumber)
+    }
+    if (type === 'minus') {
+      const newCartNumber = +cartNumber - amount
+      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber))
+      setCartNumber(newCartNumber)
+    }
+  }
+  useEffect(() => {
+    const currentCartNumber =
+      JSON.parse(localStorage.getItem('cartNumber')) || 0
+    setCartNumber(currentCartNumber)
+  }, [])
+
+  useEffect(() => {
+    console.log(amount)
+    return () => {}
+  }, [amount])
+
   return (
     // <Router>元件一定要放在最外層
     <Router>
       <>
         {/* 放切頁時不重新渲染的部份 s*/}
-        <Navbar />
+        <Navbar cartNumber={cartNumber} amount={amount} />
         {/* 放切頁時不重新渲染的部份 e*/}
 
         {/* 路由設定開始 */}
@@ -64,13 +92,17 @@ function App() {
           {/* ru */}
           {/* 放"page資料夾"內的元件 */}
           <Route exact path="/productList">
-            <RuProudctList />
+            <RuProudctList handleAddCartNumber={handleAddCartNumber} currentUser={currentUser}/>
           </Route>
           <Route exact path="/productListSalad">
-            <RuProudctListSalad />
+            <RuProudctListSalad handleAddCartNumber={handleAddCartNumber} currentUser={currentUser}/>
           </Route>
           <Route exact path="/productListCustom">
-            <RuProudctListCustom />
+            <RuProudctListCustom
+              handleAddCartNumber={handleAddCartNumber}
+              amount={amount}
+              setAmount={setAmount}
+            />
           </Route>
 
           {/* cha */}

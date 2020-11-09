@@ -13,7 +13,7 @@ function RuCard(props) {
   // id 不同元件id => addCart-btn-n n為自訂數
   // parentId 不同元件父母id => addCart-btn-warp-n n為自訂數
   // imgId 產品圖片 => card-img-n n為1~9
-  const { title, comment, buy, price, cardMargin, id, parentId, imgId } = props
+  const { title, comment, buy, price, cardMargin, id, parentId, imgId, handleAddCartNumber } = props
 
   return (
     <>
@@ -59,12 +59,13 @@ function RuCard(props) {
         {/* 加入購物車按鈕s */}
         <section className="card-addCartWarp">
           <div className="card-hr">
-            <RuAddCart
+            <RuAddCart 
               target={'target'}
               id={id}
               parentId={parentId}
               price={price}
               title={title}
+              handleAddCartNumber={handleAddCartNumber}
             />
           </div>
         </section>

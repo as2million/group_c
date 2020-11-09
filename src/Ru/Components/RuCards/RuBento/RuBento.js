@@ -7,7 +7,7 @@ import RuCard from 'Ru/Components/RuCard/RuCard'
 import background from './Images/background.png'
 
 function RuBento(props) {
-  const { searchInput } = props
+  const { searchInput, handleAddCartNumber, currentUser } = props
 
   const [itemWarp1, setItemWarp1] = useState(false)
   const [itemWarp2, setItemWarp2] = useState(false)
@@ -113,6 +113,8 @@ function RuBento(props) {
                 id={'addCart-btn-1'}
                 parentId={'addCart-btn-warp-1'}
                 imgId={'card-img-1'}
+                handleAddCartNumber={handleAddCartNumber}
+                currentUser={currentUser}
               />
             )}
             {itemWarp2 && (
@@ -124,6 +126,8 @@ function RuBento(props) {
                 id={'addCart-btn-2'}
                 parentId={'addCart-btn-warp-2'}
                 imgId={'card-img-2'}
+                handleAddCartNumber={handleAddCartNumber}
+                currentUser={currentUser}
               />
             )}
             {itemWarp3 && (
@@ -135,6 +139,8 @@ function RuBento(props) {
                 id={'addCart-btn-3'}
                 parentId={'addCart-btn-warp-3'}
                 imgId={'card-img-3'}
+                handleAddCartNumber={handleAddCartNumber}
+                currentUser={currentUser}
               />
             )}
 
@@ -147,6 +153,8 @@ function RuBento(props) {
                 id={'addCart-btn-4'}
                 parentId={'addCart-btn-warp-4'}
                 imgId={'card-img-4'}
+                handleAddCartNumber={handleAddCartNumber}
+                currentUser={currentUser}
               />
             )}
             {itemWarp5 && (
@@ -158,6 +166,8 @@ function RuBento(props) {
                 id={'addCart-btn-5'}
                 parentId={'addCart-btn-warp-5'}
                 imgId={'card-img-5'}
+                handleAddCartNumber={handleAddCartNumber}
+                currentUser={currentUser}
               />
             )}
             {itemWarp6 && (
@@ -169,6 +179,8 @@ function RuBento(props) {
                 id={'addCart-btn-6'}
                 parentId={'addCart-btn-warp-6'}
                 imgId={'card-img-6'}
+                handleAddCartNumber={handleAddCartNumber}
+                currentUser={currentUser}
               />
             )}
 
@@ -181,6 +193,8 @@ function RuBento(props) {
                 id={'addCart-btn-7'}
                 parentId={'addCart-btn-warp-7'}
                 imgId={'card-img-7'}
+                handleAddCartNumber={handleAddCartNumber}
+                currentUser={currentUser}
               />
             )}
             {itemWarp8 && (
@@ -192,6 +206,8 @@ function RuBento(props) {
                 id={'addCart-btn-8'}
                 parentId={'addCart-btn-warp-8'}
                 imgId={'card-img-8'}
+                handleAddCartNumber={handleAddCartNumber}
+                currentUser={currentUser}
               />
             )}
             {itemWarp9 && (
@@ -203,6 +219,8 @@ function RuBento(props) {
                 id={'addCart-btn-9'}
                 parentId={'addCart-btn-warp-9'}
                 imgId={'card-img-9'}
+                handleAddCartNumber={handleAddCartNumber}
+                currentUser={currentUser}
               />
             )}
           </div>
