@@ -6,7 +6,7 @@ function ChaProductList(props) {
   const [mycart1, setMycart1] = useState([]);
   const [show, setShow] = useState(false);
   const [productName, setProductName] = useState('');
-  const { handleAddCartNumber } = props;
+  const { setCartNumber, handleAddCartNumber } = props;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

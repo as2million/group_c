@@ -39,13 +39,13 @@ function App() {
   const [showBar, setShowBar] = useState(true);
   const [cartNumber, setCartNumber] = useState(0);
   const handleAddCartNumber = () => {
-    const newCartNumber = +cartNumber + 1;
-    localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-    setCartNumber(newCartNumber);
-  };
-  useEffect(() => {
+    // const newCartNumber = ;
+    localStorage.setItem('cartNumber', JSON.stringify(cartNumber + 1));
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || [];
+    setCartNumber(currentCartNumber);
+  };
+  useEffect(() => {
     setCartNumber(currentCartNumber);
   }, [cartNumber]);
 

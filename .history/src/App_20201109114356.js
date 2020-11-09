@@ -41,11 +41,10 @@ function App() {
   const handleAddCartNumber = () => {
     const newCartNumber = +cartNumber + 1;
     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-    setCartNumber(newCartNumber);
   };
   useEffect(() => {
     const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || [];
+      JSON.parse(localStorage.getItem('cartNumber')) || '';
     setCartNumber(currentCartNumber);
   }, [cartNumber]);
 

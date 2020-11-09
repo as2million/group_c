@@ -39,15 +39,12 @@ function App() {
   const [showBar, setShowBar] = useState(true);
   const [cartNumber, setCartNumber] = useState(0);
   const handleAddCartNumber = () => {
-    const newCartNumber = +cartNumber + 1;
+    const newCartNumber = cartNumber + 1;
     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-    setCartNumber(newCartNumber);
+    const currentCart = JSON.parse(localStorage.getItem('cartNumber')) || [];
+    setCartNumbers(cartNumber + 1);
   };
-  useEffect(() => {
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || [];
-    setCartNumber(currentCartNumber);
-  }, [cartNumber]);
+  // useEffect(() => {}, [cartNumber]);
 
   return (
     // <Router>元件一定要放在最外層

@@ -41,7 +41,6 @@ function App() {
   const handleAddCartNumber = () => {
     const newCartNumber = +cartNumber + 1;
     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-    setCartNumber(newCartNumber);
   };
   useEffect(() => {
     const currentCartNumber =

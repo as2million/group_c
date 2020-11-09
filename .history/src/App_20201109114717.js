@@ -43,11 +43,11 @@ function App() {
     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
     setCartNumber(newCartNumber);
   };
-  useEffect(() => {
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || [];
-    setCartNumber(currentCartNumber);
-  }, [cartNumber]);
+  // useEffect(() => {
+  //   const currentCartNumber =
+  //     JSON.parse(localStorage.getItem('cartNumber')) || [];
+  //   setCartNumber(currentCartNumber);
+  // }, [cartNumber]);
 
   return (
     // <Router>元件一定要放在最外層

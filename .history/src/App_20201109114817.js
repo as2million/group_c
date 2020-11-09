@@ -46,7 +46,6 @@ function App() {
   useEffect(() => {
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || [];
-    setCartNumber(currentCartNumber);
   }, [cartNumber]);
 
   return (

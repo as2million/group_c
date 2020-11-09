@@ -39,9 +39,10 @@ function App() {
   const [showBar, setShowBar] = useState(true);
   const [cartNumber, setCartNumber] = useState(0);
   const handleAddCartNumber = () => {
-    const newCartNumber = +cartNumber + 1;
-    localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-    setCartNumber(newCartNumber);
+    // const newCartNumber = ;
+    localStorage.setItem('cartNumber', JSON.stringify(cartNumber + 1));
+
+    setCartNumber(currentCartNumber);
   };
   useEffect(() => {
     const currentCartNumber =

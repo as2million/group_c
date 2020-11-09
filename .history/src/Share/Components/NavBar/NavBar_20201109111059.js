@@ -145,7 +145,7 @@ function NavBar(props) {
                   </Nav.Link>
                   <ShoppingAmount className="jess-navbarCartAmount" />
                   <span className="jess-navbarCartNum" id="jess-navbarCartNum">
-                    {cartNumber}
+                    {count}
                   </span>
                 </Popover>
               </li>

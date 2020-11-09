@@ -6,7 +6,7 @@ function ChaProductList(props) {
   const [mycart1, setMycart1] = useState([]);
   const [show, setShow] = useState(false);
   const [productName, setProductName] = useState('');
-  const { handleAddCartNumber } = props;
+  const { setCartNumber, handleAddCartNumber } = props;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -78,7 +78,12 @@ function ChaProductList(props) {
               type="button"
               className="btn btn-success"
               onClick={() => {
-                handleAddCartNumber();
+                handleAddCartNumber({
+                  id: 7,
+                  productName: '九九特餐-彩椒雞丁',
+                  productPrice: 100,
+                  productAmount: 1,
+                });
                 updateCartToLocalStorage({
                   id: 7,
                   productName: '九九特餐-彩椒雞丁',

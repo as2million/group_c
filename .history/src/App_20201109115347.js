@@ -48,6 +48,16 @@ function App() {
       JSON.parse(localStorage.getItem('cartNumber')) || [];
     setCartNumber(currentCartNumber);
   }, [cartNumber]);
+  // const handleAddCartNumber = () => {
+  //   const newCartNumber = +cartNumber + 1;
+  //   localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+  //   setCartNumber(newCartNumber);
+  // };
+  // useEffect(() => {
+  //   const currentCartNumber =
+  //     JSON.parse(localStorage.getItem('cartNumber')) || [];
+  //   setCartNumber(currentCartNumber);
+  // }, [cartNumber]);
 
   return (
     // <Router>元件一定要放在最外層

@@ -38,24 +38,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 function App() {
   const [showBar, setShowBar] = useState(true);
   const [cartNumber, setCartNumber] = useState(0);
-  const handleAddCartNumber = () => {
-    const newCartNumber = +cartNumber + 1;
-    localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
-    setCartNumber(newCartNumber);
-  };
-  useEffect(() => {
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || [];
-    setCartNumber(currentCartNumber);
-  }, [cartNumber]);
-
   return (
     // <Router>元件一定要放在最外層
     <Router>
       <>
         {/* 放切頁時不重新渲染的部份 s*/}
         <div style={{ display: !showBar && 'none' }}>
-          <NavBar cartNumber={cartNumber} />
+          <NavBar cartNumber={cartNumber />
           <VNavbar />
         </div>
         {/* 放切頁時不重新渲染的部份 e*/}
@@ -132,7 +121,7 @@ function App() {
             <ChaCheckpoint />
           </Route>
           <Route exact path="/chaProductList">
-            <ChaProductList handleAddCartNumber={handleAddCartNumber} />
+            <ChaProductList setCartNumber={setCartNumber} />
           </Route>
           <Route exact path="/chaCartTest">
             <ChaCartTest />
