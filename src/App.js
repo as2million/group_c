@@ -7,22 +7,10 @@ import Footer from 'Share/Components/Footer/Footer'
 
 // 引入 所有人的總元件
 // import NameApp from "Name/NameApp";
-import JanIndex from 'Janice/Pages/JanIndex'
-import JessMenu from 'Jess/Pages/JessMenu'
-import JessBento from 'Jess/Pages/JessBento'
-import JessVegBox from 'Jess/Pages/JessVegBox'
-import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
-import IrisOrderComment from 'Iris/Pages/IrisOrderComment '
-import IrisMyFav from 'Iris/Pages/IrisMyFav'
-import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
-import ChaCart from 'Cha/Pages/ChaCart'
-import ChaGroupOrder from 'Cha/Pages/ChaGroupOrder'
-import ChaOrderManagement from 'Cha/Pages/OrderManagement'
+
 import RuProudctList from 'Ru/Pages/RuProudctList'
 import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'
 import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'
-import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
-import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
 
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
@@ -42,13 +30,13 @@ function App() {
         <Switch>
           {/* janice */}
           {/* 放"page資料夾"內的元件 */}
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <JanIndex />
-          </Route>
+          </Route> */}
 
           {/* jess */}
           {/* 放"page資料夾"內的元件 */}
-          <Route exact path="/menu">
+          {/* <Route exact path="/menu">
             <JessMenu />
           </Route>
           <Route exact path="/bento/:id">
@@ -56,11 +44,11 @@ function App() {
           </Route>
           <Route exact path="/vegBox">
             <JessVegBox />
-          </Route>
+          </Route> */}
 
           {/* iris */}
           {/* 放"page資料夾"內的元件 */}
-          <Route exact path="/memberUserprofile">
+          {/* <Route exact path="/memberUserprofile">
             <IrisUserprofile />
           </Route>
           <Route exact path="/orderComment">
@@ -71,7 +59,7 @@ function App() {
           </Route>
           <Route exact path="/beastiePoint">
             <IrisBeastiePoint />
-          </Route>
+          </Route> */}
 
           {/* ru */}
           {/* 放"page資料夾"內的元件 */}
@@ -87,7 +75,7 @@ function App() {
 
           {/* cha */}
           {/* 放"page資料夾"內的元件 */}
-          <Route exact path="/cart">
+          {/* <Route exact path="/cart">
             <ChaCart />
           </Route>
           <Route exact path="/groupOrder/groupOrderCreate">
@@ -95,16 +83,16 @@ function App() {
           </Route>
           <Route exact path="/orderManagement">
             <ChaOrderManagement />
-          </Route>
+          </Route> */}
 
           {/* claudia */}
           {/* 放"page資料夾"內的元件 */}
-          <Route exact path="/farmMap">
+          {/* <Route exact path="/farmMap">
             <ClaudiaFarmIndex />
           </Route>
           <Route exact path="/farmIntro">
             <ClaudiaFarmDetailedPage />
-          </Route>
+          </Route> */}
 
           {/* 404 */}
 
