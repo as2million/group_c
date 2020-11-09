@@ -29,8 +29,7 @@ function ChaOrderManagement(props) {
     });
     const response = await fetch(request);
     const dataAllOrder = await response.json();
-    console.log('觀察fetch的function乖不乖');
-    setOrderData(dataAllOrder);
+    // setOrderData(dataAllOrder);
     // console.log(dataAllOrder);
     // console.log(
     //   dataOrders[0] && dataOrders[0].take_person && dataOrders[0].take_person
@@ -39,6 +38,7 @@ function ChaOrderManagement(props) {
   // 只讀入當前會員的訂單
   useEffect(() => {
     getMyOrderData(currentMemberSid);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // 分類訂單內容的函式

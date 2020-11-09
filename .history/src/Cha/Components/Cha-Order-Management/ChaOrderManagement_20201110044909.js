@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './ChaOrderManagement.scss';
+import ChaOrderManagementNotArrived from './../Cha-Order-Management-NotArrived/ChaOrderManagementNotArrived';
+import ChaOrderManagementArrived from './../Cha-Order-Management-Arrived/ChaOrderManagementArrived';
+import ChaOrderManagementRefund from './../Cha-Order-Management-Refund/ChaOrderManagementRefund';
+import ChaOrderManagementGrouping from './../Cha-Order-Management-Grouping/ChaOrderManagementGrouping';
 import ChaOrderItem from 'Cha/Components/Cha-Order-Management/Cha-Order-Item/ChaOrderItem';
 
 function ChaOrderManagement(props) {
   // 當前登入的會員id
   const [currentMemberSid, setCurrentMemberSid] = useState(0);
   const [orderData, setOrderData] = useState([]);
+  const [notArrivedState, setNotArrivedState] = useState([]);
+  const [arrivedState, setArrivedState] = useState([]);
+  const [refundState, setRefundState] = useState([]);
+  const [groupingState, setGroupingState] = useState([]);
 
   // 舊的樣板
   // const chaOrderManagements = Array.from({ length: 1 });
@@ -16,32 +24,6 @@ function ChaOrderManagement(props) {
   //   {chaOrderManagements.map((_, index) => (
   //   <ChaOrderManagementGrouping key={index} /> ))}
 
-  // GET訂單資料
-  async function getMyOrderData(paramsMemberId) {
-    const url = `http://localhost:5000/cart-api/my-order-my-order-detail/${paramsMemberId}`;
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    });
-    const response = await fetch(request);
-    const dataAllOrder = await response.json();
-    console.log('觀察fetch的function乖不乖');
-    setOrderData(dataAllOrder);
-    // console.log(dataAllOrder);
-    // console.log(
-    //   dataOrders[0] && dataOrders[0].take_person && dataOrders[0].take_person
-    // );
-  }
-  // 只讀入當前會員的訂單
-  useEffect(() => {
-    getMyOrderData(currentMemberSid);
-  }, []);
-
-  // 分類訂單內容的函式
   function handleClassifyState(orderState) {
     return orderData.filter((item, index) => item.order_state === orderState);
   }
@@ -116,6 +98,30 @@ function ChaOrderManagement(props) {
       setTabActive(e.target, '.cha-order-mana-title-switch');
       setOrderComponent(<ComponentD />);
     };
+
+    // GET訂單資料
+    async function getMyOrderAndMyOderDetail(paramsMemberId) {
+      const url = `http://localhost:5000/cart-api/my-order-my-order-detail/${paramsMemberId}`;
+
+      const request = new Request(url, {
+        method: 'GET',
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }),
+      });
+      const response = await fetch(request);
+      const dataAllOrder = await response.json();
+      // setOrderData(dataAllOrder);
+      // console.log(dataAllOrder);
+      // console.log(
+      //   dataOrders[0] && dataOrders[0].take_person && dataOrders[0].take_person
+      // );
+    }
+    // 只讀入當前會員的訂單
+    useEffect(() => {
+      getMyOrderAndMyOderDetail(currentMemberSid);
+    }, []);
 
     return (
       <>
