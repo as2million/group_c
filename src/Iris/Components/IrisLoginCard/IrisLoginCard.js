@@ -79,7 +79,7 @@ function IrisLoginCard(props) {
     userinfo = await response.json()
   }
 
-  // 比對帳密
+  // 登入比對帳密
   async function handleLogin() {
     await getData()
     const useraccount = document.querySelector('#useraccount').value
@@ -92,9 +92,10 @@ function IrisLoginCard(props) {
       ) {
         setIsLogin(true)
         setCurrentUser(userinfo[i].member_sid) // 設定目前使用者id
-        document.querySelector('.iris-login-content').style.display = 'none'
-        document.querySelector('.iris-success-checkmark').style.display =
-          'block'
+        document.querySelector('#useraccount').value = ''
+        document.querySelector('#userpassword').value = ''
+        // document.querySelector('.iris-success-checkmark').style.display =
+        //   'block'
       } else {
         // 若帳密錯誤，顯示錯誤提示
         $('.iris-login-alert').slideDown('slow')
@@ -111,32 +112,65 @@ function IrisLoginCard(props) {
 
   // 註冊功能
   const handleRegister = () => {
-    const account = document.querySelector('#createaccount').value
-    const password = document.querySelector('#createpassword').value
-    const email = document.querySelector('#createmail').value
-    const mobile = document.querySelector('#createmobile').value
+    let account = document.querySelector('#createaccount').value
+    let password = document.querySelector('#createpassword').value
+    let email = document.querySelector('#createmail').value
+    let mobile = document.querySelector('#createmobile').value
 
-    if (account === '') {
-      $('.iris-empty-account').slideDown('slow')
-      // setTimeout(() => {
-      //   $('.iris-empty-account').slideUp('slow')
-      // }, 1000)
+    // 判斷input是否為空 s
+    const checkList = {
+      1: account,
+      2: password,
+      3: email,
+      4: mobile,
+      11: 'account',
+      12: 'password',
+      13: 'email',
+      14: 'mobile',
     }
-    if (password === '') {
-      $('.iris-empty-password').slideDown('slow')
+
+    let i
+    for (i = 1; i < 5; i++) {
+      if (checkList[i] === '') {
+        $('.iris-empty-' + checkList[10 + i]).slideDown('slow')
+      }
     }
-    if (email === '') {
-      $('.iris-empty-email').slideDown('slow')
+    // 判斷input是否為空 end
+
+    // 帳號小於8碼
+    if (!account.match(/[A-Za-z0-9]{8,24}/)) {
+      $('.iris-empty-account').slideUp('slow')
+      $('.iris-wrong-account-format').slideDown('slow')
+      // 密碼小於8碼
+    } else if (!password.match(/[A-Za-z0-9]{8,24}/)) {
+      $('.iris-empty-password').slideUp('slow')
+      $('.iris-wrong-password-format').slideDown('slow')
+      // 信箱格式不符
+    } else if (
+      !email.match(
+        /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
+      )
+    ) {
+      $('.iris-empty-email').slideUp('slow')
+      $('.iris-wrong-email-format').slideDown('slow')
+      // 手機格式不符
+    } else if (!mobile.match(/^09[0-9]{8}$/)) {
+      $('.iris-empty-mobile').slideUp('slow')
+      $('.iris-wrong-mobile-format').slideDown('slow')
     }
-    if (mobile === '') {
-      $('.iris-empty-mobile').slideDown('slow')
-    }
-    // 資料都正確才送出
+
+    // 資料都ok才送出
     else {
+      // 清空錯誤題示
       $('.iris-empty-account').slideUp('slow')
       $('.iris-empty-password').slideUp('slow')
       $('.iris-empty-email').slideUp('slow')
       $('.iris-empty-mobile').slideUp('slow')
+      $('.iris-wrong-account-format').slideUp('slow')
+      $('.iris-wrong-password-format').slideUp('slow')
+      $('.iris-wrong-email-format').slideUp('slow')
+      $('.iris-wrong-mobile-format').slideUp('slow')
+
       // 把輸入的內容包成物件傳出去
       const newRegister = {
         account: account,
@@ -157,6 +191,11 @@ function IrisLoginCard(props) {
         .then((o) => {
           console.log(o)
         })
+
+      document.querySelector('#createaccount').value = ''
+      document.querySelector('#createpassword').value = ''
+      document.querySelector('#createmail').value = ''
+      document.querySelector('#createmobile').value = ''
     }
   }
 
@@ -226,7 +265,7 @@ function IrisLoginCard(props) {
             </div>
           </div>
 
-          <div class="iris-success-checkmark">
+          {/* <div class="iris-success-checkmark">
             <div class="iris-check-icon">
               <span class="icon-line line-tip"></span>
               <span class="icon-line line-long"></span>
@@ -234,7 +273,7 @@ function IrisLoginCard(props) {
               <div class="icon-fix"></div>
             </div>
             <div class="iris-login-sucess">登入成功</div>
-          </div>
+          </div> */}
           {/* ----------------註冊表單----------------- */}
           <div className="iris-register-content">
             <div className="iris-register-title">會員註冊</div>
@@ -243,11 +282,15 @@ function IrisLoginCard(props) {
               <InputH44 type="text" id="createaccount" />
             </div>
             <div class="iris-empty-account">*此欄位為必填</div>
+            <div class="iris-wrong-account-format">*帳號要大於8碼</div>
+
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">密碼</div>
               <InputH44 type="password" id="createpassword" />
             </div>
             <div class="iris-empty-password">*此欄位為必填</div>
+            <div class="iris-wrong-password-format">*密碼要大於8碼</div>
+
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">信箱</div>
               <InputH44 type="text" id="createmail" />
