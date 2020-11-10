@@ -3,7 +3,6 @@ import './App.css'
 // 引入 共用元件
 import Navbar from 'Share/Components/NavBar/NavBar'
 import Footer from 'Share/Components/Footer/Footer'
-// import NotFoundPage from "Share/Components/NotFoundPage/NotFoundPage";
 
 // 引入 所有人的總元件
 import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
