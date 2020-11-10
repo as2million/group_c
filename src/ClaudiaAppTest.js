@@ -7,7 +7,7 @@ import Test from './Claudia/Components/Test/Test'
 function ClaudiaAppTest() {
   return (
     <>
-      <ClaudiaFarmDetailedPage />
+      <ClaudiaFarmIndex />
     </>
   )
 }

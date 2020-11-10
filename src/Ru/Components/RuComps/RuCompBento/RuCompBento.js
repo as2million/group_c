@@ -1,49 +1,24 @@
-import React, { useState } from 'react';
-import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
-import RuBento from 'Ru/Components/RuCards/RuBento/RuBento';
-import RuButton from 'Ru/Components/RuButton/RuButton';
-import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar';
-import 'Ru/Components/RuComps/Style.scss';
+import React, { useState } from 'react'
+import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth'
+import RuBento from 'Ru/Components/RuCards/RuBento/RuBento'
+import RuButton from 'Ru/Components/RuButton/RuButton'
+import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar'
+import 'Ru/Components/RuComps/Style.scss'
 
 // 引用共用元件
-import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
 // 引用圖片
-import line from './Images/line.png';
+import line from './Images/line.png'
 
 function RuCompRuBento(props) {
   // console.log(props);
-  
-  const [searchInput, setSearchInput] = useState('');
+  const { handleAddCartNumber, currentUser } = props
+  const [searchInput, setSearchInput] = useState('')
   // console.log(searchInput);
 
   // JSX
   return (
     <>
-      {/* <div
-        className="fix"
-        style={{
-          width: '100%',
-          height: '135px',
-          backgroundColor: '#FF5151',
-          position: 'fixed',
-          zIndex: '300',
-        }}
-      >
-        我是navbar
-        <img
-          className="ru-cart target"
-          id="target"
-          style={{
-            width: '30px',
-            height: '30px',
-            backgroundColor: 'white',
-            position: 'absolute',
-            top: '50%',
-            left: '90%',
-          }}
-          // src={cart}
-        />
-      </div> */}
       <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
       <RuShowWidth />
 
@@ -122,7 +97,11 @@ function RuCompRuBento(props) {
       </div>
 
       {/* 商品卡片區 s */}
-      <RuBento searchInput={searchInput} />
+      <RuBento
+        searchInput={searchInput}
+        handleAddCartNumber={handleAddCartNumber}
+        currentUser={currentUser}
+      />
       {/* 商品卡片區 e */}
 
       {/* to top s */}
@@ -133,7 +112,7 @@ function RuCompRuBento(props) {
         我是footer
       </div> */}
     </>
-  );
+  )
 }
 
-export default RuCompRuBento;
+export default RuCompRuBento

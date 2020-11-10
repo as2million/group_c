@@ -17,7 +17,7 @@ function NavBar(props) {
   const [count, setCount] = useState(0)
   const [shoppingList, setShoppingList] = useState('0')
   const [showNav, setShowNav] = useState(true)
-  const { isLogin, setShowLoginModal, setIsLogin } = props
+  const { isLogin, setShowLoginModal, cartNumber, setIsLogin } = props
 
   function myFunction() {
     const x = document.getElementById('NavBar')
@@ -47,11 +47,12 @@ function NavBar(props) {
   return (
     <>
       <div className="nav" id="NavBar">
+        {/* <span id="ru-target">123</span> */}
         <div className="navBar-jess-container">
           <div className="navBar-jess-navCollapse ">
             <ul className="navBar-jess-navigation">
               <li className="navBar-jess-navigation_item">
-                <Nav.Link as={NavLink} to="/groupOrder">
+                <Nav.Link as={NavLink} to="/groupOrder/groupOrderCreate">
                   作伙揪團
                 </Nav.Link>
               </li>
@@ -155,6 +156,7 @@ function NavBar(props) {
                     <li
                       className="navBar-jess-dropdown_item iris-logout-option"
                       onClick={() => {
+                        setShowLoginModal(true)
                         setIsLogin(false)
                         showLoginOption()
                       }}
@@ -165,7 +167,10 @@ function NavBar(props) {
                 </div>
               </li>
 
-              <li>
+              <li id="ru-target">
+                <span className="jess-navbarCartNum" id="jess-navbarCartNum">
+                  {cartNumber}
+                </span>
                 <Popover
                   placement="bottomLeft"
                   content={shoppingList}
@@ -173,11 +178,20 @@ function NavBar(props) {
                   trigger="hover"
                   className="navbar-jess-popover"
                 >
-                  <ShoppingCart className="navbar-jess-ShopingCart" />
-                  <ShoppingAmount className="jess-navbarCartAmount" />
-                  <span className="jess-navbarCartNum" id="jess-navbarCartNum">
-                    {count}
-                  </span>
+                  <Nav.Link as={NavLink} to="/cart">
+                    <ShoppingCart className="navbar-jess-ShopingCart" />
+                  </Nav.Link>
+                  <div className="navbar-tag-wrap">
+                    <div className="navbar-tag">
+                      <ShoppingAmount className="jess-navbarCartAmount" />
+                      <span
+                        className="jess-navbarCartNum"
+                        id="jess-navbarCartNum"
+                      >
+                        {cartNumber}
+                      </span>
+                    </div>
+                  </div>
                 </Popover>
               </li>
             </ul>

@@ -24,11 +24,16 @@ $lightBrown: #f7ede2;
 
 .jess-proE-bg {
   width: 100%;
-  height: 52rem;
+  height: 58rem;
   background-color: $white;
   position: relative;
 }
-
+.jess-productTabBorder {
+  background: url('../images/SVG/border.svg') no-repeat;
+  width: 114rem;
+  height: 1rem;
+  margin: 4rem 0;
+}
 // .jess-proE-pic1 {
 //   background: url('../images/images/bento-1.jpg') no-repeat;
 //   background-size: cover;
@@ -42,7 +47,8 @@ $lightBrown: #f7ede2;
 // 第1張
 .jessListE-view-first .jess-proE-pic1 {
   /*2*/
-  background: url('../images/images/bento-1.jpg') no-repeat;
+  background: url('../images/images/07_bento-scallop.jpg') no-repeat;
+  background-position: center center;
   background-size: cover;
   width: 32rem;
   height: 32rem;
@@ -106,7 +112,8 @@ $lightBrown: #f7ede2;
 // 第2張
 .jessListE-view-first .jess-proE-pic2 {
   /*2*/
-  background: url('../images/images/bento-2.jpg') no-repeat;
+  background: url('../images/images/01_bento-chicken-thigh.jpg') no-repeat;
+  background-position: center center;
   background-size: cover;
   width: 32rem;
   height: 32rem;
@@ -171,7 +178,8 @@ $lightBrown: #f7ede2;
 
 .jessListE-view-first .jess-proE-pic3 {
   /*1*/
-  background: url('../images/images/bento-3.jpg') no-repeat;
+  background: url('../images/images/06_bento-tenderloin.jpg') no-repeat;
+  background-position: center center;
   background-size: cover;
   width: 32rem;
   height: 32rem;

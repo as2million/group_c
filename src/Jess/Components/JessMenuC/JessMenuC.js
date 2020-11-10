@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './JessMenuC.scss';
-import brownBorder from 'Jess/Components/images/SVG/brownBorder.svg';
+import React, { useState, useEffect } from 'react'
+import './JessMenuC.scss'
+import { Link } from 'react-router-dom'
+import brownBorder from 'Jess/Components/images/SVG/brownBorder.svg'
 
 function JessMenuC() {
   return (
@@ -17,14 +18,18 @@ function JessMenuC() {
             <div className="col-12 col-sm-6 d-flex ">
               <div className="row d-flex align-content-between jess-MenuC-RWD">
                 <div className="jess-view-menuCpic1">
-                  <div className="jess-menuC-pic1"></div>
+                  <Link to="/bento/13">
+                    <div className="jess-menuC-pic1"></div>
+                  </Link>
                   <div class="mask">
                     <h2>生酮沙拉</h2>
                     <p>$130</p>
                   </div>
                 </div>
                 <div className="jess-view-menuCpic2">
-                  <div className="jess-menuC-pic2"></div>
+                  <Link to="/bento/16">
+                    <div className="jess-menuC-pic2"></div>
+                  </Link>
                   <div class="mask">
                     <h2>均衡蛋白質沙拉</h2>
                     <p>$135</p>
@@ -33,16 +38,20 @@ function JessMenuC() {
               </div>
               <div className="row d-flex  align-content-between">
                 <div className="jess-view-menuCpic3">
-                  <div className="jess-menuC-pic3"></div>
+                  <Link to="/bento/15">
+                    <div className="jess-menuC-pic3"></div>
+                  </Link>
                   <div class="mask">
                     <h2>肌肉UPUP(增肌)沙拉</h2>
                     <p>$130</p>
                   </div>
                 </div>
                 <div className="jess-view-menuCpic4">
-                  <div className="jess-menuC-pic4"></div>
+                  <Link to="/bento/11">
+                    <div className="jess-menuC-pic4"></div>
+                  </Link>
                   <div class="mask">
-                    <h2>藜麥毛豆沙拉(全素)</h2>
+                    <h2>蒜烤鮭魚沙拉</h2>
                     <p>$150</p>
                   </div>
                 </div>
@@ -58,7 +67,7 @@ function JessMenuC() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default JessMenuC;
+export default JessMenuC
