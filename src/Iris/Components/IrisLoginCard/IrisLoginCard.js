@@ -259,6 +259,9 @@ function IrisLoginCard(props) {
           {/* ----------------註冊表單----------------- */}
           <div className="iris-register-content">
             <div className="iris-register-title">會員註冊</div>
+            <div class="alert alert-success iris-register-alert" role="alert">
+              註冊成功
+            </div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">帳號</div>
               <InputH44 type="text" id="createaccount" />
