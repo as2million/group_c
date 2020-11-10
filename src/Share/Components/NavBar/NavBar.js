@@ -52,7 +52,7 @@ function NavBar(props) {
           <div className="navBar-jess-navCollapse ">
             <ul className="navBar-jess-navigation">
               <li className="navBar-jess-navigation_item">
-                <Nav.Link as={NavLink} to="/groupOrder">
+                <Nav.Link as={NavLink} to="/groupOrder/groupOrderCreate">
                   作伙揪團
                 </Nav.Link>
               </li>
@@ -169,7 +169,7 @@ function NavBar(props) {
 
               <li id="ru-target">
                 <span className="jess-navbarCartNum" id="jess-navbarCartNum">
-                  {count}
+                  {cartNumber}
                 </span>
                 <Popover
                   placement="bottomLeft"
@@ -178,7 +178,9 @@ function NavBar(props) {
                   trigger="hover"
                   className="navbar-jess-popover"
                 >
-                  <ShoppingCart className="navbar-jess-ShopingCart" />
+                  <Nav.Link as={NavLink} to="/cart">
+                    <ShoppingCart className="navbar-jess-ShopingCart" />
+                  </Nav.Link>
                   <div className="navbar-tag-wrap">
                     <div className="navbar-tag">
                       <ShoppingAmount className="jess-navbarCartAmount" />

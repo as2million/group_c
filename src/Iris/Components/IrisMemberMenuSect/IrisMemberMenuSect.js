@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { withRouter } from 'react-router-dom'
-import './IrisMemberMenuSect.scss'
-import { ReactComponent as UserProfileIcon } from './Images/user_profile.svg'
-import { ReactComponent as BeastieIcon } from './Images/beastie_icon.svg'
-import { ReactComponent as OrderIcon } from './Images/order_icon.svg'
-import { ReactComponent as PlateIcon } from './Images/plate_icon.svg'
-import { ReactComponent as GroupOrderIcon } from './Images/group_order.svg'
-import { ReactComponent as MyFavIcon } from './Images/my_fav.svg'
-import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg'
-import { ReactComponent as ProfileIcon } from './Images/profile_beastie_icon.svg'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import './IrisMemberMenuSect.scss';
+import { ReactComponent as UserProfileIcon } from './Images/user_profile.svg';
+import { ReactComponent as BeastieIcon } from './Images/beastie_icon.svg';
+import { ReactComponent as OrderIcon } from './Images/order_icon.svg';
+import { ReactComponent as PlateIcon } from './Images/plate_icon.svg';
+import { ReactComponent as GroupOrderIcon } from './Images/group_order.svg';
+import { ReactComponent as MyFavIcon } from './Images/my_fav.svg';
+import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg';
+import { ReactComponent as ProfileIcon } from './Images/profile_beastie_icon.svg';
 function IrisMemberMenuSect(props) {
-  const { currentUser } = props
+  const { currentUser } = props;
 
-  let userinfo = []
-  getData()
+  let userinfo = [];
+  getData();
   // 拿資料庫會員資料
   async function getData() {
-    const url = 'http://localhost:5000/member/login'
+    const url = 'http://localhost:5000/member/login';
     const request = new Request(url, {
       method: 'GET',
       headers: new Headers({
         Accept: 'application/json',
         'Content-Type': 'appliaction/json',
       }),
-    })
-    const response = await fetch(request)
-    userinfo = await response.json()
+    });
+    const response = await fetch(request);
+    userinfo = await response.json();
   }
 
   return (
@@ -62,7 +62,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/memberUserprofile')
+                  props.history.push('/memberUserprofile');
                 }}
               >
                 <UserProfileIcon class="iris-menu-icon" />
@@ -73,7 +73,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/beastiePoint')
+                  props.history.push('/beastiePoint');
                 }}
               >
                 <BeastieIcon class="iris-menu-icon" />
@@ -85,7 +85,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/getCoupon')
+                  props.history.push('/getCoupon');
                 }}
               >
                 <OrderIcon class="iris-menu-icon" />
@@ -97,7 +97,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/orderManagement')
+                  props.history.push('/orderManagement');
                 }}
               >
                 <PlateIcon class="iris-menu-icon" />
@@ -109,7 +109,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/groupOrder')
+                  props.history.push('/groupOrder');
                 }}
               >
                 <GroupOrderIcon class="iris-menu-icon" />
@@ -121,7 +121,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/myFav')
+                  props.history.push('/myFav');
                 }}
               >
                 <MyFavIcon class="iris-menu-icon" />
@@ -133,7 +133,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/orderComment')
+                  props.history.push('/orderComment');
                 }}
               >
                 <MyCommentIcon class="iris-menu-icon" />
@@ -144,7 +144,7 @@ function IrisMemberMenuSect(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default withRouter(IrisMemberMenuSect)
+export default withRouter(IrisMemberMenuSect);

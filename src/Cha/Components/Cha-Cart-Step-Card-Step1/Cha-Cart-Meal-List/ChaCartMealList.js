@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Counter from 'Cha/Components/Cha-Cart-Step-Card-Step1/Counter/Counter'
 import './ChaCartMealList.scss'
+
 function ChaCartMealList(props) {
-  const { mealsItem, deleteMethod } = props
+  const { mealsItem, handleCount, deleteItemToLocalStorage } = props
   return (
     <>
       <div className="cha-order">
@@ -19,7 +20,13 @@ function ChaCartMealList(props) {
         </div>
         <div className="cha-order-left">
           <Counter {...props} />
-          <div className="cha-trash-can" onClick={deleteMethod}></div>
+          <div
+            className="cha-trash-can"
+            onClick={() => {
+              deleteItemToLocalStorage(mealsItem)
+              handleCount(mealsItem)
+            }}
+          ></div>
         </div>
       </div>
     </>
