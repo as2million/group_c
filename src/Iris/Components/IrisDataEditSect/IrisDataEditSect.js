@@ -8,7 +8,7 @@ import Button from './../../../Share/Components/Button/Button'
 import $ from 'jquery'
 
 function IrisDataEditSect(props) {
-  const { currentUser } = props
+  const { currentUser, setShowUpdateModal } = props
   const [userInfo, setUserInfo] = useState([])
   // const [value, setValue] = useState()
 
@@ -55,6 +55,13 @@ function IrisDataEditSect(props) {
       }
       // console.log(newProfile)
 
+      // 回到最頂部，不然光箱位置會跑掉
+      document.body.scrollTop = 0
+      document.documentElement.scrollTop = 0
+      // 秀更新成功光箱
+      setShowUpdateModal(true)
+
+      // 送出資料
       fetch('http://localhost:5000/member/updateProfile', {
         method: 'POST',
         body: JSON.stringify(newProfile),
@@ -139,6 +146,12 @@ function IrisDataEditSect(props) {
             <h6 className="iris-profile-note">
               ※ 部分資料以 * 或隱藏處理，保護您的個人隱私
             </h6>
+            {/* <div
+              class="alert alert-success iris-update-success-alert"
+              role="alert"
+            >
+              帳號或密碼錯誤
+            </div> */}
             <form className="iris-form-adjust">
               <div className="d-flex  align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box testtest">姓氏</div>
