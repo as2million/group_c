@@ -28,18 +28,19 @@ function NavBar(props) {
     }
   }
 
+  // 在登入狀態
   if (isLogin === true) {
+    // 登入選項消失
     document.querySelector('.iris-login-option').style.display = 'none'
-  } else {
-    if (document.querySelector('.iris-logout-option')) {
-      document.querySelector('.iris-logout-option').style.display = 'block'
-    }
+    // 顯示登出選項
+    document.querySelector('.iris-logout-option').style.display = 'block'
   }
 
+  // 點擊登出
   const showLoginOption = () => {
+    // 顯示登入選項,隱藏登出選項
+    setIsLogin(false)
     document.querySelector('.iris-login-option').style.display = 'block'
-
-    // display = 'none' 沒用
     document.querySelector('.iris-logout-option').style.display = 'none'
   }
 
@@ -141,16 +142,14 @@ function NavBar(props) {
                       </Nav.Link>
                       <Monster className="navBar-jess-monster4" />
                     </li>
-                    {/* 10/31 iris修改(把route拿掉) */}
+
                     <li
                       className="navBar-jess-dropdown_item iris-login-option"
                       onClick={() => {
                         setShowLoginModal(true)
                       }}
                     >
-                      {/* <Nav.Link as={NavLink} to="/login"> */}
                       登入/註冊
-                      {/* </Nav.Link> */}
                     </li>
                     {/* 11/9 新增登出選項 */}
                     <li
