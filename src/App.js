@@ -64,60 +64,11 @@ function App() {
             </Route>
             {/* component={JessBento} */}
             <Route path="/bento/:id?">
-              {/* <JessBento /> */}
               <JessBento handleCartNumber={handleCartNumber} />
             </Route>
             <Route path="/vegBox">
               <JessVegBox handleCartNumber={handleCartNumber} />
             </Route>
-
-            {/* iris */}
-            {/* 放"page資料夾"內的元件 */}
-            {/* <Route exact path="/memberUserprofile">
-            <IrisUserprofile />
-          </Route>
-          <Route exact path="/orderComment">
-            <IrisOrderComment />
-          </Route>
-          <Route exact path="/myFav">
-            <IrisMyFav />
-          </Route>
-          <Route exact path="/beastiePoint">
-            <IrisBeastiePoint />
-          </Route> */}
-
-            {/* ru */}
-            {/* 放"page資料夾"內的元件 */}
-            {/* <Route exact path="/productList">
-            <RuProudctList />
-          </Route> */}
-
-            {/* cha */}
-            {/* 放"page資料夾"內的元件 */}
-            {/* <Route exact path="/cart">
-            <ChaCart />
-          </Route>
-          <Route exact path="/groupOrder/groupOrderCreate">
-            <ChaGroupOrder />
-          </Route>
-          <Route exact path="/orderManagement">
-            <ChaOrderManagement />
-          </Route> */}
-
-            {/* claudia */}
-            {/* 放"page資料夾"內的元件 */}
-            {/* <Route exact path="/farmMap">
-            <ClaudiaFarmIndex />
-          </Route>
-          <Route exact path="/farmIntro">
-            <ClaudiaFarmDetailedPage />
-          </Route> */}
-
-            {/* 404 */}
-
-            {/* <Route exact path="*">
-            <NotFoundPage />
-          </Route> */}
           </Switch>
         </ScrollToTop>
         {/* 路由設定結束 */}
