@@ -12,7 +12,7 @@ import IrisMyFav from 'Iris/Pages/IrisMyFav'
 import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
 import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon'
 import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal'
-import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement
+import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement'
 
 
 // 安裝react router => npm install react-router-dom
