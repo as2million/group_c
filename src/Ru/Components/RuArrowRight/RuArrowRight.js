@@ -34,7 +34,7 @@ function RuArrowRight(props) {
 
   return (
     <>
-      <button className="arrowRight-warp" onMouseDown={start} onMouseUp={stop}>
+      <button className="arrowRight-warp" onMouseDown={start} onMouseUp={stop} onMouseLeave={stop}>
         <img src={ArrowR} draggable="false" />
       </button>
     </>

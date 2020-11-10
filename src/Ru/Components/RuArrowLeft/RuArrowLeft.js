@@ -28,14 +28,14 @@ function RuArrowLeft(props) {
       }, 20)
     }
     return () => {
-      console.log('B')
+      // console.log('停止moving')
       clearInterval(moving) // 滑鼠放開停止
     }
   }, [isMoving])
 
   return (
     <>
-      <button className="arrowLeft-warp" onMouseDown={start} onMouseUp={stop}>
+      <button className="arrowLeft-warp" onMouseDown={start} onMouseUp={stop} onMouseLeave={stop}>
         <img src={ArrowL} draggable="false" />
       </button>
     </>
