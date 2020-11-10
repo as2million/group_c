@@ -15,12 +15,7 @@ import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft'
 import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
 import VNavbar from '../../../Share/Components/VNavbar/VNavbar'
 import ToToop from '../../../Share/Components/ToTopButton/ScrollButton'
-import { Image } from 'react-bootstrap'
-import { countries, townships, price } from './data'
-import farmer from './Images/Svg/farmer.svg'
-import farmer2 from './Images/Svg/farmer-o.svg'
-import diet from './Images/Svg/diet.svg'
-import diet2 from './Images/Svg/diet-o.svg'
+import { datacountries, datatownships, dataprice } from './data'
 
 function JanIndexx(props) {
   const { type, id } = props
@@ -28,38 +23,49 @@ function JanIndexx(props) {
   const [township, setTownship] = useState(-1)
   const [postcode, setPostcode] = useState(-1)
 
-  //品牌特色切換
-  const intro1 = () => {
-    //點擊農夫，換到橘色圖片變大，其他取消，三角形移動到農夫下面
-    document.querySelector('.jan-farmer-icon').style =
-      'background-size: 9.5rem 9.5rem;transition:0.5s'
-    document.querySelector('.jan-diet-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
-    document.querySelector('.jan-choices-icon').style =
-      'background-size: 7.5rem 7.5rem;transition:0.5s'
-    document.querySelector('.jan-network-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
-    document.querySelector('.jan-kcal-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
-    document.querySelector('.jan-index-feature-triangle').style =
-      'left:5.2%;transition:0.5s'
-  }
-  const intro2 = () => {
-    document.querySelector('.jan-farmer-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
-    document.querySelector('.jan-diet-icon').style =
-      'background-size: 9.5rem 9.5rem;transition:0.5s'
-    document.querySelector('.jan-choices-icon').style =
-      'background-size: 7.5rem 7.5rem;transition:0.5s'
-    document.querySelector('.jan-network-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
-    document.querySelector('.jan-kcal-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
-    document.querySelector('.jan-index-feature-triangle').style =
-      'left:27%;transition:0.5s'
-  }
+  //地址狀態
+  const [indexAddress, setIndexAddress] = useState('')
 
-  const intro3 = () => {
+  //品牌特色切換
+  function intro1() {
+    document.querySelector('.jan-farmer-icon').style =
+      'background-size: 9.5rem 9.5rem;transition:0.5s'
+    document.querySelector('.jan-diet-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-choices-icon').style =
+      'background-size: 7.5rem 7.5rem;transition:0.5s'
+    document.querySelector('.jan-network-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-kcal-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-index-feature-triangle').style =
+      'left:5.2%;transition:0.3s'
+    document.querySelector('.jan-intro1').style = 'display:flex;transition:0.3s'
+    document.querySelector('.jan-intro2').style = 'display:none'
+    document.querySelector('.jan-intro3').style = 'display:none'
+    document.querySelector('.jan-intro4').style = 'display:none'
+    document.querySelector('.jan-intro5').style = 'display:none'
+  }
+  function intro2() {
+    document.querySelector('.jan-farmer-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-diet-icon').style =
+      'background-size: 9.5rem 9.5rem;transition:0.5s'
+    document.querySelector('.jan-choices-icon').style =
+      'background-size: 7.5rem 7.5rem;transition:0.5s'
+    document.querySelector('.jan-network-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-kcal-icon').style =
+      'background-size: 8rem 8rem;transition:0.5s'
+    document.querySelector('.jan-index-feature-triangle').style =
+      'left:27%;transition:0.3s'
+    document.querySelector('.jan-intro1').style = 'display:none'
+    document.querySelector('.jan-intro2').style = 'display:flex;transition:0.3s'
+    document.querySelector('.jan-intro3').style = 'display:none'
+    document.querySelector('.jan-intro4').style = 'display:none'
+    document.querySelector('.jan-intro5').style = 'display:none'
+  }
+  function intro3() {
     document.querySelector('.jan-farmer-icon').style =
       'background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-diet-icon').style =
@@ -71,9 +77,14 @@ function JanIndexx(props) {
     document.querySelector('.jan-kcal-icon').style =
       'background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-index-feature-triangle').style =
-      'left:48.5%;transition:0.5s'
+      'left:48.5%;transition:0.3s'
+    document.querySelector('.jan-intro1').style = 'display:none'
+    document.querySelector('.jan-intro2').style = 'display:none'
+    document.querySelector('.jan-intro3').style = 'display:flex;transition:0.3s'
+    document.querySelector('.jan-intro4').style = 'display:none'
+    document.querySelector('.jan-intro5').style = 'display:none'
   }
-  const intro4 = () => {
+  function intro4() {
     document.querySelector('.jan-farmer-icon').style =
       'background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-diet-icon').style =
@@ -85,9 +96,14 @@ function JanIndexx(props) {
     document.querySelector('.jan-kcal-icon').style =
       'background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-index-feature-triangle').style =
-      'left:70.5%;transition:0.5s'
+      'left:70.5%;transition:0.3s'
+    document.querySelector('.jan-intro1').style = 'display:none'
+    document.querySelector('.jan-intro2').style = 'display:none'
+    document.querySelector('.jan-intro3').style = 'display:none'
+    document.querySelector('.jan-intro4').style = 'display:flex;transition:0.3s'
+    document.querySelector('.jan-intro5').style = 'display:none'
   }
-  const intro5 = () => {
+  function intro5() {
     document.querySelector('.jan-farmer-icon').style =
       'background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-diet-icon').style =
@@ -99,11 +115,13 @@ function JanIndexx(props) {
     document.querySelector('.jan-kcal-icon').style =
       'background-size: 9.5rem 9.5rem;transition:0.5s'
     document.querySelector('.jan-index-feature-triangle').style =
-      'left:92%;transition:0.5s'
+      'left:92%;transition:0.3s;'
+    document.querySelector('.jan-intro1').style = 'display:none'
+    document.querySelector('.jan-intro2').style = 'display:none'
+    document.querySelector('.jan-intro3').style = 'display:none'
+    document.querySelector('.jan-intro4').style = 'display:none'
+    document.querySelector('.jan-intro5').style = 'display:flex;transition:0.3s'
   }
-
-  //地址狀態
-  const [indexAddress, setIndexAddress] = useState('')
 
   //監聽應用程式滾動
   function downloadIcon() {
@@ -111,19 +129,19 @@ function JanIndexx(props) {
     const info = document.querySelector('.jan-app-info')
     const downloadIcon = document.querySelector('.jan-col-download')
     if (window.scrollY > 0.1) {
-      downloadArea.style = 'left:-29rem;transition:transform 1s'
-      info.style = 'display:none'
-      downloadIcon.style = 'display:block'
+      downloadArea.style = 'left:-29rem;transition:0.5s'
+      info.style = 'display:none;transition:0.5s'
+      downloadIcon.style = 'display:block;transition:0.5s'
     }
     if (window.scrollY === 0) {
-      downloadArea.style = 'left:0rem;transition:transform 1s'
-      info.style = 'display:block'
-      downloadIcon.style = 'display:none'
+      downloadArea.style = 'left:0rem;transition:0.5s'
+      info.style = 'display:block;transition:0.5s'
+      downloadIcon.style = 'display:none;transition:0.5s'
     }
     downloadIcon.addEventListener('click', () => {
-      downloadArea.style = 'left:0rem;transition:transform 1s'
-      info.style = 'display:block'
-      downloadIcon.style = 'display:none'
+      downloadArea.style = 'left:0rem;transition:0.5s'
+      info.style = 'display:block;transition:0.5s'
+      downloadIcon.style = 'display:none;transition:0.5s'
     })
   }
   window.addEventListener('scroll', downloadIcon)
@@ -290,86 +308,86 @@ function JanIndexx(props) {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* 產銷履歷 */}
-          <div className="jan-intro2 ">
-            <div className="jan-intro2-wrap">
-              <div className="jan-intro2-title"></div>
-              <div className="jan-intro2-text">
-                <p>農產品產銷履歷制度</p>
-                <p>是一種農產品從農場到餐桌</p>
-                <p>在生產、加工、運輸、銷售過程</p>
-                <p>完整記錄的安心保證制度</p>
-                <p>具備可追溯生產者或加工者之資訊</p>
-                <p>對於健康的把關</p>
-                <p>拾餐總是比你更在意</p>
-              </div>
-              <div className="jan-index-button float-right mt-3">
-                <Button className="button-btn" text="商品列表" />
-              </div>
+        {/* 產銷履歷 */}
+        <div className="jan-intro2 ">
+          <div className="jan-intro2-wrap">
+            <div className="jan-intro2-title"></div>
+            <div className="jan-intro2-text">
+              <p>農產品產銷履歷制度</p>
+              <p>是一種農產品從農場到餐桌</p>
+              <p>在生產、加工、運輸、銷售過程</p>
+              <p>完整記錄的安心保證制度</p>
+              <p>具備可追溯生產者或加工者之資訊</p>
+              <p>對於健康的把關</p>
+              <p>拾餐總是比你更在意</p>
             </div>
-            <div className="jan-intro2-cards"></div>
+            <div className="jan-index-button float-right mt-3">
+              <Button className="button-btn" text="商品列表" />
+            </div>
           </div>
+          <div className="jan-intro2-cards"></div>
+        </div>
 
-          {/* 客製化便當 */}
-          {/* <div className="jan-intro3">
-            <div className="jan-intro3-wrap">
-              <div className="jan-intro3-title"></div>
-              <div className="jan-intro3-text">
-                <p>親愛的，是不是有那些日子，看著菜單卻覺得無從下手，</p>
-                <p>想吃照燒雞肉配玉米炒蛋，</p>
-                <p>可偏偏照燒雞肉的配菜卻是最討厭的菜色呢？</p>
-                <p>照過來，照過來!</p>
-                <p className="jan-intro3-large-text">“拾餐”客製化便當</p>
-                <p>幫你實現午餐到晚餐的美味想法；</p>
-                <p>自由組合，隨心搭配，</p>
-                <p>別再讓你的想法受限於制式的菜單上了！</p>
-              </div>
-              <div className="jan-index-button float-right mt-3">
-                <Button className="button-btn" text="客製化便當" />
-              </div>
+        {/* 客製化便當 */}
+        <div className="jan-intro3">
+          <div className="jan-intro3-wrap">
+            <div className="jan-intro3-title"></div>
+            <div className="jan-intro3-text">
+              <p>親愛的，是不是有那些日子，看著菜單卻覺得無從下手，</p>
+              <p>想吃照燒雞肉配玉米炒蛋，</p>
+              <p>可偏偏照燒雞肉的配菜卻是最討厭的菜色呢？</p>
+              <p>照過來，照過來!</p>
+              <p className="jan-intro3-large-text">“拾餐”客製化便當</p>
+              <p>幫你實現午餐到晚餐的美味想法；</p>
+              <p>自由組合，隨心搭配，</p>
+              <p>別再讓你的想法受限於制式的菜單上了！</p>
             </div>
-            <div className="jan-intro3-cards"></div>
-          </div> */}
+            <div className="jan-index-button float-right mt-3">
+              <Button className="button-btn" text="客製化便當" />
+            </div>
+          </div>
+          <div className="jan-intro3-cards"></div>
+        </div>
 
-          {/* 揪團訂購 */}
-          <div className="jan-intro4">
-            <div className="jan-intro4-wrap">
-              <div className="jan-intro4-title"></div>
-              <div className="jan-intro4-text">
-                <p>農產品產銷履歷制度</p>
-                <p>是一種農產品從農場到餐桌</p>
-                <p>在生產、加工、運輸、銷售過程</p>
-                <p>完整記錄的安心保證制度</p>
-                <p>具備可追溯生產者或加工者之資訊</p>
-                <p>對於健康的把關</p>
-                <p>拾餐總是比你更在意</p>
-              </div>
-              <div className="jan-index-button float-right mt-3">
-                <Button className="button-btn" text="商品列表" />
-              </div>
+        {/* 揪團訂購 */}
+        <div className="jan-intro4">
+          <div className="jan-intro4-wrap">
+            <div className="jan-intro4-title"></div>
+            <div className="jan-intro4-text">
+              <p>農產品產銷履歷制度</p>
+              <p>是一種農產品從農場到餐桌</p>
+              <p>在生產、加工、運輸、銷售過程</p>
+              <p>完整記錄的安心保證制度</p>
+              <p>具備可追溯生產者或加工者之資訊</p>
+              <p>對於健康的把關</p>
+              <p>拾餐總是比你更在意</p>
             </div>
-            <div className="jan-intro4-cards"></div>
-          </div>
-          {/* 營養標示 */}
-          <div className="jan-intro5">
-            <div className="jan-intro5-wrap">
-              <div className="jan-intro5-title"></div>
-              <div className="jan-intro5-text">
-                <p>農產品產銷履歷制度</p>
-                <p>是一種農產品從農場到餐桌</p>
-                <p>在生產、加工、運輸、銷售過程</p>
-                <p>完整記錄的安心保證制度</p>
-                <p>具備可追溯生產者或加工者之資訊</p>
-                <p>對於健康的把關</p>
-                <p>拾餐總是比你更在意</p>
-              </div>
-              <div className="jan-index-button float-right mt-3">
-                <Button className="button-btn" text="商品列表" />
-              </div>
+            <div className="jan-index-button float-right mt-3">
+              <Button className="button-btn" text="商品列表" />
             </div>
-            <div className="jan-intro5-cards"></div>
           </div>
+          <div className="jan-intro4-cards"></div>
+        </div>
+        {/* 營養標示 */}
+        <div className="jan-intro5">
+          <div className="jan-intro5-wrap">
+            <div className="jan-intro5-title"></div>
+            <div className="jan-intro5-text">
+              <p>農產品產銷履歷制度</p>
+              <p>是一種農產品從農場到餐桌</p>
+              <p>在生產、加工、運輸、銷售過程</p>
+              <p>完整記錄的安心保證制度</p>
+              <p>具備可追溯生產者或加工者之資訊</p>
+              <p>對於健康的把關</p>
+              <p>拾餐總是比你更在意</p>
+            </div>
+            <div className="jan-index-button float-right mt-3">
+              <Button className="button-btn" text="商品列表" />
+            </div>
+          </div>
+          <div className="jan-intro5-cards"></div>
         </div>
       </div>
 
@@ -651,7 +669,7 @@ function JanIndexx(props) {
                     <p className="jan-form-announce">
                       請填寫地址，查看免運金額
                     </p>
-                    <div className="jan-adress-radio">
+                    <div className="jan-adress-select">
                       <div className="iris-mainpage-select-wrapper d-flex">
                         <div className="iris-selectbar-wrapper">
                           <select
@@ -669,7 +687,7 @@ function JanIndexx(props) {
                             }}
                           >
                             <option value={-1}>請選擇城市</option>
-                            {countries.map((v, i) => (
+                            {datacountries.map((v, i) => (
                               <option key={i} value={i}>
                                 {v}
                               </option>
@@ -697,7 +715,7 @@ function JanIndexx(props) {
                           >
                             <option value={-1}>點我選擇區域</option>
                             {country > -1 &&
-                              townships[country].map((v, i) => (
+                              datatownships[country].map((v, i) => (
                                 <option key={i} value={i}>
                                   {v}
                                 </option>
@@ -754,7 +772,7 @@ function JanIndexx(props) {
                       {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
                       {country > -1 &&
                         township > -1 &&
-                        price[country][township]}
+                        dataprice[country][township]}
                     </span>
                     <span>元</span>免運費
                   </p>

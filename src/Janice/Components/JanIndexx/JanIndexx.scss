@@ -272,12 +272,12 @@ $deepYello: #f5a016;
   background-color: $skin;
 }
 .jan-intro1 {
-  // background-color: #ddd;
-  width: 100%;
+  margin: auto;
+  max-width: 117rem;
   height: 55rem;
   display: flex;
   // display: none;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   .jan-intro1-wrap {
     // background-color: #bbb;
@@ -485,12 +485,13 @@ $deepYello: #f5a016;
 }
 
 .jan-intro2 {
-  // background-color: #ddd;
-  width: 100%;
+  margin: auto;
+  max-width: 117rem;
   height: 55rem;
-  // display: flex;
+  display: flex;
   display: none;
-  justify-content: space-between;
+  // display: block;
+  justify-content: space-around;
   align-items: center;
   .jan-intro2-wrap {
     // background-color: #bbb;
@@ -529,12 +530,13 @@ $deepYello: #f5a016;
 }
 
 .jan-intro3 {
-  // background-color: #ddd;
-  width: 100%;
+  margin: auto;
+  max-width: 117rem;
   height: 55rem;
   display: flex;
-  // display: none;
-  justify-content: space-between;
+  display: none;
+  // display: block;
+  justify-content: space-around;
   align-items: center;
   .jan-intro3-wrap {
     // background-color: #bbb;
@@ -572,11 +574,13 @@ $deepYello: #f5a016;
 
 .jan-intro4 {
   // background-color: #ddd;
-  width: 100%;
+  margin: auto;
+  max-width: 117rem;
   height: 55rem;
-  // display: flex;
+  display: flex;
   display: none;
-  justify-content: space-between;
+  // display: block;
+  justify-content: space-around;
   align-items: center;
   .jan-intro4-wrap {
     // background-color: #bbb;
@@ -615,11 +619,13 @@ $deepYello: #f5a016;
 
 .jan-intro5 {
   // background-color: #ddd;
-  width: 100%;
+  margin: auto;
+  max-width: 117rem;
   height: 55rem;
-  // display: flex;
+  display: flex;
   display: none;
-  justify-content: space-between;
+  // display: block;
+  justify-content: space-around;
   align-items: center;
   .jan-intro5-wrap {
     // background-color: #bbb;
@@ -935,7 +941,7 @@ $deepYello: #f5a016;
       height: 70%;
       border: 0.1rem solid $yellow;
       right: 0;
-      bottom: 3rem;
+      bottom: 0.1rem;
       position: absolute;
     }
   }

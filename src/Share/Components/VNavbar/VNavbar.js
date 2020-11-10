@@ -13,7 +13,7 @@ import AddressTabs from '../AddressTabs/AddressTabs'
 registerLocale('zh-TW', zhTW)
 
 function VNavbar(props) {
-  const { fromIndex, setFromIndex, isLogin, currentUser } = props
+  const { isLogin, currentUser } = props
   const [startDate, setStartDate] = useState(
     setHours(setMinutes(new Date(), 30), 11)
   )
@@ -47,9 +47,6 @@ function VNavbar(props) {
       })
   }
   //如果登入的話，fetch會員的地址
-  // if (isLogin === true) {
-  //   addressData()
-  // }
   useEffect(() => {
     addressData()
   }, [])
@@ -67,7 +64,7 @@ function VNavbar(props) {
           setDistrict={setDistrict}
         ></AddressTabs>
       )}
-      <Navbar className="vnavbar-jan d-flex flex-wrap justify-content-between fixed-top">
+      <Navbar className="vnavbar-jan d-flex flex-wrap justify-content-around fixed-top">
         <div className="jan-vnav-container d-flex flex-wrap justify-content-around align-content-center">
           <div className="d-flex align-items-center calendar-jan">
             <img alt="" src={calendar} className="icons-jan " />

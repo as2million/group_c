@@ -22,10 +22,10 @@ const data = {
   },
 }
 
-export const countries = Object.getOwnPropertyNames(data)
-export const townships = countries.map((v, i, array) =>
+export const datacountries = Object.getOwnPropertyNames(data)
+export const datatownships = datacountries.map((v, i, array) =>
   Object.getOwnPropertyNames(data[array[i]])
 )
-export const price = countries.map((v, i, array) =>
+export const dataprice = datacountries.map((v, i, array) =>
   Object.values(data[array[i]])
 )

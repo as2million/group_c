@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Tabs, Sonnet, Tab, Container } from 'react-bootstrap'
 import './AddressTabs.scss'
 import {
-  countries,
-  townships,
-  price,
+  datacountries,
+  datatownships,
+  dataprice,
 } from '../../../Janice/Components/JanIndexx/data.js'
 
 function AddressTabs(props) {
@@ -66,7 +66,7 @@ function AddressTabs(props) {
             <form name="jan-address-form" id="jan-address-form">
               <p className="jan-form-announce">請填寫地址，查看免運金額</p>
 
-              <div className="jan-address-radio">
+              <div className="jan-address-select">
                 <div className="iris-mainpage-select-wrapper d-flex">
                   <div className="iris-selectbar-wrapper">
                     <select
@@ -84,7 +84,7 @@ function AddressTabs(props) {
                       }}
                     >
                       <option value={-1}>請選擇城市</option>
-                      {countries.map((v, i) => (
+                      {datacountries.map((v, i) => (
                         <option key={i} value={i}>
                           {v}
                         </option>
@@ -113,7 +113,7 @@ function AddressTabs(props) {
                     >
                       <option value={-1}>點我選擇區域</option>
                       {country > -1 &&
-                        townships[country].map((v, i) => (
+                        datatownships[country].map((v, i) => (
                           <option key={i} value={i}>
                             {v}
                           </option>
@@ -157,7 +157,9 @@ function AddressTabs(props) {
                   <span>
                     {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
                     {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
-                    {country > -1 && township > -1 && price[country][township]}
+                    {country > -1 &&
+                      township > -1 &&
+                      dataprice[country][township]}
                   </span>
                   元免運費
                 </p>
