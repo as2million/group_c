@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import './JessCommentInput.scss'
+import Cross from './Images/cross.svg'
 // import JessCommentList from '../../../Share/Components/Button/Button'
 // import ReactStars from 'react-rating-stars-component'
 import 'antd/dist/antd.css'
@@ -15,6 +16,7 @@ function JessCommentInput(props) {
     rating,
     setRating,
     member_sid,
+    closeModal,
   } = props
 
   // const [textInput, setTextInput] = useState('')
@@ -103,9 +105,6 @@ function JessCommentInput(props) {
       >
         確認送出
       </button>
-      {/* <button className="jess-input-button" onClick={autoSubmit}>
-        確認送出
-      </button> */}
     </>
   )
 }

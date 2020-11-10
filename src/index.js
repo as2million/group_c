@@ -14,7 +14,7 @@ ReactDOM.render(
     {/* <ClaudiaAppTest /> */}
     {/* <JanAppTest /> */}
     <App />
-    <JessAppTest />
+    {/* <JessAppTest /> */}
     {/* <IrisAppTest /> */}
 
     {/* <ChaAppTest /> */}
