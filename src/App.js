@@ -6,21 +6,6 @@ import Footer from 'Share/Components/Footer/Footer'
 // import NotFoundPage from "Share/Components/NotFoundPage/NotFoundPage";
 
 // 引入 所有人的總元件
-// import NameApp from "Name/NameApp";
-// import JanIndex from 'Janice/Pages/JanIndex'
-// import JessMenu from 'Jess/Pages/JessMenu'
-// import JessBento from 'Jess/Pages/JessBento'
-// import JessVegBox from 'Jess/Pages/JessVegBox'
-// import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
-// import IrisOrderComment from 'Iris/Pages/IrisOrderComment '
-// import IrisMyFav from 'Iris/Pages/IrisMyFav'
-// import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
-// import ChaCart from 'Cha/Pages/ChaCart'
-// import ChaGroupOrder from 'Cha/Pages/ChaGroupOrder'
-// import ChaOrderManagement from 'Cha/Pages/OrderManagement'
-// import RuProudctList from 'Ru/Pages/RuProudctList';
-// import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad';
-// import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom';
 import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
 import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
 

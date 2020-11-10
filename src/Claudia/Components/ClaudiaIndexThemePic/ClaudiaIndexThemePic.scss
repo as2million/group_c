@@ -1,3 +1,5 @@
+//------------------------------Desktop--------------------------------
+
 .claudia-fake-navbar {
     width: 100vw;
     height: 100px;
@@ -11,11 +13,10 @@
 .claudia-index-background-image {
     background-image: url(./Images/index_bg.jpg);
     height: 765px;
-    width: 1440px;
+    width: 100vw;
     
 }
 
-//change top after adding navbar
 .claudia-index-text {
     font-family: 'Noto Serif TC';
     position: absolute;
@@ -111,9 +112,27 @@
     font-weight: 700;
 }
 
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+//not working
+
+@media screen and (min-width: 57.6rem) and (max-width: 120rem) {
+
+    .claudia-index-text {
+        position: absolute;
+        right: 265px;
+    }
+
+}
 
 
-@media only screen and (max-width: 57.6rem) {
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media screen and (max-width: 57.6rem) {
     .claudia-fake-navbar {
         width: 100%;
         height: 100px;
@@ -144,6 +163,8 @@
         display: none;
     }
 }
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
 
 
 
