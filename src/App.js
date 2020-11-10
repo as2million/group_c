@@ -6,21 +6,9 @@ import Footer from 'Share/Components/Footer/Footer'
 // import NotFoundPage from "Share/Components/NotFoundPage/NotFoundPage";
 
 // 引入 所有人的總元件
-// import NameApp from "Name/NameApp";
-// import JanIndex from 'Janice/Pages/JanIndex'
 import JessMenu from 'Jess/Pages/JessMenu'
 import JessBento from 'Jess/Pages/JessBento'
 import JessVegBox from 'Jess/Pages/JessVegBox'
-// import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
-// import IrisOrderComment from 'Iris/Pages/IrisOrderComment '
-// import IrisMyFav from 'Iris/Pages/IrisMyFav'
-// import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
-// import ChaCart from 'Cha/Pages/ChaCart'
-// import ChaGroupOrder from 'Cha/Pages/ChaGroupOrder'
-// import ChaOrderManagement from 'Cha/Pages/OrderManagement'
-// import RuProudctList from 'Ru/Pages/ProudctList'
-// import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
-// import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
 
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
@@ -30,7 +18,9 @@ import ScrollToTop from '../src/Jess/Components/ScrollToTop'
 // 路由表
 function App() {
   const [showBar, setShowBar] = useState(true)
+  const [mycartList, setMycartList] = useState([])
   const [cartNumber, setCartNumber] = useState(0)
+
   // 購物車商品數量處理器
   const handleCartNumber = (type, amount) => {
     if (type === 'add') {
@@ -44,6 +34,7 @@ function App() {
       setCartNumber(newCartNumber)
     }
   }
+
   useEffect(() => {
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || 0
@@ -54,7 +45,7 @@ function App() {
     <Router>
       <>
         {/* 放切頁時不重新渲染的部份 s*/}
-        <Navbar cartNumber={cartNumber} />
+        <Navbar cartNumber={cartNumber} mycartList={mycartList} />
         {/* 放切頁時不重新渲染的部份 e*/}
 
         {/* 路由設定開始 */}
@@ -77,7 +68,7 @@ function App() {
               <JessBento handleCartNumber={handleCartNumber} />
             </Route>
             <Route path="/vegBox">
-              <JessVegBox />
+              <JessVegBox handleCartNumber={handleCartNumber} />
             </Route>
 
             {/* iris */}

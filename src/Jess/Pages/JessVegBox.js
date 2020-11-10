@@ -8,11 +8,12 @@ import JessVegD from '../Components/JessVegD/JessVegD'
 import JessVegE from '../Components/JessVegE/JessVegE'
 import ToTop from 'Share/Components/ToTopButton/ScrollButtonGreen'
 
-function JessVegBox() {
+function JessVegBox(props) {
+  const { handleCartNumber } = props
   return (
     <>
       <VNavbar />
-      <JessVegHeader />
+      <JessVegHeader handleCartNumber={handleCartNumber} />
       <JessVegB />
       <JessVegC />
       <JessVegD />

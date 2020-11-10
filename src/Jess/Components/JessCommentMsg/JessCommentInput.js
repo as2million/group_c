@@ -26,12 +26,13 @@ function JessCommentInput(props) {
     if (textInput === '') {
       return false
     }
+
     const newItems = {
       product_sid: 1,
       member_sid: 1,
       starRating: rating,
       content: textInput,
-      created_at: new Date().toString(),
+      created_at: new Date().toLocaleString(),
       // created_at: null,
     }
 
@@ -46,7 +47,6 @@ function JessCommentInput(props) {
         'Content-Type': 'application/json',
       }),
     })
-    // console.log(JSON.stringify(newItems))
 
     const response = await fetch(request)
     const data = await response.json()
@@ -62,11 +62,6 @@ function JessCommentInput(props) {
     setRating(newRating)
     // console.log('rating:', rating)
   }
-
-  // const clearStar = () => {
-  //   setStarKey(Math.random())
-  //   setRating(0)
-  // }
 
   useEffect(() => {
     handleSubmit()
@@ -85,7 +80,6 @@ function JessCommentInput(props) {
         onChange={(e) => setTextInput(e.target.value)}
         // onChange={handleChange}
         value={textInput}
-        onSelect={'hi'}
         onKeyPress={(e) => {
           if (e.key === 'Enter' && e.target.value) {
             // const newComments = [e.target.value, ...comments];
@@ -94,7 +88,7 @@ function JessCommentInput(props) {
               member_sid: 1,
               starRating: rating,
               content: textInput,
-              created_at: new Date().toLocaleString(),
+              created_at: new Date(),
             }
             const newComments = [newItems, ...comments]
             setComments(newComments)

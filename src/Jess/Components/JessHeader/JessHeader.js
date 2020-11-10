@@ -8,13 +8,12 @@ import Counter from '../../../Share/Components/Counter/Counter'
 import AddCart from 'Share/Components/AddCart/AddCart'
 import cart from '../../../Share/Components/AddCart/Images/cart.svg'
 import BreadCrumb from '../JessBreadCrumb/BreadCrumb'
-// import AddFavorite from 'Share/Components/AddFavorite/AddFavorite'
 
 function JessProdoctList(props) {
   const [count, setCount] = useState(1)
   const [total, setTotal] = useState(170)
   const [mycount, setMycountt] = useState([])
-  const { handleCartNumber } = props
+  const { handleCartNumber, handleCarList } = props
   // console.log(props)
   //useParams 設定id
   let { id } = useParams()
@@ -65,6 +64,12 @@ function JessProdoctList(props) {
 
     const newCart = [...currentCart, value]
     localStorage.setItem('cart', JSON.stringify(newCart))
+    console.log(newCart[1].productname)
+  }
+  function CartListToLocalStorage(text) {
+    const currentList = JSON.parse(localStorage.getItem('List')) || []
+    const newCart = [...currentList, text]
+    localStorage.setItem('List', JSON.stringify(newCart))
   }
 
   const calA = (e) => {
@@ -73,11 +78,8 @@ function JessProdoctList(props) {
   const setTabActive = (addElem, removeName) => {
     let removeTargets = document.querySelectorAll(removeName)
     removeTargets.forEach((target) => {
-      target.classList.remove('active')
-      console.log(target)
+      target.classList.toggle('active')
     })
-
-    addElem.classList.add('active')
   }
   return (
     <>
@@ -124,9 +126,11 @@ function JessProdoctList(props) {
           </div>
           <div className="jess-rateStar">
             <Rate disabled defaultValue={4} />
-            <span className="jess-rateStarMsgNum">
-              {menu.contentNum} 則評論{' '}
-            </span>
+            <a href="#1">
+              <span className="jess-rateStarMsgNum">
+                {menu.contentNum} 則評論{' '}
+              </span>
+            </a>
           </div>
           <hr />
           <div className="jess-productPrice mt-1">
@@ -172,6 +176,7 @@ function JessProdoctList(props) {
               className="addCart-btn addCart-btn-n"
               onClick={() => {
                 handleCartNumber('add', count)
+
                 CreateCartToLocalStorage({
                   id: 1,
                   productname: '慢煮嫩雞胸-蒜味香草',
@@ -183,16 +188,6 @@ function JessProdoctList(props) {
               <img className="addCart-cart addCart-cart-n" src={cart} />
             </button>
           </div>
-          {/* <AddCart
-            onClick={() => {
-              updateCartToLocalStorage({
-                id: 1,
-                productname: '慢煮嫩雞胸-蒜味香草',
-                amount: 1,
-                price: 170,
-              })
-            }}
-          /> */}
         </div>
       </div>
     </>

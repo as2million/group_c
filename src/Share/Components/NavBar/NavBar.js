@@ -15,8 +15,7 @@ import { NavLink } from 'react-router-dom'
 
 function NavBar(props) {
   const [count, setCount] = useState(0)
-  const [mycart, setMycart] = useState([])
-  const { cartNumber } = props
+  const { cartNumber, mycartList } = props
   const [showNav, setShowNav] = useState(true)
   const { isLogin, setShowLoginModal } = props
 
@@ -149,7 +148,7 @@ function NavBar(props) {
                 </span>
                 <Popover
                   placement="bottomLeft"
-                  content={mycart}
+                  content={mycartList}
                   title="我的購買清單"
                   trigger="hover"
                   className="navbar-jess-popover"

@@ -174,8 +174,12 @@ hr {
   background-position: 75% 60%;
   background-size: 32px;
 }
-
-.addFavorite-btn .active {
+@mixin link-hover {
+  &.active {
+    @content;
+  }
+}
+.addFavorite-btn.active {
   background-color: $dark-yellow;
   width: 37px;
   height: 37px;

@@ -22,9 +22,9 @@ function JessMenuB() {
             <div className="col-12 col-sm-6 d-flex jess-MenuB-RWD">
               <div className="row d-flex  align-content-between">
                 <div className="jess-view-menuBpic2">
-                  <Link to="/bento/2">
+                  <a href="/bento/0/#1">
                     <div className="jess-menuB-pic2"></div>
-                  </Link>
+                  </a>
                   <div class="mask">
                     <h2>慢煮嫩雞胸-蒜味香草</h2>
                     <p>$170</p>

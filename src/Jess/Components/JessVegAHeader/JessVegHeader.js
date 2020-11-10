@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Row, Col } from 'react-bootstrap'
 import 'antd/dist/antd.css'
 import './JessVegHeader.scss'
-import Counter from '../../../Share/Components/Counter/Counter'
 import AddCart from 'Share/Components/AddCart/AddCart'
 import BreadCrumb from '../JessBreadCrumb/BreadCrumb'
 import AddFavorite from 'Share/Components/AddFavorite/AddFavorite'
+import cart from '../../../Share/Components/AddCart/Images/cart.svg'
 import vegPic from './Images/vegetableBox_slick_pic2.png'
 import vegPic2 from './Images/VegBox2.jpg'
 
@@ -13,6 +12,7 @@ function JessVegHeader(props) {
   const [count, setCount] = useState(1)
   const [total, setTotal] = useState(350)
   const [veg, setVeg] = useState([])
+  const { handleCartNumber } = props
 
   async function bentoData() {
     const url = 'http://localhost:5000/product/bento'
@@ -82,6 +82,21 @@ function JessVegHeader(props) {
     addElem.classList.add('active')
   }
 
+  const favA = (e) => {
+    setfavActive(e.target, '.fav')
+  }
+  const setfavActive = (addElem, removeName) => {
+    let removeTargets = document.querySelectorAll(removeName)
+    removeTargets.forEach((target) => {
+      target.classList.toggle('active')
+    })
+  }
+  function CreateCartToLocalStorage(value) {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+    const newCart = [...currentCart, value]
+    localStorage.setItem('cart', JSON.stringify(newCart))
+  }
   return (
     <>
       <div className="jess-fluidBg">
@@ -91,7 +106,13 @@ function JessVegHeader(props) {
           <img src={vegPic}></img>
         </div>
         <div className="jess-menuList ">
-          <AddFavorite />
+          <div className="jess-fav ">
+            <button
+              className="addFavorite-btn addFavorite-btn-n fav"
+              onClick={favA}
+            ></button>
+          </div>
+
           <h1 className="jess-tittle">{veg.productname}</h1>
           <p className="jess-text20Green mt-2">11月盛產季節限定</p>
           <p className="jess-contentVeg">{veg.introduction}</p>
@@ -179,7 +200,22 @@ function JessVegHeader(props) {
             </div>
           </div>
           <div className=" mt-5 d-flex justify-content-center">
-            <AddCart />
+            <button
+              className="addCart-btn addCart-btn-n"
+              onClick={() => {
+                handleCartNumber('add', count)
+                CreateCartToLocalStorage({
+                  id: 1,
+                  productname: '在地小農蔬菜箱',
+                  size: 's',
+                  date: 2020 / 11 / 22,
+                  img_id: '22_vegBox',
+                  price: 350,
+                })
+              }}
+            >
+              <img className="addCart-cart addCart-cart-n" src={cart} />
+            </button>
           </div>
         </div>
       </div>
