@@ -17,7 +17,9 @@ import VNavbar from '../../../Share/Components/VNavbar/VNavbar';
 import ToToop from '../../../Share/ToTopButton/ScrollButton';
 
 function JanIndex(props) {
-  const { placeholder, type, id } = props;
+  useEffect(() => {
+    props.setShowBar(true);
+  }, []);
   return (
     <>
       <VNavbar />
@@ -559,12 +561,7 @@ function JanIndex(props) {
 
                     <br />
                     <div className="jan-adress-input">
-                      <input
-                        className="form-control iris-inputH50"
-                        type={type}
-                        placeholder={placeholder}
-                        id={id}
-                      />
+                      <input className="form-control iris-inputH50" />
                     </div>
 
                     <br />

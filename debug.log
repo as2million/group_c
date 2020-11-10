@@ -15,6 +15,7 @@
 [1028/210732.493:ERROR:directory_reader_win.cc(43)] FindFirstFile: 嚙緣嚙諄找不嚙踝蕭嚙踝蕭w嚙踝蕭嚙踝蕭嚙罵嚙瘠 (0x3)
 [1029/085302.155:ERROR:directory_reader_win.cc(43)] FindFirstFile: 嚙緣嚙諄找不嚙踝蕭嚙踝蕭w嚙踝蕭嚙踝蕭嚙罵嚙瘠 (0x3)
 
+<<<<<<< HEAD
 
 [1102/211300.991:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
 [1103/092602.393:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
@@ -24,3 +25,9 @@
 [1108/142957.601:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
 [1109/205536.893:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
 [1110/094243.319:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
+=======
+[1109/131659.756:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
+[1109/134210.936:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\test\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\e171143c-d6c3-4d60-9b34-b5997799f652: 系統找不到指定的路徑。 (0x3)
+[1109/140644.145:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
+[1109/171933.169:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
+>>>>>>> cha

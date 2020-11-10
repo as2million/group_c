@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect';
 // import IrisBeastiePointSect from '../Components/IrisBeastiePointSect/IrisBeastiePointSect';
-import ChaOrderManagement from './../../Cha/Components/Cha-Order-Management/ChaOrderManagement'
-import './IrisMemberPage.scss'
-import { Redirect } from 'react-router-dom'
+import ChaOrderManagement from './../../Cha/Components/Cha-Order-Management/ChaOrderManagement';
+import './IrisMemberPage.scss';
+import { Redirect } from 'react-router-dom';
 
 function IrisOrderManagement(props) {
-  const { isLogin, currentUser, setShowLoginModal } = props
+  const { isLogin, currentUser, setShowLoginModal } = props;
   if (isLogin === false) {
-    setShowLoginModal(true)
-    return <Redirect to="/" />
+    setShowLoginModal(true);
+    return <Redirect to="/" />;
   }
   return (
     <>
@@ -19,7 +19,7 @@ function IrisOrderManagement(props) {
         <ChaOrderManagement />
       </div>
     </>
-  )
+  );
 }
 
-export default IrisOrderManagement
+export default IrisOrderManagement;
