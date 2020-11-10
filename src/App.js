@@ -6,26 +6,14 @@ import Footer from 'Share/Components/Footer/Footer'
 // import NotFoundPage from "Share/Components/NotFoundPage/NotFoundPage";
 
 // 引入 所有人的總元件
-// import NameApp from "Name/NameApp";
-// import JanIndex from 'Janice/Pages/JanIndex'
-// import JessMenu from 'Jess/Pages/JessMenu'
-// import JessBento from 'Jess/Pages/JessBento'
-// import JessVegBox from 'Jess/Pages/JessVegBox'
 import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
 import IrisOrderComment from 'Iris/Pages/IrisOrderComment'
 import IrisMyFav from 'Iris/Pages/IrisMyFav'
 import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
 import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon'
 import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal'
-import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement'
-// import ChaCart from 'Cha/Pages/ChaCart'
-// import ChaGroupOrder from 'Cha/Pages/ChaGroupOrder'
-// import ChaOrderManagement from 'Cha/Pages/Iris-Profile-Page-Demo/IrisProfilePageDemo'
-import RuProudctList from 'Ru/Pages/RuProudctList'
-import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'
-import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'
-// import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
-// import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
+import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement
+
 
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
@@ -117,7 +105,7 @@ function App() {
 
           {/* ru */}
           {/* 放"page資料夾"內的元件 */}
-          <Route exact path="/productList">
+          {/* <Route exact path="/productList">
             <RuProudctList />
           </Route>
           <Route exact path="/productListSalad">
@@ -125,7 +113,7 @@ function App() {
           </Route>
           <Route exact path="/productListCustom">
             <RuProudctListCustom />
-          </Route>
+          </Route> */}
 
           {/* cha */}
           {/* 放"page資料夾"內的元件 */}
