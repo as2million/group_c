@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect';
-import IrisBeastiePointSect from '../Components/IrisBeastiePointSect/IrisBeastiePointSect';
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect'
+import IrisBeastiePointSect from '../Components/IrisBeastiePointSect/IrisBeastiePointSect'
+import './IrisMemberPage.scss'
+import { Redirect } from 'react-router-dom'
 
-import './IrisMemberPage.scss';
-
-function IrisBeastiePoint() {
+function IrisBeastiePoint(props) {
+  const { isLogin, currentUser, setShowLoginModal } = props
+  if (isLogin === false) {
+    setShowLoginModal(true)
+    return <Redirect to="/" />
+  }
   return (
     <>
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect />
-        <IrisBeastiePointSect />
+        <IrisMemberMenuSect currentUser={currentUser} />
+        <IrisBeastiePointSect currentUser={currentUser} />
       </div>
     </>
-  );
+  )
 }
 
-export default IrisBeastiePoint;
+export default IrisBeastiePoint

@@ -7,8 +7,7 @@ import JessListB from '../Components/JessListB/JessListB'
 import JessListC from '../Components/JessListC/JessListC'
 import JessListD from '../Components/JessListD/JessListD'
 import JessListE from '../Components/JessListE/JessListE'
-import ToTop from 'Share/Components/ToTopButton/ScrollApp'
-import JessCommentInput from '../Components/JessCommentMsg/JessCommentInput'
+import ToTop from 'Share/Components/ToTopButton/ScrollButton'
 
 function JessBento(props) {
   const { handleCartNumber, handleCarList } = props

@@ -26,3 +26,16 @@
   transform: translate(-50%, -50%);
 }
 
+// 登入成功光箱
+.iris-sucess-container {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  z-index: 110;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 35rem;
+  height: 40rem;
+  border-radius: 3rem;
+}

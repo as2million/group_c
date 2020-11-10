@@ -42,6 +42,7 @@ function BreadCrumb(props) {
           </Link>
         </Breadcrumb.Item>
         <Breadcrumb.Item>{path}</Breadcrumb.Item>
+        <Breadcrumb.Item>{path}</Breadcrumb.Item>
       </Breadcrumb>
     </>
   )

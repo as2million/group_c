@@ -69,7 +69,7 @@
 @media only screen and (max-width: 57.6rem) {
 
     .claudia-detailed-slider {
-        width: 375px;
+        width: 100%;
         height: 1120px;
         position: static;
         padding: 0px;
@@ -82,7 +82,7 @@
 
     .claudia-detailed-slider-container {
         width: 375px;
-        margin: 0px;
+        margin: 0px auto;
         padding-top: 70px;
         position: static;
     }
