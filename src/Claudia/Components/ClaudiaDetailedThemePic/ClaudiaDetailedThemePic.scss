@@ -1,3 +1,5 @@
+//------------------------------Desktop--------------------------------
+
 .claudia-fake-navbar {
     width: 100vw;
     height: 100px;
@@ -10,7 +12,6 @@
     background-image: url(./Images/strawberry.jpg);
 }
 
-//change top after adding navbar
 .claudia-detailed-text {
     font-family: 'Noto Serif TC';
     position: absolute;
@@ -31,7 +32,39 @@
     color: #fafafa;
 }
 
-@media only screen and (max-width: 57.6rem) {
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+
+    .claudia-detailed-background-image {
+        width: 100vw;
+        height: 667px;
+        position: relative;
+        background-image: url(./Images/rwd_strawberry.jpg);
+    }
+
+    .claudia-detailed-text {
+        // width: 270px;
+        // height: 105px;
+        position: absolute;
+        // top: 210px;
+        left: 230px;
+    }
+
+
+
+
+
+}
+
+//--------------------------------Ipad---------------------------------
+
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
     .claudia-fake-navbar {
         width: 100vw;
         height: 100px;
@@ -61,6 +94,8 @@
         font-size: 24px;
     }
 }
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
 
 
 

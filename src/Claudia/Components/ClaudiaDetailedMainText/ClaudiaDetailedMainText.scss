@@ -1,3 +1,4 @@
+//------------------------------Desktop--------------------------------
 .claudia-detailed-maintext {
     width: 80%;
     display: flex;
@@ -14,7 +15,34 @@
     margin: 0px auto;
 }
 
-@media only screen and (max-width: 57.6rem) {
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+    .claudia-detailed-maintext {
+        width: 485px;
+        display: block;
+    }
+
+    .claudia-detailed-maintext-left {
+        width: 485px;
+        margin: 0px auto 50px auto;
+    }
+
+    .claudia-detailed-maintext-right {
+        width: 485px;
+        margin: 0px auto;
+    }
+}
+
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
     .claudia-detailed-maintext {
         width: 335px;
         display: block;
@@ -31,3 +59,5 @@
     }
 
 }
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------

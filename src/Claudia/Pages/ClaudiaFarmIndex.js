@@ -18,7 +18,6 @@ function ClaudiaFarmIndex() {
                 <ClaudiaIndexContent />
             </ClaudiaMainContent>
             <ScrollButtonGreen />
-            {/* <Test2 /> */}
         </>
     )
 }

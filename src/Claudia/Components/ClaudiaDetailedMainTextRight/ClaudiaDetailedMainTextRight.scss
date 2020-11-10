@@ -73,7 +73,7 @@
 }
 
 .claudia-signup-date-button {
-    margin-top: 10px;
+    margin-top: 25px;
     text-align: center;
 }
 
@@ -81,7 +81,25 @@
     height: 45px;
 }
 
-@media only screen and (max-width: 57.6rem) {
+
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+    
+    .claudia-detailed-maintext-signup {
+        margin: 0px auto;
+        width: 485px;
+        height: 535px;
+    }
+
+    .claudia-detailed-maintext-signup-box {
+        width: 435px;
+        margin: 0px auto;
+        padding: 10px 20px;
+    }
+
+
+}
+
+@media only screen and (max-width: 576px) {
     .claudia-detailed-maintext-signup {
         margin: 0px auto;
         width: 335px;

@@ -116,13 +116,19 @@
 
 //--------------------------------Ipad---------------------------------
 
-//not working
 
-@media screen and (min-width: 57.6rem) and (max-width: 120rem) {
+@media screen and (min-width: 576px) and (max-width: 1200px) {
 
     .claudia-index-text {
         position: absolute;
+        top: 530px;
         right: 265px;
+    }
+
+    //mouse scroll icon
+
+    .claudia-center {
+        display: none;
     }
 
 }
@@ -132,7 +138,7 @@
 
 //----------------------Iphone 6/7/8 + Plus + X------------------------
 
-@media screen and (max-width: 57.6rem) {
+@media screen and (max-width: 576px) {
     .claudia-fake-navbar {
         width: 100%;
         height: 100px;
