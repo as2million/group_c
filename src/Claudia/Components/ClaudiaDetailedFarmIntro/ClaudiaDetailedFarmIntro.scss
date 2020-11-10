@@ -144,10 +144,127 @@
 
 @media screen and (min-width: 576px) and (max-width: 1200px) {
 
+    .claudia-detailed-farm-intro{
+        width: 100%;
+        height: 2480px;
+        position: static;
+        padding: 0px;
+    }
+
     .claudia-detailed-farm-intro h1 {
         font-size: 2.8rem;
         margin: 40px 0px;
     }
+
+    .claudia-detailed-farm-intro-container {
+        position: static;
+
+    }
+
+    .claudia-detailed-farm-intro-grice {
+        display: none;
+    }
+
+    .claudia-detailed-farm-video iframe {
+        width: 600px;
+        height: 370px
+    }
+
+    //Middle
+
+    .claudia-detailed-farm-middle {
+        display: block;
+        width: 600px;
+        height: 1530px;
+        margin-bottom: 42px;
+
+    }
+
+    .claudia-detailed-farm-text {
+        width: 485px;
+        height: 300px;
+        margin: 0px auto;
+
+    }
+
+    .claudia-detailed-farm-silder {
+        width: 600px;
+        display: flex;
+        justify-content: center;
+        overflow: visible;
+    }
+
+    .claudia-detailed-farm-silder-img-container {
+        width: 600px;
+        height: 700px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+    }
+
+    .claudia-detailed-farm-silder img {
+        width: 600px;
+        height: 370px;
+        margin: 20px auto;
+        position: static;
+
+    }
+
+    .claudia-detailed-farm-silder-container {
+        display: none;
+    }
+
+    //Quote Card
+
+    .claudia-detailed-farm-card {
+       width: 595px;
+       height: 290px;
+       position: relative;
+    }
+
+    .claudia-detailed-farmer-avatar img {
+        position: absolute;
+        top: 30px;
+        left: 220px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .claudia-detailed-farm-card-quote h1 {
+        position: absolute;
+        top: 160px;
+        left: 175px;
+        font-size: 20px;
+        width: 245px;
+        height: 30px;
+    }
+
+    .claudia-detailed-farm-card-quote h2 {
+        position: absolute;
+        top: 240px;
+        left: 280px;
+        font-size: 14px;
+        width: 190px;
+        height: 22px;
+    }
+
+    .claudia-detailed-farm-card-quote-left {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 200px;
+        left: 145px;
+    }
+
+    .claudia-detailed-farm-card-quote-right {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 200px;
+        right: 145px;
+    }
+
 
 }
 

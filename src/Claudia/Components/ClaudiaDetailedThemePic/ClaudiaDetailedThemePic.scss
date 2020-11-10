@@ -40,31 +40,68 @@
 
     .claudia-detailed-background-image {
         width: 100vw;
-        height: 667px;
+        height: 1024px;
         position: relative;
-        background-image: url(./Images/rwd_strawberry.jpg);
+        background-image: url(./Images/rwd_pad_strawberry.jpg);
     }
 
     .claudia-detailed-text {
-        // width: 270px;
-        // height: 105px;
         position: absolute;
-        // top: 210px;
-        left: 230px;
+        top: 380px;
+        left: 135px;
+    }
+
+    .claudia-detailed-text-1 {
+        font-size: 50px;
+    }
+
+    .claudia-detailed-text-2 {
+        font-size: 36px;
     }
 
 }
 
 //--------------------------------Ipad---------------------------------
 
+//---------------------------Iphone 6/7/8 Plus-------------------------
 
-//----------------------Iphone 6/7/8 + Plus + X------------------------
-
-@media only screen and (max-width: 576px) {
+@media screen and (min-width: 375px) and (max-width: 576px) {
     .claudia-fake-navbar {
         width: 100vw;
         height: 100px;
     }
+
+    .claudia-detailed-background-image {
+        width: 100vw;
+        height: 736px;
+        position: relative;
+        background-image: url(./Images/rwd_plus_strawberry.jpg);
+    }
+
+    .claudia-detailed-text {
+        width: 270px;
+        height: 105px;
+        position: absolute;
+        top: 230px;
+        left: 60px;
+    }
+
+    .claudia-detailed-text-1 {
+        font-size: 40px;
+
+    }
+
+    .claudia-detailed-text-2 {
+        font-size: 24px;
+    }
+}
+
+//---------------------------Iphone 6/7/8 Plus-------------------------
+
+
+//---------------------------Iphone 6/7/8 + X--------------------------
+
+@media only screen and (max-width: 375px) {
 
     .claudia-detailed-background-image {
         width: 100vw;
@@ -80,18 +117,9 @@
         top: 210px;
         left: 60px;
     }
-
-    .claudia-detailed-text-1 {
-        font-size: 40px;
-
-    }
-
-    .claudia-detailed-text-2 {
-        font-size: 24px;
-    }
 }
 
-//----------------------Iphone 6/7/8 + Plus + X------------------------
+//---------------------------Iphone 6/7/8 + X--------------------------
 
 
 

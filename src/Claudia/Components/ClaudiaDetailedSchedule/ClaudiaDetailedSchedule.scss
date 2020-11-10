@@ -207,14 +207,14 @@
 
 //--------------------------------Ipad---------------------------------
 @media screen and (min-width: 576px) and (max-width: 1200px) {
+    .claudia-detailed-schedule {
+        height: 1830px;
+    }
+
     .claudia-detailed-schedule-container {
         position: relative;
         height: 1600px;
         width: 380px;
-    }
-
-    .claudia-detailed-schedule {
-        height: 1730px;
     }
 
     .claudia-detailed-schedule h1 {
@@ -239,7 +239,7 @@
 
     .claudia-detailed-schedule-card1 {
         width: 400px;
-        height: 315px;
+        height: 400px;
     }
 
     .claudia-detailed-schedule-card1-text {
@@ -272,6 +272,7 @@
 
     .claudia-detailed-schedule-card2 {
         width: 400px;
+        height: 400px;
     }
 
     .claudia-detailed-schedule-card2-text {
@@ -303,6 +304,7 @@
 
     .claudia-detailed-schedule-card3 {
         width: 400px;
+        height: 400px;
     }
 
     .claudia-detailed-schedule-card3-text {
@@ -363,7 +365,7 @@
 
     .claudia-detailed-schedule-card5-text {
         position: absolute;
-        top: 1345px;
+        top: 1660px;
         left: 40px;
         display: block;
     }
@@ -394,7 +396,7 @@
     }
 
     .claudia-detailed-schedule {
-        height: 1830px;
+        height: 1530px;
     }
 
     .claudia-detailed-schedule h1 {
@@ -464,7 +466,7 @@
 
     .claudia-detailed-schedule-card2 img {
         position: absolute;
-        top: 450px;
+        top: 367px;
         left: 80px;
         width: 250px;
         height: 250px;
@@ -494,7 +496,7 @@
 
     .claudia-detailed-schedule-card3 img {
         position: absolute;
-        top: 870px;
+        top: 702px;
         left: 80px;
         width: 250px;
         height: 250px;
@@ -519,7 +521,7 @@
 
     .claudia-detailed-schedule-card4 img {
         position: absolute;
-        top: 1300px;
+        top: 1037px;
         left: 80px;
         width: 250px;
         height: 250px;
@@ -543,7 +545,7 @@
 
     .claudia-detailed-schedule-card5-text {
         position: absolute;
-        top: 1660px;
+        top: 1345px;
         left: 80px;
         display: block;
     }
