@@ -5,44 +5,69 @@ import { ReactComponent as WaveLine } from './Images/wave_line.svg'
 import InputH40 from './InputH40/InputH40'
 // import SelectBox from './../../../Share/Components/Input/SelectBox';
 import Button from './../../../Share/Components/Button/Button'
+import $ from 'jquery'
 
 function IrisDataEditSect(props) {
   const { currentUser } = props
   const [userInfo, setUserInfo] = useState([])
   // const [value, setValue] = useState()
 
+  // 更新會員資料
   const updateProfile = () => {
     const familyname = document.querySelector('#iris-member-family-name').value
     const givenname = document.querySelector('#iris-member-given-name').value
     const birthday = document.querySelector('#iris-member-birthday').value
     const mobile = document.querySelector('#iris-member-mobile').value
-    const password = document.querySelector('#iris-member-new-password').value
-    const email = document.querySelector('#iris-member-email').value
-    const address = document.querySelector('#iris-member-address').value
-    const newProfile = {
-      member_id: currentUser,
-      familyname: familyname,
-      givenname: givenname,
-      birthday: birthday,
-      mobile: mobile,
-      password: password,
-      email: email,
-      address: address,
-    }
-    // console.log(newProfile)
 
-    fetch('http://localhost:5000/member/updateProfile', {
-      method: 'POST',
-      body: JSON.stringify(newProfile),
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-      .then((r) => r.json())
-      .then((o) => {
-        console.log(o)
+    // 如果新密碼欄位value不一樣
+    if (
+      document.querySelector('#iris-member-new-password').value !==
+      document.querySelector('#iris-set-new-password').value
+    ) {
+      // 秀出提示
+      $('.iris-password-inconsistent').slideDown('slow')
+      // 2秒後消失
+      setTimeout(() => {
+        $('.iris-password-inconsistent').slideUp('slow')
+      }, 2000)
+      // 如果新密碼欄位value一樣就送出
+    } else {
+      let password
+      // 如果新密碼欄位有值的話
+      if (document.querySelector('#iris-member-new-password').value !== '') {
+        // 設定密碼為新密碼
+        password = document.querySelector('#iris-member-new-password').value
+      } else {
+        // 否則設定密碼為舊密碼(密碼不變)
+        password = document.querySelector('#iris-member-password').value
+      }
+      const email = document.querySelector('#iris-member-email').value
+      const address = document.querySelector('#iris-member-address').value
+      const newProfile = {
+        member_id: currentUser,
+        familyname: familyname,
+        givenname: givenname,
+        birthday: birthday,
+        mobile: mobile,
+        password: password,
+        email: email,
+        address: address,
+      }
+      // console.log(newProfile)
+
+      fetch('http://localhost:5000/member/updateProfile', {
+        method: 'POST',
+        body: JSON.stringify(newProfile),
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }),
       })
+        .then((r) => r.json())
+        .then((o) => {
+          console.log(o)
+        })
+    }
   }
 
   // -------- 取得目前user的資料 ---------- //
@@ -90,7 +115,12 @@ function IrisDataEditSect(props) {
     let address = document.querySelector('#iris-member-address')
     familyname.value = userFamilyName
     givenname.value = userGivenName
-    birthday.value = userBirthday
+    // 讓新註冊會員的生日顯示為空值
+    if (userBirthday !== '1899-11-29') {
+      birthday.value = userBirthday
+    } else {
+      birthday.value = ''
+    }
     mobile.value = item.mobile
     oldPassword.value = item.password
     email.value = item.email
@@ -148,7 +178,11 @@ function IrisDataEditSect(props) {
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">新密碼</div>
-                <InputH40 type="password" placeholder="" />
+                <InputH40
+                  type="password"
+                  placeholder=""
+                  id="iris-set-new-password"
+                />
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">確認新密碼</div>
@@ -157,6 +191,9 @@ function IrisDataEditSect(props) {
                   placeholder=""
                   id="iris-member-new-password"
                 />
+              </div>
+              <div class="iris-password-inconsistent">
+                *密碼不符，請再次確認
               </div>
               <div className="d-flex no-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">信箱</div>
