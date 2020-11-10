@@ -104,12 +104,12 @@ function IrisDataEditSect(props) {
           <h2 className="iris-profile-title">我的最愛</h2>
           <WaveLine />
         </div>
-        <div className="iris-cards-container d-flex">
+        <div className="iris-cards-container row">
           {currentUserFav.map((item, index) => {
             const imageId = 'card-img-' + item.product_sid
             const price = '$' + item.price
             return (
-              <div>
+              <div class="col-4">
                 <Card
                   key={item.sid}
                   title={item.productname}

@@ -4,8 +4,8 @@
   padding-left: 5%;
   padding-right: 5%;
   margin-top: 6rem;
-  justify-content: space-between;
   flex-wrap: wrap;
+  display: flex;
 }
 
 .iris-cards-container .card-container {
@@ -83,7 +83,7 @@
   // margin-bottom: -0.3rem;
   position: absolute;
   top: -1.2rem;
-  right: -.3rem;
+  right: -0.3rem;
 }
 
 // .card-price {
