@@ -24,6 +24,10 @@ function AddressTabs(props) {
     setAddress,
   } = props
 
+  // console.log('datacountries', datacountries)
+  // console.log('datatownships', datatownships)
+  // console.log('dataprice', dataprice)
+
   // const updateAddress = () => {
   //   const address = document.querySelector('.jan-address-input').value
 
@@ -113,7 +117,7 @@ function AddressTabs(props) {
                       }}
                       style={{ fontSize: '1.5rem' }}
                       className="form-control iris-mainpage-select"
-                      id="exampleFormControlSelect1"
+                      id="exampleFormControlSelect2"
                     >
                       <option value={-1}>點我選擇區域</option>
                       {county > -1 &&
@@ -200,31 +204,48 @@ function AddressTabs(props) {
 
   // B
   const shopAddress = () => {
-    if (document.getElementById('shop1').setAttribute('checked', true)) {
-      setCounty('新北市')
-      setTownship('汐止區')
-      setAddress('新台五路一段96號1樓-東科店')
+    var radios = document.getElementsByName('shop')
+
+    for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+        // do whatever you want with the checked radio
+        console.log('radios', radios[i].value)
+        if (radios[i].value == 1) {
+          setCounty(1)
+          setTownship(1)
+          setAddress('新台五路一段96號1樓-東科店')
+          console.log('2222')
+        }
+        // only one radio can be logically checked, don't check the rest
+        break
+      }
     }
-    if (document.getElementById('shop2').setAttribute('checked', true)) {
-      setCounty('台北市')
-      setTownship('大安區')
-      setAddress('安和路一段111號-安永鮮物_安和店')
-    }
-    if (document.getElementById('shop3').setAttribute('checked', true)) {
-      setCounty('台北市')
-      setTownship('松山區')
-      setAddress('八德路二段371號-歐克法咖啡_八德店')
-    }
-    if (document.getElementById('shop4').setAttribute('checked', true)) {
-      setCounty('台北市')
-      setTownship('南港區')
-      setAddress('重陽路263巷1號B1-南港店')
-    }
-    if (document.getElementById('shop5').setAttribute('checked', true)) {
-      setCounty('台北市')
-      setTownship('大安區')
-      setAddress('和平東路二段223號-大安店')
-    }
+
+    // if (document.getElementById('shop1').setAttribute('checked', true)) {
+    //   setCounty('新北市')
+    //   setTownship('汐止區')
+    //   setAddress('新台五路一段96號1樓-東科店')
+    // }
+    // if (document.getElementById('shop2').setAttribute('checked', true)) {
+    //   setCounty('台北市')
+    //   setTownship('大安區')
+    //   setAddress('安和路一段111號-安永鮮物_安和店')
+    // }
+    // if (document.getElementById('shop3').setAttribute('checked', true)) {
+    //   setCounty('台北市')
+    //   setTownship('松山區')
+    //   setAddress('八德路二段371號-歐克法咖啡_八德店')
+    // }
+    // if (document.getElementById('shop4').setAttribute('checked', true)) {
+    //   setCounty('台北市')
+    //   setTownship('南港區')
+    //   setAddress('重陽路263巷1號B1-南港店')
+    // }
+    // if (document.getElementById('shop5').setAttribute('checked', true)) {
+    //   setCounty('台北市')
+    //   setTownship('大安區')
+    //   setAddress('和平東路二段223號-大安店')
+    // }
   }
   const ComponentB = (props) => {
     // console.log(document.getElementById('shop1'))
@@ -265,7 +286,7 @@ function AddressTabs(props) {
                 className="jan-shops-button float-right"
               >
                 <button
-                  // onClick={}
+                  onClick={shopAddress}
                   className="button-btn-y "
                   text="確認自取地點"
                 >

@@ -107,8 +107,8 @@ function VNavbar(props) {
             <img alt="" src={mapLocator} className="icons-jan" />
             <p className="titles-jan">取餐地址：</p>
             <p onClick={() => setStatus(true)} className="address-input-jan">
-              {county}
-              {township}
+              {datacountries[county]}
+              {county === -1 ? '' : datatownships[county][township]}
               {address}
             </p>
           </div>

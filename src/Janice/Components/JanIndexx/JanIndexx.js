@@ -30,16 +30,17 @@ function JanIndexx(props) {
 
   //品牌特色切換
   function intro1() {
+    // console.log('hi')
     document.querySelector('.jan-farmer-icon').style =
-      'background-size: 9.5rem 9.5rem;transition:0.5s'
+      'background: url("./Images/Svg/farmer-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s'
     document.querySelector('.jan-diet-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-choices-icon').style =
-      'background-size: 7.5rem 7.5rem;transition:0.5s'
+      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s'
     document.querySelector('.jan-network-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-kcal-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-index-feature-triangle').style =
       'left:5.2%;transition:0.3s'
     document.querySelector('.jan-intro1').style = 'display:flex;transition:0.3s'
@@ -50,15 +51,15 @@ function JanIndexx(props) {
   }
   function intro2() {
     document.querySelector('.jan-farmer-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-diet-icon').style =
-      'background-size: 9.5rem 9.5rem;transition:0.5s'
+      'background: url("./Images/Svg/diet-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s'
     document.querySelector('.jan-choices-icon').style =
-      'background-size: 7.5rem 7.5rem;transition:0.5s'
+      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s'
     document.querySelector('.jan-network-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-kcal-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-index-feature-triangle').style =
       'left:27%;transition:0.3s'
     document.querySelector('.jan-intro1').style = 'display:none'
@@ -69,15 +70,15 @@ function JanIndexx(props) {
   }
   function intro3() {
     document.querySelector('.jan-farmer-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-diet-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-choices-icon').style =
-      'background-size: 9rem 9rem;transition:0.5s'
+      'background: url("./Images/Svg/choices-o.svg") center center no-repeat;background-size: 9rem 9rem;transition:0.5s'
     document.querySelector('.jan-network-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-kcal-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-index-feature-triangle').style =
       'left:48.5%;transition:0.3s'
     document.querySelector('.jan-intro1').style = 'display:none'
@@ -88,15 +89,15 @@ function JanIndexx(props) {
   }
   function intro4() {
     document.querySelector('.jan-farmer-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-diet-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-choices-icon').style =
-      'background-size: 7.5rem 7.5rem;transition:0.5s'
+      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s'
     document.querySelector('.jan-network-icon').style =
-      'background-size: 9.5rem 9.5rem;transition:0.5s'
+      'background: url("./Images/Svg/network-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s'
     document.querySelector('.jan-kcal-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-index-feature-triangle').style =
       'left:70.5%;transition:0.3s'
     document.querySelector('.jan-intro1').style = 'display:none'
@@ -107,15 +108,15 @@ function JanIndexx(props) {
   }
   function intro5() {
     document.querySelector('.jan-farmer-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-diet-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-choices-icon').style =
-      'background-size: 7.5rem 7.5rem;transition:0.5s'
+      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s'
     document.querySelector('.jan-network-icon').style =
-      'background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
     document.querySelector('.jan-kcal-icon').style =
-      'background-size: 9.5rem 9.5rem;transition:0.5s'
+      'background: url("./Images/Svg/kcal-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s'
     document.querySelector('.jan-index-feature-triangle').style =
       'left:92%;transition:0.3s;'
     document.querySelector('.jan-intro1').style = 'display:none'
@@ -130,6 +131,7 @@ function JanIndexx(props) {
     const downloadArea = document.querySelector('.jan-download-area')
     const info = document.querySelector('.jan-app-info')
     const downloadIcon = document.querySelector('.jan-col-download')
+    // const janAppIcon = document.querySelector('.jan-app-logo')
     if (window.scrollY > 0.1 && downloadArea && info && downloadIcon) {
       downloadArea.style = 'left:-29rem;transition:0.5s'
       info.style = 'display:none;transition:0.5s'
@@ -138,7 +140,7 @@ function JanIndexx(props) {
     if (window.scrollY === 0 && downloadArea && info && downloadIcon) {
       downloadArea.style = 'left:0rem;transition:0.5s'
       info.style = 'display:block;transition:0.5s'
-      downloadIcon.style = 'display:none;transition:0.5s'
+      downloadIcon.style = 'display:none;transition:0.5s
     }
     if (downloadArea && info && downloadIcon) {
       downloadIcon.addEventListener('click', () => {
@@ -609,7 +611,7 @@ function JanIndexx(props) {
 
       {/* 購物流程 */}
       {/* 背景圖 */}
-      <div className="container-fluid jan-p0 jan-shopping-process">
+      <div className="container-fluid jan-p0 jan-shopping-process m-0">
         {/* 模糊效果 */}
         <div className="jan-blur d-flex align-items-center">
           {/* 黑灰文字區塊 */}
@@ -693,7 +695,7 @@ function JanIndexx(props) {
                               setCounty(+e.target.value)
                               console.log('zqaza', +e.target.value)
                               //重置township的值
-                              setTownship(0)
+                              // setTownship(0)
                               setTownship(-1)
                             }}
                             onClick={hideInfo}
@@ -723,7 +725,7 @@ function JanIndexx(props) {
                             }}
                             style={{ fontSize: '1.5rem' }}
                             className="form-control iris-mainpage-select"
-                            id="exampleFormControlSelect1"
+                            id="exampleFormControlSelect2"
                           >
                             <option value={-1}>點我選擇區域</option>
                             {county > -1 &&
