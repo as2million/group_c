@@ -185,6 +185,12 @@ function IrisLoginCard(props) {
           console.log(o)
         })
 
+      // 若註冊成功，顯示成功提示
+      $('.iris-register-alert').slideDown('slow')
+      // 2秒後消失
+      setTimeout(() => {
+        $('.iris-register-alert').slideUp('slow')
+      }, 2000)
       document.querySelector('#createaccount').value = ''
       document.querySelector('#createpassword').value = ''
       document.querySelector('#createmail').value = ''
