@@ -1,3 +1,5 @@
+// 11/9 備份
+
 import React, { useState, useEffect } from 'react'
 import './IrisLoginCard.scss'
 import { ReactComponent as LoginCardBg } from './Images/login_card.svg'
@@ -8,13 +10,7 @@ import ButtonLogin from './Button/ButtonLogin'
 import $ from 'jquery'
 
 function IrisLoginCard(props) {
-  const {
-    setIsLogin,
-    setCurrentUser,
-    isLogin,
-    SetShowSucessBox,
-    SetShowLoginCard,
-  } = props
+  const { setIsLogin, setCurrentUser, isLogin } = props
 
   // 變成註冊表單
   const ToRegisterForm = () => {
@@ -69,7 +65,7 @@ function IrisLoginCard(props) {
     }, 1100)
   }
 
-  // 登入
+  // 登入功能
   let userinfo = []
   // 拿資料庫會員資料
   async function getData() {
@@ -86,7 +82,6 @@ function IrisLoginCard(props) {
   }
 
   // 登入比對帳密
-  // 要用 async await, 先拿到資料再比對
   async function handleLogin() {
     await getData()
     const useraccount = document.querySelector('#useraccount').value
@@ -99,13 +94,10 @@ function IrisLoginCard(props) {
       ) {
         setIsLogin(true)
         setCurrentUser(userinfo[i].member_sid) // 設定目前使用者id
-        SetShowSucessBox(true) // 出現登入成功光箱
-        SetShowLoginCard(false) // 登入表單消失
-
-        // Test
-        setTimeout(() => {
-          SetShowLoginCard(true)
-        }, 10000)
+        document.querySelector('#useraccount').value = ''
+        document.querySelector('#userpassword').value = ''
+        // document.querySelector('.iris-success-checkmark').style.display =
+        //   'block'
       } else {
         // 若帳密錯誤，顯示錯誤提示
         $('.iris-login-alert').slideDown('slow')
@@ -127,18 +119,36 @@ function IrisLoginCard(props) {
     let email = document.querySelector('#createmail').value
     let mobile = document.querySelector('#createmobile').value
 
+    // 判斷input是否為空 s
+    const checkList = {
+      1: account,
+      2: password,
+      3: email,
+      4: mobile,
+      11: 'account',
+      12: 'password',
+      13: 'email',
+      14: 'mobile',
+    }
+
+    let i
+    for (i = 1; i < 5; i++) {
+      if (checkList[i] === '') {
+        $('.iris-empty-' + checkList[10 + i]).slideDown('slow')
+      }
+    }
+    // 判斷input是否為空 end
+
     // 帳號小於8碼
     if (!account.match(/[A-Za-z0-9]{8,24}/)) {
       $('.iris-empty-account').slideUp('slow')
       $('.iris-wrong-account-format').slideDown('slow')
       // 密碼小於8碼
-    }
-    if (!password.match(/[A-Za-z0-9]{8,24}/)) {
+    } else if (!password.match(/[A-Za-z0-9]{8,24}/)) {
       $('.iris-empty-password').slideUp('slow')
       $('.iris-wrong-password-format').slideDown('slow')
       // 信箱格式不符
-    }
-    if (
+    } else if (
       !email.match(
         /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
       )
@@ -146,8 +156,7 @@ function IrisLoginCard(props) {
       $('.iris-empty-email').slideUp('slow')
       $('.iris-wrong-email-format').slideDown('slow')
       // 手機格式不符
-    }
-    if (!mobile.match(/^09[0-9]{8}$/)) {
+    } else if (!mobile.match(/^09[0-9]{8}$/)) {
       $('.iris-empty-mobile').slideUp('slow')
       $('.iris-wrong-mobile-format').slideDown('slow')
     }
@@ -199,10 +208,12 @@ function IrisLoginCard(props) {
           <div className="iris-login-background">
             {/* <LoginCardBg /> */}
             <img src={require('./Images/login_card.png')} />
+            {/* <img src={require('./Images/login_card.png')} /> */}
           </div>
           <div className="iris-register-background">
             {/* <RegisterCardBg /> */}
             <img src={require('./Images/register_card.png')} />
+            {/* <img src={require('./Images/register_card.png')} /> */}
           </div>
         </div>
         <div className="iris-login-form">
@@ -256,34 +267,44 @@ function IrisLoginCard(props) {
             </div>
           </div>
 
+          {/* <div class="iris-success-checkmark">
+            <div class="iris-check-icon">
+              <span class="icon-line line-tip"></span>
+              <span class="icon-line line-long"></span>
+              <div class="icon-circle"></div>
+              <div class="icon-fix"></div>
+            </div>
+            <div class="iris-login-sucess">登入成功</div>
+          </div> */}
           {/* ----------------註冊表單----------------- */}
           <div className="iris-register-content">
             <div className="iris-register-title">會員註冊</div>
-            <div class="alert alert-success iris-register-alert" role="alert">
-              註冊成功
-            </div>
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">帳號</div>
               <InputH44 type="text" id="createaccount" />
             </div>
+            <div class="iris-empty-account">*此欄位為必填</div>
             <div class="iris-wrong-account-format">*帳號要大於8碼</div>
 
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">密碼</div>
               <InputH44 type="password" id="createpassword" />
             </div>
+            <div class="iris-empty-password">*此欄位為必填</div>
             <div class="iris-wrong-password-format">*密碼要大於8碼</div>
 
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">信箱</div>
               <InputH44 type="text" id="createmail" />
             </div>
+            <div class="iris-empty-email">*此欄位為必填</div>
             <div class="iris-wrong-email-format">*請填入正確的信箱格式</div>
 
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">手機</div>
               <InputH44 type="text" id="createmobile" />
             </div>
+            <div class="iris-empty-mobile">*此欄位為必填</div>
             <div class="iris-wrong-mobile-format">*請填入正確的手機格式</div>
 
             <div

@@ -1,5 +1,5 @@
 // 導入其它的模組
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Nav } from 'react-bootstrap'
 import './Navbar.scss'
 import 'antd/dist/antd.css'
@@ -17,7 +17,7 @@ function NavBar(props) {
   const [count, setCount] = useState(0)
   const [shoppingList, setShoppingList] = useState('0')
   const [showNav, setShowNav] = useState(true)
-  const { isLogin, setShowLoginModal, cartNumber } = props
+  const { isLogin, setShowLoginModal, cartNumber, setIsLogin } = props
 
   function myFunction() {
     const x = document.getElementById('NavBar')
@@ -27,6 +27,23 @@ function NavBar(props) {
       x.className = 'nav'
     }
   }
+
+  // 在登入狀態
+  if (isLogin === true) {
+    // 登入選項消失
+    document.querySelector('.iris-login-option').style.display = 'none'
+    // 顯示登出選項
+    document.querySelector('.iris-logout-option').style.display = 'block'
+  }
+
+  // 點擊登出
+  const showLoginOption = () => {
+    // 顯示登入選項,隱藏登出選項
+    setIsLogin(false)
+    document.querySelector('.iris-login-option').style.display = 'block'
+    document.querySelector('.iris-logout-option').style.display = 'none'
+  }
+
   return (
     <>
       <div className="nav" id="NavBar">
@@ -89,7 +106,7 @@ function NavBar(props) {
               </Nav.Link>
 
               <li className="navBar-jess-navigation_item">
-                <Nav.Link as={NavLink} to="/">
+                <Nav.Link as={NavLink} to="/getcoupon">
                   專屬優惠
                 </Nav.Link>
               </li>
@@ -106,7 +123,7 @@ function NavBar(props) {
                   <ul className="navBar-jess-dropdown2">
                     <div className="navBar-jess-triangle2"></div>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/orderComment">
+                      <Nav.Link as={NavLink} to="/orderManagement">
                         訂單管理
                       </Nav.Link>
                     </li>
@@ -126,16 +143,25 @@ function NavBar(props) {
                       </Nav.Link>
                       <Monster className="navBar-jess-monster4" />
                     </li>
-                    {/* 10/31 iris修改(把route拿掉) */}
+
                     <li
-                      className="navBar-jess-dropdown_item"
+                      className="navBar-jess-dropdown_item iris-login-option"
                       onClick={() => {
                         setShowLoginModal(true)
                       }}
                     >
-                      {/* <Nav.Link as={NavLink} to="/login"> */}
-                      登入/登出
-                      {/* </Nav.Link> */}
+                      登入/註冊
+                    </li>
+                    {/* 11/9 新增登出選項 */}
+                    <li
+                      className="navBar-jess-dropdown_item iris-logout-option"
+                      onClick={() => {
+                        setShowLoginModal(true)
+                        setIsLogin(false)
+                        showLoginOption()
+                      }}
+                    >
+                      登出
                     </li>
                   </ul>
                 </div>

@@ -6,7 +6,7 @@ import VNavbar from './../Share/Components/VNavbar/VNavbar';
 import Footer from './../Share/Components/Footer/Footer';
 import Test from './Pages/Test';
 import Test2 from './Pages/Test2';
-import IrisProfilePage from './Pages/IrisProfilePage';
+import IrisUserprofile from './Pages/IrisUserprofile';
 import IrisOrderComment from './Pages/IrisOrderComment';
 import IrisMyFav from './Pages/IrisMyFav';
 import IrisBeastiePoint from './Pages/IrisBeastiePoint';
@@ -42,7 +42,7 @@ function IrisApp() {
               <Test2 name={name} />
             </Route>
             <Route path="/memberUserprofile">
-              <IrisProfilePage isLogin={isLogin} />
+              <IrisUserprofile isLogin={isLogin} />
             </Route>
             <Route path="/orderComment">
               <IrisOrderComment />

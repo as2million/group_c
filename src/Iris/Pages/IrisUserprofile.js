@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect'
-import IrisMyFavSect from '../Components/IrisMyFavSect/IrisMyFavSect'
+import IrisDataEditSect from '../Components/IrisDataEditSect/IrisDataEditSect'
 import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
 
-function IrirsMyFav(props) {
+function IrisUserprofile(props) {
   const { isLogin, currentUser, setShowLoginModal } = props
   if (isLogin === false) {
     setShowLoginModal(true)
@@ -15,10 +15,10 @@ function IrirsMyFav(props) {
     <>
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect currentUser={currentUser} />
-        <IrisMyFavSect currentUser={currentUser} />
+        <IrisDataEditSect currentUser={currentUser} />
       </div>
     </>
   )
 }
 
-export default IrirsMyFav
+export default IrisUserprofile

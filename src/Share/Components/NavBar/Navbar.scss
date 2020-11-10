@@ -386,11 +386,22 @@ html {
   line-height: 2.5rem;
   font-size: 1.8rem;
 }
-// 10/31 iris新增
+
 //會員下拉式選單的登入/登出 hover後效果
 .nav
   .navBar-jess-navigation_item
   .navBar-jess-dropdown2
   .navBar-jess-dropdown_item:hover {
   cursor: pointer;
+}
+
+// 11/9 iris新增登出選項
+.iris-login-option {
+  display: block;
+}
+
+.iris-logout-option {
+  display: none;
+  // opacity: 0;
+  // pointer-events: none;
 }
