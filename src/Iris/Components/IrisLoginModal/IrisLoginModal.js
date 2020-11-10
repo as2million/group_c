@@ -67,7 +67,7 @@ function IrisLoginModal(props) {
           SetShowLoginCard={SetShowLoginCard}
         />
       </div>
-      <div class="container iris-sucess-container">
+      <div class="iris-sucess-container">
         <IrisSuccessBox />
       </div>
     </>
