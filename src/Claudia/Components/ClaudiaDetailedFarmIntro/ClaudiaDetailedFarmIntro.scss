@@ -1,3 +1,4 @@
+//------------------------------Desktop--------------------------------
 .claudia-detailed-farm-intro {
     width: 1440px;
     height: 1480px;
@@ -137,7 +138,24 @@
     right: 140px;
 }
 
-@media only screen and (max-width: 57.6rem) {
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+
+    .claudia-detailed-farm-intro h1 {
+        font-size: 2.8rem;
+        margin: 40px 0px;
+    }
+
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
 
     .claudia-detailed-farm-intro{
         width: 100%;
@@ -259,5 +277,6 @@
         right: 18px;
     }
 }
+//----------------------Iphone 6/7/8 + Plus + X------------------------
 
 

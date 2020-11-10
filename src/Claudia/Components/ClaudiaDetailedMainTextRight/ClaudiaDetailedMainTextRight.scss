@@ -1,3 +1,4 @@
+//------------------------------Desktop--------------------------------
 .claudia-detailed-maintext-signup {
     background-color: #fff;
     border-radius: 40px;
@@ -80,7 +81,9 @@
 .claudia-signup-date-button button{
     height: 45px;
 }
+//------------------------------Desktop--------------------------------
 
+//--------------------------------Ipad---------------------------------
 
 @media screen and (min-width: 576px) and (max-width: 1200px) {
     
@@ -96,8 +99,11 @@
         padding: 10px 20px;
     }
 
-
 }
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
 
 @media only screen and (max-width: 576px) {
     .claudia-detailed-maintext-signup {
@@ -120,9 +126,8 @@
         height: 50px;
         margin-top: 10px;
     }
-
-
-
 }
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
 
 
