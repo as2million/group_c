@@ -6,8 +6,6 @@ import Footer from 'Share/Components/Footer/Footer'
 // import NotFoundPage from "Share/Components/NotFoundPage/NotFoundPage";
 
 // 引入 所有人的總元件
-// import NameApp from "Name/NameApp";
-
 import RuProudctList from 'Ru/Pages/RuProudctList'
 import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'
 import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'
@@ -43,7 +41,7 @@ function App() {
 
   useEffect(() => {
     console.log(amount)
-    return () => {}
+    return () => { }
   }, [amount])
 
   return (
@@ -56,38 +54,6 @@ function App() {
 
         {/* 路由設定開始 */}
         <Switch>
-          {/* janice */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/">
-            <JanIndex />
-          </Route> */}
-
-          {/* jess */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/menu">
-            <JessMenu />
-          </Route>
-          <Route exact path="/bento/:id">
-            <JessBento />
-          </Route>
-          <Route exact path="/vegBox">
-            <JessVegBox />
-          </Route> */}
-
-          {/* iris */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/memberUserprofile">
-            <IrisUserprofile />
-          </Route>
-          <Route exact path="/orderComment">
-            <IrisOrderComment />
-          </Route>
-          <Route exact path="/myFav">
-            <IrisMyFav />
-          </Route>
-          <Route exact path="/beastiePoint">
-            <IrisBeastiePoint />
-          </Route> */}
 
           {/* ru */}
           {/* 放"page資料夾"內的元件 */}
@@ -110,27 +76,6 @@ function App() {
               setAmount={setAmount}
             />
           </Route>
-
-          {/* cha */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/cart">
-            <ChaCart />
-          </Route>
-          <Route exact path="/groupOrder/groupOrderCreate">
-            <ChaGroupOrder />
-          </Route>
-          <Route exact path="/orderManagement">
-            <ChaOrderManagement />
-          </Route> */}
-
-          {/* claudia */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/farmMap">
-            <ClaudiaFarmIndex />
-          </Route>
-          <Route exact path="/farmIntro">
-            <ClaudiaFarmDetailedPage />
-          </Route> */}
 
           {/* 404 */}
 
