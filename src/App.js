@@ -46,6 +46,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState() // 目前用戶
   const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
   const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
+  const [showLoginCard, SetShowLoginCard] = useState(true) //
 
   //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address)到你們的頁面--------------//
   const [county, setCounty] = useState(-1)
@@ -86,6 +87,7 @@ function App() {
             amount={amount}
             setShowLoginModal={setShowLoginModal}
             showLoginModal={showLoginModal}
+            SetShowLoginCard={SetShowLoginCard}
             setIsLogin={setIsLogin}
             isLogin={isLogin}
           />

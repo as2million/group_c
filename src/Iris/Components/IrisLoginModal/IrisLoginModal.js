@@ -4,9 +4,7 @@ import IrisLoginCard from './../IrisLoginCard/IrisLoginCard'
 import IrisSuccessBox from './../IrisSuccessBox/IrisSuccessBox'
 
 function IrisLoginModal(props) {
-  const [showSucessBox, SetShowSucessBox] = useState(false)
-  const [showLoginCard, SetShowLoginCard] = useState(true)
-
+  const [showSuccessBox, setShowSuccessBox] = useState(false)
   const {
     showLoginModal,
     setShowLoginModal,
@@ -25,21 +23,11 @@ function IrisLoginModal(props) {
     } else {
       document.querySelector('.iris-login-mask').style.display = 'none'
       document.querySelector('.iris-login-container').style.display = 'none'
-      document.querySelector('.iris-sucess-container').style.display = 'none'
+      // document.querySelector('.iris-sucess-container').style.display = 'none'
       document.documentElement.style.overflowY = 'scroll'
     }
   }
 
-  if (showLoginCard === false) {
-    document.querySelector('.iris-login-container').style.display = 'none'
-  }
-  if (showSucessBox) {
-    if (showSucessBox === true) {
-      document.querySelector('.iris-sucess-container').style.display = 'block'
-    } else {
-      document.querySelector('.iris-sucess-container').style.display = 'none'
-    }
-  }
 
   return (
     <>
@@ -47,29 +35,23 @@ function IrisLoginModal(props) {
         className="iris-login-mask"
         onClick={() => {
           setShowLoginModal(false) // 點擊黑色遮罩把ShowLoginModa把改回false
-          SetShowSucessBox(false)
         }}
       ></div>
       <div class="container iris-login-container">
-        {/* <div
-          className="iris-login-background"
-          onClick={(e) => {
-            console.log('pink');
-            e.stopPropagation();
-          }}
-        ></div> */}
-
         <IrisLoginCard
           setIsLogin={setIsLogin}
           setCurrentUser={setCurrentUser}
           isLogin={isLogin}
-          SetShowSucessBox={SetShowSucessBox}
-          SetShowLoginCard={SetShowLoginCard}
+          setShowSuccessBox={setShowSuccessBox}
+          setShowLoginModal={setShowLoginModal}
         />
       </div>
-      <div class="iris-sucess-container">
-        <IrisSuccessBox />
-      </div>
+      {/* <div class="iris-login-success-element"> */}
+      <IrisSuccessBox
+        showSuccessBox={showSuccessBox}
+        setShowSuccessBox={setShowSuccessBox}
+      />
+      {/* </div> */}
     </>
   )
 }

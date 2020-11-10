@@ -6,14 +6,16 @@ import InputH44 from './../../../Share/Components/Input/InputH44.js'
 import Button from './Button/Button'
 import ButtonLogin from './Button/ButtonLogin'
 import $ from 'jquery'
+// import IrisSuccessBox from './../IrisSuccessBox/IrisSuccessBox'
 
 function IrisLoginCard(props) {
   const {
     setIsLogin,
     setCurrentUser,
     isLogin,
-    SetShowSucessBox,
+    setShowSuccessBox,
     SetShowLoginCard,
+    setShowLoginModal,
   } = props
 
   // 變成註冊表單
@@ -99,13 +101,8 @@ function IrisLoginCard(props) {
       ) {
         setIsLogin(true)
         setCurrentUser(userinfo[i].member_sid) // 設定目前使用者id
-        SetShowSucessBox(true) // 出現登入成功光箱
-        SetShowLoginCard(false) // 登入表單消失
-
-        // Test
-        setTimeout(() => {
-          SetShowLoginCard(true)
-        }, 10000)
+        setShowLoginModal(false) // 登入光箱消失
+        setShowSuccessBox(true) // 出現登入成功光箱)
       } else {
         // 若帳密錯誤，顯示錯誤提示
         $('.iris-login-alert').slideDown('slow')

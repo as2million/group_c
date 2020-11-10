@@ -17,7 +17,13 @@ function NavBar(props) {
   const [count, setCount] = useState(0)
   const [shoppingList, setShoppingList] = useState('0')
   const [showNav, setShowNav] = useState(true)
-  const { isLogin, setShowLoginModal, cartNumber, setIsLogin } = props
+  const {
+    isLogin,
+    setShowLoginModal,
+    cartNumber,
+    setIsLogin,
+    SetShowLoginCard,
+  } = props
 
   function myFunction() {
     const x = document.getElementById('NavBar')
