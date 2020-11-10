@@ -6,8 +6,9 @@ import ClaudiaModalFrame from '../ClaudiaModalFrame/ClaudiaModalFrame';
 import ClaudiaModalContent from '../ClaudiaModalContent/ClaudiaModalContent';
 import { Link, withRouter } from 'react-router-dom'
 
-function ClaudiaDetailedMainTextRight() {
+function ClaudiaDetailedMainTextRight(props) {
     const [status, setStatus] = useState(false);
+    const { handleCartNumber } = props;
 
     return (
         <>
@@ -15,7 +16,7 @@ function ClaudiaDetailedMainTextRight() {
             { status &&
                 (<ClaudiaModalFrame
                     closeModal={() => setStatus(false)}>
-                    <ClaudiaModalContent />
+                    <ClaudiaModalContent handleCartNumber={handleCartNumber} />
                 </ClaudiaModalFrame>)}
 
             {/* Page Content */}

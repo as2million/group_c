@@ -129,7 +129,6 @@
     width: 315px;
     height: 105px;
     background-color: #F7EDE2;
-    color: #858585; 
     padding: 10px 15px;
 
 }
@@ -139,6 +138,7 @@
     font-size: 1.2rem;
     display: flex;
     align-items: center;
+    color: #858585; 
 }
 
 .claudia-modal-middle-group-notes-title {
@@ -250,7 +250,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 0.8rem;
+    padding-top: 1.5rem;
     cursor: pointer;
   }
   
@@ -275,7 +275,7 @@
   }
   
   .claudia-modal-counter-count p {
-    margin: 0;
+    margin: 0px;
     user-select: none;
   }
   
@@ -370,6 +370,11 @@
     }
 
     //FRIST BLOCK
+
+    .claudia-modal-inline {
+        margin-top: 0px
+
+    }
 
     .claudia-modal-inline h2 {
         font-size: 1.4rem;
@@ -520,7 +525,7 @@
     //FOURTH BLOCK
 
     .claudia-modal-last-block {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         display: flex;
         align-items: center;
     }

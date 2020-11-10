@@ -5,14 +5,14 @@
     padding-bottom: 6rem;
 }
 
-#claudia-index-card {
+.claudia-index-card {
     width: 50%;
     height: 690px;
-    margin-left: 30px;
+    padding: 35px 0px 0px 30px;
 
 }
 
-#claudia-index-map {
+.claudia-index-map {
     width: 50%;
     height: 690px;
 }
@@ -21,16 +21,19 @@
     .claudia-index-content-container {
         display: block;
         padding-bottom: 0px;
+        width: 100vw;
     }
 
-    #claudia-index-map {
+    .claudia-index-map {
         width: 50%;
         height: 470px;
         padding-top: 20px;
     }
 
-    #claudia-index-card {
-        display: none;
+    .claudia-index-card {
+        height: 0px;
+        width: 100%;
+        padding: 30px 0px 0px 0px;
     }
 
 }

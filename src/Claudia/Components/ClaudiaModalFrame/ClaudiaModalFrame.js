@@ -6,7 +6,7 @@ const ClaudiaModalFrame = (props) => {
     const { closeModal } = props;
 
     return (
-        <div className="overlay">
+        <div className="claudia-overlay">
             <div className="claudia-modal-bg">
                 <img onClick={closeModal} className="claudia-modal-cross-img" alt="" src={Cross} />
                 {props.children}

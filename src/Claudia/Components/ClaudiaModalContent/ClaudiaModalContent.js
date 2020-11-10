@@ -6,37 +6,12 @@ import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 import selectArrow from './Images/selectArrow.svg';
 
-function ClaudiaModalContent() {
-
-    //adult total price
+function ClaudiaModalContent(props) {
 
     const [total, setTotal] = useState(0);
+    const { handleCartNumber } = props;
 
-    const handleAdultTotal = (type) => {
 
-        if ((total - 800) >= 0
-            // && counter>0
-            && type === 'decrement') {
-            setTotal(total - 800);
-        }
-        if (type === 'increment') {
-            setTotal(total + 800);
-        }
-
-    }
-
-    //child total price
-
-    const handleChildTotal = (type) => {
-        if ((total - 500) >= 0
-            // && counter>0
-            && type === 'decrement') {
-            setTotal(total - 500);
-        }
-        if (type === 'increment') {
-            setTotal(total + 500);
-        }
-    }
 
     //datepicker
     const [startDate, setStartDate] = useState(new Date());
@@ -128,10 +103,41 @@ function ClaudiaModalContent() {
         }
     }
 
+    //total count
+
+    const TotalCount = count1 + count2
+
     //rwdTotal
 
     const rwdTotal = () => {
         console.log('rwd')
+    }
+
+    //adult total price
+
+    const handleAdultTotal = (type) => {
+
+        if ((total - 800) >= 0
+            && count1 > 0
+            && type === 'decrement') {
+            setTotal(total - 800);
+        }
+        if (type === 'increment') {
+            setTotal(total + 800);
+        }
+    }
+
+    //child total price
+
+    const handleChildTotal = (type) => {
+        if ((total - 500) >= 0
+            && count2 > 0
+            && type === 'decrement') {
+            setTotal(total - 500);
+        }
+        if (type === 'increment') {
+            setTotal(total + 500);
+        }
     }
 
     return (
@@ -312,7 +318,9 @@ function ClaudiaModalContent() {
                         <span><b>總金額：</b></span>
                         <span className="claudia-modal-total-price-orange"><b>{total}</b></span>
                     </div>
-                    <div className="claudia-modal-cart-button"><button>加入購物車</button></div>
+                    <div className="claudia-modal-cart-button">
+                        <button onClick={() => handleCartNumber('add', TotalCount)}>加入購物車</button>
+                    </div>
 
                 </div>
 

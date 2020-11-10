@@ -6,7 +6,7 @@ function ArrowLeft(props) {
   return (
     <>
       <button className="arrowLeft-warp">
-        <img src={ArrowL} draggable="true" />
+        <img src={ArrowL} draggable="false"/>
       </button>
     </>
   );

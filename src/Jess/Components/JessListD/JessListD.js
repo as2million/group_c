@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './JessListD.scss'
 import 'antd/dist/antd.css'
-import Button from '../../';
-import { Rate, Button } from 'antd'
+import Button from '../../../Share/Components/Button/Button'
+import { Rate } from 'antd'
 import JessModal from '../JessModal/JessModal'
 // import JessCommentInput from '../JessCommentMsg/JessCommentInput'
 import JessCommentMsg from '../../Pages/JessCommentMsg'

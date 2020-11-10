@@ -14,7 +14,7 @@
 .claudia-detailed-text {
     font-family: 'Noto Serif TC';
     position: absolute;
-    top: 500px;
+    top: 400px;
     left: 200px;
     color: #fafafa;
     padding-bottom: 10px;
@@ -34,12 +34,12 @@
 @media only screen and (max-width: 57.6rem) {
     .claudia-fake-navbar {
         width: 100vw;
-        height: 120px;
+        height: 100px;
     }
 
     .claudia-detailed-background-image {
-        width: 375px;
-        height: 547px;
+        width: 100vw;
+        height: 667px;
         position: relative;
         background-image: url(./Images/rwd_strawberry.jpg);
     }
@@ -48,7 +48,7 @@
         width: 270px;
         height: 105px;
         position: absolute;
-        top: 90px;
+        top: 210px;
         left: 60px;
     }
 

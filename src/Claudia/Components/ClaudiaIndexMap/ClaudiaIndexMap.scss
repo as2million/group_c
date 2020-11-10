@@ -195,12 +195,6 @@
 }
 
 
-
-
-
-
-
-
 //map
 
 .claudia-index-map path {
@@ -220,11 +214,42 @@
 
 }
 
+.claudia-index-card-list-box-button {
+    width: 304px;
+    height: 110px;
+    color:  #66AB8C;
+    border: 2px solid #66AB8C;
+    border-radius: 30px;
+    background-color: #fff;
+    text-align: left;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+    //style
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color .35s, border 0s;
+}
+
 @media only screen and (max-width: 57.6rem) {
+
+    .claudia-index-map-inside {
+        width: 100vw;
+        height: 540px;
+        display: flex;
+        justify-content: center;
+        overflow: scroll;
+    }
 
     .claudia-index-map svg {
         width: 325px;
         height: 470px;
+        margin: 0px auto;
+        position: static;
+    }
+
+    .claudia-icon {
+        display: none;
     }
 
 }

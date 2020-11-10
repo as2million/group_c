@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import IrisMemberMenu from 'Cha/Components-demo/IrisMemberMenu/IrisMemberMenu'
+import IrisMemberMenuSect from './../../../Iris/Components/IrisMemberMenuSect/IrisMemberMenuSect'
 import IrisDataEdit from 'Cha/Components-demo/IrisDataEdit/IrisDataEdit'
 import ChaOrderManagement from 'Cha/Components/Cha-Order-Management/ChaOrderManagement'
 import './IrisProfilePageDemo.scss'
@@ -13,7 +13,7 @@ function IrisProfilePageDemo() {
       <NavBar />
       <VNavbar />
       <div className="container iris-userprofile-container">
-        <IrisMemberMenu />
+        <IrisMemberMenuSect />
         {/* <IrisDataEdit /> */}
         <ChaOrderManagement />
       </div>
