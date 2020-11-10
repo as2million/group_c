@@ -8,7 +8,13 @@ import {
 } from '../../../Janice/Components/JanIndexx/data.js'
 
 function AddressTabs(props) {
-  const { placeholder, closeModal } = props
+  // console.log(document.getElementById('shop1'))
+  // console.log(document.getElementById('shop2'))
+  // console.log(document.getElementById('shop3'))
+  // console.log(document.getElementById('shop3'))
+  // console.log(document.getElementById('shop5'))
+
+  const { closeModal } = props
   const {
     county,
     setCounty,
@@ -129,7 +135,7 @@ function AddressTabs(props) {
                   style={{ fontSize: '1.5rem' }}
                   className="form-control iris-inputH50"
                   type="text"
-                  placeholder="請輸入地址"
+                  placeholder="點我輸入地址"
                   value={tabInput}
                   onChange={(e) => setTabInput(e.target.value)}
                   autoFocus
@@ -138,6 +144,17 @@ function AddressTabs(props) {
 
               <br />
               <div className="jan-address-button float-right">
+                <div
+                  style={{
+                    width: '3rem',
+                    height: '3rem',
+                    cursor: 'pointer',
+                  }}
+                  className="jan-index-hide-demo float-left"
+                  onClick={(e) => setAddress('復興南路一段390號2樓')}
+                >
+                  demo
+                </div>
                 <button
                   onClick={showInfo}
                   type="button"
@@ -182,7 +199,40 @@ function AddressTabs(props) {
   }
 
   // B
+  const shopAddress = () => {
+    if (document.getElementById('shop1').setAttribute('checked', true)) {
+      setCounty('新北市')
+      setTownship('汐止區')
+      setAddress('新台五路一段96號1樓-東科店')
+    }
+    if (document.getElementById('shop2').setAttribute('checked', true)) {
+      setCounty('台北市')
+      setTownship('大安區')
+      setAddress('安和路一段111號-安永鮮物_安和店')
+    }
+    if (document.getElementById('shop3').setAttribute('checked', true)) {
+      setCounty('台北市')
+      setTownship('松山區')
+      setAddress('八德路二段371號-歐克法咖啡_八德店')
+    }
+    if (document.getElementById('shop4').setAttribute('checked', true)) {
+      setCounty('台北市')
+      setTownship('南港區')
+      setAddress('重陽路263巷1號B1-南港店')
+    }
+    if (document.getElementById('shop5').setAttribute('checked', true)) {
+      setCounty('台北市')
+      setTownship('大安區')
+      setAddress('和平東路二段223號-大安店')
+    }
+  }
   const ComponentB = (props) => {
+    // console.log(document.getElementById('shop1'))
+    // console.log(document.getElementById('shop2'))
+    // console.log(document.getElementById('shop3'))
+    // console.log(document.getElementById('shop3'))
+    // console.log(document.getElementById('shop5'))
+
     return (
       <div className="component d-flex justify-content-between ">
         <div className="jan-tab-shops-list-wrap">
@@ -209,12 +259,16 @@ function AddressTabs(props) {
               <p>台北市南港區重陽路263巷1號B1</p>
               <input type="radio" name="shop" id="shop5" value="5" />
               <label for="shop5">大安店:</label>
-              <p>台北市大安區和平東路二段223</p>
+              <p>台北市大安區和平東路二段223號</p>
               <div
                 onClick={closeModal}
                 className="jan-shops-button float-right"
               >
-                <button className="button-btn-y " text="確認自取地點">
+                <button
+                  // onClick={}
+                  className="button-btn-y "
+                  text="確認自取地點"
+                >
                   確認自取地點
                 </button>
               </div>

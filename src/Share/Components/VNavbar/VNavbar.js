@@ -10,6 +10,11 @@ import { addDays, setHours, setMinutes } from 'date-fns'
 import { registerLocale } from 'react-datepicker'
 import { zhTW } from 'date-fns/esm/locale'
 import AddressTabs from '../AddressTabs/AddressTabs'
+import {
+  datacountries,
+  datatownships,
+  dataprice,
+} from '../../../Janice/Components/JanIndexx/data.js'
 registerLocale('zh-TW', zhTW)
 
 function VNavbar(props) {
@@ -27,10 +32,8 @@ function VNavbar(props) {
     setHours(setMinutes(new Date(), 30), 11)
   )
   const [status, setStatus] = useState(false)
-
-  // const [county, setCounty] = useState('')
-  // const [district, setDistrict] = useState('')
-  // const [address, setAddress] = useState('')
+  // setCounty()
+  // setTownship()
 
   const addressData = (e) => {
     //未登入=>顯示input框
@@ -50,9 +53,9 @@ function VNavbar(props) {
         // console.log(address[0])
         // console.log(obj[0].address)
         console.log(obj)
-        setAddress(obj[0].address)
         setCounty(obj[0].county)
-        setTownship(obj[0].township)
+        setTownship(obj[0].district)
+        setAddress(obj[0].address)
       })
   }
   //如果登入的話，fetch會員的地址

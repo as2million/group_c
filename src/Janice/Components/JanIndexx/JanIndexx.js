@@ -19,8 +19,6 @@ import { datacountries, datatownships, dataprice } from './data'
 
 function JanIndexx(props) {
   const {
-    type,
-    id,
     county,
     setCounty,
     township,
@@ -698,7 +696,7 @@ function JanIndexx(props) {
                             }}
                             onClick={hideInfo}
                           >
-                            <option value={-1}>請選擇城市</option>
+                            <option value={-1}>點我選擇城市</option>
                             {datacountries.map((v, i) => (
                               <option key={i} value={i}>
                                 {v}
@@ -744,9 +742,8 @@ function JanIndexx(props) {
                       <input
                         style={{ fontSize: '1.5rem' }}
                         className="form-control iris-inputH50"
-                        type={type}
+                        type="text"
                         placeholder="請輸入地址"
-                        id={id}
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                       />
