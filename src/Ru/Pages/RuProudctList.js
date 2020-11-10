@@ -1,10 +1,11 @@
 import React from "react";
 import RuCompBento from "Ru/Components/RuComps/RuCompBento/RuCompBento";
 
-function RuProudctList() {
+function RuProudctList(props) {
+  const {handleAddCartNumber, currentUser} =props
   return (
     <>
-      <RuCompBento />
+      <RuCompBento handleAddCartNumber={handleAddCartNumber} currentUser={currentUser}/>
     </>
   );
 }

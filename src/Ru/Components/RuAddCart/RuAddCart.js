@@ -1,26 +1,27 @@
-import React, { useEffect } from "react";
-import "./Style.scss";
-import { TimelineMax, TimelineLite } from "gsap"; // npm install gsap react-gsap 安裝 tween套件
-import cart from "./Images/cart.svg";
+import React, { useEffect } from 'react'
+import './Style.scss'
+import { TimelineMax, TimelineLite } from 'gsap' // npm install gsap react-gsap 安裝 tween套件
+import cart from './Images/cart.svg'
 function RuAddCart(props) {
   // 目標的id一律用target
   // id 不同元件id
   // parentId 不同元件父母id
-  const { id, parentId } = props;
+  const { id, parentId, price, title, amount, handleAddCartNumber } = props
   // console.log(id, parentId);
 
   const addToCart = (e) => {
-    const $addBtn = document.getElementById(`${id}`);
-    const $target = document.getElementById("target");
+    // 執行加入購物車動畫
+    const $addBtn = document.getElementById(`${id}`)
+    const $target = document.getElementById('ru-target')
     // getBoundingClientRect() 取得元素相對於瀏覽器視窗的位置
-    let addBtnX = $addBtn.getBoundingClientRect().left + 75; // +75(button寬度的一半) 才會在正中心
-    let addBtnY = $addBtn.getBoundingClientRect().top + 22.5;
-    let targetX = $target.offsetLeft + 15;
-    let targetY = $target.offsetTop + 15;
-    let distanceX = Math.abs(targetX - addBtnX);
-    let distanceY = Math.abs(targetY - addBtnY);
-    let finalX = addBtnX + distanceX;
-    let finalY = targetY;
+    let addBtnX = $addBtn.getBoundingClientRect().left + 75 // +75(button寬度的一半) 才會在正中心
+    let addBtnY = $addBtn.getBoundingClientRect().top + 22.5
+    let targetX = $target.offsetLeft + 15
+    let targetY = $target.offsetTop + 15
+    let distanceX = Math.abs(targetX - addBtnX)
+    let distanceY = Math.abs(targetY - addBtnY)
+    let finalX = addBtnX + distanceX
+    let finalY = targetY
     // console.log(
     //   "按鈕X座標",
     //   addBtnX,
@@ -40,30 +41,47 @@ function RuAddCart(props) {
     //   finalY
     // );
 
-    const newEl = document.createElement("img");
-    let url = require("./Images/littleQ.svg"); // require() => 在react內 img的src可以用這個函式引入
-    newEl.setAttribute("src", url);
+    const newEl = document.createElement('img')
+    let url = require('./Images/littleQ.svg') // require() => 在react內 img的src可以用這個函式引入
+    newEl.setAttribute('src', url)
     // const newContent = document.createTextNode("Hi there and greetings!");
     // newEl.appendChild(newContent);
     newEl.setAttribute(
-      "style",
-      `width:30px; position: fixed; z-index:500; left:${addBtnX}; top: ${addBtnY}px; transform:translate(-50%,-50%);`
-    );
-    newEl.setAttribute("id", `obj`);
-    const $currentEl = document.getElementById(`${id}`);
-    const $currentElParent = document.getElementById(`${parentId}`);
-    $currentElParent.insertBefore(newEl, $currentEl.nextSibling); // 已存在元素的父層.insertBefoe('新元素', 已存在元素) => 在已存在元素之前加入新元素
+      'style',
+      `width:50px; position: fixed; z-index:9999; left:${addBtnX}; top: ${addBtnY}px; transform:translate(-50%,-50%);`
+    )
+    newEl.setAttribute('id', `obj`)
+    const $currentEl = document.getElementById(`${id}`)
+    const $currentElParent = document.getElementById(`${parentId}`)
+    $currentElParent.insertBefore(newEl, $currentEl.nextSibling) // 已存在元素的父層.insertBefoe('新元素', 已存在元素) => 在已存在元素之前加入新元素
     // 這邊加入nextSibling => 相當於將新元素加到已存在元素之後
-    new TimelineLite({ onComplete: removeNewEl }).to("#obj", 1, {
+    new TimelineLite({ onComplete: removeNewEl }).to('#obj', 1, {
       // onComplete: callback => 當當動畫結束時執行
       left: finalX,
       top: finalY,
-      width: "10px",
-    });
+      width: '10px',
+    })
     function removeNewEl() {
-      document.querySelector("#obj").remove();
+      document.querySelector('#obj').remove()
     }
-  };
+
+    // 執行加入localStorage
+    handleAddCartNumber('add', amount)
+    updateCartToLocalStorage({
+      // 設定要加入的資料
+      id: 7,
+      productName: '九九特餐-彩椒雞丁',
+      productPrice: 100,
+      productAmount: 1,
+    })
+  }
+
+  const updateCartToLocalStorage = (value) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+    const newCart = [...currentCart, value]
+    localStorage.setItem('cart', JSON.stringify(newCart))
+  }
 
   // useEffect(() => {
   //   const $target = document.querySelector(target);
@@ -83,7 +101,7 @@ function RuAddCart(props) {
         </button>
       </div>
     </>
-  );
+  )
 }
 
-export default RuAddCart;
+export default RuAddCart

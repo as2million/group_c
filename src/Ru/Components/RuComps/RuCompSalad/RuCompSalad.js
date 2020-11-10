@@ -13,36 +13,12 @@ import line from './Images/line.png';
 
 function RuCompSalad(props) {
   console.log(props);
+  const { handleAddCartNumber } = props
   const [searchInput, setSearchInput] = useState('');
 
   // JSX
   return (
     <>
-      {/* <div
-        className="fix"
-        style={{
-          width: '100%',
-          height: '135px',
-          backgroundColor: '#FF5151',
-          position: 'fixed',
-          zIndex: '300',
-        }}
-      >
-        我是navbar
-        <img
-          className="ru-cart target"
-          id="target"
-          style={{
-            width: '30px',
-            height: '30px',
-            backgroundColor: 'white',
-            position: 'absolute',
-            top: '50%',
-            left: '90%',
-          }}
-          // src={cart}
-        />
-      </div> */}
       <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
       <RuShowWidth />
 
@@ -121,7 +97,7 @@ function RuCompSalad(props) {
       </div>
 
       {/* 商品卡片區 s */}
-      <RuSalad />
+      <RuSalad handleAddCartNumber={handleAddCartNumber}/>
       {/* 商品卡片區 e */}
 
       {/* to top s */}

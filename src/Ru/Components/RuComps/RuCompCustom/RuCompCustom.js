@@ -1,48 +1,24 @@
-import React, { useState } from 'react';
-import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
-import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom';
-import RuButton from 'Ru/Components/RuButton/RuButton';
-import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar';
-import 'Ru/Components/RuComps/Style.scss';
+import React, { useState, useEffect } from 'react'
+import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth'
+import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom'
+import RuButton from 'Ru/Components/RuButton/RuButton'
+import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar'
+import 'Ru/Components/RuComps/Style.scss'
 
 // 引用共用元件
-import SearchBar from 'Share/Components/Input/SearchBar';
-import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
+import SearchBar from 'Share/Components/Input/SearchBar'
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
 // 引用圖片
-import line from './Images/line.png';
+import line from './Images/line.png'
 
 function RuCompCustom(props) {
-  console.log(props);
-  const [searchInput, setSearchInput] = useState('');
+  // console.log(props);
+  const { handleAddCartNumber, amount, setAmount } = props
+  const [searchInput, setSearchInput] = useState('')
 
   // JSX
   return (
     <>
-      {/* <div
-        className="fix"
-        style={{
-          width: '100%',
-          height: '135px',
-          backgroundColor: '#FF5151',
-          position: 'fixed',
-          zIndex: '300',
-        }}
-      >
-        我是navbar
-        <img
-          className="ru-cart target"
-          id="target"
-          style={{
-            width: '30px',
-            height: '30px',
-            backgroundColor: 'white',
-            position: 'absolute',
-            top: '50%',
-            left: '90%',
-          }}
-          // src={cart}
-        />
-      </div> */}
       <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
       <RuShowWidth />
 
@@ -121,7 +97,11 @@ function RuCompCustom(props) {
       </div>
 
       {/* 商品卡片區 s */}
-      <RuCustom />
+      <RuCustom
+        handleAddCartNumber={handleAddCartNumber}
+        setAmount={setAmount}
+        amount={amount}
+      />
       {/* 商品卡片區 e */}
 
       {/* to top s */}
@@ -132,7 +112,7 @@ function RuCompCustom(props) {
         我是footer
       </div> */}
     </>
-  );
+  )
 }
 
-export default RuCompCustom;
+export default RuCompCustom
