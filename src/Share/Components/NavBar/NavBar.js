@@ -169,7 +169,7 @@ function NavBar(props) {
 
               <li id="ru-target">
                 <span className="jess-navbarCartNum" id="jess-navbarCartNum">
-                  {count}
+                  {cartNumber}
                 </span>
                 <Popover
                   placement="bottomLeft"

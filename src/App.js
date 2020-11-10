@@ -17,10 +17,14 @@ import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
 import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon'
 import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal'
 import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement'
+import JessMenu from 'Jess/Pages/JessMenu'
+import JessBento from 'Jess/Pages/JessBento'
+import JessVegBox from 'Jess/Pages/JessVegBox'
 
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import ScrollToTop from '../src/Jess/Components/ScrollToTop'
 
 // 路由表
 function App() {
@@ -69,88 +73,103 @@ function App() {
         />
         {/* 放切頁時不重新渲染的部份 e*/}
         {/* 路由設定開始 */}
-        <Switch>
-          {/* claudia */}
-          {/* 放"page資料夾"內的元件 */}
-          <Route exact path="/farmMap">
-            <ClaudiaFarmIndex />
-          </Route>
-          <Route exact path="/farmIntro">
-            <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
-          </Route>
+        <ScrollToTop>
+          <Switch>
+            {/* claudia */}
+            {/* 放"page資料夾"內的元件 */}
+            <Route exact path="/farmMap">
+              <ClaudiaFarmIndex />
+            </Route>
+            <Route exact path="/farmIntro">
+              <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
+            </Route>
 
-          {/* ru */}
-          {/* 放"page資料夾"內的元件 */}
-          <Route exact path="/productList">
-            <RuProudctList
-              handleCartNumber={handleCartNumber}
-              currentUser={currentUser}
-            />
-          </Route>
-          <Route exact path="/productListSalad">
-            <RuProudctListSalad
-              handleCartNumber={handleCartNumber}
-              currentUser={currentUser}
-            />
-          </Route>
-          <Route exact path="/productListCustom">
-            <RuProudctListCustom
-              handleCartNumber={handleCartNumber}
-              amount={amount}
-              setAmount={setAmount}
-            />
-          </Route>
+            {/* ru */}
+            {/* 放"page資料夾"內的元件 */}
+            <Route exact path="/productList">
+              <RuProudctList
+                handleCartNumber={handleCartNumber}
+                currentUser={currentUser}
+              />
+            </Route>
+            <Route exact path="/productListSalad">
+              <RuProudctListSalad
+                handleCartNumber={handleCartNumber}
+                currentUser={currentUser}
+              />
+            </Route>
+            <Route exact path="/productListCustom">
+              <RuProudctListCustom
+                handleCartNumber={handleCartNumber}
+                amount={amount}
+                setAmount={setAmount}
+              />
+            </Route>
 
-          {/* 404 */}
+            {/* 404 */}
 
-          {/* <Route exact path="*">
+            {/* <Route exact path="*">
             <NotFoundPage />
           </Route> */}
-          {/* iris */}
-          {/* 放"page資料夾"內的元件 */}
-          <Route exact path="/memberUserprofile">
-            <IrisUserprofile
-              isLogin={isLogin}
-              currentUser={currentUser}
-              setShowLoginModal={setShowLoginModal}
-            />
-          </Route>
-          <Route exact path="/orderComment">
-            <IrisOrderComment
-              isLogin={isLogin}
-              currentUser={currentUser}
-              setShowLoginModal={setShowLoginModal}
-            />
-          </Route>
-          <Route exact path="/myFav">
-            <IrisMyFav
-              isLogin={isLogin}
-              currentUser={currentUser}
-              setShowLoginModal={setShowLoginModal}
-            />
-          </Route>
-          <Route exact path="/beastiePoint">
-            <IrisBeastiePoint
-              isLogin={isLogin}
-              currentUser={currentUser}
-              setShowLoginModal={setShowLoginModal}
-            />
-          </Route>
-          <Route path="/getCoupon">
-            <IrisGetCoupon
-              isLogin={isLogin}
-              currentUser={currentUser}
-              setShowLoginModal={setShowLoginModal}
-            />
-          </Route>
-          <Route path="/orderManagement">
-            <IrisOrderManagement
-              isLogin={isLogin}
-              currentUser={currentUser}
-              setShowLoginModal={setShowLoginModal}
-            />
-          </Route>
-        </Switch>
+            {/* iris */}
+            {/* 放"page資料夾"內的元件 */}
+            <Route exact path="/memberUserprofile">
+              <IrisUserprofile
+                isLogin={isLogin}
+                currentUser={currentUser}
+                setShowLoginModal={setShowLoginModal}
+              />
+            </Route>
+            <Route exact path="/orderComment">
+              <IrisOrderComment
+                isLogin={isLogin}
+                currentUser={currentUser}
+                setShowLoginModal={setShowLoginModal}
+              />
+            </Route>
+            <Route exact path="/myFav">
+              <IrisMyFav
+                isLogin={isLogin}
+                currentUser={currentUser}
+                setShowLoginModal={setShowLoginModal}
+              />
+            </Route>
+            <Route exact path="/beastiePoint">
+              <IrisBeastiePoint
+                isLogin={isLogin}
+                currentUser={currentUser}
+                setShowLoginModal={setShowLoginModal}
+              />
+            </Route>
+            <Route path="/getCoupon">
+              <IrisGetCoupon
+                isLogin={isLogin}
+                currentUser={currentUser}
+                setShowLoginModal={setShowLoginModal}
+              />
+            </Route>
+            <Route path="/orderManagement">
+              <IrisOrderManagement
+                isLogin={isLogin}
+                currentUser={currentUser}
+                setShowLoginModal={setShowLoginModal}
+              />
+            </Route>
+
+            {/* jess */}
+            {/* 放"page資料夾"內的元件 */}
+            <Route path="/menu">
+              <JessMenu />
+            </Route>
+            {/* component={JessBento} */}
+            <Route path="/bento/:id?">
+              <JessBento handleCartNumber={handleCartNumber} />
+            </Route>
+            <Route path="/vegBox">
+              <JessVegBox handleCartNumber={handleCartNumber} />
+            </Route>
+          </Switch>
+        </ScrollToTop>
         {/* 路由設定結束 */}
 
         {/* 放切頁時不重新渲染的部份 s*/}

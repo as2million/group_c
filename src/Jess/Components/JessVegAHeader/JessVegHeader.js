@@ -1,80 +1,226 @@
-import React, { useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
-import { Rate } from 'antd';
-import 'antd/dist/antd.css';
-import './JessVegHeader.scss';
-import Counter from '../../../Share/Components/Counter/Counter';
-import AddCart from 'Share/Components/AddCart/AddCart';
-import BreadCrumb from '../JessBreadCrumb/BreadCrumb';
-import AddFavorite from 'Share/Components/AddFavorite/AddFavorite';
+import React, { useState, useEffect } from 'react'
+import 'antd/dist/antd.css'
+import './JessVegHeader.scss'
+import AddCart from 'Share/Components/AddCart/AddCart'
+import BreadCrumb from '../JessBreadCrumb/BreadCrumb'
+import AddFavorite from 'Share/Components/AddFavorite/AddFavorite'
+import cart from '../../../Share/Components/AddCart/Images/cart.svg'
+import vegPic from './Images/vegetableBox_slick_pic2.png'
+import vegPic2 from './Images/VegBox2.jpg'
 
-function JessVegHeader() {
+function JessVegHeader(props) {
+  const [count, setCount] = useState(1)
+  const [total, setTotal] = useState(350)
+  const [veg, setVeg] = useState([])
+  const { handleCartNumber } = props
+
+  async function bentoData() {
+    const url = 'http://localhost:5000/product/bento'
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    const response = await fetch(request)
+    const data = await response.json()
+    // data會是一個array
+    // console.log(data)
+    // console.log(data[0].productname)
+
+    // setTotal(total.push(data))
+    // setTotal(data)
+    setVeg(data[22])
+    console.log(data[22])
+  }
+  const handleClick = (type) => {
+    if (type === 'increment') {
+      setCount(count + 1)
+    }
+    if (type === 'decrement' && count > 1) {
+      setCount(count - 1)
+    }
+  }
+  const handleTotal = (type) => {
+    if (total - 350 >= 0 && count > 0 && type === 'decrement') {
+      setTotal(total - 350)
+    }
+    if (type === 'increment') {
+      setTotal(total + 350)
+    }
+  }
+
+  useEffect(() => {
+    bentoData()
+  }, [])
+
+  const calA = (e) => {
+    setTabActive(e.target, '.jess-a')
+  }
+  const setTabActive = (addElem, removeName) => {
+    let removeTargets = document.querySelectorAll(removeName)
+    removeTargets.forEach((target) => {
+      target.classList.remove('active')
+      console.log(target)
+    })
+
+    addElem.classList.add('active')
+  }
+  const sizeA = (e) => {
+    setSizeActive(e.target, '.jess-b')
+  }
+  const setSizeActive = (addElem, removeName) => {
+    let removeTargets = document.querySelectorAll(removeName)
+    removeTargets.forEach((target) => {
+      target.classList.remove('active')
+      console.log(target)
+    })
+
+    addElem.classList.add('active')
+  }
+
+  const favA = (e) => {
+    setfavActive(e.target, '.fav')
+  }
+  const setfavActive = (addElem, removeName) => {
+    let removeTargets = document.querySelectorAll(removeName)
+    removeTargets.forEach((target) => {
+      target.classList.toggle('active')
+    })
+  }
+  function CreateCartToLocalStorage(value) {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+    const newCart = [...currentCart, value]
+    localStorage.setItem('cart', JSON.stringify(newCart))
+  }
   return (
     <>
       <div className="jess-fluidBg">
-        <div className="container jess-breadCrumb">
-          <BreadCrumb />
-        </div>
-        {/* <container className="jess-container"></container> */}
+        <div className="container jess-breadCrumb">{/* <BreadCrumb /> */}</div>
         <div className="jess-productList-VegPic">
-          {/* <img src={ChickenRice} alt="Background" />; */}
+          <img src={vegPic2}></img>
+          <img src={vegPic}></img>
         </div>
         <div className="jess-menuList ">
-          <AddFavorite />
-          <h1 className="jess-tittle">在地農作蔬菜箱</h1>
+          <div className="jess-fav ">
+            <button
+              className="addFavorite-btn addFavorite-btn-n fav"
+              onClick={favA}
+            ></button>
+          </div>
+
+          <h1 className="jess-tittle">{veg.productname}</h1>
           <p className="jess-text20Green mt-2">11月盛產季節限定</p>
-          <p className="jess-contentVeg">
-            在地特具有產地證明。
-            蔬菜箱內含5~6種當季蔬果，100%為台灣在地蔬菜，保證5台斤以上
-          </p>
+          <p className="jess-contentVeg">{veg.introduction}</p>
           <p className="jess-text20GreenTc">
             ・出貨日期： <span className="jess-text-15Gray">預計 4 天到貨</span>
           </p>
           <div className="row mt-3 ">
             <div className="col-2">
-              <button className="jess-calendar active">11/21 星期六</button>
+              <button className="jess-calendar jess-a active" onClick={calA}>
+                11/21 星期六
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-calendar">11/22 星期日</button>
+              <button className="jess-calendar jess-a" onClick={calA}>
+                11/22 星期日
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-calendar">11/22 星期日</button>
+              <button className="jess-calendar jess-a" onClick={calA}>
+                11/23 星期一
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-calendar">11/22 星期日</button>
+              <button className="jess-calendar jess-a" onClick={calA}>
+                11/24 星期二
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-calendar">11/22 星期日</button>
+              <button className="jess-calendar jess-a" onClick={calA}>
+                11/25 星期三
+              </button>
             </div>
           </div>
           <p className="jess-text20GreenTc mt-3">・尺寸</p>
           <div className="row mt-3 jess-VegSize ">
             <div className="col-2">
-              <button className="jess-size active">S</button>
+              <button className="jess-size jess-b active" onClick={sizeA}>
+                S
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-size">M</button>
+              <button className="jess-size jess-b" onClick={sizeA}>
+                M
+              </button>
             </div>
             <div className="col-2">
-              <button className="jess-size">L</button>
+              <button className="jess-size jess-b" onClick={sizeA}>
+                L
+              </button>
             </div>
           </div>
           <hr />
-          <div className="jess-productPrice">
-            <p className="jess-salePrice">$350</p>
+          <div className="jess-productPrice mt-1">
+            <p className="jess-salePrice">${total}</p>
             <p className="jess-saleTotal">剩餘2箱</p>
           </div>
           <hr />
           <div className=" mt-5 d-flex justify-content-center">
-            <Counter />
+            <div className="counter-box">
+              <div
+                onClick={() => {
+                  handleClick('decrement')
+                  handleTotal('decrement')
+                }}
+                className={
+                  count === 1
+                    ? 'counter-decrement cursor-default'
+                    : 'counter-decrement counter-hover'
+                }
+              >
+                <p>-</p>
+              </div>
+              <div className="counter-count">
+                <p>{count}</p>
+              </div>
+              <div
+                onClick={() => {
+                  handleClick('increment')
+                  handleTotal('increment')
+                }}
+                className="counter-increment"
+              >
+                <p>+</p>
+              </div>
+            </div>
           </div>
           <div className=" mt-5 d-flex justify-content-center">
-            <AddCart />
+            <button
+              className="addCart-btn addCart-btn-n"
+              onClick={() => {
+                handleCartNumber('add', count)
+                CreateCartToLocalStorage({
+                  id: 1,
+                  productname: '在地小農蔬菜箱',
+                  size: 's',
+                  date: 2020 / 11 / 22,
+                  img_id: '22_vegBox',
+                  price: 350,
+                })
+              }}
+            >
+              <img className="addCart-cart addCart-cart-n" src={cart} />
+            </button>
           </div>
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default JessVegHeader;
+export default JessVegHeader
