@@ -108,7 +108,9 @@ $white: #ffffff;
 
 // no.1 生酮沙拉
 .jess-menuC-pic1 {
-  background: url('./images/jess-menuC-pic1.jpg') no-repeat;
+  background: url('../images/images/13_salad.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
   width: 23rem;
   height: 23rem;
   position: relative;
@@ -152,7 +154,9 @@ $white: #ffffff;
 
 // no.2 均衡蛋白質沙拉
 .jess-menuC-pic2 {
-  background: url('./images/jess-menuC-pic2.jpg') no-repeat;
+  background: url('../images/images/16_egg.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
   width: 23rem;
   height: 23rem;
   position: relative;
@@ -196,7 +200,9 @@ $white: #ffffff;
 
 // no.3 肌肉UPUP(增肌)沙拉
 .jess-menuC-pic3 {
-  background: url('./images/jess-menuC-pic3.jpg') no-repeat;
+  background: url('../images/images/15_musleSalad.JPG') no-repeat;
+  background-position: center center;
+  background-size: cover;
   width: 23rem;
   height: 23rem;
   position: relative;
@@ -238,9 +244,11 @@ $white: #ffffff;
   transition-delay: 0.1s;
 }
 
-// no.4 藜麥毛豆沙拉(全素)
+// no.4 (全素)
 .jess-menuC-pic4 {
-  background: url('./images/jess-menuC-pic4.jpg') no-repeat;
+  background: url('../images/images/14_salmon.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
   width: 23rem;
   height: 23rem;
   position: relative;

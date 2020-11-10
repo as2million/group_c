@@ -1,10 +1,11 @@
 import React from "react";
 import RuCompSalad from "Ru/Components/RuComps/RuCompSalad/RuCompSalad";
 
-function RuProudctListSalad() {
+function RuProudctListSalad(props) {
+  const {handleAddCartNumber} =props
   return (
     <>
-      <RuCompSalad />
+      <RuCompSalad handleAddCartNumber={handleAddCartNumber}/>
     </>
   );
 }

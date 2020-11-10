@@ -28,6 +28,19 @@ $white: #ffffff;
   height: 75rem;
   background-color: $white;
 }
+.jess-msg-container {
+  width: 100%;
+  height: 75rem;
+  overflow: scroll;
+  // background-attachment: local;
+  background-attachment: scroll;
+}
+// .jess-rateStarColor div {
+//   outline: none;
+//   color: #f48145;
+//   width: 14rem;
+//   height: 3rem;
+// }
 .jess-text-30orange {
   font-size: 3rem;
   font-family: 'Noto Serif TC', serif;
@@ -51,11 +64,17 @@ $white: #ffffff;
   font-family: 'Noto Sans TC';
   color: $orange;
 }
-.jess-text-15Gray {
+.jess-text-15Gray2 {
   font-size: 1.5rem;
   font-family: 'Noto Sans TC';
   color: $darkGary;
-  line-height: 2.5rem;
+  line-height: 3rem;
+  text-align: center;
+}
+.jess-rateStarColor {
+  outline: none;
+  text-align: start;
+  width: 8rem;
 }
 .jess-text-15brown {
   font-size: 1.5rem;
@@ -67,11 +86,9 @@ $white: #ffffff;
   background-color: $white;
   height: 9rem;
 }
-.jess-productTabBorder {
-  background: url('../images/SVG/border.svg') no-repeat;
-  width: 114rem;
-  height: 1rem;
-  margin-top: 10rem;
+.jess-contentBorder {
+  width: 100%;
+  border-bottom: 0.1rem solid $brown;
 }
 
 @media screen and (max-width: 576px) {
