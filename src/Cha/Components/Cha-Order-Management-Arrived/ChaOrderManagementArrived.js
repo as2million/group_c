@@ -1,5 +1,5 @@
-import React from 'react';
-import './ChaOrderManagementArrived.scss';
+import React from 'react'
+import './ChaOrderManagementArrived.scss'
 function ChaOrderManagementArrived(props) {
   return (
     <>
@@ -52,6 +52,6 @@ function ChaOrderManagementArrived(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
-export default ChaOrderManagementArrived;
+export default ChaOrderManagementArrived

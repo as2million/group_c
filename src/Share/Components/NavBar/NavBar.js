@@ -1,48 +1,48 @@
 // 導入其它的模組
-import React, { useState, useEffect } from 'react';
-import { Nav } from 'react-bootstrap';
-import './Navbar.scss';
-import 'antd/dist/antd.css';
-import { Popover } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
-import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg';
-import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg';
-import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg';
-import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg';
-import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg';
+import React, { useState, useEffect } from 'react'
+import { Nav } from 'react-bootstrap'
+import './Navbar.scss'
+import 'antd/dist/antd.css'
+import { Popover } from 'antd'
+import { MenuOutlined } from '@ant-design/icons'
+import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg'
+import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg'
+import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg'
+import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg'
+import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg'
 // 選單連結要使用NavLink取代Link
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 function NavBar(props) {
-  const [count, setCount] = useState(0);
-  const [shoppingList, setShoppingList] = useState('0');
-  const [showNav, setShowNav] = useState(true);
-  const { isLogin, setShowLoginModal, cartNumber, setIsLogin } = props;
+  const [count, setCount] = useState(0)
+  const [shoppingList, setShoppingList] = useState('0')
+  const [showNav, setShowNav] = useState(true)
+  const { isLogin, setShowLoginModal, cartNumber, setIsLogin } = props
 
   function myFunction() {
-    const x = document.getElementById('NavBar');
+    const x = document.getElementById('NavBar')
     if (x.className === 'nav') {
-      x.className += ' responsive';
+      x.className += ' responsive'
     } else {
-      x.className = 'nav';
+      x.className = 'nav'
     }
   }
 
   // 在登入狀態
   if (isLogin === true) {
     // 登入選項消失
-    document.querySelector('.iris-login-option').style.display = 'none';
+    document.querySelector('.iris-login-option').style.display = 'none'
     // 顯示登出選項
-    document.querySelector('.iris-logout-option').style.display = 'block';
+    document.querySelector('.iris-logout-option').style.display = 'block'
   }
 
   // 點擊登出
   const showLoginOption = () => {
     // 顯示登入選項,隱藏登出選項
-    setIsLogin(false);
-    document.querySelector('.iris-login-option').style.display = 'block';
-    document.querySelector('.iris-logout-option').style.display = 'none';
-  };
+    setIsLogin(false)
+    document.querySelector('.iris-login-option').style.display = 'block'
+    document.querySelector('.iris-logout-option').style.display = 'none'
+  }
 
   return (
     <>
@@ -147,7 +147,7 @@ function NavBar(props) {
                     <li
                       className="navBar-jess-dropdown_item iris-login-option"
                       onClick={() => {
-                        setShowLoginModal(true);
+                        setShowLoginModal(true)
                       }}
                     >
                       登入/註冊
@@ -156,9 +156,9 @@ function NavBar(props) {
                     <li
                       className="navBar-jess-dropdown_item iris-logout-option"
                       onClick={() => {
-                        setShowLoginModal(true);
-                        setIsLogin(false);
-                        showLoginOption();
+                        setShowLoginModal(true)
+                        setIsLogin(false)
+                        showLoginOption()
                       }}
                     >
                       登出
@@ -202,9 +202,9 @@ function NavBar(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 // 輸出元件(函式)
 
-export default NavBar;
+export default NavBar

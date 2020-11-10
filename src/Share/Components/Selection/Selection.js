@@ -1,6 +1,6 @@
-import React from 'react';
-import './Selection.scss';
-import selectArrow from 'Share/Components/Selection/Images/selectArrow.svg';
+import React from 'react'
+import './Selection.scss'
+import selectArrow from 'Share/Components/Selection/Images/selectArrow.svg'
 
 function Selection(props) {
   // width值在 .selection-container 這個選擇器下
@@ -19,7 +19,7 @@ function Selection(props) {
         {/* 下拉按鈕 e */}
       </div>
     </>
-  );
+  )
 }
 
-export default Selection;
+export default Selection

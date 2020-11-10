@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import './ChaOrderManagement.scss';
-import ChaOrderItem from 'Cha/Components/Cha-Order-Management/Cha-Order-Item/ChaOrderItem';
+import React, { useState, useEffect } from 'react'
+import './ChaOrderManagement.scss'
+import ChaOrderItem from 'Cha/Components/Cha-Order-Management/Cha-Order-Item/ChaOrderItem'
 
 function ChaOrderManagement(props) {
   // 當前登入的會員id
-  const [currentMemberSid, setCurrentMemberSid] = useState(0);
-  const [orderData, setOrderData] = useState([]);
+  const [currentMemberSid, setCurrentMemberSid] = useState(0)
+  const [orderData, setOrderData] = useState([])
 
   // 舊的樣板
   // const chaOrderManagements = Array.from({ length: 1 });
@@ -18,7 +18,7 @@ function ChaOrderManagement(props) {
 
   // GET訂單資料
   async function getMyOrderData(paramsMemberId) {
-    const url = `http://localhost:5000/cart-api/my-order-my-order-detail/${paramsMemberId}`;
+    const url = `http://localhost:5000/cart-api/my-order-my-order-detail/${paramsMemberId}`
 
     const request = new Request(url, {
       method: 'GET',
@@ -26,11 +26,11 @@ function ChaOrderManagement(props) {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
-    });
-    const response = await fetch(request);
-    const dataAllOrder = await response.json();
-    console.log('觀察fetch的function乖不乖');
-    setOrderData(dataAllOrder);
+    })
+    const response = await fetch(request)
+    const dataAllOrder = await response.json()
+    console.log('觀察fetch的function乖不乖')
+    setOrderData(dataAllOrder)
     // console.log(dataAllOrder);
     // console.log(
     //   dataOrders[0] && dataOrders[0].take_person && dataOrders[0].take_person
@@ -38,12 +38,12 @@ function ChaOrderManagement(props) {
   }
   // 只讀入當前會員的訂單
   useEffect(() => {
-    getMyOrderData(currentMemberSid);
-  }, []);
+    getMyOrderData(currentMemberSid)
+  }, [])
 
   // 分類訂單內容的函式
   function handleClassifyState(orderState) {
-    return orderData.filter((item, index) => item.order_state === orderState);
+    return orderData.filter((item, index) => item.order_state === orderState)
   }
 
   // 未送達
@@ -55,8 +55,8 @@ function ChaOrderManagement(props) {
           <ChaOrderItem key={item.id} orderItem={item} />
         ))}
       </>
-    );
-  };
+    )
+  }
   // 已送達
   const ComponentB = (props) => {
     return (
@@ -65,8 +65,8 @@ function ChaOrderManagement(props) {
           <ChaOrderItem key={item.id} orderItem={item} />
         ))}
       </>
-    );
-  };
+    )
+  }
   // 已退費/已取消
   const ComponentC = (props) => {
     return (
@@ -75,8 +75,8 @@ function ChaOrderManagement(props) {
           <ChaOrderItem key={item.id} orderItem={item} />
         ))}
       </>
-    );
-  };
+    )
+  }
   // 揪團中
   const ComponentD = (props) => {
     return (
@@ -85,37 +85,37 @@ function ChaOrderManagement(props) {
           <ChaOrderItem key={item.id} orderItem={item} />
         ))}
       </>
-    );
-  };
+    )
+  }
   // 切換用函式
   const setTabActive = (addElem, removeName) => {
-    let removeTargets = document.querySelectorAll(removeName);
+    let removeTargets = document.querySelectorAll(removeName)
     removeTargets.forEach((target) => {
-      target.classList.remove('cha-active');
-    });
+      target.classList.remove('cha-active')
+    })
 
-    addElem.classList.add('cha-active');
-  };
+    addElem.classList.add('cha-active')
+  }
   const TabMenu = () => {
-    const [orderComponent, setOrderComponent] = useState(<ComponentA />);
+    const [orderComponent, setOrderComponent] = useState(<ComponentA />)
 
     const tabContentA = (e) => {
-      setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<ComponentA />);
-    };
+      setTabActive(e.target, '.cha-order-mana-title-switch')
+      setOrderComponent(<ComponentA />)
+    }
 
     const tabContentB = (e) => {
-      setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<ComponentB />);
-    };
+      setTabActive(e.target, '.cha-order-mana-title-switch')
+      setOrderComponent(<ComponentB />)
+    }
     const tabContentC = (e) => {
-      setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<ComponentC />);
-    };
+      setTabActive(e.target, '.cha-order-mana-title-switch')
+      setOrderComponent(<ComponentC />)
+    }
     const tabContentD = (e) => {
-      setTabActive(e.target, '.cha-order-mana-title-switch');
-      setOrderComponent(<ComponentD />);
-    };
+      setTabActive(e.target, '.cha-order-mana-title-switch')
+      setOrderComponent(<ComponentD />)
+    }
 
     return (
       <>
@@ -148,12 +148,13 @@ function ChaOrderManagement(props) {
           <div>{orderComponent}</div>
         </div>
       </>
-    );
-  };
+    )
+  }
   return (
     <>
       <TabMenu />
     </>
-  );
+  )
 }
-export default ChaOrderManagement;
+
+export default ChaOrderManagement

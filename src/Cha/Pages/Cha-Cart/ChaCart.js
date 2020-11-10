@@ -1,45 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
-import ChaCartProgressBar from 'Cha/Components/Cha-Cart-ProgressBar/ChaCartProgressBar';
-import ChaCartSubmitCard from 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard';
-import ChaCartStepCardStep1 from 'Cha/Components/Cha-Cart-Step-Card-Step1/ChaCartStepCardStep1';
-import ChaCartStepCardStep2 from 'Cha/Components/Cha-Cart-Step-Card-Step2/ChaCartStepCardStep2';
-import ChaCartStepCardStep3 from 'Cha/Components/Cha-Cart-Step-Card-Step3/ChaCartStepCardStep3';
+import ChaCartProgressBar from 'Cha/Components/Cha-Cart-ProgressBar/ChaCartProgressBar'
+import ChaCartSubmitCard from 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard'
+import ChaCartStepCardStep1 from 'Cha/Components/Cha-Cart-Step-Card-Step1/ChaCartStepCardStep1'
+import ChaCartStepCardStep2 from 'Cha/Components/Cha-Cart-Step-Card-Step2/ChaCartStepCardStep2'
+import ChaCartStepCardStep3 from 'Cha/Components/Cha-Cart-Step-Card-Step3/ChaCartStepCardStep3'
 
-import 'Cha/Pages/Cha-Cart/ChaCart.scss';
+import 'Cha/Pages/Cha-Cart/ChaCart.scss'
 
 function ChaCart(props) {
   // 餐點資料(未處理)
-  const [meals, setMeals] = useState([]);
+  const [meals, setMeals] = useState([])
   // 餐點資料(已處理)
   // const [mealsDisplay, setMealsDisplay] = useState([]);
   // 控制navbar
-  const { setShowBar, handleCartNumber } = props;
+  const { setShowBar, handleCartNumber } = props
   // 資料，準備傳送給「我的訂單」
-  const [memberSid, setMemberSid] = useState('');
-  const [name, setName] = useState('');
-  const [mobile, setMobile] = useState('');
-  const [takeWay, setTakeWay] = useState('');
-  const [takeDate, setTakeDate] = useState('');
-  const [takeTime, setTakeTime] = useState('11:00 ~ 11:30');
-  const [address, setAddress] = useState('');
-  const [beastieCoin, setBeastieCoin] = useState('');
+  const [memberSid, setMemberSid] = useState('')
+  const [name, setName] = useState('')
+  const [mobile, setMobile] = useState('')
+  const [takeWay, setTakeWay] = useState('')
+  const [takeDate, setTakeDate] = useState('')
+  const [takeTime, setTakeTime] = useState('11:00 ~ 11:30')
+  const [address, setAddress] = useState('')
+  const [beastieCoin, setBeastieCoin] = useState('')
 
   // 掛載就設定隱藏navbar
   useEffect(() => {
-    setShowBar(false);
-  }, []);
+    setShowBar(false)
+  }, [])
 
   // 讀取LocalStorage
   function readCartFromLocalStorage() {
-    const newCart = localStorage.getItem('cart') || '[]';
-    console.log(JSON.parse(newCart));
-    setMeals(JSON.parse(newCart));
+    const newCart = localStorage.getItem('cart') || '[]'
+    console.log(JSON.parse(newCart))
+    setMeals(JSON.parse(newCart))
   }
   // componentDidMount，一開始會載入資料(在元件初始化完成後)
   useEffect(() => {
-    readCartFromLocalStorage();
-  }, []);
+    readCartFromLocalStorage()
+  }, [])
   // // }, [meals]);
 
   // // componentDidUpdate// 只要meals改變，就處理meals
@@ -114,40 +114,40 @@ function ChaCart(props) {
   // 更新購物車中的商品數量
   const updateCartToLocalStorage = (item, isAdded = true) => {
     // console.log(item, isAdded);
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
     // find if the product in the localstorage with its id
-    const index = currentCart.findIndex((v) => v.id === item.id);
+    const index = currentCart.findIndex((v) => v.id === item.id)
     // console.log('index', index);
     // found: index! == -1
     if (index > -1) {
       if (isAdded) {
-        currentCart[index].productAmount++;
+        currentCart[index].productAmount++
       } else if (!isAdded && currentCart[index].productAmount > 1) {
-        currentCart[index].productAmount--;
+        currentCart[index].productAmount--
       }
       // isAdded &&
       //   ? currentCart[index].productAmount++
       //   : currentCart[index].productAmount--;
     } else {
-      currentCart.push(item);
-      console.log('currentCart', currentCart);
+      currentCart.push(item)
+      console.log('currentCart', currentCart)
     }
-    localStorage.setItem('cart', JSON.stringify(currentCart));
+    localStorage.setItem('cart', JSON.stringify(currentCart))
     // 設定資料
-    setMeals(currentCart);
-  };
+    setMeals(currentCart)
+  }
   // 刪除的商品數量
   const deleteItemToLocalStorage = (item) => {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
     // find if the product in the localstorage with its id
-    const newCart = currentCart.filter((v) => v.id !== item.id);
+    const newCart = currentCart.filter((v) => v.id !== item.id)
 
-    localStorage.setItem('cart', JSON.stringify(newCart));
+    localStorage.setItem('cart', JSON.stringify(newCart))
 
     // 設定資料
-    setMeals(newCart);
-  };
+    setMeals(newCart)
+  }
 
   return (
     <>
@@ -209,6 +209,6 @@ function ChaCart(props) {
         </aside>
       </div>
     </>
-  );
+  )
 }
-export default ChaCart;
+export default ChaCart
