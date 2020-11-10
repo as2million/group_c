@@ -18,13 +18,17 @@ import ToToop from '../../../Share/Components/ToTopButton/ScrollButton'
 import { datacountries, datatownships, dataprice } from './data'
 
 function JanIndexx(props) {
-  const { type, id } = props
-  const [country, setCountry] = useState(-1)
-  const [township, setTownship] = useState(-1)
-  const [postcode, setPostcode] = useState(-1)
-
-  //地址狀態
-  const [indexAddress, setIndexAddress] = useState('')
+  const {
+    type,
+    id,
+    county,
+    setCounty,
+    township,
+    setTownship,
+    address,
+    setAddress,
+  } = props
+  const [price, setPrice] = useState(-1)
 
   //品牌特色切換
   function intro1() {
@@ -156,7 +160,14 @@ function JanIndexx(props) {
 
   return (
     <>
-      <VNavbar {...props} />
+      <VNavbar
+        county={county}
+        setCounty={setCounty}
+        township={township}
+        setTownship={setTownship}
+        address={address}
+        setAddress={setAddress}
+      />
 
       <div className="jan-fake-nav d-flex justify-content-center align-items-center">
         navbar的高度
@@ -673,18 +684,19 @@ function JanIndexx(props) {
                       <div className="iris-mainpage-select-wrapper d-flex">
                         <div className="iris-selectbar-wrapper">
                           <select
-                            onClick={hideInfo}
                             style={{ fontSize: '1.5rem' }}
                             className="form-control iris-mainpage-select"
                             id="exampleFormControlSelect1"
-                            value={country}
+                            value={county}
                             onChange={(e) => {
                               //將字串轉成數字
-                              setCountry(+e.target.value)
+                              setCounty(+e.target.value)
+                              console.log('zqaza', +e.target.value)
                               //重置township的值
                               setTownship(0)
                               setTownship(-1)
                             }}
+                            onClick={hideInfo}
                           >
                             <option value={-1}>請選擇城市</option>
                             {datacountries.map((v, i) => (
@@ -714,8 +726,8 @@ function JanIndexx(props) {
                             id="exampleFormControlSelect1"
                           >
                             <option value={-1}>點我選擇區域</option>
-                            {country > -1 &&
-                              datatownships[country].map((v, i) => (
+                            {county > -1 &&
+                              datatownships[county].map((v, i) => (
                                 <option key={i} value={i}>
                                   {v}
                                 </option>
@@ -735,8 +747,8 @@ function JanIndexx(props) {
                         type={type}
                         placeholder="請輸入地址"
                         id={id}
-                        value={indexAddress}
-                        onChange={(e) => setIndexAddress(e.target.value)}
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
                       />
                     </div>
 
@@ -749,7 +761,7 @@ function JanIndexx(props) {
                           cursor: 'pointer',
                         }}
                         className="jan-index-hide-demo float-left"
-                        onClick={(e) => setIndexAddress('復興南路一段390號2樓')}
+                        onClick={(e) => setAddress('復興南路一段390號2樓')}
                       >
                         demo
                       </div>
@@ -770,9 +782,9 @@ function JanIndexx(props) {
                     <span className="jan-price">
                       {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
                       {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
-                      {country > -1 &&
+                      {county > -1 &&
                         township > -1 &&
-                        dataprice[country][township]}
+                        dataprice[county][township]}
                     </span>
                     <span>元</span>免運費
                   </p>

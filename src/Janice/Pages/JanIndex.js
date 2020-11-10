@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import JanIndexx from '../Components/JanIndexx/JanIndexx'
 
-function JanIndex() {
+function JanIndex(props) {
   return (
     <>
-      <JanIndexx />
+      <JanIndexx {...props} />
     </>
   )
 }

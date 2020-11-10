@@ -10,12 +10,12 @@ import {
 function AddressTabs(props) {
   const { placeholder, closeModal } = props
   const {
-    address,
-    setAddress,
     county,
     setCounty,
-    district,
-    setDistrict,
+    township,
+    setTownship,
+    address,
+    setAddress,
   } = props
 
   // const updateAddress = () => {
@@ -41,9 +41,7 @@ function AddressTabs(props) {
 
   // Acomponent
   const ComponentA = (props) => {
-    const [country, setCountry] = useState(-1)
-    const [township, setTownship] = useState(-1)
-    const [postcode, setPostcode] = useState(-1)
+    const [price, setPrice] = useState(-1)
 
     //地址輸入部分，預設值式資料庫地址欄位
     const [tabInput, setTabInput] = useState(address)
@@ -74,10 +72,10 @@ function AddressTabs(props) {
                       style={{ fontSize: '1.5rem' }}
                       className="form-control iris-mainpage-select"
                       id="exampleFormControlSelect1"
-                      value={country}
+                      value={county}
                       onChange={(e) => {
                         //將字串轉成數字
-                        setCountry(+e.target.value)
+                        setCounty(+e.target.value)
                         //重置township的值
                         setTownship(0)
                         setTownship(-1)
@@ -112,8 +110,8 @@ function AddressTabs(props) {
                       id="exampleFormControlSelect1"
                     >
                       <option value={-1}>點我選擇區域</option>
-                      {country > -1 &&
-                        datatownships[country].map((v, i) => (
+                      {county > -1 &&
+                        datatownships[county].map((v, i) => (
                           <option key={i} value={i}>
                             {v}
                           </option>
@@ -157,9 +155,9 @@ function AddressTabs(props) {
                   <span>
                     {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
                     {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
-                    {country > -1 &&
+                    {county > -1 &&
                       township > -1 &&
-                      dataprice[country][township]}
+                      dataprice[county][township]}
                   </span>
                   元免運費
                 </p>

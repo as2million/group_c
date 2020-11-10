@@ -15,6 +15,9 @@ import AddressTabs from 'Share/Components/AddressTabs/AddressTabs'
 
 // 路由表
 function App() {
+  const [county, setCounty] = useState(-1)
+  const [township, setTownship] = useState(-1)
+  const [address, setAddress] = useState('')
   return (
     // <Router>元件一定要放在最外層
     <Router>
@@ -28,7 +31,14 @@ function App() {
           {/* janice */}
           {/* 放"page資料夾"內的元件 */}
           <Route exact path="/">
-            <JanIndex />
+            <JanIndex
+              county={county}
+              setCounty={setCounty}
+              township={township}
+              setTownship={setTownship}
+              address={address}
+              setAddress={setAddress}
+            />
           </Route>
         </Switch>
         <Footer />

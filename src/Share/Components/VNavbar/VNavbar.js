@@ -13,15 +13,24 @@ import AddressTabs from '../AddressTabs/AddressTabs'
 registerLocale('zh-TW', zhTW)
 
 function VNavbar(props) {
-  const { isLogin, currentUser } = props
+  const {
+    isLogin,
+    currentUser,
+    county,
+    setCounty,
+    township,
+    setTownship,
+    address,
+    setAddress,
+  } = props
   const [startDate, setStartDate] = useState(
     setHours(setMinutes(new Date(), 30), 11)
   )
   const [status, setStatus] = useState(false)
 
-  const [county, setCounty] = useState('')
-  const [district, setDistrict] = useState('')
-  const [address, setAddress] = useState('')
+  // const [county, setCounty] = useState('')
+  // const [district, setDistrict] = useState('')
+  // const [address, setAddress] = useState('')
 
   const addressData = (e) => {
     //未登入=>顯示input框
@@ -43,7 +52,7 @@ function VNavbar(props) {
         console.log(obj)
         setAddress(obj[0].address)
         setCounty(obj[0].county)
-        setDistrict(obj[0].district)
+        setTownship(obj[0].township)
       })
   }
   //如果登入的話，fetch會員的地址
@@ -60,8 +69,8 @@ function VNavbar(props) {
           closeModal={() => setStatus(false)}
           county={county}
           setCounty={setCounty}
-          district={district}
-          setDistrict={setDistrict}
+          township={township}
+          setTownship={setTownship}
         ></AddressTabs>
       )}
       <Navbar className="vnavbar-jan d-flex flex-wrap justify-content-around fixed-top">
@@ -96,7 +105,7 @@ function VNavbar(props) {
             <p className="titles-jan">取餐地址：</p>
             <p onClick={() => setStatus(true)} className="address-input-jan">
               {county}
-              {district}
+              {township}
               {address}
             </p>
           </div>
