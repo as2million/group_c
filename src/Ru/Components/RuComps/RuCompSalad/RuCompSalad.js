@@ -13,7 +13,7 @@ import line from './Images/line.png';
 
 function RuCompSalad(props) {
   console.log(props);
-  const { handleAddCartNumber } = props
+  const { handleCartNumber } = props
   const [searchInput, setSearchInput] = useState('');
 
   // JSX
@@ -97,7 +97,7 @@ function RuCompSalad(props) {
       </div>
 
       {/* 商品卡片區 s */}
-      <RuSalad handleAddCartNumber={handleAddCartNumber}/>
+      <RuSalad handleCartNumber={handleCartNumber}/>
       {/* 商品卡片區 e */}
 
       {/* to top s */}

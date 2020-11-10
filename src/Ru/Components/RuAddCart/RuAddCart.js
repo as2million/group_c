@@ -13,7 +13,13 @@ function RuAddCart(props) {
     price,
     title,
     amount,
-    handleAddCartNumber,
+    handleCartNumber,
+    setIsShowHintA,
+    setIsShowHintB,
+    setIsShowHintC,
+    setIsShowHintD,
+    setIsShowHintE,
+    setIsShowHintF,
   } = props
   // console.log(id, parentId);
 
@@ -74,7 +80,7 @@ function RuAddCart(props) {
     }
 
     // 執行加入localStorage
-    handleAddCartNumber('add', amount)
+    handleCartNumber('add', amount)
     updateCartToLocalStorage({
       // 設定要加入的資料
       id: proudctId,
@@ -82,12 +88,21 @@ function RuAddCart(props) {
       productPrice: price,
       productAmount: amount || 1,
     })
+    
+    // 按下加入購物車按鈕 關閉顯示區
+    setIsShowHintA(false)
+    setIsShowHintB(false)
+    setIsShowHintC(false)
+    setIsShowHintD(false)
+    setIsShowHintE(false)
+    setIsShowHintF(false)
   }
 
   const updateCartToLocalStorage = (item, isAdded = true) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
-    const index = currentCart.findIndex((v) => v.id === item.id)
+    const index = currentCart.findIndex((v) => v.id === item.id) // 如果localStorage裡面的id
     if (index > -1) {
+      // 如果localStorage裡面已經有一樣的id
       if (isAdded) {
         currentCart[index].productAmount += amount
       } else if (!isAdded && currentCart[index].productAmount > 1) {

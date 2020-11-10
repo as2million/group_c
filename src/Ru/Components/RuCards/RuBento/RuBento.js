@@ -7,7 +7,7 @@ import RuCard from 'Ru/Components/RuCard/RuCard'
 import background from './Images/background.png'
 
 function RuBento(props) {
-  const { searchInput, handleAddCartNumber, currentUser } = props
+  const { searchInput, handleCartNumber, currentUser } = props
   const [itemWarp1, setItemWarp1] = useState(false)
   const [itemWarp2, setItemWarp2] = useState(false)
   const [itemWarp3, setItemWarp3] = useState(false)
@@ -150,7 +150,7 @@ function RuBento(props) {
                 proudctId = {data[0].sid}
                 parentId={'ru-addCart-btn-warp-1'}
                 imgId={data[0].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -165,7 +165,7 @@ function RuBento(props) {
                 proudctId = {data[1].sid}
                 parentId={'ru-addCart-btn-warp-2'}
                 imgId={data[1].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -180,7 +180,7 @@ function RuBento(props) {
                 proudctId = {data[2].sid}
                 parentId={'ru-addCart-btn-warp-3'}
                 imgId={data[2].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -196,7 +196,7 @@ function RuBento(props) {
                 proudctId = {data[3].sid}
                 parentId={'ru-addCart-btn-warp-4'}
                 imgId={data[3].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -211,7 +211,7 @@ function RuBento(props) {
                 proudctId = {data[4].sid}
                 parentId={'ru-addCart-btn-warp-5'}
                 imgId={data[4].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -226,7 +226,7 @@ function RuBento(props) {
                 proudctId = {data[5].sid}
                 parentId={'ru-addCart-btn-warp-6'}
                 imgId={data[5].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -242,7 +242,7 @@ function RuBento(props) {
                 proudctId = {data[6].sid}
                 parentId={'ru-addCart-btn-warp-7'}
                 imgId={data[6].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -257,7 +257,7 @@ function RuBento(props) {
                 proudctId = {data[7].sid}
                 parentId={'ru-addCart-btn-warp-8'}
                 imgId={data[7].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -272,7 +272,7 @@ function RuBento(props) {
                 proudctId = {data[8].sid}
                 parentId={'ru-addCart-btn-warp-9'}
                 imgId={data[8].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -287,7 +287,7 @@ function RuBento(props) {
                 proudctId = {data[9].sid}
                 parentId={'ru-addCart-btn-warp-10'}
                 imgId={data[9].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -302,7 +302,7 @@ function RuBento(props) {
                 proudctId = {data[10].sid}
                 parentId={'ru-addCart-btn-warp-11'}
                 imgId={data[10].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -317,7 +317,7 @@ function RuBento(props) {
                 proudctId = {data[11].sid}
                 parentId={'ru-addCart-btn-warp-12'}
                 imgId={data[11].img_id}
-                handleAddCartNumber={handleAddCartNumber} // localStorage函式
+                handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}

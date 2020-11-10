@@ -12,7 +12,7 @@ import line from './Images/line.png'
 
 function RuCompRuBento(props) {
   // console.log(props);
-  const { handleAddCartNumber, currentUser } = props
+  const { handleCartNumber, currentUser } = props
   const [searchInput, setSearchInput] = useState('')
   // console.log(searchInput);
 
@@ -99,7 +99,7 @@ function RuCompRuBento(props) {
       {/* 商品卡片區 s */}
       <RuBento
         searchInput={searchInput}
-        handleAddCartNumber={handleAddCartNumber} // localStorage函式
+        handleCartNumber={handleCartNumber} // localStorage函式
         currentUser={currentUser}
       />
       {/* 商品卡片區 e */}

@@ -21,7 +21,7 @@ function App() {
   const [amount, setAmount] = useState(1)
   const [currentUser, setCurrentUser] = useState() // 目前用戶
 
-  const handleAddCartNumber = (type = 'add', amount = 1) => {
+  const handleCartNumber = (type = 'add', amount = 1) => {
     if (type === 'add') {
       const newCartNumber = +cartNumber + amount
       localStorage.setItem('cartNumber', JSON.stringify(newCartNumber))
@@ -59,19 +59,19 @@ function App() {
           {/* 放"page資料夾"內的元件 */}
           <Route exact path="/productList">
             <RuProudctList
-              handleAddCartNumber={handleAddCartNumber} // localStorage函式
+              handleCartNumber={handleCartNumber} // localStorage函式
               currentUser={currentUser}
             />
           </Route>
           <Route exact path="/productListSalad">
             <RuProudctListSalad
-              handleAddCartNumber={handleAddCartNumber} // localStorage函式
+              handleCartNumber={handleCartNumber} // localStorage函式
               currentUser={currentUser}
             />
           </Route>
           <Route exact path="/productListCustom">
             <RuProudctListCustom
-              handleAddCartNumber={handleAddCartNumber} // localStorage函式
+              handleCartNumber={handleCartNumber} // localStorage函式
               amount={amount}
               setAmount={setAmount}
             />

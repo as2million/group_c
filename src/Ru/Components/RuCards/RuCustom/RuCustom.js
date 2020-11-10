@@ -16,20 +16,18 @@ import RuEggA from 'Ru/Components/RuFoodItems/RuEggA/RuEggA'
 
 // 引用共用元件
 import Card from 'Share/Components/Card/Card'
-import cauliflower from './Images/cauliflower.svg'
+import cauliflower from './Images/cauliflower.svg' // rwd暫放(待刪)
+// 品項放置後s
 import cauliflowerAfter from './Images/cauliflowerAfter.svg'
-import cabage from './Images/cabage.svg'
 import cabageAfter from './Images/cabageAfter.svg'
-import corn from './Images/corn.svg'
 import cornAfter from './Images/cornAfter.svg'
-import egg from './Images/egg.svg'
+import qingjiangAfter from './Images/qingjiangAfter.svg'
 import eggAfter from './Images/eggAfter.svg'
-import poachedEgg from './Images/poachedEgg.svg'
 import poachedEggAfter from './Images/poachedEggAfter.svg'
-import rice from './Images/rice.svg'
 import riceAfter from './Images/riceAfter.svg'
-import shrimp from './Images/shrimp.svg'
 import shrimpAfter from './Images/shrimpAfter.svg'
+
+// 品項放置後 e
 import hintA from './Images/hintA.svg'
 import hintB from './Images/hintB.svg'
 import hintC from './Images/hintC.svg'
@@ -42,7 +40,7 @@ import background from './Images/background.png'
 import { ReactComponent as LunchBox } from './Images/lunchBox.svg' // 將svg以元件方式引入
 
 function RuCustom(props) {
-  const { searchInput, handleAddCartNumber, amount, setAmount } = props
+  const { searchInput, handleCartNumber, amount, setAmount } = props
   const [moveX, setMoveX] = useState(0) // 選項區滑動變亮(RuArrowRight / RuArrowLeft 調整)
   const [isPrice, setIsPrice] = useState(true) // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false) // 是否開啟營養標示
@@ -64,9 +62,6 @@ function RuCustom(props) {
   const [isShowHintD, setIsShowHintD] = useState(true)
   const [isShowHintE, setIsShowHintE] = useState(false)
   const [isShowHintF, setIsShowHintF] = useState(false)
-
-  // 後端請求資料用的state(預設值不要為空值)
-  // const [data, setData] = useState('1234567891011121314151617181920')
 
   // 設定 今日菜色(價格) 資訊
   const [riceName, setRiceName] = useState('')
@@ -92,11 +87,13 @@ function RuCustom(props) {
   const [veg1available, setVeg1available] = useState(true)
   const [veg2available, setVeg2available] = useState(true)
   const [veg3available, setVeg3available] = useState(true)
+  const [veg4available, setVeg4available] = useState(true)
 
   // 標記入box內的是哪種蔬菜
   const [putAclass, setPutAclass] = useState('ru-put')
   const [putBclass, setPutBclass] = useState('ru-put')
   const [putCclass, setPutCclass] = useState('ru-put')
+
 
   // 是否可以購買
   const [isCanBuy, setIsCanBuy] = useState(false)
@@ -238,6 +235,8 @@ function RuCustom(props) {
               setVeg2available(true)
             } else if (boxer.classList.contains('ru-put-veg-3')) {
               setVeg3available(true)
+            } else if (boxer.classList.contains('ru-put-veg-4')) {
+              setVeg4available(true)
             }
             break
           case 'ru-put-2': // 觸發事件在第二個盒子
@@ -253,6 +252,8 @@ function RuCustom(props) {
               setVeg2available(true)
             } else if (boxer.classList.contains('ru-put-veg-3')) {
               setVeg3available(true)
+            } else if (boxer.classList.contains('ru-put-veg-4')) {
+              setVeg4available(true)
             }
             break
           case 'ru-put-3': // 觸發事件在第三個盒子
@@ -268,6 +269,8 @@ function RuCustom(props) {
               setVeg2available(true)
             } else if (boxer.classList.contains('ru-put-veg-3')) {
               setVeg3available(true)
+            } else if (boxer.classList.contains('ru-put-veg-4')) {
+              setVeg4available(true)
             }
             break
           case 'ru-put-4': // 觸發事件在第四個盒子
@@ -321,6 +324,14 @@ function RuCustom(props) {
             setVeg3available(false)
             setPutAclass('ru-put ru-put-veg-3')
             break
+          case 'ru-veg-4':
+            setImgA(qingjiangAfter)
+            setVegNameA(data[11].productName)
+            setVegPriceA(data[11].price)
+            setVegCalA(data[11].calories)
+            setVeg4available(false)
+            setPutAclass('ru-put ru-put-veg-4')
+            break
         }
       } else if (e.target === boxB) {
         // 配菜B區
@@ -349,6 +360,14 @@ function RuCustom(props) {
             setVegCalB(data[10].calories)
             setVeg3available(false)
             setPutBclass('ru-put ru-put-veg-3')
+            break
+          case 'ru-veg-4':
+            setImgB(qingjiangAfter)
+            setVegNameB(data[11].productName)
+            setVegPriceB(data[11].price)
+            setVegCalB(data[11].calories)
+            setVeg4available(false)
+            setPutBclass('ru-put ru-put-veg-4')
             break
         }
       } else if (e.target === boxC) {
@@ -380,6 +399,14 @@ function RuCustom(props) {
             setVegCalC(data[10].calories)
             setVeg3available(false)
             setPutCclass('ru-put ru-put-veg-3')
+            break
+          case 'ru-veg-4':
+            setImgC(qingjiangAfter)
+            setVegNameC(data[11].productName)
+            setVegPriceC(data[11].price)
+            setVegCalC(data[11].calories)
+            setVeg4available(false)
+            setPutCclass('ru-put ru-put-veg-4')
             break
         }
       } else if (
@@ -610,7 +637,7 @@ function RuCustom(props) {
                       <RuAddCart
                         id={'addCart-btn-custom'}
                         parentId={'addCart-btn-warp-custom'}
-                        handleAddCartNumber={handleAddCartNumber}
+                        handleCartNumber={handleCartNumber}
                         proudctId={todayId}
                         price={
                           ricePrice +
@@ -622,6 +649,12 @@ function RuCustom(props) {
                         }
                         title={'客製化便當'}
                         amount={amount}
+                        setIsShowHintA={setIsShowHintA}
+                        setIsShowHintB={setIsShowHintB}
+                        setIsShowHintC={setIsShowHintC}
+                        setIsShowHintD={setIsShowHintD}
+                        setIsShowHintE={setIsShowHintE}
+                        setIsShowHintF={setIsShowHintF}
                       />
                     ) : (
                       <div
@@ -635,7 +668,7 @@ function RuCustom(props) {
                         <RuAddCart
                           id={'addCart-btn-custom'}
                           parentId={'addCart-btn-warp-custom'}
-                          handleAddCartNumber={handleAddCartNumber}
+                          handleCartNumber={handleCartNumber}
                           proudctId={todayId}
                           price={
                             ricePrice +
@@ -647,6 +680,12 @@ function RuCustom(props) {
                           }
                           title={'客製化便當'}
                           amount={amount}
+                          setIsShowHintA={setIsShowHintA}
+                          setIsShowHintB={setIsShowHintB}
+                          setIsShowHintC={setIsShowHintC}
+                          setIsShowHintD={setIsShowHintD}
+                          setIsShowHintE={setIsShowHintE}
+                          setIsShowHintF={setIsShowHintF}
                         />
                       </div>
                     )}
@@ -767,6 +806,7 @@ function RuCustom(props) {
                         veg1available={veg1available}
                         veg2available={veg2available}
                         veg3available={veg3available}
+                        veg4available={veg4available}
                       />
                     )}
                     {selection === 'egg' && <RuEggA data={data} />}

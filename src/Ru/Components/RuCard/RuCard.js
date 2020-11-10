@@ -26,7 +26,7 @@ function RuCard(props) {
     proudctId,
     parentId,
     imgId,
-    handleAddCartNumber,
+    handleCartNumber,
   } = props
 
   return (
@@ -127,7 +127,7 @@ function RuCard(props) {
               parentId={parentId}
               price={price}
               title={title}
-              handleAddCartNumber={handleAddCartNumber} // localStorage函式
+              handleCartNumber={handleCartNumber} // localStorage函式
             />
           </div>
         </section>
