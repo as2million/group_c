@@ -6,8 +6,6 @@ import Footer from 'Share/Components/Footer/Footer'
 // import NotFoundPage from "Share/Components/NotFoundPage/NotFoundPage";
 
 // 引入 所有人的總元件
-// import NameApp from "Name/NameApp";
-
 import RuProudctList from 'Ru/Pages/RuProudctList'
 import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'
 import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'
@@ -22,7 +20,7 @@ function App() {
   const [cartNumber, setCartNumber] = useState(0)
   const [amount, setAmount] = useState(1)
   const [currentUser, setCurrentUser] = useState() // 目前用戶
-  
+
   const handleAddCartNumber = (type = 'add', amount = 1) => {
     if (type === 'add') {
       const newCartNumber = +cartNumber + amount
@@ -43,7 +41,7 @@ function App() {
 
   useEffect(() => {
     console.log(amount)
-    return () => {}
+    return () => { }
   }, [amount])
 
   return (
@@ -92,10 +90,10 @@ function App() {
           {/* ru */}
           {/* 放"page資料夾"內的元件 */}
           <Route exact path="/productList">
-            <RuProudctList handleAddCartNumber={handleAddCartNumber} currentUser={currentUser}/>
+            <RuProudctList handleAddCartNumber={handleAddCartNumber} currentUser={currentUser} />
           </Route>
           <Route exact path="/productListSalad">
-            <RuProudctListSalad handleAddCartNumber={handleAddCartNumber} currentUser={currentUser}/>
+            <RuProudctListSalad handleAddCartNumber={handleAddCartNumber} currentUser={currentUser} />
           </Route>
           <Route exact path="/productListCustom">
             <RuProudctListCustom
