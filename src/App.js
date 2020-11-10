@@ -13,7 +13,6 @@ import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon'
 import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal'
 import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement'
 
-
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -39,24 +38,6 @@ function App() {
         {/* 放切頁時不重新渲染的部份 e*/}
         {/* 路由設定開始 */}
         <Switch>
-          {/* janice */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/">
-            <JanIndex />
-          </Route> */}
-
-          {/* jess */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/menu">
-            <JessMenu />
-          </Route>
-          <Route exact path="/bento/:id">
-            <JessBento />
-          </Route>
-          <Route exact path="/vegBox">
-            <JessVegBox />
-          </Route>
-
           {/* iris */}
           {/* 放"page資料夾"內的元件 */}
           <Route exact path="/memberUserprofile">
@@ -101,45 +82,6 @@ function App() {
               setShowLoginModal={setShowLoginModal}
             />
           </Route>
-
-          {/* ru */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/productList">
-            <RuProudctList />
-          </Route>
-          <Route exact path="/productListSalad">
-            <RuProudctListSalad />
-          </Route>
-          <Route exact path="/productListCustom">
-            <RuProudctListCustom />
-          </Route> */}
-
-          {/* cha */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/cart">
-            <ChaCart />
-          </Route>
-          <Route exact path="/groupOrder/groupOrderCreate">
-            <ChaGroupOrder />
-          </Route> */}
-          {/* <Route exact path="/orderManagement">
-            <ChaOrderManagement />
-          </Route> */}
-
-          {/* claudia */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/farmMap">
-            <ClaudiaFarmIndex />
-          </Route>
-          <Route exact path="/farmIntro">
-            <ClaudiaFarmDetailedPage />
-          </Route> */}
-
-          {/* 404 */}
-
-          {/* <Route exact path="*">
-            <NotFoundPage />
-          </Route> */}
         </Switch>
         {/* 路由設定結束 */}
 
