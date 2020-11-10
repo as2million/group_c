@@ -54,38 +54,6 @@ function App() {
 
         {/* 路由設定開始 */}
         <Switch>
-          {/* janice */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/">
-            <JanIndex />
-          </Route> */}
-
-          {/* jess */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/menu">
-            <JessMenu />
-          </Route>
-          <Route exact path="/bento/:id">
-            <JessBento />
-          </Route>
-          <Route exact path="/vegBox">
-            <JessVegBox />
-          </Route> */}
-
-          {/* iris */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/memberUserprofile">
-            <IrisUserprofile />
-          </Route>
-          <Route exact path="/orderComment">
-            <IrisOrderComment />
-          </Route>
-          <Route exact path="/myFav">
-            <IrisMyFav />
-          </Route>
-          <Route exact path="/beastiePoint">
-            <IrisBeastiePoint />
-          </Route> */}
 
           {/* ru */}
           {/* 放"page資料夾"內的元件 */}
@@ -103,26 +71,10 @@ function App() {
             />
           </Route>
 
-          {/* cha */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/cart">
-            <ChaCart />
-          </Route>
-          <Route exact path="/groupOrder/groupOrderCreate">
-            <ChaGroupOrder />
-          </Route>
-          <Route exact path="/orderManagement">
-            <ChaOrderManagement />
-          </Route> */}
 
-          {/* claudia */}
-          {/* 放"page資料夾"內的元件 */}
-          {/* <Route exact path="/farmMap">
-            <ClaudiaFarmIndex />
-          </Route>
-          <Route exact path="/farmIntro">
-            <ClaudiaFarmDetailedPage />
-          </Route> */}
+
+
+
 
           {/* 404 */}
 
