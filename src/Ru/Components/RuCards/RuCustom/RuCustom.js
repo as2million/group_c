@@ -104,6 +104,10 @@ function RuCustom(props) {
   // 包後端資料的state
   const [data, setData] = useState('')
 
+  // 給localStorage的id
+  let today = +new Date()
+  const [todayId, setTodayId] = useState(today)
+
   // 切換售價與營養標示
   function switchPrice() {
     setIsPrice(true)
@@ -607,6 +611,16 @@ function RuCustom(props) {
                         id={'addCart-btn-custom'}
                         parentId={'addCart-btn-warp-custom'}
                         handleAddCartNumber={handleAddCartNumber}
+                        proudctId={todayId}
+                        price={
+                          ricePrice +
+                          meetPrice +
+                          eggPrice +
+                          vegPriceA +
+                          vegPriceB +
+                          vegPriceC
+                        }
+                        title={'客製化便當'}
                         amount={amount}
                       />
                     ) : (
@@ -622,6 +636,16 @@ function RuCustom(props) {
                           id={'addCart-btn-custom'}
                           parentId={'addCart-btn-warp-custom'}
                           handleAddCartNumber={handleAddCartNumber}
+                          proudctId={todayId}
+                          price={
+                            ricePrice +
+                            meetPrice +
+                            eggPrice +
+                            vegPriceA +
+                            vegPriceB +
+                            vegPriceC
+                          }
+                          title={'客製化便當'}
                           amount={amount}
                         />
                       </div>

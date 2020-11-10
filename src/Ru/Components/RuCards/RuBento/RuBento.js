@@ -8,7 +8,6 @@ import background from './Images/background.png'
 
 function RuBento(props) {
   const { searchInput, handleAddCartNumber, currentUser } = props
-
   const [itemWarp1, setItemWarp1] = useState(false)
   const [itemWarp2, setItemWarp2] = useState(false)
   const [itemWarp3, setItemWarp3] = useState(false)
@@ -21,6 +20,7 @@ function RuBento(props) {
   const [itemWarp10, setItemWarp10] = useState(false)
   const [itemWarp11, setItemWarp11] = useState(false)
   const [itemWarp12, setItemWarp12] = useState(false)
+
   const [isShowNothing, setIsShowNothing] = useState(false)
   // 後端資料
   const [data, setData] = useState('')
@@ -44,7 +44,7 @@ function RuBento(props) {
       return
     }
     let title1 = data[0].productname
-    let title2 =data[1].productname
+    let title2 = data[1].productname
     let title3 = data[2].productname
     let title4 = data[3].productname
     let title5 = data[4].productname
@@ -142,39 +142,45 @@ function RuBento(props) {
             {itemWarp1 && (
               <RuCard
                 title={data[0].productname}
-                comment={'1180'}
+                comment={data[0].contentNum}
                 buy={'234'}
                 price={data[0].price}
+                stars={4.5}
                 id={'ru-addCart-btn-1'}
+                proudctId = {data[0].sid}
                 parentId={'ru-addCart-btn-warp-1'}
                 imgId={data[0].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
             {itemWarp2 && (
               <RuCard
                 title={data[1].productname}
-                comment={'1180'}
+                comment={data[1].contentNum}
                 buy={'234'}
                 price={data[1].price}
+                stars={5}
                 id={'ru-addCart-btn-2'}
+                proudctId = {data[1].sid}
                 parentId={'ru-addCart-btn-warp-2'}
                 imgId={data[1].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
             {itemWarp3 && (
               <RuCard
                 title={data[2].productname}
-                comment={'1180'}
+                comment={data[2].contentNum}
                 buy={'234'}
                 price={data[2].price}
+                stars={4}
                 id={'ru-addCart-btn-3'}
+                proudctId = {data[2].sid}
                 parentId={'ru-addCart-btn-warp-3'}
                 imgId={data[2].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -182,39 +188,45 @@ function RuBento(props) {
             {itemWarp4 && (
               <RuCard
                 title={data[3].productname}
-                comment={'1180'}
+                comment={data[3].contentNum}
                 buy={'234'}
                 price={data[3].price}
+                stars={3.5}
                 id={'ru-addCart-btn-4'}
+                proudctId = {data[3].sid}
                 parentId={'ru-addCart-btn-warp-4'}
                 imgId={data[3].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
             {itemWarp5 && (
               <RuCard
                 title={data[4].productname}
-                comment={'1180'}
+                comment={data[4].contentNum}
                 buy={'234'}
                 price={data[4].price}
+                stars={4.5}
                 id={'ru-addCart-btn-5'}
+                proudctId = {data[4].sid}
                 parentId={'ru-addCart-btn-warp-5'}
                 imgId={data[4].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
             {itemWarp6 && (
               <RuCard
                 title={data[5].productname}
-                comment={'1180'}
+                comment={data[5].contentNum}
                 buy={'234'}
                 price={data[5].price}
+                stars={5}
                 id={'ru-addCart-btn-6'}
+                proudctId = {data[5].sid}
                 parentId={'ru-addCart-btn-warp-6'}
                 imgId={data[5].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
@@ -222,78 +234,90 @@ function RuBento(props) {
             {itemWarp7 && (
               <RuCard
                 title={data[6].productname}
-                comment={'1180'}
+                comment={data[6].contentNum}
                 buy={'234'}
                 price={data[6].price}
+                stars={4}
                 id={'ru-addCart-btn-7'}
+                proudctId = {data[6].sid}
                 parentId={'ru-addCart-btn-warp-7'}
                 imgId={data[6].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
             {itemWarp8 && (
               <RuCard
                 title={data[7].productname}
-                comment={'1180'}
+                comment={data[7].contentNum}
                 buy={'234'}
                 price={data[7].price}
+                stars={3}
                 id={'ru-addCart-btn-8'}
+                proudctId = {data[7].sid}
                 parentId={'ru-addCart-btn-warp-8'}
                 imgId={data[7].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
             {itemWarp9 && (
               <RuCard
                 title={data[8].productname}
-                comment={'1180'}
+                comment={data[8].contentNum}
                 buy={'234'}
                 price={data[8].price}
+                stars={4.5}
                 id={'ru-addCart-btn-9'}
+                proudctId = {data[8].sid}
                 parentId={'ru-addCart-btn-warp-9'}
                 imgId={data[8].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
-             {itemWarp10 && (
+            {itemWarp10 && (
               <RuCard
                 title={data[9].productname}
-                comment={'1180'}
+                comment={data[9].contentNum}
                 buy={'234'}
                 price={data[9].price}
+                stars={4}
                 id={'ru-addCart-btn-10'}
+                proudctId = {data[9].sid}
                 parentId={'ru-addCart-btn-warp-10'}
                 imgId={data[9].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
-             {itemWarp11 && (
+            {itemWarp11 && (
               <RuCard
                 title={data[10].productname}
-                comment={'1180'}
+                comment={data[10].contentNum}
                 buy={'234'}
                 price={data[10].price}
+                stars={4}
                 id={'ru-addCart-btn-11'}
+                proudctId = {data[10].sid}
                 parentId={'ru-addCart-btn-warp-11'}
                 imgId={data[10].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}
-             {itemWarp12 && (
+            {itemWarp12 && (
               <RuCard
                 title={data[11].productname}
-                comment={'1180'}
+                comment={data[11].contentNum}
                 buy={'234'}
                 price={data[11].price}
+                stars={3.5}
                 id={'ru-addCart-btn-12'}
+                proudctId = {data[11].sid}
                 parentId={'ru-addCart-btn-warp-12'}
                 imgId={data[11].img_id}
-                handleAddCartNumber={handleAddCartNumber}
+                handleAddCartNumber={handleAddCartNumber} // localStorage函式
                 currentUser={currentUser}
               />
             )}

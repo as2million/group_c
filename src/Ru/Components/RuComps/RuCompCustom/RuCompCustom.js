@@ -20,7 +20,9 @@ function RuCompCustom(props) {
   return (
     <>
       <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
-      <RuShowWidth />
+      {/* <span className="ru-cantSearch"> */}
+        <RuShowWidth />
+      {/* </span> */}
 
       <div className="ru-mainImg-warp">
         <h1>享受美食 不需要理由</h1>
@@ -33,6 +35,7 @@ function RuCompCustom(props) {
           <RuSearchBar
             searchInput={searchInput}
             setSearchInput={setSearchInput}
+            searchId={'ru-searchId'}
           />
           {/* 搜尋欄e */}
 

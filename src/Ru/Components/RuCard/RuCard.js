@@ -1,6 +1,8 @@
 import React from 'react'
 import './Style.scss'
 import star from './Images/star.svg'
+import starHalf from './Images/starHalf.svg'
+import starFull from './Images/starFull.svg'
 import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart'
 import RuAddFavorite from 'Ru/Components/RuAddFavorite/RuAddFavorite'
 
@@ -19,7 +21,9 @@ function RuCard(props) {
     buy,
     price,
     cardMargin,
+    stars,
     id,
+    proudctId,
     parentId,
     imgId,
     handleAddCartNumber,
@@ -53,13 +57,52 @@ function RuCard(props) {
             <h2>{title}</h2>
             <section>
               <div>
-                <div className="ru-card-star-warp">
-                  <img className="ru-card-star" src={star} />
-                  <img className="ru-card-star" src={star} />
-                  <img className="ru-card-star" src={star} />
-                  <img className="ru-card-star" src={star} />
-                  <img className="ru-card-star" src={star} />
-                </div>
+                {stars === 5 && (
+                  <div className="ru-card-star-warp">
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                  </div>
+                )}
+                {stars === 4.5 && (
+                  <div className="ru-card-star-warp">
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starHalf} />
+                  </div>
+                )}
+                {stars === 4 && (
+                  <div className="ru-card-star-warp">
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={star} />
+                  </div>
+                )}
+                {stars === 3.5 && (
+                  <div className="ru-card-star-warp">
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starHalf} />
+                    <img className="ru-card-star" src={star} />
+                  </div>
+                )}
+                {stars === 3 && (
+                  <div className="ru-card-star-warp">
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={starFull} />
+                    <img className="ru-card-star" src={star} />
+                    <img className="ru-card-star" src={star} />
+                  </div>
+                )}
+
                 <span>
                   <p className="ru-card-num ru-card-commentNum">
                     {comment} 則評論
@@ -80,10 +123,11 @@ function RuCard(props) {
             <RuAddCart
               target={'target'}
               id={id}
+              proudctId={proudctId}
               parentId={parentId}
               price={price}
               title={title}
-              handleAddCartNumber={handleAddCartNumber}
+              handleAddCartNumber={handleAddCartNumber} // localStorage函式
             />
           </div>
         </section>

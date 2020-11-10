@@ -6,7 +6,15 @@ function RuAddCart(props) {
   // 目標的id一律用target
   // id 不同元件id
   // parentId 不同元件父母id
-  const { id, parentId, price, title, amount, handleAddCartNumber } = props
+  const {
+    id,
+    proudctId,
+    parentId,
+    price,
+    title,
+    amount,
+    handleAddCartNumber,
+  } = props
   // console.log(id, parentId);
 
   const addToCart = (e) => {
@@ -69,25 +77,29 @@ function RuAddCart(props) {
     handleAddCartNumber('add', amount)
     updateCartToLocalStorage({
       // 設定要加入的資料
-      id: 7,
-      productName: '九九特餐-彩椒雞丁',
-      productPrice: 100,
-      productAmount: 1,
+      id: proudctId,
+      productName: title,
+      productPrice: price,
+      productAmount: amount || 1,
     })
   }
 
-  const updateCartToLocalStorage = (value) => {
+  const updateCartToLocalStorage = (item, isAdded = true) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
-
-    const newCart = [...currentCart, value]
-    localStorage.setItem('cart', JSON.stringify(newCart))
+    const index = currentCart.findIndex((v) => v.id === item.id)
+    if (index > -1) {
+      if (isAdded) {
+        currentCart[index].productAmount += amount
+      } else if (!isAdded && currentCart[index].productAmount > 1) {
+        currentCart[index].productAmount--
+      }
+    } else {
+      currentCart.push(item)
+      console.log('currentCart', currentCart)
+    }
+    localStorage.setItem('cart', JSON.stringify(currentCart))
+    // setMeals(currentCart)
   }
-
-  // useEffect(() => {
-  //   const $target = document.querySelector(target);
-  //   const $addBtn = document.querySelector(id);
-  //   console.log(target, id)
-  // }, []);
 
   return (
     <>

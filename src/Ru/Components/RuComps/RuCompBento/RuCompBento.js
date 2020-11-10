@@ -99,7 +99,7 @@ function RuCompRuBento(props) {
       {/* 商品卡片區 s */}
       <RuBento
         searchInput={searchInput}
-        handleAddCartNumber={handleAddCartNumber}
+        handleAddCartNumber={handleAddCartNumber} // localStorage函式
         currentUser={currentUser}
       />
       {/* 商品卡片區 e */}

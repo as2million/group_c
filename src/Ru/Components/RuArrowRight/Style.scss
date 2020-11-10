@@ -1,8 +1,8 @@
-.arrowRight-warp:focus {
+.ru-arrowRight-warp:focus {
   outline: none;
 }
 
-.arrowRight-warp {
+.ru-arrowRight-warp {
   border: none;
   background-color: #ffffff00;
   margin: 0px;
@@ -11,10 +11,10 @@
   transition: 0.2s;
 }
 
-.arrowRight-warp > img {
+.ru-arrowRight-warp > img {
   width: 100%;
 }
 
-.arrowRight-warp:active {
+.ru-arrowRight-warp:active {
   transform: scale(0.85);
 }
