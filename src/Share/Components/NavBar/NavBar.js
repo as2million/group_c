@@ -156,7 +156,6 @@ function NavBar(props) {
                     <li
                       className="navBar-jess-dropdown_item iris-logout-option"
                       onClick={() => {
-                        setShowLoginModal(true)
                         setIsLogin(false)
                         showLoginOption()
                       }}
