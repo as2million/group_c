@@ -74,9 +74,41 @@ function App() {
             <JanIndex setShowBar={setShowBar} />
           </Route>
 
+          {/* jess */}
+          {/* 放"page資料夾"內的元件 */}
+          {/* <Route exact path="/menu">
+            <JessMenu />
+          </Route>
+          <Route exact path="/bento/:id">
+            <JessBento />
+          </Route>
+          <Route exact path="/vegBox">
+            <JessVegBox />
+          </Route> */}
+
+          {/* iris */}
+          {/* 放"page資料夾"內的元件 */}
+          {/* <Route exact path="/memberUserprofile">
+            <IrisUserprofile />
+          </Route>
+          <Route exact path="/orderComment">
+            <IrisOrderComment />
+          </Route>
+          <Route exact path="/myFav">
+            <IrisMyFav />
+          </Route>
+          <Route exact path="/beastiePoint">
+            <IrisBeastiePoint />
+          </Route> */}
           <Route path="/orderManagement">
             <IrisOrderManagement />
           </Route>
+
+          {/* ru */}
+          {/* 放"page資料夾"內的元件 */}
+          {/* <Route exact path="/productList">
+            <RuProudctList />
+          </Route> */}
 
           {/* cha */}
           {/* 放"page資料夾"內的元件 */}
@@ -114,6 +146,16 @@ function App() {
           <Route exact path="/chaCartTest">
             <ChaCartTest />
           </Route>
+
+          {/* claudia */}
+          {/* 放"page資料夾"內的元件 */}
+          {/* <Route exact path="/farmMap">
+            <ClaudiaFarmIndex />
+          </Route>
+          <Route exact path="/farmIntro">
+            <ClaudiaFarmDetailedPage />
+          </Route> */}
+
           {/* 404 */}
 
           {/* <Route exact path="*">

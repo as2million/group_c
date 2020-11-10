@@ -44,13 +44,6 @@ function ChaOrderItem(props) {
         >
           click
         </Button>
-        <Button
-          onClick={() => setOpen(!open)}
-          aria-controls="example-collapse-text"
-          aria-expanded={open}
-        >
-          click
-        </Button>
         <Collapse in={open}>
           <div id="example-collapse-text">
             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus

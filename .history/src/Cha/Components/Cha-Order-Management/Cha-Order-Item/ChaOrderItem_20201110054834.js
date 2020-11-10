@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import './ChaOrderItem.scss';
-import { Button, Collapse } from 'react-bootstrap';
 function ChaOrderItem(props) {
   const { orderItem } = props;
-
   function OrderDetail() {
-    const [open, setOpen] = useState(false);
     return (
       <>
         <p>
           <a
-            className="btn btn-primary"
+            class="btn btn-primary"
             data-toggle="collapse"
             href="#collapseExample"
             role="button"
@@ -20,7 +17,7 @@ function ChaOrderItem(props) {
             Link with href
           </a>
           <button
-            className="btn btn-primary"
+            class="btn btn-primary"
             type="button"
             data-toggle="collapse"
             data-target="#collapseExample"
@@ -30,40 +27,18 @@ function ChaOrderItem(props) {
             Button with data-target
           </button>
         </p>
-        <div className="collapse" id="collapseExample">
-          <div className="card card-body">
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
             terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
             labore wes anderson cred nesciunt sapiente ea proident.
           </div>
         </div>
-        <Button
-          onClick={() => setOpen(!open)}
-          aria-controls="example-collapse-text"
-          aria-expanded={open}
-        >
-          click
-        </Button>
-        <Button
-          onClick={() => setOpen(!open)}
-          aria-controls="example-collapse-text"
-          aria-expanded={open}
-        >
-          click
-        </Button>
-        <Collapse in={open}>
-          <div id="example-collapse-text">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-            labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
-        </Collapse>
       </>
     );
   }
   return (
     <>
-      <OrderDetail />
       <div className="cha-order-row">
         <div className="cha-order-column1-picture"></div>
         <div className="cha-order-column2">

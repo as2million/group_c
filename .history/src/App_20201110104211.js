@@ -6,8 +6,6 @@ import VNavbar from 'Share/Components/VNavbar/VNavbar';
 import Footer from 'Share/Components/Footer/Footer';
 
 // 引入 所有人的總元件
-import JanIndex from 'Janice/Components/JanIndex/JanIndex';
-import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement';
 import ChaCart from 'Cha/Pages/Cha-Cart/ChaCart';
 import ChaGroupOrderCreate from 'Cha/Components/Cha-Group-Order-Create/ChaGroupOrderCreate';
 import ChaGroupOrderSearch from 'Cha/Components/Cha-Group-Order-Search/ChaGroupOrderSearch';
@@ -17,6 +15,7 @@ import ChaGroupOrderMenu from 'Cha/Components/Cha-Group-Order-Menu/ChaGroupOrder
 import ChaCheckpoint from 'Cha/Pages/ChaCheckpoint';
 import ChaProductList from 'Cha/Components-demo/ChaProductList';
 import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // 路由表
@@ -74,9 +73,41 @@ function App() {
             <JanIndex setShowBar={setShowBar} />
           </Route>
 
+          {/* jess */}
+          {/* 放"page資料夾"內的元件 */}
+          {/* <Route exact path="/menu">
+            <JessMenu />
+          </Route>
+          <Route exact path="/bento/:id">
+            <JessBento />
+          </Route>
+          <Route exact path="/vegBox">
+            <JessVegBox />
+          </Route> */}
+
+          {/* iris */}
+          {/* 放"page資料夾"內的元件 */}
+          {/* <Route exact path="/memberUserprofile">
+            <IrisUserprofile />
+          </Route>
+          <Route exact path="/orderComment">
+            <IrisOrderComment />
+          </Route>
+          <Route exact path="/myFav">
+            <IrisMyFav />
+          </Route>
+          <Route exact path="/beastiePoint">
+            <IrisBeastiePoint />
+          </Route> */}
           <Route path="/orderManagement">
             <IrisOrderManagement />
           </Route>
+
+          {/* ru */}
+          {/* 放"page資料夾"內的元件 */}
+          {/* <Route exact path="/productList">
+            <RuProudctList />
+          </Route> */}
 
           {/* cha */}
           {/* 放"page資料夾"內的元件 */}
@@ -114,6 +145,16 @@ function App() {
           <Route exact path="/chaCartTest">
             <ChaCartTest />
           </Route>
+
+          {/* claudia */}
+          {/* 放"page資料夾"內的元件 */}
+          {/* <Route exact path="/farmMap">
+            <ClaudiaFarmIndex />
+          </Route>
+          <Route exact path="/farmIntro">
+            <ClaudiaFarmDetailedPage />
+          </Route> */}
+
           {/* 404 */}
 
           {/* <Route exact path="*">

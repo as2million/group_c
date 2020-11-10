@@ -1,11 +1,31 @@
 import React, { useState } from 'react';
 import './ChaOrderItem.scss';
-import { Button, Collapse } from 'react-bootstrap';
 function ChaOrderItem(props) {
   const { orderItem } = props;
-
+  function Orderdetail2() {}
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      {' '}
+      <>
+        <Button
+          onClick={() => setOpen(!open)}
+          aria-controls="example-collapse-text"
+          aria-expanded={open}
+        >
+          click
+        </Button>
+        <Collapse in={open}>
+          <div id="example-collapse-text">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+            labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </Collapse>
+      </>
+    </>
+  );}
   function OrderDetail() {
-    const [open, setOpen] = useState(false);
     return (
       <>
         <p>
@@ -37,27 +57,6 @@ function ChaOrderItem(props) {
             labore wes anderson cred nesciunt sapiente ea proident.
           </div>
         </div>
-        <Button
-          onClick={() => setOpen(!open)}
-          aria-controls="example-collapse-text"
-          aria-expanded={open}
-        >
-          click
-        </Button>
-        <Button
-          onClick={() => setOpen(!open)}
-          aria-controls="example-collapse-text"
-          aria-expanded={open}
-        >
-          click
-        </Button>
-        <Collapse in={open}>
-          <div id="example-collapse-text">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-            labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
-        </Collapse>
       </>
     );
   }

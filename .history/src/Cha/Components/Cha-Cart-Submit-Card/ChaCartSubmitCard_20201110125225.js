@@ -106,7 +106,7 @@ function ChaCartSubmitCard(props) {
       member_sid: memberSid,
       take_person: name,
       mobile: mobile,
-      take_way: '自取',
+      take_way: 自取,
       take_address: address,
       take_date: takeDate,
       take_time: takeTime,

@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import './ChaOrderItem.scss';
-import { Button, Collapse } from 'react-bootstrap';
 function ChaOrderItem(props) {
   const { orderItem } = props;
-
   function OrderDetail() {
-    const [open, setOpen] = useState(false);
     return (
       <>
         <p>
@@ -44,13 +41,6 @@ function ChaOrderItem(props) {
         >
           click
         </Button>
-        <Button
-          onClick={() => setOpen(!open)}
-          aria-controls="example-collapse-text"
-          aria-expanded={open}
-        >
-          click
-        </Button>
         <Collapse in={open}>
           <div id="example-collapse-text">
             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
@@ -64,6 +54,7 @@ function ChaOrderItem(props) {
   return (
     <>
       <OrderDetail />
+      <Orderdetail2 />
       <div className="cha-order-row">
         <div className="cha-order-column1-picture"></div>
         <div className="cha-order-column2">
