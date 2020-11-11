@@ -226,10 +226,15 @@
 @media only screen and (max-width: 57.6rem) {
   .claudia-index-map-inside {
     width: 100vw;
-    height: 540px;
+    height: 470px;
     display: flex;
     justify-content: center;
     overflow: scroll;
+  }
+
+  .claudia-index-map {
+    width: 100%;
+    padding: 0px;
   }
 
   .claudia-index-map svg {
