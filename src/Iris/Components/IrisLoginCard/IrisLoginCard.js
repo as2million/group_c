@@ -212,7 +212,7 @@ function IrisLoginCard(props) {
           {/* ----------------登入表單----------------- */}
           <div className="iris-login-content">
             <div className="iris-login-title">會員登入</div>
-            <div class="alert alert-danger iris-login-alert" role="alert">
+            <div className="alert alert-danger iris-login-alert" role="alert">
               帳號或密碼錯誤
             </div>
             <div className="iris-login-input d-flex  align-items-center">
@@ -224,7 +224,7 @@ function IrisLoginCard(props) {
               <InputH44 type="password" id="userpassword" />
             </div>
             <div className="iris-login-other d-flex">
-              <div class="form-check">
+              <div className="form-check">
                 <input
                   class="form-check-input iris-big-checkbox"
                   type="checkbox"
@@ -262,7 +262,10 @@ function IrisLoginCard(props) {
           {/* ----------------註冊表單----------------- */}
           <div className="iris-register-content">
             <div className="iris-register-title">會員註冊</div>
-            <div class="alert alert-success iris-register-alert" role="alert">
+            <div
+              className="alert alert-success iris-register-alert"
+              role="alert"
+            >
               註冊成功
             </div>
             <div className="iris-login-input d-flex  align-items-center">
@@ -275,7 +278,7 @@ function IrisLoginCard(props) {
               <div className="iris-login-text">密碼</div>
               <InputH44 type="password" id="createpassword" />
             </div>
-            <div class="iris-wrong-password-format">*密碼要大於8碼</div>
+            <div className="iris-wrong-password-format">*密碼要大於8碼</div>
 
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">信箱</div>
@@ -287,7 +290,9 @@ function IrisLoginCard(props) {
               <div className="iris-login-text">手機</div>
               <InputH44 type="text" id="createmobile" />
             </div>
-            <div class="iris-wrong-mobile-format">*請填入正確的手機格式</div>
+            <div className="iris-wrong-mobile-format">
+              *請填入正確的手機格式
+            </div>
 
             <div
               className="iris-register-button"
