@@ -10,6 +10,7 @@ import {
 function AddressTabs(props) {
   const {
     // takeOrNot,
+    currentUser,
     setTakeOrNot,
     closeModal,
     county,
@@ -20,27 +21,35 @@ function AddressTabs(props) {
     setAddress,
   } = props
 
-  // console.log('datacountries', datacountries)
-  // console.log('datatownships', datatownships)
-  // console.log('dataprice', dataprice)
+  const updateAddress = () => {
+    // const address = document.querySelector('#iris-member-address').value
+    const newcounty = document.querySelector('#exampleFormControlSelect1')
+      .options[county].value
+    const newdistrict = document.querySelector('#exampleFormControlSelect2')
+      .options[township].value
+    const newaddress = document.querySelector('#exampleFormControlSelect3')
+      .value
+    const newAddressData = {
+      member_id: currentUser,
+      county: newcounty,
+      district: newdistrict,
+      address: newaddress,
+    }
+    // console.log(newProfile)
 
-  //   const newData = {
-  //     address: address,
-  //   }
-  //   fetch('http://localhost:5000/index/member_list', {
-  //     method: 'PUT',
-  //     body: JSON.stringify(newData),
-  //     headers: new Headers({
-  //       Accept: 'application/json',
-  //       'Content-Type': 'application/json',
-  //     }),
-  //   })
-  //     .then((r) => r.json())
-
-  //     .then((obj) => {
-  //       console.log(obj)
-  //     })
-  // }
+    fetch('http://localhost:5000/index/updateAddress', {
+      method: 'POST',
+      body: JSON.stringify(newAddressData),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+      .then((r) => r.json())
+      .then((o) => {
+        console.log(o)
+      })
+  }
 
   // Acomponent
   const ComponentA = (props) => {
@@ -127,6 +136,7 @@ function AddressTabs(props) {
               <br />
               <div className="jan-address-input">
                 <input
+                  id="exampleFormControlSelect3"
                   style={{ fontSize: '1.5rem' }}
                   className="form-control iris-inputH50"
                   type="text"
@@ -177,7 +187,7 @@ function AddressTabs(props) {
 
               <div className="jan-put-button float-right float-bottom">
                 <button
-                  // onClick={updateAddress}
+                  onClick={updateAddress}
                   type="button"
                   className="button-btn-y "
                   text="設為預設地址"
