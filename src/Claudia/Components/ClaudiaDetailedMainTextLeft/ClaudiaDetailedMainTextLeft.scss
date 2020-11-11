@@ -24,6 +24,10 @@
 //--------------------------------Ipad---------------------------------
 
 @media screen and (min-width: 576px) and (max-width: 769px) {
+  .claudia-detailed-maintext-left-i {
+    width: 485px;
+  }
+
   .claudia-detailed-maintext-left-i h1 {
     width: 485px;
   }
@@ -38,6 +42,9 @@
 //----------------------Iphone 6/7/8 + Plus + X------------------------
 
 @media screen and (max-width: 576px) {
+  .claudia-detailed-maintext-left-i {
+    width: 285px;
+  }
   .claudia-detailed-maintext-left-i h1 {
     font-size: 24px;
     color: #66ab8c;
