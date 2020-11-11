@@ -25,6 +25,9 @@ import qingjiangAfter from './Images/qingjiangAfter.svg'
 import eggAfter from './Images/eggAfter.svg'
 import poachedEggAfter from './Images/poachedEggAfter.svg'
 import riceAfter from './Images/riceAfter.svg'
+import grainRiceAfter from './Images/grainRiceAfter.svg'
+import redQuinoaAfter from './Images/redQuinoaAfter.svg'
+import chickenBreastAfter from './Images/chickenBreastAfter.svg'
 import shrimpAfter from './Images/shrimpAfter.svg'
 
 // 品項放置後 e
@@ -93,7 +96,6 @@ function RuCustom(props) {
   const [putAclass, setPutAclass] = useState('ru-put')
   const [putBclass, setPutBclass] = useState('ru-put')
   const [putCclass, setPutCclass] = useState('ru-put')
-
 
   // 是否可以購買
   const [isCanBuy, setIsCanBuy] = useState(false)
@@ -416,6 +418,7 @@ function RuCustom(props) {
         e.target === img
       ) {
         // 白飯區
+
         switch (
           e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
         ) {
@@ -425,9 +428,18 @@ function RuCustom(props) {
             setRicePrice(data[0].price)
             setRiceCal(data[0].calories)
             break
-          // case 'ru-rice-2':
-          //   setImgD(riceAfter)
-          //   break
+          case 'ru-rice-2':
+            setImgD(grainRiceAfter)
+            setRiceName(data[1].productName)
+            setRicePrice(data[1].price)
+            setRiceCal(data[1].calories)
+            break
+          case 'ru-rice-3':
+            setImgD(redQuinoaAfter)
+            setRiceName(data[2].productName)
+            setRicePrice(data[2].price)
+            setRiceCal(data[2].calories)
+            break
           case 'ru-egg-1': // 'ru-egg-1'
             setImgE(eggAfter) // 就放入放置後圖片
             setEggName(data[6].productName)
@@ -441,7 +453,13 @@ function RuCustom(props) {
             setEggCal(data[7].calories)
             break
           case 'ru-meet-1': // 'ru-meet-1'
-            setImgF(shrimpAfter) // 就放入放置後圖片
+            setImgF(chickenBreastAfter) // 就放入放置後圖片
+            setMeetName(data[3].productName)
+            setMeetPrice(data[3].price)
+            setMeetCal(data[3].calories)
+            break
+          case 'ru-meet-3': 
+            setImgF(shrimpAfter)
             setMeetName(data[5].productName)
             setMeetPrice(data[5].price)
             setMeetCal(data[5].calories)
