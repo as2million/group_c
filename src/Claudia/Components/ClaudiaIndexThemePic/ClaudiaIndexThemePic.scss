@@ -5,14 +5,12 @@
   height: 100px;
 }
 
-.claudia-index-background {
-  position: relative;
-}
-
 .claudia-index-background-image {
   background-image: url(./Images/index_bg.jpg);
   height: 765px;
-  width: 100vw;
+  width: 1440px;
+  margin: 0px auto;
+  position: relative;
 }
 
 .claudia-index-text {
@@ -112,27 +110,24 @@
 
 //--------------------------------Ipad---------------------------------
 
-
 @media screen and (min-width: 576px) and (max-width: 1200px) {
-
-    .claudia-index-text {
-        position: absolute;
-        top: 770px;
-        right: 255px;
-    }
-
-    .claudia-index-background-image {
-      width: 100vw;
-      height: 1024px;
-      background-image: url(./Images/rwd_pad_index_bg.jpg);
+  .claudia-index-text {
+    position: absolute;
+    top: 770px;
+    right: 255px;
   }
 
-    //mouse scroll icon
+  .claudia-index-background-image {
+    width: 100vw;
+    height: 1024px;
+    background-image: url(./Images/rwd_pad_index_bg.jpg);
+  }
 
-    .claudia-center {
-        display: none;
-    }
+  //mouse scroll icon
 
+  .claudia-center {
+    display: none;
+  }
 }
 
 //--------------------------------Ipad---------------------------------
@@ -141,36 +136,35 @@
 
 @media screen and (min-width: 375px) and (max-width: 576px) {
   .claudia-fake-navbar {
-      width: 100%;
-      height: 100px;
+    width: 100%;
+    height: 100px;
   }
 
   .claudia-index-background-image {
-      width: 100vw;
-      height: 736px;
-      background-image: url(./Images/rwd_plus_index_bg.jpg);
+    width: 100vw;
+    height: 736px;
+    background-image: url(./Images/rwd_plus_index_bg.jpg);
   }
 
   .claudia-index-text {
-      position: absolute;
-      top: 530px;
-      right: 100px;
+    position: absolute;
+    top: 530px;
+    right: 100px;
   }
 
   .claudia-index-text-1 {
-      font-size: 40px;
+    font-size: 40px;
   }
 
   .claudia-index-text-2 {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   //mouse scroll icon
 
   .claudia-center {
-      display: none;
+    display: none;
   }
-
 }
 
 //---------------------------Iphone 6/7/8 Plus-------------------------
@@ -178,18 +172,16 @@
 //---------------------------Iphone 6/7/8 + X--------------------------
 
 @media screen and (max-width: 375px) {
+  .claudia-index-background-image {
+    width: 100vw;
+    height: 667px;
+    background-image: url(./Images/rwd_index_bg.jpg);
+  }
 
-    .claudia-index-background-image {
-        width: 100vw;
-        height: 667px;
-        background-image: url(./Images/rwd_index_bg.jpg);
-    }
-
-    .claudia-index-text {
-        position: absolute;
-        right: 80px;
-    }
+  .claudia-index-text {
+    position: absolute;
+    right: 80px;
+  }
 }
-
 
 //--------------------------Iphone 6/7/8 + X--------------------------

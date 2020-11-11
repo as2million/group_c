@@ -13,6 +13,7 @@ function ClaudiaIndexContent() {
   return (
     <>
       <div className="claudia-index-content">
+      <div className="claudia-index-content-fix-container">
         <div className="claudia-index-content-container">
           <div className="claudia-index-map">
             <ClaudiaIndexMap setCity={setCity} setData={setData} data={data} />
@@ -32,6 +33,9 @@ function ClaudiaIndexContent() {
             />
           </div>
         </div>
+
+      </div>
+        
         {/* <div className="claudia-fake-footer"></div> */}
       </div>
     </>
