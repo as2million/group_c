@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import ReactDOM from 'react-dom'
 import './JessModal.scss'
 import Cross from './Images/cross.svg'
-import JessCommentInput from '../JessCommentMsg/JessCommentInput'
 function JessModal(props) {
   const { closeModal } = props
 
@@ -16,7 +14,6 @@ function JessModal(props) {
             alt=""
             src={Cross}
           />
-          {/* <JessCommentInput closeModal={closeModal} /> */}
           {props.children}
         </div>
       </div>

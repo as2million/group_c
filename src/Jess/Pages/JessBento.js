@@ -11,19 +11,57 @@ import ToTop from 'Share/Components/ToTopButton/ScrollButton'
 
 function JessBento(props) {
   const { handleCartNumber, handleCarList } = props
+  const [count, setCount] = useState(1)
+  const [total, setTotal] = useState(170)
 
+  //useParams 設定id
+  let { id } = useParams()
+  const [menu, setMenu] = useState([])
+  async function bentoData() {
+    const url = 'http://localhost:5000/product/bento'
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    const response = await fetch(request)
+    const data = await response.json()
+
+    // setMenu(data[0])
+    //這邊id值可以設定分頁
+    setMenu(data[id])
+    console.log(data)
+  }
+
+  useEffect(() => {
+    bentoData()
+  }, [id])
+
+  const refreshPage = () => {
+    window.location.reload()
+  }
   return (
     <>
       <VNavbar />
       <JessHeader
         handleCartNumber={handleCartNumber}
         handleCarList={handleCarList}
+        count={count}
+        setCount={setCount}
+        total={total}
+        setTotal={setTotal}
+        menu={menu}
+        setMenu={setMenu}
       />
       <JessListA />
       <JessListB />
       <JessListC />
       <JessListD />
-      <JessListE />
+      <JessListE menu={menu} setMenu={setMenu} />
       <ToTop />
     </>
   )

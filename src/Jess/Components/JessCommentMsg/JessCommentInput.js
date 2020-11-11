@@ -8,22 +8,22 @@ import 'antd/dist/antd.css'
 import { Rate } from 'antd'
 
 function JessCommentInput(props) {
-  const {
-    textInput,
-    setTextInput,
-    comments,
-    setComments,
-    rating,
-    setRating,
-    member_sid,
-    closeModal,
-    status,
-    setStatus,
-  } = props
-
-  // const [textInput, setTextInput] = useState('')
-  // const [starKey, setStarKey] = useState(Math.random())
-  // const [comments, setComments] = useState([
+  const [textInput, setTextInput] = useState('')
+  const [comments, setComments] = useState([])
+  const [rating, setRating] = useState(0)
+  const { closeModal } = props
+  // const {
+  //   textInput,
+  //   setTextInput,
+  //   comments,
+  //   setComments,
+  //   rating,
+  //   setRating,
+  //   member_sid,
+  //   closeModal,
+  //   status,
+  //   setStatus,
+  // } = props
 
   async function handleSubmit(v) {
     // e.preventDefault();
@@ -68,56 +68,60 @@ function JessCommentInput(props) {
     handleSubmit()
   }, [])
 
-  // const handleClose = (e) => {
-  //   closeModal(false)
-  // }
   return (
     <>
-      <div className="col-3 jess-comment-productPic"></div>
-      <div className="col-9">
-        <p className="jess-modalText">滿意此商品嗎：</p>
-        <div className="jess-rateStar mt-0">
-          <Rate count={5} value={rating} onChange={ratingChanged} />
-        </div>
-        <textarea
-          className="form-control  form-control-lg mt-3 jess-textarea"
-          type="text"
-          rows="5"
-          placeholder="您的寶貴意見是我們成長的動力"
-          onChange={(e) => setTextInput(e.target.value)}
-          // onChange={handleChange}
-          value={textInput}
-          onKeyPress={(e) => {
-            if (e.key === 'Enter' && e.target.value) {
-              // const newComments = [e.target.value, ...comments];
-              const newItems = {
-                product_sid: 1,
-                member_sid: 1,
-                starRating: rating,
-                content: textInput,
-                // created_at: new Date(),
+      <div className="row mt-3">
+        <div className="col-3 jess-comment-productPic mt-2"></div>
+        <div className="col-8">
+          <p className="jess-modalText">滿意此商品嗎：</p>
+          <div className="jess-rateStar mt-0">
+            <Rate count={5} value={rating} onChange={ratingChanged} />
+          </div>
+          <textarea
+            className="form-control  form-control-lg mt-3 jess-textarea"
+            type="text"
+            rows="4"
+            style={{ fontSize: '1.7rem' }}
+            placeholder="您的寶貴意見是我們成長的動力^_*"
+            onChange={(e) => setTextInput(e.target.value)}
+            // onChange={handleChange}
+            value={textInput}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter' && e.target.value) {
+                // const newComments = [e.target.value, ...comments];
+                const newItems = {
+                  product_sid: 1,
+                  member_sid: 1,
+                  starRating: rating,
+                  content: textInput,
+                  // created_at: new Date(),
+                }
+                const newComments = [newItems, ...comments]
+                setComments(newComments)
+                setTextInput('')
               }
-              const newComments = [newItems, ...comments]
-              setComments(newComments)
-              setTextInput('')
+            }}
+          ></textarea>
+          <button
+            className="jess-input-button"
+            onClick={() => {
+              closeModal()
+              handleSubmit()
+            }}
+          >
+            確認送出
+          </button>
+          <input
+            type="button"
+            value="demo"
+            className="jess-demo-button"
+            onClick={(e) =>
+              setTextInput(
+                '拾餐的便當真的好健康，網站超美又有趣，他們的工作人員也都好優秀，回購率100%!!'
+              )
             }
-          }}
-        ></textarea>
-        <button
-          className="jess-input-button"
-          // onClick={handleSubmit}
-          // onClick={
-          //   () => {
-          //   handleSubmit()
-          //   }
-          // }
-          onClick={() => {
-            closeModal()
-            handleSubmit()
-          }}
-        >
-          確認送出
-        </button>
+          ></input>
+        </div>
       </div>
     </>
   )

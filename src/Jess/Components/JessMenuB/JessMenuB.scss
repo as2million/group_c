@@ -31,18 +31,30 @@ $white: #ffffff;
   padding: 0;
 }
 
-.jess-menuB-pic1::before {
-  content: '客製化便當';
+.jess-menuB-BentoText {
   color: #ffffff;
   font-size: 3rem;
   font-family: 'Noto Serif TC';
   font-weight: 600;
   letter-spacing: 1rem;
-  position: relative;
+  position: absolute;
   text-shadow: #000 1px 1px 5px;
   top: 40%;
   left: 35%;
+  z-index: 20;
 }
+// .jess-menuB-pic1::before {
+//   content: '客製化便當';
+//   color: #ffffff;
+//   font-size: 3rem;
+//   font-family: 'Noto Serif TC';
+//   font-weight: 600;
+//   letter-spacing: 1rem;
+//   position: relative;
+//   text-shadow: #000 1px 1px 5px;
+//   top: 40%;
+//   left: 35%;
+// }
 
 .jess-menuB-pic1 {
   background: url('./images/jess-menuB-pic1.jpg') no-repeat;

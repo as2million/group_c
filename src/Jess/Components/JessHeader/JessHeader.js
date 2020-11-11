@@ -10,37 +10,44 @@ import cart from '../../../Share/Components/AddCart/Images/cart.svg'
 import BreadCrumb from '../JessBreadCrumb/BreadCrumb'
 
 function JessProdoctList(props) {
-  const [count, setCount] = useState(1)
-  const [total, setTotal] = useState(170)
-  const [mycount, setMycountt] = useState([])
-  const { handleCartNumber, handleCarList } = props
+  // const [count, setCount] = useState(1)
+  // const [total, setTotal] = useState(170)
+  const {
+    handleCartNumber,
+    count,
+    setCount,
+    total,
+    setTotal,
+    menu,
+    setMenu,
+  } = props
   // console.log(props)
   //useParams 設定id
   let { id } = useParams()
-  const [menu, setMenu] = useState([])
-  async function bentoData() {
-    const url = 'http://localhost:5000/product/bento'
+  // const [menu, setMenu] = useState([])
+  // async function bentoData() {
+  //   const url = 'http://localhost:5000/product/bento'
 
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
+  //   const request = new Request(url, {
+  //     method: 'GET',
+  //     headers: new Headers({
+  //       Accept: 'application/json',
+  //       'Content-Type': 'application/json',
+  //     }),
+  //   })
 
-    const response = await fetch(request)
-    const data = await response.json()
+  //   const response = await fetch(request)
+  //   const data = await response.json()
 
-    // setMenu(data[0])
-    //這邊id值可以設定分頁
-    setMenu(data[id])
-    console.log(data)
-  }
+  //   // setMenu(data[0])
+  //   //這邊id值可以設定分頁
+  //   setMenu(data[id])
+  //   console.log(data)
+  // }
 
-  useEffect(() => {
-    bentoData()
-  }, [])
+  // useEffect(() => {
+  //   bentoData()
+  // }, [])
 
   const handleClick = (type) => {
     if (type === 'increment') {
@@ -59,13 +66,6 @@ function JessProdoctList(props) {
     }
   }
 
-  // function CreateCartToLocalStorage(value) {
-  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || []
-
-  //   const newCart = [...currentCart, value]
-  //   localStorage.setItem('cart', JSON.stringify(newCart))
-  //   console.log(newCart[1].productname)
-  // }
   const CreateCartToLocalStorage = (item, amount = 1, isAdded) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
     const index = currentCart.findIndex((v) => v.id === item.id)
@@ -93,15 +93,10 @@ function JessProdoctList(props) {
   }
   return (
     <>
-      {/* <div className="container jess-breadCrumb">
-        <BreadCrumb />
-      </div> */}
-      {/* <BreadCrumb className="jess-breadCrumb" /> */}
       <div className="jess-fluidBg">
         <div className="container jess-breadCrumb">
           <BreadCrumb menu={menu} />
         </div>
-        {/* <container className="jess-container"></container> */}
 
         <div className="jess-productList-chichenPic">
           <img
@@ -140,7 +135,7 @@ function JessProdoctList(props) {
           </div>
           <div className="jess-rateStar">
             <Rate disabled defaultValue={4} />
-            <a href="#1">
+            <a href="#1" className="jess-contentId">
               <span className="jess-rateStarMsgNum">
                 {menu.contentNum} 則評論{' '}
               </span>
@@ -194,7 +189,7 @@ function JessProdoctList(props) {
                 CreateCartToLocalStorage(
                   {
                     id: 1,
-                    productName: '慢煮嫩雞胸-蒜味香草',
+                    productName: '中歐香料嫩雞胸',
                     productPicture: '00_bento-chicken-breast',
                     productPrice: 150,
                     productAmount: 1,

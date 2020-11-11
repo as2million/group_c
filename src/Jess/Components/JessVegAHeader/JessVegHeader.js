@@ -91,12 +91,28 @@ function JessVegHeader(props) {
       target.classList.toggle('active')
     })
   }
-  function CreateCartToLocalStorage(value) {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+  // function CreateCartToLocalStorage(value) {
+  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
-    const newCart = [...currentCart, value]
-    localStorage.setItem('cart', JSON.stringify(newCart))
+  //   const newCart = [...currentCart, value]
+  //   localStorage.setItem('cart', JSON.stringify(newCart))
+  // }
+  const CreateCartToLocalStorage = (item, amount = 1, isAdded) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+    const index = currentCart.findIndex((v) => v.id === item.id)
+    if (index > -1) {
+      if (isAdded) {
+        currentCart[index].productAmount += amount
+      } else if (!isAdded && currentCart[index].productAmount > 1) {
+        currentCart[index].productAmount--
+      }
+    } else {
+      currentCart.push(item)
+      console.log('currentCart', currentCart)
+    }
+    localStorage.setItem('cart', JSON.stringify(currentCart))
   }
+
   return (
     <>
       <div className="jess-fluidBg">
@@ -205,12 +221,13 @@ function JessVegHeader(props) {
               onClick={() => {
                 handleCartNumber('add', count)
                 CreateCartToLocalStorage({
-                  id: 1,
-                  productname: '在地小農蔬菜箱',
+                  id: 23,
+                  productName: '在地小農蔬菜箱',
+                  productPicture: '22_vegBox',
                   size: 's',
                   date: 2020 / 11 / 22,
-                  img_id: '22_vegBox',
-                  price: 350,
+                  productPrice: 350,
+                  productAmount: 1,
                 })
               }}
             >

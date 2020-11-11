@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import './JessMenuB.scss'
 import { Link } from 'react-router-dom'
+
 import brownBorder from 'Jess/Components/images/SVG/brownBorder.svg'
 
-function JessMenuB() {
+function JessMenuB(props) {
   return (
     <>
       <div className="container-fluid jess-MenuB-container-fluid">
@@ -16,7 +17,9 @@ function JessMenuB() {
           </p>
           <div className="row mt-5 ">
             <div class="col-12 col-sm-6 ">
-              {/* <p className="jess-menuB-BentoText">客製化便當</p> */}
+              <p className="jess-menuB-BentoText" id="title">
+                客製化便當
+              </p>
               <div className="jess-menuB-pic1"></div>
             </div>
             <div className="col-12 col-sm-6 d-flex jess-MenuB-RWD">

@@ -7,6 +7,7 @@ import './ChaOrderItem.scss'
 import JessModal from '../JessModal/JessModal'
 import JessCommentMsg from '../../Pages/JessCommentMsg'
 import JessCommentOrder from '../JessCommentMsg/JessCommentOrder'
+import JessCommentInput from '../JessCommentMsg/JessCommentInput'
 
 ///以上三個
 // import UpdateCartAToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalStorage'
@@ -160,7 +161,7 @@ function ChaOrderItem(props) {
       <>
         {status && (
           <JessModal closeModal={() => setStatus(false)}>
-            <JessCommentMsg closeModal={() => setStatus(false)} />
+            <JessCommentInput closeModal={() => setStatus(false)} />
             {/* <JessCommentMsg status={status} setStatus={setStatus} /> */}
           </JessModal>
         )}

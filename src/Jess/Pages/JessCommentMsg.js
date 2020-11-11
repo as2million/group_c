@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../Components/JessCommentMsg/JessCommentInput.scss'
 import JessCommentInput from '../Components/JessCommentMsg/JessCommentInput'
-import JessCommentList from '../Components/JessCommentMsg/JessCommentList'
 
 function JessMenu(props) {
   const [textInput, setTextInput] = useState('')

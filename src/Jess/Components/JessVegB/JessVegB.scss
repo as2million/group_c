@@ -68,7 +68,24 @@ $white: #ffffff;
   width: 114rem;
   height: 39.8rem;
   margin-top: 6rem;
+
+  overflow: hidden;
+  animation-name: example;
+  // animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  // animation-iteration-count: infinite;
+  // animation-direction: alternate;
 }
+@keyframes example {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.3);
+  }
+}
+
 .jess-farmPic {
   background: url('./images/farm.jpg');
   background-size: cover;
