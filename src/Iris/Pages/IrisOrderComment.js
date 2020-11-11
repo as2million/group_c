@@ -7,6 +7,7 @@ import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
 
 function IrisOrderComment(props) {
+  const [commentDelete, setCommentDelete] = useState('')
   const { isLogin, currentUser, setShowLoginModal } = props
   if (isLogin === false) {
     setShowLoginModal(true)
@@ -16,8 +17,15 @@ function IrisOrderComment(props) {
     <>
       <VNavbar />
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect currentUser={currentUser} />
-        <IrisOrderCommentSect currentUser={currentUser} />
+        <IrisMemberMenuSect
+          currentUser={currentUser}
+          commentDelete={commentDelete}
+        />
+        <IrisOrderCommentSect
+          currentUser={currentUser}
+          commentDelete={commentDelete}
+          setCommentDelete={setCommentDelete}
+        />
       </div>
     </>
   )

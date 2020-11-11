@@ -8,7 +8,11 @@ import { id } from 'date-fns/locale'
 // import InputH40 from './../../../Share/Components/Input/InputH40';
 
 function IrisUserCommentSect(props) {
-  const { currentUser } = props
+  const {
+    currentUser,
+    // 設定setCommentDelete的狀態，傳到memberMenu，若有改變數字會減一
+    setCommentDelete,
+  } = props
   const [allComment, setAllComment] = useState([])
 
   // ---------- 改留言 ---------- //
@@ -87,7 +91,7 @@ function IrisUserCommentSect(props) {
     })
       .then((r) => r.json())
       .then((o) => {
-        console.log(o)
+        // console.log(o)
       })
   }
 
@@ -106,7 +110,7 @@ function IrisUserCommentSect(props) {
     const response = await fetch(request)
     const data = await response.json()
 
-    console.log(data)
+    // console.log(data)
     setAllComment(data)
   }
 
@@ -131,14 +135,18 @@ function IrisUserCommentSect(props) {
     commentNum.innerText = commentNum.innerText - 1
     // console.log(commentNum)
 
-    // 2. 準備要送的資料
+    // 2. 連動menu數字
+    // 設甚麼值無所謂，重點是讓狀態改變，menu那邊useEffect才會偵測到
+    setCommentDelete(thisId)
+
+    // 3. 準備要送的資料
     // 抓要刪除的投稿的資料庫sid
     const commentSid = e.target.parentNode.parentNode.parentNode.id.slice(9)
     const commentToBeDelete = {
       commentSid: commentSid,
     }
 
-    // 3. 送出
+    // 4. 送出
     fetch('http://localhost:5000/member/deleteComment', {
       method: 'POST',
       body: JSON.stringify(commentToBeDelete),
@@ -149,7 +157,7 @@ function IrisUserCommentSect(props) {
     })
       .then((r) => r.json())
       .then((o) => {
-        console.log(o)
+        // console.log(o)
       })
   }
 
@@ -172,7 +180,7 @@ function IrisUserCommentSect(props) {
           className="iris-comment-box"
           id={thisId}
           onClick={() => {
-            console.log(thisId)
+            // console.log(thisId)
           }}
         >
           {/* <div className="iris-comment-box d-flex" id="comment1"> */}

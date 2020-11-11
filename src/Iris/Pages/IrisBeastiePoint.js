@@ -7,7 +7,15 @@ import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
 
 function IrisBeastiePoint(props) {
-  const { isLogin, currentUser, setShowLoginModal } = props
+  const {
+    isLogin,
+    currentUser,
+    setShowLoginModal,
+    userCommentCount,
+    userFavCount,
+    userToTalCoin,
+    setUserToTalCoin,
+  } = props
   if (isLogin === false) {
     setShowLoginModal(true)
     return <Redirect to="/" />
@@ -16,8 +24,17 @@ function IrisBeastiePoint(props) {
     <>
       <VNavbar />
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect currentUser={currentUser} />
-        <IrisBeastiePointSect currentUser={currentUser} />
+        <IrisMemberMenuSect
+          currentUser={currentUser}
+          // 投稿,最愛,怪獸幣數量
+          // userCommentCount={userCommentCount}
+          // userFavCount={userFavCount}
+          // userToTalCoin={userToTalCoin}
+        />
+        <IrisBeastiePointSect
+          currentUser={currentUser}
+          // setUserToTalCoin={setUserToTalCoin}
+        />
       </div>
     </>
   )

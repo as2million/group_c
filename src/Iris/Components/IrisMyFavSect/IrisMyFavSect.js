@@ -10,7 +10,12 @@ import Card from './Card/Card'
 // import Star123 from './Images/star_orange.svg';
 
 function IrisDataEditSect(props) {
-  const { currentUser } = props
+  const {
+    currentUser,
+    userFavDelete,
+    // 設定userFavDelete的狀態，傳到memberMenu，若有改變數字會減一
+    setUserFavDelete,
+  } = props
   const [myFav, setMyFav] = useState([])
 
   // 得到目前所有的最愛資料
@@ -28,7 +33,7 @@ function IrisDataEditSect(props) {
     const response = await fetch(request)
     const data = await response.json()
 
-    console.log(data)
+    // console.log(data)
     setMyFav(data)
   }
 
@@ -65,17 +70,18 @@ function IrisDataEditSect(props) {
     })
       .then((r) => r.json())
       .then((o) => {
-        console.log(o)
+        // console.log(o)
       })
   }
 
   // 刪除最愛
   const deleteFav = (e) => {
-    console.log('delete')
-
     // 得到 product_sid
     const product_sid = e.target.className
-    // console.log(product_sid)
+
+    // 2. 連動menu數字
+    // 設甚麼值無所謂，重點是讓狀態改變，menu那邊useEffect才會偵測到
+    setUserFavDelete(product_sid)
 
     const itemToBeDelete = {
       currentUser: currentUser,
@@ -93,7 +99,7 @@ function IrisDataEditSect(props) {
     })
       .then((r) => r.json())
       .then((o) => {
-        console.log(o)
+        // console.log(o)
       })
   }
 

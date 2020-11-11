@@ -69,19 +69,27 @@ function IrisBeastiePointSect(props) {
     const response = await fetch(request)
     const data = await response.json()
 
-    console.log(data)
+    // console.log(data)
     setCouponList(data)
   }
 
-  // ------- 一開始就會開始載入資料 ------- //
+  // 一開始就會開始載入資料
   useEffect(() => {
     getCouponFromServer()
   }, [])
 
-  // ------ 過濾出現在使用者的優惠券 ------ //
+  //  過濾出現在使用者的優惠券
   const currentUserCoupon = couponList.filter(
     (couponList) => couponList.member_sid === currentUser
   )
+
+  // 計算總值
+  let sum = 0
+  function calctotalCoin(currentObject, index, array) {
+    sum += currentObject.coupon_type
+  }
+  currentUserCoupon.forEach(calctotalCoin)
+  let userBeastieCoin = sum * 10
 
   // ------- coupon template --------- //
   const couponDisplay = currentUserCoupon.map((item, index) => {
@@ -132,7 +140,7 @@ function IrisBeastiePointSect(props) {
             <div className="iris-icon-box d-flex align-items-center iris-total-coin-box">
               <BesatieCoin />
               <p>怪獸幣總資產</p>
-              <div className="iris-beastie-coin">480</div>
+              <div className="iris-beastie-coin">{userBeastieCoin}</div>
             </div>
 
             <VerticalLine />
