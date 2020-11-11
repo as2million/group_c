@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './JessListC.scss'
+import './ArrowRight.scss'
 import Fade from 'react-reveal/Fade'
 import Slide from 'react-reveal/Slide'
-import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
+// import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
 
 function JessListC() {
   // A-Veg
@@ -293,8 +294,14 @@ function JessListC() {
 
           <div className="jess-product-Tab1 d-flex ">{component}</div>
           <div className="container d-flex justify-content-end">
-            {/* {ArrowRight} */}
-            <div className="jess-proC-rArrow d-flex float-right"></div>
+            <div className="arrowright-warp">
+              <div className="jess-arrow-circleR jess-arrow" draggable="true">
+                <div className="jess-arrow-right"></div>
+              </div>
+            </div>
+            {/* <div className="jess-proC-rArrow d-flex float-right">
+              <ArrowRight />
+            </div> */}
           </div>
         </div>
       </>

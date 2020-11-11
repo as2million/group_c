@@ -39,7 +39,7 @@ function JessListD(props) {
       )} */}
       {status && (
         <JessModal closeModal={() => setStatus(false)}>
-          <JessCommentMsg />
+          <JessCommentMsg status={status} setStatus={setStatus} />
         </JessModal>
       )}
 

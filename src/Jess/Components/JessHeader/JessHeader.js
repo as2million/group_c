@@ -59,17 +59,27 @@ function JessProdoctList(props) {
     }
   }
 
-  function CreateCartToLocalStorage(value) {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+  // function CreateCartToLocalStorage(value) {
+  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
-    const newCart = [...currentCart, value]
-    localStorage.setItem('cart', JSON.stringify(newCart))
-    console.log(newCart[1].productname)
-  }
-  function CartListToLocalStorage(text) {
-    const currentList = JSON.parse(localStorage.getItem('List')) || []
-    const newCart = [...currentList, text]
-    localStorage.setItem('List', JSON.stringify(newCart))
+  //   const newCart = [...currentCart, value]
+  //   localStorage.setItem('cart', JSON.stringify(newCart))
+  //   console.log(newCart[1].productname)
+  // }
+  const CreateCartToLocalStorage = (item, amount = 1, isAdded) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+    const index = currentCart.findIndex((v) => v.id === item.id)
+    if (index > -1) {
+      if (isAdded) {
+        currentCart[index].productAmount += amount
+      } else if (!isAdded && currentCart[index].productAmount > 1) {
+        currentCart[index].productAmount--
+      }
+    } else {
+      currentCart.push(item)
+      console.log('currentCart', currentCart)
+    }
+    localStorage.setItem('cart', JSON.stringify(currentCart))
   }
 
   const calA = (e) => {
@@ -139,7 +149,7 @@ function JessProdoctList(props) {
           <hr />
           <div className="jess-productPrice mt-1">
             <p className="jess-salePrice mt-2">${total}</p>
-            <p className="jess-saleTotal">今日已售出58個</p>
+            <p className="jess-saleTotal">今日已售出{menu.purchased}個</p>
           </div>
           <hr />
           <div className=" mt-5 d-flex justify-content-center">
@@ -181,12 +191,18 @@ function JessProdoctList(props) {
               onClick={() => {
                 handleCartNumber('add', count)
 
-                CreateCartToLocalStorage({
-                  id: 1,
-                  productname: '慢煮嫩雞胸-蒜味香草',
-                  img_id: '00_bento-chicken-breast',
-                  price: 150,
-                })
+                CreateCartToLocalStorage(
+                  {
+                    id: 1,
+                    productName: '慢煮嫩雞胸-蒜味香草',
+                    productPicture: '00_bento-chicken-breast',
+                    productPrice: 150,
+                    productAmount: 1,
+                  },
+
+                  count,
+                  true
+                )
               }}
             >
               <img className="addCart-cart addCart-cart-n" src={cart} />

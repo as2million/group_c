@@ -214,14 +214,39 @@ function App() {
             {/* jess */}
             {/* 放"page資料夾"內的元件 */}
             <Route path="/menu">
-              <JessMenu />
+              <JessMenu
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+              />
             </Route>
             {/* component={JessBento} */}
             <Route path="/bento/:id?">
-              <JessBento handleCartNumber={handleCartNumber} />
+              <JessBento
+                currentUser={currentUser}
+                handleCartNumber={handleCartNumber}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+              />
             </Route>
             <Route path="/vegBox">
-              <JessVegBox handleCartNumber={handleCartNumber} />
+              <JessVegBox
+                currentUser={currentUser}
+                handleCartNumber={handleCartNumber}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+              />
             </Route>
 
             {/* janice */}
