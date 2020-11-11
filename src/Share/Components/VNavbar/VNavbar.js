@@ -83,7 +83,7 @@ function VNavbar(props) {
     addressData()
   }, [isLogin])
 
-  // -------- 取得目前user的資料 ---------- //
+  //疑似無法再次更改資料 -------- 取得目前user的資料 ---------- //
 
   // const updateAddress = () => {
   //   // const address = document.querySelector('#iris-member-address').value
