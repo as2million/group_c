@@ -129,11 +129,11 @@ function IrisBeastiePointSect(props) {
 
         <div className="iris-beastie-content-container ">
           <div className="iris-beastie-icons-container d-flex  justify-content-center">
-            <div className="iris-icon-box d-flex align-items-center">
+            <div className="iris-icon-box d-flex align-items-center iris-total-coin-box">
               <BesatieCoin />
               <p>怪獸幣總資產</p>
+              <div className="iris-beastie-coin">480</div>
             </div>
-            <div className="iris-beastie-coin">480</div>
 
             <VerticalLine />
 
