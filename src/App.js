@@ -10,12 +10,12 @@ import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
 import RuProudctList from 'Ru/Pages/RuProudctList'
 import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'
 import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'
-import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
+
 import IrisOrderComment from 'Iris/Pages/IrisOrderComment'
 import IrisMyFav from 'Iris/Pages/IrisMyFav'
 import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
 import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon'
-import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal'
+
 import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement'
 import JessMenu from 'Jess/Pages/JessMenu'
 import JessBento from 'Jess/Pages/JessBento'
@@ -32,6 +32,9 @@ import ChaProductList from 'Cha/Components-demo/ChaProductList'
 import ChaCartTest from 'Cha/Components-demo/ChaCartTest'
 
 import JanIndex from 'Janice/Pages/JanIndex'
+
+import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal'
+import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
 
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
@@ -170,44 +173,74 @@ function App() {
             {/* 放"page資料夾"內的元件 */}
             <Route exact path="/memberUserprofile">
               <IrisUserprofile
+                // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                // vnbar
+                county={county}
+                township={township}
+                address={address}
               />
             </Route>
             <Route exact path="/orderComment">
               <IrisOrderComment
+                // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                // vnbar
+                county={county}
+                township={township}
+                address={address}
               />
             </Route>
             <Route exact path="/myFav">
               <IrisMyFav
+                // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                // vnbar
+                county={county}
+                township={township}
+                address={address}
               />
             </Route>
             <Route exact path="/beastiePoint">
               <IrisBeastiePoint
+                // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                // vnbar
+                county={county}
+                township={township}
+                address={address}
               />
             </Route>
             <Route path="/getCoupon">
               <IrisGetCoupon
+                // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                // vnbar
+                county={county}
+                township={township}
+                address={address}
               />
             </Route>
             <Route path="/orderManagement">
               <IrisOrderManagement
+                // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                // vnbar
+                county={county}
+                township={township}
+                address={address}
               />
             </Route>
 
