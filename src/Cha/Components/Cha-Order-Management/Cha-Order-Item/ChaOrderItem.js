@@ -6,8 +6,7 @@ import UpdateCartToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalSt
 
 // import { Button, Collapse } from 'react-bootstrap';
 function ChaOrderItem(props) {
-  const { orderItem } = props;
-  // handleCartNumber
+  const { orderItem, handleCartNumber } = props;
 
   // 訂單明細的內容JSX
   const ComponentOrderDetail = (props) => {
@@ -219,7 +218,9 @@ function ChaOrderItem(props) {
                           })
                         );
                         // props.history.push('/cart');
-                        // handleCartNumber('minus', totalAmount);
+                        orderItem.order_detail.forEach((item) =>
+                          handleCartNumber('minus', item.product_amount)
+                        );
                       }}
                     />
                   </Link>
