@@ -32,3 +32,5 @@ export const dataprice = datacountries.map((v, i, array) =>
   Object.values(data[array[i]])
 )
 // console.log('dataprice:', dataprice)
+
+//可以在用“node  src/Janice/Components/JanIndexx/data.js”終端機查看console.log()的結果

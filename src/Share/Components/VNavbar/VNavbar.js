@@ -38,46 +38,6 @@ function VNavbar(props) {
 
   const [status, setStatus] = useState(false)
 
-  // //---------------這裡要拿會員資料
-  // const [userInfo, setUserInfo] = useState([])
-
-  // // -------- 取得目前user的資料 ---------- //
-  // async function getUserInfoFromServer() {
-  //   const url = 'http://localhost:5000/member/allUserProfile'
-
-  //   const request = new Request(url, {
-  //     method: 'GET',
-  //     headers: new Headers({
-  //       Accept: 'application/json',
-  //       'Content-Type': 'application/json',
-  //     }),
-  //   })
-
-  //   const response = await fetch(request)
-  //   const data = await response.json()
-
-  //   console.log(data)
-  //   setUserInfo(data)
-  // }
-
-  // // --------- 過濾出現在使用者的資料 --------- //
-  // const currentUserInfo = userInfo.filter(
-  //   (userInfo) => userInfo.member_sid === currentUser
-  // )
-  // console.log(currentUserInfo)
-
-  // useEffect(() => {
-  //   getUserInfoFromServer()
-  // }, [])
-
-  // // 把user資料代進去
-  // currentUserInfo.map((item, index) => {
-  //   const fullAddress = item.county + item.district + item.address
-
-  //   address.value = fullAddress
-  //   setAddress(item.address)
-  // })
-
   const addressData = (e) => {
     if (isLogin === true) {
       fetch('http://localhost:5000/index/member_list', {
@@ -90,21 +50,31 @@ function VNavbar(props) {
         .then((r) => r.json())
 
         .then((obj) => {
-          // const newAddress = [...obj, ...adress]
-          // setAddress(newAddress)
-          // console.log(address[0])
-          // console.log(obj[0].address)
-          // console.log(obj)
-          // })
-          // console.log(item.county)
-          // console.log(item.district)
-          // console.log(item.address)
-          console.log(obj[0].county)
-          console.log(obj[0].district)
-          console.log(obj[0].address)
-          // setCounty(obj[0].county)
-          // setTownship(obj[0].district)
-          setAddress(obj[0].address)
+          // const newAddress = [...obj, ...adress]無法印出結果
+          // setAddress(newAddress)無法印出結果
+          // console.log(address[0])無法印出結果
+          // console.log(obj[0].address)無法印出結果
+          // console.log(obj)無法印出結果
+          // })無法印出結果
+          // console.log(obj[0].county)  ->台北市
+          // console.log(obj[0].district)  ->大安區
+          // console.log(obj[0].address)  ->忠孝東路一段50號
+
+          // console.log(datacountries.indexOf(obj[0].county))  ->0
+
+          // console.log(
+          //   datatownships[datacountries.indexOf(obj[0].county)].indexOf(
+          //     obj[0].district
+          //   )
+          // )  -> 4
+
+          setCounty(datacountries.indexOf(obj[1].county))
+          setTownship(
+            datatownships[datacountries.indexOf(obj[1].county)].indexOf(
+              obj[1].district
+            )
+          )
+          setAddress(obj[1].address)
         })
     }
   }
