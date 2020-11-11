@@ -39,8 +39,8 @@ function RuMeetA(props) {
         </div>
       </li>
       {/* 品項1 e*/}
-         {/* 品項2 s*/}
-         <li className="ru-species-item ru-species-item2" id="">
+      {/* 品項2 s*/}
+      <li className="ru-species-item ru-species-item2" id="">
         <div className="ru-species-img" id="ru-item2">
           <img
             src={chickenLeg}

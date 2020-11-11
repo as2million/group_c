@@ -28,6 +28,7 @@ import riceAfter from './Images/riceAfter.svg'
 import grainRiceAfter from './Images/grainRiceAfter.svg'
 import redQuinoaAfter from './Images/redQuinoaAfter.svg'
 import chickenBreastAfter from './Images/chickenBreastAfter.svg'
+import chickenLegAfter from './Images/chickenLegAfter.svg'
 import shrimpAfter from './Images/shrimpAfter.svg'
 
 // 品項放置後 e
@@ -458,7 +459,13 @@ function RuCustom(props) {
             setMeetPrice(data[3].price)
             setMeetCal(data[3].calories)
             break
-          case 'ru-meet-3': 
+          case 'ru-meet-2':
+            setImgF(chickenLegAfter) 
+            setMeetName(data[4].productName)
+            setMeetPrice(data[4].price)
+            setMeetCal(data[4].calories)
+            break
+          case 'ru-meet-3':
             setImgF(shrimpAfter)
             setMeetName(data[5].productName)
             setMeetPrice(data[5].price)
