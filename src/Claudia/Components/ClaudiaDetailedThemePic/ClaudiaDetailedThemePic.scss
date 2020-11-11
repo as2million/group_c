@@ -10,8 +10,8 @@
 }
 
 .claudia-detailed-background-image {
-  height: 765px;
   width: 1440px;
+  height: 765px;
   position: relative;
   background-image: url(./Images/strawberry.jpg);
   margin: 0px auto;
@@ -43,7 +43,7 @@
 
 @media screen and (min-width: 576px) and (max-width: 1200px) {
   .claudia-detailed-background-image {
-    width: 100vw;
+    width: 768px;
     height: 1024px;
     position: relative;
     background-image: url(./Images/rwd_pad_strawberry.jpg);
@@ -69,13 +69,9 @@
 //---------------------------Iphone 6/7/8 Plus-------------------------
 
 @media screen and (min-width: 375px) and (max-width: 576px) {
-  .claudia-fake-navbar {
-    width: 100vw;
-    height: 100px;
-  }
 
   .claudia-detailed-background-image {
-    width: 100vw;
+    width: 414px;
     height: 736px;
     position: relative;
     background-image: url(./Images/rwd_plus_strawberry.jpg);
@@ -104,7 +100,7 @@
 
 @media only screen and (max-width: 375px) {
   .claudia-detailed-background-image {
-    width: 100vw;
+    width: 375px;
     height: 667px;
     position: relative;
     background-image: url(./Images/rwd_strawberry.jpg);
