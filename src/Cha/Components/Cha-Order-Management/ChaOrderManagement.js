@@ -31,7 +31,7 @@ function ChaOrderManagement(props) {
     const dataAllOrder = await response.json();
     console.log('觀察fetch的function乖不乖');
     setOrderData(dataAllOrder);
-    // console.log(dataAllOrder);
+    console.log(dataAllOrder);
     // console.log(
     //   dataOrders[0] && dataOrders[0].take_person && dataOrders[0].take_person
     // );
@@ -51,9 +51,11 @@ function ChaOrderManagement(props) {
     return (
       <>
         {/* notArrivedItem */}
-        {handleClassifyState('未送達').map((item, value) => (
-          <ChaOrderItem key={item.id} orderItem={item} />
-        ))}
+        {handleClassifyState('未送達')
+          .reverse()
+          .map((item, value) => (
+            <ChaOrderItem key={item.id} orderItem={item} />
+          ))}
       </>
     );
   };
@@ -61,9 +63,11 @@ function ChaOrderManagement(props) {
   const ComponentB = (props) => {
     return (
       <>
-        {handleClassifyState('已送達').map((item, value) => (
-          <ChaOrderItem key={item.id} orderItem={item} />
-        ))}
+        {handleClassifyState('已送達')
+          .reverse()
+          .map((item, value) => (
+            <ChaOrderItem key={item.id} orderItem={item} />
+          ))}
       </>
     );
   };

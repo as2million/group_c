@@ -102,7 +102,7 @@ function ChaCartSubmitCard(props) {
   // POST給my_order的資料
   async function createToMyOrder() {
     const bodyData = {
-      order_state: '火速運送中',
+      order_state: '已送達',
       member_sid: memberSid,
       take_person: name,
       mobile: mobile,

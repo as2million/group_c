@@ -9,7 +9,7 @@ import ChaCartStepCardStep3 from 'Cha/Components/Cha-Cart-Step-Card-Step3/ChaCar
 import 'Cha/Pages/Cha-Cart/ChaCart.scss';
 
 function ChaCart(props) {
-  // 餐點資料(未處理)
+  // 餐點資料
   const [meals, setMeals] = useState([]);
   // 餐點資料(已處理)
   // const [mealsDisplay, setMealsDisplay] = useState([]);
@@ -40,7 +40,7 @@ function ChaCart(props) {
   useEffect(() => {
     readCartFromLocalStorage();
   }, []);
-  // // }, [meals]);
+  // }, [meals]);
 
   // // componentDidUpdate// 只要meals改變，就處理meals
   // useEffect(() => {
@@ -111,7 +111,7 @@ function ChaCart(props) {
   //   handleShow();
   // };
 
-  // 更新購物車中的商品數量
+  // 更新購物車中的商品
   const updateCartToLocalStorage = (item, isAdded = true) => {
     // console.log(item, isAdded);
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -146,7 +146,7 @@ function ChaCart(props) {
     localStorage.setItem('cart', JSON.stringify(newCart));
 
     // 設定資料
-    setMeals(newCart);
+    // setMeals(newCart);
   };
 
   return (

@@ -75,7 +75,7 @@ function ChaCartStepCardStep1(props) {
     id: 2,
     productName: '玫瑰岩鹽烤雞',
     productPrice: 160,
-    productAmount: 3,
+    productAmount: 2,
   };
   const demoMeals3 = {
     id: 3,
@@ -101,7 +101,7 @@ function ChaCartStepCardStep1(props) {
             updateCartToLocalStorage(demoMeals1);
             updateCartToLocalStorage(demoMeals2);
             updateCartToLocalStorage(demoMeals3);
-            handleCartNumber('add', 3);
+            handleCartNumber('add', 6);
           }}
         >
           步驟1：餐點明細
