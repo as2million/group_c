@@ -24,6 +24,8 @@ function RuAddCart(props) {
   // console.log(id, parentId);
 
   const addToCart = (e) => {
+
+    // 給第五組 動畫開始 s
     // 執行加入購物車動畫
     const $addBtn = document.getElementById(`${id}`)
     const $target = document.getElementById('ru-target')
@@ -78,6 +80,7 @@ function RuAddCart(props) {
     function removeNewEl() {
       document.querySelector('#obj').remove()
     }
+    // 給第五組 動畫開始 e
 
     // 執行加入localStorage
     handleCartNumber('add', amount)
