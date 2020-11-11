@@ -7,13 +7,16 @@ import './IrisMemberPage.scss';
 import { Redirect } from 'react-router-dom';
 
 function IrisOrderManagement(props) {
-  const { isLogin } = props;
-  // if (isLogin === false) return <Redirect to="/" />;
+  const { isLogin, currentUser, setShowLoginModal } = props;
+  // if (isLogin === false) {
+  //   setShowLoginModal(true)
+  //   return <Redirect to="/" />
+  // }
   return (
     <>
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect />
-        <ChaOrderManagement />
+        <IrisMemberMenuSect currentUser={currentUser} />
+        <ChaOrderManagement {...props} />
       </div>
     </>
   );

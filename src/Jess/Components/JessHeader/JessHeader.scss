@@ -7,7 +7,15 @@ html {
   margin: 0;
   padding: 0;
 }
-$primary: #f48145;
+$orange: #f48145;
+$darkGary: #858585;
+$darkBrown: #a59583;
+$brown: #decdbb;
+$lightBrown: #f7ede2;
+$green: #66ab8c;
+$white: #ffffff;
+$light-yellow: #f6bd60;
+$dark-yellow: #f5a016;
 $font-size: 1rem;
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
@@ -17,24 +25,43 @@ $font-size: 1rem;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap');
 
+// ::selection {
+//   background: #f6bd60;
+//   color: #ffffff;
+// }
 .jess-fluidBg {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   position: relative;
 }
-
+.jess-breadCrumb {
+  margin-top: 20rem;
+}
+.jess-fav button {
+}
+//
 .jess-productList-chichenPic {
-  background: url('./Images/chickenRice.jpg') no-repeat;
-  background-size: cover;
+  // background: url('./Images/chickenRice02.jpg') no-repeat;
+  background-size: contain;
   background-position: center center;
   width: 87rem;
   height: 65rem;
-  margin-top: 30rem;
   margin-right: 13.5rem;
+  margin-top: 4rem;
+  overflow: scroll;
+  background-attachment: local;
+}
+.jess-HeadPic {
+  background-size: cover;
+  background-position: center center;
+  // overflow: hidden;
+  width: 87rem;
+  height: 65rem;
 }
 .jess-menuList {
-  margin-top: 30rem;
   width: 29rem;
+  margin-top: 4rem;
 }
 .jess-tittle {
   font-size: $font-size + 1.8;
@@ -63,6 +90,7 @@ $font-size: 1rem;
 }
 .jess-nutrient2 {
   margin-top: 3rem;
+  font-size: 1.4rem;
   width: 6rem;
   height: 6rem;
   border-radius: 0.5rem;
@@ -71,9 +99,21 @@ $font-size: 1rem;
   padding: 0.6rem;
   color: #a59583;
 }
+.jess-nutrient3 {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #decdbb;
+  text-align: center;
+  padding: 0.6rem;
+  color: #a59583;
+  letter-spacing: 0.1rem;
+}
 
 .jess-rateStar {
-  margin-top: 3rem;
+  margin-top: 2rem;
   width: 29rem;
   display: inline-flex;
   align-items: center;
@@ -90,7 +130,7 @@ hr {
   margin-top: 3rem;
 }
 .jess-productPrice {
-  margin-top: 5rem;
+  margin-top: 0rem;
   width: 29rem;
   display: inline-flex;
   align-items: center;
@@ -106,19 +146,62 @@ hr {
   font-size: 1.5rem;
   color: #858585;
 }
+// .favorite-btn
+.addFavorite-btn:focus {
+  outline: none;
+}
 
-@media (min-width: 480px) and (max-width: 680px) {
+.addFavorite-btn {
+  background-color: $white;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url('./Images/addFavoriteA.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
+.addFavorite-btn:hover {
+  background-color: $light-yellow;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url('./Images/addFavoriteB.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+@mixin link-hover {
+  &.active {
+    @content;
+  }
+}
+.addFavorite-btn.active {
+  background-color: $dark-yellow;
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  background-image: url('./Images/addFavoriteC.svg');
+  background-repeat: no-repeat;
+  background-position: 75% 60%;
+  background-size: 32px;
+}
+
+@media screen and (max-width: 576px) {
   .jess-fluidBg {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
   }
   .jess-productList-chichenPic {
-    background: url('./Images/chickenRice.jpg') no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background: url('./Images/chickenRice.jpg') no-repeat center;
+    background-size: contain;
     width: 100%;
-    margin: 0;
+    height: 35rem;
   }
   .jess-menuList {
     margin: 0 auto;

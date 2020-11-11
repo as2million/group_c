@@ -8,11 +8,13 @@
 }
 
 .iris-profile-photo {
-  background-color: #fff;
+  background-color: #f6dcb3;
   width: 13.2rem;
   height: 13.2rem;
   border-radius: 6.6rem;
   margin-top: 3rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .iris-brief-info-wraper {
@@ -91,6 +93,6 @@
 .iris-membermenu-container {
   margin-top: 15rem;
   max-width: 117rem;
-  min-height: 100vh;
+  // min-height: 100vh;
   margin-bottom: 3rem;
 }

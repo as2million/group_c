@@ -1,36 +1,39 @@
-.claudia-index-content {
+.claudia-index-content-container {
     display: flex;
     width: 80%;
     margin: 0px auto;
-    padding-bottom: 50px;
+    padding-bottom: 6rem;
 }
 
-#claudia-index-card {
+.claudia-index-card {
     width: 50%;
     height: 690px;
-    margin-left: 30px;
+    padding: 35px 0px 0px 30px;
 
 }
 
-#claudia-index-map {
+.claudia-index-map {
     width: 50%;
     height: 690px;
 }
 
-@media only screen and (max-width: 375px) {
-    .claudia-index-content {
+@media only screen and (max-width: 57.6rem) {
+    .claudia-index-content-container {
         display: block;
         padding-bottom: 0px;
+        width: 100vw;
     }
 
-    #claudia-index-map {
+    .claudia-index-map {
         width: 50%;
         height: 470px;
         padding-top: 20px;
     }
 
-    #claudia-index-card {
-        display: none;
+    .claudia-index-card {
+        height: 0px;
+        width: 100%;
+        padding: 30px 0px 0px 0px;
     }
 
 }

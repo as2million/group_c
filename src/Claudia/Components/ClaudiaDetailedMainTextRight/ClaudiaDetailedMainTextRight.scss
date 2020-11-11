@@ -2,14 +2,15 @@
     background-color: #fff;
     border-radius: 40px;
     width: 400px;
-    height: 495px;
+    height: 500px;
     margin: 0px 110px 0px 62px;
-    padding: 35px 25px;
+    padding: 40px 25px;
     font-size: 20px;
+    box-shadow: 0px 3px 6px #D1C5B8;
 }
 
 .claudia-detailed-maintext-signup-box {
-    width: 342px;
+    width: 347px;
     margin: 0px auto;
 }
 
@@ -77,10 +78,10 @@
 }
 
 .claudia-signup-date-button button{
-    height: 55px;
+    height: 45px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 57.6rem) {
     .claudia-detailed-maintext-signup {
         margin: 0px auto;
         width: 335px;

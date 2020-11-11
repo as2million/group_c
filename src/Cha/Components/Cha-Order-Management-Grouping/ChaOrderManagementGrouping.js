@@ -1,5 +1,5 @@
-import React from 'react';
-import './ChaOrderManagementGrouping.scss';
+import React from 'react'
+import './ChaOrderManagementGrouping.scss'
 function ChaOrderManagementGrouping(props) {
   return (
     <>
@@ -58,6 +58,6 @@ function ChaOrderManagementGrouping(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
-export default ChaOrderManagementGrouping;
+export default ChaOrderManagementGrouping

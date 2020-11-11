@@ -1,22 +1,31 @@
-import React, { useState, useEffect } from 'react';
-// import BreadCrumb from '../Components/JessBreadCrumb/BreadCrumb'
-import JessHeader from '../Components/JessHeader/JessHeader';
-import JessListA from '../Components/JessListA/JessListA';
-import JessListB from '../Components/JessListB/JessListB';
-import JessListC from '../Components/JessListC/JessListC';
-import JessListD from '../Components/JessListD/JessListD';
+import React, { useState, useEffect } from 'react'
+import { Link, withRouter, useParams } from 'react-router-dom'
+import VNavbar from 'Share/Components/VNavbar/VNavbar'
+import JessHeader from '../Components/JessHeader/JessHeader'
+import JessListA from '../Components/JessListA/JessListA'
+import JessListB from '../Components/JessListB/JessListB'
+import JessListC from '../Components/JessListC/JessListC'
+import JessListD from '../Components/JessListD/JessListD'
+import JessListE from '../Components/JessListE/JessListE'
+import ToTop from 'Share/Components/ToTopButton/ScrollButton'
 
-function JessBento() {
+function JessBento(props) {
+  const { handleCartNumber, handleCarList } = props
   return (
     <>
-      {/* <BreadCrumb /> */}
-      <JessHeader />
+      <VNavbar />
+      <JessHeader
+        handleCartNumber={handleCartNumber}
+        handleCarList={handleCarList}
+      />
       <JessListA />
       <JessListB />
       <JessListC />
       <JessListD />
+      <JessListE />
+      <ToTop />
     </>
-  );
+  )
 }
 
-export default JessBento;
+export default withRouter(JessBento)

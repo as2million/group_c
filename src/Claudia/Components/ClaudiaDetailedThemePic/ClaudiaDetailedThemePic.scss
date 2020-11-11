@@ -14,30 +14,32 @@
 .claudia-detailed-text {
     font-family: 'Noto Serif TC';
     position: absolute;
-    top: 500px;
+    top: 400px;
     left: 200px;
-    color: #FAFAFA;
+    color: #fafafa;
     padding-bottom: 10px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #fafafa;
 }
 
 .claudia-detailed-text-1 {
     font-size: 40px;
+    color: #fafafa;
 }
 
 .claudia-detailed-text-2 {
     font-size: 36px;
+    color: #fafafa;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 57.6rem) {
     .claudia-fake-navbar {
         width: 100vw;
-        height: 120px;
+        height: 100px;
     }
 
     .claudia-detailed-background-image {
-        width: 375px;
-        height: 547px;
+        width: 100vw;
+        height: 667px;
         position: relative;
         background-image: url(./Images/rwd_strawberry.jpg);
     }
@@ -46,7 +48,7 @@
         width: 270px;
         height: 105px;
         position: absolute;
-        top: 90px;
+        top: 210px;
         left: 60px;
     }
 

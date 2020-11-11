@@ -9,14 +9,16 @@ import ClaudiaDetailedFarmAdr from '../Components/ClaudiaDetailedFarmAdr/Claudia
 import ClaudiaDetailedNavButtons from '../Components/ClaudiaDetailedNavButtons/ClaudiaDetailedNavButtons';
 import ClaudiaDetailedRecommended from '../Components/ClaudiaDetailedRecommended/ClaudiaDetailedRecommended';
 import Footer from '../../Share/Components/Footer/Footer';
+import ScrollButtonGreen from '../../Share/Components/ToTopButton/ScrollButtonGreen';
 
-function ClaudiaFarmIntroPage() {
+function ClaudiaFarmIntroPage(props) {
+    const { handleCartNumber } = props;
 
     return (
         <>
             <ClaudiaMainContent>
                 <ClaudiaDetailedThemePic />
-                <ClaudiaDetailedMainText />
+                <ClaudiaDetailedMainText handleCartNumber={handleCartNumber} />
                 <ClaudiaDetailedSilder />
                 <ClaudiaDetailedSchedule />
                 <ClaudiaDetailedFarmIntro />
@@ -24,7 +26,7 @@ function ClaudiaFarmIntroPage() {
                 <ClaudiaDetailedNavButtons />
                 <ClaudiaDetailedRecommended />
             </ClaudiaMainContent>
-            <Footer />
+            <ScrollButtonGreen />
         </>
     )
 }
