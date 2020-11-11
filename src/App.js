@@ -46,9 +46,12 @@ function App() {
   const [showBar, setShowBar] = useState(true)
   const [cartNumber, setCartNumber] = useState(0)
   const [amount, setAmount] = useState(1)
+
+  // ---------- iris ---------- //
   const [currentUser, setCurrentUser] = useState() // 目前用戶
   const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
   const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
+  const [currentUserCommentNum, setCurrentUserCommentNum] = useState()
 
   //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address)到你們的頁面--------------//
   const [county, setCounty] = useState(-1)

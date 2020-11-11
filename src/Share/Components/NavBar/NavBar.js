@@ -52,7 +52,15 @@ function NavBar(props) {
 
   return (
     <>
-      <div className="nav" id="NavBar">
+      <div
+        className="nav"
+        id="NavBar"
+        // onClick={() => {
+        //   if (setShowLoginModal) {
+        //     setShowLoginModal(false)
+        //   }
+        // }}
+      >
         {/* <span id="ru-target">123</span> */}
         <div className="navBar-jess-container">
           <div className="navBar-jess-navCollapse ">
@@ -156,7 +164,10 @@ function NavBar(props) {
                         setShowLoginModal(true)
                       }}
                     >
+                      {' '}
+                      {/* <Nav.Link as={NavLink} to="/memberUserprofile"> */}
                       登入/註冊
+                      {/* </Nav.Link> */}
                     </li>
                     {/* 11/9 新增登出選項 */}
                     <li
