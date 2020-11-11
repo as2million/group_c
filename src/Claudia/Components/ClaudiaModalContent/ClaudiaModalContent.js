@@ -63,7 +63,7 @@ function ClaudiaModalContent(props) {
     })
   }
 
-  //adult counter
+  //WEB adult counter
 
   const [count1, setCount1] = useState(0)
 
@@ -82,7 +82,7 @@ function ClaudiaModalContent(props) {
     // console.log('test', count1)
   }, [count1])
 
-  //child counter
+  //WEB child counter
 
   const [count2, setCount2] = useState(0)
 
@@ -95,7 +95,7 @@ function ClaudiaModalContent(props) {
     }
   }
 
-  //total count
+  //WEB total count
 
   const TotalCount = count1 + count2
 
@@ -103,6 +103,9 @@ function ClaudiaModalContent(props) {
 
   const rwdTotal = () => {
     console.log('rwd')
+    console.log('rwd-adult-select', document.getElementsByClassName('claudia-selection-adult-value')[0].value)
+    console.log('rwd-child-select', document.getElementsByClassName('claudia-selection-child-value')[0].value)
+
   }
 
   //adult total price
@@ -193,7 +196,7 @@ function ClaudiaModalContent(props) {
               <b>成人</b>
             </div>
 
-            {/* Web Adult Right Box Start*/}
+            {/* WEB Adult Right Box Start*/}
             <div
               className="claudia-modal-signup-num-box-right"
               style={{ width: '245px' }}
@@ -236,7 +239,7 @@ function ClaudiaModalContent(props) {
                 </div>
               </div>
             </div>
-            {/* Web Adult Right Box End*/}
+            {/* WEB Adult Right Box End*/}
 
             {/* RWD Adult Right Box Start */}
             <div className="claudia-modal-signup-num-box-right-rwd">
@@ -251,7 +254,7 @@ function ClaudiaModalContent(props) {
                 </span>
               </div>
               <div className="claudia-selection-container">
-                <select onChange={rwdTotal}>
+                <select className="claudia-selection-adult-value" onChange={rwdTotal}>
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -269,7 +272,7 @@ function ClaudiaModalContent(props) {
               <b>兒童</b>
             </div>
 
-            {/* Web Adult Right Box Start*/}
+            {/* WEB Child Right Box Start*/}
             <div className="claudia-modal-signup-num-box-right">
               <div className="claudia-modal-signup-num-box-price-inline">
                 <span>
@@ -309,8 +312,8 @@ function ClaudiaModalContent(props) {
                 </div>
               </div>
             </div>
-            {/* Web Adult Right Box End*/}
-            {/* RWD Adult Right Box Start */}
+            {/* WEB Child Right Box End*/}
+            {/* RWD Child Right Box Start */}
             <div
               className="claudia-modal-signup-num-box-right-rwd"
               style={{ width: '177px' }}
@@ -326,18 +329,18 @@ function ClaudiaModalContent(props) {
                 </span>
               </div>
               <div className="claudia-selection-container">
-                <select>
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
+                <select className="claudia-selection-child-value" onChange={rwdTotal}>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
                 </select>
                 <button>
                   <img src={selectArrow}></img>
                 </button>
               </div>
             </div>
-            {/* RWD Adult Right Box End */}
+            {/* RWD Child Right Box End */}
           </div>
         </div>
         <div className="claudia-modal-last-block">
