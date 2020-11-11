@@ -252,6 +252,7 @@ function ClaudiaModalContent(props) {
               </div>
               <div className="claudia-selection-container">
                 <select onChange={rwdTotal}>
+                  <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -326,6 +327,7 @@ function ClaudiaModalContent(props) {
               </div>
               <div className="claudia-selection-container">
                 <select>
+                  <option>0</option>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
