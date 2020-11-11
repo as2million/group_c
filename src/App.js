@@ -47,10 +47,13 @@ function App() {
   const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
   const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
 
-  //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address)到你們的頁面--------------//
+  //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address,selectDate,slecteTime,takeOrNo共12個)到你們的頁面--------------//
   const [county, setCounty] = useState(-1)
   const [township, setTownship] = useState(-1)
   const [address, setAddress] = useState('')
+  const [selectDate, setSelectDate] = useState('')
+  const [slecteTime, setSelectTime] = useState('11:00 ~ 11:30')
+  const [takeOrNot, setTakeOrNot] = useState('外送')
 
   const handleCartNumber = (type = 'add', amount = 1) => {
     if (type === 'add') {
@@ -228,6 +231,15 @@ function App() {
             {/* 放"page資料夾"內的元件 */}
             <Route exact path="/">
               <JanIndex
+                isLogin={isLogin}
+                currentUser={currentUser}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                setShowBar={setShowBar}
                 county={county}
                 setCounty={setCounty}
                 township={township}

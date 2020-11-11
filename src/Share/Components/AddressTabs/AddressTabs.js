@@ -8,14 +8,10 @@ import {
 } from '../../../Janice/Components/JanIndexx/data.js'
 
 function AddressTabs(props) {
-  // console.log(document.getElementById('shop1'))
-  // console.log(document.getElementById('shop2'))
-  // console.log(document.getElementById('shop3'))
-  // console.log(document.getElementById('shop3'))
-  // console.log(document.getElementById('shop5'))
-
-  const { closeModal } = props
   const {
+    // takeOrNot,
+    setTakeOrNot,
+    closeModal,
     county,
     setCounty,
     township,
@@ -27,9 +23,6 @@ function AddressTabs(props) {
   // console.log('datacountries', datacountries)
   // console.log('datatownships', datatownships)
   // console.log('dataprice', dataprice)
-
-  // const updateAddress = () => {
-  //   const address = document.querySelector('.jan-address-input').value
 
   //   const newData = {
   //     address: address,
@@ -51,8 +44,6 @@ function AddressTabs(props) {
 
   // Acomponent
   const ComponentA = (props) => {
-    const [price, setPrice] = useState(-1)
-
     //地址輸入部分，預設值式資料庫地址欄位
     const [tabInput, setTabInput] = useState(address)
 
@@ -214,46 +205,33 @@ function AddressTabs(props) {
           setCounty(1)
           setTownship(1)
           setAddress('新台五路一段96號1樓-東科店')
-          console.log('2222')
+        }
+        if (radios[i].value == 2) {
+          setCounty(0)
+          setTownship(4)
+          setAddress('安和路一段111號-安永鮮物_安和店')
+        }
+        if (radios[i].value == 3) {
+          setCounty(0)
+          setTownship(3)
+          setAddress('八德路二段371號-歐克法咖啡_八德店')
+        }
+        if (radios[i].value == 4) {
+          setCounty(0)
+          setTownship(10)
+          setAddress('重陽路263巷1號B1-南港店')
+        }
+        if (radios[i].value == 5) {
+          setCounty(0)
+          setTownship(4)
+          setAddress('和平東路二段223號-大安店')
         }
         // only one radio can be logically checked, don't check the rest
         break
       }
     }
-
-    // if (document.getElementById('shop1').setAttribute('checked', true)) {
-    //   setCounty('新北市')
-    //   setTownship('汐止區')
-    //   setAddress('新台五路一段96號1樓-東科店')
-    // }
-    // if (document.getElementById('shop2').setAttribute('checked', true)) {
-    //   setCounty('台北市')
-    //   setTownship('大安區')
-    //   setAddress('安和路一段111號-安永鮮物_安和店')
-    // }
-    // if (document.getElementById('shop3').setAttribute('checked', true)) {
-    //   setCounty('台北市')
-    //   setTownship('松山區')
-    //   setAddress('八德路二段371號-歐克法咖啡_八德店')
-    // }
-    // if (document.getElementById('shop4').setAttribute('checked', true)) {
-    //   setCounty('台北市')
-    //   setTownship('南港區')
-    //   setAddress('重陽路263巷1號B1-南港店')
-    // }
-    // if (document.getElementById('shop5').setAttribute('checked', true)) {
-    //   setCounty('台北市')
-    //   setTownship('大安區')
-    //   setAddress('和平東路二段223號-大安店')
-    // }
   }
   const ComponentB = (props) => {
-    // console.log(document.getElementById('shop1'))
-    // console.log(document.getElementById('shop2'))
-    // console.log(document.getElementById('shop3'))
-    // console.log(document.getElementById('shop3'))
-    // console.log(document.getElementById('shop5'))
-
     return (
       <div className="component d-flex justify-content-between ">
         <div className="jan-tab-shops-list-wrap">
@@ -286,7 +264,11 @@ function AddressTabs(props) {
                 className="jan-shops-button float-right"
               >
                 <button
-                  onClick={shopAddress}
+                  onClick={() => {
+                    shopAddress()
+                    setTakeOrNot('自取')
+                    // console.log(takeOrNot)
+                  }}
                   className="button-btn-y "
                   text="確認自取地點"
                 >
@@ -326,7 +308,14 @@ function AddressTabs(props) {
     return (
       <div className="position-absolute position-fixed jan-tabs-bcc">
         <div className="jan-tabs">
-          <div onClick={closeModal} className="jan-tabs-close"></div>
+          <div
+            onClick={() => {
+              closeModal()
+              setTakeOrNot('外送')
+              // console.log(takeOrNot)
+            }}
+            className="jan-tabs-close"
+          ></div>
           <div className="jan-address-tab">
             <ul className="jan-address-tab-menu">
               <li

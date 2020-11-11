@@ -19,6 +19,7 @@ import { datacountries, datatownships, dataprice } from './data'
 
 function JanIndexx(props) {
   const {
+    setShowBar,
     county,
     setCounty,
     township,
@@ -27,6 +28,10 @@ function JanIndexx(props) {
     setAddress,
   } = props
   const [price, setPrice] = useState(-1)
+
+  useEffect(() => {
+    setShowBar(true)
+  }, [])
 
   //品牌特色切換
   function intro1() {
@@ -131,22 +136,25 @@ function JanIndexx(props) {
     const downloadArea = document.querySelector('.jan-download-area')
     const info = document.querySelector('.jan-app-info')
     const downloadIcon = document.querySelector('.jan-col-download')
-    // const janAppIcon = document.querySelector('.jan-app-logo')
+    const janAppIcon = document.querySelector('.jan-app-logo')
     if (window.scrollY > 0.1 && downloadArea && info && downloadIcon) {
       downloadArea.style = 'left:-29rem;transition:0.5s'
       info.style = 'display:none;transition:0.5s'
       downloadIcon.style = 'display:block;transition:0.5s'
+      janAppIcon.style = 'visibility: hidden'
     }
     if (window.scrollY === 0 && downloadArea && info && downloadIcon) {
       downloadArea.style = 'left:0rem;transition:0.5s'
       info.style = 'display:block;transition:0.5s'
-      downloadIcon.style = 'display:none;transition:0.5s
+      downloadIcon.style = 'display:none;transition:0.5s'
+      janAppIcon.style = 'visibility: visible;transition:0.5s'
     }
     if (downloadArea && info && downloadIcon) {
       downloadIcon.addEventListener('click', () => {
         downloadArea.style = 'left:0rem;transition:0.5s'
         info.style = 'display:block;transition:0.5s'
         downloadIcon.style = 'display:none;transition:0.5s'
+        janAppIcon.style = 'visibility: visible;transition:0.5s'
       })
     }
   }
@@ -163,6 +171,7 @@ function JanIndexx(props) {
   return (
     <>
       <VNavbar
+        {...props}
         county={county}
         setCounty={setCounty}
         township={township}
@@ -177,7 +186,13 @@ function JanIndexx(props) {
       {/* 輪播牆 */}
       <div className="container-fluid jan-p0">
         {/* <div className="row"> */}
-        <div className="jan-index-carousel position-relative">
+
+        <div className="jan-index-carousel-wrap position-relative">
+          <div className="jan-index-carousel1 d-flex flex-column">
+            <div className="jan-fresh"></div>
+            <div className="jan-goodfood"></div>
+            <div className="jan-health"></div>
+          </div>
           {/* 應用程式下載 */}
           {/* 橘底 */}
           <div className="position-absolute position-fixed jan-download-area d-flex justify-content-center">
@@ -198,12 +213,12 @@ function JanIndexx(props) {
           <div className="position-absolute jan-mouse-arrow"></div>
 
           {/* 切換鈕 */}
-          <ul class="position-absolute jan-carousel-dots d-flex justify-content-center">
-            <li class="jan-carousel-dot1"></li>
-            <li class="jan-carousel-dot2"></li>
-            <li class="jan-carousel-dot3"></li>
-            <li class="jan-carousel-dot4"></li>
-            <li class="jan-carousel-dot5"></li>
+          <ul className="position-absolute jan-carousel-dots d-flex justify-content-center">
+            <li className="jan-carousel-dot1"></li>
+            <li className="jan-carousel-dot2"></li>
+            <li className="jan-carousel-dot3"></li>
+            <li className="jan-carousel-dot4"></li>
+            <li className="jan-carousel-dot5"></li>
           </ul>
         </div>
         {/* </div> */}
@@ -547,10 +562,10 @@ function JanIndexx(props) {
               <img alt="" src={titleRight} />
             </div>
             {/* 活動卡片 */}
-            <div class="container">
-              <div class="row">
-                <div class="col-12 d-flex justify-content-center">
-                  <div class="jan-event d-flex ">
+            <div className="container">
+              <div className="row">
+                <div className="col-12 d-flex justify-content-center">
+                  <div className="jan-event d-flex ">
                     <div className="jan-event-img">
                       <img src="" alt="" />
                     </div>
@@ -579,22 +594,22 @@ function JanIndexx(props) {
                     </div>
                   </div>
                 </div>
-                <div class="col-12 mt-5 ">
-                  <div class="img-wrap d-flex justify-content-between align-items-center">
+                <div className="col-12 mt-5 ">
+                  <div className="img-wrap d-flex justify-content-between align-items-center">
                     <div className="jan-event-arrowL">
                       <ArrowLeft />
                     </div>
                     <div className="jan-img-select d-flex justify-content-between">
-                      <div class="img-row">
+                      <div className="img-row">
                         <img src="" alt="" />
                       </div>
-                      <div class="img-row">
+                      <div className="img-row">
                         <img src="" alt="" />
                       </div>
-                      <div class="img-row">
+                      <div className="img-row">
                         <img src="" alt="" />
                       </div>
-                      <div class="img-row">
+                      <div className="img-row">
                         <img src="" alt="" />
                       </div>
                     </div>
@@ -616,7 +631,7 @@ function JanIndexx(props) {
         <div className="jan-blur d-flex align-items-center">
           {/* 黑灰文字區塊 */}
           <div className="jan-p0 jan-black-blur">
-            <div className="row d-flex justify-content-center align-items-center flex-column">
+            <div className="d-flex justify-content-center align-items-center flex-column">
               {/* 購物流程標題-淺色 */}
               <div className="d-flex align-items-center mt-5">
                 <img alt="" src={titleLeftLight} />
@@ -819,14 +834,14 @@ function JanIndexx(props) {
       <div className="container-fluid jan-p0 jan-article">
         <div className="jan-p0 flex-colunm justify-content-center">
           {/* 標題 */}
-          <div className="row mb-5 d-flex justify-content-center">
+          <div className="mb-5 d-flex justify-content-center">
             <img alt="" src={titleLeft} />
             <p className="mt-2 jan-feature-title">好文推薦</p>
             <img alt="" src={titleRight} />
           </div>
 
           {/* 推薦文章卡片 */}
-          <div className="row d-flex justify-content-center align-items-center">
+          <div className="p-2 d-flex justify-content-center align-items-center">
             {/* 左邊模糊卡片 */}
             <div className="col-3">
               <div className="m-auto d-flex justify-content-center flex-wrap jan-article-bcc  jan-article-left-blur">
@@ -873,7 +888,7 @@ function JanIndexx(props) {
 
             {/* 右邊模糊卡片 */}
             <div className="col-3">
-              <div className="m-auto d-flex justify-content-center flex-wrap jan-article-bcc jan-article-right-blur">
+              <div className="m-auto d-flex justify-content-center flex-wrap jan-article-sbcc jan-article-right-blur">
                 {/* 圖片 */}
                 <div className="jan-article-img"></div>
                 {/* 文字 */}
