@@ -27,8 +27,8 @@ function RuAddCart(props) {
 
     // 給第五組 動畫開始 s
     // 執行加入購物車動畫
-    const $addBtn = document.getElementById(`${id}`)
-    const $target = document.getElementById('ru-target')
+    const $addBtn = document.getElementById(`${id}`) // 觸發按鈕
+    const $target = document.getElementById('ru-target') // 目標
     // getBoundingClientRect() 取得元素相對於瀏覽器視窗的位置
     let addBtnX = $addBtn.getBoundingClientRect().left + 75 // +75(button寬度的一半) 才會在正中心
     let addBtnY = $addBtn.getBoundingClientRect().top + 22.5
