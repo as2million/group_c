@@ -52,6 +52,7 @@ function App() {
   const [township, setTownship] = useState(-1);
   const [address, setAddress] = useState('');
 
+  // 20201112舊版購物車icon計數處理器
   const handleCartNumber = (type = 'add', amount = 1) => {
     if (type === 'add') {
       const newCartNumber = +cartNumber + amount;
@@ -64,6 +65,27 @@ function App() {
       setCartNumber(newCartNumber);
     }
   };
+  // 20201112新版購物車icon計數處理器(修正減項邏輯，單純加的人可以不用)
+  // const handleCartNumber2 = (type = 'add', amount = 1) => {
+  //   if (type === 'add') {
+  //     let currentCartNumber =
+  //       JSON.parse(localStorage.getItem('cartNumber')) || 0;
+  //     let newCartNumber = +currentCartNumber + amount;
+  //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+  //     setCartNumber(newCartNumber);
+  //   }
+  //   if (
+  //     type === 'minus' &&
+  //     JSON.parse(localStorage.getItem('cartNumber')) > 0
+  //   ) {
+  //     let currentCartNumber =
+  //       JSON.parse(localStorage.getItem('cartNumber')) || 0;
+  //     let newCartNumber = +currentCartNumber - amount;
+  //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+  //     setCartNumber(newCartNumber);
+  //   }
+  // };
+
   useEffect(() => {
     const currentCartNumber =
       JSON.parse(localStorage.getItem('cartNumber')) || 0;
@@ -131,7 +153,8 @@ function App() {
             <Route exact path="/cart">
               <ChaCart
                 setShowBar={setShowBar}
-                handleCartNumber={handleCartNumber}
+                setCartNumber={setCartNumber}
+                // handleCartNumber={handleCartNumber}
               />
             </Route>
             {/* 揪團 */}
@@ -209,6 +232,7 @@ function App() {
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 handleCartNumber={handleCartNumber}
+                setShowBar={setShowBar}
               />
             </Route>
 

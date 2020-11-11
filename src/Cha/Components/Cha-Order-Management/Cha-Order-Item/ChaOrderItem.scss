@@ -1,14 +1,17 @@
+// * {
+//   outline: 1px solid red;
+// }
 .cha-order-row {
   /* border: solid .1rem red; */
   margin: auto;
   /* padding-top: 4.25rem; */
-  width: 82.5rem;
+  width: 80rem;
   height: 24rem;
   border-bottom: 0.1rem solid #decdbb;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   /* //   margin-top: 2rem;
 }
 
@@ -20,8 +23,8 @@
 }
 
 .cha-order-column1-picture {
-  height: 16rem;
-  width: 16rem;
+  height: 15rem;
+  width: 15rem;
   background-color: rgb(255, 249, 170);
   margin-right: 2rem;
   /* //   width: 30%; */
@@ -32,7 +35,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 56rem;
+  width: 54rem;
 }
 
 .cha-order-column2-row1 {
@@ -118,9 +121,9 @@
 
 .cha-order-detail-container {
   background-color: #fbf3e9;
-  width: 82.5rem;
+  width: 80rem !important;
   border-bottom: 0.1rem solid #e2d9cf;
-  padding: 2rem 11rem 2rem 11rem;
+  padding: 2rem 11rem 2rem 11rem !important;
   /* 上右下左 */
   box-sizing: border-box;
   /* display: flex;
@@ -131,8 +134,8 @@
 .cha-order-detail-container div {
   margin: 1rem 0rem 1rem 0rem;
   flex-wrap: nowrap;
-  /* display: flex;
-    justify-content: space-between; */
+  display: flex;
+  // justify-content: space-between;
   padding: 0.2rem 1rem 0.2rem 1rem;
   /* margin: 0.1rem; */
 }
@@ -194,27 +197,28 @@
   color: #fff;
 }
 
-.cha-reset-display button {
-  color: #f6bd60 !important;
-  text-decoration: underline !important;
-  font-size: 1.8rem !important;
-  font-weight: 600 !important;
-  background-color: #fff !important;
-  border-color: white !important;
-  outline: none !important;
-  margin-right: 4rem !important;
-}
-.cha-reset-display button:active,
-.cha-reset-display button:focus,
-.cha-reset-display button:hover {
-  color: #f48145 !important;
-  transition: 0.3s !important;
-  background-color: #fff !important;
-  border-color: white !important;
-  outline: none !important;
-}
+// .cha-reset-display button {
+//   color: #f6bd60 !important;
+//   text-decoration: underline !important;
+//   font-size: 1.8rem !important;
+//   font-weight: 600 !important;
+//   background-color: #fff !important;
+//   border-color: white !important;
+//   outline: none !important;
+//   margin-right: 4rem !important;
+// }
+// .cha-reset-display button:active,
+// .cha-reset-display button:focus,
+// .cha-reset-display button:hover {
+//   color: #f48145 !important;
+//   transition: 0.3s !important;
+//   background-color: #fff !important;
+//   border-color: white !important;
+//   outline: none !important;
+// }
 .cha-receipt-demo {
   background: url('../Images/receipt-demo.png');
+  background-color: rgb(236, 221, 135);
   background-size: 100% 100%;
   width: 19.2rem;
   height: 30.3rem;

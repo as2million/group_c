@@ -6,7 +6,13 @@ import UpdateCartToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalSt
 
 // import { Button, Collapse } from 'react-bootstrap';
 function ChaOrderItem(props) {
-  const { orderItem, handleCartNumber } = props;
+  const {
+    orderItem,
+    handleCartNumber,
+    setChangeOrderState,
+    changeOrderState,
+  } = props;
+  const [error, setError] = useState(null);
 
   // 訂單明細的內容JSX
   const ComponentOrderDetail = (props) => {
@@ -14,41 +20,41 @@ function ChaOrderItem(props) {
     return (
       <>
         <div className="cha-order-detail-container container">
-          <div class="cha-order-detail-header row">
+          <div class="cha-order-detail-header">
             <span class="col-5">商品名稱</span>
             <span class="col-2">商品單價</span>
             <span class="col-3">商品數量</span>
           </div>
-          <div className="cha-horizontal-line-in-order row"></div>
+          <div className="cha-horizontal-line-in-order"></div>
           {orderItem.order_detail.map((item, value) => (
-            <div className="cha-detail-hover row">
+            <div className="cha-detail-hover">
               <span className="col-5">{item.product_name}</span>
               <span className="col-2">${item.product_price}</span>
               <span className="col-3">X {item.product_amount}</span>
             </div>
           ))}
-          <div className="cha-horizontal-line-in-order row"></div>
-          <div className="cha-detail-hover row">
+          <div className="cha-horizontal-line-in-order"></div>
+          <div className="cha-detail-hover">
             <span className="col-7">小計</span>
             <span className="col-3">X {orderItem.total_amount}</span>
             <span className="col-2 cha-text-left">
               ${orderItem.subtotal_price}
             </span>
           </div>
-          <div className="cha-detail-hover row justify-content-between">
+          <div className="cha-detail-hover justify-content-between">
             <span>運費</span>
             <span>${orderItem.shipping}</span>
           </div>
-          <div className="cha-detail-hover row justify-content-between">
+          <div className="cha-detail-hover  justify-content-between">
             <span>怪獸幣</span>
             <span>-${orderItem.beastie_coin}</span>
           </div>
-          <div className="cha-detail-hover row  justify-content-between">
+          <div className="cha-detail-hover  justify-content-between">
             <span>餐具</span>
-            <span>{false ? '是' : orderItem.tableware}</span>
+            <span>{orderItem.tableware === '是' ? '是' : '否'}</span>
           </div>
-          <div className="cha-horizontal-line-in-order row"></div>
-          <div className="cha-detail-hover row justify-content-between">
+          <div className="cha-horizontal-line-in-order"></div>
+          <div className="cha-detail-hover justify-content-between">
             <span>訂單總額</span>
             <span> ${orderItem.total_price}</span>
           </div>
@@ -67,7 +73,7 @@ function ChaOrderItem(props) {
             <span class="col-2">商品單價</span>
             <span class="col-3">商品數量</span>
           </div>
-          <div className="cha-horizontal-line-in-order row"></div>
+          <div className="cha-horizontal-line-in-order"></div>
           {orderItem.order_detail.map((item, value) => (
             <div className="row">
               <span className="col-5">{item.product_name}</span>
@@ -123,6 +129,35 @@ function ChaOrderItem(props) {
       setTabActive(e.target, '.cha-order-mana-title-switch');
       setOrderDetailComponent(<ComponentReceipt orderItem={orderItem} />);
     };
+    // 退費的功能
+    const idForChangeState = {
+      sid: orderItem.sid,
+      order_state: '已退費',
+    };
+    async function updateTotalToServer() {
+      // const newOrderState = { order_state: '已退費' };
+
+      const url = 'http://localhost:5000/cart-api/my-order-chang-state';
+      const request = new Request(url, {
+        method: 'POST',
+        body: JSON.stringify(idForChangeState),
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }),
+      });
+      // try {
+      const response = await fetch(request);
+      const data = await response.json();
+      setChangeOrderState(changeOrderState + 1);
+      // data會是一個物件值
+      // console.log('data', data);
+      console.log('POST有在動');
+      console.log('changeOrderState', changeOrderState);
+      //   } catch (error) {
+      //     setError(error);
+      //   }
+    }
 
     return (
       <>
@@ -164,7 +199,7 @@ function ChaOrderItem(props) {
                 <span>{orderItem.take_time} </span>
                 <span className="cha-order-divider"> | </span>
                 <span> 取餐方式: </span>
-                <span>{!orderItem.take_way ? '自取' : orderItem.take_way}</span>
+                <span>{orderItem.take_way === '外送' ? '外送' : '自取'}</span>
               </div>
 
               <div className="cha-order-column2-row4">
@@ -203,7 +238,7 @@ function ChaOrderItem(props) {
             <div className="cha-order-column3-btn">
               <div className="cha-order-in-column3-control-height">
                 {(orderItem.order_state === '已送達' ||
-                  orderItem.order_state === '已取消/已退費') && (
+                  orderItem.order_state === '已退費') && (
                   <Link to="/cart">
                     <input
                       type="button"
@@ -225,11 +260,16 @@ function ChaOrderItem(props) {
                     />
                   </Link>
                 )}
-                {orderItem.order_state === '未送達' && (
+                {(orderItem.order_state === '未送達' ||
+                  orderItem.order_state === '火速運送中') && (
                   <input
                     type="button"
                     value="取消/退費"
                     className="cha-order-btn-858585"
+                    onClick={() => {
+                      updateTotalToServer();
+                      console.log('點擊取消/退費');
+                    }}
                   />
                 )}
                 {orderItem.order_state === '揪團中' && (

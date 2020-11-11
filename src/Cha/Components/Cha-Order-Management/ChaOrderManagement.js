@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import './ChaOrderManagement.scss';
+import { ReactComponent as WaveLine } from './Images/wave_line.svg';
 import ChaOrderItem from 'Cha/Components/Cha-Order-Management/Cha-Order-Item/ChaOrderItem';
 
 function ChaOrderManagement(props) {
+  const [error, setError] = useState(null);
   // 當前登入的會員id
   const [currentMemberSid, setCurrentMemberSid] = useState(0);
+  // 整包訂單、訂單明細的資料
   const [orderData, setOrderData] = useState([]);
-
-  // 舊的樣板
-  // const chaOrderManagements = Array.from({ length: 1 });
-  // {chaOrderManagements.map((_, index) => (
-  //   <ChaOrderManagementArrived key={index} /> ))}
-  //   {chaOrderManagements.map((_, index) => (
-  //   <ChaOrderManagementRefund key={index} /> ))}
-  //   {chaOrderManagements.map((_, index) => (
-  //   <ChaOrderManagementGrouping key={index} /> ))}
+  // 退費後刷新頁面用
+  const [changeOrderState, setChangeOrderState] = useState(0);
+  // 恢復Navbar
+  const { setShowBar } = props;
+  useEffect(() => {
+    setShowBar(true);
+    console.log('設定navbar');
+  }, []);
 
   // GET訂單資料
   async function getMyOrderData(paramsMemberId) {
@@ -36,14 +38,35 @@ function ChaOrderManagement(props) {
     //   dataOrders[0] && dataOrders[0].take_person && dataOrders[0].take_person
     // );
   }
-  // 只讀入當前會員的訂單
+  // 掛載就讀入當前會員的訂單
   useEffect(() => {
     getMyOrderData(currentMemberSid);
+    console.log('1111');
   }, []);
 
+  // 重新載入資料，切換到退費頁面
+  useEffect(() => {
+    getMyOrderData(currentMemberSid);
+    //   console.log('2222');
+    //   // setOrderComponent(<ComponentC />);
+    //   let removeTargets = document.querySelectorAll(
+    //     '.cha-order-mana-title-switch'
+    //   );
+    //   removeTargets.forEach((target) => {
+    //     target.classList.remove('cha-active');
+    //   });
+    //   document
+    //     .querySelectorAll('.cha-order-mana-title-switch')[2]
+    //     .classList.add('cha-active');
+    //   console.log('333');
+  }, [changeOrderState]);
+
   // 分類訂單內容的函式
-  function handleClassifyState(orderState) {
-    return orderData.filter((item, index) => item.order_state === orderState);
+  function handleClassifyState(orderState1, orderState2) {
+    return orderData.filter(
+      (item, index) =>
+        item.order_state === orderState1 || item.order_state === orderState2
+    );
   }
 
   // 未送達
@@ -51,10 +74,14 @@ function ChaOrderManagement(props) {
     return (
       <>
         {/* notArrivedItem */}
-        {handleClassifyState('未送達')
+        {handleClassifyState('未送達', '火速運送中')
           .reverse()
           .map((item, value) => (
-            <ChaOrderItem key={item.id} orderItem={item} />
+            <ChaOrderItem
+              key={item.sid}
+              orderItem={item}
+              setChangeOrderState={setChangeOrderState}
+            />
           ))}
       </>
     );
@@ -66,7 +93,11 @@ function ChaOrderManagement(props) {
         {handleClassifyState('已送達')
           .reverse()
           .map((item, value) => (
-            <ChaOrderItem key={item.id} orderItem={item} />
+            <ChaOrderItem
+              key={item.sid}
+              orderItem={item}
+              setChangeOrderState={setChangeOrderState}
+            />
           ))}
       </>
     );
@@ -75,9 +106,15 @@ function ChaOrderManagement(props) {
   const ComponentC = (props) => {
     return (
       <>
-        {handleClassifyState('已退費/已取消').map((item, value) => (
-          <ChaOrderItem key={item.id} orderItem={item} />
-        ))}
+        {handleClassifyState('已退費')
+          .reverse()
+          .map((item, value) => (
+            <ChaOrderItem
+              key={item.sid}
+              orderItem={item}
+              setChangeOrderState={setChangeOrderState}
+            />
+          ))}
       </>
     );
   };
@@ -86,7 +123,11 @@ function ChaOrderManagement(props) {
     return (
       <>
         {handleClassifyState('揪團中').map((item, value) => (
-          <ChaOrderItem key={item.id} orderItem={item} />
+          <ChaOrderItem
+            key={item.sid}
+            orderItem={item}
+            setChangeOrderState={setChangeOrderState}
+          />
         ))}
       </>
     );
@@ -123,7 +164,7 @@ function ChaOrderManagement(props) {
 
     return (
       <>
-        <div className="cha-order-mana-content-container col-9">
+        <div className="cha-order-mana-content-container col-9 ">
           <div className="cha-order-mana-content-row1">
             <div
               className="cha-order-mana-title-switch cha-active"
@@ -142,13 +183,8 @@ function ChaOrderManagement(props) {
             </div>
           </div>
           <div className="cha-order-mana-content-row2">
-            <div className="cha-order-mana-border"></div>
+            <WaveLine />
           </div>
-          {/* <div>
-            {dataOrders[0] &&
-              dataOrders[0].take_person &&
-              dataOrders[0].take_person}
-          </div> */}
           <div>{orderComponent}</div>
         </div>
       </>

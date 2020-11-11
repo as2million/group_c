@@ -7,8 +7,11 @@ import ChaReceiptType from 'Cha/Components/Cha-Cart-Step-Card-Step3/Cha-Receipt-
 import './ChaCartStepCardStep3.scss';
 
 function ChaCartStepCardStep3(props) {
-  const [creditNumber, setCreditNumber] = useState('');
-  const [numberPointText, setNumberPointText] = useState('●●●●●●●●●●●●');
+  const [creditNumber1, setCreditNumber1] = useState('');
+  const [creditNumber2, setCreditNumber2] = useState('');
+  const [creditNumber3, setCreditNumber3] = useState('');
+  const [creditNumber4, setCreditNumber4] = useState('');
+  const [numberPointText, setNumberPointText] = useState('●●●●●●●●●●●●●●●●');
   const [creditMonth, setCreditMonth] = useState('●●');
   const [creditYear, setCreditYear] = useState('●●');
   const [creditFlip, setCreditFlip] = useState(false);
@@ -17,26 +20,45 @@ function ChaCartStepCardStep3(props) {
 
   // 信用卡號呈現效果
   function ShowInCard() {
+    let creditNumber = creditNumber1 + creditNumber2 + creditNumber4;
     if (creditNumber.length >= 0) {
-      let p1 = '';
-      let pl1 = 12 - creditNumber.length;
-      for (let i = 0; i < pl1; i++) {
-        p1 += '●';
+      let point1 = '';
+      let pointLength1 = 16 - creditNumber.length;
+      for (let i = 0; i < pointLength1; i++) {
+        point1 += '●';
       }
-      setNumberPointText(creditNumber + p1);
+      let numberAddPoint = creditNumber + point1;
+      let num1to4 = numberAddPoint.slice(0, 4);
+      let num5to8 = numberAddPoint.slice(4, 8);
+      let num9to12 = numberAddPoint.slice(8, 12);
+      let num13to16 = numberAddPoint.slice(12, 16);
+
+      setNumberPointText(
+        num1to4 + ' ' + num5to8 + ' ' + num9to12 + ' ' + num13to16
+      );
+      // setNumberPointText(creditNumber + point1);
     }
     if (credit3Number.length >= 0) {
-      let p2 = '';
-      let pl2 = 3 - credit3Number.length;
-      for (let i = 0; i < pl2; i++) {
-        p2 += '●';
+      let point2 = '';
+      let pointLength2 = 3 - credit3Number.length;
+      for (let i = 0; i < pointLength2; i++) {
+        point2 += '●';
       }
-      setThreeNumberPointText(credit3Number + p2);
+      setThreeNumberPointText(credit3Number + point2);
     }
   }
   useEffect(() => {
     ShowInCard();
-  }, [creditNumber]);
+  }, [creditNumber1]);
+  useEffect(() => {
+    ShowInCard();
+  }, [creditNumber2]);
+  useEffect(() => {
+    ShowInCard();
+  }, [creditNumber3]);
+  useEffect(() => {
+    ShowInCard();
+  }, [creditNumber4]);
   useEffect(() => {
     ShowInCard();
   }, [credit3Number]);
@@ -91,15 +113,49 @@ function ChaCartStepCardStep3(props) {
         {/* 信用卡號 */}
         <div className="form-group">
           <label htmlFor="cha-step3-1-card-number">信用卡號</label>
+
           <input
             type="text"
             className="form-control cha-step3-1-card-number"
-            id="cha-step3-1-card-number"
-            maxLength="12"
-            placeholder="XXXX XXXX XXXX XXXX"
-            value={creditNumber}
+            id="cha-step3-1-card-number col"
+            maxLength="4"
+            placeholder="XXXX"
+            value={creditNumber1}
             onChange={(e) => {
-              setCreditNumber(e.target.value);
+              setCreditNumber1(e.target.value);
+            }}
+          />
+          <input
+            type="text"
+            className="form-control cha-step3-1-card-number"
+            id="cha-step3-1-card-number col"
+            maxLength="4"
+            placeholder="XXXX"
+            value={creditNumber2}
+            onChange={(e) => {
+              setCreditNumber2(e.target.value);
+            }}
+          />
+          <input
+            type="text"
+            className="form-control cha-step3-1-card-number"
+            id="cha-step3-1-card-number col"
+            maxLength="4"
+            placeholder="XXXX"
+            value={creditNumber3}
+            onChange={(e) => {
+              setCreditNumber3(e.target.value);
+            }}
+          />
+          <input
+            type="text"
+            className="form-control cha-step3-1-card-number col"
+            id="cha-step3-1-card-number"
+            maxLength="4"
+            placeholder="XXXX"
+            value={creditNumber4}
+            onChange={(e) => {
+              setCreditNumber4(e.target.value);
             }}
           />
         </div>

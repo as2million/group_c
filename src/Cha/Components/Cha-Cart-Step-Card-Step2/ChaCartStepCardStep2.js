@@ -28,7 +28,7 @@ function ChaCartStepCardStep2(props) {
     setTakeWay,
     setTakeTime,
   } = props;
-
+  // console.log('檢查日期', startDate);
   // GET會員資料
   async function getMemberDataFromServer(paramsMemberId) {
     const url = `http://localhost:5000/cart-api/member/${paramsMemberId}`;

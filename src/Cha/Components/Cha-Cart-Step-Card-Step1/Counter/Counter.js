@@ -1,5 +1,5 @@
-import React from 'react'
-import './Counter.scss'
+import React from 'react';
+import './Counter.scss';
 
 function Counter(props) {
   const {
@@ -7,16 +7,20 @@ function Counter(props) {
     mealsItem,
     updateCartToLocalStorage,
     handleCartNumber,
-  } = props
+  } = props;
   return (
     <>
       <div className="cha-counter-box">
         <div
           onClick={() => {
-            handleCount(mealsItem.id, 'decrement')
+            handleCount(mealsItem.id, 'decrement');
             // if (mealsItem.productAmount < 1) return;
-            updateCartToLocalStorage(mealsItem, false)
-            handleCartNumber('minus')
+            updateCartToLocalStorage(mealsItem, 1, false);
+            if (mealsItem.productAmount > 1) {
+              handleCartNumber('minus', 1);
+            } else {
+              handleCartNumber('minus', 0);
+            }
           }}
           className={
             mealsItem.productAmount === 1
@@ -31,9 +35,9 @@ function Counter(props) {
         </div>
         <div
           onClick={() => {
-            handleCount(mealsItem.id, 'increment')
-            updateCartToLocalStorage(mealsItem, true)
-            handleCartNumber()
+            handleCount(mealsItem.id, 'increment');
+            updateCartToLocalStorage(mealsItem, 1, true);
+            handleCartNumber('add', 1);
           }}
           className="cha-counter-increment"
         >
@@ -41,7 +45,7 @@ function Counter(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Counter
+export default Counter;
