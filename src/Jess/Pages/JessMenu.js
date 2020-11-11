@@ -4,6 +4,7 @@ import JessMenuA from '../Components/JessMenuA/JessMenuA'
 import JessMenuB from '../Components/JessMenuB/JessMenuB'
 import JessMenuC from '../Components/JessMenuC/JessMenuC'
 import JessMenuD from '../Components/JessMenuD/JessMenuD'
+import ChaOrderItem from '../Components/Cha-Order-Item/ChaOrderItem'
 
 function JessMenu() {
   return (
@@ -13,6 +14,7 @@ function JessMenu() {
       <JessMenuB />
       <JessMenuC />
       <JessMenuD />
+      <ChaOrderItem />
     </>
   )
 }

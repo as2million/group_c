@@ -9,8 +9,8 @@ function JessCommentList(props) {
   return (
     <>
       <div>
-        <li key={comment.sid} className="jess-commentItem">
-          <div className="jess-rateStarColor">
+        <li key={comment.member_sid} className="jess-commentItem">
+          <div className="jess-ItemrateStarColor col-3">
             <Rate count={5} value={comment.starRating} disabled />
           </div>
           <div className="jess-itemTextBox">{comment.content}</div>

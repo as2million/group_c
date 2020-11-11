@@ -49,8 +49,8 @@ function JessMenu(props) {
         />
         {/* <div className="jess-inputBorder"></div> */}
         {/* <div className="jess-commentBox">
-              <JessCommentList comments={comments} />
-            </div> */}
+          <JessCommentList comments={comments} />
+        </div> */}
       </div>
     </>
   )

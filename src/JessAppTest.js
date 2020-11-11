@@ -14,7 +14,7 @@ function JessAppTest() {
       <>
         <NavBar />
         {/* <VNavbar /> */}
-        {/* <JessBento /> */}
+        <JessBento />
         <JessCommentMsg />
         {/* <JessVegBox /> */}
         {/* <JessMenu /> */}

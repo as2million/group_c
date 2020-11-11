@@ -35,7 +35,7 @@ $white: #ffffff;
 //commentItem
 .jess-commentItem {
   height: 7rem;
-  width: 70rem;
+  width: 90rem;
   background-color: #ffffff;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -45,6 +45,9 @@ $white: #ffffff;
   padding: 1rem;
   display: flex;
   outline: none;
+}
+.jess-ItemrateStarColor {
+  width: 7rem;
 }
 //input
 .jess-rateStar div {

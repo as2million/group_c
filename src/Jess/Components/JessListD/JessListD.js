@@ -26,7 +26,7 @@ function JessListD(props) {
     const data = await response.json()
 
     setComments(data)
-    console.log(data)
+    console.log('我的get:', data)
   }
 
   useEffect(() => {
@@ -74,11 +74,6 @@ function JessListD(props) {
                       <ul className="list-unstyled">
                         <li class=" d-flex ">
                           <div className="jess-rateStarColor mt-2">
-                            {/* <ReactStars
-                              size={20}
-                              value={item.starRating}
-                              edit={false}
-                            /> */}
                             <Rate count={5} value={item.starRating} disabled />
                           </div>
                           <div className="jess-text-15Gray2 mt-2">
@@ -97,8 +92,6 @@ function JessListD(props) {
               )
             })}
           </div>
-          {/* <Pagination size="small" total={10} /> */}
-          <div className="jess-pageTotal"></div>
         </div>
       </div>
     </>

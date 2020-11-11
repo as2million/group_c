@@ -68,9 +68,9 @@ function JessCommentInput(props) {
     handleSubmit()
   }, [])
 
-  const handleCancel = (e) => {
-    setStatus(false)
-  }
+  // const handleClose = (e) => {
+  //   closeModal(false)
+  // }
   return (
     <>
       <div className="col-3 jess-comment-productPic"></div>
@@ -95,7 +95,7 @@ function JessCommentInput(props) {
                 member_sid: 1,
                 starRating: rating,
                 content: textInput,
-                created_at: new Date(),
+                // created_at: new Date(),
               }
               const newComments = [newItems, ...comments]
               setComments(newComments)
@@ -106,8 +106,15 @@ function JessCommentInput(props) {
         <button
           className="jess-input-button"
           // onClick={handleSubmit}
-          onClick={handleSubmit}
-          onCancel={handleCancel}
+          // onClick={
+          //   () => {
+          //   handleSubmit()
+          //   }
+          // }
+          onClick={() => {
+            closeModal()
+            handleSubmit()
+          }}
         >
           確認送出
         </button>
