@@ -180,6 +180,9 @@ function App() {
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                // 會員menu數字
+                currentUserCommentNum={currentUserCommentNum}
+                setCurrentUserCommentNum={setCurrentUserCommentNum}
                 // vnbar
                 county={county}
                 township={township}
