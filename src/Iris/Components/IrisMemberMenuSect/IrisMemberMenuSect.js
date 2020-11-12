@@ -50,14 +50,19 @@ function IrisMemberMenuSect(props) {
     (allComments) => allComments.member === currentUser
   )
 
+  if (currentUserComment.length === 0) {
+    currentUserComment.length += 1
+  }
   // 抓DOM減一
   const commentMinusOne = () => {
     document.querySelector('#iris-comment-count').innerText -= 1
   }
   // 在myFavSect有設狀態，若狀態有變(代表有刪除評論)就減一
+
   useEffect(() => {
     commentMinusOne()
   }, [commentDelete])
+
   // setUserCommentCount(currentUserComment.length) //執行這個會報錯
   // ----------------------------------------------//
 
@@ -92,10 +97,16 @@ function IrisMemberMenuSect(props) {
   const currentUserFav = myFavs.filter(
     (myFavs) => myFavs.member_sid === currentUser
   )
+
   // 抓DOM減一
   const myFavMinusOne = () => {
     document.querySelector('#iris-fav-count').innerText -= 1
   }
+  // 如果是新用戶，最愛數量會變-1，把它加回來
+  if (currentUserComment.length === 0) {
+    currentUserFav.length += 1
+  }
+
   // 在myFavSect有設userFavDelete狀態，若狀態有變(代表有刪除最愛)就減一
   useEffect(() => {
     myFavMinusOne()

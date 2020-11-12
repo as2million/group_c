@@ -8,11 +8,29 @@ import Button from './../../../Share/Components/Button/Button'
 import $ from 'jquery'
 
 function IrisDataEditSect(props) {
-  const { currentUser, setShowUpdateModal } = props
+  const { currentUser, setShowUpdateModal, setShowGetCouponBox } = props
   const [userInfo, setUserInfo] = useState([])
+  const [couponStatus, setCouponStatus] = useState([])
+  const [couponOneStatus, setCouponOneStatus] = useState('')
+
   // const [value, setValue] = useState()
 
-  // 更新會員資料
+  // -------先新增會員資料折價券領取狀態資料表--------//
+  const dataToBeSend = { currentUser: currentUser }
+  fetch('http://localhost:5000/member/addCouponStatus', {
+    method: 'POST',
+    body: JSON.stringify(dataToBeSend),
+    headers: new Headers({
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    }),
+  })
+    .then((r) => r.json())
+    .then((o) => {
+      console.log(o)
+    })
+
+  // ------------ 更新會員資料 ----------------- //
   const updateProfile = () => {
     const familyname = document.querySelector('#iris-member-family-name').value
     const givenname = document.querySelector('#iris-member-given-name').value
@@ -55,10 +73,35 @@ function IrisDataEditSect(props) {
       }
       // console.log(newProfile)
 
-      // 秀更新成功光箱
-      setShowUpdateModal(true)
+      // 第一次填資料送優惠券
+      // coupon1_status=0 代表之前沒領過
+      if (currentUserCouponStatus[0].coupon1_status === 0) {
+        const newCouponStatus = {
+          currentUser: currentUser,
+          coupon1: 1,
+          coupon2: 0,
+        }
+        // 更新領取狀態
+        fetch('http://localhost:5000/member/changeCouponStatus', {
+          method: 'POST',
+          body: JSON.stringify(newCouponStatus),
+          headers: new Headers({
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          }),
+        })
+          .then((r) => r.json())
+          .then((o) => {
+            console.log(o)
+          })
+        // 秀成功獲取優惠券光箱
+        setShowGetCouponBox(true)
+      } else {
+        // 秀更新成功光箱
+        setShowUpdateModal(true)
+      }
 
-      // 送出資料
+      // 更新會員資料
       fetch('http://localhost:5000/member/updateProfile', {
         method: 'POST',
         body: JSON.stringify(newProfile),
@@ -75,6 +118,7 @@ function IrisDataEditSect(props) {
   }
 
   // -------- 取得目前user的資料 ---------- //
+  // 取得所有會員的資料
   async function getUserInfoFromServer() {
     const url = 'http://localhost:5000/member/allUserProfile'
 
@@ -93,7 +137,7 @@ function IrisDataEditSect(props) {
     setUserInfo(data)
   }
 
-  // --------- 過濾出現在使用者的資料 --------- //
+  // 過濾出現在使用者的資料
   const currentUserInfo = userInfo.filter(
     (userInfo) => userInfo.member_sid === currentUser
   )
@@ -101,9 +145,40 @@ function IrisDataEditSect(props) {
 
   useEffect(() => {
     getUserInfoFromServer()
-  }, [])
+  }, [couponOneStatus])
 
-  // 把user資料代進去
+  // --------- 取得目前user的優惠券領取狀態 --------- //
+  // 取得所有人的優惠券領取狀態
+  async function getCouponStatusFromServer() {
+    const url = 'http://localhost:5000/member/couponStatus'
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log(data)
+    setCouponStatus(data)
+  }
+  // 載入
+  useEffect(() => {
+    getCouponStatusFromServer()
+  }, [])
+  // 過濾出現在使用者的資料
+  const currentUserCouponStatus = couponStatus.filter(
+    (couponStatus) => couponStatus.member_sid === currentUser
+  )
+
+  // console.log不出來，但59行讀的到資料
+  // console.log(currentUserCouponStatus[0].coupon1_status)
+
+  // ----------- 把user資料代進去 ----------- //
   currentUserInfo.map((item, index) => {
     const userFamilyName = item.name.slice(0, 1)
     const userGivenName = item.name.slice(1, 3)

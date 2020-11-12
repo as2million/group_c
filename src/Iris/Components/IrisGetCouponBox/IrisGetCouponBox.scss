@@ -1,0 +1,57 @@
+// 遮罩
+.iris-getCoupon-mask {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  // position: absolute;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  // display: none;
+  z-index: 100;
+}
+
+// 登入成功白底
+.iris-getCoupon-container {
+  // display: none;
+  // position: absolute;
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  z-index: 110;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 35rem;
+  height: 40rem;
+  border-radius: 3rem;
+}
+
+.iris-coupon-img-wrapper {
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.iris-getCoupon-text1 {
+  position: fixed;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 2.4rem;
+  color: #f5a016;
+  font-weight: bold;
+}
+.iris-getCoupon-text2 {
+  position: fixed;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  font-size: 2.4rem;
+  color: #f5a016;
+  font-weight: bold;
+}
+

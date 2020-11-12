@@ -6,9 +6,11 @@ import VNavbar from 'Share/Components/VNavbar/VNavbar'
 import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
+import IrisGetCouponBox from './../Components/IrisGetCouponBox/IrisGetCouponBox'
 
 function IrisUserprofile(props) {
   const [showUpdateModal, setShowUpdateModal] = useState(false)
+  const [showGetCouponBox, setShowGetCouponBox] = useState(false)
   const {
     isLogin,
     currentUser,
@@ -35,6 +37,14 @@ function IrisUserprofile(props) {
     }
   }
 
+  if (showGetCouponBox === true) {
+    document.querySelector('.IrisGetCouponBox').style.display = 'block'
+  } else {
+    if (document.querySelector('.IrisGetCouponBox')) {
+      document.querySelector('.IrisGetCouponBox').style.display = 'none'
+    }
+  }
+
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
     // setShowLoginModal(true)
@@ -55,6 +65,7 @@ function IrisUserprofile(props) {
         <IrisDataEditSect
           currentUser={currentUser}
           setShowUpdateModal={setShowUpdateModal}
+          setShowGetCouponBox={setShowGetCouponBox}
         />
         <div
           className="iris-update-success-mask"
@@ -75,6 +86,12 @@ function IrisUserprofile(props) {
         </div>
       </div>
       <ScrollButton />
+      <div className="IrisGetCouponBox">
+        <IrisGetCouponBox
+          showGetCouponBox={showGetCouponBox}
+          setShowGetCouponBox={setShowGetCouponBox}
+        />
+      </div>
     </>
   )
 }
