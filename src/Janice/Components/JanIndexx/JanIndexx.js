@@ -190,9 +190,16 @@ function JanIndexx(props) {
     document.querySelector('.jan-map-results').style = 'visibility: visible'
   }
 
+  //活動牆
+  // hideArrow()=>{
+  //   if(activeItemIndex===2){
+  //     document.querySelector(.)
+  //   }
+  // }
+
   return (
     <>
-      {/* <VNavbar
+      <VNavbar
         {...props}
         county={county}
         setCounty={setCounty}
@@ -200,7 +207,7 @@ function JanIndexx(props) {
         setTownship={setTownship}
         address={address}
         setAddress={setAddress}
-      /> */}
+      />
 
       <div className="jan-fake-nav d-flex justify-content-center align-items-center">
         navbar的高度
@@ -675,6 +682,7 @@ function JanIndexx(props) {
                         firstAndLastGutter={false}
                         rightChevron={<ArrowRight />}
                         leftChevron={<ArrowLeft />}
+                        onClick={console.log(activeItemIndex)}
                       >
                         <div className="img-row">
                           <img alt="" src={event1} />
