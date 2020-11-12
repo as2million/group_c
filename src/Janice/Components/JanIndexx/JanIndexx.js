@@ -16,11 +16,9 @@ import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
 import VNavbar from '../../../Share/Components/VNavbar/VNavbar'
 import ToToop from '../../../Share/Components/ToTopButton/ScrollButton'
 import { datacountries, datatownships, dataprice } from './data'
-import banner1 from './Images/Images/banner1.jpg'
-import banner2 from './Images/Images/banner1.jpg'
-import banner5 from './Images/Images/banner1.jpg'
-import banner4 from './Images/Images/banner1.jpg'
+
 import { Carousel } from 'antd'
+import { Link } from 'react-router-dom'
 import ItemsCarousel from 'react-items-carousel'
 import event1 from './Images/Images/event1.png'
 import event2 from './Images/Images/event2.jpg'
@@ -191,15 +189,21 @@ function JanIndexx(props) {
   }
 
   //活動牆
-  // hideArrow()=>{
-  //   if(activeItemIndex===2){
-  //     document.querySelector(.)
+  // window.addEventListener('click', hideArrow)
+  // function hideArrow() {
+  //   if (activeItemIndex === 0) {
+  //     document.querySelector('.jan-event-hideArrowL').style = 'z-index: 200'
   //   }
+
+  //   if (activeItemIndex === 5) {
+  //     document.querySelector('.jan-event-hideArrowR').style = 'z-index: 200'
+  //   }
+  //   console.log(activeItemIndex)
   // }
 
   return (
     <>
-      <VNavbar
+      {/* <VNavbar
         {...props}
         county={county}
         setCounty={setCounty}
@@ -207,7 +211,7 @@ function JanIndexx(props) {
         setTownship={setTownship}
         address={address}
         setAddress={setAddress}
-      />
+      /> */}
 
       <div className="jan-fake-nav d-flex justify-content-center align-items-center">
         navbar的高度
@@ -330,98 +334,101 @@ function JanIndexx(props) {
 
       {/* intros */}
       <div className="container-fluid jan-p0 jan-intro-area">
-        <div className="container jan-intro1 jan-p0">
-          {/* 在地小農 */}
-          <div className="jan-intro1">
-            {/* 介紹欄位 */}
-            <div className="jan-intro1-wrap">
-              <div className="jan-intro1-title"></div>
-              <div className="jan-intro1-text">
-                <p>嚴選在地農產品</p>
-                <p>透過小農地圖</p>
-                <p className="jan-intro1-large-text">
-                  “拾餐“帶你從餐桌看見台灣
-                </p>
-                <p>走訪這些在地小農</p>
-                <p>打開感官體驗</p>
-                <p>拾餐也提供蔬菜箱寄送</p>
-                <p>給想自己料理的你</p>
-                <p>不用出門也能品嘗到安心的美味</p>
-              </div>
+        {/* <div className="container jan-intro1 jan-p0"> */}
+        {/* 在地小農 */}
+        <div className="jan-intro1">
+          {/* 介紹欄位 */}
+          <div className="jan-intro1-wrap">
+            <div className="jan-intro1-title"></div>
+            <div className="jan-intro1-text mt-5">
+              <p>嚴選在地農產品</p>
+              <p>透過小農地圖</p>
+              <p className="jan-intro1-large-text">“拾餐“帶你從餐桌看見台灣</p>
+              <p>走訪這些在地小農</p>
+              <p>打開感官體驗</p>
+              <p>拾餐也提供蔬菜箱寄送</p>
+              <p>給想自己料理的你</p>
+              <p>不用出門也能品嘗到安心的美味</p>
+            </div>
+            <Link style={{ 'text-decoration': 'none' }} to="/farmMap">
               <div className="jan-index-button float-right mt-3">
                 <Button className="button-btn-g" text="小農地圖" />
               </div>
-            </div>
-            {/* 小農欄位 */}
-            <div className="jan-intro1-cards p-5">
-              {/* 萱草園．農友張武增 */}
-              <div className="jan-intro1-card1">
-                <div className="jan-intro1-farmer1 d-flex justify-content-center"></div>
-                <div className="jan-intro1-card1-wrap flex-column">
-                  <div className="jan-intro1-fake-farmer1"></div>
-                  <p className="jan-card1-title">萱草園．農友張武增</p>
-                  <p className="jan-card1-text ">
-                    張武增張大哥，生於花蓮赤柯山 田地保育山羌，通過綠色保育標章
-                    「安心金針」甘甜風味受好評 友善耕種，堅持不使用農藥、化肥
-                    熱風烘乾，堅持提供無硫金針。
-                  </p>
+            </Link>
+          </div>
+          {/* 小農欄位 */}
+          <div className="jan-intro1-cards p-5">
+            {/* 萱草園．農友張武增 */}
+            <div className="jan-intro1-card1">
+              <div className="jan-intro1-farmer1 d-flex justify-content-center"></div>
+              <div className="jan-intro1-card1-wrap flex-column">
+                <div className="jan-intro1-fake-farmer1"></div>
+                <p className="jan-card1-title">萱草園．農友張武增</p>
+                <p className="jan-card1-text ">
+                  張武增張大哥，生於花蓮赤柯山 田地保育山羌，通過綠色保育標章
+                  「安心金針」甘甜風味受好評 友善耕種，堅持不使用農藥、化肥
+                  熱風烘乾，堅持提供無硫金針。
+                </p>
+                <Link style={{ 'text-decoration': 'none' }} to="/farmIntro">
                   <div className="jan-card-arrow float-right"></div>
+
                   <br />
                   <p className="jan-card1-viewmore float-right">view more</p>
-                </div>
+                </Link>
               </div>
+            </div>
 
-              {/* 青翠園有機農場・農友莊翠蘭 */}
+            {/* 青翠園有機農場・農友莊翠蘭 */}
+            <div className="jan-intro1-card2">
               <div className="jan-intro1-card2">
-                <div className="jan-intro1-card2">
-                  <div className="jan-intro1-farmer2"></div>
-                  <div className="jan-intro1-card2-wrap flex-column">
-                    <div className="jan-intro1-fake-farmer2"></div>
-                    <p className="jan-card2-title">
-                      青翠園有機農場・農友莊翠蘭
-                    </p>
-                    <p className="jan-card2-text ">
-                      堅持至今的信念是個好： 「對自己身體好，對消費者的身體好，
-                      對土地好，對天地萬物好」。 她的心願是，「如果土地會說話，
-                      希望他們會說：『嗯，我很舒服』， 這樣就太好了！」
-                    </p>
+                <div className="jan-intro1-farmer2"></div>
+                <div className="jan-intro1-card2-wrap flex-column">
+                  <div className="jan-intro1-fake-farmer2"></div>
+                  <p className="jan-card2-title">青翠園有機農場・農友莊翠蘭</p>
+                  <p className="jan-card2-text ">
+                    堅持至今的信念是個好： 「對自己身體好，對消費者的身體好，
+                    對土地好，對天地萬物好」。 她的心願是，「如果土地會說話，
+                    希望他們會說：『嗯，我很舒服』， 這樣就太好了！」
+                  </p>
+                  <Link to="/farmIntro">
                     <div className="jan-card-arrow float-right"></div>
                     <br />
                     <p className="m-0 jan-card2-viewmore float-right">
                       view more
                     </p>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+        {/* </div> */}
         {/* 產銷履歷 */}
-        <div className="jan-intro2 ">
+        <div className="jan-intro2">
           <div className="jan-intro2-wrap">
             <div className="jan-intro2-title"></div>
-            <div className="jan-intro2-text">
+            <div className="jan-intro2-text mt-5">
               <p>農產品產銷履歷制度</p>
               <p>是一種農產品從農場到餐桌</p>
               <p>在生產、加工、運輸、銷售過程</p>
               <p>完整記錄的安心保證制度</p>
               <p>具備可追溯生產者或加工者之資訊</p>
-              <p>對於健康的把關</p>
-              <p>拾餐總是比你更在意</p>
+              <p className="jan-intro2-large-text">對於健康的把關</p>
+              <p className="jan-intro2-large-text">"拾餐"總是比你更在意</p>
             </div>
-            <div className="jan-index-button float-right mt-3">
-              <Button className="button-btn" text="商品列表" />
-            </div>
+            <Link style={{ 'text-decoration': 'none' }} to="/productList">
+              <div className="jan-index-button float-right mt-3">
+                <Button className="button-btn" text="商品列表" />
+              </div>
+            </Link>
           </div>
           <div className="jan-intro2-cards"></div>
         </div>
-
         {/* 客製化便當 */}
         <div className="jan-intro3">
           <div className="jan-intro3-wrap">
             <div className="jan-intro3-title"></div>
-            <div className="jan-intro3-text">
+            <div className="jan-intro3-text mt-5">
               <p>親愛的，是不是有那些日子，看著菜單卻覺得無從下手，</p>
               <p>想吃照燒雞肉配玉米炒蛋，</p>
               <p>可偏偏照燒雞肉的配菜卻是最討厭的菜色呢？</p>
@@ -431,29 +438,40 @@ function JanIndexx(props) {
               <p>自由組合，隨心搭配，</p>
               <p>別再讓你的想法受限於制式的菜單上了！</p>
             </div>
+
             <div className="jan-index-button float-right mt-3">
+              <Link
+                style={{ 'text-decoration': 'none' }}
+                to="/productListCustom"
+              ></Link>
               <Button className="button-btn" text="客製化便當" />
             </div>
           </div>
           <div className="jan-intro3-cards"></div>
         </div>
-
         {/* 揪團訂購 */}
         <div className="jan-intro4">
           <div className="jan-intro4-wrap">
             <div className="jan-intro4-title"></div>
-            <div className="jan-intro4-text">
-              <p>農產品產銷履歷制度</p>
-              <p>是一種農產品從農場到餐桌</p>
-              <p>在生產、加工、運輸、銷售過程</p>
-              <p>完整記錄的安心保證制度</p>
-              <p>具備可追溯生產者或加工者之資訊</p>
-              <p>對於健康的把關</p>
-              <p>拾餐總是比你更在意</p>
+            <div className="jan-intro4-text mt-5">
+              <p>“拾餐”讓您和您的親朋好友更容易揪團</p>
+              <p>您不需要為了訂哪一種口味的餐點</p>
+              <p>而在費心的喬團友了</p>
+              <p>有了點餐網址從此輕鬆選餐</p>
+              <p>分開結帳功能</p>
+              <p>團主不再為收錢煩惱</p>
+              <p className="jan-intro4-large-text">
+                快來享受ㄧ站購足的訂餐便利吧！
+              </p>
             </div>
-            <div className="jan-index-button float-right mt-3">
-              <Button className="button-btn" text="商品列表" />
-            </div>
+            <Link
+              style={{ 'text-decoration': 'none' }}
+              to="/groupOrder/groupOrderCreate"
+            >
+              <div className="jan-index-button float-right mt-3">
+                <Button className="button-btn" text="作伙揪團" />
+              </div>
+            </Link>
           </div>
           <div className="jan-intro4-cards"></div>
         </div>
@@ -461,18 +479,21 @@ function JanIndexx(props) {
         <div className="jan-intro5">
           <div className="jan-intro5-wrap">
             <div className="jan-intro5-title"></div>
-            <div className="jan-intro5-text">
-              <p>農產品產銷履歷制度</p>
-              <p>是一種農產品從農場到餐桌</p>
-              <p>在生產、加工、運輸、銷售過程</p>
-              <p>完整記錄的安心保證制度</p>
-              <p>具備可追溯生產者或加工者之資訊</p>
-              <p>對於健康的把關</p>
-              <p>拾餐總是比你更在意</p>
+            <div className="jan-intro5-text mt-5">
+              <p>以均衡飲食為設計基礎</p>
+              <p>除了注重食材來源</p>
+              <p>更考量餐點製備及供餐過程等多方面的衛生安全</p>
+              <p className="jan-intro5-large-text">當日料理、供應</p>
+              <p>以提供較多完整的營養素</p>
+              <p>避免過多添加物以及鹽份的攝取</p>
+              <p>希望吃出食物的原味及新鮮味</p>
+              <p>更能夠吃進健康</p>
             </div>
-            <div className="jan-index-button float-right mt-3">
-              <Button className="button-btn" text="商品列表" />
-            </div>
+            <Link style={{ 'text-decoration': 'none' }} to="/productList">
+              <div className="jan-index-button float-right mt-3">
+                <Button className="button-btn" text="商品列表" />
+              </div>
+            </Link>
           </div>
           <div className="jan-intro5-cards"></div>
         </div>
@@ -498,19 +519,21 @@ function JanIndexx(props) {
               {/* <Card1 /> */}
               <div className="jan-card-container">
                 {/* item圖片 */}
-                <section className="jan-card-img-warp">
-                  <div className="jan-card-img1">
-                    <div className="jan-ingredient">
-                      <div className="jan-ingredient-content">
-                        簡單卻迷人的迷迭香風味，經過真空舒肥的肉質軟嫩又Juicy，特別加入研磨風乾大蒜，濃郁香氣，清爽不膩。
+                <Link style={{ 'text-decoration': 'none' }} to="/bento/1">
+                  <section className="jan-card-img-warp">
+                    <div className="jan-card-img1">
+                      <div className="jan-ingredient">
+                        <div className="jan-ingredient-content">
+                          簡單卻迷人的迷迭香風味，經過真空舒肥的肉質軟嫩又Juicy，特別加入研磨風乾大蒜，濃郁香氣，清爽不膩。
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </section>
+                  </section>
+                </Link>
 
                 <section className="jan-card-info-warp d-flex justify-content-center">
                   <div className="jan-card-info d-flex flex-column">
-                    <h3>慢煮嫩雞胸-蒜味香草</h3>
+                    <h3>中歐香料嫩雞胸</h3>
                     {/* 分隔線 */}
                     <section>
                       <div className="jan-card-hr d-flex flex-column justify-content-center align-items-center">
@@ -533,15 +556,17 @@ function JanIndexx(props) {
               {/* <Card2 /> */}
               <div className="jan-card-container">
                 {/* item圖片 */}
-                <section className="jan-card-img-warp">
-                  <div className="jan-card-img2">
-                    <div className="jan-ingredient ">
-                      <div className="jan-ingredient-content ">
-                        只用些許香料，黑胡椒昇華鮮蝦甜味，火烤逼出濃郁鮮味，淋上新鮮萊姆汁，不用剝殼，爽脆口感，忍不住一隻接一隻！
+                <Link style={{ 'text-decoration': 'none' }} to="/bento/3">
+                  <section className="jan-card-img-warp">
+                    <div className="jan-card-img2">
+                      <div className="jan-ingredient ">
+                        <div className="jan-ingredient-content ">
+                          只用些許香料，黑胡椒昇華鮮蝦甜味，火烤逼出濃郁鮮味，淋上新鮮萊姆汁，不用剝殼，爽脆口感，忍不住一隻接一隻！
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </section>
+                  </section>
+                </Link>
 
                 <section className="jan-card-info-warp d-flex justify-content-center">
                   <div className="jan-card-info d-flex flex-column">
@@ -568,15 +593,17 @@ function JanIndexx(props) {
               {/* Card3 */}
               <div className="jan-card-container">
                 {/* item圖片 */}
-                <section className="jan-card-img-warp">
-                  <div className="jan-card-img3">
-                    <div className="jan-ingredient ">
-                      <div className="jan-ingredient-content ">
-                        均勻抹上日本發酵鹽麴醃製，軟化肉質並提出松阪豬本身鮮甜味，慢熟幾小時才噴火烤出香氣，又香又嫩，不同於一般松阪豬，柔嫩而彈牙，一吃上癮！
+                <Link style={{ 'text-decoration': 'none' }} to="/bento/4">
+                  <section className="jan-card-img-warp">
+                    <div className="jan-card-img3">
+                      <div className="jan-ingredient ">
+                        <div className="jan-ingredient-content ">
+                          均勻抹上日本發酵鹽麴醃製，軟化肉質並提出松阪豬本身鮮甜味，慢熟幾小時才噴火烤出香氣，又香又嫩，不同於一般松阪豬，柔嫩而彈牙，一吃上癮！
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </section>
+                  </section>
+                </Link>
 
                 <section className="jan-card-info-warp d-flex justify-content-center">
                   <div className="jan-card-info d-flex flex-column">
@@ -604,9 +631,11 @@ function JanIndexx(props) {
           </div>
 
           {/* 商品列表按鈕 */}
-          <div className="mt-5 container jan-index-button d-flex justify-content-center">
-            <Button className="button-btn" text="商品列表" />
-          </div>
+          <Link style={{ 'text-decoration': 'none' }} to="/productList">
+            <div className="mt-5 container jan-index-button d-flex justify-content-center">
+              <Button className="button-btn" text="商品列表" />
+            </div>
+          </Link>
         </div>
       </div>
 
@@ -655,9 +684,7 @@ function JanIndexx(props) {
                 </div>
                 <div className="col-12 mt-5 ">
                   <div className="img-wrap d-flex justify-content-between align-items-center">
-                    {/* <div className="jan-event-arrowL">
-                      <ArrowLeft />
-                    </div> */}
+                    <div className="jan-event-hideArrowL"></div>
                     <div
                       className="jan-img-select"
                       style={{
@@ -682,7 +709,6 @@ function JanIndexx(props) {
                         firstAndLastGutter={false}
                         rightChevron={<ArrowRight />}
                         leftChevron={<ArrowLeft />}
-                        onClick={console.log(activeItemIndex)}
                       >
                         <div className="img-row">
                           <img alt="" src={event1} />
@@ -707,23 +733,7 @@ function JanIndexx(props) {
                         </div>
                       </ItemsCarousel>
                     </div>
-                    {/* <div className="jan-img-select d-flex justify-content-between">
-                      <div className="img-row">
-                        <img src="" alt="" />
-                      </div>
-                      <div className="img-row">
-                        <img src="" alt="" />
-                      </div>
-                      <div className="img-row">
-                        <img src="" alt="" />
-                      </div>
-                      <div className="img-row">
-                        <img src="" alt="" />
-                      </div>
-                    </div> */}
-                    {/* <div className="jan-event-arrowR">
-                      <ArrowRight />
-                    </div> */}
+                    <div className="jan-event-hideArrowR"></div>
                   </div>
                 </div>
               </div>
@@ -917,17 +927,24 @@ function JanIndexx(props) {
                   </p>
                 </div>
                 <div className="jan-map-buttons d-flex justify-content-between mt-4">
-                  <div className="jan-index-button">
-                    <button className="button-btn" text="商品列表">
-                      商品列表
-                    </button>
-                  </div>
+                  <Link style={{ 'text-decoration': 'none' }} to="/productList">
+                    <div className="jan-index-button">
+                      <button className="button-btn" text="商品列表">
+                        商品列表
+                      </button>
+                    </div>
+                  </Link>
                   <br />
-                  <div className="jan-index-button">
-                    <button className="button-btn" text="揪團訂購">
-                      揪團訂購
-                    </button>
-                  </div>
+                  <Link
+                    style={{ 'text-decoration': 'none' }}
+                    to="/groupOrder/groupOrderCreate"
+                  >
+                    <div className="jan-index-button">
+                      <button className="button-btn" text="揪團訂購">
+                        揪團訂購
+                      </button>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>

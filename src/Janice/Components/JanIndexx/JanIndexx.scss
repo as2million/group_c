@@ -547,7 +547,7 @@ $deepYello: #f5a016;
     color: $gray;
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 1.4rem;
-    margin-top: 2rem;
+    margin-top: 6rem;
     margin-left: 5rem;
     .jan-intro2-large-text {
       color: $deepYello;
@@ -592,7 +592,7 @@ $deepYello: #f5a016;
     color: $gray;
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 1.4rem;
-    margin-top: 2rem;
+    margin-top: 6rem;
     margin-left: 5rem;
     .jan-intro3-large-text {
       color: $deepYello;
@@ -636,7 +636,7 @@ $deepYello: #f5a016;
     color: $gray;
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 1.4rem;
-    margin-top: 2rem;
+    margin-top: 6rem;
     margin-left: 5rem;
     .jan-intro4-large-text {
       color: $deepYello;
@@ -646,7 +646,7 @@ $deepYello: #f5a016;
     }
   }
   .jan-intro4-cards {
-    background-color: #ccc;
+    background: url('./Images/Images/networkintro4.jpg') center center no-repeat;
     width: 68rem;
     height: 50rem;
     background-size: cover;
@@ -681,7 +681,7 @@ $deepYello: #f5a016;
     color: $gray;
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 1.4rem;
-    margin-top: 2rem;
+    margin-top: 6rem;
     margin-left: 5rem;
     .jan-intro5-large-text {
       color: $deepYello;
@@ -691,7 +691,7 @@ $deepYello: #f5a016;
     }
   }
   .jan-intro5-cards {
-    background-color: #ccc;
+    background: url('./Images/Images/kcalintro5.png') center center no-repeat;
     width: 68rem;
     height: 50rem;
     background-size: cover;
@@ -762,6 +762,7 @@ $deepYello: #f5a016;
       }
       .jan-card-img-warp:hover {
         transition: 0.5s;
+        text-decoration: none;
         .jan-ingredient {
           border-radius: 20px 20px 0 0;
           display: block;
@@ -869,6 +870,21 @@ $deepYello: #f5a016;
     }
   }
 }
+// .jan-event-hideArrowR {
+//   width: 12rem;
+//   height: 10rem;
+//   position: absolute;
+//   background-color: $skin;
+//   right: 0rem;
+//   z-index: 0;
+// }
+// .jan-event-hideArrowL {
+//   width: 10.5rem;
+//   height: 10rem;
+//   background-color: $skin;
+//   position: absolute;
+//   z-index: 200;
+// }
 
 // 購物流程背景樣式
 .jan-shopping-process {
