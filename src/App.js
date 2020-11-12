@@ -52,11 +52,6 @@ function App() {
   const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
   const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
 
-  // ---------------iris test------------------- //
-  // const [userCommentCount, setUserCommentCount] = useState(0) //當前會員的投稿數
-  // const [userFavCount, setUserFavCount] = useState(0) //當前會員的最愛數量
-  // const [userToTalCoin, setUserToTalCoin] = useState(0) //當前會員的怪獸幣總額
-
   //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address)到你們的頁面--------------//
   const [county, setCounty] = useState(-1)
   const [township, setTownship] = useState(-1)
@@ -196,10 +191,6 @@ function App() {
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
-                // setUserCommentCount={setUserCommentCount}
-                // userCommentCount={userCommentCount}
-                // userFavCount={userFavCount}
-                // userToTalCoin={userToTalCoin}
                 // vnbar
                 county={county}
                 township={township}
@@ -212,10 +203,6 @@ function App() {
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
-                // setUserFavCount={setUserFavCount}
-                // userCommentCount={userCommentCount}
-                // userFavCount={userFavCount}
-                // userToTalCoin={userToTalCoin}
                 // vnbar
                 county={county}
                 township={township}
@@ -228,10 +215,6 @@ function App() {
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
-                // setUserToTalCoin={setUserToTalCoin}
-                // userCommentCount={userCommentCount}
-                // userFavCount={userFavCount}
-                // userToTalCoin={userToTalCoin}
                 // vnbar
                 county={county}
                 township={township}
