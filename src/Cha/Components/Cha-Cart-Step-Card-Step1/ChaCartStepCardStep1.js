@@ -67,27 +67,31 @@ function ChaCartStepCardStep1(props) {
   // let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
   const demoMeals1 = {
     id: 1,
-    productName: '慢煮嫩雞胸-蒜味香草',
-    productPrice: 150,
+    productName: '中歐香料嫩雞胸',
+    productPrice: 170,
     productAmount: 1,
+    productImage: '00_bento-chicken-breast',
   };
   const demoMeals2 = {
     id: 2,
-    productName: '玫瑰岩鹽烤雞',
-    productPrice: 160,
-    productAmount: 2,
+    productName: '日式燒雞腿',
+    productPrice: 150,
+    productAmount: 3,
+    productImage: '01_bento-chicken-thigh',
   };
   const demoMeals3 = {
     id: 3,
-    productName: '乾煎功夫鱸魚',
-    productPrice: 170,
-    productAmount: 3,
+    productName: '醬烤厚切1983黑豚',
+    productPrice: 175,
+    productAmount: 5,
+    productImage: '00_bento-chicken-breast',
   };
   const promotion2 = {
-    id: 4,
-    productName: '超健康蔬果沙拉',
-    productPrice: 110,
+    id: 13,
+    productName: '激瘦下午茶沙拉',
+    productPrice: 130,
     productAmount: 1,
+    productImage: '12_afternoon',
   };
   return (
     <>
@@ -99,9 +103,9 @@ function ChaCartStepCardStep1(props) {
             // createCartToLocalStorage(demoMeals2);
             // createCartToLocalStorage(demoMeals3);
             updateCartToLocalStorage(demoMeals1, 1);
-            updateCartToLocalStorage(demoMeals2, 2);
-            updateCartToLocalStorage(demoMeals3, 3);
-            handleCartNumber('add', 6);
+            updateCartToLocalStorage(demoMeals2, 3);
+            updateCartToLocalStorage(demoMeals3, 5);
+            handleCartNumber('add', 9);
           }}
         >
           步驟1：餐點明細

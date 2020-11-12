@@ -5,12 +5,10 @@ import ChaCreditCardBack from 'Cha/Components/Cha-Cart-Step-Card-Step3/Images/Ch
 import ChaReceiptType from 'Cha/Components/Cha-Cart-Step-Card-Step3/Cha-Receipt-Type/ChaReceiptType';
 // import TWZipCode from './Cha-Address-Select/TWZipCode';
 import './ChaCartStepCardStep3.scss';
+import InputH40 from './InputH40/InputH40';
 
 function ChaCartStepCardStep3(props) {
-  const [creditNumber1, setCreditNumber1] = useState('');
-  const [creditNumber2, setCreditNumber2] = useState('');
-  const [creditNumber3, setCreditNumber3] = useState('');
-  const [creditNumber4, setCreditNumber4] = useState('');
+  const [creditNumber, setCreditNumber] = useState('');
   const [numberPointText, setNumberPointText] = useState('●●●●●●●●●●●●●●●●');
   const [creditMonth, setCreditMonth] = useState('●●');
   const [creditYear, setCreditYear] = useState('●●');
@@ -20,7 +18,6 @@ function ChaCartStepCardStep3(props) {
 
   // 信用卡號呈現效果
   function ShowInCard() {
-    let creditNumber = creditNumber1 + creditNumber2 + creditNumber4;
     if (creditNumber.length >= 0) {
       let point1 = '';
       let pointLength1 = 16 - creditNumber.length;
@@ -49,16 +46,7 @@ function ChaCartStepCardStep3(props) {
   }
   useEffect(() => {
     ShowInCard();
-  }, [creditNumber1]);
-  useEffect(() => {
-    ShowInCard();
-  }, [creditNumber2]);
-  useEffect(() => {
-    ShowInCard();
-  }, [creditNumber3]);
-  useEffect(() => {
-    ShowInCard();
-  }, [creditNumber4]);
+  }, [creditNumber]);
   useEffect(() => {
     ShowInCard();
   }, [credit3Number]);
@@ -113,54 +101,19 @@ function ChaCartStepCardStep3(props) {
         {/* 信用卡號 */}
         <div className="form-group">
           <label htmlFor="cha-step3-1-card-number">信用卡號</label>
-
-          <input
+          <InputH40
             type="text"
             className="form-control cha-step3-1-card-number"
-            id="cha-step3-1-card-number col"
-            maxLength="4"
-            placeholder="XXXX"
-            value={creditNumber1}
-            onChange={(e) => {
-              setCreditNumber1(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            className="form-control cha-step3-1-card-number"
-            id="cha-step3-1-card-number col"
-            maxLength="4"
-            placeholder="XXXX"
-            value={creditNumber2}
-            onChange={(e) => {
-              setCreditNumber2(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            className="form-control cha-step3-1-card-number"
-            id="cha-step3-1-card-number col"
-            maxLength="4"
-            placeholder="XXXX"
-            value={creditNumber3}
-            onChange={(e) => {
-              setCreditNumber3(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            className="form-control cha-step3-1-card-number col"
             id="cha-step3-1-card-number"
-            maxLength="4"
-            placeholder="XXXX"
-            value={creditNumber4}
+            maxLength="16"
+            placeholder="XXXX XXXX XXXX XXXX"
+            value={creditNumber}
             onChange={(e) => {
-              setCreditNumber4(e.target.value);
+              setCreditNumber(e.target.value);
             }}
           />
         </div>
         {/* 月、年、後三碼 */}
-        <label className="choice" htmlFor="card"></label>
         {/* MMM */}
         <div className="form-row">
           <div className="form-group col">
@@ -189,7 +142,7 @@ function ChaCartStepCardStep3(props) {
           </div>
           <div className="form-group">
             <label></label>
-            <div className="m-1 mt-3">/</div>
+            <div className="cha-slash">/</div>
           </div>
           <div className="form-group col">
             <label>年</label>
@@ -216,7 +169,7 @@ function ChaCartStepCardStep3(props) {
 
           <div className="form-group col">
             <label htmlFor="cha-step3-4-back-3number">後三碼</label>
-            <input
+            <InputH40
               type="text"
               value={credit3Number}
               className="form-control cha-step3-4-back-3number"

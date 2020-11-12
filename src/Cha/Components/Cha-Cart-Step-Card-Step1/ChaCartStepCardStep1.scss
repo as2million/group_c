@@ -5,7 +5,7 @@
   background-color: #fff;
   margin-right: 0.5rem;
   margin-bottom: 1rem;
-  padding: 3rem;
+  padding: 4rem;
   box-sizing: border-box;
   box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
 }
@@ -89,7 +89,8 @@
   transition: 0.5s;
 }
 .cha-salad-01 {
-  background: url('./Images/salad-01.jpg');
+  background: url('/productImages/Bento/16_egg.jpg');
+  object-fit: cover;
   background-size: 150%;
   background-position: center;
   background-color: rgb(251, 224, 103);
@@ -97,15 +98,17 @@
   height: 15rem;
 }
 .cha-salad-02 {
-  background: url('./Images/salad-02.jpg');
-  background-size: 120% 120%;
+  background: url('/productImages/Bento/12_afternoon.jpg');
+  object-fit: cover;
+  background-size: 150%;
   background-position: center;
   background-color: rgb(251, 224, 103);
   width: 15rem;
   height: 15rem;
 }
 .cha-salad-03 {
-  background: url('./Images/salad-03.jpg');
+  background: url('/productImages/Bento/18_seaFood.jpg');
+  object-fit: cover;
   background-size: 150%;
   background-position: center;
   background-color: rgb(251, 224, 103);

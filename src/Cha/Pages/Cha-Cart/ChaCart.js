@@ -222,7 +222,7 @@ function ChaCart(props) {
             beastieCoin={beastieCoin}
             takeDate={takeDate}
             takeTime={takeTime}
-            // handleCartNumber={handleCartNumber}
+            handleCartNumber={handleCartNumber}
             {...props}
           />
         </aside>

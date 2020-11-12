@@ -13,7 +13,13 @@ function ChaCartMealList(props) {
     <>
       <div className="cha-order">
         <div className="cha-order-right">
-          <div className="cha-product-pic"></div>
+          <div className="cha-product-pic">
+            <img
+              className="cha-HeadPic"
+              src={'/productImages/Bento/' + mealsItem.productImage + '.jpg'}
+            ></img>
+          </div>
+
           <div className="cha-step1-content">
             <div className="cha-step1-product-name">
               {mealsItem.productName}

@@ -219,19 +219,23 @@ function ChaOrderItem(props) {
                   {/* </Button>
                   </span> */}
                 </span>
-                <span
-                  className="cha-order-mana-title-switch"
-                  onClick={tabContentB}
-                >
-                  用餐評價
-                </span>
-                <span
-                  className="cha-order-mana-title-switch"
-                  onClick={tabContentC}
-                >
-                  查閱發票
-                </span>
-                {/* <!-- <span> 怪獸對決 </span> --> */}
+                {orderItem.order_state === '已送達' && (
+                  <span
+                    className="cha-order-mana-title-switch"
+                    onClick={tabContentB}
+                  >
+                    用餐評價
+                  </span>
+                )}
+                {orderItem.order_state === '已送達' && (
+                  <span
+                    className="cha-order-mana-title-switch"
+                    onClick={tabContentC}
+                  >
+                    查閱發票
+                  </span>
+                )}
+                {orderItem.order_state === '揪團中' && <span> 怪獸對決 </span>}
               </div>
             </div>
 

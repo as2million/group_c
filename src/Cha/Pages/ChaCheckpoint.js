@@ -1,5 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import InputAdd from 'Share/Components/Input/InputAdd';
+import InputAddress from 'Share/Components/Input/InputAddress';
+import InputAddressEdit from 'Share/Components/Input/InputAddressEdit';
+import InputH40 from 'Share/Components/Input/InputH40';
+import InputTest from 'Share/Components/Input/InputTest';
+import MainPageSelectBox from 'Share/Components/Input/MainPageSelectBox';
+import SelectBox from 'Share/Components/Input/SelectBox';
 
 function ChaCheckpoint(props) {
   return (
@@ -74,6 +81,14 @@ function ChaCheckpoint(props) {
             開始點餐
           </button>
         </Link>
+        <hr />
+        <InputAdd />
+        <InputAddress />
+        <InputAddressEdit />
+        <InputH40 />
+        <InputTest />
+        <MainPageSelectBox />
+        <SelectBox />
         <div
           style={{ width: '100%', height: '15rem', backgroundColor: '#fff' }}
         ></div>
