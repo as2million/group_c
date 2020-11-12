@@ -11,7 +11,8 @@ import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg'
 import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg'
 import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg'
 // 選單連結要使用NavLink取代Link
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 function NavBar(props) {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function NavBar(props) {
   const {
     isLogin,
     setShowLoginModal,
+    showLoginModal,
     cartNumber,
     setIsLogin,
     SetShowLoginCard,
@@ -52,17 +54,16 @@ function NavBar(props) {
 
   return (
     <>
-      <div
-        className="nav"
-        id="NavBar"
-        onClick={() => {
-          if (setShowLoginModal === true) {
-            setShowLoginModal(false)
-          }
-        }}
-      >
+      <div className="nav" id="NavBar">
         {/* <span id="ru-target">123</span> */}
-        <div className="navBar-jess-container">
+        <div
+          className="navBar-jess-container"
+          onClick={() => {
+            if (showLoginModal === true) {
+              setShowLoginModal(false)
+            }
+          }}
+        >
           <div className="navBar-jess-navCollapse ">
             <ul className="navBar-jess-navigation">
               <li className="navBar-jess-navigation_item">
@@ -132,7 +133,9 @@ function NavBar(props) {
               <li className="navBar-jess-navigation_item">
                 <div
                   onClick={() => {
-                    setShowLoginModal(true)
+                    if (isLogin === false) {
+                      setShowLoginModal(true)
+                    }
                   }}
                 >
                   <Nav.Link>
