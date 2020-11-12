@@ -10,7 +10,7 @@
   filter: alpha(opacity=50);
   -moz-opacity: 0.5;
   opacity: 0.5;
-  position: absolute;
+  position: fixed;
   left: 0px;
   top: 0px;
   display: none;
@@ -19,7 +19,7 @@
 
 .iris-update-success-box {
   display: none;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 55%;
   z-index: 200;

@@ -6,7 +6,8 @@
   filter: alpha(opacity=50);
   -moz-opacity: 0.5;
   opacity: 0.5;
-  position: absolute;
+  // position: absolute;
+  position: fixed;
   left: 0px;
   top: 0px;
   display: none;
@@ -16,7 +17,8 @@
 // 登入成功白底
 .iris-login-success-container {
   display: none;
-  position: absolute;
+  // position: absolute;
+  position: fixed;
   left: 50%;
   top: 55%;
   z-index: 110;

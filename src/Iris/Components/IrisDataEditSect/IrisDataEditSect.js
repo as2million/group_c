@@ -55,9 +55,6 @@ function IrisDataEditSect(props) {
       }
       // console.log(newProfile)
 
-      // 回到最頂部，不然光箱位置會跑掉
-      document.body.scrollTop = 0
-      document.documentElement.scrollTop = 0
       // 秀更新成功光箱
       setShowUpdateModal(true)
 
