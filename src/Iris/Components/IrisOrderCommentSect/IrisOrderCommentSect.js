@@ -110,7 +110,7 @@ function IrisUserCommentSect(props) {
     const response = await fetch(request)
     const data = await response.json()
 
-    // console.log(data)
+    console.log(data)
     setAllComment(data)
   }
 
@@ -170,8 +170,14 @@ function IrisUserCommentSect(props) {
   const commentDisplay = currentUserComment.map((item, index) => {
     // id用數字抓不到，前面加commentId
     const thisId = 'commentId' + item.sid
+    // 圖片
+    const imageId = 'comment-img-' + item.product_sid
+    console.log(imageId)
     // 處理從資料庫撈來的日期格式
-    const commentDate = item.created_at.slice(0, 10)
+    let commentDate = item.created_at.toLocaleString()
+    // let commentDate = item.created_at.slice(0, 10)
+    // console.log(typeof commentDate)
+
     return (
       <>
         <div className="iris-member-line"></div>
@@ -185,7 +191,7 @@ function IrisUserCommentSect(props) {
         >
           {/* <div className="iris-comment-box d-flex" id="comment1"> */}
           <div className="iris-comment-img-warpper">
-            <img className="iris-comment-img" id={item.comment_img}></img>
+            <img className="iris-comment-img" id={imageId}></img>
           </div>
           <div className="iris-comment-section-wrapper">
             <div className="iris-comment-text-wrapper d-flex">
