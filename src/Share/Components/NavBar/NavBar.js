@@ -55,11 +55,11 @@ function NavBar(props) {
       <div
         className="nav"
         id="NavBar"
-        // onClick={() => {
-        //   if (setShowLoginModal) {
-        //     setShowLoginModal(false)
-        //   }
-        // }}
+        onClick={() => {
+          if (setShowLoginModal === true) {
+            setShowLoginModal(false)
+          }
+        }}
       >
         {/* <span id="ru-target">123</span> */}
         <div className="navBar-jess-container">
@@ -130,9 +130,16 @@ function NavBar(props) {
                 </Nav.Link>
               </li>
               <li className="navBar-jess-navigation_item">
-                <Nav.Link as={NavLink} to="/memberUserprofile">
-                  會員中心 <BackArrow className="backArrow" />{' '}
-                </Nav.Link>
+                <div
+                  onClick={() => {
+                    setShowLoginModal(true)
+                  }}
+                >
+                  <Nav.Link>
+                    {/* <Nav.Link as={NavLink} to="/memberUserprofile"> */}
+                    會員中心 <BackArrow className="backArrow" />{' '}
+                  </Nav.Link>
+                </div>
                 <div className="navBar-jess-emptydiv">
                   <ul className="navBar-jess-dropdown2">
                     <div className="navBar-jess-triangle2"></div>
@@ -164,10 +171,7 @@ function NavBar(props) {
                         setShowLoginModal(true)
                       }}
                     >
-                      {' '}
-                      {/* <Nav.Link as={NavLink} to="/memberUserprofile"> */}
                       登入/註冊
-                      {/* </Nav.Link> */}
                     </li>
                     {/* 11/9 新增登出選項 */}
                     <li

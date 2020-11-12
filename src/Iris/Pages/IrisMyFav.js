@@ -5,6 +5,7 @@ import IrisMyFavSect from '../Components/IrisMyFavSect/IrisMyFavSect'
 import VNavbar from 'Share/Components/VNavbar/VNavbar'
 import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 function IrirsMyFav(props) {
   const [userFavDelete, setUserFavDelete] = useState('')
@@ -12,6 +13,11 @@ function IrirsMyFav(props) {
   if (isLogin === false) {
     setShowLoginModal(true)
     return <Redirect to="/" />
+    // 不讓它到首頁  測試讓它回到上一頁 失敗
+    // const goBack = () => {
+    // props.history.goBack()
+    // }
+    // goBack()
   }
   return (
     <>
@@ -31,4 +37,4 @@ function IrirsMyFav(props) {
   )
 }
 
-export default IrirsMyFav
+export default withRouter(IrirsMyFav)
