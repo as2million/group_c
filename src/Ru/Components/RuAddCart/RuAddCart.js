@@ -24,7 +24,6 @@ function RuAddCart(props) {
   // console.log(id, parentId);
 
   const addToCart = (e) => {
-
     // 給第五組 動畫開始 s
     // 執行加入購物車動畫
     const $addBtn = document.getElementById(`${id}`) // 觸發按鈕
@@ -91,14 +90,18 @@ function RuAddCart(props) {
       productPrice: price,
       productAmount: amount || 1,
     })
-    
+
     // 按下加入購物車按鈕 關閉顯示區
-    setIsShowHintA(false)
-    setIsShowHintB(false)
-    setIsShowHintC(false)
-    setIsShowHintD(false)
-    setIsShowHintE(false)
-    setIsShowHintF(false)
+    //如果從客製化按按鈕
+    if ((id === 'addCart-btn-custom')) {
+      // 關閉全部的hint區塊
+      setIsShowHintA(false)
+      setIsShowHintB(false)
+      setIsShowHintC(false)
+      setIsShowHintD(false)
+      setIsShowHintE(false)
+      setIsShowHintF(false)
+    }
   }
 
   const updateCartToLocalStorage = (item, isAdded = true) => {
