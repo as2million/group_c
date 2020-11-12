@@ -24,9 +24,12 @@ function RuBento(props) {
   const [isShowNothing, setIsShowNothing] = useState(false)
   // 後端資料
   const [data, setData] = useState('')
+  const [dataFav, setDataFav] = useState('')
+  const [showFavArr, setShowFavArr] = useState([])
 
   // 向後端請求資料
   useEffect(() => {
+    // 拿商品列表
     fetch('http://localhost:5000/product/bento') // 非同步
       .then(function (response) {
         return response.json()
@@ -36,10 +39,35 @@ function RuBento(props) {
         const copyJson = [...myJson]
         setData(copyJson)
       })
+
+    // 拿 我的最愛
+    fetch('http://localhost:5000/member/myFavList') // 非同步
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (myJson) {
+        // console.log(myJson)
+        const copyJsonFav = [...myJson]
+        setDataFav(copyJsonFav)
+        console.log(copyJsonFav)
+      })
   }, [])
 
-  // 搜尋功能 s
+  // 拿到有幾筆要固定我的最愛按鈕 邏輯
   useEffect(() => {
+    const favArr = [] // 放抓到的dataFav[i].product_sid資料
+    for (let i = 0; i < dataFav.length; i++) {
+      // 如果當前會員 跟 我的最愛資料表的member_sid匹配
+      if (currentUser === dataFav[i].member_sid) {
+        console.log(dataFav[i].product_sid)
+        favArr.push(dataFav[i].product_sid)
+      }
+    }
+    // console.log(favArr)
+    setShowFavArr(favArr) // 這樣才可以傳到RuAddFavorite
+    // console.log(showFavArr)
+
+    // 搜尋功能 s
     if (!data) {
       return
     }
@@ -58,7 +86,7 @@ function RuBento(props) {
     const $containerA = document.querySelector('.ru-itemWarp')
 
     // 第一次掛載DOM 與 每次state改變時 都會觸發
-    console.log(searchInput)
+    // console.log(searchInput)
     setItemWarp1(true)
     setItemWarp2(true)
     setItemWarp3(true)
@@ -125,9 +153,10 @@ function RuBento(props) {
     ) {
       setIsShowNothing(true)
     }
+    // 搜尋功能 e
     return () => {}
-  }, [searchInput, data]) // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
-  // 搜尋功能 e
+  }, [searchInput, data, dataFav]) // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
+
   if (!data) {
     return <></>
   }
@@ -153,11 +182,13 @@ function RuBento(props) {
                 imgId={data[0].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp2 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[1].productname}
                 comment={data[1].contentNum}
                 buy={data[1].purchased}
@@ -169,11 +200,13 @@ function RuBento(props) {
                 imgId={data[1].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp3 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[2].productname}
                 comment={data[2].contentNum}
                 buy={data[2].purchased}
@@ -185,12 +218,14 @@ function RuBento(props) {
                 imgId={data[2].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
 
             {itemWarp4 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[3].productname}
                 comment={data[3].contentNum}
                 buy={data[3].purchased}
@@ -202,11 +237,13 @@ function RuBento(props) {
                 imgId={data[3].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp5 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[4].productname}
                 comment={data[4].contentNum}
                 buy={data[4].purchased}
@@ -218,11 +255,13 @@ function RuBento(props) {
                 imgId={data[4].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp6 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[5].productname}
                 comment={data[5].contentNum}
                 buy={data[5].purchased}
@@ -234,12 +273,14 @@ function RuBento(props) {
                 imgId={data[5].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
 
             {itemWarp7 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[6].productname}
                 comment={data[6].contentNum}
                 buy={data[6].purchased}
@@ -251,11 +292,13 @@ function RuBento(props) {
                 imgId={data[6].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp8 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[7].productname}
                 comment={data[7].contentNum}
                 buy={data[7].purchased}
@@ -267,11 +310,13 @@ function RuBento(props) {
                 imgId={data[7].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp9 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[8].productname}
                 comment={data[8].contentNum}
                 buy={data[8].purchased}
@@ -283,11 +328,13 @@ function RuBento(props) {
                 imgId={data[8].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp10 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[9].productname}
                 comment={data[9].contentNum}
                 buy={data[9].purchased}
@@ -299,11 +346,13 @@ function RuBento(props) {
                 imgId={data[9].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp11 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[10].productname}
                 comment={data[10].contentNum}
                 buy={data[10].purchased}
@@ -315,11 +364,13 @@ function RuBento(props) {
                 imgId={data[10].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp12 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[11].productname}
                 comment={data[11].contentNum}
                 buy={data[11].purchased}
@@ -331,6 +382,7 @@ function RuBento(props) {
                 imgId={data[11].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
           </div>

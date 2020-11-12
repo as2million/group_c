@@ -93,7 +93,7 @@ function RuAddCart(props) {
 
     // 按下加入購物車按鈕 關閉顯示區
     //如果從客製化按按鈕
-    if ((id === 'addCart-btn-custom')) {
+    if (id === 'addCart-btn-custom') {
       // 關閉全部的hint區塊
       setIsShowHintA(false)
       setIsShowHintB(false)

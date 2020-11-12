@@ -54,7 +54,7 @@ function RuSalad(props) {
     const $containerA = document.querySelector('.ru-itemWarp')
 
     // 第一次掛載DOM 與 每次state改變時 都會觸發
-    console.log(searchInput)
+    // console.log(searchInput)
     setItemWarp1(true)
     setItemWarp2(true)
     setItemWarp3(true)

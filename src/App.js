@@ -43,7 +43,7 @@ function App() {
   const [showBar, setShowBar] = useState(true)
   const [cartNumber, setCartNumber] = useState(0)
   const [amount, setAmount] = useState(1)
-  const [currentUser, setCurrentUser] = useState() // 目前用戶
+  const [currentUser, setCurrentUser] = useState(4) // 目前用戶
   const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
   const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
 
@@ -71,7 +71,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    console.log(amount)
+    // console.log(amount)
     return () => {}
   }, [amount])
 

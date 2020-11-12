@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Style.scss'
 import star from './Images/star.svg'
 import starHalf from './Images/starHalf.svg'
@@ -18,6 +18,7 @@ function RuCard(props) {
   // imgId 產品圖片 => card-img-n n為1~9
   const {
     data,
+    dataFav,
     title,
     comment,
     buy,
@@ -29,7 +30,15 @@ function RuCard(props) {
     parentId,
     imgId,
     handleCartNumber,
+    currentUser,
+    showFavArr,
   } = props
+
+  const [isShowFav, setIsShowFav] = useState(false) // 是否要定住我的最愛按鈕
+
+//  if (showFavArr[0] === proudctId){
+//   setIsShowFav(true)
+//  }
 
   // 每個卡片跳轉到指定的詳頁 邏輯
   function linkToDetail() {
@@ -56,9 +65,30 @@ function RuCard(props) {
               }}
             ></img>
           </a>
-          <div className="ru-card-abs">
-            <RuAddFavorite />
-          </div>
+          {/* 是否固定我的最愛按鈕 */}
+          {isShowFav ? (
+            <div className="ru-card-abs ru-card-abs-stop">
+              <RuAddFavorite
+                data={data}
+                isShowFav={isShowFav}
+                setIsShowFav={setIsShowFav}
+                currentUser={currentUser}
+                proudctId={proudctId}
+                dataFav={dataFav}
+              />
+            </div>
+          ) : (
+            <div className="ru-card-abs">
+              <RuAddFavorite
+                data={data}
+                isShowFav={isShowFav}
+                setIsShowFav={setIsShowFav}
+                currentUser={currentUser}
+                proudctId={proudctId}
+                dataFav={dataFav}
+              />
+            </div>
+          )}
         </section>
         {/* item圖片e */}
         {/* item資訊s */}

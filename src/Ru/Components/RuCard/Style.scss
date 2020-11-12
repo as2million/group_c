@@ -45,6 +45,11 @@
   transition: 0.35s;
 }
 
+.ru-card-abs-stop .addFavorite-btn {
+  background-color: $dark-yellow;
+  background-image: url('./Images/addFavoriteC.svg');
+}
+
 .ru-card-img {
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
