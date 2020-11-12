@@ -108,13 +108,62 @@
 
 //------------------------------Desktop--------------------------------
 
+//-----------------------------Ipad Pro--------------------------------
+
+// @media screen and (min-width: 768.1px) and (max-width: 1200px) {
+//   .claudia-index-text {
+//     position: absolute;
+//     top: 770px;
+//     right: 240px;
+//   }
+
+//   .claudia-index-background-image {
+//     width: 768px;
+//     height: 1024px;
+//     background-image: url(./Images/rwd_pad_index_bg.jpg);
+//   }
+
+//   .claudia-index-text {
+//     text-align: center;
+//   }
+
+//   .claudia-index-text-1 {
+//     font-size: 70px;
+//   }
+  
+//   .claudia-index-text-2 {
+//     font-size: 50px;
+//   }
+
+//   .claudia-index-text {
+//     position: absolute;
+//     top: 1000px;
+//     right: 295px;
+//   }
+
+//   .claudia-index-background-image {
+//     width: 1024px;
+//     height: 1366px;
+//     background-image: url(./Images/rwd_pad_pro_index_bg.jpg);
+//   }
+
+//   //mouse scroll icon
+
+//   .claudia-center {
+//     display: none;
+//   }
+
+// }
+
+//-----------------------------Ipad Pro--------------------------------
+
 //--------------------------------Ipad---------------------------------
 
-@media screen and (min-width: 576px) and (max-width: 1200px) {
+@media screen and (min-width: 576.1px) and (max-width: 1200px) {
   .claudia-index-text {
     position: absolute;
     top: 770px;
-    right: 255px;
+    right: 240px;
   }
 
   .claudia-index-background-image {
