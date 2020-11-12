@@ -16,6 +16,19 @@ import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
 import VNavbar from '../../../Share/Components/VNavbar/VNavbar'
 import ToToop from '../../../Share/Components/ToTopButton/ScrollButton'
 import { datacountries, datatownships, dataprice } from './data'
+import banner1 from './Images/Images/banner1.jpg'
+import banner2 from './Images/Images/banner1.jpg'
+import banner5 from './Images/Images/banner1.jpg'
+import banner4 from './Images/Images/banner1.jpg'
+import { Carousel } from 'antd'
+import ItemsCarousel from 'react-items-carousel'
+import event1 from './Images/Images/event1.png'
+import event2 from './Images/Images/event2.jpg'
+import event3 from './Images/Images/event3.jpg'
+import event4 from './Images/Images/event4.jpg'
+import event5 from './Images/Images/event5.jpg'
+import event6 from './Images/Images/event6.jpg'
+import event7 from './Images/Images/event7.png'
 
 function JanIndexx(props) {
   const {
@@ -28,10 +41,19 @@ function JanIndexx(props) {
     setAddress,
   } = props
   const [price, setPrice] = useState(-1)
+  const [activeItemIndex, setActiveItemIndex] = useState(0)
 
   useEffect(() => {
     setShowBar(true)
   }, [])
+
+  const contentStyle = {
+    height: '70rem',
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#2638891',
+  }
 
   //品牌特色切換
   function intro1() {
@@ -170,7 +192,7 @@ function JanIndexx(props) {
 
   return (
     <>
-      <VNavbar
+      {/* <VNavbar
         {...props}
         county={county}
         setCounty={setCounty}
@@ -178,21 +200,51 @@ function JanIndexx(props) {
         setTownship={setTownship}
         address={address}
         setAddress={setAddress}
-      />
+      /> */}
 
       <div className="jan-fake-nav d-flex justify-content-center align-items-center">
         navbar的高度
       </div>
       {/* 輪播牆 */}
       <div className="container-fluid jan-p0">
-        {/* <div className="row"> */}
-
         <div className="jan-index-carousel-wrap position-relative">
-          <div className="jan-index-carousel1 d-flex flex-column">
-            <div className="jan-fresh"></div>
-            <div className="jan-goodfood"></div>
-            <div className="jan-health"></div>
-          </div>
+          <Carousel autoplay>
+            <div>
+              <div
+                className="bannerwrap d-flex flex-column"
+                style={contentStyle}
+              >
+                <div className="banner1 d-flex flex-column">
+                  <div className="jan-fresh"></div>
+                  <div>
+                    <div className="jan-health"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="bannerwrap" style={contentStyle}>
+                <div className="banner2"></div>
+              </div>
+            </div>
+            <div>
+              <div className="bannerwrap" style={contentStyle}>
+                <div className="banner3"></div>
+              </div>
+            </div>
+            <div>
+              <div className="bannerwrap" style={contentStyle}>
+                <div className="banner4"></div>
+              </div>
+            </div>
+          </Carousel>
+          {/* <div className="jan-index-carousel1">
+            <div className="jan-fresh-wrap d-flex flex-column">
+              <div className="jan-fresh"></div>
+              
+              <div className="jan-health"></div>
+            </div>
+          </div> */}
           {/* 應用程式下載 */}
           {/* 橘底 */}
           <div className="position-absolute position-fixed jan-download-area d-flex justify-content-center">
@@ -596,10 +648,58 @@ function JanIndexx(props) {
                 </div>
                 <div className="col-12 mt-5 ">
                   <div className="img-wrap d-flex justify-content-between align-items-center">
-                    <div className="jan-event-arrowL">
+                    {/* <div className="jan-event-arrowL">
                       <ArrowLeft />
+                    </div> */}
+                    <div
+                      className="jan-img-select"
+                      style={{
+                        padding: '0 0px',
+                        maxWidth: 900,
+                        margin: '0 auto',
+                      }}
+                    >
+                      <ItemsCarousel
+                        infiniteLoop={false}
+                        requestToChangeActive={setActiveItemIndex}
+                        activeItemIndex={activeItemIndex}
+                        gutter={20}
+                        activePosition={'center'}
+                        chevronWidth={60}
+                        disableSwipe={true}
+                        alwaysShowChevrons={true}
+                        numberOfCards={4}
+                        slidesToScroll={1}
+                        outsideChevron={true}
+                        showSlither={false}
+                        firstAndLastGutter={false}
+                        rightChevron={<ArrowRight />}
+                        leftChevron={<ArrowLeft />}
+                      >
+                        <div className="img-row">
+                          <img alt="" src={event1} />
+                        </div>
+                        <div className="img-row">
+                          <img alt="" src={event2} />
+                        </div>
+                        <div className="img-row">
+                          <img alt="" src={event3} />
+                        </div>
+                        <div className="img-row">
+                          <img alt="" src={event4} />
+                        </div>
+                        <div className="img-row">
+                          <img alt="" src={event5} />
+                        </div>
+                        <div className="img-row">
+                          <img alt="" src={event6} />
+                        </div>
+                        <div className="img-row">
+                          <img alt="" src={event7} />
+                        </div>
+                      </ItemsCarousel>
                     </div>
-                    <div className="jan-img-select d-flex justify-content-between">
+                    {/* <div className="jan-img-select d-flex justify-content-between">
                       <div className="img-row">
                         <img src="" alt="" />
                       </div>
@@ -612,10 +712,10 @@ function JanIndexx(props) {
                       <div className="img-row">
                         <img src="" alt="" />
                       </div>
-                    </div>
-                    <div className="jan-event-arrowR">
+                    </div> */}
+                    {/* <div className="jan-event-arrowR">
                       <ArrowRight />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
