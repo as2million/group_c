@@ -103,12 +103,14 @@ function ClaudiaModalContent(props) {
 
   const rwdTotal = () => {
     console.log('rwd')
-    console.log('rwd-adult-select', document.getElementsByClassName('claudia-selection-adult-value')[0].value)
-    console.log('rwd-child-select', document.getElementsByClassName('claudia-selection-child-value')[0].value)
-
+    // console.log('rwd-adult-select', document.getElementsByClassName('claudia-selection-adult-value')[0].value)
+    // console.log('rwd-child-select', document.getElementsByClassName('claudia-selection-child-value')[0].value)
+    let rwdAdultNum = +document.getElementsByClassName('claudia-selection-adult-value')[0].value;
+    let rwdChildNum = +document.getElementsByClassName('claudia-selection-child-value')[0].value;
+    setTotal(800 * rwdAdultNum + 500 * rwdChildNum)
   }
 
-  //adult total price
+  //WEB adult total price
 
   const handleAdultTotal = (type) => {
     if (total - 800 >= 0 && count1 > 0 && type === 'decrement') {
@@ -119,7 +121,7 @@ function ClaudiaModalContent(props) {
     }
   }
 
-  //child total price
+  //WEB child total price
 
   const handleChildTotal = (type) => {
     if (total - 500 >= 0 && count2 > 0 && type === 'decrement') {
