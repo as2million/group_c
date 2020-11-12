@@ -21,14 +21,11 @@ function IrirsMyFav(props) {
     setAddress,
   ] = useState('')
   const { isLogin, currentUser, setShowLoginModal } = props
+
+  // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
-    setShowLoginModal(true)
+    // setShowLoginModal(true)
     return <Redirect to="/" />
-    // 不讓它到首頁  測試讓它回到上一頁 失敗
-    // const goBack = () => {
-    // props.history.goBack()
-    // }
-    // goBack()
   }
   return (
     <>

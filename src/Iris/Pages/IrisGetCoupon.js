@@ -20,8 +20,10 @@ function IrisGetCoupon(props) {
     address,
     setAddress,
   } = props
+
+  // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
-    setShowLoginModal(true)
+    // setShowLoginModal(true)
     return <Redirect to="/" />
   }
   return (

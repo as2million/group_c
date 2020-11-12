@@ -44,6 +44,14 @@ function NavBar(props) {
     document.querySelector('.iris-logout-option').style.display = 'block'
   }
 
+  // 在未登入的狀態點擊會員相關選項
+  const disableLink = (e) => {
+    if (isLogin === false) {
+      e.preventDefault() //不跳轉頁面
+      setShowLoginModal(true) //秀登入光箱
+    }
+  }
+
   // 點擊登出
   const showLoginOption = () => {
     // 顯示登入選項,隱藏登出選項
@@ -67,7 +75,13 @@ function NavBar(props) {
           <div className="navBar-jess-navCollapse ">
             <ul className="navBar-jess-navigation">
               <li className="navBar-jess-navigation_item">
-                <Nav.Link as={NavLink} to="/groupOrder/groupOrderCreate">
+                <Nav.Link
+                  as={NavLink}
+                  to="/groupOrder/groupOrderCreate"
+                  onClick={(e) => {
+                    disableLink(e)
+                  }}
+                >
                   作伙揪團
                 </Nav.Link>
               </li>
@@ -121,7 +135,13 @@ function NavBar(props) {
               </Nav.Link>
 
               <li className="navBar-jess-navigation_item">
-                <Nav.Link as={NavLink} to="/getcoupon">
+                <Nav.Link
+                  as={NavLink}
+                  to="/getcoupon"
+                  onClick={(e) => {
+                    disableLink(e)
+                  }}
+                >
                   專屬優惠
                 </Nav.Link>
               </li>
@@ -131,38 +151,60 @@ function NavBar(props) {
                 </Nav.Link>
               </li>
               <li className="navBar-jess-navigation_item">
-                <div
-                  onClick={() => {
-                    if (isLogin === false) {
-                      setShowLoginModal(true)
-                    }
+                <Nav.Link
+                  as={NavLink}
+                  to="/memberUserprofile"
+                  onClick={(e) => {
+                    disableLink(e)
                   }}
                 >
-                  <Nav.Link>
-                    {/* <Nav.Link as={NavLink} to="/memberUserprofile"> */}
-                    會員中心 <BackArrow className="backArrow" />{' '}
-                  </Nav.Link>
-                </div>
+                  會員中心 <BackArrow className="backArrow" />
+                </Nav.Link>
+                {/* </div> */}
                 <div className="navBar-jess-emptydiv">
                   <ul className="navBar-jess-dropdown2">
                     <div className="navBar-jess-triangle2"></div>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/orderManagement">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/orderManagement"
+                        onClick={(e) => {
+                          disableLink(e)
+                        }}
+                      >
                         訂單管理
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/memberUserprofile">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/memberUserprofile"
+                        onClick={(e) => {
+                          disableLink(e)
+                        }}
+                      >
                         修改會員資料
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/myFav">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/myFav"
+                        onClick={(e) => {
+                          disableLink(e)
+                        }}
+                      >
                         我的最愛
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/beastiePoint">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/beastiePoint"
+                        onClick={(e) => {
+                          disableLink(e)
+                        }}
+                      >
                         我的怪獸
                       </Nav.Link>
                       <Monster className="navBar-jess-monster4" />

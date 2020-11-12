@@ -20,8 +20,9 @@ function IrisBeastiePoint(props) {
     address,
     setAddress,
   } = props
+  // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
-    setShowLoginModal(true)
+    // setShowLoginModal(true)
     return <Redirect to="/" />
   }
   return (
@@ -35,17 +36,8 @@ function IrisBeastiePoint(props) {
         setAddress={setAddress}
       />
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect
-          currentUser={currentUser}
-          // 投稿,最愛,怪獸幣數量
-          // userCommentCount={userCommentCount}
-          // userFavCount={userFavCount}
-          // userToTalCoin={userToTalCoin}
-        />
-        <IrisBeastiePointSect
-          currentUser={currentUser}
-          // setUserToTalCoin={setUserToTalCoin}
-        />
+        <IrisMemberMenuSect currentUser={currentUser} />
+        <IrisBeastiePointSect currentUser={currentUser} />
       </div>
       <ScrollButton />
     </>
