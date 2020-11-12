@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './JessMenuB.scss';
-import brownBorder from 'Jess/Components/images/SVG/brownBorder.svg';
+import React, { useState, useEffect } from 'react'
+import './JessMenuB.scss'
+import { Link } from 'react-router-dom'
+import brownBorder from 'Jess/Components/images/SVG/brownBorder.svg'
 
 function JessMenuB() {
   return (
@@ -21,30 +22,38 @@ function JessMenuB() {
             <div className="col-12 col-sm-6 d-flex jess-MenuB-RWD">
               <div className="row d-flex  align-content-between">
                 <div className="jess-view-menuBpic2">
-                  <div className="jess-menuB-pic2"></div>
+                  <a href="/bento/0/#1">
+                    <div className="jess-menuB-pic2"></div>
+                  </a>
                   <div class="mask">
-                    <h2>醬烤厚切1983黑豚</h2>
-                    <p>$120</p>
+                    <h2>慢煮嫩雞胸-蒜味香草</h2>
+                    <p>$170</p>
                   </div>
                 </div>
                 <div className="jess-view-menuBpic3">
-                  <div className="jess-menuB-pic3"></div>
+                  <Link to="/bento/1">
+                    <div className="jess-menuB-pic3"></div>
+                  </Link>
                   <div class="mask">
-                    <h2>慢煮嫩雞胸-中歐香料</h2>
+                    <h2>日式燒雞腿</h2>
                     <p>$135</p>
                   </div>
                 </div>
               </div>
               <div className="row d-flex  align-content-between">
                 <div className="jess-view-menuBpic4">
-                  <div className="jess-menuB-pic4"></div>
+                  <Link to="/bento/4">
+                    <div className="jess-menuB-pic4"></div>
+                  </Link>
                   <div class="mask">
-                    <h2>麴塩五香松阪豬</h2>
-                    <p>$180</p>
+                    <h2>頂級熟成菲力牛排</h2>
+                    <p>$230</p>
                   </div>
                 </div>
                 <div className="jess-view-menuBpic5">
-                  <div className="jess-menuB-pic5"></div>
+                  <Link to="/bento/3">
+                    <div className="jess-menuB-pic5"></div>
+                  </Link>
                   <div class="mask">
                     <h2>熱帶火烤萊姆蝦</h2>
                     <p>$220</p>
@@ -59,7 +68,7 @@ function JessMenuB() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default JessMenuB;
+export default JessMenuB

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 // import MainContent from 'Cha/Components-demo/MainContent'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
-import Home from 'Cha/pages-demo/Home'
+import Home from 'Cha/Pages/ChaCheckpoint'
 import About from 'Cha/pages-demo/About'
 import Product from 'Cha/pages-demo/Product'
 import Success from 'Cha/pages-demo/Success'
@@ -20,13 +20,13 @@ function ChaAppTest() {
     <Router>
       <>
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/cha/home">
             <Home />
           </Route>
           <Route path="/cart">
             <ChaCart />
           </Route>
-          <Route path="/groupOrder">
+          <Route path="/groupOrder/groupOrderCreate">
             <ChaGroupOrder />
           </Route>
           <Route path="/orderManagement">
@@ -34,8 +34,7 @@ function ChaAppTest() {
           </Route>
           <Route path="/irisProfilePageDemo">
             <IrisProfilePageDemo />
-          </Route>
-          <Route path="/scrollApp"></Route>
+          </Route> */}
         </Switch>
       </>
     </Router>

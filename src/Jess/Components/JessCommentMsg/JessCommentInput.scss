@@ -23,32 +23,70 @@ $white: #ffffff;
 
 .jess-comment-bg {
   width: 100%;
-  margin-top: 15rem;
-  // display: flex;
+  display: flex;
   // flex-wrap: wrap;
 }
 .jess-commentBox {
-  width: 80rem;
+  width: 70rem;
   // height: 10rem;
-
   font-size: 1.5rem;
   list-style: none;
-  // display: flex;
-  // flex-direction: column-reverse;
 }
-.jess-commentList > li {
+//commentItem
+.jess-commentItem {
   height: 7rem;
-  background-color: #f0f0f0;
+  width: 70rem;
+  background-color: #ffffff;
   font-size: 1.5rem;
   line-height: 2rem;
   color: $darkGary;
   list-style: none;
   border-bottom: 0.1rem solid $darkBrown;
   padding: 1rem;
+  display: flex;
+  outline: none;
+}
+
+.jess-rateStar div {
+  outline: none;
+}
+.jess-rateStarColor {
+  outline: none;
+  // color: #f48145;
+  width: 18rem;
+  height: 3rem;
+}
+.jess-itemTextBox {
+  // text-align: end;
+  background-color: transparent;
+  outline: none;
+  height: 7rem;
+  width: 50rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.jess-btnBox {
+  width: 20rem;
+  text-align: right;
+}
+//Edit
+.jess-commentList {
+  outline: none;
+  height: 7rem;
+  list-style: none;
+  border-bottom: 0.1rem solid $darkBrown;
+}
+.jess-commentEditList {
+  padding: 1rem;
+  background-color: #ffffff;
+  font-size: 1.5rem;
+  border: 0.1rem solid $darkGary;
+  outline: none;
 }
 .jess-input {
   width: 80rem;
   height: 10rem;
+  margin-top: 15rem;
 }
 .jess-inputText {
   font-size: 3rem;
@@ -65,11 +103,26 @@ $white: #ffffff;
   color: #ffffff;
   font-size: 1.5rem;
   margin-top: 1rem;
+  outline: none;
 }
 .jess-inputBorder {
   background: url('../images/SVG/brownBorder.svg') no-repeat;
   background-size: contain;
-  width: 80rem;
+  width: 70rem;
   height: 1rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
+}
+.jess-commentbtn {
+  color: $darkBrown;
+  border: none;
+  font-size: 1.5rem;
+  margin: 1rem;
+  font-family: 'Noto Sans TC';
+  background-color: transparent;
+  outline: none;
+}
+
+.jess-commentText {
+  height: 7rem;
+  width: 30rem;
 }

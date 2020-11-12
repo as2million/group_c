@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './JessMenuD.scss';
+import React, { useState, useEffect } from 'react'
+import './JessMenuD.scss'
 
 function JessMenuD() {
   return (
@@ -55,7 +55,7 @@ function JessMenuD() {
         {/* <div className="jess-border"></div> */}
       </div>
     </>
-  );
+  )
 }
 
-export default JessMenuD;
+export default JessMenuD

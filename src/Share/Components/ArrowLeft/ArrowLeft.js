@@ -1,15 +1,16 @@
-import React from 'react';
-import './ArrowLeft.scss';
-import ArrowL from './Images/ArrowLeft.svg';
+import React from 'react'
+import './ArrowLeft.scss'
 
 function ArrowLeft(props) {
   return (
     <>
-      <button className="arrowLeft-warp">
-        <img src={ArrowL} draggable="false"/>
-      </button>
+      <div className="arrowLeft-warp">
+        <div className="jan-arrow-circleL" draggable="true">
+          <div className="jan-arrow-left"></div>
+        </div>
+      </div>
     </>
-  );
+  )
 }
 
-export default ArrowLeft;
+export default ArrowLeft

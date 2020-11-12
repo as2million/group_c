@@ -9,17 +9,37 @@ import { ReactComponent as PlateIcon } from './Images/plate_icon.svg';
 import { ReactComponent as GroupOrderIcon } from './Images/group_order.svg';
 import { ReactComponent as MyFavIcon } from './Images/my_fav.svg';
 import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg';
-
+import { ReactComponent as ProfileIcon } from './Images/profile_beastie_icon.svg';
 function IrisMemberMenuSect(props) {
+  const { currentUser } = props;
+
+  let userinfo = [];
+  getData();
+  // 拿資料庫會員資料
+  async function getData() {
+    const url = 'http://localhost:5000/member/login';
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'appliaction/json',
+      }),
+    });
+    const response = await fetch(request);
+    userinfo = await response.json();
+  }
+
   return (
     <>
       <div class="container iris-membermenu-container col-3 ">
         <div class="row">
           <div class="iris-menu-background d-flex">
             {/* ---------- info ----------- */}
-            <div class="iris-profile-photo"></div>
+            <div class="iris-profile-photo d-flex">
+              <ProfileIcon />
+            </div>
 
-            <div class="iris-user-name">Christina Wang</div>
+            <div class="iris-user-name">{currentUser}</div>
 
             <div class="iris-brief-info-wraper d-flex flex-wrap">
               <div class="iris-brief-info">
