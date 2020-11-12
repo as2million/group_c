@@ -5,6 +5,7 @@ import ChaCartSubmitCard from 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmit
 import ChaCartStepCardStep1 from 'Cha/Components/Cha-Cart-Step-Card-Step1/ChaCartStepCardStep1';
 import ChaCartStepCardStep2 from 'Cha/Components/Cha-Cart-Step-Card-Step2/ChaCartStepCardStep2';
 import ChaCartStepCardStep3 from 'Cha/Components/Cha-Cart-Step-Card-Step3/ChaCartStepCardStep3';
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 
 import 'Cha/Pages/Cha-Cart/ChaCart.scss';
 
@@ -24,6 +25,8 @@ function ChaCart(props) {
   const [takeTime, setTakeTime] = useState('11:00 ~ 11:30');
   const [address, setAddress] = useState('');
   const [beastieCoin, setBeastieCoin] = useState('');
+  const [county, setCounty] = useState('');
+  const [district, setDistrict] = useState('');
 
   // 掛載就設定隱藏navbar
   useEffect(() => {
@@ -170,6 +173,7 @@ function ChaCart(props) {
   };
   return (
     <>
+      <ScrollButton />
       <ChaCartProgressBar />
       <div className="cha-wrap">
         {/* 訂單步驟欄*/}
@@ -193,6 +197,10 @@ function ChaCart(props) {
             setName={setName}
             mobile={mobile}
             setMobile={setMobile}
+            county={county}
+            setCounty={setCounty}
+            district={district}
+            setDistrict={setDistrict}
             address={address}
             setAddress={setAddress}
             beastieCoin={beastieCoin}

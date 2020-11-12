@@ -6,7 +6,7 @@ import ChaOrderItem from 'Cha/Components/Cha-Order-Management/Cha-Order-Item/Cha
 function ChaOrderManagement(props) {
   const [error, setError] = useState(null);
   // 當前登入的會員id
-  const [currentMemberSid, setCurrentMemberSid] = useState(0);
+  const [currentMemberSid, setCurrentMemberSid] = useState(1);
   // 整包訂單、訂單明細的資料
   const [orderData, setOrderData] = useState([]);
   // 退費後刷新頁面用
@@ -15,7 +15,7 @@ function ChaOrderManagement(props) {
   const { setShowBar } = props;
   useEffect(() => {
     setShowBar(true);
-    console.log('設定navbar');
+    console.log('設定navbar出現');
   }, []);
 
   // GET訂單資料
@@ -31,7 +31,7 @@ function ChaOrderManagement(props) {
     });
     const response = await fetch(request);
     const dataAllOrder = await response.json();
-    console.log('觀察fetch的function乖不乖');
+    console.log('fetch成功', dataAllOrder);
     setOrderData(dataAllOrder);
     // console.log(dataAllOrder);
     // console.log(
@@ -41,7 +41,7 @@ function ChaOrderManagement(props) {
   // 掛載就讀入當前會員的訂單
   useEffect(() => {
     getMyOrderData(currentMemberSid);
-    console.log('1111');
+    console.log('每次掛載就讀入當前會員的訂單');
   }, []);
 
   // 重新載入資料，切換到退費頁面
@@ -58,7 +58,9 @@ function ChaOrderManagement(props) {
     //   document
     //     .querySelectorAll('.cha-order-mana-title-switch')[2]
     //     .classList.add('cha-active');
-    //   console.log('333');
+    console.log(
+      'changeOrderState有變化就呼叫getMyOrderData(currentMemberSid);'
+    );
   }, [changeOrderState]);
 
   // 分類訂單內容的函式

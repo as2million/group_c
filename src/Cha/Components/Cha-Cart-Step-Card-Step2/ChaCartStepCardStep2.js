@@ -14,6 +14,8 @@ function ChaCartStepCardStep2(props) {
   const [startDate, setStartDate] = useState(
     setHours(setMinutes(new Date(), 30), 11)
   );
+
+  const [showAddress, setShowAddress] = useState('');
   // 當前登入的會員id
   const [currentMemberSid, setCurrentMemberSid] = useState(1);
 
@@ -25,7 +27,9 @@ function ChaCartStepCardStep2(props) {
     setName,
     mobile,
     setMobile,
-    address,
+    county,
+    setCounty,
+    setDistrict,
     setAddress,
     setBeastieCoin,
     setTakeDate,
@@ -54,7 +58,10 @@ function ChaCartStepCardStep2(props) {
     setName(data[0].name);
     setMobile(data[0].mobile);
     setTakeWay(data[0].take_way);
+    setCounty(data[0].county);
+    setDistrict(data[0].district);
     setAddress(data[0].address);
+    setShowAddress(data[0].county + data[0].district + data[0].address);
     setMemberSid(data[0].member_sid);
     setBeastieCoin(data[0].beastie_coin);
   }
@@ -155,10 +162,10 @@ function ChaCartStepCardStep2(props) {
             className="form-control cha-step2-5-take-address-1"
             id="cha-step2-5-take-address-1"
             placeholder="請填寫取餐地址"
-            value={address}
-            onChange={(e) => {
-              setAddress(e.target.value);
-            }}
+            value={showAddress}
+            // onChange={(e) => {
+            //   setAddress(e.target.value);
+            // }}
             disabled
           />
         </div>

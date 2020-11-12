@@ -1,6 +1,7 @@
 import React from 'react';
 import ChaCartMealList from 'Cha/Components/Cha-Cart-Step-Card-Step1/Cha-Cart-Meal-List/ChaCartMealList';
 import './ChaCartStepCardStep1.scss';
+import JessListE from './JessListE/JessListE';
 
 function ChaCartStepCardStep1(props) {
   const {
@@ -87,12 +88,13 @@ function ChaCartStepCardStep1(props) {
     productImage: '00_bento-chicken-breast',
   };
   const promotion2 = {
-    id: 13,
-    productName: '激瘦下午茶沙拉',
-    productPrice: 130,
+    id: 7,
+    productName: '頂級熟成菲力牛排',
+    productPrice: 230,
     productAmount: 1,
-    productImage: '12_afternoon',
+    productImage: '06_bento-tenderloin',
   };
+
   return (
     <>
       <div className="cha-main-card cha-main-card-step1">
@@ -136,7 +138,13 @@ function ChaCartStepCardStep1(props) {
         {/* <div className="cha-step-check-btn-div">
           <input type="button" value="確認" className="cha-step-check-btn" />
         </div> */}
-        <div className="cha-step1-promotion-header-div">
+        <JessListE
+          onClick={() => {
+            updateCartToLocalStorage(promotion2);
+            handleCartNumber();
+          }}
+        />
+        {/* <div className="cha-step1-promotion-header-div">
           <div className="cha-step1-promotion-header">你可能還想來點</div>
         </div>
         <div className="cha-step1-promotion-row">
@@ -149,7 +157,7 @@ function ChaCartStepCardStep1(props) {
             }}
           ></div>
           <div className="cha-step1-promotion-picture cha-salad-03"></div>
-        </div>
+        </div> */}
       </div>
     </>
   );
