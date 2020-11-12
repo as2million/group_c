@@ -43,28 +43,24 @@ function RuButton(props) {
       setOpenCustom(true)
     }
   }, [openBento, openSalad, openCustom])
-  
+
   return (
     <>
-      {/* 先判斷是抓到哪個按鈕 */}
+      {/* 先判斷是抓到哪個按鈕再判斷要不要亮 */}
       {id === 'ru-button-btn-1' &&
-        {
-          /* 再判斷要不要亮按鈕 */
-        }(
-          openBento ? (
-            <button
-              className={className}
-              onClick={handleCardArea}
-              style={{ backgroundColor: '#F48145', color: 'white' }}
-            >
-              {text}
-            </button>
-          ) : (
-            <button className={className} onClick={handleCardArea}>
-              {text}
-            </button>
-          )
-        )}
+        (openBento ? (
+          <button
+            className={className}
+            onClick={handleCardArea}
+            style={{ backgroundColor: '#F48145', color: 'white' }}
+          >
+            {text}
+          </button>
+        ) : (
+          <button className={className} onClick={handleCardArea}>
+            {text}
+          </button>
+        ))}
       {id === 'ru-button-btn-2' &&
         (openSalad ? (
           <button
