@@ -43,7 +43,7 @@ function App() {
   const [showBar, setShowBar] = useState(true)
   const [cartNumber, setCartNumber] = useState(0)
   const [amount, setAmount] = useState(1)
-  const [currentUser, setCurrentUser] = useState() // 目前用戶
+  const [currentUser, setCurrentUser] = useState(1) // 目前用戶
   const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
   const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
 
@@ -215,6 +215,8 @@ function App() {
             {/* 放"page資料夾"內的元件 */}
             <Route path="/menu">
               <JessMenu
+                currentUser={currentUser}
+                setCartNumber={setCartNumber}
                 county={county}
                 setCounty={setCounty}
                 township={township}
@@ -227,6 +229,7 @@ function App() {
             <Route path="/bento/:id?">
               <JessBento
                 currentUser={currentUser}
+                setCartNumber={setCartNumber}
                 handleCartNumber={handleCartNumber}
                 county={county}
                 setCounty={setCounty}
@@ -239,6 +242,7 @@ function App() {
             <Route path="/vegBox">
               <JessVegBox
                 currentUser={currentUser}
+                setCartNumber={setCartNumber}
                 handleCartNumber={handleCartNumber}
                 county={county}
                 setCounty={setCounty}

@@ -62,27 +62,33 @@ $white: #ffffff;
   z-index: 3;
 }
 .jess-VegBox {
+  width: 114rem;
+  height: 39.8rem;
+  margin-top: 6rem;
+  overflow: hidden;
+}
+.jess-VegBox2 {
   background: url('./images/jess-VegBox.jpg');
   background-size: cover;
   background-position: center center;
   width: 114rem;
   height: 39.8rem;
-  margin-top: 6rem;
-
-  overflow: hidden;
-  animation-name: example;
-  // animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  // animation-iteration-count: infinite;
-  // animation-direction: alternate;
+  -webkit-animation-name: scale;
+  -webkit-animation-duration: 8s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: initial;
 }
-@keyframes example {
+
+@keyframes scale {
   0% {
     transform: scale(1);
   }
 
+  50% {
+    transform: scale(1.1);
+  }
   100% {
-    transform: scale(1.3);
+    transform: scale(1);
   }
 }
 

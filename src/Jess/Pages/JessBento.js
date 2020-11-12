@@ -10,7 +10,7 @@ import JessListE from '../Components/JessListE/JessListE'
 import ToTop from 'Share/Components/ToTopButton/ScrollButton'
 
 function JessBento(props) {
-  const { handleCartNumber, handleCarList } = props
+  const { handleCartNumber, handleCarList, currentUser } = props
   const [count, setCount] = useState(1)
   const [total, setTotal] = useState(170)
 
@@ -40,10 +40,7 @@ function JessBento(props) {
   useEffect(() => {
     bentoData()
   }, [id])
-
-  const refreshPage = () => {
-    window.location.reload()
-  }
+  console.log('currentUser:', currentUser)
   return (
     <>
       <VNavbar />

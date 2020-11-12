@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Fade from 'react-reveal/Fade'
 import 'antd/dist/antd.css'
 import './JessVegB.scss'
+import veg from './images/jess-VegBox.jpg'
 
 function JessVegB() {
   return (
@@ -24,7 +25,10 @@ function JessVegB() {
                   <p>屬於這塊土地的脈絡與感動</p>
                 </Fade>
               </div>
-              <div className="jess-VegBox col-12 "></div>
+              <div className="jess-VegBox col-12 ">
+                <div className="jess-VegBox2 col-12 "></div>
+                <div className="jess-VegBox3 col-12 "></div>
+              </div>
             </div>
           </div>
           <div className="row mt-5 justify-content-between">
