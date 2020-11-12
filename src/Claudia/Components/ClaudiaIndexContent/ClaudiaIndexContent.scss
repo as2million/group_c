@@ -1,3 +1,4 @@
+//------------------------------Desktop--------------------------------
 .claudia-index-content-fix-container {
   width: 1440px;
   margin: 0px auto;
@@ -20,8 +21,72 @@
   width: 50%;
   height: 690px;
 }
+//------------------------------Desktop--------------------------------
 
-@media only screen and (max-width: 57.6rem) {
+//-----------------------------Ipad Pro--------------------------------
+
+@media screen and (min-width: 768.1px) and (max-width: 1200px) {
+  .claudia-index-content-fix-container {
+    width: 100%;
+    margin: 0px auto;
+  }
+
+  .claudia-index-content-container {
+    display: block;
+    padding-bottom: 0px;
+    width: 100%;
+  }
+
+  .claudia-index-map {
+    width: 50%;
+    height: 715px;
+    padding-top: 20px;
+  }
+
+  .claudia-index-card {
+    height: 0px;
+    width: 100%;
+    padding: 30px 0px 0px 0px;
+  }
+
+}
+
+
+
+
+//-----------------------------Ipad Pro--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576.1px) and (max-width: 768px) {
+  .claudia-index-content-fix-container {
+    width: 100%;
+    margin: 0px auto;
+  }
+
+  .claudia-index-content-container {
+    display: block;
+    padding-bottom: 0px;
+    width: 100%;
+  }
+
+  .claudia-index-map {
+    width: 50%;
+    height: 600px;
+    padding-top: 20px;
+  }
+
+  .claudia-index-card {
+    height: 0px;
+    width: 100%;
+    padding: 30px 0px 0px 0px;
+  }
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+@media only screen and (max-width: 576px) {
   .claudia-index-content-fix-container {
     width: 100%;
     margin: 0px auto;
@@ -45,3 +110,5 @@
     padding: 30px 0px 0px 0px;
   }
 }
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------

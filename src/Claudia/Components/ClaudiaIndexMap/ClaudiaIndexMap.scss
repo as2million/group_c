@@ -1,3 +1,4 @@
+//------------------------------Desktop--------------------------------
 .claudia-index-map svg {
   width: 505px;
   height: 715px;
@@ -223,7 +224,43 @@
   transition: color 0.35s, border 0s;
 }
 
-@media only screen and (max-width: 57.6rem) {
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576.1px) and (max-width: 1200px) {
+  .claudia-index-map-inside {
+    width: 100vw;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+  }
+
+  .claudia-index-map {
+    width: 100%;
+    height: 600px;
+    padding: 0px;
+  }
+
+  .claudia-index-map svg {
+    width: 400px;
+    height: 600px;
+    margin: 0px auto;
+    position: static;
+  }
+
+  .claudia-icon {
+    display: none;
+  }
+
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
   .claudia-index-map-inside {
     width: 100vw;
     height: 470px;
@@ -248,3 +285,5 @@
     display: none;
   }
 }
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
