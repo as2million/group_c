@@ -8,7 +8,18 @@ import { Redirect } from 'react-router-dom'
 
 function IrisUserprofile(props) {
   const [showUpdateModal, setShowUpdateModal] = useState(false)
-  const { isLogin, currentUser, setShowLoginModal } = props
+  const {
+    isLogin,
+    currentUser,
+    setShowLoginModal,
+    // vnbar
+    county,
+    setCounty,
+    township,
+    setTownship,
+    address,
+    setAddress,
+  } = props
 
   if (showUpdateModal === true) {
     document.querySelector('.iris-update-success-mask').style.display = 'block'
@@ -29,7 +40,14 @@ function IrisUserprofile(props) {
   }
   return (
     <>
-      <VNavbar />
+      <VNavbar
+        county={county}
+        setCounty={setCounty}
+        township={township}
+        setTownship={setTownship}
+        address={address}
+        setAddress={setAddress}
+      />
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect currentUser={currentUser} />
         <IrisDataEditSect

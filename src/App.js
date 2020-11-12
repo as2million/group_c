@@ -181,8 +181,11 @@ function App() {
                 setShowLoginModal={setShowLoginModal}
                 // vnbar
                 county={county}
+                setCounty={setCounty}
                 township={township}
+                setTownship={setTownship}
                 address={address}
+                setAddress={setAddress}
               />
             </Route>
             <Route exact path="/orderComment">
@@ -193,8 +196,11 @@ function App() {
                 setShowLoginModal={setShowLoginModal}
                 // vnbar
                 county={county}
+                setCounty={setCounty}
                 township={township}
+                setTownship={setTownship}
                 address={address}
+                setAddress={setAddress}
               />
             </Route>
             <Route exact path="/myFav">
@@ -205,8 +211,11 @@ function App() {
                 setShowLoginModal={setShowLoginModal}
                 // vnbar
                 county={county}
+                setCounty={setCounty}
                 township={township}
+                setTownship={setTownship}
                 address={address}
+                setAddress={setAddress}
               />
             </Route>
             <Route exact path="/beastiePoint">
@@ -217,8 +226,11 @@ function App() {
                 setShowLoginModal={setShowLoginModal}
                 // vnbar
                 county={county}
+                setCounty={setCounty}
                 township={township}
+                setTownship={setTownship}
                 address={address}
+                setAddress={setAddress}
               />
             </Route>
             <Route path="/getCoupon">
@@ -229,8 +241,11 @@ function App() {
                 setShowLoginModal={setShowLoginModal}
                 // vnbar
                 county={county}
+                setCounty={setCounty}
                 township={township}
+                setTownship={setTownship}
                 address={address}
+                setAddress={setAddress}
               />
             </Route>
             <Route path="/orderManagement">
@@ -241,8 +256,11 @@ function App() {
                 setShowLoginModal={setShowLoginModal}
                 // vnbar
                 county={county}
+                setCounty={setCounty}
                 township={township}
+                setTownship={setTownship}
                 address={address}
+                setAddress={setAddress}
               />
             </Route>
 

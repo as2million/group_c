@@ -86,6 +86,8 @@ function IrisMemberMenuSect(props) {
     getMyFavFromServer()
   }, [])
 
+  // console.log(currentUser)
+
   // 過濾出現在使用者的最愛(array)
   const currentUserFav = myFavs.filter(
     (myFavs) => myFavs.member_sid === currentUser

@@ -11,10 +11,13 @@ function IrisBeastiePoint(props) {
     isLogin,
     currentUser,
     setShowLoginModal,
-    userCommentCount,
-    userFavCount,
-    userToTalCoin,
-    setUserToTalCoin,
+    // vnbar
+    county,
+    setCounty,
+    township,
+    setTownship,
+    address,
+    setAddress,
   } = props
   if (isLogin === false) {
     setShowLoginModal(true)
@@ -22,7 +25,14 @@ function IrisBeastiePoint(props) {
   }
   return (
     <>
-      <VNavbar />
+      <VNavbar
+        county={county}
+        setCounty={setCounty}
+        township={township}
+        setTownship={setTownship}
+        address={address}
+        setAddress={setAddress}
+      />
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect
           currentUser={currentUser}

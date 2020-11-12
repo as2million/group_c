@@ -28,7 +28,6 @@ function IrisLoginModal(props) {
     }
   }
 
-
   return (
     <>
       <div

@@ -8,7 +8,17 @@ import { Redirect } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 
 function IrirsMyFav(props) {
-  const [userFavDelete, setUserFavDelete] = useState('')
+  const [
+    userFavDelete,
+    setUserFavDelete,
+    // vnbar
+    county,
+    setCounty,
+    township,
+    setTownship,
+    address,
+    setAddress,
+  ] = useState('')
   const { isLogin, currentUser, setShowLoginModal } = props
   if (isLogin === false) {
     setShowLoginModal(true)
@@ -21,7 +31,7 @@ function IrirsMyFav(props) {
   }
   return (
     <>
-      <VNavbar />
+      <VNavbar {...props} />
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect
           currentUser={currentUser}
