@@ -5,6 +5,7 @@ import IrisOrderCommentSect from '../Components/IrisOrderCommentSect/IrisOrderCo
 import VNavbar from 'Share/Components/VNavbar/VNavbar'
 import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
 
 function IrisOrderComment(props) {
   const [commentDelete, setCommentDelete] = useState('')
@@ -45,6 +46,7 @@ function IrisOrderComment(props) {
           setCommentDelete={setCommentDelete}
         />
       </div>
+      <ScrollButton />
     </>
   )
 }

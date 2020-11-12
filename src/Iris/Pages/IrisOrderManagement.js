@@ -6,6 +6,7 @@ import ChaOrderManagement from './../../Cha/Components/Cha-Order-Management/ChaO
 import VNavbar from 'Share/Components/VNavbar/VNavbar'
 import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
 
 function IrisOrderManagement(props) {
   const {
@@ -38,6 +39,7 @@ function IrisOrderManagement(props) {
         <IrisMemberMenuSect currentUser={currentUser} />
         <ChaOrderManagement />
       </div>
+      <ScrollButton />
     </>
   )
 }

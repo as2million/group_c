@@ -5,6 +5,7 @@ import IrisGetCouponSect from '../Components/IrisGetCouponSect/IrisGetCouponSect
 import VNavbar from 'Share/Components/VNavbar/VNavbar'
 import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
 
 function IrisGetCoupon(props) {
   const {
@@ -37,6 +38,7 @@ function IrisGetCoupon(props) {
         <IrisMemberMenuSect currentUser={currentUser} />
         <IrisGetCouponSect />
       </div>
+      <ScrollButton />
     </>
   )
 }

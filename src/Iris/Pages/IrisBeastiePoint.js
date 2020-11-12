@@ -5,6 +5,7 @@ import IrisBeastiePointSect from '../Components/IrisBeastiePointSect/IrisBeastie
 import VNavbar from 'Share/Components/VNavbar/VNavbar'
 import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
 
 function IrisBeastiePoint(props) {
   const {
@@ -46,6 +47,7 @@ function IrisBeastiePoint(props) {
           // setUserToTalCoin={setUserToTalCoin}
         />
       </div>
+      <ScrollButton />
     </>
   )
 }

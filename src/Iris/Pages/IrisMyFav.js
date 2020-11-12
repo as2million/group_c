@@ -6,6 +6,7 @@ import VNavbar from 'Share/Components/VNavbar/VNavbar'
 import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
 
 function IrirsMyFav(props) {
   const [
@@ -43,6 +44,7 @@ function IrirsMyFav(props) {
           setUserFavDelete={setUserFavDelete}
         />
       </div>
+      <ScrollButton />
     </>
   )
 }

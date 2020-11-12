@@ -5,6 +5,7 @@ import IrisDataEditSect from '../Components/IrisDataEditSect/IrisDataEditSect'
 import VNavbar from 'Share/Components/VNavbar/VNavbar'
 import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
 
 function IrisUserprofile(props) {
   const [showUpdateModal, setShowUpdateModal] = useState(false)
@@ -72,6 +73,7 @@ function IrisUserprofile(props) {
           </div>
         </div>
       </div>
+      <ScrollButton />
     </>
   )
 }
