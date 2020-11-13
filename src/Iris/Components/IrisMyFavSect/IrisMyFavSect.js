@@ -118,9 +118,7 @@ function IrisMyFavSect(props) {
         // console.log(o)
       })
   }
-  // if (myFav) {
-  //   return
-  // }
+
   return (
     <>
       <div className="container col-9">
@@ -130,7 +128,8 @@ function IrisMyFavSect(props) {
         </div>
         <div className="iris-cards-container row">
           {currentUserFav.map((item, index) => {
-            const imageId = 'card-img-' + item.product_sid
+            // const imageId = 'card-img-' + item.product_sid
+            const imageId = item.img_id
             const price = '$' + item.price
             return (
               <div class="col-4">
