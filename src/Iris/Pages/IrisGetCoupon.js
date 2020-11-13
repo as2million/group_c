@@ -11,6 +11,7 @@ function IrisGetCoupon(props) {
   const {
     isLogin,
     currentUser,
+    currentUserData,
     setShowLoginModal,
     // vnbar
     county,
@@ -37,7 +38,10 @@ function IrisGetCoupon(props) {
         setAddress={setAddress}
       />
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect currentUser={currentUser} />
+        <IrisMemberMenuSect
+          currentUser={currentUser}
+          currentUserData={currentUserData}
+        />
         <IrisGetCouponSect />
       </div>
       <ScrollButton />

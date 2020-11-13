@@ -16,6 +16,7 @@ function IrisLoginCard(props) {
     setShowSuccessBox,
     SetShowLoginCard,
     setShowLoginModal,
+    setCurrentUserData,
   } = props
 
   // 變成註冊表單
@@ -101,6 +102,8 @@ function IrisLoginCard(props) {
       ) {
         setIsLogin(true)
         setCurrentUser(userinfo[i].member_sid) // 設定目前使用者id
+        setCurrentUserData(userinfo[i])
+        console.log(userinfo[i])
         setShowLoginModal(false) // 登入光箱消失
         setShowSuccessBox(true) // 出現登入成功光箱)
       } else {

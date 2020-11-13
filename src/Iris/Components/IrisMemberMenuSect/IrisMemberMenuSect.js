@@ -11,7 +11,13 @@ import { ReactComponent as MyFavIcon } from './Images/my_fav.svg'
 import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg'
 import { ReactComponent as ProfileIcon } from './Images/profile_beastie_icon.svg'
 function IrisMemberMenuSect(props) {
-  const { currentUser, userFavDelete, commentDelete, beastiePointAdd } = props
+  const {
+    currentUser,
+    userFavDelete,
+    commentDelete,
+    beastiePointAdd,
+    currentUserData,
+  } = props
 
   const [userCommentCount, setUserCommentCount] = useState(0) //當前會員的投稿數
   const [userToTalCoin, setUserToTalCoin] = useState(0) //當前會員的怪獸幣總額
@@ -138,11 +144,11 @@ function IrisMemberMenuSect(props) {
               <ProfileIcon />
             </div>
 
-            <div class="iris-user-name">{currentUser}</div>
+            <div class="iris-user-name">{currentUserData.name}</div>
 
             <div class="iris-brief-info-wraper d-flex flex-wrap">
               <div class="iris-brief-info">
-                <div>我的投稿</div>
+                <div>我的評論</div>
                 {/* <div>{userCommentCount}</div> */}
                 <div id="iris-comment-count">{currentUserComment.length}</div>
               </div>
@@ -239,7 +245,7 @@ function IrisMemberMenuSect(props) {
                 }}
               >
                 <MyCommentIcon class="iris-menu-icon" />
-                <div class="iris-menu-text">我的投稿</div>
+                <div class="iris-menu-text">我的評論</div>
               </div>
             </div>
           </div>

@@ -249,7 +249,7 @@ function IrisUserCommentSect(props) {
     <>
       <div className="container col-9">
         <div className="row justify-content-center iris-content-title-container ">
-          <h2 className="iris-comment-title">我的投稿</h2>
+          <h2 className="iris-comment-title">我的評論</h2>
           <WaveLine />
         </div>
         <div className="iris-comment-list-container">
@@ -258,7 +258,7 @@ function IrisUserCommentSect(props) {
             <span className="iris-comment-quantity">
               {currentUserComment.length}
             </span>{' '}
-            則投稿
+            則評論
           </h6>
           {/* <IrisMemberLine /> */}
 

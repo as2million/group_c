@@ -11,6 +11,7 @@ function IrisBeastiePoint(props) {
   const {
     isLogin,
     currentUser,
+    currentUserData,
     setShowLoginModal,
     // vnbar
     county,
@@ -36,7 +37,10 @@ function IrisBeastiePoint(props) {
         setAddress={setAddress}
       />
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect currentUser={currentUser} />
+        <IrisMemberMenuSect
+          currentUser={currentUser}
+          currentUserData={currentUserData}
+        />
         <IrisBeastiePointSect currentUser={currentUser} />
       </div>
       <ScrollButton />

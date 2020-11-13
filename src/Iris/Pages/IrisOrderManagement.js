@@ -12,6 +12,7 @@ function IrisOrderManagement(props) {
   const {
     isLogin,
     currentUser,
+    currentUserData,
     setShowLoginModal,
     // vnbar
     county,
@@ -38,7 +39,10 @@ function IrisOrderManagement(props) {
         setAddress={setAddress}
       />
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect currentUser={currentUser} />
+        <IrisMemberMenuSect
+          currentUser={currentUser}
+          currentUserData={currentUserData}
+        />
         <ChaOrderManagement />
       </div>
       <ScrollButton />

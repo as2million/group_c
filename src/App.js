@@ -49,6 +49,7 @@ function App() {
 
   // ---------- iris ---------- //
   const [currentUser, setCurrentUser] = useState() // 目前用戶
+  const [currentUserData, setCurrentUserData] = useState({}) // 目前用戶
   const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
   const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
 
@@ -179,6 +180,7 @@ function App() {
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                currentUserData={currentUserData}
                 // vnbar
                 county={county}
                 setCounty={setCounty}
@@ -194,6 +196,7 @@ function App() {
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                currentUserData={currentUserData}
                 // vnbar
                 county={county}
                 setCounty={setCounty}
@@ -209,6 +212,7 @@ function App() {
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                currentUserData={currentUserData}
                 // vnbar
                 county={county}
                 setCounty={setCounty}
@@ -224,6 +228,7 @@ function App() {
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                currentUserData={currentUserData}
                 // vnbar
                 county={county}
                 setCounty={setCounty}
@@ -239,6 +244,7 @@ function App() {
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                currentUserData={currentUserData}
                 // vnbar
                 county={county}
                 setCounty={setCounty}
@@ -254,6 +260,7 @@ function App() {
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                currentUserData={currentUserData}
                 // vnbar
                 county={county}
                 setCounty={setCounty}
@@ -303,6 +310,8 @@ function App() {
           setIsLogin={setIsLogin}
           setCurrentUser={setCurrentUser}
           isLogin={isLogin}
+          currentUserData={currentUserData}
+          setCurrentUserData={setCurrentUserData}
         />
       </>
     </Router>

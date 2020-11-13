@@ -11,6 +11,8 @@ function IrisLoginModal(props) {
     setIsLogin,
     setCurrentUser,
     isLogin,
+    currentUserData,
+    setCurrentUserData,
   } = props
 
   // 若ShowLoginModal是true，就秀登入畫面
@@ -43,6 +45,7 @@ function IrisLoginModal(props) {
           isLogin={isLogin}
           setShowSuccessBox={setShowSuccessBox}
           setShowLoginModal={setShowLoginModal}
+          setCurrentUserData={setCurrentUserData}
         />
       </div>
       {/* <div class="iris-login-success-element"> */}

@@ -199,7 +199,6 @@ function IrisDataEditSect(props) {
     (couponStatus) => couponStatus.member_sid === currentUser
   )
 
-  // console.log不出來，但59行讀的到資料
   // console.log(currentUserCouponStatus[0].coupon1_status)
 
   // ----------- 把user資料代進去 ----------- //
@@ -230,6 +229,14 @@ function IrisDataEditSect(props) {
     address.value = fullAddress
   })
 
+  const fillInData = () => {
+    document.querySelector('#iris-member-family-name').value = '林'
+    document.querySelector('#iris-member-given-name').value = '凱特'
+    document.querySelector('#iris-member-birthday').value = '1990-04-07'
+    document.querySelector('#iris-member-address').value =
+      '台北市大安區忠孝東路一段50號'
+  }
+
   return (
     <>
       <div className="container col-9">
@@ -239,7 +246,12 @@ function IrisDataEditSect(props) {
           <WaveLine />
           <div />
           <div className="row justify-content-center">
-            <h6 className="iris-profile-note">
+            <h6
+              className="iris-profile-note"
+              onClick={() => {
+                fillInData()
+              }}
+            >
               ※ 部分資料以 * 或隱藏處理，保護您的個人隱私
             </h6>
             {/* <div

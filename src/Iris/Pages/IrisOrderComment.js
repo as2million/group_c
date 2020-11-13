@@ -12,6 +12,7 @@ function IrisOrderComment(props) {
   const {
     isLogin,
     currentUser,
+    currentUserData,
     setShowLoginModal,
     // vnbar
     county,
@@ -41,6 +42,7 @@ function IrisOrderComment(props) {
         <IrisMemberMenuSect
           currentUser={currentUser}
           commentDelete={commentDelete}
+          currentUserData={currentUserData}
         />
         <IrisOrderCommentSect
           currentUser={currentUser}

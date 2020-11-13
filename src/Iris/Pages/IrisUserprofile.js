@@ -15,6 +15,7 @@ function IrisUserprofile(props) {
   const {
     isLogin,
     currentUser,
+    currentUserData,
     setShowLoginModal,
     // vnbar
     county,
@@ -65,6 +66,7 @@ function IrisUserprofile(props) {
         <IrisMemberMenuSect
           currentUser={currentUser}
           beastiePointAdd={beastiePointAdd}
+          currentUserData={currentUserData}
         />
         <IrisDataEditSect
           currentUser={currentUser}
