@@ -17,7 +17,7 @@ function ChaCart(props) {
   // 控制navbar
   const { setShowBar, setCartNumber } = props;
   // 資料，準備傳送給「我的訂單」
-  const [memberSid, setMemberSid] = useState('');
+  const [memberSid, setMemberSid] = useState(1);
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
   const [takeWay, setTakeWay] = useState('');

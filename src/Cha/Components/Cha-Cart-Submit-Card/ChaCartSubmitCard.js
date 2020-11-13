@@ -106,7 +106,7 @@ function ChaCartSubmitCard(props) {
   // POST給my_order的資料
   async function createToMyOrder() {
     const bodyData = {
-      order_state: '火速運送中',
+      order_state: '已送達',
       member_sid: memberSid,
       take_person: name,
       mobile: mobile,
@@ -177,26 +177,23 @@ function ChaCartSubmitCard(props) {
     }
   }
 
-  window.addEventListener('scroll', () => {
-    shoppingListState();
-  });
-  // main code
-  function shoppingListState() {
-    let shoppingList = document.querySelector('.cha-aside-card');
-    let w = Math.ceil(
-      (Math.round(window.pageYOffset) /
-        (document.body.scrollHeight - window.innerHeight)) *
-        100
-    );
-    if (w >= 92) {
-      shoppingList.style.position = 'none';
-      shoppingList.style.bottom = '28.2rem';
-      // console.log(shoppingList);
-    } else {
-      shoppingList.style.position = 'fixed';
-      shoppingList.style.bottom = '11.3rem';
-    }
-  }
+  // window.addEventListener('scroll', () => {
+  //   shoppingListState();
+  // });
+  // // main code
+  // function shoppingListState() {
+  //   let shoppingList = document.querySelector('.cha-aside-card');
+  //   let w = Math.ceil(
+  //     (Math.round(window.pageYOffset) /
+  //       (document.body.scrollHeight - window.innerHeight)) *
+  //       100
+  //   );
+  //   if (w >= 92) {
+  //     shoppingList.classList.add('cha-control');
+  //   } else {
+  //     shoppingList.classList.remove('cha-control');
+  //   }
+  // }
 
   return (
     <>

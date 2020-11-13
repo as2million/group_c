@@ -78,10 +78,10 @@ const ChaModal = (props) => {
     <>
       <div className="cha-claudia-overlay">
         <div className="cha-claudia-modal-bg">
-          <img
+          <div
             onClick={closeModal}
             className="cha-claudia-modal-cross-img"
-            alt=""
+            // alt=""
             // src={Cross}
           />
           {/* 光箱內容頂部 */}

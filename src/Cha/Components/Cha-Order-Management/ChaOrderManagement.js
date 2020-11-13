@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './ChaOrderManagement.scss';
 import { ReactComponent as WaveLine } from './Images/wave_line.svg';
 import ChaOrderItem from 'Cha/Components/Cha-Order-Management/Cha-Order-Item/ChaOrderItem';
 
 function ChaOrderManagement(props) {
+  const [forceKey, setForceKey] = useState(false);
+  const [tabindexKey, setTabindexKey] = useState('A');
+
   const [error, setError] = useState(null);
   // 當前登入的會員id
   const [currentMemberSid, setCurrentMemberSid] = useState(1);
@@ -82,6 +85,8 @@ function ChaOrderManagement(props) {
             <ChaOrderItem
               key={item.sid}
               orderItem={item}
+              setForceKey={setForceKey}
+              setTabindexKey={setTabindexKey}
               setChangeOrderState={setChangeOrderState}
             />
           ))}
@@ -114,6 +119,8 @@ function ChaOrderManagement(props) {
             <ChaOrderItem
               key={item.sid}
               orderItem={item}
+              setForceKey={setForceKey}
+              setTabindexKey={setTabindexKey}
               setChangeOrderState={setChangeOrderState}
             />
           ))}
@@ -143,8 +150,30 @@ function ChaOrderManagement(props) {
 
     addElem.classList.add('cha-active');
   };
-  const TabMenu = () => {
+  const TabMenu = (props) => {
     const [orderComponent, setOrderComponent] = useState(<ComponentA />);
+    // force bool, index = A, B, C...
+    const { force, index } = props;
+    const elA = useRef(null);
+    const elC = useRef(null);
+
+    useEffect(() => {
+      if (force && index) {
+        switch (index) {
+          case 'A':
+            setTabActive(elA.current, '.cha-order-mana-title-switch');
+            setOrderComponent(<ComponentA />);
+            break;
+          case 'C':
+            console.log(elC.current);
+            setTabActive(elC.current, '.cha-order-mana-title-switch');
+            setOrderComponent(<ComponentC />);
+            break;
+          default:
+            break;
+        }
+      }
+    }, [force, index]);
 
     const tabContentA = (e) => {
       setTabActive(e.target, '.cha-order-mana-title-switch');
@@ -170,6 +199,7 @@ function ChaOrderManagement(props) {
           <div className="cha-order-mana-content-row1">
             <div
               className="cha-order-mana-title-switch cha-active"
+              ref={elA}
               onClick={tabContentA}
             >
               未送達
@@ -177,7 +207,11 @@ function ChaOrderManagement(props) {
             <div className="cha-order-mana-title-switch" onClick={tabContentB}>
               已送達
             </div>
-            <div className="cha-order-mana-title-switch" onClick={tabContentC}>
+            <div
+              className="cha-order-mana-title-switch"
+              onClick={tabContentC}
+              ref={elC}
+            >
               已退費
             </div>
             <div className="cha-order-mana-title-switch" onClick={tabContentD}>
@@ -194,7 +228,7 @@ function ChaOrderManagement(props) {
   };
   return (
     <>
-      <TabMenu />
+      <TabMenu force={forceKey} index={tabindexKey} />
     </>
   );
 }

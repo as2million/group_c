@@ -272,6 +272,9 @@ function ChaOrderItem(props) {
                     className="cha-order-btn-858585"
                     onClick={() => {
                       updateTotalToServer();
+                      console.log(props);
+                      props.setForceKey(true);
+                      props.setTabindexKey('C');
                       console.log('點擊取消/退費');
                     }}
                   />
@@ -297,7 +300,7 @@ function ChaOrderItem(props) {
   };
   return (
     <>
-      <TabMenu orderItem={orderItem} />
+      <TabMenu orderItem={orderItem} {...props} />
     </>
   );
 }

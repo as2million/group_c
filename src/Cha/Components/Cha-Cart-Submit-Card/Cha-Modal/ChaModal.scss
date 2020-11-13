@@ -18,18 +18,18 @@
   border-radius: 2rem;
   width: 800px;
   height: 500px;
-  padding: 6.5rem 8.5rem;
+  padding: 6.5rem 7.5rem 6.5rem 8.5rem;
   position: relative;
 }
 .cha-wrap-coupon-container {
-  margin-top: 4rem;
+  margin-top: 0rem;
   width: 600px;
   height: 350px;
   overflow: hidden;
   overflow-y: scroll;
   overflow-x: hidden;
   background-attachment: scroll;
-  background-color: #faf;
+  // background-color: rgb(240, 240, 240);
 }
 .cha-wrap-coupon-container::-webkit-scrollbar {
   display: none;
@@ -43,6 +43,7 @@
   object-fit: cover;
   cursor: pointer;
   float: right;
+  border: 0;
 }
 .cha-claudia-modal-cross-img:hover {
   background: url(./Images/cross-black.svg) no-repeat;
@@ -50,6 +51,7 @@
   background-size: cover;
   width: 3rem;
   height: 3rem;
+  border: 0;
 }
 
 @media only screen and (max-width: 57.6rem) {
