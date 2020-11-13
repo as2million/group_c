@@ -44,12 +44,29 @@ function RuCalA(props) {
       <div className="ru-info-item-container">
         {/* 詳細資料品項1 s */}
         <ul className="ru-info-item-warp">
-          <li className="ru-info-item ru-info-item1">
+          <li
+            className="ru-info-item ru-info-item1"
+            style={{ position: 'relative' }}
+          >
             <div className="ru-category-container">
               <p className="ru-category">副食</p>
             </div>
             <p className="ru-selectionName">{riceName}</p>
             <p className="ru-number">{riceCal}kcal</p>
+            <ul
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                backgroundColor: 'red',
+              }}
+            >
+              <li style={{ listStyle: 'none', fontSize: '18px' }}>
+                碳水化合物
+              </li>
+              <li style={{ listStyle: 'none', fontSize: '18px' }}>蛋白質</li>
+              <li style={{ listStyle: 'none', fontSize: '18px' }}>脂肪</li>
+            </ul>
           </li>
           {/* 詳細資料品項1 e */}
 
