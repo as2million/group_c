@@ -3,7 +3,15 @@ import './Style.scss'
 
 // 監控瀏覽器寬度
 function RuDetailedInfo(props) {
-  const { riceName, data } = props
+  const {
+    data,
+    riceName,
+    meetName,
+    vegNameA,
+    vegNameB,
+    vegNameC,
+    eggName,
+  } = props
   const [carbohydrates, setCarbohydrates] = useState('')
   const [protein, setProtein] = useState('')
   const [fat, setFat] = useState('')
@@ -17,12 +25,67 @@ function RuDetailedInfo(props) {
       riceName,
       riceName === data[0].productName
     )
-    if (data && riceName === data[0].productName) {
-      setCarbohydrates(data[0].cabohydrate)
+
+    // 給予營養標示邏輯
+    for (let i = 0; i < data.length; i++) {
+      // 如果副食欄位有副食
+      switch (riceName) {
+        // 等於資料內的productName
+        case data[i].productName:
+          // 給予該項產品的 碳水化合物 / 蛋白質 / 脂肪 克數
+          setCarbohydrates(data[i].cabohydrate)
+          setProtein(data[i].protein)
+          setFat(data[i].fat)
+          break
+      }
+      // 如果主食欄位有主食
+      switch (meetName) {
+        // 等於資料內的productName
+        case data[i].productName:
+          // 給予該項產品的 碳水化合物 / 蛋白質 / 脂肪 克數
+          setCarbohydrates(data[i].cabohydrate)
+          setProtein(data[i].protein)
+          setFat(data[i].fat)
+          break
+      }
+      // 如果配菜A欄位有配菜
+      switch (vegNameA) {
+        // 等於資料內的productName
+        case data[i].productName:
+          // 給予該項產品的 碳水化合物 / 蛋白質 / 脂肪 克數
+          setCarbohydrates(data[i].cabohydrate)
+          setProtein(data[i].protein)
+          setFat(data[i].fat)
+          break
+      }
+      // 如果配菜B欄位有配菜
+      switch (vegNameB) {
+        case data[i].productName:
+          setCarbohydrates(data[i].cabohydrate)
+          setProtein(data[i].protein)
+          setFat(data[i].fat)
+          break
+      }
+      // 如果配菜C欄位有配菜
+      switch (vegNameC) {
+        case data[i].productName:
+          setCarbohydrates(data[i].cabohydrate)
+          setProtein(data[i].protein)
+          setFat(data[i].fat)
+          break
+      }
+      // 如果蛋欄位有蛋
+      switch (eggName) {
+        case data[i].productName:
+          setCarbohydrates(data[i].cabohydrate)
+          setProtein(data[i].protein)
+          setFat(data[i].fat)
+          break
+      }
     }
-    console.log(carbohydrates)
+
     return () => {}
-  }, [data, riceName])
+  }, [data, riceName, meetName, vegNameA, vegNameB, vegNameC, eggName])
 
   if (!data) {
     return

@@ -138,7 +138,7 @@ function RuCalA(props) {
             <p className="ru-selectionName">{meetName}</p>
             <p className="ru-number">{meetCal}kcal</p>
             {isShowDetailedInfo2 && (
-              <RuDetailedInfo data={data} riceName={riceName} />
+              <RuDetailedInfo data={data} meetName={meetName} />
             )}
           </li>
           {/* 詳細資料品項2 e */}
@@ -155,9 +155,7 @@ function RuCalA(props) {
             </div>
             <p className="ru-selectionName">{vegNameA}</p>
             <p className="ru-number">{vegCalA}kcal</p>
-            {isShowDetailedInfo3 && (
-              <RuDetailedInfo data={data} riceName={riceName} />
-            )}
+            {isShowDetailedInfo3 && <RuDetailedInfo data={data} vegNameA={vegNameA}/>}
           </li>
           {/* 詳細資料品項3 e */}
 
@@ -173,9 +171,7 @@ function RuCalA(props) {
             </div>
             <p className="ru-selectionName">{vegNameB}</p>
             <p className="ru-number">{vegCalB}kcal</p>
-            {isShowDetailedInfo4 && (
-              <RuDetailedInfo data={data} riceName={riceName} />
-            )}
+            {isShowDetailedInfo4 && <RuDetailedInfo data={data} vegNameB={vegNameB}/>}
           </li>
           {/* 詳細資料品項4 e */}
 
@@ -191,9 +187,7 @@ function RuCalA(props) {
             </div>
             <p className="ru-selectionName">{vegNameC}</p>
             <p className="ru-number">{vegCalC}kcal</p>
-            {isShowDetailedInfo5 && (
-              <RuDetailedInfo data={data} riceName={riceName} />
-            )}
+            {isShowDetailedInfo5 && <RuDetailedInfo data={data} vegNameC={vegNameC}/>}
           </li>
           {/* 詳細資料品項5 e */}
 
@@ -209,9 +203,7 @@ function RuCalA(props) {
             </div>
             <p className="ru-selectionName">{eggName}</p>
             <p className="ru-number">{eggCal}kcal</p>
-            {isShowDetailedInfo6 && (
-              <RuDetailedInfo data={data} riceName={riceName} />
-            )}
+            {isShowDetailedInfo6 && <RuDetailedInfo data={data} eggName={eggName}/>}
           </li>
           {/* 詳細資料品項 e */}
         </ul>
