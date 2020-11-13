@@ -24,7 +24,7 @@ function JessListE(props) {
               activePosition={'center'}
               chevronWidth={60}
               disableSwipe={true}
-              alwaysShowChevrons={true}
+              alwaysShowChevrons={false}
               numberOfCards={3}
               slidesToScroll={3}
               outsideChevron={true}

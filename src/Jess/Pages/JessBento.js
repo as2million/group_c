@@ -14,7 +14,7 @@ function JessBento(props) {
   const [count, setCount] = useState(1)
   const [total, setTotal] = useState(170)
   const [menu, setMenu] = useState([])
-
+  console.log('currentUser:', currentUser)
   //useParams 設定id
   let { id } = useParams()
   async function bentoData() {
@@ -40,7 +40,7 @@ function JessBento(props) {
   useEffect(() => {
     bentoData()
   }, [id])
-  console.log('currentUser:', currentUser)
+
   return (
     <>
       <VNavbar {...props} />

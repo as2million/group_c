@@ -26,7 +26,9 @@ function JessProdoctList(props) {
     setTownship,
     address,
     setAddress,
+    currentUser,
   } = props
+  console.log('currentUser:', currentUser)
   // console.log(props)
   //useParams 設定id
   let { id } = useParams()

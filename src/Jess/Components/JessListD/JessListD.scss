@@ -35,6 +35,10 @@ $white: #ffffff;
   // background-attachment: local;
   background-attachment: scroll;
 }
+
+.jess-msg-container::-webkit-scrollbar {
+  display: none;
+}
 // .jess-rateStarColor div {
 //   outline: none;
 //   color: #f48145;

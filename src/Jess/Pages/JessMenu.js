@@ -17,7 +17,7 @@ function JessMenu(props) {
       <JessMenuB id={id} />
       <JessMenuC id={id} />
       <JessMenuD />
-      {/* <ChaOrderItem /> */}
+      <ChaOrderItem />
     </>
   )
 }
