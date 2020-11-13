@@ -38,9 +38,11 @@ $font-size: 1rem;
 .jess-breadCrumb {
   margin-top: 20rem;
 }
-.jess-fav button {
-}
+
 //
+.jess-productList-chichenPic::-webkit-scrollbar {
+  display: none;
+}
 .jess-productList-chichenPic {
   // background: url('./Images/chickenRice02.jpg') no-repeat;
   background-size: contain;

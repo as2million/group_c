@@ -38,30 +38,32 @@ function VNavbar(props) {
   const addressData = (e) => {
     //未登入=>顯示input框
     //已登入=>顯示member.id的地址
-    fetch('http://localhost:5000/index/member_list', {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-      .then((r) => r.json())
-
-      .then((obj) => {
-        // const newAddress = [...obj, ...adress]
-        // setAddress(newAddress)
-        // console.log(address[0])
-        // console.log(obj[0].address)
-        console.log(obj)
-        setCounty(obj[0].county)
-        setTownship(obj[0].district)
-        setAddress(obj[0].address)
+    if (isLogin === true) {
+      fetch('http://localhost:5000/index/member_list', {
+        method: 'GET',
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }),
       })
+        .then((r) => r.json())
+
+        .then((obj) => {
+          // const newAddress = [...obj, ...adress]
+          // setAddress(newAddress)
+          // console.log(address[0])
+          // console.log(obj[0].address)
+          console.log(obj)
+          setCounty(obj[0].county)
+          setTownship(obj[0].district)
+          setAddress(obj[0].address)
+        })
+    }
   }
   //如果登入的話，fetch會員的地址
   useEffect(() => {
     addressData()
-  }, [])
+  }, [isLogin])
 
   return (
     <>

@@ -20,6 +20,12 @@ function JessProdoctList(props) {
     setTotal,
     menu,
     setMenu,
+    county,
+    setCounty,
+    township,
+    setTownship,
+    address,
+    setAddress,
   } = props
   // console.log(props)
   //useParams 設定id
@@ -134,7 +140,7 @@ function JessProdoctList(props) {
             </div>
           </div>
           <div className="jess-rateStar">
-            <Rate disabled defaultValue={4} />
+            <Rate count={5} value={menu.startRating} allowHalf disabled />
             <a href="#1" className="jess-contentId">
               <span className="jess-rateStarMsgNum">
                 {menu.contentNum} 則評論{' '}

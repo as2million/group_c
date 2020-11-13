@@ -16,6 +16,7 @@ function JessCommentOrder(props) {
               <div className="jess-commentOrderStar col-3">
                 {/* <Rate count={5} value={item.starRating} disabled /> */}
                 <ReactStars size={18} value={item.starRating} edit={false} />
+                {/* <Rate count={5} value={item.starRating} allowHalf disabled /> */}
               </div>
               <div className="jess-OrderTextBox col-6">{item.content}</div>
               <div className=" jess-btnBox col-3">

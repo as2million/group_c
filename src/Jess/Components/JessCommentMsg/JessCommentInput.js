@@ -75,7 +75,7 @@ function JessCommentInput(props) {
         <div className="col-8">
           <p className="jess-modalText">滿意此商品嗎：</p>
           <div className="jess-rateStar mt-0">
-            <Rate count={5} value={rating} onChange={ratingChanged} />
+            <Rate count={5} value={rating} onChange={ratingChanged} allowHalf />
           </div>
           <textarea
             className="form-control  form-control-lg mt-3 jess-textarea"

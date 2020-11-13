@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Link, withRouter, useParams } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { withRouter, useParams } from 'react-router-dom'
 import VNavbar from 'Share/Components/VNavbar/VNavbar'
 import JessMenuA from '../Components/JessMenuA/JessMenuA'
 import JessMenuB from '../Components/JessMenuB/JessMenuB'
@@ -12,12 +12,12 @@ function JessMenu(props) {
   useEffect(() => {}, [id])
   return (
     <>
-      <VNavbar />
+      <VNavbar {...props} />
       <JessMenuA />
       <JessMenuB id={id} />
-      <JessMenuC />
+      <JessMenuC id={id} />
       <JessMenuD />
-      <ChaOrderItem />
+      {/* <ChaOrderItem /> */}
     </>
   )
 }

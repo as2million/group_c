@@ -13,10 +13,10 @@ function JessBento(props) {
   const { handleCartNumber, handleCarList, currentUser } = props
   const [count, setCount] = useState(1)
   const [total, setTotal] = useState(170)
+  const [menu, setMenu] = useState([])
 
   //useParams 設定id
   let { id } = useParams()
-  const [menu, setMenu] = useState([])
   async function bentoData() {
     const url = 'http://localhost:5000/product/bento'
 
@@ -43,7 +43,7 @@ function JessBento(props) {
   console.log('currentUser:', currentUser)
   return (
     <>
-      <VNavbar />
+      <VNavbar {...props} />
       <JessHeader
         handleCartNumber={handleCartNumber}
         handleCarList={handleCarList}

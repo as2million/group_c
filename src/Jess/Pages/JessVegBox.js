@@ -9,11 +9,23 @@ import JessVegE from '../Components/JessVegE/JessVegE'
 import ToTop from 'Share/Components/ToTopButton/ScrollButtonGreen'
 
 function JessVegBox(props) {
-  const { handleCartNumber } = props
+  const { handleCartNumber, handleCarList, currentUser } = props
+  const [count, setCount] = useState(1)
+  const [total, setTotal] = useState(170)
+  const [menu, setMenu] = useState([])
   return (
     <>
-      <VNavbar />
-      <JessVegHeader handleCartNumber={handleCartNumber} />
+      <VNavbar {...props} />
+      <JessVegHeader
+        handleCartNumber={handleCartNumber}
+        handleCarList={handleCarList}
+        count={count}
+        setCount={setCount}
+        total={total}
+        setTotal={setTotal}
+        menu={menu}
+        setMenu={setMenu}
+      />
       <JessVegB />
       <JessVegC />
       <JessVegD />

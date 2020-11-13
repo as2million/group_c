@@ -74,7 +74,12 @@ function JessListD(props) {
                       <ul className="list-unstyled">
                         <li class=" d-flex ">
                           <div className="jess-rateStarColor mt-2">
-                            <Rate count={5} value={item.starRating} disabled />
+                            <Rate
+                              count={5}
+                              value={item.starRating}
+                              allowHalf
+                              disabled
+                            />
                           </div>
                           <div className="jess-text-15Gray2 mt-2">
                             {item.name}
