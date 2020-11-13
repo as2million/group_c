@@ -32,6 +32,7 @@ function IrisCard(props) {
     handleCartNumber,
     currentUser,
     showFavArr,
+    currentUserFav,
   } = props
 
   const [isShowFav, setIsShowFav] = useState(false) // 是否要定住我的最愛按鈕
@@ -53,16 +54,7 @@ function IrisCard(props) {
 
   // 定住我的最愛按鈕邏輯
   useEffect(() => {
-    if (showFavArr !== undefined) {
-      console.log(showFavArr, showFavArr.length)
-      for (let i = 0; i < showFavArr.length; i++) {
-        // 當該會員的加入過我的最愛的商品id 匹配 這個card元件的商品id 時
-        if (showFavArr[i] === proudctId) {
-          // 就定住我的最愛按鈕
-          setIsShowFav(true)
-        }
-      }
-    }
+    setIsShowFav(true)
   }, [])
 
   return (
@@ -107,11 +99,11 @@ function IrisCard(props) {
         {/* item圖片e */}
         {/* item資訊s */}
         <section className="iris-card-info-warp">
-          <div className="iris-card-none">
-            {/* 取間隔用 s */}
-            <h3>${price}</h3>
-            {/* 取間隔用 e */}
-          </div>
+          {/* <div className="iris-card-none"> */}
+          {/* 取間隔用 s */}
+          {/* <h3>${price}</h3> */}
+          {/* 取間隔用 e */}
+          {/* </div> */}
           <div className="iris-card-info">
             <h2>{title}</h2>
             <section>
@@ -170,10 +162,11 @@ function IrisCard(props) {
                 </span>
               </div>
             </section>
-          </div>
-          <div className="iris-card-price">
             <h3>${price}</h3>
           </div>
+          {/* <div className="iris-card-price">
+            <h3>${price}</h3>
+          </div> */}
         </section>
         {/* item資訊e */}
         {/* 加入購物車按鈕s */}

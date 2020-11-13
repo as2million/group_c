@@ -34,7 +34,7 @@ function IrisMyFavSect(props) {
     const response = await fetch(request)
     const data = await response.json()
 
-    // console.log(data)
+    console.log(data)
     setMyFav(data)
   }
 
@@ -43,20 +43,20 @@ function IrisMyFavSect(props) {
     getMyFavFromServer()
   }, [])
 
-  useEffect(() => {
-    // 拿到有幾筆要固定我的最愛按鈕 邏輯
-    const favArr = [] // 放抓到的myFav[i].product_sid資料
-    for (let i = 0; i < myFav.length; i++) {
-      // 如果當前會員 跟 我的最愛資料表的member_sid匹配
-      if (currentUser === myFav[i].member_sid) {
-        // console.log(myFav[i].product_sid)
-        favArr.push(myFav[i].product_sid)
-      }
-    }
-    // console.log(favArr)
-    setShowFavArr(favArr) // 這樣才可以傳到RuAddFavorite
-    // console.log(showFavArr)
-  }, [myFav])
+  // useEffect(() => {
+  //   // 拿到有幾筆要固定我的最愛按鈕 邏輯
+  //   const favArr = [] // 放抓到的myFav[i].product_sid資料
+  //   for (let i = 0; i < myFav.length; i++) {
+  //     // 如果當前會員 跟 我的最愛資料表的member_sid匹配
+  //     if (currentUser === myFav[i].member_sid) {
+  //       // console.log(myFav[i].product_sid)
+  //       favArr.push(myFav[i].product_sid)
+  //     }
+  //   }
+  //   // console.log(favArr)
+  //   setShowFavArr(favArr) // 這樣才可以傳到RuAddFavorite
+  //   console.log(showFavArr)
+  // }, [myFav])
 
   // 過濾出現在使用者的最愛
   const currentUserFav = myFav.filter(
@@ -141,7 +141,7 @@ function IrisMyFavSect(props) {
                   price={price}
                   imgId={imageId}
                   showFavArr={showFavArr}
-                  proudctId={item.product_sid}
+                  currentUserFav={currentUserFav}
                 />
                 <div
                   id="iris-card-delete"
