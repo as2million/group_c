@@ -49,7 +49,7 @@ function RuCustom(props) {
   const [isPrice, setIsPrice] = useState(true) // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false) // 是否開啟營養標示
   const [selection, setSelection] = useState('rice') // 選擇開啟哪個菜色選區
-  const [limitX, setLimitX] = useState() // 右滑極限值(RuButtonB可以調不同選項區的極限值)
+  const [limitX, setLimitX] = useState(-100) // 右滑極限值 => 白飯選區為初始值 (RuButtonB可以調不同選項區的極限值)
   const [imgA, setImgA] = useState()
   const [imgB, setImgB] = useState()
   const [imgC, setImgC] = useState()
@@ -460,7 +460,7 @@ function RuCustom(props) {
             setMeetCal(data[3].calories)
             break
           case 'ru-meet-2':
-            setImgF(chickenLegAfter) 
+            setImgF(chickenLegAfter)
             setMeetName(data[4].productName)
             setMeetPrice(data[4].price)
             setMeetCal(data[4].calories)
