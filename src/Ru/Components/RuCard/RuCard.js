@@ -54,7 +54,7 @@ function RuCard(props) {
   // 定住我的最愛按鈕邏輯
   useEffect(() => {
     if (showFavArr !== undefined) {
-      console.log(showFavArr, showFavArr.length)
+      // console.log(showFavArr, showFavArr.length)
       for (let i = 0; i < showFavArr.length; i++) {
         // 當該會員的加入過我的最愛的商品id 匹配 這個card元件的商品id 時
         if (showFavArr[i] === proudctId) {

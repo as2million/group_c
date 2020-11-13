@@ -334,9 +334,9 @@ function RuSalad(props) {
       </div>
       {/* 商品區 - 網頁版 e */}
       {/* 商品區 - ipad版 s */}
-      <div className="ru-item-containerB">
-        {/* 卡片區 s */}
-        <div className="ru-card-warp">
+      {/* <div className="ru-item-containerB"> */}
+      {/* 卡片區 s */}
+      {/* <div className="ru-card-warp">
           <div className="ru-itemWarp ru-itemWarp1">
             <RuCard
               title={'慢煮嫩雞胸-蒜味香草'}
@@ -442,17 +442,17 @@ function RuSalad(props) {
               imgId={'ru-card-img-1'}
             />
           </div>
-        </div>
-        {/* 卡片區 e */}
-        {/* 背景米圖 s */}
-        <img src={background}></img>
-        {/* 背景米圖 e */}
-      </div>
+        </div> */}
+      {/* 卡片區 e */}
+      {/* 背景米圖 s */}
+      {/* <img src={background}></img> */}
+      {/* 背景米圖 e */}
+      {/* </div> */}
       {/* 商品區- ipad版e */}
       {/* 商品區 - 手機版 s */}
-      <div className="ru-item-containerC">
-        {/* 卡片區 s */}
-        <div className="ru-card-warp">
+      {/* <div className="ru-item-containerC"> */}
+      {/* 卡片區 s */}
+      {/* <div className="ru-card-warp">
           <div className="ru-itemWarp ru-itemWarp1">
             <RuCard
               title={'慢煮嫩雞胸-蒜味香草'}
@@ -557,12 +557,12 @@ function RuSalad(props) {
               imgId={'ru-card-img-9'}
             />
           </div>
-        </div>
-        {/* 卡片區 e */}
-        {/* 背景米圖 s */}
-        <img src={background}></img>
-        {/* 背景米圖 e */}
-      </div>
+        </div> */}
+      {/* 卡片區 e */}
+      {/* 背景米圖 s */}
+      {/* <img src={background}></img> */}
+      {/* 背景米圖 e */}
+      {/* </div> */}
       {/* 商品區- 手機版e */}
     </>
   )

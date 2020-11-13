@@ -54,6 +54,9 @@ function RuBento(props) {
   }, [])
 
   useEffect(() => {
+    // 第一次掛載DOM 與 每次state改變時 都會觸發
+    // console.log(searchInput)
+
     // 等待兩個fetch都結束
     if (!data || !dataFav) {
       return
@@ -87,8 +90,6 @@ function RuBento(props) {
     let title12 = data[11].productname
     const $containerA = document.querySelector('.ru-itemWarp')
 
-    // 第一次掛載DOM 與 每次state改變時 都會觸發
-    // console.log(searchInput)
     setItemWarp1(true)
     setItemWarp2(true)
     setItemWarp3(true)
@@ -174,6 +175,7 @@ function RuBento(props) {
             {itemWarp1 && (
               <RuCard
                 data={data}
+                dataFav={dataFav}
                 title={data[0].productname}
                 comment={data[0].contentNum}
                 buy={data[0].purchased}
@@ -397,9 +399,9 @@ function RuBento(props) {
       </div>
       {/* 商品區 - 網頁版 e */}
       {/* 商品區 - ipad版 s */}
-      <div className="ru-item-containerB">
-        {/* 卡片區 s */}
-        <div className="ru-card-warp">
+      {/* <div className="ru-item-containerB"> */}
+      {/* 卡片區 s */}
+      {/* <div className="ru-card-warp">
           <div className="ru-itemWarp ru-itemWarp1">
             <RuCard
               title={'慢煮嫩雞胸-蒜味香草'}
@@ -505,17 +507,17 @@ function RuBento(props) {
               imgId={'ru-card-img-1'}
             />
           </div>
-        </div>
-        {/* 卡片區 e */}
-        {/* 背景米圖 s */}
-        <img src={background}></img>
-        {/* 背景米圖 e */}
-      </div>
+        </div> */}
+      {/* 卡片區 e */}
+      {/* 背景米圖 s */}
+      {/* <img src={background}></img> */}
+      {/* 背景米圖 e */}
+      {/* </div> */}
       {/* 商品區- ipad版e */}
       {/* 商品區 - 手機版 s */}
-      <div className="ru-item-containerC">
-        {/* 卡片區 s */}
-        <div className="ru-card-warp">
+      {/* <div className="ru-item-containerC"> */}
+      {/* 卡片區 s */}
+      {/* <div className="ru-card-warp">
           <div className="ru-itemWarp ru-itemWarp1">
             <RuCard
               title={'慢煮嫩雞胸-蒜味香草'}
@@ -620,12 +622,12 @@ function RuBento(props) {
               imgId={'ru-card-img-9'}
             />
           </div>
-        </div>
-        {/* 卡片區 e */}
-        {/* 背景米圖 s */}
-        <img src={background}></img>
-        {/* 背景米圖 e */}
-      </div>
+        </div> */}
+      {/* 卡片區 e */}
+      {/* 背景米圖 s */}
+      {/* <img src={background}></img> */}
+      {/* 背景米圖 e */}
+      {/* </div> */}
       {/* 商品區- 手機版e */}
     </>
   )
