@@ -1,15 +1,15 @@
 // correct
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { ReactComponent as WaveLine } from './Images/wave_line.svg'
 import { ReactComponent as StarOrange } from './Images/star_orange.svg'
 import { ReactComponent as StarGrey } from './Images/star_grey.svg'
 import './IrisMyFavSect.scss'
-import Card from './Card/Card'
+import IrisCard from './IrisCard/IrisCard'
 // import Star123 from './Images/star_orange.svg';
 
-function IrisDataEditSect(props) {
+function IrisMyFavSect(props) {
   const {
     currentUser,
     userFavDelete,
@@ -17,6 +17,7 @@ function IrisDataEditSect(props) {
     setUserFavDelete,
   } = props
   const [myFav, setMyFav] = useState([])
+  const [showFavArr, setShowFavArr] = useState([])
 
   // 得到目前所有的最愛資料
   async function getMyFavFromServer() {
@@ -42,6 +43,21 @@ function IrisDataEditSect(props) {
     getMyFavFromServer()
   }, [])
 
+  useEffect(() => {
+    // 拿到有幾筆要固定我的最愛按鈕 邏輯
+    const favArr = [] // 放抓到的myFav[i].product_sid資料
+    for (let i = 0; i < myFav.length; i++) {
+      // 如果當前會員 跟 我的最愛資料表的member_sid匹配
+      if (currentUser === myFav[i].member_sid) {
+        // console.log(myFav[i].product_sid)
+        favArr.push(myFav[i].product_sid)
+      }
+    }
+    // console.log(favArr)
+    setShowFavArr(favArr) // 這樣才可以傳到RuAddFavorite
+    // console.log(showFavArr)
+  }, [myFav])
+
   // 過濾出現在使用者的最愛
   const currentUserFav = myFav.filter(
     (myFav) => myFav.member_sid === currentUser
@@ -49,30 +65,30 @@ function IrisDataEditSect(props) {
   console.log(currentUserFav)
 
   // 新增最愛
-  const addFav = (e) => {
-    // 得到 product_sid
-    const product_sid = e.target.className
-    // console.log(product_sid)
+  // const addFav = (e) => {
+  //   // 得到 product_sid
+  //   const product_sid = e.target.className
+  //   // console.log(product_sid)
 
-    const newFavItem = {
-      currentUser: currentUser,
-      product_sid: product_sid,
-    }
-    // console.log(newProfile)
+  //   const newFavItem = {
+  //     currentUser: currentUser,
+  //     product_sid: product_sid,
+  //   }
+  //   // console.log(newProfile)
 
-    fetch('http://localhost:5000/member/addMyFav', {
-      method: 'POST',
-      body: JSON.stringify(newFavItem),
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-      .then((r) => r.json())
-      .then((o) => {
-        // console.log(o)
-      })
-  }
+  //   fetch('http://localhost:5000/member/addMyFav', {
+  //     method: 'POST',
+  //     body: JSON.stringify(newFavItem),
+  //     headers: new Headers({
+  //       Accept: 'application/json',
+  //       'Content-Type': 'application/json',
+  //     }),
+  //   })
+  //     .then((r) => r.json())
+  //     .then((o) => {
+  //       // console.log(o)
+  //     })
+  // }
 
   // 刪除最愛
   const deleteFav = (e) => {
@@ -102,7 +118,9 @@ function IrisDataEditSect(props) {
         // console.log(o)
       })
   }
-
+  // if (myFav) {
+  //   return
+  // }
   return (
     <>
       <div className="container col-9">
@@ -116,12 +134,14 @@ function IrisDataEditSect(props) {
             const price = '$' + item.price
             return (
               <div class="col-4">
-                <Card
+                <IrisCard
                   key={item.sid}
                   title={item.productname}
                   comment={item.contentNum}
                   price={price}
                   imgId={imageId}
+                  showFavArr={showFavArr}
+                  proudctId={item.product_sid}
                 />
                 <div
                   id="iris-card-delete"
@@ -136,7 +156,7 @@ function IrisDataEditSect(props) {
                   id="iris-card-add"
                   className={item.product_sid}
                   onClick={(e) => {
-                    addFav(e)
+                    // addFav(e)
                   }}
                 >
                   add
@@ -150,4 +170,4 @@ function IrisDataEditSect(props) {
   )
 }
 
-export default IrisDataEditSect
+export default IrisMyFavSect

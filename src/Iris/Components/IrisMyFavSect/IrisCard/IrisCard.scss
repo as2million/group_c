@@ -1,0 +1,141 @@
+@import './Variable.scss';
+
+#iris-card-margin {
+  margin: 0px 20px;
+}
+
+.iris-card-container {
+  border-radius: 5px;
+  width: 345px;
+  height: 100%;
+}
+
+.iris-card-img-warp {
+  height: 340px;
+  position: relative;
+}
+
+.iris-card-info-warp h3 {
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $minor-heading,
+    $bold,
+    0px,
+    $light-orange
+  );
+}
+
+.iris-card-img-warp:hover > .iris-card-abs {
+  top: 83%;
+  transition: 0.35s;
+}
+
+.iris-card-abs {
+  position: absolute;
+  top: 110%;
+  right: 20px;
+  transition: 0.35s;
+}
+
+.iris-card-abs-stop {
+  position: absolute;
+  top: 83%;
+  right: 20px;
+  transition: 0.35s;
+}
+
+.iris-card-abs-stop .iris-addFavorite-btn {
+  background-color: $dark-yellow;
+  background-image: url('./Images/addFavoriteC.svg');
+}
+
+.iris-card-img {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.iris-card-info-warp {
+  background-color: $white;
+  border-right: 1px solid $hr-Color;
+  border-left: 1px solid $hr-Color;
+  width: 100%;
+  height: 108px;
+  position: relative;
+  @include flex($df, $fdc, $jcc, $alc);
+  flex-direction: row;
+}
+
+.iris-card-none {
+  opacity: 0;
+}
+
+.iris-card-info {
+  min-width: 170px;
+  @include flex($df, $fdc, $jcc, $alc);
+}
+
+.iris-card-info > h2 {
+  font-size: $productName-size;
+  margin-bottom: 15px;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $productName-size,
+    $regular,
+    0px,
+    $productName-Color
+  );
+}
+
+.iris-card-price {
+  align-self: flex-end;
+  margin-bottom: 15px;
+}
+
+.iris-card-star-warp {
+  @include flex($df, $fdr, $jcc, $alc);
+}
+
+.iris-card-star {
+  margin: 0px 2px;
+  width: 14px;
+}
+
+.iris-card-num {
+  display: inline;
+  @include font(
+    // 字體, 字體大小, 字重, 字距, 字色
+    $notoSansTC,
+    $number-size,
+    $regular,
+    0px,
+    $light-grey
+  );
+}
+
+.iris-card-commentNum {
+  margin-right: 6px;
+  margin-bottom: 16px;
+}
+
+.iris-card-addCartWarp {
+  background-color: $white;
+  height: 84px;
+  border-right: 1px solid $hr-Color;
+  border-left: 1px solid $hr-Color;
+  border-bottom: 1px solid $hr-Color;
+  @include flex($df, $fdr, $jcc, $alc);
+}
+
+.iris-card-hr {
+  width: 87.465%;
+  height: 100%;
+  border-top: 1px solid $hr-Color;
+  @include flex($df, $fdc, $jcc, $alc);
+}

@@ -8,7 +8,12 @@ import Button from './../../../Share/Components/Button/Button'
 import $ from 'jquery'
 
 function IrisDataEditSect(props) {
-  const { currentUser, setShowUpdateModal, setShowGetCouponBox } = props
+  const {
+    currentUser,
+    setShowUpdateModal,
+    setShowGetCouponBox,
+    setBeastiePointAdd,
+  } = props
   const [userInfo, setUserInfo] = useState([])
   const [couponStatus, setCouponStatus] = useState([])
   const [couponOneStatus, setCouponOneStatus] = useState('')
@@ -80,6 +85,7 @@ function IrisDataEditSect(props) {
           currentUser: currentUser,
           coupon1: 1,
           coupon2: 0,
+          coupon_type: 3,
         }
         // 更新領取狀態
         fetch('http://localhost:5000/member/changeCouponStatus', {
@@ -92,8 +98,26 @@ function IrisDataEditSect(props) {
         })
           .then((r) => r.json())
           .then((o) => {
+            // console.log(o)
+          })
+        // 新增優惠券
+        fetch('http://localhost:5000/member/addCoupon', {
+          method: 'POST',
+          body: JSON.stringify(newCouponStatus),
+          headers: new Headers({
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          }),
+        })
+          .then((r) => r.json())
+          .then((o) => {
             console.log(o)
           })
+
+        // 2. 連動menu數字
+        // 設甚麼值無所謂，重點是讓狀態改變，menu那邊useEffect才會偵測到
+        setBeastiePointAdd(newCouponStatus.coupon1)
+
         // 秀成功獲取優惠券光箱
         setShowGetCouponBox(true)
       } else {

@@ -9,9 +9,11 @@ import { withRouter } from 'react-router-dom'
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
 
 function IrirsMyFav(props) {
-  const [
-    userFavDelete,
-    setUserFavDelete,
+  const [userFavDelete, setUserFavDelete] = useState('')
+  const {
+    isLogin,
+    currentUser,
+    setShowLoginModal,
     // vnbar
     county,
     setCounty,
@@ -19,8 +21,7 @@ function IrirsMyFav(props) {
     setTownship,
     address,
     setAddress,
-  ] = useState('')
-  const { isLogin, currentUser, setShowLoginModal } = props
+  } = props
 
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {

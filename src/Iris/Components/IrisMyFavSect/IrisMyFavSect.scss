@@ -8,24 +8,24 @@
   display: flex;
 }
 
-.iris-cards-container .card-container {
-  margin-top: -2rem;
-  margin-bottom: 5rem;
-  width: 21rem;
-  height: 31.5rem;
-}
+// .iris-cards-container .card-container {
+//   margin-top: -2rem;
+//   margin-bottom: 5rem;
+//   width: 21rem;
+//   height: 31.5rem;
+// }
 
-.iris-cards-container .card-container .card-img-warp {
-  width: 21rem;
-  height: 21rem;
-}
+// .iris-cards-container .card-container .card-img-warp {
+//   width: 21rem;
+//   height: 21rem;
+// }
 
-.iris-cards-container .card-info h2 {
-  font-size: 1.4rem;
-  color: #262628;
-  margin-bottom: 0.5rem;
-  width: 140px;
-}
+// .iris-cards-container .card-info h2 {
+//   font-size: 1.4rem;
+//   color: #262628;
+//   margin-bottom: 0.5rem;
+//   width: 140px;
+// }
 
 // .iris-cards-container .card-info > h2 {
 //   font-size: $productName-size;
@@ -40,82 +40,94 @@
 //   );
 // }
 
-.iris-cards-container .card-info-warp {
-  height: 6rem;
-}
-
-.iris-cards-container .card-star-warp .card-star {
-  width: 1rem;
-}
-
-.iris-cards-container .card-buyNum {
-  display: none;
-}
-
-.iris-cards-container .card-commentNum {
-  padding-top: 1rem;
-}
-
-.iris-cards-container .card-img-warp:hover > .card-abs {
-  top: 78%;
-  transition: 0.35s;
-}
-
-.iris-cards-container .card-abs {
-  position: absolute;
-  top: 100%;
-  right: 1.5rem;
-  transition: 0.35s;
-}
-
-// card-none不知是啥，會影響排版，display none
-.iris-cards-container .card-none {
-  display: none;
-}
-
-.iris-cards-container .card-price {
-  position: relative;
-}
-
-.iris-cards-container .card-price h3 {
-  font-size: 1.3rem;
-  // padding-right: 2rem;
-  // margin-bottom: -0.3rem;
-  position: absolute;
-  top: -1.2rem;
-  right: -0.3rem;
-}
-
-// .card-price {
-//   align-self: flex-end;
-//   margin-bottom: 10px;
+// .iris-cards-container .iris-card-info-warp {
+//   height: 6rem;
 // }
 
-.iris-cards-container .card-addCartWarp {
-  height: 5rem;
-}
+// .iris-cards-container .iris-card-star-warp .iris-card-star {
+//   width: 1rem;
+// }
 
-.iris-cards-container .card-hr button {
-  height: 3.1rem;
-  width: 10.4rem;
-}
+// .iris-cards-container .iris-card-buyNum {
+//   display: none;
+// }
 
-.iris-cards-container .addCart-btn::after {
-  @include font(
-    // 字體, 字體大小, 字重, 字距, 字色
-    $notoSansTC,
-    1.4rem,
-    $regular,
-    1.25px,
-    $light-orange
-  );
-  @include flex($df, $fdr, $jcc, $alc);
-}
+// .iris-cards-container .iris-card-commentNum {
+//   padding-top: 1rem;
+// }
 
-.iris-cards-container button img {
-  src: './Images/star_orange.svg';
-}
+// .iris-cards-container .iris-card-img-warp:hover > .iris-card-abs {
+//   top: 78%;
+//   transition: 0.35s;
+// }
 
-.iris-cards-container .addCart-cart {
-  width: 2rem;
-}
+// .iris-cards-container .iris-card-abs {
+//   position: absolute;
+//   top: 100%;
+//   right: 1.5rem;
+//   transition: 0.35s;
+// }
+
+// .iris-card-abs-stop {
+//   position: absolute;
+//   top: 83%;
+//   right: 20px;
+//   transition: 0.35s;
+// }
+
+// .iris-card-abs-stop .iris-addFavorite-btn {
+//   background-color: $dark-yellow;
+//   background-image: url('./Images/addFavoriteC.svg');
+// }
+
+// card-none不知是啥，會影響排版，display none
+// .iris-cards-container .iris-card-none {
+//   display: none;
+// }
+
+// .iris-cards-container .iris-card-price {
+//   position: relative;
+// }
+
+// .iris-cards-container .iris-card-price h3 {
+//   font-size: 1.3rem;
+//   // padding-right: 2rem;
+//   // margin-bottom: -0.3rem;
+//   position: absolute;
+//   top: -1.2rem;
+//   right: -0.3rem;
+// }
+
+// // .card-price {
+// //   align-self: flex-end;
+// //   margin-bottom: 10px;
+// // }
+
+// .iris-cards-container .iris-card-addCartWarp {
+//   height: 5rem;
+// }
+
+// .iris-cards-container .iris-card-hr button {
+//   height: 3.1rem;
+//   width: 10.4rem;
+// }
+
+// .iris-cards-container .iris-addCart-btn::after {
+//   @include font(
+//     // 字體, 字體大小, 字重, 字距, 字色
+//     $notoSansTC,
+//     1.4rem,
+//     $regular,
+//     1.25px,
+//     $light-orange
+//   );
+//   @include flex($df, $fdr, $jcc, $alc);
+// }
+
+// .iris-cards-container button img {
+//   src: './Images/star_orange.svg';
+// }
+
+// .iris-cards-container .iris-addCart-cart {
+//   width: 2rem;
+// }

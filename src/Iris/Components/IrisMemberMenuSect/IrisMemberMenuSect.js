@@ -11,7 +11,7 @@ import { ReactComponent as MyFavIcon } from './Images/my_fav.svg'
 import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg'
 import { ReactComponent as ProfileIcon } from './Images/profile_beastie_icon.svg'
 function IrisMemberMenuSect(props) {
-  const { currentUser, userFavDelete, commentDelete } = props
+  const { currentUser, userFavDelete, commentDelete, beastiePointAdd } = props
 
   const [userCommentCount, setUserCommentCount] = useState(0) //當前會員的投稿數
   const [userToTalCoin, setUserToTalCoin] = useState(0) //當前會員的怪獸幣總額
@@ -40,28 +40,16 @@ function IrisMemberMenuSect(props) {
     // console.log(allComments)
   }
 
-  // 載入資料
+  // 1. 一開始就會開始載入資料
+  // 2. 在orderComment有設狀態，若狀態有變(代表有刪評論),就重抓資料給menu更新數字
   useEffect(() => {
     getAllCommentFromServer()
-  }, [])
+  }, [commentDelete])
 
   // 過濾出現在使用者的投稿
   const currentUserComment = allComments.filter(
     (allComments) => allComments.member === currentUser
   )
-
-  if (currentUserComment.length === 0) {
-    currentUserComment.length += 1
-  }
-  // 抓DOM減一
-  const commentMinusOne = () => {
-    document.querySelector('#iris-comment-count').innerText -= 1
-  }
-  // 在myFavSect有設狀態，若狀態有變(代表有刪除評論)就減一
-
-  useEffect(() => {
-    commentMinusOne()
-  }, [commentDelete])
 
   // setUserCommentCount(currentUserComment.length) //執行這個會報錯
   // ----------------------------------------------//
@@ -86,10 +74,11 @@ function IrisMemberMenuSect(props) {
     setMyFavs(data)
   }
 
-  // 一開始就會開始載入資料
+  // 1. 一開始就會開始載入資料
+  // 2. 在myFavSect有設userFavDelete狀態，若狀態有變(代表有刪除最愛),就重抓資料給menu更新數字
   useEffect(() => {
     getMyFavFromServer()
-  }, [])
+  }, [userFavDelete])
 
   // console.log(currentUser)
 
@@ -97,20 +86,6 @@ function IrisMemberMenuSect(props) {
   const currentUserFav = myFavs.filter(
     (myFavs) => myFavs.member_sid === currentUser
   )
-
-  // 抓DOM減一
-  const myFavMinusOne = () => {
-    document.querySelector('#iris-fav-count').innerText -= 1
-  }
-  // 如果是新用戶，最愛數量會變-1，把它加回來
-  if (currentUserComment.length === 0) {
-    currentUserFav.length += 1
-  }
-
-  // 在myFavSect有設userFavDelete狀態，若狀態有變(代表有刪除最愛)就減一
-  useEffect(() => {
-    myFavMinusOne()
-  }, [userFavDelete])
 
   // ----------------------------------------------//
 
@@ -134,10 +109,11 @@ function IrisMemberMenuSect(props) {
     setCouponLists(data)
   }
 
-  // 一開始就會開始載入資料
+  // 1. 一開始就會開始載入資料
+  // 2. 在dataEdit有設狀態，若狀態有變(代表有新增折價券),就重抓資料給menu更新數字
   useEffect(() => {
     getCouponFromServer()
-  }, [])
+  }, [beastiePointAdd])
 
   // 過濾出現在使用者的優惠券
   const currentUserCoupon = couponLists.filter(
@@ -180,7 +156,7 @@ function IrisMemberMenuSect(props) {
               <div class="iris-brief-info">
                 <div>怪獸幣</div>
                 {/* <div>{userToTalCoin}</div> */}
-                <div>{userBeastieCoin}</div>
+                <div id="iris-total-coin">{userBeastieCoin}</div>
               </div>
             </div>
             {/* ---------- menu ----------- */}

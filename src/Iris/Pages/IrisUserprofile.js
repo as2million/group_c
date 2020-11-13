@@ -11,6 +11,7 @@ import IrisGetCouponBox from './../Components/IrisGetCouponBox/IrisGetCouponBox'
 function IrisUserprofile(props) {
   const [showUpdateModal, setShowUpdateModal] = useState(false)
   const [showGetCouponBox, setShowGetCouponBox] = useState(false)
+  const [beastiePointAdd, setBeastiePointAdd] = useState()
   const {
     isLogin,
     currentUser,
@@ -61,11 +62,15 @@ function IrisUserprofile(props) {
         setAddress={setAddress}
       />
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect currentUser={currentUser} />
+        <IrisMemberMenuSect
+          currentUser={currentUser}
+          beastiePointAdd={beastiePointAdd}
+        />
         <IrisDataEditSect
           currentUser={currentUser}
           setShowUpdateModal={setShowUpdateModal}
           setShowGetCouponBox={setShowGetCouponBox}
+          setBeastiePointAdd={setBeastiePointAdd}
         />
         <div
           className="iris-update-success-mask"
