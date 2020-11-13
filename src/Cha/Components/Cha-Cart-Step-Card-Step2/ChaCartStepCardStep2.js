@@ -5,21 +5,31 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { addDays, setHours, setMinutes } from 'date-fns';
 import { registerLocale } from 'react-datepicker';
 import { zhTW } from 'date-fns/esm/locale';
+import InputH40 from './InputH40/InputH40';
+import Selection from './Selection/Selection';
+
 registerLocale('zh-TW', zhTW);
 
 function ChaCartStepCardStep2(props) {
   const [startDate, setStartDate] = useState(
     setHours(setMinutes(new Date(), 30), 11)
   );
+
+  const [showAddress, setShowAddress] = useState('');
   // 當前登入的會員id
   const [currentMemberSid, setCurrentMemberSid] = useState(1);
+
+  // // 重構手機顯示
+  // const [showMobile, setShowMobile] = useState('');
   const {
     setMemberSid,
     name,
     setName,
     mobile,
     setMobile,
-    address,
+    county,
+    setCounty,
+    setDistrict,
     setAddress,
     setBeastieCoin,
     setTakeDate,
@@ -28,7 +38,7 @@ function ChaCartStepCardStep2(props) {
     setTakeWay,
     setTakeTime,
   } = props;
-
+  // console.log('檢查日期', startDate);
   // GET會員資料
   async function getMemberDataFromServer(paramsMemberId) {
     const url = `http://localhost:5000/cart-api/member/${paramsMemberId}`;
@@ -44,11 +54,15 @@ function ChaCartStepCardStep2(props) {
     const data = await response.json();
     // data會是一個物件值
     // console.log(data);
+    console.log('讀入會員資料成功');
     setName(data[0].name);
     setMobile(data[0].mobile);
     setTakeWay(data[0].take_way);
+    setCounty(data[0].county);
+    setDistrict(data[0].district);
     setAddress(data[0].address);
-    setMemberSid(data[0].sid);
+    setShowAddress(data[0].county + data[0].district + data[0].address);
+    setMemberSid(data[0].member_sid);
     setBeastieCoin(data[0].beastie_coin);
   }
 
@@ -57,6 +71,12 @@ function ChaCartStepCardStep2(props) {
     getMemberDataFromServer(currentMemberSid);
   }, []);
 
+  // 重構手機顯示
+  // let phoneNumb0to3 = mobile.slice(0, 4);
+  // let phoneNumb4to6 = mobile.slice(4, 7);
+  // let phoneNumb7to9 = mobile.slice(7, 10);
+  // setShowMobile(phoneNumb0to3 + '-' + phoneNumb4to6 + '-' + phoneNumb7to9);
+
   return (
     <>
       <div className="cha-main-card cha-main-card-step2">
@@ -64,7 +84,7 @@ function ChaCartStepCardStep2(props) {
         {/* 聯絡人姓名 */}
         <div className="form-group">
           <label htmlFor="cha-step2-1-name">聯絡人姓名</label>
-          <input
+          <InputH40
             type="text"
             className="form-control cha-step2-1-name"
             id="cha-step2-1-name"
@@ -78,11 +98,11 @@ function ChaCartStepCardStep2(props) {
         {/* 手機號碼 */}
         <div className="form-group">
           <label htmlFor="cha-step2-2-phone">手機號碼</label>
-          <input
+          <InputH40
             type="text"
             className="form-control cha-step2-2-phone"
             id="cha-step2-2-phone"
-            placeholder="請填寫姓名"
+            placeholder="請填寫手機"
             value={mobile}
             onChange={(e) => {
               setMobile(e.target.value);
@@ -92,25 +112,27 @@ function ChaCartStepCardStep2(props) {
         {/* 取餐日期、時間 */}
 
         <div className="form-row">
-          <div className="form-group col">
+          <div className="form-group col-6">
             <label htmlFor="cha-step2-3-take-date">取餐日期</label>
             <br />
-            <DatePicker
-              // className="form-control cha-step2-3-take-date"
-              // id="cha-step2-3-take-date"
-              // placeholder="請填寫姓名"
-              dateFormat="yyyy-MM-dd"
-              selected={startDate}
-              onChange={(date) => {
-                setTakeDate(date);
-                setStartDate(date);
-              }}
-              minDate={Date.now()}
-              maxDate={addDays(new Date(), 13)}
-              locale="zh-TW"
-            />
+            <div className="cha-DatePicker-display">
+              <DatePicker
+                // className="form-control cha-step2-3-take-date"
+                // id="cha-step2-3-take-date"
+                // placeholder="請填寫姓名"
+                dateFormat="yyyy-MM-dd"
+                selected={startDate}
+                onChange={(date) => {
+                  setTakeDate(date);
+                  setStartDate(date);
+                }}
+                minDate={Date.now()}
+                maxDate={addDays(new Date(), 13)}
+                locale="zh-TW"
+              />
+            </div>
           </div>
-          <div className="form-group col">
+          <div className="form-group col-6">
             <label htmlFor="cha-step2-4-take-time">取餐時間</label>
             <select
               id="cha-step2-4-take-time"
@@ -132,19 +154,19 @@ function ChaCartStepCardStep2(props) {
 
         {/* handleChange(event) {
          this.setState({value: event.target.value});} */}
-
         {/* 取餐地址1 */}
         <div className="form-group">
           <label htmlFor="cha-step2-5-take-address-3">取餐地址</label>
-          <input
+          <InputH40
             type="text"
             className="form-control cha-step2-5-take-address-1"
             id="cha-step2-5-take-address-1"
             placeholder="請填寫取餐地址"
-            value={address}
-            onChange={(e) => {
-              setAddress(e.target.value);
-            }}
+            value={showAddress}
+            // onChange={(e) => {
+            //   setAddress(e.target.value);
+            // }}
+            disabled
           />
         </div>
         {/* 取餐地址2 */}

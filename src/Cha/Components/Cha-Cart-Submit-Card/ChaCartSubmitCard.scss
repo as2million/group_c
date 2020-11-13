@@ -1,18 +1,26 @@
 .cha-aside-card {
   width: 36rem;
-  /* height: 3.0rem; */
+  // height: 59rem;
   border-radius: 0.5rem;
   border: 0.1rem solid #e5e5e5;
   background-color: #fff;
   margin-left: 0.5rem;
-  padding: 3rem;
+  padding: 4rem;
   box-sizing: border-box;
   position: fixed;
+  top: 8.5rem;
   box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
+}
+.cha-control {
+  position: relative;
+  bottom: 28.2rem;
+  right: 12.4rem;
 }
 .cha-aside-card-fake {
   width: 36rem;
+  height: 100%;
   box-sizing: border-box;
+  // background-color: #faf;
 }
 .cha-step-header {
   font-size: 2.4rem;
@@ -31,7 +39,7 @@
   width: 12rem;
   position: absolute;
   top: 1.5rem;
-  right: -3rem;
+  right: -4rem;
   border-radius: 2.5rem 0rem 0rem 2.5rem;
   color: #fff;
   font-size: 1.8rem;
@@ -60,7 +68,7 @@
   width: 17rem;
   position: absolute;
   top: -3.5rem;
-  right: -3rem;
+  right: -4rem;
   border-radius: 2.5rem 0rem 0rem 2.5rem;
   color: #fff;
   font-size: 1.8rem;

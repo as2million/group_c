@@ -1,79 +1,101 @@
-import React, { useState, useEffect } from 'react'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import './App.css';
 // 引入 共用元件
-import Navbar from 'Share/Components/NavBar/NavBar'
-import Footer from 'Share/Components/Footer/Footer'
+import Navbar from 'Share/Components/NavBar/NavBar';
+import Footer from 'Share/Components/Footer/Footer';
 
 // 引入 所有人的總元件
-import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
-import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
-import RuProudctList from 'Ru/Pages/RuProudctList'
-import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'
-import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'
-import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
-import IrisOrderComment from 'Iris/Pages/IrisOrderComment'
-import IrisMyFav from 'Iris/Pages/IrisMyFav'
-import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
-import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon'
-import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal'
-import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement'
-import JessMenu from 'Jess/Pages/JessMenu'
-import JessBento from 'Jess/Pages/JessBento'
-import JessVegBox from 'Jess/Pages/JessVegBox'
+import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex';
+import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage';
+import RuProudctList from 'Ru/Pages/RuProudctList';
+import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad';
+import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom';
+import IrisUserprofile from 'Iris/Pages/IrisUserprofile';
+import IrisOrderComment from 'Iris/Pages/IrisOrderComment';
+import IrisMyFav from 'Iris/Pages/IrisMyFav';
+import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint';
+import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon';
+import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal';
+import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement';
+import JessMenu from 'Jess/Pages/JessMenu';
+import JessBento from 'Jess/Pages/JessBento';
+import JessVegBox from 'Jess/Pages/JessVegBox';
 
-import ChaCart from 'Cha/Pages/Cha-Cart/ChaCart'
-import ChaGroupOrderCreate from 'Cha/Components/Cha-Group-Order-Create/ChaGroupOrderCreate'
-import ChaGroupOrderSearch from 'Cha/Components/Cha-Group-Order-Search/ChaGroupOrderSearch'
-import ChaGroupOrderSignIn from 'Cha/Components/Cha-Group-Order-SignIn/ChaGroupOrderSignIn'
-import ChaGroupOrderConfirm from 'Cha/Components/Cha-Group-Order-Confirm/ChaGroupOrderConfirm'
-import ChaGroupOrderMenu from 'Cha/Components/Cha-Group-Order-Menu/ChaGroupOrderMenu'
-import ChaCheckpoint from 'Cha/Pages/ChaCheckpoint'
-import ChaProductList from 'Cha/Components-demo/ChaProductList'
-import ChaCartTest from 'Cha/Components-demo/ChaCartTest'
+import ChaCart from 'Cha/Pages/Cha-Cart/ChaCart';
+import ChaGroupOrderCreate from 'Cha/Components/Cha-Group-Order-Create/ChaGroupOrderCreate';
+import ChaGroupOrderSearch from 'Cha/Components/Cha-Group-Order-Search/ChaGroupOrderSearch';
+import ChaGroupOrderSignIn from 'Cha/Components/Cha-Group-Order-SignIn/ChaGroupOrderSignIn';
+import ChaGroupOrderConfirm from 'Cha/Components/Cha-Group-Order-Confirm/ChaGroupOrderConfirm';
+import ChaGroupOrderMenu from 'Cha/Components/Cha-Group-Order-Menu/ChaGroupOrderMenu';
+import ChaCheckpoint from 'Cha/Pages/ChaCheckpoint';
+import ChaProductList from 'Cha/Components-demo/ChaProductList';
+import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 
-import JanIndex from 'Janice/Pages/JanIndex'
+import JanIndex from 'Janice/Pages/JanIndex';
 
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import ScrollToTop from '../src/Jess/Components/ScrollToTop'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ScrollToTop from '../src/Jess/Components/ScrollToTop';
 
 // 路由表
 function App() {
-  const [showBar, setShowBar] = useState(true)
-  const [cartNumber, setCartNumber] = useState(0)
-  const [amount, setAmount] = useState(1)
-  const [currentUser, setCurrentUser] = useState() // 目前用戶
-  const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
-  const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
+  const [showBar, setShowBar] = useState(true);
+  const [cartNumber, setCartNumber] = useState(0);
+  const [amount, setAmount] = useState(1);
+  const [currentUser, setCurrentUser] = useState(); // 目前用戶
+  const [isLogin, setIsLogin] = useState(false); //是否登入，預設否
+  const [showLoginModal, setShowLoginModal] = useState(false); //控制是否秀光箱
 
   //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address)到你們的頁面--------------//
-  const [county, setCounty] = useState(-1)
-  const [township, setTownship] = useState(-1)
-  const [address, setAddress] = useState('')
+  const [county, setCounty] = useState(-1);
+  const [township, setTownship] = useState(-1);
+  const [address, setAddress] = useState('');
 
+  // 20201112舊版購物車icon計數處理器
   const handleCartNumber = (type = 'add', amount = 1) => {
     if (type === 'add') {
-      const newCartNumber = +cartNumber + amount
-      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber))
-      setCartNumber(newCartNumber)
+      const newCartNumber = +cartNumber + amount;
+      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+      setCartNumber(newCartNumber);
     }
     if (type === 'minus') {
-      const newCartNumber = +cartNumber - amount
-      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber))
-      setCartNumber(newCartNumber)
+      const newCartNumber = +cartNumber - amount;
+      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+      setCartNumber(newCartNumber);
     }
-  }
-  useEffect(() => {
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0
-    setCartNumber(currentCartNumber)
-  }, [])
+  };
+  // 20201112新版購物車icon計數處理器(修正減項邏輯，單純加的人可以不用)
+  // const handleCartNumber2 = (type = 'add', amount = 1) => {
+  //   if (type === 'add') {
+  //     let currentCartNumber =
+  //       JSON.parse(localStorage.getItem('cartNumber')) || 0;
+  //     let newCartNumber = +currentCartNumber + amount;
+  //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+  //     setCartNumber(newCartNumber);
+  //   }
+  //   if (
+  //     type === 'minus' &&
+  //     JSON.parse(localStorage.getItem('cartNumber')) > 0
+  //   ) {
+  //     let currentCartNumber =
+  //       JSON.parse(localStorage.getItem('cartNumber')) || 0;
+  //     let newCartNumber = +currentCartNumber - amount;
+  //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+  //     setCartNumber(newCartNumber);
+  //   }
+  // };
 
   useEffect(() => {
-    console.log(amount)
-    return () => {}
-  }, [amount])
+    const currentCartNumber =
+      JSON.parse(localStorage.getItem('cartNumber')) || 0;
+    setCartNumber(currentCartNumber);
+  }, []);
+
+  useEffect(() => {
+    console.log(amount);
+    return () => {};
+  }, [amount]);
 
   return (
     // <Router>元件一定要放在最外層
@@ -131,7 +153,8 @@ function App() {
             <Route exact path="/cart">
               <ChaCart
                 setShowBar={setShowBar}
-                handleCartNumber={handleCartNumber}
+                setCartNumber={setCartNumber}
+                // handleCartNumber={handleCartNumber}
               />
             </Route>
             {/* 揪團 */}
@@ -208,6 +231,8 @@ function App() {
                 isLogin={isLogin}
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
+                handleCartNumber={handleCartNumber}
+                setShowBar={setShowBar}
               />
             </Route>
 
@@ -282,7 +307,7 @@ function App() {
         />
       </>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

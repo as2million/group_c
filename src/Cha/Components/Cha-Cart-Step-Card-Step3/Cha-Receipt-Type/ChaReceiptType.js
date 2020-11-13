@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ChaReceiptType.scss';
 import TWZipCode from './../Cha-Address-Select/TWZipCode';
-
+import InputH40 from '../InputH40/InputH40';
 function ChaReceiptType(props) {
   // 未達成
   const ComponentA = (props) => {
@@ -11,12 +11,12 @@ function ChaReceiptType(props) {
         <div className="cha-group-receipt-type-2">
           <div className="form-group">
             <label htmlFor="cha-step3-5-1-charitable">愛心碼</label>
-            <input
+            <InputH40
               type="text"
               className="form-control cha-step3-5-1-charitable"
               id="cha-step3-5-1-charitable"
               name="cha-step3-5-1-charitable"
-              placeholder="請填寫後三碼"
+              placeholder="請填寫愛心碼"
             />
           </div>
         </div>
@@ -31,17 +31,18 @@ function ChaReceiptType(props) {
         <div className="cha-group-receipt-type-2">
           <div className="form-group">
             <label htmlFor="cha-step3-5-2-1-vehicle">載具類型</label>
-            <input
+            <InputH40
               type="text"
               className="form-control cha-step3-5-2-1-vehicle"
               id="cha-step3-5-2-1-vehicle"
               name="cha-step3-5-2-1-vehicle"
               placeholder="會員載具"
+              // 手機載具、自然人憑證
             />
           </div>
           <div className="form-group">
             <label htmlFor="cha-step3-5-2-2-vehicle">Email</label>
-            <input
+            <InputH40
               type="email"
               className="form-control cha-step3-5-2-2-vehicle"
               id="cha-step3-5-2-2-vehicle"
@@ -52,7 +53,7 @@ function ChaReceiptType(props) {
           <div className="form-group">
             <label>發票寄送地址</label>
             <TWZipCode />
-            <input
+            <InputH40
               type="text"
               className="form-control cha-step3-5-2-5-vehicle"
               id="cha-step3-5-2-5-vehicle"
@@ -75,7 +76,7 @@ function ChaReceiptType(props) {
         <div className="cha-group-receipt-type-3">
           <div className="form-group">
             <label htmlFor="cha-step3-5-3-1-vehicle">公司抬頭</label>
-            <input
+            <InputH40
               type="text"
               className="form-control cha-step3-5-3-1-vehicle"
               id="cha-step3-5-3-1-vehicle"
@@ -85,7 +86,7 @@ function ChaReceiptType(props) {
           </div>
           <div className="form-group">
             <label htmlFor="cha-step3-5-3-2-vehicle">統一編號</label>
-            <input
+            <InputH40
               type="text"
               className="form-control cha-step3-5-3-2-vehicle"
               id="cha-step3-5-3-2-vehicle"
@@ -95,7 +96,7 @@ function ChaReceiptType(props) {
           </div>
           <div className="form-group">
             <label htmlFor="cha-step3-5-3-3-vehicle">Email</label>
-            <input
+            <InputH40
               type="email"
               className="form-control cha-step3-5-3-3-vehicle"
               id="cha-step3-5-3-3-vehicle"
@@ -145,7 +146,7 @@ function ChaReceiptType(props) {
             </p>
             <div className="cha-step3-5-receipt-div">
               <div className="">
-                <input
+                <InputH40
                   className="cha-receipt-title-switch"
                   id="cha-receipt-type-1"
                   name="cha-receipt-type"
@@ -161,7 +162,7 @@ function ChaReceiptType(props) {
                 </label>
               </div>
               <div className="cha-receipt-title-switch">
-                <input
+                <InputH40
                   className=""
                   id="cha-receipt-type-2"
                   name="cha-receipt-type"
@@ -177,7 +178,7 @@ function ChaReceiptType(props) {
                 </label>
               </div>
               <div className="">
-                <input
+                <InputH40
                   className=""
                   id="cha-receipt-type-3"
                   name="cha-receipt-type"

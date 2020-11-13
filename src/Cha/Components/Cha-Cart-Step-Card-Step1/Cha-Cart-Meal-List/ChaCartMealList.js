@@ -1,14 +1,25 @@
-import React from 'react'
-import Counter from 'Cha/Components/Cha-Cart-Step-Card-Step1/Counter/Counter'
-import './ChaCartMealList.scss'
+import React from 'react';
+import Counter from 'Cha/Components/Cha-Cart-Step-Card-Step1/Counter/Counter';
+import './ChaCartMealList.scss';
 
 function ChaCartMealList(props) {
-  const { mealsItem, handleCount, deleteItemToLocalStorage } = props
+  const {
+    mealsItem,
+    handleCount,
+    deleteItemToLocalStorage,
+    handleCartNumber,
+  } = props;
   return (
     <>
       <div className="cha-order">
         <div className="cha-order-right">
-          <div className="cha-product-pic"></div>
+          <div className="cha-product-pic">
+            <img
+              className="cha-HeadPic"
+              src={'/productImages/Bento/' + mealsItem.productImage + '.jpg'}
+            ></img>
+          </div>
+
           <div className="cha-step1-content">
             <div className="cha-step1-product-name">
               {mealsItem.productName}
@@ -23,13 +34,14 @@ function ChaCartMealList(props) {
           <div
             className="cha-trash-can"
             onClick={() => {
-              deleteItemToLocalStorage(mealsItem)
-              handleCount(mealsItem)
+              deleteItemToLocalStorage(mealsItem);
+              handleCount(mealsItem);
+              handleCartNumber('minus', mealsItem.productAmount);
             }}
           ></div>
         </div>
       </div>
     </>
-  )
+  );
 }
-export default ChaCartMealList
+export default ChaCartMealList;
