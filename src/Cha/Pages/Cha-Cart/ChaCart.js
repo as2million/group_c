@@ -235,6 +235,9 @@ function ChaCart(props) {
           />
         </aside>
       </div>
+      {/* <div
+        style={{ height: '6rem', width: '100%', backgroundColor: '#faf' }}
+      ></div> */}
     </>
   );
 }

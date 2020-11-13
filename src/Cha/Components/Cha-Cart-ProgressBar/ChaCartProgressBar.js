@@ -17,7 +17,7 @@ function moveBar(color = '#fff') {
   if (bar) {
     bar.style.width = w + '%';
     bar.style.background = color;
-    console.log('bar.style.width', bar.style.width);
+    // console.log('bar.style.width', bar.style.width);
   }
 }
 function ChaCartProgressBar(props) {

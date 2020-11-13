@@ -7,7 +7,8 @@ import InputH40 from 'Share/Components/Input/InputH40';
 import InputTest from 'Share/Components/Input/InputTest';
 import MainPageSelectBox from 'Share/Components/Input/MainPageSelectBox';
 import SelectBox from 'Share/Components/Input/SelectBox';
-
+import IrisSuccessBox from 'Iris/Components/IrisSuccessBox/IrisSuccessBox';
+import IrisBeastiePointSect from 'Iris/Components/IrisBeastiePointSect/IrisBeastiePointSect';
 function ChaCheckpoint(props) {
   return (
     <>
@@ -89,6 +90,8 @@ function ChaCheckpoint(props) {
         <InputTest />
         <MainPageSelectBox />
         <SelectBox />
+        <IrisSuccessBox />
+        <IrisBeastiePointSect />
         <div
           style={{ width: '100%', height: '15rem', backgroundColor: '#fff' }}
         ></div>

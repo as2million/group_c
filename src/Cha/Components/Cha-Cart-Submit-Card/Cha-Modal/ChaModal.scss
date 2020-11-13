@@ -1,0 +1,67 @@
+.cha-claudia-overlay {
+  position: fixed;
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.cha-claudia-modal-bg {
+  margin: 110px auto 0px auto;
+  background-color: white;
+  border-radius: 2rem;
+  width: 800px;
+  height: 500px;
+  padding: 6.5rem 8.5rem;
+  position: relative;
+}
+.cha-wrap-coupon-container {
+  margin-top: 4rem;
+  width: 600px;
+  height: 350px;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-attachment: scroll;
+  background-color: #faf;
+}
+.cha-wrap-coupon-container::-webkit-scrollbar {
+  display: none;
+}
+.cha-claudia-modal-cross-img {
+  background: url(./Images/cross.svg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  cursor: pointer;
+  float: right;
+}
+.cha-claudia-modal-cross-img:hover {
+  background: url(./Images/cross-black.svg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 3rem;
+  height: 3rem;
+}
+
+@media only screen and (max-width: 57.6rem) {
+  .cha-claudia-modal-bg {
+    width: 335px;
+    height: 535px;
+    padding: 2.5rem 2rem 4.5rem 2rem;
+    border-radius: 40px;
+    margin: 115px auto;
+  }
+
+  .cha-claudia-overlay {
+    overflow: hidden;
+  }
+}

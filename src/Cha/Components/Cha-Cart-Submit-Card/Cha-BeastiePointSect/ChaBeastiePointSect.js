@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import './IrisBeastiePointSect.scss';
+import './ChaBeastiePointSect.scss';
 import { ReactComponent as WaveLine } from './Images/wave_line.svg';
 import { ReactComponent as BesatieBook } from './Images/beastie_book.svg';
 import { ReactComponent as BesatieCoin } from './Images/beastie_coin.svg';
@@ -11,7 +11,7 @@ import { ReactComponent as BeastieCoupon20 } from './Images/beastie_coupon20.svg
 import { ReactComponent as BeastieCoupon20Grey } from './Images/beastie-coupon20-grey.svg';
 import { ReactComponent as CouponVerticalLine } from './Images/coupon_vertical_line.svg';
 
-function IrisBeastiePointSect(props) {
+function ChaBeastiePointSect(props) {
   const { currentUser } = props;
   const [couponList, setCouponList] = useState([]);
 
@@ -117,60 +117,6 @@ function IrisBeastiePointSect(props) {
       </div>
     );
   });
-
-  return (
-    <>
-      <div className="container col-9">
-        {/* <div className="row justify-content-center"> */}
-        <div className="row justify-content-center iris-content-title-container ">
-          <h2 className="iris-comment-title">怪獸幣</h2>
-          <WaveLine />
-        </div>
-
-        <div className="iris-beastie-content-container ">
-          <div className="iris-beastie-icons-container d-flex  justify-content-center">
-            <div className="iris-icon-box d-flex align-items-center">
-              <BesatieCoin />
-              <p>怪獸幣總資產</p>
-            </div>
-            <div className="iris-beastie-coin">480</div>
-
-            <VerticalLine />
-
-            <div className="iris-beastie-box ">
-              <div className="iris-beastie-name-box d-flex align-items-center justify-content-center">
-                <PencilIcon
-                  className="iris-pencil-icon"
-                  onClick={() => {
-                    changeBeastieName();
-                  }}
-                />
-                &nbsp;&nbsp;
-                {/* <div className="iris-beastie-name">小Q怪</div> */}
-                <div className="iris-beastie-name">{beastieName}</div>
-                <input
-                  className="iris-beastie-name-input"
-                  onKeyDown={(e) => {
-                    recordNewName(e);
-                  }}
-                />
-              </div>
-              <BesatieQ />
-            </div>
-
-            <VerticalLine />
-
-            <div className="iris-icon-box d-flex align-items-center ">
-              <BesatieBook />
-              <p>遊戲規則</p>
-            </div>
-          </div>
-
-          <div className="iris-coupon-container">{couponDisplay}</div>
-        </div>
-      </div>
-    </>
-  );
 }
 
-export default IrisBeastiePointSect;
+export default ChaBeastiePointSect;

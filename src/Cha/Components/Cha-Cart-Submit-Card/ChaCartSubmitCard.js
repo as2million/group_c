@@ -4,6 +4,8 @@ import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
 // import RequestToServer from 'Cha/RequestToServer';
 import ChaCartButton from './Cha-Cart-Button/ChaCartButton';
 import { withRouter, useHistory } from 'react-router-dom';
+import ChaModal from './Cha-Modal/ChaModal';
+import ChaBeastiePointSect from 'Cha/Components/Cha-Cart-Submit-Card/Cha-BeastiePointSect/ChaBeastiePointSect';
 function ChaCartSubmitCard(props) {
   const {
     // mealsDisplay,
@@ -26,7 +28,8 @@ function ChaCartSubmitCard(props) {
   // const [totalPrice, setTotalPrice] = useState(0);
   // fetch用
   const [error, setError] = useState([]);
-
+  // 控制光箱
+  const [modalController, setModalController] = useState(false);
   // 計算商品總量
   const calcuTotalAmount = (items) => {
     let total = 0;
@@ -174,31 +177,35 @@ function ChaCartSubmitCard(props) {
     }
   }
 
-  // window.addEventListener('scroll', () => {
-  //   shoppingListState();
-  // });
-  // // main code
-  // function shoppingListState() {
-  //   let shoppingList = document.querySelector('.cha-aside-card');
-  //   let w = Math.ceil(
-  //     (Math.round(window.pageYOffset) /
-  //       (document.body.scrollHeight - window.innerHeight)) *
-  //       100
-  //   );
-  //   if (w >= 88) {
-  //     shoppingList.style.position = 'absolute';
-  //     shoppingList.style.bottom = '28.2rem';
-  //     shoppingList.style.right = '12.4rem';
-  //     // console.log(shoppingList);
-  //   } else {
-  //     shoppingList.style.position = 'fixed';
-  //     shoppingList.style.top = '10.5rem';
-  //     shoppingList.style.right = '12.4rem';
-  //   }
-  // }
+  window.addEventListener('scroll', () => {
+    shoppingListState();
+  });
+  // main code
+  function shoppingListState() {
+    let shoppingList = document.querySelector('.cha-aside-card');
+    let w = Math.ceil(
+      (Math.round(window.pageYOffset) /
+        (document.body.scrollHeight - window.innerHeight)) *
+        100
+    );
+    if (w >= 92) {
+      shoppingList.style.position = 'none';
+      shoppingList.style.bottom = '28.2rem';
+      // console.log(shoppingList);
+    } else {
+      shoppingList.style.position = 'fixed';
+      shoppingList.style.bottom = '11.3rem';
+    }
+  }
 
   return (
     <>
+      {/* Modal */}
+      {modalController && (
+        <ChaModal closeModal={() => setModalController(false)}>
+          {/* <ChaBeastiePointSect /> */}
+        </ChaModal>
+      )}
       <div className="cha-aside-card-fake"></div>
       <div className="cha-aside-card">
         <div className="cha-step-header">
@@ -234,7 +241,12 @@ function ChaCartSubmitCard(props) {
               value="cha-monster-coin"
               id="cha-monster-coin"
             />
-            <label htmlFor="cha-monster-coin">使用怪獸幣</label>
+            <label
+              htmlFor="cha-monster-coin"
+              onClick={() => setModalController(true)}
+            >
+              使用怪獸幣
+            </label>
           </div>
           <div>-${beastieCoin}</div>
         </div>
