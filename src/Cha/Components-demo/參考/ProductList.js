@@ -11,7 +11,7 @@ function ProductList(props) {
   const handleShow = () => setShow(true);
 
   const updateCartToLocalStorage = (item) => {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const currentCart = JSON.parse(localStorage.getItem('cart1')) || [];
 
     // find if the product in the localstorage with its id
     const index = currentCart.findIndex((v) => v.id === item.id);
@@ -26,7 +26,7 @@ function ProductList(props) {
       currentCart.push(item);
     }
 
-    localStorage.setItem('cart', JSON.stringify(currentCart));
+    localStorage.setItem('cart1', JSON.stringify(currentCart));
 
     // 設定資料
     setMycart(currentCart);

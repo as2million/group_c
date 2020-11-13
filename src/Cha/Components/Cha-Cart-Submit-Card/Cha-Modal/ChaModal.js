@@ -3,6 +3,7 @@ import './ChaModal.scss';
 import Cross from './Images/cross.svg';
 // 優惠券的
 import { ReactComponent as CouponVerticalLine } from './Images1/coupon_vertical_line.svg';
+import InputR from '.././Input-R/InputR';
 const ChaModal = (props) => {
   const { closeModal } = props;
   const [couponList, setCouponList] = useState([]);
@@ -47,8 +48,9 @@ const ChaModal = (props) => {
     const dueTime = item.coupon_due.slice(11, 16);
     const couponImgId = 'coupon-img-' + item.coupon_type;
     return (
-      <div className="cha-coupon-add-checkbox" key={index}>
-        <input
+      <label className="cha-coupon-add-checkbox" key={index}>
+        <InputR
+          className="bg-warning text-warning"
           type="radio"
           name="tableware"
           value={item.sid}
@@ -90,7 +92,7 @@ const ChaModal = (props) => {
             </div>
           </div>
         </div>
-      </div>
+      </label>
     );
   });
 

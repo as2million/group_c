@@ -31,14 +31,16 @@ function ChaReceiptType(props) {
         <div className="cha-group-receipt-type-2">
           <div className="form-group">
             <label htmlFor="cha-step3-5-2-1-vehicle">載具類型</label>
-            <InputH40
+            <select
               type="text"
               className="form-control cha-step3-5-2-1-vehicle"
               id="cha-step3-5-2-1-vehicle"
               name="cha-step3-5-2-1-vehicle"
-              placeholder="會員載具"
-              // 手機載具、自然人憑證
-            />
+            >
+              <option value="會員載具">會員載具</option>
+              <option value="手機載具">手機載具</option>
+              <option value="自然人憑證">自然人憑證</option>
+            </select>
           </div>
           <div className="form-group">
             <label htmlFor="cha-step3-5-2-2-vehicle">Email</label>
@@ -50,7 +52,7 @@ function ChaReceiptType(props) {
               placeholder="Email"
             />
           </div>
-          <div className="form-group">
+          <div className="form-group cha-TWZipCode-display">
             <label>發票寄送地址</label>
             <TWZipCode />
             <InputH40
@@ -81,7 +83,7 @@ function ChaReceiptType(props) {
               className="form-control cha-step3-5-3-1-vehicle"
               id="cha-step3-5-3-1-vehicle"
               name="cha-step3-5-3-1-vehicle"
-              placeholder="公司抬頭"
+              placeholder="請填寫公司抬頭"
             />
           </div>
           <div className="form-group">
@@ -91,7 +93,7 @@ function ChaReceiptType(props) {
               className="form-control cha-step3-5-3-2-vehicle"
               id="cha-step3-5-3-2-vehicle"
               name="cha-step3-5-3-2-vehicle"
-              placeholder="統一編號"
+              placeholder="請填寫統一編號"
             />
           </div>
           <div className="form-group">
@@ -101,7 +103,7 @@ function ChaReceiptType(props) {
               className="form-control cha-step3-5-3-3-vehicle"
               id="cha-step3-5-3-3-vehicle"
               name="cha-step3-5-3-3-vehicle"
-              placeholder="Email"
+              placeholder="請填寫Email"
             />
           </div>
         </div>
@@ -136,7 +138,7 @@ function ChaReceiptType(props) {
     };
     return (
       <>
-        <div className="cha-receipt-content-container col-9">
+        <div className="cha-receipt-content-container">
           {/* 發票開立 */}
           <div className="cha-step3-5-receipt-choose">
             <p>
@@ -145,8 +147,8 @@ function ChaReceiptType(props) {
               </span>
             </p>
             <div className="cha-step3-5-receipt-div">
-              <div className="">
-                <InputH40
+              <div className="cha-receipt-title-switch" onClick={tabContentA}>
+                <input
                   className="cha-receipt-title-switch"
                   id="cha-receipt-type-1"
                   name="cha-receipt-type"
@@ -156,40 +158,31 @@ function ChaReceiptType(props) {
                 <label
                   className="cha-receipt-title-switch"
                   htmlFor="cha-receipt-type-1"
-                  onClick={tabContentA}
                 >
                   發票捐贈
                 </label>
               </div>
-              <div className="cha-receipt-title-switch">
-                <InputH40
+              <div className="cha-receipt-title-switch" onClick={tabContentB}>
+                <input
                   className=""
                   id="cha-receipt-type-2"
                   name="cha-receipt-type"
                   type="radio"
                   value="2"
                 />
-                <label
-                  className=""
-                  htmlFor="cha-receipt-type-2"
-                  onClick={tabContentB}
-                >
+                <label className="" htmlFor="cha-receipt-type-2">
                   二聯式電子發票
                 </label>
               </div>
-              <div className="">
-                <InputH40
+              <div className="cha-receipt-title-switch" onClick={tabContentC}>
+                <input
                   className=""
                   id="cha-receipt-type-3"
                   name="cha-receipt-type"
                   type="radio"
                   value="3"
                 />
-                <label
-                  className=""
-                  htmlFor="cha-receipt-type-3"
-                  onClick={tabContentC}
-                >
+                <label className="" htmlFor="cha-receipt-type-3">
                   三聯式電子發票
                 </label>
               </div>

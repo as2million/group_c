@@ -1,3 +1,13 @@
+$primary: #f5a016;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+
+.cha-coupon-add-checkbox input {
+  background-color: #faf;
+  color: #ffa;
+  height: 2rem;
+}
 .cha-claudia-overlay {
   position: fixed;
   display: block;
@@ -24,7 +34,7 @@
 // 我增添的樣式
 .cha-wrap-coupon-container {
   margin-top: 0rem;
-  width: 600px;
+  // width: 600px;
   height: 380px;
   overflow: hidden;
   overflow-y: scroll;
@@ -37,6 +47,7 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 3rem;
+  cursor: pointer;
 }
 .cha-iris-coupon-box {
   width: 48rem;

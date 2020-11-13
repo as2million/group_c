@@ -121,7 +121,7 @@ function ChaCartSubmitCard(props) {
       subtotal_price: subtotalPrice,
       total_price: totalPrice,
       shipping: shipping,
-      beastie_coin: beastieCoin,
+      beastie_coin: useBeastieCoin,
       tableware: tableware,
       created_at: new Date(),
     };
@@ -258,7 +258,7 @@ function ChaCartSubmitCard(props) {
           <div>運費</div>
           <div>${shipping}</div>
         </div>
-        <div className="cha-shipping">
+        <div className="cha-monster-coin">
           <div className="form-group">
             <input
               type="checkbox"
@@ -268,42 +268,40 @@ function ChaCartSubmitCard(props) {
             />
             <label
               htmlFor="cha-monster-coin"
-              style={{ cursor: 'point' }}
+              // style={{ cursor: 'pointer' }}
               onClick={() => setModalController(true)}
             >
               使用怪獸幣
             </label>
           </div>
-          <div>-${beastieCoin}</div>
+          <div>-${useBeastieCoin}</div>
         </div>
         <div className="cha-horizontal-line"></div>
         <div className="cha-tableware">
-          <div>
-            <label>
-              <input
-                type="radio"
-                name="tableware"
-                value="yes"
-                onChange={(e) => {
-                  setTableware(e.target.value);
-                }}
-                checked={tableware === 'yes'}
-              />
-              附餐具
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="tableware"
-                value="no"
-                onChange={(e) => {
-                  setTableware(e.target.value);
-                }}
-                checked={tableware === 'no'}
-              />
-              不附餐具
-            </label>
-          </div>
+          <label>
+            <input
+              type="radio"
+              name="tableware"
+              value="yes"
+              onChange={(e) => {
+                setTableware(e.target.value);
+              }}
+              checked={tableware === 'yes'}
+            />
+            附餐具
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="tableware"
+              value="no"
+              onChange={(e) => {
+                setTableware(e.target.value);
+              }}
+              checked={tableware === 'no'}
+            />
+            不附餐具
+          </label>
         </div>
         <div className="cha-horizontal-line"></div>
         <div className="cha-shopping-list-total">
