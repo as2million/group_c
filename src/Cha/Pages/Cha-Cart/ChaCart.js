@@ -171,13 +171,60 @@ function ChaCart(props) {
       setCartNumber(newCartNumber);
     }
   };
+  //fixed card
+
+  window.addEventListener('scroll', () => {
+    if (
+      document.getElementsByClassName('cha-main-card-step1')[0] &&
+      document.getElementsByClassName('cha-main-card-step2')[0] &&
+      document.getElementsByClassName('cha-main-card-step3')[0]
+    ) {
+      const step1CardHeight = document.getElementsByClassName(
+        'cha-main-card-step1'
+      )[0].clientHeight;
+      const step2CardHeight = document.getElementsByClassName(
+        'cha-main-card-step2'
+      )[0].clientHeight;
+      const step3CardHeight = document.getElementsByClassName(
+        'cha-main-card-step3'
+      )[0].clientHeight;
+
+      // console.log('step1', stepOneCardHeight)
+
+      const asideCard = document.getElementsByClassName('cha-aside-card')[0];
+      const asideColumn = document.getElementsByClassName('cha-aside')[0];
+
+      //6 is border totals
+      let mainHeight = step1CardHeight + step2CardHeight + step3CardHeight + 26;
+
+      // console.log('mainHeight', mainHeight);
+
+      asideColumn.style.height = `${mainHeight}px`;
+      asideCard.style.top = `${window.pageYOffset}px`;
+
+      // console.log('top', parseInt(asideCard.style.top))
+      if (document.getElementsByClassName('cha-main')[0]) {
+        // console.log('main height', document.getElementsByClassName('cha-main')[0].clientHeight)
+        // console.log('cal top', mainHeight - parseInt(asideCard.style.top));
+
+        if (mainHeight - parseInt(asideCard.style.top) < 570) {
+          asideCard.style.bottom = '0px';
+          asideCard.style.top = 'auto';
+        } else {
+          asideCard.style.top = `${window.pageYOffset}px`;
+          asideCard.style.bottom = 'auto';
+        }
+      }
+    }
+  });
+
   return (
     <>
       <ScrollButton />
       <ChaCartProgressBar />
       <div className="cha-wrap">
         {/* 訂單步驟欄*/}
-        <main>
+        <main className="cha-main">
           {/* 步驟一*/}
           <ChaCartStepCardStep1
             meals={meals}
@@ -216,7 +263,7 @@ function ChaCart(props) {
           <ChaCartStepCardStep3 />
         </main>
         {/* 購物清單欄*/}
-        <aside>
+        <aside className="cha-aside">
           <ChaCartSubmitCard
             // step1
             meals={meals}

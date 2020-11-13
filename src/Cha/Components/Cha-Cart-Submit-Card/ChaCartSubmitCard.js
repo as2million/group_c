@@ -30,6 +30,9 @@ function ChaCartSubmitCard(props) {
   const [error, setError] = useState([]);
   // 控制光箱
   const [modalController, setModalController] = useState(false);
+  // 光箱內的checkbox
+  const [useBeastieCoin, setUseBeastieCoin] = useState(0);
+  const [couponSid, setCouponSid] = useState(0);
   // 計算商品總量
   const calcuTotalAmount = (items) => {
     let total = 0;
@@ -65,8 +68,8 @@ function ChaCartSubmitCard(props) {
   }, [totalAmount]);
 
   // 計算總價
-  let totalPrice =
-    subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0);
+  let totalPrice = subtotalPrice + shipping - useBeastieCoin;
+  console.log(useBeastieCoin);
   // setTotalPrice(
   //   subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0)
 
@@ -156,6 +159,7 @@ function ChaCartSubmitCard(props) {
       product_amount: item.productAmount,
       product_name: item.productName,
       product_price: item.productPrice,
+      product_image: item.productI,
     }));
     const url = 'http://localhost:5000/cart-api/my-order-detail';
     const request = new Request(url, {
@@ -194,12 +198,36 @@ function ChaCartSubmitCard(props) {
   //     shoppingList.classList.remove('cha-control');
   //   }
   // }
+  async function deleteCouponListData(paramsCouponSid) {
+    const url = `http://localhost:5000/cart-api/use-coupon/${paramsCouponSid}`;
+
+    const request = new Request(url, {
+      method: 'DELETE',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    });
+    const response = await fetch(request);
+    const data = await response.json();
+    console.log('deleteCouponListData_fetch成功', data);
+    // console.log(dataAllOrder);
+    // console.log(
+    //   dataOrders[0] && dataOrders[0].take_person && dataOrders[0].take_person
+    // );
+  }
 
   return (
     <>
       {/* Modal */}
       {modalController && (
-        <ChaModal closeModal={() => setModalController(false)}>
+        <ChaModal
+          closeModal={() => setModalController(false)}
+          useBeastieCoin={useBeastieCoin}
+          setUseBeastieCoin={setUseBeastieCoin}
+          couponSid={couponSid}
+          setCouponSid={setCouponSid}
+        >
           {/* <ChaBeastiePointSect /> */}
         </ChaModal>
       )}
@@ -240,6 +268,7 @@ function ChaCartSubmitCard(props) {
             />
             <label
               htmlFor="cha-monster-coin"
+              style={{ cursor: 'point' }}
               onClick={() => setModalController(true)}
             >
               使用怪獸幣
@@ -289,6 +318,7 @@ function ChaCartSubmitCard(props) {
             props.history.push('/orderManagement');
             handleSubmitCartRemoveLocalStorage();
             handleCartNumber('minus', totalAmount);
+            couponSid && deleteCouponListData(couponSid);
           }}
         >
           <ChaCartButton
