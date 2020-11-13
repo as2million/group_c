@@ -210,7 +210,8 @@ $lightBrown: #f7ede2;
 .jan-tab-address-map {
   width: 60rem;
   height: 54rem;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
+  overflow: hidden;
 }
 .jan-tab-shops-list-wrap {
   width: 30rem;

@@ -199,7 +199,16 @@ function AddressTabs(props) {
             </form>
           </div>
         </div>
-        <div className="jan-tab-address-map"></div>
+        {/* 滿額免運地圖 */}
+        <div className="jan-tab-address-map">
+          <iframe
+            src="https://plotdb.io/v/chart/27933"
+            width="600px"
+            height="565px"
+            allowfullscreen="true"
+            frameborder="0"
+          ></iframe>
+        </div>
       </div>
     )
   }
@@ -289,6 +298,7 @@ function AddressTabs(props) {
             </div>
           </div>
         </div>
+        {/* 門市地圖 */}
         <div className="jan-tab-shops-map">
           <iframe
             src="https://www.google.com/maps/d/u/0/embed?mid=1dbpBBf0U6YHIYOs45R-S9WgBp8wBSola"

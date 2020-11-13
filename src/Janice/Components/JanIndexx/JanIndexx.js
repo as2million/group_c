@@ -950,7 +950,15 @@ function JanIndexx(props) {
           </div>
 
           {/* 地圖 */}
-          <div className="jan-map-view"></div>
+          <div className="jan-map-view">
+            <iframe
+              src="https://plotdb.io/v/chart/27933"
+              width="816px"
+              height="550px"
+              allowfullscreen="true"
+              frameborder="0"
+            ></iframe>
+          </div>
         </div>
       </div>
 
