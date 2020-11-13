@@ -602,9 +602,12 @@ $deepYello: #f5a016;
     }
   }
   .jan-intro3-cards {
-    background-color: #ccc;
+    // background-color: #ccc;
     width: 68rem;
     height: 50rem;
+    video {
+      outline: none;
+    }
   }
 }
 

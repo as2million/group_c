@@ -232,7 +232,10 @@ $lightBrown: #f7ede2;
 .jan-tab-shops-map {
   width: 60rem;
   height: 54rem;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
+  iframe {
+    border: none;
+  }
 }
 
 @media screen and (max-width: 480px) {

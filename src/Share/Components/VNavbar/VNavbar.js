@@ -41,123 +41,123 @@ function VNavbar(props) {
   const [status, setStatus] = useState(false)
 
   //原本fetch的方法
-  const addressData = (e) => {
-    if (isLogin === true) {
-      fetch('http://localhost:5000/index/member_list', {
-        method: 'GET',
-        headers: new Headers({
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        }),
-      })
-        .then((r) => r.json())
-        .then((obj) => {
-          // const newAddress = [...obj, ...adress]無法印出結果
-          // setAddress(newAddress)無法印出結果
-          // console.log(address[0])無法印出結果
-          // console.log(obj[0].address)無法印出結果
-          // console.log(obj)無法印出結果
-          // })無法印出結果
-          // console.log(obj[0].county)  ->台北市
-          // console.log(obj[0].district)  ->大安區
-          // console.log(obj[0].address)  ->忠孝東路一段50號
-          // console.log(datacountries.indexOf(obj[0].county))  ->0
-          // console.log(
-          //   datatownships[datacountries.indexOf(obj[0].county)].indexOf(
-          //     obj[0].district
-          //   )
-          // )  -> 4
-          //   console.log(currentUser - 1)
-          setCounty(datacountries.indexOf(obj[1].county))
-          setTownship(
-            datatownships[datacountries.indexOf(obj[1].county)].indexOf(
-              obj[1].district
-            )
-          )
-          setAddress(obj[1].address)
-        })
-    }
-  }
+  // const addressData = (e) => {
+  //   if (isLogin === true) {
+  //     fetch('http://localhost:5000/index/member_list', {
+  //       method: 'GET',
+  //       headers: new Headers({
+  //         Accept: 'application/json',
+  //         'Content-Type': 'application/json',
+  //       }),
+  //     })
+  //       .then((r) => r.json())
+  //       .then((obj) => {
+  // const newAddress = [...obj, ...adress]無法印出結果
+  // setAddress(newAddress)無法印出結果
+  // console.log(address[0])無法印出結果
+  // console.log(obj[0].address)無法印出結果
+  // console.log(obj)無法印出結果
+  // })無法印出結果
+  // console.log(obj[0].county)  ->台北市
+  // console.log(obj[0].district)  ->大安區
+  // console.log(obj[0].address)  ->忠孝東路一段50號
+  // console.log(datacountries.indexOf(obj[0].county))  ->0
+  // console.log(
+  //   datatownships[datacountries.indexOf(obj[0].county)].indexOf(
+  //     obj[0].district
+  //   )
+  // )  -> 4
+  //   console.log(currentUser - 1)
+  //         setCounty(datacountries.indexOf(obj[1].county))
+  //         setTownship(
+  //           datatownships[datacountries.indexOf(obj[1].county)].indexOf(
+  //             obj[1].district
+  //           )
+  //         )
+  //         setAddress(obj[1].address)
+  //       })
+  //   }
+  // }
 
-  useEffect(() => {
-    addressData()
-  }, [isLogin])
+  // useEffect(() => {
+  //   addressData()
+  // }, [isLogin])
 
   //疑似無法再次更改資料 -------- 取得目前user的資料 ---------- //
 
-  // const updateAddress = () => {
-  //   // const address = document.querySelector('#iris-member-address').value
-  //   const address = document.querySelector('.address-input-jan').innerHTML
-  //   const newAddressData = {
-  //     member_id: currentUser,
-  //     address: address,
-  //   }
-  //   // console.log(newProfile)
+  const updateAddress = () => {
+    // const address = document.querySelector('#iris-member-address').value
+    const address = document.querySelector('.address-input-jan').innerHTML
+    const newAddressData = {
+      member_id: currentUser,
+      address: address,
+    }
+    // console.log(newProfile)
 
-  //   fetch('http://localhost:5000/index/updateAddress', {
-  //     method: 'POST',
-  //     body: JSON.stringify(newAddressData),
-  //     headers: new Headers({
-  //       Accept: 'application/json',
-  //       'Content-Type': 'application/json',
-  //     }),
-  //   })
-  //     .then((r) => r.json())
-  //     .then((o) => {
-  //       console.log(o)
-  //     })
-  // }
+    fetch('http://localhost:5000/index/updateAddress', {
+      method: 'POST',
+      body: JSON.stringify(newAddressData),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+      .then((r) => r.json())
+      .then((o) => {
+        console.log(o)
+      })
+  }
 
-  // async function getUserInfoFromServerJan() {
-  //   const url = 'http://localhost:5000/index/member_list'
+  async function getUserInfoFromServerJan() {
+    // if (isLogin === true) {
+    const url = 'http://localhost:5000/index/member_list'
 
-  //   const request = new Request(url, {
-  //     method: 'GET',
-  //     headers: new Headers({
-  //       Accept: 'application/json',
-  //       'Content-Type': 'application/json',
-  //     }),
-  //   })
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
 
-  //   const response = await fetch(request)
-  //   const dataJan = await response.json()
+    const response = await fetch(request)
+    const dataJan = await response.json()
 
-  //   // console.log(dataJan)
-  //   setUserInfoJan(dataJan)
-  //   setCounty(datacountries.indexOf(userInfoJan[1].county))
-  //   setTownship(
-  //     datatownships[datacountries.indexOf(userInfoJan[1].county)].indexOf(
-  //       userInfoJan[1].district
-  //     )
-  //   )
-  //   setAddress(userInfoJan[1].address)
-  // }
+    // console.log(dataJan)
+    setUserInfoJan(dataJan)
+    // setCounty(datacountries.indexOf(userInfoJan[1].county))
+    // setTownship(
+    //   datatownships[datacountries.indexOf(userInfoJan[1].county)].indexOf(
+    //     userInfoJan[1].district
+    //   )
+    // )
+    // setAddress(userInfoJan[1].address)
+  }
 
   // --------- 過濾出現在使用者的資料 --------- //
-  // const currentUserInfoJan = userInfoJan.filter(
-  //   (userInfoJan) => userInfoJan.member_sid === currentUser
-  // )
+  const currentUserInfoJan = userInfoJan.filter(
+    (userInfoJan) => userInfoJan.member_sid === currentUser
+  )
   // console.log('hi', userInfoJan)
   // console.log(currentUserInfoJan[0])
 
-  // if (isLogin === true) {
-  // currentUserInfoJan.map((item, index) => {
-  //   const getcounty = item.county
-  //   const gettownship = item.district
-  //   const getaddress = item.address
+  currentUserInfoJan.map((item, index) => {
+    const getcounty = item.county
+    const gettownship = item.district
+    const getaddress = item.address
 
-  //   setCounty(datacountries.indexOf(getcounty))
-  //   setTownship(
-  //     datatownships[datacountries.indexOf(getcounty)].indexOf(gettownship)
-  //   )
-  //   setAddress(getaddress)
-  // })
-  // }
+    setCounty(datacountries.indexOf(getcounty))
+    setTownship(
+      datatownships[datacountries.indexOf(getcounty)].indexOf(gettownship)
+    )
+    setAddress(getaddress)
+  })
 
   // 如果登入的話，fetch會員的地址
-  // useEffect(() => {
-  //   getUserInfoFromServerJan()
-  // }, [])
+  useEffect(() => {
+    getUserInfoFromServerJan()
+    console.log('isLogin isLogin')
+  }, [isLogin])
 
   return (
     <>

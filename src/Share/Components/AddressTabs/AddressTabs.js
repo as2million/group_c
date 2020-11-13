@@ -89,6 +89,7 @@ function AddressTabs(props) {
                         //重置township的值
                         setTownship(0)
                         setTownship(-1)
+                        console.log('county onchange')
                       }}
                     >
                       <option value={-1}>請選擇城市</option>
@@ -288,7 +289,13 @@ function AddressTabs(props) {
             </div>
           </div>
         </div>
-        <div className="jan-tab-shops-map"></div>
+        <div className="jan-tab-shops-map">
+          <iframe
+            src="https://www.google.com/maps/d/u/0/embed?mid=1dbpBBf0U6YHIYOs45R-S9WgBp8wBSola"
+            width="600"
+            height="540"
+          ></iframe>
+        </div>
       </div>
     )
   }

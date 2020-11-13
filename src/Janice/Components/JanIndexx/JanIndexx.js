@@ -188,22 +188,9 @@ function JanIndexx(props) {
     document.querySelector('.jan-map-results').style = 'visibility: visible'
   }
 
-  //活動牆
-  // window.addEventListener('click', hideArrow)
-  // function hideArrow() {
-  //   if (activeItemIndex === 0) {
-  //     document.querySelector('.jan-event-hideArrowL').style = 'z-index: 200'
-  //   }
-
-  //   if (activeItemIndex === 5) {
-  //     document.querySelector('.jan-event-hideArrowR').style = 'z-index: 200'
-  //   }
-  //   console.log(activeItemIndex)
-  // }
-
   return (
     <>
-      {/* <VNavbar
+      <VNavbar
         {...props}
         county={county}
         setCounty={setCounty}
@@ -211,7 +198,7 @@ function JanIndexx(props) {
         setTownship={setTownship}
         address={address}
         setAddress={setAddress}
-      /> */}
+      />
 
       <div className="jan-fake-nav d-flex justify-content-center align-items-center">
         navbar的高度
@@ -334,7 +321,6 @@ function JanIndexx(props) {
 
       {/* intros */}
       <div className="container-fluid jan-p0 jan-intro-area">
-        {/* <div className="container jan-intro1 jan-p0"> */}
         {/* 在地小農 */}
         <div className="jan-intro1">
           {/* 介紹欄位 */}
@@ -402,7 +388,6 @@ function JanIndexx(props) {
             </div>
           </div>
         </div>
-        {/* </div> */}
         {/* 產銷履歷 */}
         <div className="jan-intro2">
           <div className="jan-intro2-wrap">
@@ -447,7 +432,21 @@ function JanIndexx(props) {
               <Button className="button-btn" text="客製化便當" />
             </div>
           </div>
-          <div className="jan-intro3-cards"></div>
+          <div className="jan-intro3-cards">
+            <video
+              preload="auto"
+              width="680"
+              height="500"
+              loop="true"
+              autoplay="autoplay"
+              muted="true"
+            >
+              <source
+                src="./Images/customIntro33.mp4"
+                type="video/mp4"
+              ></source>
+            </video>
+          </div>
         </div>
         {/* 揪團訂購 */}
         <div className="jan-intro4">
@@ -701,7 +700,7 @@ function JanIndexx(props) {
                         activePosition={'center'}
                         chevronWidth={60}
                         disableSwipe={true}
-                        alwaysShowChevrons={true}
+                        alwaysShowChevrons={false}
                         numberOfCards={4}
                         slidesToScroll={1}
                         outsideChevron={true}
