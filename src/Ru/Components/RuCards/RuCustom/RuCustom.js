@@ -640,6 +640,7 @@ function RuCustom(props) {
                   )}
                   {isCal && (
                     <RuCalA
+                      data={data}
                       riceName={riceName}
                       riceCal={riceCal}
                       meetName={meetName}

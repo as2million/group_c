@@ -64,7 +64,10 @@ function RuCard(props) {
       }
     }
   }, [])
-
+  
+  if (!data) {
+    return
+  }
   return (
     <>
       <div className="ru-card-container" id={cardMargin}>
