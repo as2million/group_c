@@ -160,7 +160,7 @@ function RuSalad(props) {
                 comment={data[12].contentNum}
                 buy={data[12].purchased}
                 price={data[12].price}
-                stars={5}
+                stars={data[12].startRating}
                 id={'ru-addCart-btn-12'}
                 proudctId={data[12].sid}
                 parentId={'ru-addCart-btn-warp-12'}
@@ -177,7 +177,7 @@ function RuSalad(props) {
                 comment={data[13].contentNum}
                 buy={data[13].purchased}
                 price={data[13].price}
-                stars={4}
+                stars={data[13].startRating}
                 id={'ru-addCart-btn-13'}
                 proudctId={data[13].sid}
                 parentId={'ru-addCart-btn-warp-13'}
@@ -194,7 +194,7 @@ function RuSalad(props) {
                 comment={data[14].contentNum}
                 buy={data[14].purchased}
                 price={data[14].price}
-                stars={3.5}
+                stars={data[14].startRating}
                 id={'ru-addCart-btn-14'}
                 proudctId={data[14].sid}
                 parentId={'ru-addCart-btn-warp-14'}
@@ -212,7 +212,7 @@ function RuSalad(props) {
                 comment={data[15].contentNum}
                 buy={data[15].purchased}
                 price={data[15].price}
-                stars={4.5}
+                stars={data[15].startRating}
                 id={'ru-addCart-btn-15'}
                 proudctId={data[15].sid}
                 parentId={'ru-addCart-btn-warp-15'}
@@ -229,7 +229,7 @@ function RuSalad(props) {
                 comment={data[16].contentNum}
                 buy={data[16].purchased}
                 price={data[16].price}
-                stars={4.5}
+                stars={data[16].startRating}
                 id={'ru-addCart-btn-16'}
                 proudctId={data[16].sid}
                 parentId={'ru-addCart-btn-warp-16'}
@@ -246,7 +246,7 @@ function RuSalad(props) {
                 comment={data[17].contentNum}
                 buy={data[17].purchased}
                 price={data[17].price}
-                stars={5}
+                stars={data[17].startRating}
                 id={'ru-addCart-btn-17'}
                 proudctId={data[17].sid}
                 parentId={'ru-addCart-btn-warp-17'}
@@ -264,7 +264,7 @@ function RuSalad(props) {
                 comment={data[18].contentNum}
                 buy={data[18].purchased}
                 price={data[18].price}
-                stars={3}
+                stars={data[18].startRating}
                 id={'ru-addCart-btn-18'}
                 proudctId={data[18].sid}
                 parentId={'ru-addCart-btn-warp-18'}
@@ -281,7 +281,7 @@ function RuSalad(props) {
                 comment={data[19].contentNum}
                 buy={data[19].purchased}
                 price={data[19].price}
-                stars={4}
+                stars={data[19].startRating}
                 id={'ru-addCart-btn-19'}
                 proudctId={data[19].sid}
                 parentId={'ru-addCart-btn-warp-19'}
@@ -298,7 +298,7 @@ function RuSalad(props) {
                 comment={data[20].contentNum}
                 buy={data[20].purchased}
                 price={data[20].price}
-                stars={4.5}
+                stars={data[20].startRating}
                 id={'ru-addCart-btn-20'}
                 proudctId={data[20].sid}
                 parentId={'ru-addCart-btn-warp-20'}
@@ -315,7 +315,7 @@ function RuSalad(props) {
                 comment={data[21].contentNum}
                 buy={data[21].purchased}
                 price={data[21].price}
-                stars={4.5}
+                stars={data[21].startRating}
                 id={'ru-addCart-btn-21'}
                 proudctId={data[21].sid}
                 parentId={'ru-addCart-btn-warp-21'}

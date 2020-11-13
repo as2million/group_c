@@ -178,7 +178,7 @@ function RuBento(props) {
                 comment={data[0].contentNum}
                 buy={data[0].purchased}
                 price={data[0].price}
-                stars={4.5}
+                stars={data[0].startRating}
                 id={'ru-addCart-btn-1'}
                 proudctId={data[0].sid}
                 parentId={'ru-addCart-btn-warp-1'}
@@ -196,7 +196,7 @@ function RuBento(props) {
                 comment={data[1].contentNum}
                 buy={data[1].purchased}
                 price={data[1].price}
-                stars={5}
+                stars={data[1].startRating}
                 id={'ru-addCart-btn-2'}
                 proudctId={data[1].sid}
                 parentId={'ru-addCart-btn-warp-2'}
@@ -214,7 +214,7 @@ function RuBento(props) {
                 comment={data[2].contentNum}
                 buy={data[2].purchased}
                 price={data[2].price}
-                stars={4}
+                stars={data[2].startRating}
                 id={'ru-addCart-btn-3'}
                 proudctId={data[2].sid}
                 parentId={'ru-addCart-btn-warp-3'}
@@ -233,7 +233,7 @@ function RuBento(props) {
                 comment={data[3].contentNum}
                 buy={data[3].purchased}
                 price={data[3].price}
-                stars={3.5}
+                stars={data[3].startRating}
                 id={'ru-addCart-btn-4'}
                 proudctId={data[3].sid}
                 parentId={'ru-addCart-btn-warp-4'}
@@ -251,7 +251,7 @@ function RuBento(props) {
                 comment={data[4].contentNum}
                 buy={data[4].purchased}
                 price={data[4].price}
-                stars={4.5}
+                stars={data[4].startRating}
                 id={'ru-addCart-btn-5'}
                 proudctId={data[4].sid}
                 parentId={'ru-addCart-btn-warp-5'}
@@ -269,7 +269,7 @@ function RuBento(props) {
                 comment={data[5].contentNum}
                 buy={data[5].purchased}
                 price={data[5].price}
-                stars={5}
+                stars={data[5].startRating}
                 id={'ru-addCart-btn-6'}
                 proudctId={data[5].sid}
                 parentId={'ru-addCart-btn-warp-6'}
@@ -288,7 +288,7 @@ function RuBento(props) {
                 comment={data[6].contentNum}
                 buy={data[6].purchased}
                 price={data[6].price}
-                stars={4}
+                stars={data[6].startRating}
                 id={'ru-addCart-btn-7'}
                 proudctId={data[6].sid}
                 parentId={'ru-addCart-btn-warp-7'}
@@ -306,7 +306,7 @@ function RuBento(props) {
                 comment={data[7].contentNum}
                 buy={data[7].purchased}
                 price={data[7].price}
-                stars={3}
+                stars={data[7].startRating}
                 id={'ru-addCart-btn-8'}
                 proudctId={data[7].sid}
                 parentId={'ru-addCart-btn-warp-8'}
@@ -324,7 +324,7 @@ function RuBento(props) {
                 comment={data[8].contentNum}
                 buy={data[8].purchased}
                 price={data[8].price}
-                stars={4.5}
+                stars={data[8].startRating}
                 id={'ru-addCart-btn-9'}
                 proudctId={data[8].sid}
                 parentId={'ru-addCart-btn-warp-9'}
@@ -342,7 +342,7 @@ function RuBento(props) {
                 comment={data[9].contentNum}
                 buy={data[9].purchased}
                 price={data[9].price}
-                stars={4}
+                stars={data[9].startRating}
                 id={'ru-addCart-btn-10'}
                 proudctId={data[9].sid}
                 parentId={'ru-addCart-btn-warp-10'}
@@ -360,7 +360,7 @@ function RuBento(props) {
                 comment={data[10].contentNum}
                 buy={data[10].purchased}
                 price={data[10].price}
-                stars={4}
+                stars={data[10].startRating}
                 id={'ru-addCart-btn-11'}
                 proudctId={data[10].sid}
                 parentId={'ru-addCart-btn-warp-11'}
@@ -378,7 +378,7 @@ function RuBento(props) {
                 comment={data[11].contentNum}
                 buy={data[11].purchased}
                 price={data[11].price}
-                stars={3.5}
+                stars={data[11].startRating}
                 id={'ru-addCart-btn-12'}
                 proudctId={data[11].sid}
                 parentId={'ru-addCart-btn-warp-12'}
