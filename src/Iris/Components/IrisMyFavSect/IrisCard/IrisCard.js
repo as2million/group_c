@@ -105,63 +105,58 @@ function IrisCard(props) {
           {/* 取間隔用 e */}
           {/* </div> */}
           <div className="iris-card-info">
-            <h2>{title}</h2>
-            <section>
-              <div>
-                {stars === 5 && (
-                  <div className="iris-card-star-warp">
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                  </div>
-                )}
-                {stars === 4.5 && (
-                  <div className="iris-card-star-warp">
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starHalf} />
-                  </div>
-                )}
-                {stars === 4 && (
-                  <div className="iris-card-star-warp">
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={star} />
-                  </div>
-                )}
-                {stars === 3.5 && (
-                  <div className="iris-card-star-warp">
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starHalf} />
-                    <img className="iris-card-star" src={star} />
-                  </div>
-                )}
-                {stars === 3 && (
-                  <div className="iris-card-star-warp">
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={starFull} />
-                    <img className="iris-card-star" src={star} />
-                    <img className="iris-card-star" src={star} />
-                  </div>
-                )}
+            <h2 className="iris-card-title">{title}</h2>
 
-                <span>
-                  <p className="iris-card-num iris-card-commentNum">
-                    {comment} 則評論
-                  </p>
-                  <p className="iris-card-num iris-card-buyNum">{buy} 已購買</p>
-                </span>
+            {stars === 5 && (
+              <div className="iris-card-star-warp">
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
               </div>
-            </section>
+            )}
+            {stars === 4.5 && (
+              <div className="iris-card-star-warp">
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starHalf} />
+              </div>
+            )}
+            {stars === 4 && (
+              <div className="iris-card-star-warp">
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={star} />
+              </div>
+            )}
+            {stars === 3.5 && (
+              <div className="iris-card-star-warp">
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starHalf} />
+                <img className="iris-card-star" src={star} />
+              </div>
+            )}
+            {stars === 3 && (
+              <div className="iris-card-star-warp">
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={starFull} />
+                <img className="iris-card-star" src={star} />
+                <img className="iris-card-star" src={star} />
+              </div>
+            )}
+
+            <p className="iris-card-num iris-card-commentNum">
+              {comment} 則評論
+            </p>
+
             <h3>${price}</h3>
           </div>
           {/* <div className="iris-card-price">

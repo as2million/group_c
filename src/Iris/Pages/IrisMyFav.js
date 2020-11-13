@@ -13,6 +13,7 @@ function IrirsMyFav(props) {
   const {
     isLogin,
     currentUser,
+    currentUserData,
     setShowLoginModal,
     // vnbar
     county,
@@ -35,6 +36,7 @@ function IrirsMyFav(props) {
         <IrisMemberMenuSect
           currentUser={currentUser}
           userFavDelete={userFavDelete}
+          currentUserData={currentUserData}
         />
         <IrisMyFavSect
           currentUser={currentUser}

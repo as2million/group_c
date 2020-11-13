@@ -129,18 +129,17 @@ function IrisMyFavSect(props) {
         <div className="iris-cards-container row">
           {currentUserFav.map((item, index) => {
             // const imageId = 'card-img-' + item.product_sid
-            const imageId = item.img_id
-            const price = '$' + item.price
             return (
               <div class="col-4">
                 <IrisCard
                   key={item.sid}
                   title={item.productname}
                   comment={item.contentNum}
-                  price={price}
-                  imgId={imageId}
+                  price={item.price}
+                  imgId={item.img_id}
                   showFavArr={showFavArr}
                   currentUserFav={currentUserFav}
+                  stars={item.starRating}
                 />
                 <div
                   id="iris-card-delete"
