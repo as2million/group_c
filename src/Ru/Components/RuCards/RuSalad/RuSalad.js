@@ -22,6 +22,8 @@ function RuSalad(props) {
   const [isShowNothing, setIsShowNothing] = useState(false)
   // 後端資料
   const [data, setData] = useState('')
+  const [dataFav, setDataFav] = useState('')
+  const [showFavArr, setShowFavArr] = useState([])
 
   // 向後端請求資料
   useEffect(() => {
@@ -34,13 +36,40 @@ function RuSalad(props) {
         const copyJson = [...myJson]
         setData(copyJson)
       })
+
+    // 拿 我的最愛
+    fetch('http://localhost:5000/member/myFavList') // 非同步
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (myJson) {
+        // console.log(myJson)
+        const copyJsonFav = [...myJson]
+        setDataFav(copyJsonFav)
+        console.log(copyJsonFav)
+      })
   }, [])
 
-  // 搜尋功能 s
   useEffect(() => {
-    if (!data) {
+    // 等待兩個fetch都結束
+    if (!data || !dataFav) {
       return
     }
+
+    // 拿到有幾筆要固定我的最愛按鈕 邏輯
+    const favArr = [] // 放抓到的dataFav[i].product_sid資料
+    for (let i = 0; i < dataFav.length; i++) {
+      // 如果當前會員 跟 我的最愛資料表的member_sid匹配
+      if (currentUser === dataFav[i].member_sid) {
+        // console.log(dataFav[i].product_sid)
+        favArr.push(dataFav[i].product_sid)
+      }
+    }
+    // console.log(favArr)
+    setShowFavArr(favArr) // 這樣才可以傳到RuAddFavorite
+    // console.log(showFavArr)
+
+    // 搜尋功能 s
     let title1 = data[12].productname
     let title2 = data[13].productname
     let title3 = data[14].productname
@@ -111,9 +140,9 @@ function RuSalad(props) {
       setIsShowNothing(true)
     }
     return () => {}
-  }, [searchInput, data]) // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
+  }, [searchInput, data, dataFav]) // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
   // 搜尋功能 e
-  if (!data) {
+  if (!data || !dataFav) {
     return <></>
   }
   return (
@@ -138,6 +167,7 @@ function RuSalad(props) {
                 imgId={data[12].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp2 && (
@@ -154,6 +184,7 @@ function RuSalad(props) {
                 imgId={data[13].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp3 && (
@@ -170,6 +201,7 @@ function RuSalad(props) {
                 imgId={data[14].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
 
@@ -187,6 +219,7 @@ function RuSalad(props) {
                 imgId={data[15].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp5 && (
@@ -203,6 +236,7 @@ function RuSalad(props) {
                 imgId={data[16].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp6 && (
@@ -219,6 +253,7 @@ function RuSalad(props) {
                 imgId={data[17].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
 
@@ -236,6 +271,7 @@ function RuSalad(props) {
                 imgId={data[18].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp8 && (
@@ -252,6 +288,7 @@ function RuSalad(props) {
                 imgId={data[19].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp9 && (
@@ -268,6 +305,7 @@ function RuSalad(props) {
                 imgId={data[20].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
             {itemWarp10 && (
@@ -284,6 +322,7 @@ function RuSalad(props) {
                 imgId={data[21].img_id}
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
+                showFavArr={showFavArr}
               />
             )}
           </div>

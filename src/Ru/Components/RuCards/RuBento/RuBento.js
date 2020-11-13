@@ -53,13 +53,18 @@ function RuBento(props) {
       })
   }, [])
 
-  // 拿到有幾筆要固定我的最愛按鈕 邏輯
   useEffect(() => {
+    // 等待兩個fetch都結束
+    if (!data || !dataFav) {
+      return
+    }
+
+    // 拿到有幾筆要固定我的最愛按鈕 邏輯
     const favArr = [] // 放抓到的dataFav[i].product_sid資料
     for (let i = 0; i < dataFav.length; i++) {
       // 如果當前會員 跟 我的最愛資料表的member_sid匹配
       if (currentUser === dataFav[i].member_sid) {
-        console.log(dataFav[i].product_sid)
+        // console.log(dataFav[i].product_sid)
         favArr.push(dataFav[i].product_sid)
       }
     }
@@ -68,9 +73,6 @@ function RuBento(props) {
     // console.log(showFavArr)
 
     // 搜尋功能 s
-    if (!data) {
-      return
-    }
     let title1 = data[0].productname
     let title2 = data[1].productname
     let title3 = data[2].productname
@@ -157,7 +159,8 @@ function RuBento(props) {
     return () => {}
   }, [searchInput, data, dataFav]) // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
 
-  if (!data) {
+  // 等待兩個fetch都結束
+  if (!data || !dataFav) {
     return <></>
   }
   return (
