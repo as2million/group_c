@@ -13,6 +13,7 @@ import RuRiceA from 'Ru/Components/RuFoodItems/RuRiceA/RuRiceA'
 import RuMeetA from 'Ru/Components/RuFoodItems/RuMeetA/RuMeetA'
 import RuVegetableA from 'Ru/Components/RuFoodItems/RuVegetableA/RuVegetableA'
 import RuEggA from 'Ru/Components/RuFoodItems/RuEggA/RuEggA'
+import RuCutsomHint from 'Ru/Components/RuCutsomHint/RuCutsomHint'
 
 // 引用共用元件
 import Card from 'Share/Components/Card/Card'
@@ -60,6 +61,7 @@ function RuCustom(props) {
   const [priority, setPriority] = useState('')
 
   // 開啟提示區
+  const [isShowHint, setIsShowHint] = useState(true)
   const [isShowHintA, setIsShowHintA] = useState(false)
   const [isShowHintB, setIsShowHintB] = useState(false)
   const [isShowHintC, setIsShowHintC] = useState(false)
@@ -297,6 +299,7 @@ function RuCustom(props) {
             break
         }
       } else if (e.target === boxA) {
+        setIsShowHint(false) // 東西放完就關閉示字樣
         // 配菜A區
         // 如果放開滑鼠的地方是在 boxA 身上
         switch (e.dataTransfer.getData('text/plain', e.target.id)) {
@@ -337,6 +340,7 @@ function RuCustom(props) {
             break
         }
       } else if (e.target === boxB) {
+        setIsShowHint(false) // 東西放完就關閉示字樣
         // 配菜B區
         // 如果放開滑鼠的地方是在 boxB 身上
         switch (e.dataTransfer.getData('text/plain', e.target.id)) {
@@ -374,6 +378,7 @@ function RuCustom(props) {
             break
         }
       } else if (e.target === boxC) {
+        setIsShowHint(false) // 東西放完就關閉示字樣
         // 配菜C區
         // 如果放開滑鼠的地方是在 boxC 身上
         switch (
@@ -419,7 +424,7 @@ function RuCustom(props) {
         e.target === img
       ) {
         // 白飯區
-
+        setIsShowHint(false) // 東西放完就關閉示字樣
         switch (
           e.dataTransfer.getData('text/plain', e.target.id) // 當source的id是
         ) {
@@ -524,6 +529,7 @@ function RuCustom(props) {
             <div className="ru-drop-warp" id="ru-dropOutAreaC">
               <div className="ru-box-container">
                 <div className="ru-box-warp">
+                  {isShowHint && <RuCutsomHint />}
                   {/* 放置菜色A區vegA s*/}
                   <div id="ru-hintA">
                     {isShowHintA && <img src={hintA}></img>}
@@ -569,7 +575,6 @@ function RuCustom(props) {
                   <div id="ru-hintD">
                     {isShowHintD && <img src={hintD}></img>}
                   </div>
-
                   <div id="ru-areaD" style={{ zIndex: priority }}>
                     <img
                       src={imgD}
