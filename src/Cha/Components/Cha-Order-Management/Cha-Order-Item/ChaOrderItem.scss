@@ -223,3 +223,13 @@
   width: 19.2rem;
   height: 30.3rem;
 }
+
+.cha-order-HeadPic,
+.cha-order-column1-picture {
+  width: 15rem;
+  height: 15rem;
+  background-color: rgb(212, 172, 119);
+}
+.cha-order-HeadPic {
+  object-fit: cover;
+}

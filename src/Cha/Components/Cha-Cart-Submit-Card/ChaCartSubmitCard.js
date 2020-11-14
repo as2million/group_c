@@ -238,6 +238,7 @@ function ChaCartSubmitCard(props) {
           className="cha-step-header"
           onClick={() => {
             localStorage.removeItem('cart');
+            localStorage.removeItem('cartNumber');
             const newCart = localStorage.getItem('cart') || '[]';
             setMeals(JSON.parse(newCart));
           }}

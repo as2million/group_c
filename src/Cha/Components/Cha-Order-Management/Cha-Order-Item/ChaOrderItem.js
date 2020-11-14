@@ -163,7 +163,16 @@ function ChaOrderItem(props) {
       <>
         <div className="cha-order-item-container">
           <div className="cha-order-row">
-            <div className="cha-order-column1-picture"></div>
+            <div className="cha-order-column1-picture">
+              <img
+                className="cha-order-HeadPic"
+                src={
+                  '/productImages/Bento/' +
+                  orderItem.order_detail[0].product_image +
+                  '.jpg'
+                }
+              ></img>
+            </div>
             <div className="cha-order-column2">
               <div className="cha-order-column2-row1">
                 <span>
@@ -188,6 +197,17 @@ function ChaOrderItem(props) {
                   </span>
                 </span>
               </div>
+              {orderItem.order_state === '揪團中' && (
+                <div className="cha-order-column2-row1">
+                  <span>
+                    <span> 揪團名稱: </span>
+                    <span> </span>
+                    <span className="cha-order-orange">
+                      {orderItem.order_name}
+                    </span>
+                  </span>
+                </div>
+              )}
               <div className="cha-order-column2-row2">
                 <span> 取餐聯絡人: </span>
                 <span>{orderItem.take_person}</span>
@@ -239,7 +259,7 @@ function ChaOrderItem(props) {
                     查閱發票
                   </span>
                 )}
-                {orderItem.order_state === '揪團中' && <span> 怪獸對決 </span>}
+                {/* {orderItem.order_state === '揪團中' && <span> 怪獸對決 </span>} */}
               </div>
             </div>
 
@@ -258,11 +278,12 @@ function ChaOrderItem(props) {
                             productName: item.product_name,
                             productPrice: item.product_price,
                             productAmount: item.product_amount,
+                            productImage: item.product_image,
                           })
                         );
                         // props.history.push('/cart');
                         orderItem.order_detail.forEach((item) =>
-                          handleCartNumber('minus', item.product_amount)
+                          handleCartNumber('add', item.product_amount)
                         );
                       }}
                     />
@@ -276,7 +297,7 @@ function ChaOrderItem(props) {
                     className="cha-order-btn-858585"
                     onClick={() => {
                       updateTotalToServer();
-                      console.log(props);
+                      // console.log(props);
                       props.setForceKey(true);
                       props.setTabindexKey('C');
                       console.log('點擊取消/退費');

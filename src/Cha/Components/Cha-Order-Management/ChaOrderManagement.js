@@ -19,8 +19,9 @@ function ChaOrderManagement(props) {
   // -----------退費後刷新頁面用-----------//
   const [changeOrderState, setChangeOrderState] = useState(0);
 
+  const { setShowBar, handleCartNumber } = props;
+
   // -----------恢復Navbar--------------//
-  const { setShowBar } = props;
   useEffect(() => {
     setShowBar(true);
     console.log('useEffect，設定navbar出現');
@@ -94,6 +95,7 @@ function ChaOrderManagement(props) {
               key={item.sid}
               orderItem={item}
               setChangeOrderState={setChangeOrderState}
+              handleCartNumber={handleCartNumber}
             />
           ))}
       </>
@@ -112,6 +114,7 @@ function ChaOrderManagement(props) {
               setForceKey={setForceKey}
               setTabindexKey={setTabindexKey}
               setChangeOrderState={setChangeOrderState}
+              handleCartNumber={handleCartNumber}
             />
           ))}
       </>
