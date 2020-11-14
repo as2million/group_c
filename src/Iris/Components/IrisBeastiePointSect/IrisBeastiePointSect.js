@@ -12,7 +12,7 @@ import { ReactComponent as BeastieCoupon20Grey } from './Images/beastie-coupon20
 import { ReactComponent as CouponVerticalLine } from './Images/coupon_vertical_line.svg'
 
 function IrisBeastiePointSect(props) {
-  const { currentUser } = props
+  const { currentUser, setShowRuleBox } = props
   const [couponList, setCouponList] = useState([])
 
   // 若localStorage有小怪獸名字就用此名，沒有就叫小怪獸
@@ -174,7 +174,14 @@ function IrisBeastiePointSect(props) {
             <VerticalLine />
 
             <div className="iris-icon-box d-flex align-items-center ">
-              <BesatieBook />
+              <div
+                className="iris-rule-book"
+                onClick={() => {
+                  setShowRuleBox(true)
+                }}
+              >
+                <BesatieBook />
+              </div>
               <p>遊戲規則</p>
             </div>
           </div>

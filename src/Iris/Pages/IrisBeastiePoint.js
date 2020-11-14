@@ -6,6 +6,7 @@ import VNavbar from 'Share/Components/VNavbar/VNavbar'
 import './IrisMemberPage.scss'
 import { Redirect } from 'react-router-dom'
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
+import IrisBeastieRuleBox from '../Components/IrisBeastieRuleBox/IrisBeastieRuleBox'
 
 function IrisBeastiePoint(props) {
   const {
@@ -21,11 +22,15 @@ function IrisBeastiePoint(props) {
     address,
     setAddress,
   } = props
+
+  const [showRuleBox, setShowRuleBox] = useState(false)
+
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
     // setShowLoginModal(true)
     return <Redirect to="/" />
   }
+
   return (
     <>
       <VNavbar
@@ -41,9 +46,16 @@ function IrisBeastiePoint(props) {
           currentUser={currentUser}
           currentUserData={currentUserData}
         />
-        <IrisBeastiePointSect currentUser={currentUser} />
+        <IrisBeastiePointSect
+          currentUser={currentUser}
+          setShowRuleBox={setShowRuleBox}
+        />
       </div>
       <ScrollButton />
+      <IrisBeastieRuleBox
+        showRuleBox={showRuleBox}
+        setShowRuleBox={setShowRuleBox}
+      />
     </>
   )
 }
