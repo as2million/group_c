@@ -120,15 +120,24 @@
   bottom: 0;
 }
 
-.card-star-warp {
+.iris-comment-text-wrapper .card-star-warp {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: auto;
 }
-.card-star {
-  margin: 0px 2px;
-  width: 14px;
+
+.iris-comment-text-wrapper .card-star-warp .ant-rate-star {
+  margin-right: 0px;
+}
+
+.iris-comment-text-wrapper .ant-rate-star {
+  height: 25px;
+}
+
+.iris-comment-text-wrapper .anticon.anticon-star {
+  height: 27px;
 }
 
 // comment image

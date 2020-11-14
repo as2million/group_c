@@ -99,9 +99,9 @@ function IrisBeastiePointSect(props) {
   // ------- coupon template --------- //
   const couponDisplay = currentUserCoupon.map((item, index) => {
     const isseuDate = item.coupon_issue.slice(0, 10)
-    const isseuTime = item.coupon_issue.slice(11, 16)
+    // const isseuTime = item.coupon_issue.slice(11, 16)
     const dueDate = item.coupon_due.slice(0, 10)
-    const dueTime = item.coupon_due.slice(11, 16)
+    const dueTime = '23:59'
     const couponImgId = 'coupon-img-' + item.coupon_type
     return (
       <div className="iris-coupon-box d-flex align-items-center ">
@@ -117,7 +117,7 @@ function IrisBeastiePointSect(props) {
             <div className="iris-coupon-issue">
               <span>領取時間:</span>
               <span> {isseuDate}</span>
-              <span> {isseuTime}</span>
+              {/* <span> {isseuTime}</span> */}
             </div>
             <div className="iris-coupon-due">
               <span>使用期限:</span>

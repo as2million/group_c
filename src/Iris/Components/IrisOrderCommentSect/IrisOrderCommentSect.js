@@ -4,7 +4,8 @@ import { ReactComponent as WaveLine } from './Images/wave_line.svg'
 import { ReactComponent as IrisMemberLine } from './Images/iris_member_line.svg'
 import star from './Images/star.svg'
 import IrisTextArea from './IrisTextArea/IrisTextArea'
-import { id } from 'date-fns/locale'
+import { Rate } from 'antd'
+import 'antd/dist/antd.css'
 // import InputH40 from './../../../Share/Components/Input/InputH40';
 
 function IrisUserCommentSect(props) {
@@ -174,8 +175,8 @@ function IrisUserCommentSect(props) {
     const imageId = 'comment-img-' + item.product_sid
     console.log(imageId)
     // 處理從資料庫撈來的日期格式
-    let commentDate = item.created_at.toLocaleString()
-    // let commentDate = item.created_at.slice(0, 10)
+    // let commentDate = item.created_at.toLocaleString()
+    let commentDate = item.created_at.slice(0, 10)
     // console.log(typeof commentDate)
 
     return (
@@ -197,11 +198,7 @@ function IrisUserCommentSect(props) {
             <div className="iris-comment-text-wrapper d-flex">
               <div>{item.productname}</div>&nbsp;&nbsp;
               <div className="card-star-warp">
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
+                <Rate count={5} value={item.startRating} allowHalf disabled />
               </div>
             </div>
             <div className="iris-comment-text">{item.content}</div>
