@@ -23,6 +23,7 @@ import cauliflowerAfter from './Images/cauliflowerAfter.svg'
 import cabageAfter from './Images/cabageAfter.svg'
 import cornAfter from './Images/cornAfter.svg'
 import qingjiangAfter from './Images/qingjiangAfter.svg'
+import eggplantAfter from './Images/eggplantAfter.svg'
 import eggAfter from './Images/eggAfter.svg'
 import poachedEggAfter from './Images/poachedEggAfter.svg'
 import riceAfter from './Images/riceAfter.svg'
@@ -94,6 +95,7 @@ function RuCustom(props) {
   const [veg2available, setVeg2available] = useState(true)
   const [veg3available, setVeg3available] = useState(true)
   const [veg4available, setVeg4available] = useState(true)
+  const [veg5available, setVeg5available] = useState(true)
 
   // 標記入box內的是哪種蔬菜
   const [putAclass, setPutAclass] = useState('ru-put')
@@ -242,6 +244,8 @@ function RuCustom(props) {
               setVeg3available(true)
             } else if (boxer.classList.contains('ru-put-veg-4')) {
               setVeg4available(true)
+            } else if (boxer.classList.contains('ru-put-veg-5')) {
+              setVeg5available(true)
             }
             break
           case 'ru-put-2': // 觸發事件在第二個盒子
@@ -259,6 +263,8 @@ function RuCustom(props) {
               setVeg3available(true)
             } else if (boxer.classList.contains('ru-put-veg-4')) {
               setVeg4available(true)
+            } else if (boxer.classList.contains('ru-put-veg-5')) {
+              setVeg5available(true)
             }
             break
           case 'ru-put-3': // 觸發事件在第三個盒子
@@ -276,6 +282,8 @@ function RuCustom(props) {
               setVeg3available(true)
             } else if (boxer.classList.contains('ru-put-veg-4')) {
               setVeg4available(true)
+            } else if (boxer.classList.contains('ru-put-veg-5')) {
+              setVeg5available(true)
             }
             break
           case 'ru-put-4': // 觸發事件在第四個盒子
@@ -338,6 +346,14 @@ function RuCustom(props) {
             setVeg4available(false)
             setPutAclass('ru-put ru-put-veg-4')
             break
+          case 'ru-veg-5':
+            setImgA(eggplantAfter)
+            setVegNameA(data[12].productName)
+            setVegPriceA(data[12].price)
+            setVegCalA(data[12].calories)
+            setVeg5available(false)
+            setPutAclass('ru-put ru-put-veg-5')
+            break
         }
       } else if (e.target === boxB) {
         setIsShowHint(false) // 東西放完就關閉示字樣
@@ -375,6 +391,14 @@ function RuCustom(props) {
             setVegCalB(data[11].calories)
             setVeg4available(false)
             setPutBclass('ru-put ru-put-veg-4')
+            break
+          case 'ru-veg-5':
+            setImgB(eggplantAfter)
+            setVegNameB(data[12].productName)
+            setVegPriceB(data[12].price)
+            setVegCalB(data[12].calories)
+            setVeg5available(false)
+            setPutBclass('ru-put ru-put-veg-5')
             break
         }
       } else if (e.target === boxC) {
@@ -415,6 +439,14 @@ function RuCustom(props) {
             setVegCalC(data[11].calories)
             setVeg4available(false)
             setPutCclass('ru-put ru-put-veg-4')
+            break
+          case 'ru-veg-5':
+            setImgC(eggplantAfter)
+            setVegNameC(data[12].productName)
+            setVegPriceC(data[12].price)
+            setVegCalC(data[12].calories)
+            setVeg5available(false)
+            setPutCclass('ru-put ru-put-veg-5')
             break
         }
       } else if (
@@ -838,6 +870,7 @@ function RuCustom(props) {
                         veg2available={veg2available}
                         veg3available={veg3available}
                         veg4available={veg4available}
+                        veg5available={veg5available}
                       />
                     )}
                     {selection === 'egg' && <RuEggA data={data} />}
@@ -862,7 +895,7 @@ function RuCustom(props) {
       {/* 商品區 - 網頁版 e */}
 
       {/* 商品區 - 手機版 s */}
-      <div className="ru-custom-containerC">
+      {/* <div className="ru-custom-containerC">
         <div className="ru-custom-warp">
           <div className="ru-drop-container">
             <div className="ru-drop-warp">
@@ -880,21 +913,21 @@ function RuCustom(props) {
                   <div className="ru-selectionBtn-warp ru-selectionBtn-warp1">
                     <RuButtonB
                       text={'副食'}
-                      // id={'ru-buttonB-rice'}
+                      id={'ru-buttonB-rice'}
                     />
                     <RuButtonB
                       text={'主食'}
-                      // id={'ru-buttonB-meet'}
+                      id={'ru-buttonB-meet'}
                     />
                   </div>
                   <div className="ru-selectionBtn-warp ru-selectionBtn-warp2">
                     <RuButtonB
                       text={'配菜'}
-                      // id={'ru-buttonB-vegetable'}
+                      id={'ru-buttonB-vegetable'}
                     />
                     <RuButtonB
                       text={'蛋'}
-                      // id={'ru-buttonB-egg'}
+                      id={'ru-buttonB-egg'}
                     />
                   </div>
                 </div>
@@ -903,9 +936,9 @@ function RuCustom(props) {
               <div className="ru-species-container">
                 <RuArrowLeft />
                 <div className="ru-species-warp">
-                  <ul>
-                    {/* 品項1 s*/}
-                    <li className="ru-species-item ru-species-item1">
+                  <ul> */}
+      {/* 品項1 s*/}
+      {/* <li className="ru-species-item ru-species-item1">
                       <div className="ru-species-img">
                         <img src={cauliflower}></img>
                       </div>
@@ -933,11 +966,11 @@ function RuCustom(props) {
                       <div className="ru-species-btn">
                         <RuButtonC text={'選擇'} />
                       </div>
-                    </li>
-                    {/* 品項1 e*/}
+                    </li> */}
+      {/* 品項1 e*/}
 
-                    {/* 品項2 s*/}
-                    <li className="ru-species-item ru-species-item2">
+      {/* 品項2 s*/}
+      {/* <li className="ru-species-item ru-species-item2">
                       <div className="ru-species-img">
                         <img src={cauliflower}></img>
                       </div>
@@ -965,11 +998,11 @@ function RuCustom(props) {
                       <div className="ru-species-btn">
                         <RuButtonC text={'選擇'} />
                       </div>
-                    </li>
-                    {/* 品項2 e*/}
+                    </li> */}
+      {/* 品項2 e*/}
 
-                    {/* 品項3 s*/}
-                    <li className="ru-species-item ru-species-item3">
+      {/* 品項3 s*/}
+      {/* <li className="ru-species-item ru-species-item3">
                       <div className="ru-species-img">
                         <img src={cauliflower}></img>
                       </div>
@@ -994,11 +1027,11 @@ function RuCustom(props) {
                           </li>
                         </ul>
                       </div>
-                    </li>
-                    {/* 品項3 e*/}
+                    </li> */}
+      {/* 品項3 e*/}
 
-                    {/* 品項4 s*/}
-                    <li className="ru-species-item ru-species-item4">
+      {/* 品項4 s*/}
+      {/* <li className="ru-species-item ru-species-item4">
                       <div className="ru-species-img">
                         <img src={cauliflower}></img>
                       </div>
@@ -1023,11 +1056,11 @@ function RuCustom(props) {
                           </li>
                         </ul>
                       </div>
-                    </li>
-                    {/* 品項4 e*/}
+                    </li> */}
+      {/* 品項4 e*/}
 
-                    {/* 品項5 s*/}
-                    <li className="ru-species-item ru-species-item5">
+      {/* 品項5 s*/}
+      {/* <li className="ru-species-item ru-species-item5">
                       <div className="ru-species-img">
                         <img src={cauliflower}></img>
                       </div>
@@ -1052,9 +1085,9 @@ function RuCustom(props) {
                           </li>
                         </ul>
                       </div>
-                    </li>
-                    {/* 品項5 e*/}
-                  </ul>
+                    </li> */}
+      {/* 品項5 e*/}
+      {/* </ul>
                 </div>
                 <RuArrowRight />
               </div>
@@ -1067,67 +1100,67 @@ function RuCustom(props) {
 
                 <div className="ru-info-container">
                   <div className="ru-info-item-container">
-                    <ul className="ru-info-item-warp">
-                      {/* 詳細資料品項1 s */}
-                      <li className="ru-info-item ru-info-item1">
+                    <ul className="ru-info-item-warp"> */}
+      {/* 詳細資料品項1 s */}
+      {/* <li className="ru-info-item ru-info-item1">
                         <div className="ru-category-container">
                           <p className="ru-category">副食</p>
                         </div>
                         <p className="ru-selectionName">香甜白飯</p>
                         <p className="ru-number">$10</p>
-                      </li>
-                      {/* 詳細資料品項1 e */}
+                      </li> */}
+      {/* 詳細資料品項1 e */}
 
-                      {/* 詳細資料品項2 s */}
-                      <li className="ru-info-item ru-info-item2">
+      {/* 詳細資料品項2 s */}
+      {/* <li className="ru-info-item ru-info-item2">
                         <div className="ru-category-container">
                           <p className="ru-category">主食</p>
                         </div>
                         <p className="ru-selectionName">慢煮嫩雞胸-蒜味香草</p>
                         <p className="ru-number">$55</p>
-                      </li>
-                      {/* 詳細資料品項2 e */}
+                      </li> */}
+      {/* 詳細資料品項2 e */}
 
-                      {/* 詳細資料品項3 s */}
-                      <li className="ru-info-item ru-info-item3">
+      {/* 詳細資料品項3 s */}
+      {/* <li className="ru-info-item ru-info-item3">
                         <div className="ru-category-container">
                           <p className="ru-category">配菜</p>
                         </div>
                         <p className="ru-selectionName">清炒高麗菜</p>
                         <p className="ru-number">$10</p>
-                      </li>
-                      {/* 詳細資料品項3 e */}
+                      </li> */}
+      {/* 詳細資料品項3 e */}
 
-                      {/* 詳細資料品項4 s */}
-                      <li className="ru-info-item ru-info-item4">
+      {/* 詳細資料品項4 s */}
+      {/* <li className="ru-info-item ru-info-item4">
                         <div className="ru-category-container">
                           <p className="ru-category">配菜</p>
                         </div>
                         <p className="ru-selectionName">綠色嫩花椰</p>
                         <p className="ru-number">$10</p>
-                      </li>
-                      {/* 詳細資料品項4 e */}
+                      </li> */}
+      {/* 詳細資料品項4 e */}
 
-                      {/* 詳細資料品項5 s */}
-                      <li className="ru-info-item ru-info-item5">
+      {/* 詳細資料品項5 s */}
+      {/* <li className="ru-info-item ru-info-item5">
                         <div className="ru-category-container">
                           <p className="ru-category">配菜</p>
                         </div>
                         <p className="ru-selectionName">黃金玉米</p>
                         <p className="ru-number">$15</p>
-                      </li>
-                      {/* 詳細資料品項5 e */}
+                      </li> */}
+      {/* 詳細資料品項5 e */}
 
-                      {/* 詳細資料品項6 s */}
-                      <li className="ru-info-item ru-info-item6">
+      {/* 詳細資料品項6 s */}
+      {/* <li className="ru-info-item ru-info-item6">
                         <div className="ru-category-container">
                           <p className="ru-category">蛋</p>
                         </div>
                         <p className="ru-selectionName">水煮蛋</p>
                         <p className="ru-number">$10</p>
-                      </li>
-                      {/* 詳細資料品項 e */}
-                    </ul>
+                      </li> */}
+      {/* 詳細資料品項 e */}
+      {/* </ul>
                   </div>
                   <div className="ru-info-total-container">
                     <div className="ru-info-total-warp">
@@ -1152,8 +1185,8 @@ function RuCustom(props) {
           </div>
         </div>
         <img src={background}></img>
-      </div>
-      {/* 商品區 - 網頁版 e */}
+      </div> */}
+      {/* 商品區 - 手機版 e */}
       {/* <Selecton /> */}
 
       {/* 背景米圖 s */}

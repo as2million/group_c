@@ -5,6 +5,7 @@ import cauliflower from './Images/cauliflower.svg'
 import cabage from './Images/cabage.svg'
 import corn from './Images/corn.svg'
 import qingjiang from './Images/qingjiang.svg'
+import eggplant from './Images/eggplant.svg'
 
 // 網頁版 配菜 選項
 function RuVegetableA(props) {
@@ -14,6 +15,7 @@ function RuVegetableA(props) {
     veg2available,
     veg3available,
     veg4available,
+    veg5available,
   } = props
   return (
     <>
@@ -159,6 +161,43 @@ function RuVegetableA(props) {
         </div>
       </li>
       {/* 品項4 e*/}
+      {/* 品項5 s*/}
+      <li className="ru-species-item ru-species-item5">
+        <div className="ru-species-img">
+          {veg5available ? (
+            <img
+              src={eggplant}
+              className="ru-items ru-veg"
+              id="ru-veg-5"
+            ></img>
+          ) : (
+            <img
+              src={eggplant}
+              className="ru-items ru-veg"
+              id="ru-veg-5"
+              style={{ pointerEvents: 'none', filter: 'grayscale(100%)' }}
+            ></img>
+          )}
+        </div>
+        <div className="ru-species-info">
+          <ul>
+            <li>
+              <h4>
+                {data[12].productName} <span>${data[12].price}</span>
+              </h4>
+            </li>
+            <li className="ru-species-calories">
+              熱量: {data[12].calories}大卡
+            </li>
+            <li className="ru-species-carbohydrates">
+              碳水化合物:{data[12].cabohydrate}g
+            </li>
+            <li className="ru-species-protein">蛋白質: {data[12].protein}g</li>
+            <li className="ru-species-fat">脂肪: {data[12].fat}g</li>
+          </ul>
+        </div>
+      </li>
+      {/* 品項5 e*/}
     </>
   )
 }

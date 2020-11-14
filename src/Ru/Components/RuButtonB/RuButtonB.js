@@ -75,7 +75,7 @@ function RuButtonB(props) {
         setIsShowHintD(false)
         setIsShowHintE(false)
         setIsShowHintF(false)
-        setLimitX(-450) // 這邊調配右滑極限值
+        setLimitX(-760) // 這邊調配右滑極限值
         break
       case 'ru-buttonB-egg':
         setSelection('egg') // 開啟蛋選區
