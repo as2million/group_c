@@ -111,7 +111,7 @@ function ChaReceiptType(props) {
     );
   };
 
-  // 切換用函式
+  // ---------------切換用函式---------------//
   const setTabActive = (addElem, removeName) => {
     let removeTargets = document.querySelectorAll(removeName);
     removeTargets.forEach((target) => {

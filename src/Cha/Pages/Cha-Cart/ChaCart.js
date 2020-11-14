@@ -10,111 +10,49 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import 'Cha/Pages/Cha-Cart/ChaCart.scss';
 
 function ChaCart(props) {
-  // 餐點資料
+  //-------------當前登入會員的id--------------//
+  //------------預設林凱特，member_sid = 1-----//
+  const [currentMemberSid, setCurrentMemberSid] = useState(1);
+
+  // --------------餐點資料--------------//
   const [meals, setMeals] = useState([]);
-  // 餐點資料(已處理)
-  // const [mealsDisplay, setMealsDisplay] = useState([]);
-  // 控制navbar
+
+  // ---------------控制navbar------------//
   const { setShowBar, setCartNumber } = props;
-  // 資料，準備傳送給「我的訂單」
+
+  // ----------給「會員資料表」用-------------//
   const [memberSid, setMemberSid] = useState(1);
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
-  const [takeWay, setTakeWay] = useState('');
-  const [takeDate, setTakeDate] = useState('');
+  const [takeWay, setTakeWay] = useState('外送');
+  const [takeDate, setTakeDate] = useState(new Date());
   const [takeTime, setTakeTime] = useState('11:00 ~ 11:30');
-  const [address, setAddress] = useState('');
-  const [beastieCoin, setBeastieCoin] = useState('');
   const [county, setCounty] = useState('');
   const [district, setDistrict] = useState('');
+  const [address, setAddress] = useState('');
+  const [beastieCoin, setBeastieCoin] = useState('');
 
-  // 掛載就設定隱藏navbar
+  //------------ 掛載就設定隱藏navbar----------//
   useEffect(() => {
     setShowBar(false);
+    console.log('useEffect，在購物車隱藏navbar');
   }, []);
 
-  // 讀取LocalStorage
+  //------------- 讀取LocalStorage-----------//
   function readCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]';
-    console.log(JSON.parse(newCart));
     setMeals(JSON.parse(newCart));
   }
-  // componentDidMount，一開始會載入資料(在元件初始化完成後)
+
+  // ------------componentDidMount，一開始會載入資料(在元件初始化完成後)------//
   useEffect(() => {
     readCartFromLocalStorage();
+    console.log('useEffect，讀取LocalStorage的「cart」', meals);
   }, []);
   // // }, [meals]);
-
   // // componentDidUpdate// 只要meals改變，就處理meals
-  // useEffect(() => {
-  //   // mealsDisplay運算
-  //   let newMealsDisplay = [];
 
-  //   //尋找mealsDisplay
-  //   for (let i = 0; i < meals.length; i++) {
-  //     //尋找mealsDisplay中有沒有此meals[i].id
-  //     //有找到會返回陣列成員的索引值
-  //     //沒找到會返回-1
-  //     const index = newMealsDisplay.findIndex(
-  //       (value) => value.id === meals[i].id
-  //     );
-  //     //有的話就數量+1
-  //     if (index !== -1) {
-  //       //每次只有加1個數量
-  //       // newMealsDisplay[index].productAmount++;
-  //       //假設是加數量的
-  //       newMealsDisplay[index].productAmount += meals[i].productAmount;
-  //     } else {
-  //       //沒有的話就把項目加入，數量為1
-  //       const newItem = { ...meals[i] };
-  //       newMealsDisplay = [...newMealsDisplay, newItem];
-  //     }
-  //   }
-  // // 刪掉數量為0的物件
-  // newMealsDisplay = newMealsDisplay.filter(
-  //   (item, index) => item.productAmount !== 0
-  // );
-  // console.log(newMealsDisplay);
-  // 只要meals改變，就處理meals
-  // setMealsDisplay(newMealsDisplay);
-  // }, [meals]);
-
-  // 新增LocalStorage;
-  // const createCartToLocalStorage = (value) => {
-  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  //   const newCart = [...currentCart, value];
-  //   localStorage.setItem('cart', JSON.stringify(newCart));
-
-  //   // // 設定資料
-  //   setMeals(newCart);
-  // };
-
-  // const updateCartToLocalStorage1111 = (item) => {
-  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  //   // find if the product in the localstorage with its id
-  //   const index = currentCart.findIndex((v) => v.id === item.id);
-
-  //   // found: index! == -1
-  //   if (index > -1) {
-  //     //currentCart[index].amount++
-  //     setProductName('這個商品已經加過了');
-  //     handleShow();
-  //     return;
-  //   } else {
-  //     currentCart.push(item);
-  //   }
-
-  //   localStorage.setItem('cart', JSON.stringify(currentCart));
-
-  //   // 設定資料
-  //   setMycart(currentCart);
-  //   setProductName('產品：' + item.name + '已成功加入購物車');
-  //   handleShow();
-  // };
-
-  // 更新購物車中的商品
+  //------------- 更新購物車中的商品----------------//
   const updateCartToLocalStorage = (item, amount = 1, isAdded = true) => {
     // console.log(item, isAdded);
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -128,30 +66,26 @@ function ChaCart(props) {
       } else if (!isAdded && currentCart[index].productAmount > 1) {
         currentCart[index].productAmount--;
       }
-      // isAdded &&
-      //   ? currentCart[index].productAmount++
-      //   : currentCart[index].productAmount--;
     } else {
       currentCart.push(item);
-      console.log('currentCart', currentCart);
     }
     localStorage.setItem('cart', JSON.stringify(currentCart));
     // 設定資料
     setMeals(currentCart);
+    console.log('新增資料到LocalStorage的「cart」', currentCart);
   };
-  // 刪除的商品數量
+  // ---------------刪除的商品數量---------------//
   const deleteItemToLocalStorage = (item) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-
     // find if the product in the localstorage with its id
     const newCart = currentCart.filter((v) => v.id !== item.id);
-
     localStorage.setItem('cart', JSON.stringify(newCart));
-
+    console.log('刪除LocalStorage「cart」：被刪資料', item);
     // 設定資料
     setMeals(newCart);
   };
-  // 20201112新版購物車icon計數處理器(cartNumber)
+
+  //--------------- 20201112新版購物車icon計數處理器(cartNumber)---------------//
   const handleCartNumber = (type = 'add', amount = 1) => {
     if (type === 'add') {
       let currentCartNumber =
@@ -159,6 +93,7 @@ function ChaCart(props) {
       let newCartNumber = +currentCartNumber + amount;
       localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
       setCartNumber(newCartNumber);
+      console.log('加入購物車的商品數量', amount);
     }
     if (
       type === 'minus' &&
@@ -169,10 +104,11 @@ function ChaCart(props) {
       let newCartNumber = +currentCartNumber - amount;
       localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
       setCartNumber(newCartNumber);
+      console.log('減去購物車的商品數量', amount);
     }
   };
-  //fixed card
 
+  //---------------fixed card(紹妤完成)---------------//
   window.addEventListener('scroll', () => {
     if (
       document.getElementsByClassName('cha-main-card-step1')[0] &&
@@ -188,25 +124,18 @@ function ChaCart(props) {
       const step3CardHeight = document.getElementsByClassName(
         'cha-main-card-step3'
       )[0].clientHeight;
-
       // console.log('step1', stepOneCardHeight)
-
       const asideCard = document.getElementsByClassName('cha-aside-card')[0];
       const asideColumn = document.getElementsByClassName('cha-aside')[0];
-
       //6 is border totals
       let mainHeight = step1CardHeight + step2CardHeight + step3CardHeight + 26;
-
       // console.log('mainHeight', mainHeight);
-
       asideColumn.style.height = `${mainHeight}px`;
       asideCard.style.top = `${window.pageYOffset}px`;
-
       // console.log('top', parseInt(asideCard.style.top))
       if (document.getElementsByClassName('cha-main')[0]) {
         // console.log('main height', document.getElementsByClassName('cha-main')[0].clientHeight)
         // console.log('cal top', mainHeight - parseInt(asideCard.style.top));
-
         if (mainHeight - parseInt(asideCard.style.top) < 570) {
           asideCard.style.bottom = '0px';
           asideCard.style.top = 'auto';
@@ -238,6 +167,8 @@ function ChaCart(props) {
           />
           {/* 步驟二 */}
           <ChaCartStepCardStep2
+            currentMemberSid={currentMemberSid}
+            setCurrentMemberSid={setCurrentMemberSid}
             memberSid={memberSid}
             setMemberSid={setMemberSid}
             name={name}
@@ -267,12 +198,15 @@ function ChaCart(props) {
           <ChaCartSubmitCard
             // step1
             meals={meals}
+            setMeals={setMeals}
             // mealsDisplay={mealsDisplay}
             // step2
             memberSid={memberSid}
             name={name}
             mobile={mobile}
             takeWay={takeWay}
+            county={county}
+            district={district}
             address={address}
             beastieCoin={beastieCoin}
             takeDate={takeDate}

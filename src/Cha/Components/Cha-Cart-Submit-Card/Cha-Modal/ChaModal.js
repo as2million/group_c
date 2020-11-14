@@ -3,7 +3,6 @@ import './ChaModal.scss';
 import Cross from './Images/cross.svg';
 // 優惠券的
 import { ReactComponent as CouponVerticalLine } from './Images1/coupon_vertical_line.svg';
-import InputR from '.././Input-R/InputR';
 const ChaModal = (props) => {
   const { closeModal } = props;
   const [couponList, setCouponList] = useState([]);
@@ -49,8 +48,7 @@ const ChaModal = (props) => {
     const couponImgId = 'coupon-img-' + item.coupon_type;
     return (
       <label className="cha-coupon-add-checkbox" key={index}>
-        <InputR
-          className="bg-warning text-warning"
+        <input
           type="radio"
           name="tableware"
           value={item.sid}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
-import UpdateCartToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalStorage';
+// import UpdateCartToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalStorage';
 
 function ChaProductList(props) {
   const [mycart1, setMycart1] = useState([]);
@@ -12,11 +12,11 @@ function ChaProductList(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const createCartToLocalStorage = (value) => {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+  const UpdateCartToLocalStorage = (value) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart1')) || [];
 
     const newCart = [...currentCart, value];
-    localStorage.setItem('cart', JSON.stringify(newCart));
+    localStorage.setItem('cart1', JSON.stringify(newCart));
 
     // 設定資料
     setMycart1(newCart);

@@ -4,24 +4,29 @@ import { ReactComponent as WaveLine } from './Images/wave_line.svg';
 import ChaOrderItem from 'Cha/Components/Cha-Order-Management/Cha-Order-Item/ChaOrderItem';
 
 function ChaOrderManagement(props) {
+  // ---------點選退費，實現自動切換頁面---------------//
   const [forceKey, setForceKey] = useState(false);
   const [tabindexKey, setTabindexKey] = useState('A');
 
   const [error, setError] = useState(null);
-  // 當前登入的會員id
+
+  // ---------當前登入的會員id--------------//
   const [currentMemberSid, setCurrentMemberSid] = useState(1);
-  // 整包訂單、訂單明細的資料
+
+  //----------- 整包訂單、訂單明細的資料------------//
   const [orderData, setOrderData] = useState([]);
-  // 退費後刷新頁面用
+
+  // -----------退費後刷新頁面用-----------//
   const [changeOrderState, setChangeOrderState] = useState(0);
-  // 恢復Navbar
+
+  // -----------恢復Navbar--------------//
   const { setShowBar } = props;
   useEffect(() => {
     setShowBar(true);
-    console.log('設定navbar出現');
+    console.log('useEffect，設定navbar出現');
   }, []);
 
-  // GET訂單資料
+  // ---------------讀入訂單資料--------------//
   async function getMyOrderData(paramsMemberId) {
     const url = `http://localhost:5000/cart-api/my-order-my-order-detail/${paramsMemberId}`;
 
@@ -34,39 +39,24 @@ function ChaOrderManagement(props) {
     });
     const response = await fetch(request);
     const dataAllOrder = await response.json();
-    console.log('fetch成功', dataAllOrder);
+    console.log('讀入訂單資料', dataAllOrder);
     setOrderData(dataAllOrder);
-    // console.log(dataAllOrder);
-    // console.log(
-    //   dataOrders[0] && dataOrders[0].take_person && dataOrders[0].take_person
-    // );
   }
-  // 掛載就讀入當前會員的訂單
+  // --------------掛載就讀入當前會員的訂單-----------------//
   useEffect(() => {
     getMyOrderData(currentMemberSid);
-    console.log('每次掛載就讀入當前會員的訂單');
+    console.log('useEffect，讀入當前會員的訂單資料');
   }, []);
 
-  // 重新載入資料，切換到退費頁面
+  //  --------------重新載入資料，切換到退費頁面-----------------//
   useEffect(() => {
     getMyOrderData(currentMemberSid);
-    //   console.log('2222');
-    //   // setOrderComponent(<ComponentC />);
-    //   let removeTargets = document.querySelectorAll(
-    //     '.cha-order-mana-title-switch'
-    //   );
-    //   removeTargets.forEach((target) => {
-    //     target.classList.remove('cha-active');
-    //   });
-    //   document
-    //     .querySelectorAll('.cha-order-mana-title-switch')[2]
-    //     .classList.add('cha-active');
     console.log(
-      'changeOrderState有變化就呼叫getMyOrderData(currentMemberSid);'
+      'useEffect，getMyOrderData(currentMemberSid)，[changeOrderState]'
     );
   }, [changeOrderState]);
 
-  // 分類訂單內容的函式
+  //  --------------分類訂單內容的函式-----------------//
   function handleClassifyState(orderState1, orderState2) {
     return orderData.filter(
       (item, index) =>

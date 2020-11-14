@@ -12,11 +12,13 @@ function ChaOrderItem(props) {
     setChangeOrderState,
     changeOrderState,
   } = props;
+
   const [error, setError] = useState(null);
 
   // 訂單明細的內容JSX
   const ComponentOrderDetail = (props) => {
     const { orderItem } = props;
+
     return (
       <>
         <div className="cha-order-detail-container container">
@@ -51,7 +53,7 @@ function ChaOrderItem(props) {
           </div>
           <div className="cha-detail-hover  justify-content-between">
             <span>餐具</span>
-            <span>{orderItem.tableware === '是' ? '是' : '否'}</span>
+            <span>{orderItem.tableware === 'yes' ? '是' : '否'}</span>
           </div>
           <div className="cha-horizontal-line-in-order"></div>
           <div className="cha-detail-hover justify-content-between">
@@ -146,17 +148,15 @@ function ChaOrderItem(props) {
           'Content-Type': 'application/json',
         }),
       });
-      // try {
-      const response = await fetch(request);
-      const data = await response.json();
-      setChangeOrderState(changeOrderState + 1);
-      // data會是一個物件值
-      // console.log('data', data);
-      console.log('POST有在動');
-      console.log('changeOrderState', changeOrderState);
-      //   } catch (error) {
-      //     setError(error);
-      //   }
+      try {
+        const response = await fetch(request);
+        const data = await response.json();
+        setChangeOrderState(changeOrderState + 1);
+        // console.log('data', data);
+        console.log('更改訂單狀態');
+      } catch (error) {
+        setError(error);
+      }
     }
 
     return (
@@ -205,7 +205,11 @@ function ChaOrderItem(props) {
               <div className="cha-order-column2-row4">
                 <span>
                   <span> 取餐地址: </span>
-                  <span>{orderItem.take_address}</span>
+                  <span>
+                    {orderItem.take_county +
+                      orderItem.take_district +
+                      orderItem.take_address}
+                  </span>
                 </span>
               </div>
               <div className="cha-order-column2-row5">

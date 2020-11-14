@@ -16,15 +16,15 @@ function ProductList(props) {
     // find if the product in the localstorage with its id
     const index = currentCart.findIndex((v) => v.id === item.id);
 
-    // found: index! == -1
-    if (index > -1) {
-      //currentCart[index].amount++
-      setProductName('這個商品已經加過了');
-      handleShow();
-      return;
-    } else {
-      currentCart.push(item);
-    }
+    // // found: index! == -1
+    // if (index > -1) {
+    //   //currentCart[index].amount++
+    //   setProductName('這個商品已經加過了');
+    //   handleShow();
+    //   return;
+    // } else {
+    //   currentCart.push(item);
+    // }
 
     localStorage.setItem('cart1', JSON.stringify(currentCart));
 

@@ -1,26 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import './ChaCartStepCardStep2.scss';
+import InputH40 from './InputH40/InputH40';
+
+// -------------時間套件，start-------------------//
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { addDays, setHours, setMinutes } from 'date-fns';
 import { registerLocale } from 'react-datepicker';
 import { zhTW } from 'date-fns/esm/locale';
-import InputH40 from './InputH40/InputH40';
-
 registerLocale('zh-TW', zhTW);
+// -------------時間套件，over-------------------//
 
 function ChaCartStepCardStep2(props) {
-  const [startDate, setStartDate] = useState(
-    setHours(setMinutes(new Date(), 30), 11)
-  );
+  // const [takeDate, setTakeDate] = useState(new Date());
 
+  //-------------地址重構(縣市+區域+詳細地址)----------//
   const [showAddress, setShowAddress] = useState('');
-  // 當前登入的會員id
-  const [currentMemberSid, setCurrentMemberSid] = useState(1);
+  // county={county}
+  // setCounty={setCounty}
+  // district={district}
+  // setDistrict={setDistrict}
 
-  // // 重構手機顯示
-  // const [showMobile, setShowMobile] = useState('');
   const {
+    currentMemberSid,
+    setCurrentMemberSid,
     setMemberSid,
     name,
     setName,
@@ -28,16 +31,18 @@ function ChaCartStepCardStep2(props) {
     setMobile,
     county,
     setCounty,
+    district,
     setDistrict,
     setAddress,
     setBeastieCoin,
+    takeDate,
     setTakeDate,
     takeTime,
     takeWay,
     setTakeWay,
     setTakeTime,
   } = props;
-  // console.log('檢查日期', startDate);
+
   // GET會員資料
   async function getMemberDataFromServer(paramsMemberId) {
     const url = `http://localhost:5000/cart-api/member/${paramsMemberId}`;
@@ -53,7 +58,8 @@ function ChaCartStepCardStep2(props) {
     const data = await response.json();
     // data會是一個物件值
     // console.log(data);
-    console.log('讀入會員資料成功');
+    console.log('讀入會員資料', data);
+
     setName(data[0].name);
     setMobile(data[0].mobile);
     setTakeWay(data[0].take_way);
@@ -68,13 +74,25 @@ function ChaCartStepCardStep2(props) {
   // componentDidMount，一掛載就GET會員資料表
   useEffect(() => {
     getMemberDataFromServer(currentMemberSid);
+    console.log('一掛載就讀取會員資料表');
   }, []);
 
-  // 重構手機顯示
-  // let phoneNumb0to3 = mobile.slice(0, 4);
-  // let phoneNumb4to6 = mobile.slice(4, 7);
-  // let phoneNumb7to9 = mobile.slice(7, 10);
-  // setShowMobile(phoneNumb0to3 + '-' + phoneNumb4to6 + '-' + phoneNumb7to9);
+  // // 重構手機顯示
+  // function showMobilInput() {
+  //   let phoneNumb0to3 = mobile.slice(0, 4);
+  //   let phoneNumb4to6 = mobile.slice(4, 7);
+  //   let phoneNumb7to9 = mobile.slice(7, 10);
+  //   if (mobile.length < 5) {
+  //     setShowMobile(phoneNumb0to3);
+  //   } else if (mobile.length >= 5 && mobile.length <= 7) {
+  //     setShowMobile(phoneNumb0to3 + '-' + phoneNumb4to6);
+  //   } else {
+  //     setShowMobile(phoneNumb0to3 + '-' + phoneNumb4to6 + '-' + phoneNumb7to9);
+  //   }
+  // }
+  // useEffect(() => {
+  //   showMobilInput();
+  // }, [mobile]);
 
   return (
     <>
@@ -120,10 +138,10 @@ function ChaCartStepCardStep2(props) {
                 // id="cha-step2-3-take-date"
                 // placeholder="請填寫姓名"
                 dateFormat="yyyy-MM-dd"
-                selected={startDate}
+                selected={takeDate}
                 onChange={(date) => {
                   setTakeDate(date);
-                  setStartDate(date);
+                  console.log(takeDate);
                 }}
                 minDate={Date.now()}
                 maxDate={addDays(new Date(), 13)}
