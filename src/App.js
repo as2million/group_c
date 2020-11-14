@@ -36,7 +36,8 @@ import JanIndex from 'Janice/Pages/JanIndex';
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ScrollToTop from '../src/Jess/Components/ScrollToTop';
+//加入 ScrollToTop
+import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
 
 // 路由表
 function App() {
@@ -46,7 +47,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(); // 目前用戶
   const [isLogin, setIsLogin] = useState(false); //是否登入，預設否
   const [showLoginModal, setShowLoginModal] = useState(false); //控制是否秀光箱
-
+  console.log('currentUser:', currentUser);
   //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address)到你們的頁面--------------//
   const [county, setCounty] = useState(-1);
   const [township, setTownship] = useState(-1);
@@ -110,6 +111,7 @@ function App() {
             showLoginModal={showLoginModal}
             setIsLogin={setIsLogin}
             isLogin={isLogin}
+            currentUser={currentUser}
           />
         </div>
         {/* 放切頁時不重新渲染的部份 e*/}

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import './JessModal.scss'
-import Cross from './Images/cross.svg'
+import React, { useState, useEffect } from 'react';
+import './JessModal.scss';
+import Cross from './Images/cross.svg';
 function JessModal(props) {
-  const { closeModal } = props
+  const { closeModal, nowUser, currentUser } = props;
 
   return (
     <>
@@ -18,7 +18,7 @@ function JessModal(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default JessModal
+export default JessModal;

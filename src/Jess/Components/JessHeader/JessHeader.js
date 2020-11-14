@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { withRouter, useParams } from 'react-router-dom'
-import { Rate } from 'antd'
-import 'antd/dist/antd.css'
-import './JessHeader.scss'
-import chickenpic from './Images/02.jpg'
-import Counter from '../../../Share/Components/Counter/Counter'
-import AddCart from 'Share/Components/AddCart/AddCart'
-import cart from '../../../Share/Components/AddCart/Images/cart.svg'
-import BreadCrumb from '../JessBreadCrumb/BreadCrumb'
+import React, { useState, useEffect } from 'react';
+import { withRouter, useParams } from 'react-router-dom';
+import { Rate } from 'antd';
+import 'antd/dist/antd.css';
+import './JessHeader.scss';
+import chickenpic from './Images/02.jpg';
+import Counter from '../../../Share/Components/Counter/Counter';
+import AddCart from 'Share/Components/AddCart/AddCart';
+import cart from '../../../Share/Components/AddCart/Images/cart.svg';
+import BreadCrumb from '../JessBreadCrumb/BreadCrumb';
 
 function JessProdoctList(props) {
   // const [count, setCount] = useState(1)
@@ -27,11 +27,12 @@ function JessProdoctList(props) {
     address,
     setAddress,
     currentUser,
-  } = props
-  console.log('currentUser:', currentUser)
+    nowUser,
+  } = props;
+  console.log('nowUser:', nowUser);
   // console.log(props)
   //useParams 設定id
-  let { id } = useParams()
+  let { id } = useParams();
   // const [menu, setMenu] = useState([])
   // async function bentoData() {
   //   const url = 'http://localhost:5000/product/bento'
@@ -59,46 +60,45 @@ function JessProdoctList(props) {
 
   const handleClick = (type) => {
     if (type === 'increment') {
-      setCount(count + 1)
+      setCount(count + 1);
     }
     if (type === 'decrement' && count > 1) {
-      setCount(count - 1)
+      setCount(count - 1);
     }
-  }
+  };
   const handleTotal = (type) => {
     if (total - 170 >= 0 && count > 0 && type === 'decrement') {
-      setTotal(total - 170)
+      setTotal(total - 170);
     }
     if (type === 'increment') {
-      setTotal(total + 170)
+      setTotal(total + 170);
     }
-  }
+  };
 
   const CreateCartToLocalStorage = (item, amount = 1, isAdded) => {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
-    const index = currentCart.findIndex((v) => v.id === item.id)
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const index = currentCart.findIndex((v) => v.id === item.id);
     if (index > -1) {
       if (isAdded) {
-        currentCart[index].productAmount += amount
+        currentCart[index].productAmount += amount;
       } else if (!isAdded && currentCart[index].productAmount > 1) {
-        currentCart[index].productAmount--
+        currentCart[index].productAmount--;
       }
     } else {
-      currentCart.push(item)
-      console.log('currentCart', currentCart)
+      currentCart.push(item);
     }
-    localStorage.setItem('cart', JSON.stringify(currentCart))
-  }
+    localStorage.setItem('cart', JSON.stringify(currentCart));
+  };
 
   const calA = (e) => {
-    setTabActive(e.target, '.jess-a')
-  }
+    setTabActive(e.target, '.jess-a');
+  };
   const setTabActive = (addElem, removeName) => {
-    let removeTargets = document.querySelectorAll(removeName)
+    let removeTargets = document.querySelectorAll(removeName);
     removeTargets.forEach((target) => {
-      target.classList.toggle('active')
-    })
-  }
+      target.classList.toggle('active');
+    });
+  };
   return (
     <>
       <div className="jess-fluidBg">
@@ -159,8 +159,8 @@ function JessProdoctList(props) {
             <div className="counter-box">
               <div
                 onClick={() => {
-                  handleClick('decrement')
-                  handleTotal('decrement')
+                  handleClick('decrement');
+                  handleTotal('decrement');
                   // if (count === 2) {
                   //   setHoverBackgroundColor('white')
                   //   setHoverMinusColor('#858585')
@@ -179,8 +179,8 @@ function JessProdoctList(props) {
               </div>
               <div
                 onClick={() => {
-                  handleClick('increment')
-                  handleTotal('increment')
+                  handleClick('increment');
+                  handleTotal('increment');
                 }}
                 className="counter-increment"
               >
@@ -192,7 +192,7 @@ function JessProdoctList(props) {
             <button
               className="addCart-btn addCart-btn-n"
               onClick={() => {
-                handleCartNumber('add', count)
+                handleCartNumber('add', count);
 
                 CreateCartToLocalStorage(
                   {
@@ -205,7 +205,7 @@ function JessProdoctList(props) {
 
                   count,
                   true
-                )
+                );
               }}
             >
               <img className="addCart-cart addCart-cart-n" src={cart} />
@@ -214,7 +214,7 @@ function JessProdoctList(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default withRouter(JessProdoctList)
+export default withRouter(JessProdoctList);
