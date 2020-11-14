@@ -46,9 +46,11 @@ function ChaCartStepCardStep3(props) {
   }
   useEffect(() => {
     ShowInCard();
+    console.log('useEffect,ShowInCard(),[creditNumber]');
   }, [creditNumber]);
   useEffect(() => {
     ShowInCard();
+    console.log('useEffect,ShowInCard(),[credit3Number]');
   }, [credit3Number]);
 
   return (

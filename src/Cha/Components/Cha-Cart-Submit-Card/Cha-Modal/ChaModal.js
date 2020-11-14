@@ -7,6 +7,7 @@ const ChaModal = (props) => {
   const { closeModal } = props;
   const [couponList, setCouponList] = useState([]);
   const [currentUser, setCurrentUser] = useState(1);
+  const { useBeastieCoin, setUseBeastieCoin, couponSid, setCouponSid } = props;
 
   // ------- 得到目前所有的優惠券資料 --------- //
   async function getCouponFromServer() {
@@ -46,34 +47,53 @@ const ChaModal = (props) => {
     const dueTime = item.coupon_due.slice(11, 16);
     const couponImgId = 'coupon-img-' + item.coupon_type;
     return (
-      <div className="cha-iris-coupon-box d-flex align-items-center ">
-        <div className="cha-iris-coupon-icon">
-          <div className="cha-iris-coupon-img" id={couponImgId}>
-            {/* <BeastieCoupon20 /> */}
+      <label className="cha-coupon-add-checkbox" key={index}>
+        <input
+          type="radio"
+          name="tableware"
+          value={item.sid}
+          onChange={(e) => {
+            // setUseBeastieCoin(e.target.value);
+            setCouponSid(e.target.value);
+            console.log('item.sid', couponSid === item.sid);
+            console.log('item.coupon_type', item.coupon_type);
+            console.log('couponSid', couponSid);
+            console.log('item.sid', item.sid);
+            setUseBeastieCoin(item.coupon_type * 10);
+          }}
+          checked={+couponSid === item.sid}
+        />
+
+        <div className="cha-iris-coupon-box d-flex align-items-center ">
+          <div className="cha-iris-coupon-icon">
+            <div className="cha-iris-coupon-img" id={couponImgId}>
+              {/* <BeastieCoupon20 /> */}
+            </div>
+          </div>
+          <CouponVerticalLine />
+          <div className="cha-iris-coupon-info d-flex flex-column">
+            <div className="cha-iris-coupon-title">
+              {item.coupon_type}0元怪獸幣
+            </div>
+            <div>
+              <div className="cha-iris-coupon-issue">
+                <span>領取時間:</span>
+                <span> {isseuDate}</span>
+                <span> {isseuTime}</span>
+              </div>
+              <div className="cha-iris-coupon-due">
+                <span>使用期限:</span>
+                <span> {dueDate}</span>
+                <span> {dueTime} </span>
+                <span>前</span>
+              </div>
+            </div>
           </div>
         </div>
-        <CouponVerticalLine />
-        <div className="cha-iris-coupon-info d-flex flex-column">
-          <div className="cha-iris-coupon-title">
-            {item.coupon_type}0元怪獸幣
-          </div>
-          <div>
-            <div className="cha-iris-coupon-issue">
-              <span>領取時間:</span>
-              <span> {isseuDate}</span>
-              <span> {isseuTime}</span>
-            </div>
-            <div className="cha-iris-coupon-due">
-              <span>使用期限:</span>
-              <span> {dueDate}</span>
-              <span> {dueTime} </span>
-              <span>前</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      </label>
     );
   });
+
   return (
     <>
       <div className="cha-claudia-overlay">
@@ -81,7 +101,7 @@ const ChaModal = (props) => {
           <div
             onClick={closeModal}
             className="cha-claudia-modal-cross-img"
-            // alt=""
+            alt=""
             // src={Cross}
           />
           {/* 光箱內容頂部 */}

@@ -1,7 +1,14 @@
 html {
   font-size: 10px;
 }
+.cha-aside {
+  position: relative;
+  height: 1600px;
+}
 
+.cha-main {
+  height: auto;
+}
 .cha-wrap {
   display: flex;
   justify-content: center;

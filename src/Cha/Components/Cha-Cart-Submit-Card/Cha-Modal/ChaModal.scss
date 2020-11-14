@@ -1,3 +1,13 @@
+$primary: #f5a016;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+
+.cha-coupon-add-checkbox input {
+  background-color: #faf;
+  color: #ffa;
+  height: 2rem;
+}
 .cha-claudia-overlay {
   position: fixed;
   display: block;
@@ -21,19 +31,31 @@
   padding: 6.5rem 7.5rem 6.5rem 8.5rem;
   position: relative;
 }
+// 我增添的樣式
 .cha-wrap-coupon-container {
   margin-top: 0rem;
-  width: 600px;
-  height: 350px;
+  // width: 600px;
+  height: 380px;
   overflow: hidden;
   overflow-y: scroll;
   overflow-x: hidden;
   background-attachment: scroll;
   // background-color: rgb(240, 240, 240);
 }
+.cha-coupon-add-checkbox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+.cha-iris-coupon-box {
+  width: 48rem;
+}
 .cha-wrap-coupon-container::-webkit-scrollbar {
   display: none;
 }
+
 .cha-claudia-modal-cross-img {
   background: url(./Images/cross.svg) no-repeat;
   background-position: center center;
@@ -43,7 +65,8 @@
   object-fit: cover;
   cursor: pointer;
   float: right;
-  border: 0;
+  position: absolute;
+  right: 6rem;
 }
 .cha-claudia-modal-cross-img:hover {
   background: url(./Images/cross-black.svg) no-repeat;
@@ -51,7 +74,6 @@
   background-size: cover;
   width: 3rem;
   height: 3rem;
-  border: 0;
 }
 
 @media only screen and (max-width: 57.6rem) {

@@ -15,18 +15,14 @@ function ChaCartStepCardStep1(props) {
     handleCartNumber,
   } = props;
 
-  // 刪除商品選項
+  // ---------------刪除商品選項---------------//
   const handleDelete = (id) => {
     const newMealsDisplay = meals.filter((item, index) => item.id !== id);
     setMeals(newMealsDisplay);
+    console.log('前端刪除商品選項');
   };
-  // const handleDelete = (id) => {
-  //   const newMealsDisplay = mealsDisplay.filter(
-  //     (item, index) => item.id !== id
-  //   );
-  //   setMealsDisplay(newMealsDisplay);
-  // };
-  // 計數器加減功能
+
+  //  ---------------計數器加減功能 ---------------//
   const handleCount = (id, type) => {
     const newMeals = [...meals];
     const mealsItemIndex = newMeals.findIndex((item) => item.id === id);
@@ -39,24 +35,10 @@ function ChaCartStepCardStep1(props) {
       }
       setMeals(newMeals);
     }
+    console.log('前端計數器加減');
   };
-  // const handleCount = (id, type) => {
-  //   const newMealsDisplay = [...mealsDisplay];
-  //   const mealsItemIndex = newMealsDisplay.findIndex((item) => item.id === id);
-  //   if (mealsItemIndex !== -1) {
-  //     if (type === 'increment') {
-  //       newMealsDisplay[mealsItemIndex].productAmount += 1;
-  //     }
-  //     if (
-  //       type === 'decrement' &&
-  //       newMealsDisplay[mealsItemIndex].productAmount > 1
-  //     ) {
-  //       newMealsDisplay[mealsItemIndex].productAmount -= 1;
-  //     }
-  //     setMealsDisplay(newMealsDisplay);
-  //   }
-  // };
-  // 計算商品價格小計
+
+  //  ---------------計算商品價格小計 ---------------//
   const calcuSubtotalPrice = (items) => {
     let total = 0;
     for (let i = 0; i < items.length; i++) {
@@ -65,7 +47,8 @@ function ChaCartStepCardStep1(props) {
     return total;
   };
   let subtotalPrice = calcuSubtotalPrice(meals);
-  // let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
+
+  //-----------DEMO用物件-----------//
   const demoMeals1 = {
     id: 1,
     productName: '中歐香料嫩雞胸',
@@ -87,12 +70,26 @@ function ChaCartStepCardStep1(props) {
     productAmount: 5,
     productImage: '00_bento-chicken-breast',
   };
-  const promotion2 = {
-    id: 7,
-    productName: '頂級熟成菲力牛排',
-    productPrice: 230,
+  const promotion3 = {
+    id: 13,
+    productName: '激瘦下午茶沙拉',
+    productPrice: 130,
     productAmount: 1,
-    productImage: '06_bento-tenderloin',
+    productImage: '12_afternoon',
+  };
+  const promotion2 = {
+    id: 14,
+    productName: '生酮沙拉',
+    productPrice: 130,
+    productAmount: 1,
+    productImage: '13_salad',
+  };
+  const promotion1 = {
+    id: 15,
+    productName: '蒜烤鮭魚沙拉',
+    productPrice: 150,
+    productAmount: 1,
+    productImage: '14_salmon',
   };
 
   return (
@@ -139,8 +136,16 @@ function ChaCartStepCardStep1(props) {
           <input type="button" value="確認" className="cha-step-check-btn" />
         </div> */}
         <JessListE
-          onClick={() => {
+          onClickPromotion1={() => {
+            updateCartToLocalStorage(promotion1);
+            handleCartNumber();
+          }}
+          onClickPromotion2={() => {
             updateCartToLocalStorage(promotion2);
+            handleCartNumber();
+          }}
+          onClickPromotion3={() => {
+            updateCartToLocalStorage(promotion3);
             handleCartNumber();
           }}
         />

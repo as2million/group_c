@@ -7,8 +7,10 @@
   margin-left: 0.5rem;
   padding: 4rem;
   box-sizing: border-box;
-  position: fixed;
-  top: 8.5rem;
+  position: absolute;
+  top: 0rem;
+  // position: fixed;
+  // top: 8.5rem;
   box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem #c2c2c279;
 }
 .cha-control {
@@ -81,7 +83,7 @@
 }
 .cha-little-total,
 .cha-shipping,
-.cha-tableware,
+.cha-monster-coin,
 .cha-shopping-list-total {
   font-size: 1.5rem;
   color: #858585;
@@ -90,8 +92,22 @@
   display: flex;
   justify-content: space-between;
 }
+.cha-monster-coin label {
+  cursor: pointer;
+}
+.cha-tableware input,
+.cha-monster-coin input {
+  margin-right: 1rem !important;
+}
 .cha-tableware label {
-  margin-right: 10rem;
+  margin-right: 2rem !important;
+}
+
+.cha-tableware {
+  font-size: 1.5rem;
+  color: #858585;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .cha-shopping-list-total-number {
@@ -126,3 +142,9 @@
 .cha-horizontal-line {
   border-bottom: 0.1rem solid #8585853a;
 }
+
+// .cha-tableware {
+// }
+// // Import Bootstrap and its default variables
+// @import '~bootstrap/scss/bootstrap.scss';
+// @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');

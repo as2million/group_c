@@ -7,7 +7,7 @@ import './IrisMemberPage.scss';
 import { Redirect } from 'react-router-dom';
 
 function IrisOrderManagement(props) {
-  const { isLogin, currentUser, setShowLoginModal } = props;
+  const { isLogin, currentUser, setShowLoginModal, handleCartNumber } = props;
   // if (isLogin === false) {
   //   setShowLoginModal(true)
   //   return <Redirect to="/" />
