@@ -29,7 +29,7 @@ function ChaOrderManagement(props) {
 
   // ---------------讀入訂單資料--------------//
   async function getMyOrderData(paramsMemberId) {
-    const url = `http://localhost:5000/cart-api/my-order-my-order-detail/${paramsMemberId}`;
+    const url = `http://localhost:5000/cart-api/my-order-my-order-detail-test/${paramsMemberId}`;
 
     const request = new Request(url, {
       method: 'GET',

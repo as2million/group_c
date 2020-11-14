@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
 import { Link, Switch } from 'react-router-dom';
 import './ChaOrderItem.scss';
+import ChaGrayButton from './Cha-Gray-Button/ChaGrayButton';
+import ChaOrangeButton from './Cha-Orange-Button/ChaOrangeButton';
+import ChaOrangeButtonPlus from './Cha-Orange-Button-Plus/ChaOrangeButtonPlus';
 import UpdateCartToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalStorage';
 
 // import { Button, Collapse } from 'react-bootstrap';
@@ -82,10 +85,11 @@ function ChaOrderItem(props) {
               <span className="col-2">${item.product_price}</span>
               <span className="col-3">X {item.product_amount}</span>
               <span className="col-2">
-                <input
+                <ChaOrangeButtonPlus
                   type="button"
                   value="我要評價"
-                  className="cha-detail-btn"
+                  text="我要評價"
+                  className="cha-detail-btn cha-order-orange-plus-btn"
                 />
               </span>
             </div>
@@ -139,7 +143,7 @@ function ChaOrderItem(props) {
     async function updateTotalToServer() {
       // const newOrderState = { order_state: '已退費' };
 
-      const url = 'http://localhost:5000/cart-api/my-order-chang-state';
+      const url = 'http://localhost:5000/cart-api/my-order-chang-state-test';
       const request = new Request(url, {
         method: 'POST',
         body: JSON.stringify(idForChangeState),
@@ -268,9 +272,7 @@ function ChaOrderItem(props) {
                 {(orderItem.order_state === '已送達' ||
                   orderItem.order_state === '已退費') && (
                   <Link to="/cart">
-                    <input
-                      type="button"
-                      value="再次訂購"
+                    <div
                       onClick={() => {
                         orderItem.order_detail.forEach((item) =>
                           UpdateCartToLocalStorage({
@@ -286,15 +288,19 @@ function ChaOrderItem(props) {
                           handleCartNumber('add', item.product_amount)
                         );
                       }}
-                    />
+                    >
+                      <ChaOrangeButton
+                        type="button"
+                        value="再次訂購"
+                        text="再次訂購"
+                        className="cha-order-orange-btn"
+                      />
+                    </div>
                   </Link>
                 )}
                 {(orderItem.order_state === '未送達' ||
                   orderItem.order_state === '火速運送中') && (
-                  <input
-                    type="button"
-                    value="取消/退費"
-                    className="cha-order-btn-858585"
+                  <div
                     onClick={() => {
                       updateTotalToServer();
                       // console.log(props);
@@ -302,16 +308,44 @@ function ChaOrderItem(props) {
                       props.setTabindexKey('C');
                       console.log('點擊取消/退費');
                     }}
-                  />
+                  >
+                    <ChaGrayButton
+                      type="button"
+                      value="取消/退費"
+                      text="取消/退費"
+                      className="cha-order-btn-858585 cha-order-refund-btn"
+                    />
+                  </div>
                 )}
                 {orderItem.order_state === '揪團中' && (
-                  <input type="button" value="加入點餐" />
+                  <div>
+                    <ChaOrangeButton
+                      type="button"
+                      value="加入點餐"
+                      text="加入點餐"
+                      className="cha-order-orange-btn"
+                    />
+                  </div>
                 )}
                 {orderItem.order_state === '揪團中' && (
-                  <input type="button" value="分享連結" />
+                  <div>
+                    <ChaOrangeButton
+                      type="button"
+                      value="分享連結"
+                      text="分享連結"
+                      className="cha-order-orange-btn"
+                    />
+                  </div>
                 )}
                 {orderItem.order_state === '揪團中' && (
-                  <input type="button" value="收單" />
+                  <div>
+                    <ChaOrangeButton
+                      type="button"
+                      value="收單"
+                      text="收單"
+                      className="cha-order-orange-btn"
+                    />
+                  </div>
                 )}
               </div>
             </div>

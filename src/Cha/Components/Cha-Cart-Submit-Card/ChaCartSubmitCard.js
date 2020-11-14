@@ -118,7 +118,7 @@ function ChaCartSubmitCard(props) {
       created_at: new Date(),
     };
 
-    const url = 'http://localhost:5000/cart-api/my-order';
+    const url = 'http://localhost:5000/cart-api/my-order-test';
     // console.log('takeDate', takeDate);
     console.log('bodyData', bodyData);
     const request = new Request(url, {
@@ -154,10 +154,10 @@ function ChaCartSubmitCard(props) {
       product_amount: item.productAmount,
       product_name: item.productName,
       product_price: item.productPrice,
-      product_image: item.productImage,
+      product_image: item.productImage ? item.productImage : '',
     }));
 
-    const url = 'http://localhost:5000/cart-api/my-order-detail';
+    const url = 'http://localhost:5000/cart-api/my-order-detail-test';
     console.log('OrderDetailArr', myOrderDetailArray);
     const request = new Request(url, {
       method: 'POST',
@@ -200,7 +200,7 @@ function ChaCartSubmitCard(props) {
   //   }
   // }
   async function deleteCouponListData(paramsCouponSid) {
-    const url = `http://localhost:5000/cart-api/use-coupon/${paramsCouponSid}`;
+    const url = `http://localhost:5000/cart-api/use-coupon-test/${paramsCouponSid}`;
 
     const request = new Request(url, {
       method: 'DELETE',
@@ -321,10 +321,9 @@ function ChaCartSubmitCard(props) {
         <div
           className="cha-shopping-cart-btn-div"
           onClick={() => {
-            console.log('takeDate', takeDate);
-            createToMyOrder();
-
-            // props.history.push('/orderManagement');
+            console.log('購物車提交保險，商品為0，不能送資料');
+            totalAmount && createToMyOrder();
+            // props.history.push('/orderManagement');移動到第二支fetch
             handleSubmitCartRemoveLocalStorage();
             handleCartNumber('minus', totalAmount);
             couponSid && deleteCouponListData(couponSid);
