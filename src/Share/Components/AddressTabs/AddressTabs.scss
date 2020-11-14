@@ -206,6 +206,9 @@ $lightBrown: #f7ede2;
   font-weight: 400;
   color: $gray;
   visibility: hidden;
+  .jan-tabs-highlight {
+    color: $deepYello;
+  }
 }
 .jan-tab-address-map {
   width: 60rem;

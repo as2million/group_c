@@ -180,6 +180,54 @@ function JanIndexx(props) {
   }
   window.addEventListener('scroll', downloadIcon)
 
+  //活動牆
+  function event1C() {
+    document.querySelector('.jan-event-img').style =
+      'background: url("./Images/Images/event1.png") center center no-repeat;background-size: cover'
+    document.querySelector('.jan-event-title1').style = 'display:block'
+    document.querySelector('.jan-event-title2').style = 'display:none'
+    document.querySelector('.jan-event-title3').style = 'display:none'
+    document.querySelector('.jan-event-content1').style = 'display:block'
+    document.querySelector('.jan-event-content2').style = 'display:none'
+    document.querySelector('.jan-event-content3').style = 'display:none'
+  }
+  function event2C() {
+    document.querySelector('.jan-event-img').style =
+      'background: url("./Images/Images/event2.jpg") center center no-repeat;background-size: cover'
+    document.querySelector('.jan-event-title2').style = 'display:block'
+    document.querySelector('.jan-event-title3').style = 'display:none'
+    document.querySelector('.jan-event-title1').style = 'display:none'
+    document.querySelector('.jan-event-content2').style = 'display:block'
+    document.querySelector('.jan-event-content3').style = 'display:none'
+    document.querySelector('.jan-event-content1').style = 'display:none'
+  }
+  function event3C() {
+    document.querySelector('.jan-event-img').style =
+      'background: url("./Images/Images/event3.jpg") center center no-repeat;background-size: cover'
+    document.querySelector('.jan-event-title3').style = 'display:block'
+    document.querySelector('.jan-event-title2').style = 'display:none'
+    document.querySelector('.jan-event-title1').style = 'display:none'
+    document.querySelector('.jan-event-content3').style = 'display:block'
+    document.querySelector('.jan-event-content2').style = 'display:none'
+    document.querySelector('.jan-event-content1').style = 'display:none'
+  }
+  function event4C() {
+    document.querySelector('.jan-event-img').style =
+      'background: url("./Images/Images/event4.jpg") center center no-repeat;background-size: cover'
+  }
+  function event5C() {
+    document.querySelector('.jan-event-img').style =
+      'background: url("./Images/Images/event5.jpg") center center no-repeat;background-size: cover'
+  }
+  function event6C() {
+    document.querySelector('.jan-event-img').style =
+      'background: url("./Images/Images/event6.jpg") center center no-repeat;background-size: cover'
+  }
+  function event7C() {
+    document.querySelector('.jan-event-img').style =
+      'background: url("./Images/Images/event7.png") center center no-repeat;background-size: cover'
+  }
+
   //地圖顯示外送金額及自取門市
   const hideInfo = () => {
     document.querySelector('.jan-map-results').style = 'visibility: hidden'
@@ -357,7 +405,6 @@ function JanIndexx(props) {
                 </p>
                 <Link style={{ 'text-decoration': 'none' }} to="/farmIntro">
                   <div className="jan-card-arrow float-right"></div>
-
                   <br />
                   <p className="jan-card1-viewmore float-right">view more</p>
                 </Link>
@@ -653,15 +700,21 @@ function JanIndexx(props) {
               <div className="row">
                 <div className="col-12 d-flex justify-content-center">
                   <div className="jan-event d-flex ">
-                    <div className="jan-event-img">
-                      <img src="" alt="" />
-                    </div>
+                    <div className="jan-event-img"></div>
                     <div className="jan-event-text text-center m-auto">
-                      <div className="jan-event-title mb-5">
+                      <div className="jan-event-title jan-event-title1 mb-5">
                         <p>現在訂購</p>
                         <p>就送 Blender Bottle 搖搖杯</p>
                       </div>
-                      <div className="jan-event-content mt-3">
+                      <div className="jan-event-title jan-event-title2 mb-5">
+                        <p>火熱上架！</p>
+                        <p>下週百元餐盒，三天、三種限定主菜！</p>
+                      </div>
+                      <div className="jan-event-title jan-event-title3 mb-5">
+                        <p>網購消費</p>
+                        <p>指定品項滿額享優惠</p>
+                      </div>
+                      <div className="jan-event-content  jan-event-content1 mt-3">
                         <p>環保，才是歷久不衰的流行。</p>
                         <p>現在訂購，就送Blender Bottle搖搖杯</p>
                         <br />
@@ -673,7 +726,55 @@ function JanIndexx(props) {
                         <p>包兩週 外送宅配到公司</p>
                         <br />
                         <br />
-                        <p className="jan-call-to-action">馬上訂購</p>
+                        <Link
+                          style={{ 'text-decoration': 'none' }}
+                          to="/productList"
+                        >
+                          <p className="jan-call-to-action">馬上訂購</p>
+                        </Link>
+                      </div>
+                      <div className="jan-event-content  jan-event-content2 mt-3">
+                        <p>下週百元餐盒，三天、三種限定主菜！</p>
+                        <p>蒜泥厲害豬五花、海灘慢烤味噌魚、海灘橄欖油蔥雞腿</p>
+                        <br />
+                        <br />
+                        <p>
+                          餐盒使用低GI糙米紫米飯、新鮮季節時蔬、超甜66號地瓜、輕滷蛋
+                        </p>
+                        <br />
+                        <br />
+                        <p>吃午餐再也不是負擔</p>
+                        <p>血糖不會驟升陡降、下午不再昏昏欲睡</p>
+                        <br />
+                        <br />
+                        <Link
+                          style={{ 'text-decoration': 'none' }}
+                          to="/productList"
+                        >
+                          <p className="jan-call-to-action">來去餐點</p>
+                        </Link>
+                      </div>
+                      <div className="jan-event-content  jan-event-content3 mt-3">
+                        <p>12/31前，網購消費指定品項滿$500元，回饋$100！</p>
+                        <br />
+                        <p>活動辦法：</p>
+                        <p>
+                          7/1起，於拾餐網站單筆消費指定品項滿$500元(常溫/冷凍/冷藏訂單分開計算)，即可獲得乙張$100電子優惠券，消費滿$2,500(含)以上，獲貳張$250電子優惠券。
+                        </p>
+                        <br />
+                        <br />
+                        <p>
+                          * 以線上結帳付款之訂單，需完成付款，訂單才算成立。
+                        </p>
+                        <p>* 已取消之訂單，將失去本活動之資格。</p>
+                        <br />
+                        <br />
+                        <Link
+                          style={{ 'text-decoration': 'none' }}
+                          to="/productList"
+                        >
+                          <p className="jan-call-to-action">來去餐點</p>
+                        </Link>
                       </div>
                       <div className="jan-event-date">
                         活動日期：2020.11.1~2020.12.31
@@ -709,25 +810,25 @@ function JanIndexx(props) {
                         rightChevron={<ArrowRight />}
                         leftChevron={<ArrowLeft />}
                       >
-                        <div className="img-row">
+                        <div onClick={event1C} className="img-row">
                           <img alt="" src={event1} />
                         </div>
-                        <div className="img-row">
+                        <div onClick={event2C} className="img-row">
                           <img alt="" src={event2} />
                         </div>
-                        <div className="img-row">
+                        <div onClick={event3C} className="img-row">
                           <img alt="" src={event3} />
                         </div>
-                        <div className="img-row">
+                        <div onClick={event4C} className="img-row">
                           <img alt="" src={event4} />
                         </div>
-                        <div className="img-row">
+                        <div onClick={event5C} className="img-row">
                           <img alt="" src={event5} />
                         </div>
-                        <div className="img-row">
+                        <div onClick={event6C} className="img-row">
                           <img alt="" src={event6} />
                         </div>
-                        <div className="img-row">
+                        <div onClick={event7C} className="img-row">
                           <img alt="" src={event7} />
                         </div>
                       </ItemsCarousel>
@@ -812,7 +913,7 @@ function JanIndexx(props) {
                 <div className="mb-4">
                   <form name="jan-adress-form" id="jan-adress-form">
                     <p className="jan-form-announce">
-                      請填寫地址，查看免運金額
+                      只需請填寫完整地址，美味方便到手
                     </p>
                     <div className="jan-adress-select">
                       <div className="iris-mainpage-select-wrapper d-flex">
@@ -904,7 +1005,7 @@ function JanIndexx(props) {
                         className="button-btn-y "
                         text="查詢結果"
                       >
-                        查詢結果
+                        確認地址
                       </button>
                     </div>
                   </form>
@@ -912,18 +1013,18 @@ function JanIndexx(props) {
                 <div className="jan-map-results mt-4">
                   <p>
                     所在地點，符合滿
-                    <span className="jan-price">
+                    <span className="jan-price jan-tabs-highlight">
                       {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
                       {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
                       {county > -1 &&
                         township > -1 &&
                         dataprice[county][township]}
                     </span>
-                    <span>元</span>免運費
+                    <span className="jan-tabs-highlight">元</span>免運費
                   </p>
-                  <p>
+                  {/* <p>
                     最近的自取地點是大安門市<span>（查看其他門市）</span>
-                  </p>
+                  </p> */}
                 </div>
                 <div className="jan-map-buttons d-flex justify-content-between mt-4">
                   <Link style={{ 'text-decoration': 'none' }} to="/productList">
@@ -952,6 +1053,7 @@ function JanIndexx(props) {
           {/* 地圖 */}
           <div className="jan-map-view">
             <iframe
+              title="indexDataMap"
               src="https://plotdb.io/v/chart/27933"
               width="816px"
               height="550px"

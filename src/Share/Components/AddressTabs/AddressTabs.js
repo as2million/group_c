@@ -72,7 +72,8 @@ function AddressTabs(props) {
         <div className="jan-tab-address-form-wrap">
           <div className="p-5">
             <form name="jan-address-form" id="jan-address-form">
-              <p className="jan-form-announce">請填寫地址，查看免運金額</p>
+              <p className="jan-form-announce">只需請填寫完整地址</p>
+              <p className="jan-form-announce">美味方便到手</p>
 
               <div className="jan-address-select">
                 <div className="iris-mainpage-select-wrapper d-flex">
@@ -167,7 +168,7 @@ function AddressTabs(props) {
                   className="button-btn-y "
                   text="查詢結果"
                 >
-                  查詢結果
+                  確認地址
                 </button>
               </div>
               <br />
@@ -175,14 +176,14 @@ function AddressTabs(props) {
               <div className="jan-map-results p-2 mt-4 ">
                 <p>
                   所在地點，符合滿
-                  <span>
+                  <span className="jan-tabs-highlight">
                     {/* 如果country與township的索引值均大於-1時(也就是都有選的情況下)，呈現postcode */}
                     {/* `條件 && 呈現` 是 `if(條件){呈現}` 的簡寫法，只在React JSX中可以使用 */}
                     {county > -1 &&
                       township > -1 &&
                       dataprice[county][township]}
                   </span>
-                  元免運費
+                  <span className="jan-tabs-highlight">元</span>免運費
                 </p>
               </div>
 
@@ -202,6 +203,7 @@ function AddressTabs(props) {
         {/* 滿額免運地圖 */}
         <div className="jan-tab-address-map">
           <iframe
+            title="tabsDataMap"
             src="https://plotdb.io/v/chart/27933"
             width="600px"
             height="565px"

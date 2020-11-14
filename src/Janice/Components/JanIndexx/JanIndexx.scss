@@ -12,6 +12,7 @@ $deepYello: #f5a016;
 
 @import '../../../Share/Components/Button/Variable.scss';
 @import '../../../Share/Components/Button/Button.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
 
 .jan-p0 {
   padding: 0 !important;
@@ -841,13 +842,29 @@ $deepYello: #f5a016;
   font-size: 1.8rem;
   font-family: 'Noto Serif TC', serif;
   color: $orange;
-  line-height: 10px;
+  line-height: 13px;
+  font-weight: 700;
+}
+.jan-event-title2 {
+  display: none;
+}
+.jan-event-title3 {
+  display: none;
+}
+.jan-event-content2 {
+  display: none;
+}
+.jan-event-content3 {
+  display: none;
 }
 .jan-event-content {
   font-size: 1.3rem;
   font-family: 'Noto Sans TC', sans-serif;
   color: $gray;
   line-height: 10px;
+  p {
+    line-height: 15px;
+  }
   .jan-call-to-action {
     color: $orange;
   }
