@@ -17,8 +17,13 @@ function IrisBeastiePointSect(props) {
 
   // 若localStorage有小怪獸名字就用此名，沒有就叫小怪獸
   let beastieName = localStorage.getItem('beastieName')
+
   if (beastieName) {
-    beastieName = localStorage.getItem('beastieName')
+    if (currentUser === 1) {
+      beastieName = '小Q怪'
+    } else {
+      beastieName = localStorage.getItem('beastieName')
+    }
   } else {
     beastieName = '小怪獸'
   }
