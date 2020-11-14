@@ -1,26 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import { withRouter, useHistory } from 'react-router-dom'
-import { Link, Switch } from 'react-router-dom'
-import './ChaOrderItem.scss'
+import React, { useState, useEffect } from 'react';
+import { withRouter, useHistory } from 'react-router-dom';
+import { Link, Switch } from 'react-router-dom';
+import './ChaOrderItem.scss';
 
-//加上這三個
-import JessModal from '../JessModal/JessModal'
-import JessCommentMsg from '../../Pages/JessCommentMsg'
-import JessCommentOrder from '../JessCommentMsg/JessCommentOrder'
-import JessCommentInput from '../JessCommentMsg/JessCommentInput'
-
-///以上三個
+//加上這三個 路徑要注意------------
+import JessModal from '../JessModal/JessModal';
+import JessCommentOrder from '../JessCommentMsg/JessCommentOrder';
+import JessCommentInput from '../JessCommentMsg/JessCommentInput';
+///-----------------------------
 // import UpdateCartAToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalStorage'
 
 // import { Button, Collapse } from 'react-bootstrap';
 function ChaOrderItem(props) {
-  const { orderItem, handleCartNumber } = props
-  const [status, setStatus] = useState(false)
-  const [comments, setComments] = useState([])
+  const { orderItem, handleCartNumber } = props;
+  const [status, setStatus] = useState(false);
+  const [comments, setComments] = useState([]);
 
   //fetch member
   async function messageData() {
-    const url = 'http://localhost:5000/product/member1msg'
+    const url = 'http://localhost:5000/product/member1msg';
 
     const request = new Request(url, {
       method: 'GET',
@@ -28,21 +26,21 @@ function ChaOrderItem(props) {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
-    })
+    });
 
-    const response = await fetch(request)
-    const data = await response.json()
+    const response = await fetch(request);
+    const data = await response.json();
 
-    setComments(data)
+    setComments(data);
     // console.log(data)
   }
   useEffect(() => {
-    messageData()
-  }, [status])
+    messageData();
+  }, [status]);
 
   // 訂單明細的內容JSX
   const ComponentOrderDetail = (props) => {
-    const { orderItem } = props
+    const { orderItem } = props;
     return (
       <>
         <div className="cha-order-detail-container container">
@@ -84,8 +82,8 @@ function ChaOrderItem(props) {
           </div>
         </div>
       </>
-    )
-  }
+    );
+  };
   // 餐點評價的內容JSX
   const ComponentMealComment = (props) => {
     // const { orderItem } = props;
@@ -110,15 +108,17 @@ function ChaOrderItem(props) {
                 type="button"
                 value="我要評價"
                 className="cha-detail-btn"
+                // Jess光箱的onClick事件
                 onClick={() => setStatus(true)}
               />
             </span>
           </div>
+          {/* 留言完要呈現的畫面component */}
           <JessCommentOrder comments={comments} setComments={setComments} />
         </div>
       </>
-    )
-  }
+    );
+  };
   // 餐點評價的內容JSX
   const ComponentReceipt = (props) => {
     // const { orderItem } = props;
@@ -128,37 +128,38 @@ function ChaOrderItem(props) {
           <div className="cha-receipt-demo"></div>
         </div>
       </>
-    )
-  }
+    );
+  };
   // 切換用函式
   const setTabActive = (addElem, removeName) => {
-    let removeTargets = document.querySelectorAll(removeName)
+    let removeTargets = document.querySelectorAll(removeName);
     removeTargets.forEach((target) => {
-      target.classList.remove('cha-active-detail')
-    })
+      target.classList.remove('cha-active-detail');
+    });
 
-    addElem.classList.add('cha-active-detail')
-  }
+    addElem.classList.add('cha-active-detail');
+  };
   const TabMenu = (props) => {
-    const { orderItem } = props
-    const [orderDetailComponent, setOrderDetailComponent] = useState()
+    const { orderItem } = props;
+    const [orderDetailComponent, setOrderDetailComponent] = useState();
     // const [open, setOpen] = useState(false);
     const tabContentA = (e) => {
-      setTabActive(e.target, '.cha-order-mana-title-switch')
-      setOrderDetailComponent(<ComponentOrderDetail orderItem={orderItem} />)
-    }
+      setTabActive(e.target, '.cha-order-mana-title-switch');
+      setOrderDetailComponent(<ComponentOrderDetail orderItem={orderItem} />);
+    };
 
     const tabContentB = (e) => {
-      setTabActive(e.target, '.cha-order-mana-title-switch')
-      setOrderDetailComponent(<ComponentMealComment orderItem={orderItem} />)
-    }
+      setTabActive(e.target, '.cha-order-mana-title-switch');
+      setOrderDetailComponent(<ComponentMealComment orderItem={orderItem} />);
+    };
     const tabContentC = (e) => {
-      setTabActive(e.target, '.cha-order-mana-title-switch')
-      setOrderDetailComponent(<ComponentReceipt orderItem={orderItem} />)
-    }
+      setTabActive(e.target, '.cha-order-mana-title-switch');
+      setOrderDetailComponent(<ComponentReceipt orderItem={orderItem} />);
+    };
 
     return (
       <>
+        {/* 加上這個觸發光箱 */}
         {status && (
           <JessModal closeModal={() => setStatus(false)}>
             <JessCommentInput closeModal={() => setStatus(false)} />
@@ -277,12 +278,12 @@ function ChaOrderItem(props) {
           {/* </Collapse> */}
         </div>
       </>
-    )
-  }
+    );
+  };
   return (
     <>
       <TabMenu orderItem={orderItem} />
     </>
-  )
+  );
 }
-export default withRouter(ChaOrderItem)
+export default withRouter(ChaOrderItem);
