@@ -260,17 +260,19 @@ function JanIndexx(props) {
                 className="bannerwrap d-flex flex-column"
                 style={contentStyle}
               >
-                <div className="banner1 d-flex flex-column">
+                <div className="banner1 d-flex flex-column align-items-center">
                   <div className="jan-fresh"></div>
-                  <div>
-                    <div className="jan-health"></div>
-                  </div>
+
+                  <div className="jan-health"></div>
                 </div>
               </div>
             </div>
             <div>
               <div className="bannerwrap" style={contentStyle}>
-                <div className="banner2"></div>
+                <div className="banner2  ">
+                  <p>選擇友善的安心蔬果，</p>
+                  <p>是我們愛護土地的方式。</p>
+                </div>
               </div>
             </div>
             <div>
@@ -406,7 +408,10 @@ function JanIndexx(props) {
                 <Link style={{ 'text-decoration': 'none' }} to="/farmIntro">
                   <div className="jan-card-arrow float-right"></div>
                   <br />
-                  <p className="jan-card1-viewmore float-right">view more</p>
+                  <br />
+                  <div className="jan-card1-viewmore float-right">
+                    <p>view more</p>
+                  </div>
                 </Link>
               </div>
             </div>
@@ -425,6 +430,7 @@ function JanIndexx(props) {
                   </p>
                   <Link to="/farmIntro">
                     <div className="jan-card-arrow float-right"></div>
+                    <br />
                     <br />
                     <p className="m-0 jan-card2-viewmore float-right">
                       view more
@@ -833,7 +839,6 @@ function JanIndexx(props) {
                         </div>
                       </ItemsCarousel>
                     </div>
-                    <div className="jan-event-hideArrowR"></div>
                   </div>
                 </div>
               </div>
@@ -993,6 +998,7 @@ function JanIndexx(props) {
                           width: '3rem',
                           height: '3rem',
                           cursor: 'pointer',
+                          color: '#f7ede2',
                         }}
                         className="jan-index-hide-demo float-left"
                         onClick={(e) => setAddress('復興南路一段390號2樓')}
@@ -1077,22 +1083,39 @@ function JanIndexx(props) {
           {/* 推薦文章卡片 */}
           <div className="p-2 d-flex justify-content-center align-items-center">
             {/* 左邊模糊卡片 */}
-            <div className="col-3">
-              <div className="m-auto d-flex justify-content-center flex-wrap jan-article-bcc  jan-article-left-blur">
-                {/* 圖片 */}
-                <div className="jan-article-img"></div>
-                {/* 文字 */}
-                <div className="jan-article-text-area">
+            {/* <div className="col-3">
+              <div className="m-auto d-flex justify-content-center flex-wrap jan-article-bcc  jan-article-left-blur"> */}
+            {/* 圖片 */}
+            {/* <div className="jan-article-img"></div> */}
+            {/* 文字 */}
+            {/* <div className="jan-article-text-area">
                   <p className="jan-article-name">Alice Yong</p>
                   <p className="jan-article-text">
                     以前勤勞的時候天天煮低卡便當，但是發覺實在很累。兩個人的食材份量很難拿捏，還要採買、準備、收拾清潔，後來乾脆直接放棄。你們的出現真的是一大救星~低卡方便又超好吃，偶爾想下廚也有菜箱寄送服務，而且還看得到產銷履歷，真的讓人很安心！
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* 中間兩張卡片 */}
-            <div className="col-6 d-flex justify-content-around">
+            <div className="col-9 d-flex justify-content-around">
+              {/* <ItemsCarousel
+                infiniteLoop={false}
+                requestToChangeActive={setActiveItemIndex}
+                activeItemIndex={activeItemIndex}
+                gutter={20}
+                activePosition={'center'}
+                chevronWidth={60}
+                disableSwipe={true}
+                alwaysShowChevrons={false}
+                numberOfCards={4}
+                slidesToScroll={1}
+                outsideChevron={true}
+                showSlither={false}
+                firstAndLastGutter={false}
+                rightChevron={<ArrowRight />}
+                leftChevron={<ArrowLeft />}
+              > */}
               <div className="d-flex justify-content-center flex-wrap jan-article-bcc">
                 {/* 圖片 */}
                 <div className="jan-article-img1"></div>
@@ -1118,15 +1141,28 @@ function JanIndexx(props) {
                   </p>
                 </div>
               </div>
+
+              <div className="d-flex justify-content-center flex-wrap jan-article-bcc">
+                {/* 圖片 */}
+                <div className="jan-article-img3"></div>
+                {/* 文字 */}
+                <div className="jan-article-text-area">
+                  <p className="jan-article-name">佳惠</p>
+                  <p className="jan-article-text">
+                    拾餐的便當口味多變、熱量又低，而且配菜也會隨著主餐不同而有調整。主餐及配料調味剛剛好，不油不膩還減鹽少糖。一改過去對於便當的既有印象，讓人能吃出健康又能吃飽。另外他們的沙拉，也是很用心的料理！蔬菜新鮮、醬料好吃、配菜豐富！給出門在外工作上班上課的人提供了一份很健康的午餐！覺得很感恩！
+                  </p>
+                </div>
+              </div>
+              {/* </ItemsCarousel> */}
             </div>
 
             {/* 右邊模糊卡片 */}
-            <div className="col-3">
-              <div className="m-auto d-flex justify-content-center flex-wrap jan-article-sbcc jan-article-right-blur">
-                {/* 圖片 */}
-                <div className="jan-article-img"></div>
-                {/* 文字 */}
-                <div className="jan-article-text-area">
+            {/* <div className="col-3">
+              <div className="m-auto d-flex justify-content-center flex-wrap jan-article-sbcc jan-article-right-blur"> */}
+            {/* 圖片 */}
+            {/* <div className="jan-article-img"></div> */}
+            {/* 文字 */}
+            {/* <div className="jan-article-text-area">
                   <p className="jan-article-name">小傑</p>
                   <p className="jan-article-text">
                     我一直都有健身的習慣，也有在喝高蛋白，對於飲食基本上我沒有甚麼克制。很感謝你們讓我可以體驗到好吃又健康吃不膩的水煮餐，真的滿適合健身的我這樣吃！
@@ -1135,18 +1171,16 @@ function JanIndexx(props) {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
-
-          <ToToop />
-          <div className="jan-article-arrowR">
+          {/* <div className="jan-article-arrowR">
             <ArrowRight />
           </div>
           <div className="jan-article-blurR"></div>
           <div className="jan-article-arrowL">
             <ArrowLeft />
           </div>
-          <div className="jan-article-blurL"></div>
+          <div className="jan-article-blurL"></div> */}
         </div>
       </div>
 

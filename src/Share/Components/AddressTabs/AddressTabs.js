@@ -151,16 +151,31 @@ function AddressTabs(props) {
 
               <br />
               <div className="jan-address-button float-right">
-                <div
-                  style={{
-                    width: '3rem',
-                    height: '3rem',
-                    cursor: 'pointer',
-                  }}
-                  className="jan-index-hide-demo float-left"
-                  onClick={(e) => setAddress('復興南路一段390號2樓')}
-                >
-                  demo
+                <div className="d-flex flex-column float-left">
+                  <div
+                    style={{
+                      width: '3rem',
+                      height: '3rem',
+                      cursor: 'pointer',
+                      color: '#fafafa',
+                    }}
+                    className="jan-index-hide-demo float-left"
+                    onClick={(e) => setAddress('堤頂大道二段207號2樓')}
+                  >
+                    demo
+                  </div>
+                  <div
+                    style={{
+                      width: '3rem',
+                      height: '3rem',
+                      cursor: 'pointer',
+                      color: '#ffafafa',
+                    }}
+                    className="jan-index-hide-demo float-left"
+                    onClick={(e) => setAddress('重新路三段115巷6號')}
+                  >
+                    demo2
+                  </div>
                 </div>
                 <button
                   onClick={showInfo}
@@ -187,7 +202,10 @@ function AddressTabs(props) {
                 </p>
               </div>
 
-              <div className="jan-put-button float-right float-bottom">
+              <div
+                style={{ display: 'none' }}
+                className="jan-put-button float-right float-bottom"
+              >
                 <button
                   onClick={updateAddress}
                   type="button"
