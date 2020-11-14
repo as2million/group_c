@@ -23,9 +23,7 @@ function RuCompCustom(props) {
   return (
     <>
       <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
-      {/* <span className="ru-cantSearch"> */}
-      <RuShowWidth />
-      {/* </span> */}
+      {/* <RuShowWidth /> */}
 
       <div className="ru-mainImg-warp">
         <h1>享受美食 不需要理由</h1>
