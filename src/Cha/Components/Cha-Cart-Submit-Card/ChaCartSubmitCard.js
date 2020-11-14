@@ -4,7 +4,8 @@ import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
 // import RequestToServer from 'Cha/RequestToServer';
 import ChaCartButton from './Cha-Cart-Button/ChaCartButton';
 import { withRouter, useHistory } from 'react-router-dom';
-import ChaModal from './Cha-Modal/ChaModal';
+import ChaCouponModal from './Cha-Coupon-Modal/ChaCouponModal';
+import ChaSubmitModal from './Cha-Submit-Modal/ChaSubmitModal';
 import ChaBeastiePointSect from 'Cha/Components/Cha-Cart-Submit-Card/Cha-BeastiePointSect/ChaBeastiePointSect';
 function ChaCartSubmitCard(props) {
   const {
@@ -35,8 +36,10 @@ function ChaCartSubmitCard(props) {
   // fetch用
   const [error, setError] = useState([]);
 
-  // 控制光箱
-  const [modalController, setModalController] = useState(false);
+  // 控制Coupon光箱
+  const [couponModalController, setCouponModalController] = useState(false);
+  // 控制Submit光箱
+  const [submitModalController, setSubmitModalController] = useState(false);
   // 光箱內的checkbox
   const [useBeastieCoin, setUseBeastieCoin] = useState(0);
   const [couponSid, setCouponSid] = useState(0);
@@ -118,7 +121,7 @@ function ChaCartSubmitCard(props) {
       created_at: new Date(),
     };
 
-    const url = 'http://localhost:5000/cart-api/my-order-test';
+    const url = 'http://localhost:5000/cart-api/my-order';
     // console.log('takeDate', takeDate);
     console.log('bodyData', bodyData);
     const request = new Request(url, {
@@ -157,7 +160,7 @@ function ChaCartSubmitCard(props) {
       product_image: item.productImage ? item.productImage : '',
     }));
 
-    const url = 'http://localhost:5000/cart-api/my-order-detail-test';
+    const url = 'http://localhost:5000/cart-api/my-order-detail';
     console.log('OrderDetailArr', myOrderDetailArray);
     const request = new Request(url, {
       method: 'POST',
@@ -169,10 +172,9 @@ function ChaCartSubmitCard(props) {
     });
 
     try {
+      setSubmitModalController(true);
       const response = await fetch(request);
       const dataMyOrderDetail = await response.json();
-
-      props.history.push('/orderManagement');
       // data會是一個物件值
       console.log('my-order-detail dataMyOrderDetails', dataMyOrderDetail);
       console.log('order_sid', orderSid);
@@ -200,7 +202,7 @@ function ChaCartSubmitCard(props) {
   //   }
   // }
   async function deleteCouponListData(paramsCouponSid) {
-    const url = `http://localhost:5000/cart-api/use-coupon-test/${paramsCouponSid}`;
+    const url = `http://localhost:5000/cart-api/use-coupon/${paramsCouponSid}`;
 
     const request = new Request(url, {
       method: 'DELETE',
@@ -217,20 +219,32 @@ function ChaCartSubmitCard(props) {
     //   dataOrders[0] && dataOrders[0].take_person && dataOrders[0].take_person
     // );
   }
-
   return (
     <>
       {/* Modal */}
-      {modalController && (
-        <ChaModal
-          closeModal={() => setModalController(false)}
+      {couponModalController && (
+        <ChaCouponModal
+          closeModal={() => setCouponModalController(false)}
           useBeastieCoin={useBeastieCoin}
           setUseBeastieCoin={setUseBeastieCoin}
           couponSid={couponSid}
           setCouponSid={setCouponSid}
         >
           {/* <ChaBeastiePointSect /> */}
-        </ChaModal>
+        </ChaCouponModal>
+      )}
+      {submitModalController && (
+        <ChaSubmitModal
+          closeModalSecret={() => setSubmitModalController(false)}
+          takeDate={takeDate}
+          takeTime={takeTime}
+          closeModal={() => {
+            props.history.push('/orderManagement');
+            setSubmitModalController(false);
+          }}
+        >
+          {/* <ChaBeastiePointSect /> */}
+        </ChaSubmitModal>
       )}
       <div className="cha-aside-card-fake"></div>
       <div className="cha-aside-card">
@@ -278,7 +292,7 @@ function ChaCartSubmitCard(props) {
             <label
               htmlFor="cha-monster-coin"
               // style={{ cursor: 'pointer' }}
-              onClick={() => setModalController(true)}
+              onClick={() => setCouponModalController(true)}
             >
               使用怪獸幣
             </label>
@@ -314,16 +328,16 @@ function ChaCartSubmitCard(props) {
         </div>
         <div className="cha-horizontal-line"></div>
         <div className="cha-shopping-list-total">
-          <div>總計</div>
+          <div onClick={() => setSubmitModalController(true)}>總計</div>
           <div className="cha-shopping-list-total-number">${totalPrice}</div>
         </div>
         {/* 提交按鈕 */}
         <div
           className="cha-shopping-cart-btn-div"
           onClick={() => {
-            console.log('購物車提交保險，商品為0，不能送資料');
+            console.log('商品數為0不給提交，目前商品數：', totalAmount);
             totalAmount && createToMyOrder();
-            // props.history.push('/orderManagement');移動到第二支fetch
+            // props.history.push('/orderManagement');移動到確認交易的光箱內
             handleSubmitCartRemoveLocalStorage();
             handleCartNumber('minus', totalAmount);
             couponSid && deleteCouponListData(couponSid);

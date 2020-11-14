@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './ChaModal.scss';
+import './ChaCouponModal.scss';
 import Cross from './Images/cross.svg';
+
 // 優惠券的
 import { ReactComponent as CouponVerticalLine } from './Images1/coupon_vertical_line.svg';
-const ChaModal = (props) => {
+const ChaCouponModal = (props) => {
   const { closeModal } = props;
   const [couponList, setCouponList] = useState([]);
   const [currentUser, setCurrentUser] = useState(1);
@@ -24,7 +25,7 @@ const ChaModal = (props) => {
     const response = await fetch(request);
     const data = await response.json();
 
-    console.log('couponList', data);
+    console.log('讀取優惠券資料', data);
     setCouponList(data);
   }
 
@@ -115,4 +116,4 @@ const ChaModal = (props) => {
   );
 };
 
-export default ChaModal;
+export default ChaCouponModal;

@@ -2,7 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import './ChaOrderManagement.scss';
 import { ReactComponent as WaveLine } from './Images/wave_line.svg';
 import ChaOrderItem from 'Cha/Components/Cha-Order-Management/Cha-Order-Item/ChaOrderItem';
-
+// 光箱
+import ChaRefundModal from './Cha-Order-Item/Cha-Refund-Modal/ChaRefundModal';
 function ChaOrderManagement(props) {
   // ---------點選退費，實現自動切換頁面---------------//
   const [forceKey, setForceKey] = useState(false);
@@ -21,6 +22,8 @@ function ChaOrderManagement(props) {
 
   const { setShowBar, handleCartNumber } = props;
 
+  //--------------光箱控制器，refund---------------//
+  const [refundModalController, setRefundModalController] = useState(false);
   // -----------恢復Navbar--------------//
   useEffect(() => {
     setShowBar(true);
@@ -29,7 +32,7 @@ function ChaOrderManagement(props) {
 
   // ---------------讀入訂單資料--------------//
   async function getMyOrderData(paramsMemberId) {
-    const url = `http://localhost:5000/cart-api/my-order-my-order-detail-test/${paramsMemberId}`;
+    const url = `http://localhost:5000/cart-api/my-order-my-order-detail/${paramsMemberId}`;
 
     const request = new Request(url, {
       method: 'GET',
@@ -43,6 +46,13 @@ function ChaOrderManagement(props) {
     console.log('讀入訂單資料', dataAllOrder);
     setOrderData(dataAllOrder);
   }
+
+  // --------------掛載就篩選掉order_detail為空陣列的order-----------------//
+  useEffect(() => {
+    setOrderData(orderData.map((item) => item.order_detail === !['']));
+    console.log('useEffect，篩選掉order_detail為空陣列的order');
+  }, []);
+
   // --------------掛載就讀入當前會員的訂單-----------------//
   useEffect(() => {
     getMyOrderData(currentMemberSid);
@@ -103,6 +113,7 @@ function ChaOrderManagement(props) {
   };
   // 已退費/已取消
   const ComponentC = (props) => {
+    const { setRefundModalController } = props;
     return (
       <>
         {handleClassifyState('已退費')
@@ -115,6 +126,9 @@ function ChaOrderManagement(props) {
               setTabindexKey={setTabindexKey}
               setChangeOrderState={setChangeOrderState}
               handleCartNumber={handleCartNumber}
+              // 光箱用
+              // closeModal={() => setRefundModalController(false)}
+              setRefundModalController={setRefundModalController}
             />
           ))}
       </>
@@ -122,6 +136,7 @@ function ChaOrderManagement(props) {
   };
   // 揪團中
   const ComponentD = (props) => {
+    // const {setRefundModalController}
     return (
       <>
         {handleClassifyState('揪團中').map((item, value) => (
@@ -129,6 +144,7 @@ function ChaOrderManagement(props) {
             key={item.sid}
             orderItem={item}
             setChangeOrderState={setChangeOrderState}
+            closeModal={() => setRefundModalController(false)}
           />
         ))}
       </>
@@ -146,7 +162,12 @@ function ChaOrderManagement(props) {
   const TabMenu = (props) => {
     const [orderComponent, setOrderComponent] = useState(<ComponentA />);
     // force bool, index = A, B, C...
-    const { force, index } = props;
+    const {
+      force,
+      index,
+      setRefundModalController,
+      refundModalController,
+    } = props;
     const elA = useRef(null);
     const elC = useRef(null);
 
@@ -188,6 +209,13 @@ function ChaOrderManagement(props) {
 
     return (
       <>
+        {refundModalController && (
+          <ChaRefundModal
+            setRefundModalController={setRefundModalController}
+            refundModalController={refundModalController}
+            closeModal={() => setRefundModalController(false)}
+          ></ChaRefundModal>
+        )}
         <div className="cha-order-mana-content-container col-9 ">
           <div className="cha-order-mana-content-row1">
             <div
@@ -221,7 +249,12 @@ function ChaOrderManagement(props) {
   };
   return (
     <>
-      <TabMenu force={forceKey} index={tabindexKey} />
+      <TabMenu
+        force={forceKey}
+        index={tabindexKey}
+        setRefundModalController={setRefundModalController}
+        refundModalController={refundModalController}
+      />
     </>
   );
 }

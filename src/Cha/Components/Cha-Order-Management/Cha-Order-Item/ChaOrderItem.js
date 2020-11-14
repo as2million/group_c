@@ -9,14 +9,14 @@ import UpdateCartToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalSt
 
 // import { Button, Collapse } from 'react-bootstrap';
 function ChaOrderItem(props) {
+  const [error, setError] = useState(null);
   const {
     orderItem,
     handleCartNumber,
     setChangeOrderState,
     changeOrderState,
+    setRefundModalController,
   } = props;
-
-  const [error, setError] = useState(null);
 
   // 訂單明細的內容JSX
   const ComponentOrderDetail = (props) => {
@@ -119,7 +119,7 @@ function ChaOrderItem(props) {
     addElem.classList.add('cha-active-detail');
   };
   const TabMenu = (props) => {
-    const { orderItem } = props;
+    const { orderItem, setRefundModalController } = props;
     const [orderDetailComponent, setOrderDetailComponent] = useState();
     // const [open, setOpen] = useState(false);
     const tabContentA = (e) => {
@@ -135,6 +135,7 @@ function ChaOrderItem(props) {
       setTabActive(e.target, '.cha-order-mana-title-switch');
       setOrderDetailComponent(<ComponentReceipt orderItem={orderItem} />);
     };
+
     // 退費的功能
     const idForChangeState = {
       sid: orderItem.sid,
@@ -143,7 +144,7 @@ function ChaOrderItem(props) {
     async function updateTotalToServer() {
       // const newOrderState = { order_state: '已退費' };
 
-      const url = 'http://localhost:5000/cart-api/my-order-chang-state-test';
+      const url = 'http://localhost:5000/cart-api/my-order-chang-state';
       const request = new Request(url, {
         method: 'POST',
         body: JSON.stringify(idForChangeState),
@@ -168,19 +169,21 @@ function ChaOrderItem(props) {
         <div className="cha-order-item-container">
           <div className="cha-order-row">
             <div className="cha-order-column1-picture">
-              <img
-                className="cha-order-HeadPic"
-                src={
-                  '/productImages/Bento/' +
-                  orderItem.order_detail[0].product_image +
-                  '.jpg'
-                }
-              ></img>
+              {orderItem.order_detail && (
+                <img
+                  className="cha-order-HeadPic"
+                  src={
+                    '/productImages/Bento/' +
+                    orderItem.order_detail[0].product_image +
+                    '.jpg'
+                  }
+                ></img>
+              )}
             </div>
             <div className="cha-order-column2">
               <div className="cha-order-column2-row1">
                 <span>
-                  <span> 訂單編號: </span>
+                  <span>訂單編號:</span>
                   <span> </span>
                   <span className="cha-order-orange"> AAA{orderItem.sid} </span>
                 </span>
@@ -307,6 +310,7 @@ function ChaOrderItem(props) {
                       props.setForceKey(true);
                       props.setTabindexKey('C');
                       console.log('點擊取消/退費');
+                      // setRefundModalController(true);
                     }}
                   >
                     <ChaGrayButton

@@ -163,8 +163,8 @@ function ChaCartStepCardStep2(props) {
               {/* <option selected>請選擇時間</option> */}
               <option>11:00 ~ 11:30</option>
               <option>11:30 ~ 12:00</option>
+              <option>12:00 ~ 12:30</option>
               <option>12:30 ~ 13:00</option>
-              <option>13:30 ~ 13:00</option>
             </select>
           </div>
         </div>
