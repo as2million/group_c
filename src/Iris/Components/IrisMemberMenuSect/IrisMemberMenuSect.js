@@ -19,8 +19,6 @@ function IrisMemberMenuSect(props) {
     currentUserData,
   } = props
 
-  const [userCommentCount, setUserCommentCount] = useState(0) //當前會員的投稿數
-  const [userToTalCoin, setUserToTalCoin] = useState(0) //當前會員的怪獸幣總額
   const [allComments, setAllComments] = useState([])
   const [myFavs, setMyFavs] = useState([])
   const [couponLists, setCouponLists] = useState([])

@@ -17,6 +17,7 @@ function IrisCard(props) {
   // parentId 不同元件父母id => addCart-btn-warp-n n為自訂數
   // imgId 產品圖片 => card-img-n n為1~9
   const {
+    key,
     data,
     dataFav,
     title,
@@ -33,6 +34,9 @@ function IrisCard(props) {
     currentUser,
     showFavArr,
     currentUserFav,
+    setUserFavDelete,
+    hideCard,
+    setHideCard,
   } = props
 
   const [isShowFav, setIsShowFav] = useState(false) // 是否要定住我的最愛按鈕
@@ -59,7 +63,7 @@ function IrisCard(props) {
 
   return (
     <>
-      <div className="iris-card-container" id={cardMargin}>
+      <div className="iris-card-container">
         {/* item圖片s */}
         <section className="iris-card-img-warp">
           <a href="" className="iris-card-link" onClick={linkToDetail}>
@@ -81,6 +85,8 @@ function IrisCard(props) {
                 currentUser={currentUser}
                 proudctId={proudctId}
                 dataFav={dataFav}
+                setUserFavDelete={setUserFavDelete}
+                setHideCard={setHideCard}
               />
             </div>
           ) : (

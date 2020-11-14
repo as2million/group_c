@@ -77,6 +77,19 @@ function IrisDataEditSect(props) {
         address: address,
       }
       // console.log(newProfile)
+      // 更新會員資料
+      fetch('http://localhost:5000/member/updateProfile', {
+        method: 'POST',
+        body: JSON.stringify(newProfile),
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }),
+      })
+        .then((r) => r.json())
+        .then((o) => {
+          console.log(o)
+        })
 
       // 第一次填資料送優惠券
       // coupon1_status=0 代表之前沒領過
@@ -120,24 +133,12 @@ function IrisDataEditSect(props) {
 
         // 秀成功獲取優惠券光箱
         setShowGetCouponBox(true)
+        // setData()
       } else {
         // 秀更新成功光箱
         setShowUpdateModal(true)
+        // setData()
       }
-
-      // 更新會員資料
-      fetch('http://localhost:5000/member/updateProfile', {
-        method: 'POST',
-        body: JSON.stringify(newProfile),
-        headers: new Headers({
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        }),
-      })
-        .then((r) => r.json())
-        .then((o) => {
-          console.log(o)
-        })
     }
   }
 
@@ -202,32 +203,38 @@ function IrisDataEditSect(props) {
   // console.log(currentUserCouponStatus[0].coupon1_status)
 
   // ----------- 把user資料代進去 ----------- //
-  currentUserInfo.map((item, index) => {
-    const userFamilyName = item.name.slice(0, 1)
-    const userGivenName = item.name.slice(1, 3)
-    const userBirthday = item.birthday.slice(0, 10)
-    const fullAddress = item.county + item.district + item.address
-    let familyname = document.querySelector('#iris-member-family-name')
-    let givenname = document.querySelector('#iris-member-given-name')
-    let birthday = document.querySelector('#iris-member-birthday')
-    let mobile = document.querySelector('#iris-member-mobile')
-    let oldPassword = document.querySelector('#iris-member-password')
-    // let password = document.querySelector('#iris-member-new-password')
-    let email = document.querySelector('#iris-member-email')
-    let address = document.querySelector('#iris-member-address')
-    familyname.value = userFamilyName
-    givenname.value = userGivenName
-    // 讓新註冊會員的生日顯示為空值
-    if (userBirthday !== '1899-11-29') {
-      birthday.value = userBirthday
-    } else {
-      birthday.value = ''
-    }
-    mobile.value = item.mobile
-    oldPassword.value = item.password
-    email.value = item.email
-    address.value = fullAddress
-  })
+  const setData = () => {
+    currentUserInfo.map((item, index) => {
+      const userFamilyName = item.name.slice(0, 1)
+      const userGivenName = item.name.slice(1, 3)
+      const userBirthday = item.birthday.slice(0, 10)
+      const fullAddress = item.county + item.district + item.address
+      let familyname = document.querySelector('#iris-member-family-name')
+      let givenname = document.querySelector('#iris-member-given-name')
+      let birthday = document.querySelector('#iris-member-birthday')
+      let mobile = document.querySelector('#iris-member-mobile')
+      let oldPassword = document.querySelector('#iris-member-password')
+      // let password = document.querySelector('#iris-member-new-password')
+      let email = document.querySelector('#iris-member-email')
+      let address = document.querySelector('#iris-member-address')
+      familyname.value = userFamilyName
+      givenname.value = userGivenName
+      // 讓新註冊會員的生日顯示為空值
+      if (userBirthday !== '1899-11-29') {
+        birthday.value = userBirthday
+      } else {
+        birthday.value = ''
+      }
+      mobile.value = item.mobile
+      oldPassword.value = item.password
+      email.value = item.email
+      address.value = fullAddress
+    })
+  }
+
+  useEffect(() => {
+    setData()
+  }, [userInfo])
 
   const fillInData = () => {
     document.querySelector('#iris-member-family-name').value = '林'
