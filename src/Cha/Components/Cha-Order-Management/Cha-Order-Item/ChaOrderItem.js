@@ -125,13 +125,14 @@ function ChaOrderItem(props) {
 
               <span className="col-2">${item.product_price}</span>
               <span className="col-3">X {item.product_amount}</span>
-              <span className="col-2">
+              <span
+                className="col-2" // Jess光箱的onClick事件
+                onClick={() => setStatus(true)}
+              >
                 <ChaOrangeButtonPlus
                   type="button"
                   className="cha-detail-btn cha-order-orange-plus-btn"
                   text="我要評價"
-                  // Jess光箱的onClick事件
-                  onClick={() => setStatus(true)}
                 />
               </span>
             </div>
