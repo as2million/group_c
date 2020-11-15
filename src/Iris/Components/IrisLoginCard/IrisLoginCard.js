@@ -153,7 +153,14 @@ function IrisLoginCard(props) {
     }
 
     // 資料都ok才送出
-    else {
+    if (
+      account.match(/[A-Za-z0-9]{8,24}/) &&
+      password.match(/[A-Za-z0-9]{8,24}/) &&
+      email.match(
+        /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
+      ) &&
+      mobile.match(/^09[0-9]{8}$/)
+    ) {
       // 清空錯誤題示
       $('.iris-empty-account').slideUp('slow')
       $('.iris-empty-password').slideUp('slow')

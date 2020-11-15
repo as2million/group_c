@@ -19,10 +19,7 @@ function IrisDataEditSect(props) {
     setCouponOneStatus,
   } = props
   const [userInfo, setUserInfo] = useState([])
-  // const [couponStatus, setCouponStatus] = useState([])
-  // const [couponOneStatus, setCouponOneStatus] = useState('')
 
-  // const [value, setValue] = useState()
 
   // -------先新增會員資料折價券領取狀態資料表--------//
   const dataToBeSend = { currentUser: currentUser }
@@ -134,6 +131,7 @@ function IrisDataEditSect(props) {
         // 2. 連動menu數字
         // 設甚麼值無所謂，重點是讓狀態改變，menu那邊useEffect才會偵測到
         setBeastiePointAdd(newCouponStatus.coupon1)
+        
         // 秀成功獲取優惠券光箱
         setShowGetCouponBox(true)
         // setData()
@@ -173,7 +171,7 @@ function IrisDataEditSect(props) {
 
   useEffect(() => {
     getUserInfoFromServer()
-  }, [couponStatus])
+  }, [])
 
   // --------- 取得目前user的優惠券領取狀態 --------- //
   // 取得所有人的優惠券領取狀態
