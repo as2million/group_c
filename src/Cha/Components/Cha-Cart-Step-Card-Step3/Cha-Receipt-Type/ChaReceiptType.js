@@ -25,6 +25,8 @@ function ChaReceiptType(props) {
   };
   // 已達成
   const ComponentB = (props) => {
+    const [receiptAddress, setReceiptAddress] = useState('');
+    const [receiptEmail, setReceiptEmail] = useState('');
     return (
       <>
         {/* 二聯式電子發票 */}
@@ -43,13 +45,22 @@ function ChaReceiptType(props) {
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="cha-step3-5-2-2-vehicle">Email</label>
+            <label
+              htmlFor="cha-step3-5-2-2-vehicle"
+              onClick={() => {
+                setReceiptAddress('復興南路一段390號2樓');
+                setReceiptEmail('1234567890@gmail.com.tw');
+              }}
+            >
+              Email
+            </label>
             <InputH40
               type="email"
               className="form-control cha-step3-5-2-2-vehicle"
               id="cha-step3-5-2-2-vehicle"
               name="cha-step3-5-2-2-vehicle"
-              placeholder="Email"
+              placeholder="請填寫Email"
+              value={receiptEmail}
             />
           </div>
           <div className="form-group cha-TWZipCode-display">
@@ -61,6 +72,7 @@ function ChaReceiptType(props) {
               id="cha-step3-5-2-5-vehicle"
               name="cha-step3-5-2-5-vehicle"
               placeholder="發票寄送地址"
+              value={receiptAddress}
             />
             <p className="cha-step3-receipt-alert">
               (由拾餐為您兌獎，中獎後將會寄送紙本發票給您)
@@ -141,11 +153,10 @@ function ChaReceiptType(props) {
         <div className="cha-receipt-content-container">
           {/* 發票開立 */}
           <div className="cha-step3-5-receipt-choose">
-            <p>
-              <span ori="發票開立" err="請選擇發票類型">
-                發票開立
-              </span>
-            </p>
+            <span ori="發票開立" err="請選擇發票類型">
+              發票開立
+            </span>
+
             <div className="cha-step3-5-receipt-div">
               <div className="cha-receipt-title-switch" onClick={tabContentA}>
                 <input

@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
 import { Link, Switch } from 'react-router-dom';
 import './ChaOrderItem.scss';
-import ChaGrayButton from './Cha-Gray-Button/ChaGrayButton';
-import ChaOrangeButton from './Cha-Orange-Button/ChaOrangeButton';
-import ChaOrangeButtonPlus from './Cha-Orange-Button-Plus/ChaOrangeButtonPlus';
 import UpdateCartToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalStorage';
-import ChaRefundModal from '../Cha-Order-Item/Cha-Refund-Modal/ChaRefundModal';
 
 //加上這三個 路徑要注意------------
 import JessModal from '../../../../Jess/Components/JessModal/JessModal';
@@ -21,12 +17,9 @@ function ChaOrderItem(props) {
     handleCartNumber,
     setChangeOrderState,
     changeOrderState,
-    // setRefundModalController,
   } = props;
 
   const [error, setError] = useState(null);
-  //--------------光箱控制器，refund---------------//
-  const [refundModalController, setRefundModalController] = useState(false);
   //Jess 光箱需要的state
   const [status, setStatus] = useState(false);
   const [comments, setComments] = useState([]);
@@ -126,10 +119,10 @@ function ChaOrderItem(props) {
               <span className="col-2">${item.product_price}</span>
               <span className="col-3">X {item.product_amount}</span>
               <span className="col-2">
-                <ChaOrangeButtonPlus
+                <input
                   type="button"
-                  className="cha-detail-btn cha-order-orange-plus-btn"
-                  text="我要評價"
+                  value="我要評價"
+                  className="cha-detail-btn"
                   // Jess光箱的onClick事件
                   onClick={() => setStatus(true)}
                 />
@@ -174,7 +167,7 @@ function ChaOrderItem(props) {
     addElem.classList.add('cha-active-detail');
   };
   const TabMenu = (props) => {
-    // const { orderItem, setRefundModalController } = props;
+    const { orderItem } = props;
     const [orderDetailComponent, setOrderDetailComponent] = useState();
     // const [open, setOpen] = useState(false);
     const tabContentA = (e) => {
@@ -190,7 +183,6 @@ function ChaOrderItem(props) {
       setTabActive(e.target, '.cha-order-mana-title-switch');
       setOrderDetailComponent(<ComponentReceipt orderItem={orderItem} />);
     };
-
     // 退費的功能
     const idForChangeState = {
       sid: orderItem.sid,
@@ -221,13 +213,6 @@ function ChaOrderItem(props) {
 
     return (
       <>
-        {refundModalController && (
-          <ChaRefundModal
-            // setRefundModalController={setRefundModalController}
-            // refundModalController={refundModalController}
-            closeModal={() => setRefundModalController(false)}
-          ></ChaRefundModal>
-        )}
         {/* 加上這個觸發光箱 */}
         {status && (
           <JessModal closeModal={() => setStatus(false)}>
@@ -241,21 +226,20 @@ function ChaOrderItem(props) {
         <div className="cha-order-item-container">
           <div className="cha-order-row">
             <div className="cha-order-column1-picture">
-              {orderItem.order_detail && (
-                <img
-                  className="cha-order-HeadPic"
-                  src={
-                    '/productImages/Bento/' +
-                    orderItem.order_detail[0].product_image +
-                    '.jpg'
-                  }
-                ></img>
-              )}
+              <img
+                className="cha-order-HeadPic"
+                src={
+                  '/productImages/Bento/' +
+                  orderItem.order_detail[0].product_image +
+                  '.jpg'
+                }
+                alt=""
+              ></img>
             </div>
             <div className="cha-order-column2">
               <div className="cha-order-column2-row1">
                 <span>
-                  <span>訂單編號:</span>
+                  <span> 訂單編號: </span>
                   <span> </span>
                   <span className="cha-order-orange"> AAA{orderItem.sid} </span>
                 </span>
@@ -347,7 +331,9 @@ function ChaOrderItem(props) {
                 {(orderItem.order_state === '已送達' ||
                   orderItem.order_state === '已退費') && (
                   <Link to="/cart">
-                    <div
+                    <input
+                      type="button"
+                      value="再次訂購"
                       onClick={() => {
                         orderItem.order_detail.forEach((item) =>
                           UpdateCartToLocalStorage({
@@ -363,75 +349,32 @@ function ChaOrderItem(props) {
                           handleCartNumber('add', item.product_amount)
                         );
                       }}
-                    >
-                      <ChaOrangeButton
-                        type="button"
-                        value="再次訂購"
-                        text="再次訂購"
-                        className="cha-order-orange-btn"
-                      />
-                    </div>
+                    />
                   </Link>
                 )}
                 {(orderItem.order_state === '未送達' ||
                   orderItem.order_state === '火速運送中') && (
-                  <div
+                  <input
+                    type="button"
+                    value="取消/退費"
+                    className="cha-order-btn-858585"
                     onClick={() => {
-                      // updateTotalToServer();
+                      updateTotalToServer();
                       // console.log(props);
                       props.setForceKey(true);
                       props.setTabindexKey('C');
                       console.log('點擊取消/退費');
-                      setRefundModalController(true);
                     }}
-                  >
-                    <ChaGrayButton
-                      type="button"
-                      value="取消/退費"
-                      text="取消/退費"
-                      className="cha-order-btn-858585 cha-order-refund-btn"
-                    />
-                  </div>
+                  />
                 )}
                 {orderItem.order_state === '揪團中' && (
-                  <div>
-                    <ChaOrangeButton
-                      type="button"
-                      value="加入點餐"
-                      text="加入點餐"
-                      className="cha-order-orange-btn"
-                    />
-                  </div>
+                  <input type="button" value="加入點餐" />
                 )}
                 {orderItem.order_state === '揪團中' && (
-                  <div>
-                    <ChaOrangeButton
-                      type="button"
-                      value="分享連結"
-                      text="分享連結"
-                      className="cha-order-orange-btn"
-                    />
-                  </div>
+                  <input type="button" value="分享連結" />
                 )}
                 {orderItem.order_state === '揪團中' && (
-                  <div>
-                    <ChaOrangeButton
-                      type="button"
-                      value="收單"
-                      text="收單"
-                      className="cha-order-orange-btn"
-                    />
-                  </div>
-                )}
-                {orderItem.order_state === '揪團中' && (
-                  <div>
-                    <ChaGrayButton
-                      type="button"
-                      value="取消/退費"
-                      text="取消/退費"
-                      className="cha-order-btn-858585 cha-order-refund-btn"
-                    />
-                  </div>
+                  <input type="button" value="收單" />
                 )}
               </div>
             </div>

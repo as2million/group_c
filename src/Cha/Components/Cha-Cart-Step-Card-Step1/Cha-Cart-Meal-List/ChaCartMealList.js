@@ -17,6 +17,7 @@ function ChaCartMealList(props) {
             <img
               className="cha-HeadPic"
               src={'/productImages/Bento/' + mealsItem.productImage + '.jpg'}
+              alt="美味盡在拾餐"
             ></img>
           </div>
 
