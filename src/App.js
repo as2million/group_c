@@ -110,12 +110,24 @@ function App() {
               <RuProudctList
                 handleCartNumber={handleCartNumber}
                 currentUser={currentUser}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
               />
             </Route>
             <Route exact path="/productListSalad">
               <RuProudctListSalad
                 handleCartNumber={handleCartNumber}
                 currentUser={currentUser}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
               />
             </Route>
             <Route exact path="/productListCustom">
@@ -123,6 +135,12 @@ function App() {
                 handleCartNumber={handleCartNumber}
                 amount={amount}
                 setAmount={setAmount}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
               />
             </Route>
             {/* cha */}

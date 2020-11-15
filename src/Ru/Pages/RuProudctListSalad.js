@@ -6,7 +6,7 @@ function RuProudctListSalad(props) {
   const { handleCartNumber, currentUser } = props
   return (
     <>
-      <VNavBar />
+      <VNavBar {...props}/>
       <RuCompSalad
         handleCartNumber={handleCartNumber}
         currentUser={currentUser}

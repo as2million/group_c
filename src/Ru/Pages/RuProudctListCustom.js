@@ -6,7 +6,7 @@ function RuProudctListCustom(props) {
   const { handleCartNumber, setAmount, amount } = props
   return (
     <>
-      <VNavBar />
+      <VNavBar {...props}/>
       <RuCompCustom
         handleCartNumber={handleCartNumber}
         amount={amount}
