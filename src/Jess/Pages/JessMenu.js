@@ -24,7 +24,7 @@ function JessMenu(props) {
       <JessMenuC id={id} />
       <JessMenuD />
       {/* <ChaOrderItem {...props} nowUser={nowUser} /> */}
-      <ChaOrderItem {...props} currentUser={currentUser} />
+      {/* <ChaOrderItem {...props} currentUser={currentUser} /> */}
     </>
   );
 }
