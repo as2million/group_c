@@ -153,6 +153,7 @@ function ChaCart(props) {
   });
 
   //------------格式檢查的函式-------//
+  // !password.match(/[A-Za-z0-9]{8,24}/)
   const handleFormatCheck = () => {
     console.log(
       '檢查到的購物車內商品：數量、meals===[]、meals.length===0',
@@ -203,13 +204,23 @@ function ChaCart(props) {
     } else {
       $('.cha-wrong-credit3Number').slideUp('slow');
     }
+    console.log(
+      '!meals.length === 0,!name === "",mobile.match(/^09[0-9]{8}$/),takeDate,creditNumber.length === 16,credit3Number.length === 3,JSON.stringify(takeDate)',
+      !meals.length === 0,
+      !name === '',
+      mobile.match(/^09[0-9]{8}$/),
+      takeDate,
+      creditNumber.length === 16,
+      credit3Number.length === 3,
+      JSON.stringify(takeDate)
+    );
     if (
-      meals.length === 0 &&
-      name === '' &&
-      !mobile.match(/^09[0-9]{8}$/) &&
-      !takeDate &&
-      !(creditNumber.length === 16) &&
-      !(credit3Number.length === 3)
+      !(meals.length === 0) &&
+      !(name === '') &&
+      mobile.match(/^09[0-9]{8}$/) &&
+      takeDate &&
+      creditNumber.length === 16 &&
+      credit3Number.length === 3
     ) {
       setFormatCheck(true);
       console.log('通過格式檢查，setFormatCheck(true)');
