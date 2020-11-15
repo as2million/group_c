@@ -169,7 +169,7 @@ function AddressTabs(props) {
                       width: '3rem',
                       height: '3rem',
                       cursor: 'pointer',
-                      color: '#ffafafa',
+                      color: '#fafafa',
                     }}
                     className="jan-index-hide-demo float-left"
                     onClick={(e) => setAddress('重新路三段115巷6號')}

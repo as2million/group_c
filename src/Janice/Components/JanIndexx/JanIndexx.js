@@ -820,6 +820,7 @@ function JanIndexx(props) {
                           <img alt="" src={event1} />
                         </div>
                         <div onClick={event2C} className="img-row">
+                          {/* <div className="img-row-infor"></div> */}
                           <img alt="" src={event2} />
                         </div>
                         <div onClick={event3C} className="img-row">
