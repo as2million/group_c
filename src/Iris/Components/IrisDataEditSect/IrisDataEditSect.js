@@ -13,10 +13,14 @@ function IrisDataEditSect(props) {
     setShowUpdateModal,
     setShowGetCouponBox,
     setBeastiePointAdd,
+    couponStatus,
+    setCouponStatus,
+    couponOneStatus,
+    setCouponOneStatus,
   } = props
   const [userInfo, setUserInfo] = useState([])
-  const [couponStatus, setCouponStatus] = useState([])
-  const [couponOneStatus, setCouponOneStatus] = useState('')
+  // const [couponStatus, setCouponStatus] = useState([])
+  // const [couponOneStatus, setCouponOneStatus] = useState('')
 
   // const [value, setValue] = useState()
 
@@ -130,11 +134,14 @@ function IrisDataEditSect(props) {
         // 2. 連動menu數字
         // 設甚麼值無所謂，重點是讓狀態改變，menu那邊useEffect才會偵測到
         setBeastiePointAdd(newCouponStatus.coupon1)
-
         // 秀成功獲取優惠券光箱
         setShowGetCouponBox(true)
         // setData()
       } else {
+        // 
+        if (!couponStatus) {
+          return
+        }
         // 秀更新成功光箱
         setShowUpdateModal(true)
         // setData()
@@ -170,7 +177,7 @@ function IrisDataEditSect(props) {
 
   useEffect(() => {
     getUserInfoFromServer()
-  }, [couponOneStatus])
+  }, [couponStatus])
 
   // --------- 取得目前user的優惠券領取狀態 --------- //
   // 取得所有人的優惠券領取狀態
@@ -194,7 +201,8 @@ function IrisDataEditSect(props) {
   // 載入
   useEffect(() => {
     getCouponStatusFromServer()
-  }, [])
+  }, [couponStatus])
+
   // 過濾出現在使用者的資料
   const currentUserCouponStatus = couponStatus.filter(
     (couponStatus) => couponStatus.member_sid === currentUser

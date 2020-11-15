@@ -12,11 +12,16 @@ function IrisUserprofile(props) {
   const [showUpdateModal, setShowUpdateModal] = useState(false)
   const [showGetCouponBox, setShowGetCouponBox] = useState(false)
   const [beastiePointAdd, setBeastiePointAdd] = useState()
+
   const {
     isLogin,
     currentUser,
     currentUserData,
     setShowLoginModal,
+    couponStatus,
+    setCouponStatus,
+    couponOneStatus,
+    setCouponOneStatus,
     // vnbar
     county,
     setCounty,
@@ -73,6 +78,10 @@ function IrisUserprofile(props) {
           setShowUpdateModal={setShowUpdateModal}
           setShowGetCouponBox={setShowGetCouponBox}
           setBeastiePointAdd={setBeastiePointAdd}
+          couponStatus={couponStatus}
+          setCouponStatus={setCouponStatus}
+          couponOneStatus={couponOneStatus}
+          setCouponOneStatus={setCouponOneStatus}
         />
         <div
           className="iris-update-success-mask"

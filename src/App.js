@@ -52,6 +52,8 @@ function App() {
   const [currentUserData, setCurrentUserData] = useState({}) // 目前用戶
   const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
   const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
+  const [couponStatus, setCouponStatus] = useState([])
+  const [couponOneStatus, setCouponOneStatus] = useState('')
 
   //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address)到你們的頁面--------------//
   const [county, setCounty] = useState(-1)
@@ -181,6 +183,10 @@ function App() {
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 currentUserData={currentUserData}
+                couponStatus={couponStatus}
+                setCouponStatus={setCouponStatus}
+                couponOneStatus={couponOneStatus}
+                setCouponOneStatus={setCouponOneStatus}
                 // vnbar
                 county={county}
                 setCounty={setCounty}
@@ -245,6 +251,9 @@ function App() {
                 currentUser={currentUser}
                 setShowLoginModal={setShowLoginModal}
                 currentUserData={currentUserData}
+                couponStatus={couponStatus}
+                setCouponStatus={setCouponStatus}
+                couponOneStatus={couponOneStatus}
                 // vnbar
                 county={county}
                 setCounty={setCounty}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './IrisGetCouponBox.scss'
 import { ReactComponent as Coupon30 } from './beastie_coupon30.svg'
-import { Animated } from 'react-animated-css'
 
 function IrisGetCouponBox(props) {
   const { setShowGetCouponBox } = props

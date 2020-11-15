@@ -13,6 +13,10 @@ function IrisGetCoupon(props) {
     currentUser,
     currentUserData,
     setShowLoginModal,
+    couponStatus,
+    setCouponStatus,
+    couponOneStatus,
+    setCouponOneStatus,
     // vnbar
     county,
     setCounty,
@@ -42,7 +46,13 @@ function IrisGetCoupon(props) {
           currentUser={currentUser}
           currentUserData={currentUserData}
         />
-        <IrisGetCouponSect />
+        <IrisGetCouponSect
+          currentUser={currentUser}
+          couponStatus={couponStatus}
+          setCouponStatus={setCouponStatus}
+          couponOneStatus={couponOneStatus}
+          setCouponOneStatus={setCouponOneStatus}
+        />
       </div>
       <ScrollButton />
     </>
