@@ -22,22 +22,14 @@ $white: #ffffff;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap');
 
-.jess-comment-bg {
-  width: 100%;
-  display: flex;
-  // flex-wrap: wrap;
-}
-.jess-commentBox {
-  width: 70rem;
-  // height: 10rem;
-  font-size: 1.5rem;
-  list-style: none;
+.jess-commentOderBg {
+  width: 60rem;
 }
 //commentItem
 .jess-commentOder {
   height: 7rem;
-  width: 90rem;
-  background-color: #ffffff;
+  width: 70rem;
+  // background-color: $lightBrown;
   font-size: 1.5rem;
   line-height: 2rem;
   color: $darkGary;
@@ -46,8 +38,18 @@ $white: #ffffff;
   padding: 1rem;
   display: flex;
   outline: none;
-  align-items: center;
+  align-self: center;
 }
+
+.jess-textTittle {
+  font-size: 1.5rem;
+  font-family: 'Noto Sans TC';
+  color: $orange;
+}
+.jess-commentOrderStar a:hover {
+  text-decoration: none;
+}
+
 // .jess-commentOrderStar ul {
 //   width: 17rem;
 // }

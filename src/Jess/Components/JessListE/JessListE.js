@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import 'antd/dist/antd.css'
-import './JessListE.scss'
-import { Link } from 'react-router-dom'
-import ItemsCarousel from 'react-items-carousel'
-import right from './Images/right.svg'
-import left from './Images/left.svg'
+import React, { useState, useEffect } from 'react';
+import 'antd/dist/antd.css';
+import './JessListE.scss';
+import { Link } from 'react-router-dom';
+import ItemsCarousel from 'react-items-carousel';
+import right from './Images/right.svg';
+import left from './Images/left.svg';
 
 function JessListE(props) {
-  const [activeItemIndex, setActiveItemIndex] = useState(0)
-  const { menu, setMenu, refreshPage } = props
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const { menu, setMenu, refreshPage } = props;
   return (
     <>
       <div className="container-fluid">
@@ -24,7 +24,7 @@ function JessListE(props) {
               activePosition={'center'}
               chevronWidth={60}
               disableSwipe={true}
-              alwaysShowChevrons={false}
+              alwaysShowChevrons={true}
               numberOfCards={3}
               slidesToScroll={3}
               outsideChevron={true}
@@ -87,7 +87,7 @@ function JessListE(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default JessListE
+export default JessListE;

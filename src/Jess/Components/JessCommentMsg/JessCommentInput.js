@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import ReactDOM from 'react-dom'
-import './JessCommentInput.scss'
-import Cross from './Images/cross.svg'
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import './JessCommentInput.scss';
+import Cross from './Images/cross.svg';
 // import JessCommentList from '../../../Share/Components/Button/Button'
 // import ReactStars from 'react-rating-stars-component'
-import 'antd/dist/antd.css'
-import { Rate } from 'antd'
+import 'antd/dist/antd.css';
+import { Rate } from 'antd';
 
 function JessCommentInput(props) {
-  const [textInput, setTextInput] = useState('')
-  const [comments, setComments] = useState([])
-  const [rating, setRating] = useState(0)
-  const { closeModal } = props
+  const [textInput, setTextInput] = useState('');
+  const [comments, setComments] = useState([]);
+  const [rating, setRating] = useState(0);
+  const { closeModal, orderItem } = props;
   // const {
   //   textInput,
   //   setTextInput,
@@ -28,7 +28,7 @@ function JessCommentInput(props) {
   async function handleSubmit(v) {
     // e.preventDefault();
     if (textInput === '') {
-      return false
+      return false;
     }
 
     const newItems = {
@@ -38,10 +38,10 @@ function JessCommentInput(props) {
       content: textInput,
       created_at: new Date().toLocaleString(),
       // created_at: null,
-    }
-    const newComments = [newItems, ...comments]
-    setComments(newComments)
-    const url = 'http://localhost:5000/product/member1msg'
+    };
+    const newComments = [newItems, ...comments];
+    setComments(newComments);
+    const url = 'http://localhost:5000/product/member1msg';
     const request = new Request(url, {
       method: 'POST',
       body: JSON.stringify(newItems),
@@ -49,29 +49,34 @@ function JessCommentInput(props) {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
-    })
+    });
 
-    const response = await fetch(request)
-    const data = await response.json()
+    const response = await fetch(request);
+    const data = await response.json();
 
-    console.log('伺服器回傳的json資料', data)
+    console.log('伺服器回傳的json資料', data);
 
-    setTextInput('')
-    setRating(0)
+    setTextInput('');
+    setRating(0);
     // clearStar()
   }
   const ratingChanged = (newRating) => {
-    setRating(newRating)
-  }
+    setRating(newRating);
+  };
 
   useEffect(() => {
-    handleSubmit()
-  }, [])
+    handleSubmit();
+  }, []);
 
   return (
     <>
       <div className="row mt-3">
-        <div className="col-3 jess-comment-productPic mt-2"></div>
+        <div className="col-3  mt-2">
+          <img
+            src={'/productImages/Bento/' + '00_bento-chicken-breast' + '.jpg'}
+            className="jess-comment-productPic"
+          ></img>
+        </div>
         <div className="col-8">
           <p className="jess-modalText">滿意此商品嗎：</p>
           <div className="jess-rateStar mt-0">
@@ -95,18 +100,18 @@ function JessCommentInput(props) {
                   starRating: rating,
                   content: textInput,
                   // created_at: new Date(),
-                }
-                const newComments = [newItems, ...comments]
-                setComments(newComments)
-                setTextInput('')
+                };
+                const newComments = [newItems, ...comments];
+                setComments(newComments);
+                setTextInput('');
               }
             }}
           ></textarea>
           <button
             className="jess-input-button"
             onClick={() => {
-              closeModal()
-              handleSubmit()
+              closeModal();
+              handleSubmit();
             }}
           >
             確認送出
@@ -124,7 +129,7 @@ function JessCommentInput(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default JessCommentInput
+export default JessCommentInput;

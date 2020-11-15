@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import Fade from 'react-reveal/Fade'
-import 'antd/dist/antd.css'
-import './JessVegB.scss'
-import veg from './images/jess-VegBox.jpg'
+import React, { useState, useEffect } from 'react';
+import Fade from 'react-reveal/Fade';
+import 'antd/dist/antd.css';
+import './JessVegB.scss';
+import { Parallax } from 'rc-scroll-anim';
 
 function JessVegB() {
   return (
@@ -25,9 +25,15 @@ function JessVegB() {
                   <p>屬於這塊土地的脈絡與感動</p>
                 </Fade>
               </div>
+
               <div className="jess-VegBox col-12 ">
-                <div className="jess-VegBox2 col-12 "></div>
-                <div className="jess-VegBox3 col-12 "></div>
+                <Parallax
+                  animation={{ x: 0, opacity: 1, playScale: [0.3, 0.8] }}
+                  style={{ opacity: 0 }}
+                  className="jess-VegBox2 col-12"
+                />
+                {/* <div className="jess-VegBox2 col-12 "></div> */}
+                {/* <div className="jess-VegBox3 col-12 "></div> */}
               </div>
             </div>
           </div>
@@ -62,7 +68,7 @@ function JessVegB() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default JessVegB
+export default JessVegB;

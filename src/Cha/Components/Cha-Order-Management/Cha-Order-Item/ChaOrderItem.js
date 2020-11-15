@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
 import { Link, Switch } from 'react-router-dom';
 import './ChaOrderItem.scss';
 import UpdateCartToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalStorage';
+
+//加上這三個 路徑要注意------------
+import JessModal from '../../../../Jess/Components/JessModal/JessModal';
+import JessCommentOrder from '../../../../Jess/Components/JessCommentMsg/JessCommentOrder';
+import JessCommentInput from '../../../../Jess/Components/JessCommentMsg/JessCommentInput';
+import { Collapse } from 'antd';
 
 // import { Button, Collapse } from 'react-bootstrap';
 function ChaOrderItem(props) {
@@ -14,6 +20,36 @@ function ChaOrderItem(props) {
   } = props;
 
   const [error, setError] = useState(null);
+  //Jess 光箱需要的state
+  const [status, setStatus] = useState(false);
+  const [comments, setComments] = useState([]);
+  const { Panel } = Collapse;
+
+  function callback(key) {
+    console.log(key);
+  }
+
+  //fetch member
+  async function messageData() {
+    const url = 'http://localhost:5000/product/member1msg2';
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    });
+
+    const response = await fetch(request);
+    const data = await response.json();
+
+    setComments(data);
+    // console.log(data)
+  }
+  useEffect(() => {
+    messageData();
+  }, [status]);
 
   // 訂單明細的內容JSX
   const ComponentOrderDetail = (props) => {
@@ -79,6 +115,7 @@ function ChaOrderItem(props) {
           {orderItem.order_detail.map((item, value) => (
             <div className="row">
               <span className="col-5">{item.product_name}</span>
+
               <span className="col-2">${item.product_price}</span>
               <span className="col-3">X {item.product_amount}</span>
               <span className="col-2">
@@ -86,10 +123,25 @@ function ChaOrderItem(props) {
                   type="button"
                   value="我要評價"
                   className="cha-detail-btn"
+                  // Jess光箱的onClick事件
+                  onClick={() => setStatus(true)}
                 />
               </span>
             </div>
           ))}
+        </div>
+        <div className="jess-container mx-auto">
+          <div className="jess-Collapse ">
+            <Collapse defaultActiveKey={[]} ghost>
+              <Panel header="我的留言" key="1" className="jess-Panel pl-5">
+                <JessCommentOrder
+                  comments={comments}
+                  setComments={setComments}
+                  orderItem={orderItem}
+                />
+              </Panel>
+            </Collapse>
+          </div>
         </div>
       </>
     );
@@ -161,6 +213,16 @@ function ChaOrderItem(props) {
 
     return (
       <>
+        {/* 加上這個觸發光箱 */}
+        {status && (
+          <JessModal closeModal={() => setStatus(false)}>
+            <JessCommentInput
+              closeModal={() => setStatus(false)}
+              orderItem={orderItem}
+            />
+            {/* <JessCommentMsg status={status} setStatus={setStatus} /> */}
+          </JessModal>
+        )}
         <div className="cha-order-item-container">
           <div className="cha-order-row">
             <div className="cha-order-column1-picture">
@@ -171,6 +233,7 @@ function ChaOrderItem(props) {
                   orderItem.order_detail[0].product_image +
                   '.jpg'
                 }
+                alt=""
               ></img>
             </div>
             <div className="cha-order-column2">
