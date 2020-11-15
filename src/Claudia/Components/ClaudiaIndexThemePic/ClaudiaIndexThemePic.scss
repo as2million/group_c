@@ -5,14 +5,12 @@
   height: 100px;
 }
 
-.claudia-index-background {
-  position: relative;
-}
-
 .claudia-index-background-image {
-  background-image: url(./Images/index_bg.jpg);
+  background-image: url(./Images/index_new_bg.jpg);
   height: 765px;
-  width: 100vw;
+  width: 1440px;
+  margin: 0px auto;
+  position: relative;
 }
 
 .claudia-index-text {
@@ -110,36 +108,97 @@
 
 //------------------------------Desktop--------------------------------
 
+//-----------------------------Ipad Pro--------------------------------
+
+// @media screen and (min-width: 768.1px) and (max-width: 1200px) {
+//   .claudia-index-text {
+//     position: absolute;
+//     top: 770px;
+//     right: 240px;
+//   }
+
+//   .claudia-index-background-image {
+//     width: 768px;
+//     height: 1024px;
+//     background-image: url(./Images/rwd_pad_index_bg.jpg);
+//   }
+
+//   .claudia-index-text {
+//     text-align: center;
+//   }
+
+//   .claudia-index-text-1 {
+//     font-size: 70px;
+//   }
+  
+//   .claudia-index-text-2 {
+//     font-size: 50px;
+//   }
+
+//   .claudia-index-text {
+//     position: absolute;
+//     top: 1000px;
+//     right: 295px;
+//   }
+
+//   .claudia-index-background-image {
+//     width: 1024px;
+//     height: 1366px;
+//     background-image: url(./Images/rwd_pad_pro_index_bg.jpg);
+//   }
+
+//   //mouse scroll icon
+
+//   .claudia-center {
+//     display: none;
+//   }
+
+// }
+
+//-----------------------------Ipad Pro--------------------------------
+
 //--------------------------------Ipad---------------------------------
 
-//not working
-
-@media screen and (min-width: 57.6rem) and (max-width: 120rem) {
+@media screen and (min-width: 576.1px) and (max-width: 1200px) {
   .claudia-index-text {
     position: absolute;
-    right: 265px;
+    top: 770px;
+    right: 240px;
+  }
+
+  .claudia-index-background-image {
+    width: 768px;
+    height: 1024px;
+    background-image: url(./Images/rwd_pad_index_bg.jpg);
+  }
+
+  //mouse scroll icon
+
+  .claudia-center {
+    display: none;
   }
 }
 
 //--------------------------------Ipad---------------------------------
 
-//----------------------Iphone 6/7/8 + Plus + X------------------------
+//---------------------------Iphone 6/7/8 Plus-------------------------
 
-@media screen and (max-width: 57.6rem) {
+@media screen and (min-width: 375px) and (max-width: 576px) {
   .claudia-fake-navbar {
     width: 100%;
     height: 100px;
   }
 
   .claudia-index-background-image {
-    width: 100vw;
-    height: 667px;
-    background-image: url(./Images/rwd_index_bg.jpg);
+    width: 414px;
+    height: 736px;
+    background-image: url(./Images/rwd_plus_index_bg.jpg);
   }
 
   .claudia-index-text {
     position: absolute;
-    right: 80px;
+    top: 530px;
+    right: 100px;
   }
 
   .claudia-index-text-1 {
@@ -157,4 +216,21 @@
   }
 }
 
-//----------------------Iphone 6/7/8 + Plus + X------------------------
+//---------------------------Iphone 6/7/8 Plus-------------------------
+
+//---------------------------Iphone 6/7/8 + X--------------------------
+
+@media screen and (max-width: 375px) {
+  .claudia-index-background-image {
+    width: 375px;
+    height: 667px;
+    background-image: url(./Images/rwd_index_bg.jpg);
+  }
+
+  .claudia-index-text {
+    position: absolute;
+    right: 80px;
+  }
+}
+
+//--------------------------Iphone 6/7/8 + X--------------------------
