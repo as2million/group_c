@@ -70,7 +70,7 @@ function ChaCartSubmitCard(props) {
 
   useEffect(() => {
     // 運費的商業邏輯
-    if (totalAmount > 0 && totalAmount <= 2) {
+    if (totalAmount > 0 && totalAmount <= 3) {
       setShipping(50);
     } else {
       setShipping(0);

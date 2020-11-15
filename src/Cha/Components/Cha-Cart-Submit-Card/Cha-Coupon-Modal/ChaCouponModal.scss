@@ -51,6 +51,11 @@ $primary: #f5a016;
 }
 .cha-iris-coupon-box {
   width: 48rem;
+  transition: 0.3s;
+}
+.cha-iris-coupon-box:hover {
+  box-shadow: 0.1rem 0.2rem 0.5rem 0.3rem #9e9e9e79;
+  transition: 0.3s;
 }
 .cha-wrap-coupon-container::-webkit-scrollbar {
   display: none;

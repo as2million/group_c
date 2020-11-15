@@ -48,6 +48,23 @@ function ChaCartStepCardStep1(props) {
   };
   let subtotalPrice = calcuSubtotalPrice(meals);
 
+  //  //  ---------------計算商品總量 ---------------//
+  const calcuTotalAmount = (items) => {
+    let total = 0;
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].productAmount;
+    }
+    return total;
+  };
+  let totalAmount = calcuTotalAmount(meals);
+
+  //   useEffect(()=>{
+  // let b =
+  // if(totalAmount<3){
+
+  // }else{}
+  //   },[totalAmount])
+
   //-----------DEMO用物件-----------//
   const demoMeals1 = {
     id: 1,
@@ -108,6 +125,22 @@ function ChaCartStepCardStep1(props) {
           }}
         >
           步驟1：餐點明細
+          <div className="cha-step1-wrap-mons">
+            <div
+              className={
+                totalAmount < 3
+                  ? 'cha-step1-mons-promotion'
+                  : 'cha-step1-mons-promotion-toggle'
+              }
+            >
+              <div className="cha-step1-mons"></div>
+              <div className="cha-step1-talk"></div>
+              <div className="cha-step1-promotion-text">
+                <p>便當滿3個</p>
+                <p>免運喔！</p>
+              </div>
+            </div>
+          </div>
         </div>
         {/* 餐點項目 */}
         {/* {mealsDisplay.map((item, index) => ( */}

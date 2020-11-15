@@ -351,6 +351,16 @@ function ChaOrderItem(props) {
                     />
                   </div>
                 )}
+                {orderItem.order_state === '揪團中' && (
+                  <div>
+                    <ChaGrayButton
+                      type="button"
+                      value="取消/退費"
+                      text="取消/退費"
+                      className="cha-order-btn-858585 cha-order-refund-btn"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
