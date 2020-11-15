@@ -138,10 +138,6 @@ function IrisDataEditSect(props) {
         setShowGetCouponBox(true)
         // setData()
       } else {
-        // 
-        if (!couponStatus) {
-          return
-        }
         // 秀更新成功光箱
         setShowUpdateModal(true)
         // setData()
