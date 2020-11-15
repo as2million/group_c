@@ -13,7 +13,9 @@ function ClaudiaDetailedNavButtons() {
             <div className="claudia-detailed-nav-buttons-outside">
                 <div className="claudia-detailed-nav-buttons">
                     <div className="claudia-detailed-nav-buttons-container">
-                        <div className="claudia-detailed-nav-button1"><Button className="button-btn-g" text="點我報名" /></div>
+                        <a href="#signup">
+                            <div className="claudia-detailed-nav-button1"><Button className="button-btn-g" text="點我報名" /></div>
+                        </a>
                         <h1>沒有要參加這個活動嗎？</h1>
                         <div className="claudia-detailed-nav-buttons-area">
                             <div className="claudia-detailed-nav-buttons-box">
@@ -24,13 +26,15 @@ function ClaudiaDetailedNavButtons() {
                             </div>
                             <div className="claudia-detailed-nav-buttons-box">
                                 <div className="claudia-detailed-nav-buttons-icons"><img alt="bento" src={Bento} /></div>
-                                {/* add link */}
-                                <div className="claudia-detailed-nav-button2"><Button className="button-btn-g" text="我想訂便當" /></div>
+                                <Link to="/productList">
+                                    <div className="claudia-detailed-nav-button2"><Button className="button-btn-g" text="我想訂便當" /></div>
+                                </Link>
                             </div>
                             <div className="claudia-detailed-nav-buttons-box">
                                 <div className="claudia-detailed-nav-buttons-icons"><img alt="vegs" src={Vegs} /></div>
-                                {/* add link */}
-                                <div className="claudia-detailed-nav-button2"><Button className="button-btn-g" text="我想訂蔬菜箱" /></div>
+                                <Link to="/vegBox">
+                                    <div className="claudia-detailed-nav-button2"><Button className="button-btn-g" text="我想訂蔬菜箱" /></div>
+                                </Link>
                             </div>
                         </div>
                     </div>
