@@ -17,7 +17,7 @@ function JessListE(props) {
           <h2 className="jess-text-30orange text-center ">你可能也想來點</h2>
           <div className="mx-auto jess-carousel">
             <ItemsCarousel
-              infiniteLoop={false}
+              infiniteLoop={true}
               activeItemIndex={activeItemIndex}
               requestToChangeActive={setActiveItemIndex}
               gutter={40}
