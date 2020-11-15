@@ -72,7 +72,7 @@ function ChaCartSubmitCard(props) {
 
   useEffect(() => {
     // 運費的商業邏輯
-    if (totalAmount > 0 && totalAmount <= 3) {
+    if (totalAmount > 0 && totalAmount < 3) {
       setShipping(50);
     } else {
       setShipping(0);
@@ -223,20 +223,16 @@ function ChaCartSubmitCard(props) {
     // );
   }
 
-  // useEffect(() => {
-  //   if (formatCheck) {
-  //     console.log(
-  //       'useEffect，[formatCheck]，格式檢查若通過，提交訂單，格式檢查結果為：',
-  //       formatCheck
-  //     );
-  //     console.log('商品數為0不給提交，目前商品數：', totalAmount);
-  //     totalAmount && createToMyOrder();
-  //     couponSid && deleteCouponListData(couponSid);
-  //     // props.history.push('/orderManagement');移動到確認交易的光箱內
-  //     handleSubmitCartRemoveLocalStorage();
-  //     handleCartNumber('minus', totalAmount);
-  //   }
-  // }, [formatCheck]);
+  useEffect(() => {
+    if (formatCheck) {
+      console.log('useEffect，[formatCheck]，格式檢查若通過，提交訂單');
+      createToMyOrder();
+      couponSid && deleteCouponListData(couponSid);
+      // props.history.push('/orderManagement');移動到確認交易的光箱內
+      handleSubmitCartRemoveLocalStorage();
+      handleCartNumber('minus', totalAmount);
+    }
+  }, [formatCheck]);
 
   return (
     <>
@@ -357,22 +353,25 @@ function ChaCartSubmitCard(props) {
           <div className="cha-shopping-list-total-number">${totalPrice}</div>
         </div>
         {/* 提交按鈕 */}
-        <div
-          className="cha-shopping-cart-btn-div"
-          onClick={() => {
-            handleFormatCheck();
-            // console.log('商品數為0不給提交，目前商品數：', totalAmount);
-            // totalAmount && createToMyOrder();
-            // couponSid && deleteCouponListData(couponSid);
-            // // props.history.push('/orderManagement');移動到確認交易的光箱內
-            // handleSubmitCartRemoveLocalStorage();
-            // handleCartNumber('minus', totalAmount);
-          }}
-        >
-          <ChaCartButton
-            text="送出"
-            className="cha-shopping-cart-btn cha-submit-button-btn"
-          />
+        <div className=" d-flex align-items-center flex-column">
+          <div
+            className="cha-shopping-cart-btn-div"
+            onClick={() => {
+              handleFormatCheck();
+              // console.log('商品數為0不給提交，目前商品數：', totalAmount);
+              // totalAmount && createToMyOrder();
+              // couponSid && deleteCouponListData(couponSid);
+              // // props.history.push('/orderManagement');移動到確認交易的光箱內
+              // handleSubmitCartRemoveLocalStorage();
+              // handleCartNumber('minus', totalAmount);
+            }}
+          >
+            <ChaCartButton
+              text="送出"
+              className="cha-shopping-cart-btn cha-submit-button-btn"
+            />
+          </div>
+          <div className="cha-wrong-format">資料填寫不正確</div>
         </div>
       </div>
     </>

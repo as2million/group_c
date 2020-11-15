@@ -103,7 +103,7 @@ $primary: #f5a016;
   margin-top: 0rem;
   // width: 600px;
 }
-.cha-submit-modal-container span {
+.cha-submit-modal-container h1 {
   color: #e0611e;
   font-size: 3.6rem;
   margin-bottom: 3rem;
@@ -118,9 +118,13 @@ $primary: #f5a016;
   position: relative;
 }
 .cha-submit-modal-container p {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #858585;
   margin-bottom: 0.5rem;
+}
+.cha-submit-modal-container span {
+  color: #535353;
+  font-weight: 600;
 }
 .cha-submit-modal-btn {
   width: 30rem;

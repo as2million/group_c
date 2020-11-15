@@ -234,6 +234,10 @@ function ChaCart(props) {
       setFormatCheck(true);
       console.log('通過格式檢查，setFormatCheck(true)');
     } else {
+      $('.cha-wrong-format').slideDown('slow');
+      setTimeout(() => {
+        $('.cha-wrong-format').slideUp('slow');
+      }, 2000);
       console.log('未通過格式檢查');
     }
   };
