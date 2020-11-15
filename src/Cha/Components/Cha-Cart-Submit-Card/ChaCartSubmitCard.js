@@ -1,112 +1,114 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import 'Cha/Components/Cha-Cart-Submit-Card/ChaCartSubmitCard.scss';
 // import RequestToServer from 'Cha/RequestToServer';
-import ChaCartButton from './Cha-Cart-Button/ChaCartButton'
-import { withRouter, useHistory } from 'react-router-dom'
+import ChaCartButton from './Cha-Cart-Button/ChaCartButton';
+import { withRouter, useHistory } from 'react-router-dom';
+import ChaCouponModal from './Cha-Coupon-Modal/ChaCouponModal';
+import ChaSubmitModal from './Cha-Submit-Modal/ChaSubmitModal';
+import ChaBeastiePointSect from 'Cha/Components/Cha-Cart-Submit-Card/Cha-BeastiePointSect/ChaBeastiePointSect';
 function ChaCartSubmitCard(props) {
   const {
     // mealsDisplay,
     meals,
+    setMeals,
     memberSid,
     name,
     mobile,
     takeWay,
+    county,
+    district,
     address,
     beastieCoin,
     takeDate,
     takeTime,
     handleCartNumber,
-  } = props
-  const [shipping, setShipping] = useState(0)
-  const [tableware, setTableware] = useState('')
+  } = props;
+
+  const [shipping, setShipping] = useState(0);
+  const [tableware, setTableware] = useState('');
+  const [orderState, setOrderState] = useState('未送達');
+
   // const [beastieCoin, setBeastieCoin] = useState(60);
   // const [totalAmount, setTotalAmount] = useState(0);
   // const [subtotalPrice, setSubtotalPrice] = useState(0);
   // const [totalPrice, setTotalPrice] = useState(0);
   // fetch用
-  const [error, setError] = useState(null)
+  const [error, setError] = useState([]);
+
+  // 控制Coupon光箱
+  const [couponModalController, setCouponModalController] = useState(false);
+  // 控制Submit光箱
+  const [submitModalController, setSubmitModalController] = useState(false);
+  // 光箱內的checkbox
+  const [useBeastieCoin, setUseBeastieCoin] = useState(0);
+  const [couponSid, setCouponSid] = useState(0);
 
   // 計算商品總量
   const calcuTotalAmount = (items) => {
-    let total = 0
+    let total = 0;
     for (let i = 0; i < items.length; i++) {
-      total += items[i].productAmount
+      total += items[i].productAmount;
     }
-    return total
-  }
-  let totalAmount = calcuTotalAmount(meals)
+    return total;
+  };
+  let totalAmount = calcuTotalAmount(meals);
   // let totalAmount = calcuTotalAmount(mealsDisplay);
   // setTotalAmount(calcuTotalAmount(mealsDisplay));
 
   // 計算商品價格小計
   const calcuSubtotalPrice = (items) => {
-    let total = 0
+    let total = 0;
     for (let i = 0; i < items.length; i++) {
-      total += items[i].productAmount * items[i].productPrice
+      total += items[i].productAmount * items[i].productPrice;
     }
-    return total
-  }
-  let subtotalPrice = calcuSubtotalPrice(meals)
+    return total;
+  };
+  let subtotalPrice = calcuSubtotalPrice(meals);
   // let subtotalPrice = calcuSubtotalPrice(mealsDisplay);
   // setSubtotalPrice(calcuSubtotalPrice(mealsDisplay));
 
   useEffect(() => {
     // 運費的商業邏輯
-    if (totalAmount > 0 && totalAmount <= 2) {
-      setShipping(50)
+    if (totalAmount > 0 && totalAmount <= 3) {
+      setShipping(50);
     } else {
-      setShipping(0)
+      setShipping(0);
     }
-  }, [totalAmount])
+    if (totalAmount >= 10) {
+      setOrderState('火速運送中');
+    } else {
+      setOrderState('未送達');
+    }
+    console.log('隨商品總量變動的運費、訂單狀態');
+  }, [totalAmount]);
 
   // 計算總價
-  let totalPrice =
-    subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0)
+  let totalPrice = subtotalPrice + shipping - useBeastieCoin;
+  console.log(useBeastieCoin);
   // setTotalPrice(
   //   subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0)
 
   // 提交訂單後，清除localstorage
   const handleSubmitCartRemoveLocalStorage = () => {
-    localStorage.removeItem('cart')
+    localStorage.removeItem('cart');
     // const currentCartNumber =
     //   JSON.parse(localStorage.getItem('cartNumber')) || 0;
     // const otherCart = currentCartNumber - totalAmount;
     // localStorage.setItem('cartNumber', JSON.stringify(otherCart));
     // handleCartNumber('minus', totalAmount);
-  }
-
-  // 要POST給my_order的資料
-  // {
-  // order_state: "未送達",
-  // step1餐點明細計算來的
-  // step2：從會員資料表要來的
-  //   member_sid: memberSid,
-  //   take_person: name,
-  //   mobile: mobile,
-  //   take_address: address,
-  //   beastie_coin: beastieCoin,
-  // step2：用戶輸入的
-  //   take_date: startDate,
-  //   take_time: takeTime,
-  // step4：購物清單
-  // total_amount: totalAmount,
-  // subtotal_price: subtotalPrice,
-  // total_price: totalPrice,
-  // shipping: shipping,
-  // beastie_coin: beastieCoin,
-  // tableware: tableware,
-  //created_at: new Date()
-  // }
+  };
 
   // POST給my_order的資料
   async function createToMyOrder() {
     const bodyData = {
-      order_state: '火速運送中',
+      order_state: orderState,
       member_sid: memberSid,
       take_person: name,
       mobile: mobile,
-      take_way: '自取',
+      take_way: takeWay,
+      take_county: county,
+      take_district: district,
       take_address: address,
       take_date: takeDate,
       take_time: takeTime,
@@ -114,13 +116,14 @@ function ChaCartSubmitCard(props) {
       subtotal_price: subtotalPrice,
       total_price: totalPrice,
       shipping: shipping,
-      beastie_coin: beastieCoin,
+      beastie_coin: useBeastieCoin,
       tableware: tableware,
       created_at: new Date(),
-    }
+    };
 
-    const url = 'http://localhost:5000/cart-api/my-order'
-
+    const url = 'http://localhost:5000/cart-api/my-order';
+    // console.log('takeDate', takeDate);
+    console.log('bodyData', bodyData);
     const request = new Request(url, {
       method: 'POST',
       body: JSON.stringify(bodyData),
@@ -128,32 +131,37 @@ function ChaCartSubmitCard(props) {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
-    })
+    });
 
     try {
-      const response = await fetch(request)
-      const dataMyOrder = await response.json()
-      createToMyOrderDetail(dataMyOrder.insertId)
+      const response = await fetch(request);
+      const dataMyOrder = await response.json();
+
+      createToMyOrderDetail(dataMyOrder.insertId);
       // data會是一個物件值
-      console.log('my-order', dataMyOrder)
+      // console.log('my-order', dataMyOrder);
     } catch (error) {
-      setError(error)
+      setError(error);
     }
   }
+  console.log('memberSids', memberSid);
+  console.log('meals', meals);
 
   // POST給my_order_detail的資料
   async function createToMyOrderDetail(orderSid) {
     // let myOrderDetailArray = mealsDisplay.map((item) => ({
     let myOrderDetailArray = meals.map((item) => ({
       member_sid: memberSid,
-      // order_sid: dataMyOrder.insertId,
       order_sid: orderSid,
       product_sid: item.id,
       product_amount: item.productAmount,
       product_name: item.productName,
       product_price: item.productPrice,
-    }))
-    const url = 'http://localhost:5000/cart-api/my-order-detail'
+      product_image: item.productImage ? item.productImage : '',
+    }));
+
+    const url = 'http://localhost:5000/cart-api/my-order-detail';
+    console.log('OrderDetailArr', myOrderDetailArray);
     const request = new Request(url, {
       method: 'POST',
       body: JSON.stringify(myOrderDetailArray),
@@ -161,28 +169,99 @@ function ChaCartSubmitCard(props) {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
-    })
+    });
 
     try {
-      const response = await fetch(request)
-      const dataMyOrderDetail = await response.json()
+      setSubmitModalController(true);
+      const response = await fetch(request);
+      const dataMyOrderDetail = await response.json();
       // data會是一個物件值
-      console.log('my-order-detail', dataMyOrderDetail)
+      console.log('my-order-detail dataMyOrderDetails', dataMyOrderDetail);
+      console.log('order_sid', orderSid);
+      console.log('my-order-detail POST成功');
     } catch (error) {
-      setError(error)
+      setError(error);
     }
   }
 
+  // window.addEventListener('scroll', () => {
+  //   shoppingListState();
+  // });
+  // // main code
+  // function shoppingListState() {
+  //   let shoppingList = document.querySelector('.cha-aside-card');
+  //   let w = Math.ceil(
+  //     (Math.round(window.pageYOffset) /
+  //       (document.body.scrollHeight - window.innerHeight)) *
+  //       100
+  //   );
+  //   if (w >= 92) {
+  //     shoppingList.classList.add('cha-control');
+  //   } else {
+  //     shoppingList.classList.remove('cha-control');
+  //   }
+  // }
+  async function deleteCouponListData(paramsCouponSid) {
+    const url = `http://localhost:5000/cart-api/use-coupon/${paramsCouponSid}`;
+
+    const request = new Request(url, {
+      method: 'DELETE',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    });
+    const response = await fetch(request);
+    const data = await response.json();
+    console.log('deleteCouponListData_fetch成功', data);
+    // console.log(dataAllOrder);
+    // console.log(
+    //   dataOrders[0] && dataOrders[0].take_person && dataOrders[0].take_person
+    // );
+  }
   return (
     <>
+      {/* Modal */}
+      {couponModalController && (
+        <ChaCouponModal
+          closeModal={() => setCouponModalController(false)}
+          useBeastieCoin={useBeastieCoin}
+          setUseBeastieCoin={setUseBeastieCoin}
+          couponSid={couponSid}
+          setCouponSid={setCouponSid}
+        >
+          {/* <ChaBeastiePointSect /> */}
+        </ChaCouponModal>
+      )}
+      {submitModalController && (
+        <ChaSubmitModal
+          closeModalSecret={() => setSubmitModalController(false)}
+          takeDate={takeDate}
+          takeTime={takeTime}
+          closeModal={() => {
+            props.history.push('/orderManagement');
+            setSubmitModalController(false);
+          }}
+        >
+          {/* <ChaBeastiePointSect /> */}
+        </ChaSubmitModal>
+      )}
       <div className="cha-aside-card-fake"></div>
       <div className="cha-aside-card">
-        <div className="cha-step-header">
+        <div
+          className="cha-step-header"
+          onClick={() => {
+            localStorage.removeItem('cart');
+            localStorage.removeItem('cartNumber');
+            const newCart = localStorage.getItem('cart') || '[]';
+            setMeals(JSON.parse(newCart));
+          }}
+        >
           購物清單
           <button
             className="cha-control-normal-switch cha-farmer-cart-switch"
             onClick={() => {
-              props.history.push('/checkpoint')
+              props.history.push('/checkpoint');
             }}
           >
             小農購物車
@@ -202,7 +281,7 @@ function ChaCartSubmitCard(props) {
           <div>運費</div>
           <div>${shipping}</div>
         </div>
-        <div className="cha-shipping">
+        <div className="cha-monster-coin">
           <div className="form-group">
             <input
               type="checkbox"
@@ -210,52 +289,58 @@ function ChaCartSubmitCard(props) {
               value="cha-monster-coin"
               id="cha-monster-coin"
             />
-            <label htmlFor="cha-monster-coin">使用怪獸幣</label>
+            <label
+              htmlFor="cha-monster-coin"
+              // style={{ cursor: 'pointer' }}
+              onClick={() => setCouponModalController(true)}
+            >
+              使用怪獸幣
+            </label>
           </div>
-          <div>-${beastieCoin}</div>
+          <div>-${useBeastieCoin}</div>
         </div>
         <div className="cha-horizontal-line"></div>
         <div className="cha-tableware">
-          <div>
-            <label>
-              <input
-                type="radio"
-                name="tableware"
-                value="yes"
-                onChange={(e) => {
-                  setTableware(e.target.value)
-                }}
-                checked={tableware === 'yes'}
-              />
-              附餐具
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="tableware"
-                value="no"
-                onChange={(e) => {
-                  setTableware(e.target.value)
-                }}
-                checked={tableware === 'no'}
-              />
-              不附餐具
-            </label>
-          </div>
+          <label>
+            <input
+              type="radio"
+              name="tableware"
+              value="yes"
+              onChange={(e) => {
+                setTableware(e.target.value);
+              }}
+              checked={tableware === 'yes'}
+            />
+            附餐具
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="tableware"
+              value="no"
+              onChange={(e) => {
+                setTableware(e.target.value);
+              }}
+              checked={tableware === 'no'}
+            />
+            不附餐具
+          </label>
         </div>
         <div className="cha-horizontal-line"></div>
         <div className="cha-shopping-list-total">
-          <div>總計</div>
+          <div onClick={() => setSubmitModalController(true)}>總計</div>
           <div className="cha-shopping-list-total-number">${totalPrice}</div>
         </div>
         {/* 提交按鈕 */}
         <div
           className="cha-shopping-cart-btn-div"
           onClick={() => {
-            createToMyOrder()
-            props.history.push('/orderManagement')
-            handleSubmitCartRemoveLocalStorage()
-            handleCartNumber('minus', totalAmount)
+            console.log('商品數為0不給提交，目前商品數：', totalAmount);
+            totalAmount && createToMyOrder();
+            // props.history.push('/orderManagement');移動到確認交易的光箱內
+            handleSubmitCartRemoveLocalStorage();
+            handleCartNumber('minus', totalAmount);
+            couponSid && deleteCouponListData(couponSid);
           }}
         >
           <ChaCartButton
@@ -265,6 +350,6 @@ function ChaCartSubmitCard(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
-export default withRouter(ChaCartSubmitCard)
+export default withRouter(ChaCartSubmitCard);

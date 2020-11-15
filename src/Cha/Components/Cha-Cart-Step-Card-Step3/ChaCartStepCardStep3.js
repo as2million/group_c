@@ -5,10 +5,11 @@ import ChaCreditCardBack from 'Cha/Components/Cha-Cart-Step-Card-Step3/Images/Ch
 import ChaReceiptType from 'Cha/Components/Cha-Cart-Step-Card-Step3/Cha-Receipt-Type/ChaReceiptType';
 // import TWZipCode from './Cha-Address-Select/TWZipCode';
 import './ChaCartStepCardStep3.scss';
+import InputH40 from './InputH40/InputH40';
 
 function ChaCartStepCardStep3(props) {
   const [creditNumber, setCreditNumber] = useState('');
-  const [numberPointText, setNumberPointText] = useState('●●●●●●●●●●●●');
+  const [numberPointText, setNumberPointText] = useState('●●●●●●●●●●●●●●●●');
   const [creditMonth, setCreditMonth] = useState('●●');
   const [creditYear, setCreditYear] = useState('●●');
   const [creditFlip, setCreditFlip] = useState(false);
@@ -18,27 +19,38 @@ function ChaCartStepCardStep3(props) {
   // 信用卡號呈現效果
   function ShowInCard() {
     if (creditNumber.length >= 0) {
-      let p1 = '';
-      let pl1 = 12 - creditNumber.length;
-      for (let i = 0; i < pl1; i++) {
-        p1 += '●';
+      let point1 = '';
+      let pointLength1 = 16 - creditNumber.length;
+      for (let i = 0; i < pointLength1; i++) {
+        point1 += '●';
       }
-      setNumberPointText(creditNumber + p1);
+      let numberAddPoint = creditNumber + point1;
+      let num1to4 = numberAddPoint.slice(0, 4);
+      let num5to8 = numberAddPoint.slice(4, 8);
+      let num9to12 = numberAddPoint.slice(8, 12);
+      let num13to16 = numberAddPoint.slice(12, 16);
+
+      setNumberPointText(
+        num1to4 + ' ' + num5to8 + ' ' + num9to12 + ' ' + num13to16
+      );
+      // setNumberPointText(creditNumber + point1);
     }
     if (credit3Number.length >= 0) {
-      let p2 = '';
-      let pl2 = 3 - credit3Number.length;
-      for (let i = 0; i < pl2; i++) {
-        p2 += '●';
+      let point2 = '';
+      let pointLength2 = 3 - credit3Number.length;
+      for (let i = 0; i < pointLength2; i++) {
+        point2 += '●';
       }
-      setThreeNumberPointText(credit3Number + p2);
+      setThreeNumberPointText(credit3Number + point2);
     }
   }
   useEffect(() => {
     ShowInCard();
+    console.log('useEffect,ShowInCard(),[creditNumber]');
   }, [creditNumber]);
   useEffect(() => {
     ShowInCard();
+    console.log('useEffect,ShowInCard(),[credit3Number]');
   }, [credit3Number]);
 
   return (
@@ -91,11 +103,11 @@ function ChaCartStepCardStep3(props) {
         {/* 信用卡號 */}
         <div className="form-group">
           <label htmlFor="cha-step3-1-card-number">信用卡號</label>
-          <input
+          <InputH40
             type="text"
             className="form-control cha-step3-1-card-number"
             id="cha-step3-1-card-number"
-            maxLength="12"
+            maxLength="16"
             placeholder="XXXX XXXX XXXX XXXX"
             value={creditNumber}
             onChange={(e) => {
@@ -104,7 +116,6 @@ function ChaCartStepCardStep3(props) {
           />
         </div>
         {/* 月、年、後三碼 */}
-        <label className="choice" htmlFor="card"></label>
         {/* MMM */}
         <div className="form-row">
           <div className="form-group col">
@@ -133,7 +144,7 @@ function ChaCartStepCardStep3(props) {
           </div>
           <div className="form-group">
             <label></label>
-            <div className="m-1 mt-3">/</div>
+            <div className="cha-slash">/</div>
           </div>
           <div className="form-group col">
             <label>年</label>
@@ -160,7 +171,7 @@ function ChaCartStepCardStep3(props) {
 
           <div className="form-group col">
             <label htmlFor="cha-step3-4-back-3number">後三碼</label>
-            <input
+            <InputH40
               type="text"
               value={credit3Number}
               className="form-control cha-step3-4-back-3number"

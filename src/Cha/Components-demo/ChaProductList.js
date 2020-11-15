@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
+// import UpdateCartToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalStorage';
 
 function ChaProductList(props) {
   const [mycart1, setMycart1] = useState([]);
@@ -11,11 +12,11 @@ function ChaProductList(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const createCartToLocalStorage = (value) => {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+  const UpdateCartToLocalStorage = (value) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart1')) || [];
 
     const newCart = [...currentCart, value];
-    localStorage.setItem('cart', JSON.stringify(newCart));
+    localStorage.setItem('cart1', JSON.stringify(newCart));
 
     // 設定資料
     setMycart1(newCart);
@@ -65,14 +66,7 @@ function ChaProductList(props) {
             alt="..."
           />
           <div className="card-body">
-            <h5
-              className="card-title"
-              onClick={() => {
-                handleCartNumber('minus', 1);
-              }}
-            >
-              九九特餐-彩椒雞丁
-            </h5>
+            <h5 className="card-title">九九特餐-彩椒雞丁</h5>
             <p className="card-text">
               This is a longer card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
@@ -86,7 +80,7 @@ function ChaProductList(props) {
               className="btn btn-success"
               onClick={() => {
                 handleCartNumber('add', 1);
-                createCartToLocalStorage({
+                UpdateCartToLocalStorage({
                   id: 7,
                   productName: '九九特餐-彩椒雞丁',
                   productPrice: 100,
@@ -117,7 +111,8 @@ function ChaProductList(props) {
               type="button"
               className="btn btn-success"
               onClick={() => {
-                createCartToLocalStorage({
+                handleCartNumber('add', 1);
+                UpdateCartToLocalStorage({
                   id: 8,
                   productName: '哈妮BBQ烤雞腿',
                   productPrice: 130,
@@ -149,7 +144,8 @@ function ChaProductList(props) {
               type="button"
               className="btn btn-success"
               onClick={() => {
-                createCartToLocalStorage({
+                handleCartNumber('add', 1);
+                UpdateCartToLocalStorage({
                   id: 9,
                   productName: '蕃茄慢燉牛腩',
                   productPrice: 140,

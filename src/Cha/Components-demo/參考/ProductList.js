@@ -11,22 +11,22 @@ function ProductList(props) {
   const handleShow = () => setShow(true);
 
   const updateCartToLocalStorage = (item) => {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const currentCart = JSON.parse(localStorage.getItem('cart1')) || [];
 
     // find if the product in the localstorage with its id
     const index = currentCart.findIndex((v) => v.id === item.id);
 
-    // found: index! == -1
-    if (index > -1) {
-      //currentCart[index].amount++
-      setProductName('這個商品已經加過了');
-      handleShow();
-      return;
-    } else {
-      currentCart.push(item);
-    }
+    // // found: index! == -1
+    // if (index > -1) {
+    //   //currentCart[index].amount++
+    //   setProductName('這個商品已經加過了');
+    //   handleShow();
+    //   return;
+    // } else {
+    //   currentCart.push(item);
+    // }
 
-    localStorage.setItem('cart', JSON.stringify(currentCart));
+    localStorage.setItem('cart1', JSON.stringify(currentCart));
 
     // 設定資料
     setMycart(currentCart);

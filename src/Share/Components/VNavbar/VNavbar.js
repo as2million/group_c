@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import './VNavbar.scss'
-import { Navbar, Button } from 'react-bootstrap'
-import calendar from './calendar.svg'
-import clock from './clock.svg'
-import mapLocator from './mapLocator.svg'
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
-import { addDays, setHours, setMinutes } from 'date-fns'
-import { registerLocale } from 'react-datepicker'
-import { zhTW } from 'date-fns/esm/locale'
-import AddressTabs from '../AddressTabs/AddressTabs'
+import React, { useState, useEffect } from 'react';
+import './VNavbar.scss';
+import { Navbar, Button } from 'react-bootstrap';
+import calendar from './calendar.svg';
+import clock from './clock.svg';
+import mapLocator from './mapLocator.svg';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { addDays, setHours, setMinutes } from 'date-fns';
+import { registerLocale } from 'react-datepicker';
+import { zhTW } from 'date-fns/esm/locale';
+import AddressTabs from '../AddressTabs/AddressTabs';
 import {
   datacountries,
   datatownships,
   dataprice,
-} from '../../../Janice/Components/JanIndexx/data.js'
-registerLocale('zh-TW', zhTW)
+} from '../../../Janice/Components/JanIndexx/data.js';
+registerLocale('zh-TW', zhTW);
 
 function VNavbar(props) {
   const {
@@ -31,14 +31,14 @@ function VNavbar(props) {
     setTownship,
     address,
     setAddress,
-  } = props
+  } = props;
   // console.log('currentUser:', currentUser)
-  const [userInfoJan, setUserInfoJan] = useState([])
+  const [userInfoJan, setUserInfoJan] = useState([]);
 
-  const [startDate, setStartDate] = useState(new Date())
-  setSelectDate(startDate)
+  const [startDate, setStartDate] = useState(new Date());
+  setSelectDate(startDate);
 
-  const [status, setStatus] = useState(false)
+  const [status, setStatus] = useState(false);
 
   //原本fetch的方法
   const addressData = (e) => {
@@ -68,20 +68,20 @@ function VNavbar(props) {
           //   )
           // )  -> 4
           //   console.log(currentUser - 1)
-          setCounty(datacountries.indexOf(obj[1].county))
+          setCounty(datacountries.indexOf(obj[1].county));
           setTownship(
             datatownships[datacountries.indexOf(obj[1].county)].indexOf(
               obj[1].district
             )
-          )
-          setAddress(obj[1].address)
-        })
+          );
+          setAddress(obj[1].address);
+        });
     }
-  }
+  };
 
   useEffect(() => {
-    addressData()
-  }, [isLogin])
+    addressData();
+  }, [isLogin]);
 
   //疑似無法再次更改資料 -------- 取得目前user的資料 ---------- //
 
@@ -183,7 +183,7 @@ function VNavbar(props) {
               dateFormat="yyyy-MM-dd"
               selected={startDate}
               onChange={(date) => {
-                setStartDate(date)
+                setStartDate(date);
                 // console.log(selectDate)
               }}
               minDate={Date.now()}
@@ -198,7 +198,7 @@ function VNavbar(props) {
             <select
               value={slecteTime}
               onChange={(e) => {
-                setSelectTime(e.target.value)
+                setSelectTime(e.target.value);
               }}
               className="form-control select-time-jan"
             >
@@ -228,7 +228,7 @@ function VNavbar(props) {
         </div>
       </Navbar>
     </>
-  )
+  );
 }
 
-export default VNavbar
+export default VNavbar;

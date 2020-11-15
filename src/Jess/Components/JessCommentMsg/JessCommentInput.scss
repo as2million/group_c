@@ -35,7 +35,7 @@ $white: #ffffff;
 //commentItem
 .jess-commentItem {
   height: 7rem;
-  width: 70rem;
+  width: 80rem;
   background-color: #ffffff;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -46,16 +46,32 @@ $white: #ffffff;
   display: flex;
   outline: none;
 }
-
+.jess-ItemrateStarColor {
+  width: 6rem;
+}
+//input
 .jess-rateStar div {
   outline: none;
+  margin: 0 !important;
 }
 .jess-rateStarColor {
   outline: none;
-  // color: #f48145;
+  margin: 0 !important;
   width: 18rem;
   height: 3rem;
 }
+
+.jess-textarea {
+  width: 80rem;
+  height: 30rem;
+}
+
+.jess-modalText {
+  font-size: 1.8rem;
+  font-family: 'Noto Sans TC';
+  color: $orange;
+}
+
 .jess-itemTextBox {
   // text-align: end;
   background-color: transparent;
@@ -68,28 +84,6 @@ $white: #ffffff;
 .jess-btnBox {
   width: 20rem;
   text-align: right;
-}
-//Edit
-.jess-commentList {
-  outline: none;
-  height: 7rem;
-  list-style: none;
-  border-bottom: 0.1rem solid $darkBrown;
-}
-.jess-commentEditList {
-  padding: 1rem;
-  background-color: #ffffff;
-  font-size: 1.5rem;
-  border: 0.1rem solid $darkGary;
-  outline: none;
-}
-.jess-input {
-  width: 80rem;
-  height: 10rem;
-  margin-top: 15rem;
-}
-.jess-inputText {
-  font-size: 3rem;
 }
 .jess-input-button:focus {
   outline: none;
@@ -105,6 +99,32 @@ $white: #ffffff;
   margin-top: 1rem;
   outline: none;
 }
+.jess-demo-button {
+  height: 3rem;
+  width: 8rem;
+  margin-left: 1rem;
+  color: #ffffff;
+  background-color: #ffffff;
+  border: #ffffff;
+}
+.jess-comment-productPic {
+  width: 15rem;
+  height: 18rem;
+  background-color: $brown;
+  // overflow: hidden;
+  object-fit: cover;
+}
+
+.jess-input {
+  width: 100%;
+  height: 20rem;
+  // margin-top: 15rem;
+}
+
+.jess-inputText {
+  font-size: 3rem;
+}
+
 .jess-inputBorder {
   background: url('../images/SVG/brownBorder.svg') no-repeat;
   background-size: contain;

@@ -4,7 +4,7 @@ import './JessMenuD.scss'
 function JessMenuD() {
   return (
     <>
-      <div className="container-fluid jess-MenuD-container-fluid ">
+      <div className="container-fluid jess-MenuD-container-fluid mt-5">
         <div className="container">
           <p className="jess-text-30orange text-center  ">好康優惠</p>
           <div className="row mt-5 d-flex justify-content-between jess-MenuD-RWD">

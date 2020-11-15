@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import './IrisDataEditSect.scss'
-import { ReactComponent as WaveLine } from './Images/wave_line.svg'
-import InputH40 from './InputH40/InputH40'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import './IrisDataEditSect.scss';
+import { ReactComponent as WaveLine } from './Images/wave_line.svg';
+import InputH40 from './InputH40/InputH40';
 // import SelectBox from './../../../Share/Components/Input/SelectBox';
-import Button from './../../../Share/Components/Button/Button'
+import Button from './../../../Share/Components/Button/Button';
 
 function IrisDataEditSect(props) {
-  const { currentUser } = props
-  const [userInfo, setUserInfo] = useState([])
+  const { currentUser } = props;
+  const [userInfo, setUserInfo] = useState([]);
   // const [value, setValue] = useState()
 
   const updateProfile = () => {
-    const familyname = document.querySelector('#iris-member-family-name').value
-    const givenname = document.querySelector('#iris-member-given-name').value
-    const birthday = document.querySelector('#iris-member-birthday').value
-    const mobile = document.querySelector('#iris-member-mobile').value
-    const password = document.querySelector('#iris-member-new-password').value
-    const email = document.querySelector('#iris-member-email').value
-    const address = document.querySelector('#iris-member-address').value
+    const familyname = document.querySelector('#iris-member-family-name').value;
+    const givenname = document.querySelector('#iris-member-given-name').value;
+    const birthday = document.querySelector('#iris-member-birthday').value;
+    const mobile = document.querySelector('#iris-member-mobile').value;
+    const password = document.querySelector('#iris-member-new-password').value;
+    const email = document.querySelector('#iris-member-email').value;
+    const address = document.querySelector('#iris-member-address').value;
     const newProfile = {
       member_id: currentUser,
       familyname: familyname,
@@ -28,7 +28,7 @@ function IrisDataEditSect(props) {
       password: password,
       email: email,
       address: address,
-    }
+    };
     // console.log(newProfile)
 
     fetch('http://localhost:5000/member/updateProfile', {
@@ -41,13 +41,13 @@ function IrisDataEditSect(props) {
     })
       .then((r) => r.json())
       .then((o) => {
-        console.log(o)
-      })
-  }
+        console.log(o);
+      });
+  };
 
   // -------- 取得目前user的資料 ---------- //
   async function getUserInfoFromServer() {
-    const url = 'http://localhost:5000/member/allUserProfile'
+    const url = 'http://localhost:5000/member/allUserProfile';
 
     const request = new Request(url, {
       method: 'GET',
@@ -55,47 +55,47 @@ function IrisDataEditSect(props) {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
-    })
+    });
 
-    const response = await fetch(request)
-    const data = await response.json()
+    const response = await fetch(request);
+    const data = await response.json();
 
-    console.log(data)
-    setUserInfo(data)
+    console.log(data);
+    setUserInfo(data);
   }
 
   // --------- 過濾出現在使用者的資料 --------- //
   const currentUserInfo = userInfo.filter(
     (userInfo) => userInfo.member_sid === currentUser
-  )
-  console.log(currentUserInfo[0])
+  );
+  console.log(currentUserInfo[0]);
 
   useEffect(() => {
-    getUserInfoFromServer()
-  }, [])
+    getUserInfoFromServer();
+  }, []);
 
   // 把user資料代進去
   currentUserInfo.map((item, index) => {
-    const userFamilyName = item.name.slice(0, 1)
-    const userGivenName = item.name.slice(1, 3)
-    const userBirthday = item.birthday.slice(0, 10)
-    const fullAddress = item.county + item.district + item.address
-    let familyname = document.querySelector('#iris-member-family-name')
-    let givenname = document.querySelector('#iris-member-given-name')
-    let birthday = document.querySelector('#iris-member-birthday')
-    let mobile = document.querySelector('#iris-member-mobile')
-    let oldPassword = document.querySelector('#iris-member-password')
+    const userFamilyName = item.name.slice(0, 1);
+    const userGivenName = item.name.slice(1, 3);
+    const userBirthday = item.birthday.slice(0, 10);
+    const fullAddress = item.county + item.district + item.address;
+    let familyname = document.querySelector('#iris-member-family-name');
+    let givenname = document.querySelector('#iris-member-given-name');
+    let birthday = document.querySelector('#iris-member-birthday');
+    let mobile = document.querySelector('#iris-member-mobile');
+    let oldPassword = document.querySelector('#iris-member-password');
     // let password = document.querySelector('#iris-member-new-password')
-    let email = document.querySelector('#iris-member-email')
-    let address = document.querySelector('#iris-member-address')
-    familyname.value = userFamilyName
-    givenname.value = userGivenName
-    birthday.value = userBirthday
-    mobile.value = item.mobile
-    oldPassword.value = item.password
-    email.value = item.email
-    address.value = fullAddress
-  })
+    let email = document.querySelector('#iris-member-email');
+    let address = document.querySelector('#iris-member-address');
+    familyname.value = userFamilyName;
+    givenname.value = userGivenName;
+    birthday.value = userBirthday;
+    mobile.value = item.mobile;
+    oldPassword.value = item.password;
+    email.value = item.email;
+    address.value = fullAddress;
+  });
 
   return (
     <>
@@ -170,7 +170,7 @@ function IrisDataEditSect(props) {
             <div
               className="iris-profile-button"
               onClick={() => {
-                updateProfile()
+                updateProfile();
               }}
             >
               <Button className="button-btn" text="更新個人資料" />
@@ -179,7 +179,7 @@ function IrisDataEditSect(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default IrisDataEditSect
+export default IrisDataEditSect;
