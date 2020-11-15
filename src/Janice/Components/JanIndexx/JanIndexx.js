@@ -494,10 +494,7 @@ function JanIndexx(props) {
               autoplay="autoplay"
               muted="true"
             >
-              <source
-                src="./Images/customIntro33.mp4"
-                type="video/mp4"
-              ></source>
+              <source src="./Images/customFinal.mp4" type="video/mp4"></source>
             </video>
           </div>
         </div>
