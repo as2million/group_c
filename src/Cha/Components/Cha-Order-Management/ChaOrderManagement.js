@@ -22,8 +22,8 @@ function ChaOrderManagement(props) {
 
   const { setShowBar, handleCartNumber } = props;
 
-  //--------------光箱控制器，refund---------------//
-  const [refundModalController, setRefundModalController] = useState(false);
+  // //--------------光箱控制器，refund---------------//
+  // const [refundModalController, setRefundModalController] = useState(false);
   // -----------恢復Navbar--------------//
   useEffect(() => {
     setShowBar(true);
@@ -144,7 +144,7 @@ function ChaOrderManagement(props) {
             key={item.sid}
             orderItem={item}
             setChangeOrderState={setChangeOrderState}
-            closeModal={() => setRefundModalController(false)}
+            // closeModal={() => setRefundModalController(false)}
           />
         ))}
       </>
@@ -165,8 +165,8 @@ function ChaOrderManagement(props) {
     const {
       force,
       index,
-      setRefundModalController,
-      refundModalController,
+      // setRefundModalController,
+      // refundModalController,
     } = props;
     const elA = useRef(null);
     const elC = useRef(null);
@@ -209,13 +209,13 @@ function ChaOrderManagement(props) {
 
     return (
       <>
-        {refundModalController && (
+        {/* {refundModalController && (
           <ChaRefundModal
             setRefundModalController={setRefundModalController}
             refundModalController={refundModalController}
             closeModal={() => setRefundModalController(false)}
           ></ChaRefundModal>
-        )}
+        )} */}
         <div className="cha-order-mana-content-container col-9 ">
           <div className="cha-order-mana-content-row1">
             <div
@@ -252,8 +252,8 @@ function ChaOrderManagement(props) {
       <TabMenu
         force={forceKey}
         index={tabindexKey}
-        setRefundModalController={setRefundModalController}
-        refundModalController={refundModalController}
+        //   setRefundModalController={setRefundModalController}
+        //   refundModalController={refundModalController}
       />
     </>
   );

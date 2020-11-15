@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './ChaCartStepCardStep2.scss';
 import InputH40 from './InputH40/InputH40';
+import $ from 'jquery';
 
 // -------------時間套件，start-------------------//
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { addDays, setHours, setMinutes } from 'date-fns';
+import { addDays } from 'date-fns';
 import { registerLocale } from 'react-datepicker';
 import { zhTW } from 'date-fns/esm/locale';
 registerLocale('zh-TW', zhTW);
 // -------------時間套件，over-------------------//
 
 function ChaCartStepCardStep2(props) {
-  // const [takeDate, setTakeDate] = useState(new Date());
-
   //-------------地址重構(縣市+區域+詳細地址)----------//
   const [showAddress, setShowAddress] = useState('');
   // county={county}
@@ -29,16 +28,16 @@ function ChaCartStepCardStep2(props) {
     setName,
     mobile,
     setMobile,
-    county,
+    // county,
     setCounty,
-    district,
+    // district,
     setDistrict,
     setAddress,
     setBeastieCoin,
     takeDate,
     setTakeDate,
     takeTime,
-    takeWay,
+    // takeWay,
     setTakeWay,
     setTakeTime,
   } = props;
@@ -94,6 +93,79 @@ function ChaCartStepCardStep2(props) {
   //   showMobilInput();
   // }, [mobile]);
 
+  // // 註冊功能
+  //------------格式檢查的觸發函式-------//
+  //----------onClick={() => {handleRegister();}}
+  // const handleRegister = () => {
+  //   let account = document.querySelector('#createaccount').value;
+  //   let password = document.querySelector('#createpassword').value;
+  //   let email = document.querySelector('#createmail').value;
+  //   let mobile = document.querySelector('#createmobile').value;
+
+  //   // 帳號小於8碼
+  //   if (!account.match(/[A-Za-z0-9]{8,24}/)) {
+  //     $('.iris-empty-account').slideUp('slow');
+  //     $('.iris-wrong-account-format').slideDown('slow');
+  //     // 密碼小於8碼
+  //   }
+  //   if (!password.match(/[A-Za-z0-9]{8,24}/)) {
+  //     $('.iris-empty-password').slideUp('slow');
+  //     $('.iris-wrong-password-format').slideDown('slow');
+  //     // 信箱格式不符
+  //   }
+  //   if (
+  //     !email.match(
+  //       /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
+  //     )
+  //   ) {
+  //     $('.iris-empty-email').slideUp('slow');
+  //     $('.iris-wrong-email-format').slideDown('slow');
+  //     // 手機格式不符
+  //   }
+  //   if (!mobile.match(/^09[0-9]{8}$/)) {
+  //     $('.iris-empty-mobile').slideUp('slow');
+  //     $('.iris-wrong-mobile-format').slideDown('slow');
+  //   }
+
+  //   // 資料都ok才送出
+  //   else {
+  //     // 清空錯誤題示
+  //     $('.iris-empty-account').slideUp('slow');
+  //     $('.iris-empty-password').slideUp('slow');
+  //     $('.iris-empty-email').slideUp('slow');
+  //     $('.iris-empty-mobile').slideUp('slow');
+  //     $('.iris-wrong-account-format').slideUp('slow');
+  //     $('.iris-wrong-password-format').slideUp('slow');
+  //     $('.iris-wrong-email-format').slideUp('slow');
+  //     $('.iris-wrong-mobile-format').slideUp('slow');
+
+  //     // 把輸入的內容包成物件傳出去
+  //     const newRegister = {
+  //       account: account,
+  //       password: password,
+  //       email: email,
+  //       mobile: mobile,
+  //     };
+
+  //     fetch('http://localhost:5000/member/userRegister', {
+  //       method: 'POST',
+  //       body: JSON.stringify(newRegister),
+  //       headers: new Headers({
+  //         Accept: 'application/json',
+  //         'Content-Type': 'application/json',
+  //       }),
+  //     })
+  //       .then((r) => r.json())
+  //       .then((o) => {
+  //         console.log(o);
+  //       });
+
+  //     document.querySelector('#createaccount').value = '';
+  //     document.querySelector('#createpassword').value = '';
+  //     document.querySelector('#createmail').value = '';
+  //     document.querySelector('#createmobile').value = '';
+  //   }
+  // };
   return (
     <>
       <div className="cha-main-card cha-main-card-step2">
