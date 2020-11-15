@@ -23,11 +23,11 @@ $primary: #f5a016;
 }
 
 .cha-refund-claudia-modal-bg {
-  margin: 110px auto 0px auto;
+  margin: 280px auto 0px auto;
   background-color: white;
   border-radius: 2rem;
   width: 700px;
-  height: 600px;
+  height: 400px;
   padding: 6.5rem 7.5rem 6.5rem 8.5rem;
   position: relative;
 }
@@ -108,14 +108,15 @@ $primary: #f5a016;
   font-size: 3.6rem;
   margin-bottom: 3rem;
 }
-.cha-refund-happy-mons {
+.cha-refund-logo {
   background: url(./Images/cha-logo.svg) no-repeat;
   // background-color: #faf;
-  background-position: center center;
+  // background-position: center center;
   background-size: cover;
-  height: 15rem;
-  width: 12rem;
+  width: 15.9rem;
+  height: 6.9rem;
 }
+
 .cha-refund-modal-container p {
   font-size: 1.8rem;
   color: #858585;
@@ -131,4 +132,19 @@ $primary: #f5a016;
   border-bottom: 0.1rem solid #8585853a;
   margin-top: 5rem;
   margin-bottom: 2rem;
+}
+
+.cha-refund-confirm-btn {
+  display: flex;
+  justify-content: space-around;
+  width: 45rem;
+}
+.cha-gray-modal-btn,
+.cha-refund-modal-btn {
+  width: 18rem;
+}
+
+.cha-gray-modal-btn {
+  margin-top: 3rem;
+  margin-bottom: 8rem;
 }

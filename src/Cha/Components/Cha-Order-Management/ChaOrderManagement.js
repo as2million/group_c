@@ -4,6 +4,8 @@ import { ReactComponent as WaveLine } from './Images/wave_line.svg';
 import ChaOrderItem from 'Cha/Components/Cha-Order-Management/Cha-Order-Item/ChaOrderItem';
 // 光箱
 import ChaRefundModal from './Cha-Order-Item/Cha-Refund-Modal/ChaRefundModal';
+import QueueAnim from 'rc-queue-anim';
+
 function ChaOrderManagement(props) {
   // ---------點選退費，實現自動切換頁面---------------//
   const [forceKey, setForceKey] = useState(false);
@@ -24,16 +26,25 @@ function ChaOrderManagement(props) {
 
   // //--------------光箱控制器，refund---------------//
   // const [refundModalController, setRefundModalController] = useState(false);
-  // -----------恢復Navbar--------------//
+
   useEffect(() => {
+    // -----------恢復Navbar--------------//
     setShowBar(true);
     console.log('useEffect，設定navbar出現');
+
+    // --------------掛載就篩選掉order_detail為空陣列的order-----------------//
+    setOrderData(orderData.map((item) => item.order_detail === !['']));
+    console.log('useEffect，篩選掉order_detail為空陣列的order');
+
+    // --------------掛載就讀入當前會員的訂單-----------------//
+    getMyOrderData(currentMemberSid);
+    console.log('useEffect，讀入當前會員的訂單資料');
   }, []);
 
   // ---------------讀入訂單資料--------------//
   async function getMyOrderData(paramsMemberId) {
     const url = `http://localhost:5000/cart-api/my-order-my-order-detail/${paramsMemberId}`;
-
+    console.log('讀入my-order & detail');
     const request = new Request(url, {
       method: 'GET',
       headers: new Headers({
@@ -43,32 +54,27 @@ function ChaOrderManagement(props) {
     });
     const response = await fetch(request);
     const dataAllOrder = await response.json();
-    console.log('讀入訂單資料', dataAllOrder);
+    console.log('讀入my-order & detail成功', dataAllOrder);
     setOrderData(dataAllOrder);
   }
 
-  // --------------掛載就篩選掉order_detail為空陣列的order-----------------//
-  useEffect(() => {
-    setOrderData(orderData.map((item) => item.order_detail === !['']));
-    console.log('useEffect，篩選掉order_detail為空陣列的order');
-  }, []);
-
-  // --------------掛載就讀入當前會員的訂單-----------------//
-  useEffect(() => {
-    getMyOrderData(currentMemberSid);
-    console.log('useEffect，讀入當前會員的訂單資料');
-  }, []);
-
   //  --------------點選取消/退費，重新載入資料，切換到退費頁面-------------//
   useEffect(() => {
-    getMyOrderData(currentMemberSid);
-    console.log(
-      'useEffect，getMyOrderData(currentMemberSid)，[changeOrderState]'
-    );
-    setForceKey(true);
-    setTabindexKey('C');
+    if (!changeOrderState === 0) {
+      getMyOrderData(currentMemberSid);
+      console.log(
+        'useEffect，[changeOrderState]，getMyOrderData(currentMemberSid)'
+      );
+      console.log(
+        'useEffect，[changeOrderState]，切換到退費訂單頁面',
+        changeOrderState
+      );
+      // setForceKey(true);
+      // setTabindexKey('C');
+    }
   }, [changeOrderState]);
 
+  console.log('changeOrderState', changeOrderState);
   //  --------------分類訂單內容的函式-----------------//
   function handleClassifyState(orderState1, orderState2) {
     return orderData.filter(
@@ -85,13 +91,15 @@ function ChaOrderManagement(props) {
         {handleClassifyState('未送達', '火速運送中')
           .reverse()
           .map((item, value) => (
-            <ChaOrderItem
-              key={item.sid}
-              orderItem={item}
-              setForceKey={setForceKey}
-              setTabindexKey={setTabindexKey}
-              setChangeOrderState={setChangeOrderState}
-            />
+            <QueueAnim delay={50} className="queue-simple">
+              <ChaOrderItem
+                key={item.sid}
+                orderItem={item}
+                setForceKey={setForceKey}
+                setTabindexKey={setTabindexKey}
+                setChangeOrderState={setChangeOrderState}
+              />
+            </QueueAnim>
           ))}
       </>
     );
@@ -103,12 +111,14 @@ function ChaOrderManagement(props) {
         {handleClassifyState('已送達')
           .reverse()
           .map((item, value) => (
-            <ChaOrderItem
-              key={item.sid}
-              orderItem={item}
-              setChangeOrderState={setChangeOrderState}
-              handleCartNumber={handleCartNumber}
-            />
+            <QueueAnim delay={50} className="queue-simple">
+              <ChaOrderItem
+                key={item.sid}
+                orderItem={item}
+                // setChangeOrderState={setChangeOrderState}
+                handleCartNumber={handleCartNumber}
+              />
+            </QueueAnim>
           ))}
       </>
     );
@@ -121,17 +131,19 @@ function ChaOrderManagement(props) {
         {handleClassifyState('已退費')
           .reverse()
           .map((item, value) => (
-            <ChaOrderItem
-              key={item.sid}
-              orderItem={item}
-              setForceKey={setForceKey}
-              setTabindexKey={setTabindexKey}
-              setChangeOrderState={setChangeOrderState}
-              handleCartNumber={handleCartNumber}
-              // 光箱用
-              // closeModal={() => setRefundModalController(false)}
-              setRefundModalController={setRefundModalController}
-            />
+            <QueueAnim delay={50} className="queue-simple">
+              <ChaOrderItem
+                key={item.sid}
+                orderItem={item}
+                setForceKey={setForceKey}
+                setTabindexKey={setTabindexKey}
+                // setChangeOrderState={setChangeOrderState}
+                handleCartNumber={handleCartNumber}
+                // 光箱用
+                // closeModal={() => setRefundModalController(false)}
+                setRefundModalController={setRefundModalController}
+              />
+            </QueueAnim>
           ))}
       </>
     );
@@ -142,12 +154,15 @@ function ChaOrderManagement(props) {
     return (
       <>
         {handleClassifyState('揪團中').map((item, value) => (
-          <ChaOrderItem
-            key={item.sid}
-            orderItem={item}
-            setChangeOrderState={setChangeOrderState}
-            // closeModal={() => setRefundModalController(false)}
-          />
+          <QueueAnim delay={50} className="queue-simple">
+            <ChaOrderItem
+              key={item.sid}
+              orderItem={item}
+              // setChangeOrderState={setChangeOrderState}
+
+              // closeModal={() => setRefundModalController(false)}
+            />
+          </QueueAnim>
         ))}
       </>
     );

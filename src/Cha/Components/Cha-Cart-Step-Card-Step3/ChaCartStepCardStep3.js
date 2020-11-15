@@ -56,14 +56,13 @@ function ChaCartStepCardStep3(props) {
   }
   useEffect(() => {
     ShowInCard();
-    console.log('useEffect， [creditNumber]，信用卡畫面時時更新');
+    console.log('useEffect， [creditNumber]，信用卡畫面實時更新');
   }, [creditNumber]);
   useEffect(() => {
     ShowInCard();
-    console.log('useEffect， [creditNumber]，信用卡畫面時時更新');
+    console.log('useEffect， [creditNumber]，信用卡畫面實時更新');
   }, [credit3Number]);
 
-  console.log('creditMonth', creditMonth);
   return (
     <>
       <div className="cha-main-card cha-main-card-step3">

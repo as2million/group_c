@@ -58,7 +58,7 @@ const ChaCouponModal = (props) => {
             setCouponSid(e.target.value);
             // console.log('item.sid', couponSid === item.sid);
             // console.log('item.coupon_type', item.coupon_type);
-            // console.log('couponSid', couponSid);
+            console.log('couponSid', couponSid);
             // console.log('item.sid', item.sid);
             setUseBeastieCoin(item.coupon_type * 10);
             console.log('選用優惠，額度為：', useBeastieCoin);

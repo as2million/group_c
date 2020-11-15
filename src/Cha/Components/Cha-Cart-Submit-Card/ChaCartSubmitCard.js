@@ -254,6 +254,7 @@ function ChaCartSubmitCard(props) {
           takeDate={takeDate}
           takeTime={takeTime}
           closeModal={() => {
+            // 頁面跳轉跟確認按鈕放在一起了
             props.history.push('/orderManagement');
             setSubmitModalController(false);
           }}
@@ -263,16 +264,18 @@ function ChaCartSubmitCard(props) {
       )}
       <div className="cha-aside-card-fake"></div>
       <div className="cha-aside-card">
-        <div
-          className="cha-step-header"
-          onClick={() => {
-            localStorage.removeItem('cart');
-            localStorage.removeItem('cartNumber');
-            const newCart = localStorage.getItem('cart') || '[]';
-            setMeals(JSON.parse(newCart));
-          }}
-        >
-          購物清單
+        <div className="cha-step-header">
+          <span
+            onClick={() => {
+              localStorage.removeItem('cart');
+              localStorage.removeItem('cartNumber');
+              const newCart = localStorage.getItem('cart') || '[]';
+              setMeals(JSON.parse(newCart));
+            }}
+          >
+            購
+          </span>
+          物清單
           <button
             className="cha-control-normal-switch cha-farmer-cart-switch"
             // onClick={() => {
