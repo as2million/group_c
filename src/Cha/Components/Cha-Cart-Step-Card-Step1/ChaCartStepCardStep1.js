@@ -142,6 +142,7 @@ function ChaCartStepCardStep1(props) {
             </div>
           </div>
         </div>
+        <dis className="cha-wrong-totalAmount">**商品數量不能為0</dis>
         {/* 餐點項目 */}
         {/* {mealsDisplay.map((item, index) => ( */}
         {meals.map((item, index) => (

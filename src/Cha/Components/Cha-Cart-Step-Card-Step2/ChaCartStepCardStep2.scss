@@ -86,3 +86,13 @@
   margin-top: 2rem;
   margin-bottom: 1.7rem;
 }
+
+//格式檢查用
+.cha-wrong-name,
+.cha-wrong-mobile,
+.cha-wrong-takeDate {
+  font-size: 1.5rem;
+  color: red;
+  margin-top: 1rem;
+  display: none;
+}

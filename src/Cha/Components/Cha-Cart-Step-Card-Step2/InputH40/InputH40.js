@@ -6,6 +6,7 @@ import './Input.scss';
 
 function InputH40(props) {
   const {
+    setName,
     placeholder,
     type,
     id,

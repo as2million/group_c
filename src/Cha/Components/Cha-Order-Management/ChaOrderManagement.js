@@ -17,7 +17,7 @@ function ChaOrderManagement(props) {
   //----------- 整包訂單、訂單明細的資料------------//
   const [orderData, setOrderData] = useState([]);
 
-  // -----------退費後刷新頁面用-----------//
+  // -----------退費後重新讀入資料-----------//
   const [changeOrderState, setChangeOrderState] = useState(0);
 
   const { setShowBar, handleCartNumber } = props;
@@ -59,12 +59,14 @@ function ChaOrderManagement(props) {
     console.log('useEffect，讀入當前會員的訂單資料');
   }, []);
 
-  //  --------------重新載入資料，切換到退費頁面-----------------//
+  //  --------------點選取消/退費，重新載入資料，切換到退費頁面-------------//
   useEffect(() => {
     getMyOrderData(currentMemberSid);
     console.log(
       'useEffect，getMyOrderData(currentMemberSid)，[changeOrderState]'
     );
+    setForceKey(true);
+    setTabindexKey('C');
   }, [changeOrderState]);
 
   //  --------------分類訂單內容的函式-----------------//
@@ -159,8 +161,11 @@ function ChaOrderManagement(props) {
 
     addElem.classList.add('cha-active');
   };
+
   const TabMenu = (props) => {
     const [orderComponent, setOrderComponent] = useState(<ComponentA />);
+
+    // 點選取消/退費後，會觸發的切換用函式
     // force bool, index = A, B, C...
     const {
       force,

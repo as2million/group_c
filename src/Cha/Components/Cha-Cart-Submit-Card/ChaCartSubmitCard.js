@@ -6,9 +6,11 @@ import ChaCartButton from './Cha-Cart-Button/ChaCartButton';
 import { withRouter, useHistory } from 'react-router-dom';
 import ChaCouponModal from './Cha-Coupon-Modal/ChaCouponModal';
 import ChaSubmitModal from './Cha-Submit-Modal/ChaSubmitModal';
-import ChaBeastiePointSect from 'Cha/Components/Cha-Cart-Submit-Card/Cha-BeastiePointSect/ChaBeastiePointSect';
+
 function ChaCartSubmitCard(props) {
   const {
+    formatCheck,
+    handleFormatCheck,
     // mealsDisplay,
     meals,
     setMeals,
@@ -80,12 +82,11 @@ function ChaCartSubmitCard(props) {
     } else {
       setOrderState('未送達');
     }
-    console.log('隨商品總量變動的運費、訂單狀態');
+    console.log('useEffect，依[totalAmount]，改變運費、訂單狀態');
   }, [totalAmount]);
 
   // 計算總價
   let totalPrice = subtotalPrice + shipping - useBeastieCoin;
-  console.log(useBeastieCoin);
   // setTotalPrice(
   //   subtotalPrice + shipping - (totalAmount > 0 ? beastieCoin : 0)
 
@@ -97,6 +98,7 @@ function ChaCartSubmitCard(props) {
     // const otherCart = currentCartNumber - totalAmount;
     // localStorage.setItem('cartNumber', JSON.stringify(otherCart));
     // handleCartNumber('minus', totalAmount);
+    console.log('提交訂單後，清除localstorage');
   };
 
   // POST給my_order的資料
@@ -122,8 +124,7 @@ function ChaCartSubmitCard(props) {
     };
 
     const url = 'http://localhost:5000/cart-api/my-order';
-    // console.log('takeDate', takeDate);
-    console.log('bodyData', bodyData);
+    console.log('要送到my-order的Data', bodyData);
     const request = new Request(url, {
       method: 'POST',
       body: JSON.stringify(bodyData),
@@ -139,13 +140,13 @@ function ChaCartSubmitCard(props) {
 
       createToMyOrderDetail(dataMyOrder.insertId);
       // data會是一個物件值
-      // console.log('my-order', dataMyOrder);
+      console.log('完成送出my-order', dataMyOrder);
     } catch (error) {
       setError(error);
     }
   }
-  console.log('memberSids', memberSid);
-  console.log('meals', meals);
+  // console.log('memberSids', memberSid);
+  // console.log('meals', meals);
 
   // POST給my_order_detail的資料
   async function createToMyOrderDetail(orderSid) {
@@ -161,7 +162,9 @@ function ChaCartSubmitCard(props) {
     }));
 
     const url = 'http://localhost:5000/cart-api/my-order-detail';
-    console.log('OrderDetailArr', myOrderDetailArray);
+    console.log('要送到my-order-detail的data', myOrderDetailArray);
+    console.log('綁定訂單編號：', orderSid);
+
     const request = new Request(url, {
       method: 'POST',
       body: JSON.stringify(myOrderDetailArray),
@@ -176,9 +179,7 @@ function ChaCartSubmitCard(props) {
       const response = await fetch(request);
       const dataMyOrderDetail = await response.json();
       // data會是一個物件值
-      console.log('my-order-detail dataMyOrderDetails', dataMyOrderDetail);
-      console.log('order_sid', orderSid);
-      console.log('my-order-detail POST成功');
+      console.log('完成送出my-order-detail', dataMyOrderDetail);
     } catch (error) {
       setError(error);
     }
@@ -201,9 +202,10 @@ function ChaCartSubmitCard(props) {
   //     shoppingList.classList.remove('cha-control');
   //   }
   // }
+
   async function deleteCouponListData(paramsCouponSid) {
     const url = `http://localhost:5000/cart-api/use-coupon/${paramsCouponSid}`;
-
+    console.log('對use-coupon送出刪除請求，優惠券編號：', paramsCouponSid);
     const request = new Request(url, {
       method: 'DELETE',
       headers: new Headers({
@@ -213,12 +215,29 @@ function ChaCartSubmitCard(props) {
     });
     const response = await fetch(request);
     const data = await response.json();
-    console.log('deleteCouponListData_fetch成功', data);
+    console.log('對use-coupon刪除完成', data);
+
     // console.log(dataAllOrder);
     // console.log(
     //   dataOrders[0] && dataOrders[0].take_person && dataOrders[0].take_person
     // );
   }
+
+  // useEffect(() => {
+  //   if (formatCheck) {
+  //     console.log(
+  //       'useEffect，[formatCheck]，格式檢查若通過，提交訂單，格式檢查結果為：',
+  //       formatCheck
+  //     );
+  //     console.log('商品數為0不給提交，目前商品數：', totalAmount);
+  //     totalAmount && createToMyOrder();
+  //     couponSid && deleteCouponListData(couponSid);
+  //     // props.history.push('/orderManagement');移動到確認交易的光箱內
+  //     handleSubmitCartRemoveLocalStorage();
+  //     handleCartNumber('minus', totalAmount);
+  //   }
+  // }, [formatCheck]);
+
   return (
     <>
       {/* Modal */}
@@ -260,13 +279,19 @@ function ChaCartSubmitCard(props) {
           購物清單
           <button
             className="cha-control-normal-switch cha-farmer-cart-switch"
+            // onClick={() => {
+            //   props.history.push('/checkpoint');
+            // }}
+          >
+            小農購物車
+          </button>
+          <button
+            className="cha-normal-cart-switch"
+            disabled
             onClick={() => {
               props.history.push('/checkpoint');
             }}
           >
-            小農購物車
-          </button>
-          <button className="cha-normal-cart-switch" disabled>
             訂餐購物車
           </button>
         </div>
@@ -335,12 +360,13 @@ function ChaCartSubmitCard(props) {
         <div
           className="cha-shopping-cart-btn-div"
           onClick={() => {
-            console.log('商品數為0不給提交，目前商品數：', totalAmount);
-            totalAmount && createToMyOrder();
-            // props.history.push('/orderManagement');移動到確認交易的光箱內
-            handleSubmitCartRemoveLocalStorage();
-            handleCartNumber('minus', totalAmount);
-            couponSid && deleteCouponListData(couponSid);
+            handleFormatCheck();
+            // console.log('商品數為0不給提交，目前商品數：', totalAmount);
+            // totalAmount && createToMyOrder();
+            // couponSid && deleteCouponListData(couponSid);
+            // // props.history.push('/orderManagement');移動到確認交易的光箱內
+            // handleSubmitCartRemoveLocalStorage();
+            // handleCartNumber('minus', totalAmount);
           }}
         >
           <ChaCartButton

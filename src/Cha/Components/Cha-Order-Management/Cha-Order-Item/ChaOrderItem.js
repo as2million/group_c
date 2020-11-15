@@ -210,8 +210,9 @@ function ChaOrderItem(props) {
         const response = await fetch(request);
         const data = await response.json();
         setChangeOrderState(changeOrderState + 1);
-        // console.log('data', data);
-        console.log('更改訂單狀態');
+        console.log('更改訂單狀態', data);
+        // props.setForceKey(true);
+        // props.setTabindexKey('C');
       } catch (error) {
         setError(error);
       }
@@ -224,11 +225,12 @@ function ChaOrderItem(props) {
             // setRefundModalController={setRefundModalController}
             // refundModalController={refundModalController}
             closeModal={() => setRefundModalController(false)}
+            changeOrderState={() => updateTotalToServer()}
           ></ChaRefundModal>
         )}
         {/* 加上這個觸發光箱 */}
         {status && (
-          <JessModal closeModal={() => setStatus(false)}>
+          <JessModal loseModal={() => setStatus(false)}>
             <JessCommentInput
               closeModal={() => setStatus(false)}
               orderItem={orderItem}
@@ -378,9 +380,9 @@ function ChaOrderItem(props) {
                     onClick={() => {
                       // updateTotalToServer();
                       // console.log(props);
-                      props.setForceKey(true);
-                      props.setTabindexKey('C');
-                      console.log('點擊取消/退費');
+                      // props.setForceKey(true);
+                      // props.setTabindexKey('C');
+                      // console.log('點擊取消/退費');
                       setRefundModalController(true);
                     }}
                   >

@@ -1,13 +1,13 @@
 @import './Variable.scss';
 
 // 橘色
-.cha-submit-modal-button-btn:focus {
+.cha-refund-modal-button-btn:focus {
   outline: none;
 }
-.cha-submit-modal-button-btn {
+.cha-refund-modal-button-btn {
   background-color: $light-orange;
   height: 4.5rem;
-  width: 30rem;
+  width: 15rem;
   border: 1px solid $light-orange;
   border-radius: 9999px;
   position: relative;
@@ -24,16 +24,16 @@
   );
 }
 
-.cha-submit-modal-button-btn:hover {
+.cha-refund-modal-button-btn:hover {
   color: $white;
   transition: 0.5s;
 }
 
-.cha-submit-modal-button-btn:active {
+.cha-refund-modal-button-btn:active {
   border: 1px solid $dark-orange;
 }
 
-.cha-submit-modal-button-btn::after {
+.cha-refund-modal-button-btn::after {
   content: '';
   background-color: #e0611e;
   height: 4.5rem;
@@ -53,10 +53,10 @@
   );
 }
 
-.cha-submit-modal-button-btn:hover::after {
+.cha-refund-modal-button-btn:hover::after {
   top: 0px;
 }
 
-.cha-submit-modal-button-btn:active::after {
+.cha-refund-modal-button-btn:active::after {
   background-color: $dark-orange;
 }

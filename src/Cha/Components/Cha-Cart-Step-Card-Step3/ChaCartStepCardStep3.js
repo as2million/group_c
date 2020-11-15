@@ -6,14 +6,21 @@ import ChaReceiptType from 'Cha/Components/Cha-Cart-Step-Card-Step3/Cha-Receipt-
 // import TWZipCode from './Cha-Address-Select/TWZipCode';
 import './ChaCartStepCardStep3.scss';
 import InputH40 from './InputH40/InputH40';
-
+import $ from 'jquery';
 function ChaCartStepCardStep3(props) {
-  const [creditNumber, setCreditNumber] = useState('');
+  const {
+    handleFormatCheck,
+    creditNumber,
+    setCreditNumber,
+    credit3Number,
+    setCredit3Number,
+  } = props;
+  // const [creditNumber, setCreditNumber] = useState('');
   const [numberPointText, setNumberPointText] = useState('●●●●●●●●●●●●●●●●');
   const [creditMonth, setCreditMonth] = useState('●●');
   const [creditYear, setCreditYear] = useState('●●');
   const [creditFlip, setCreditFlip] = useState(false);
-  const [credit3Number, setCredit3Number] = useState('');
+  // const [credit3Number, setCredit3Number] = useState('');
   const [threeNumberPointText, setThreeNumberPointText] = useState('●●●');
 
   // 信用卡號呈現效果
@@ -44,15 +51,40 @@ function ChaCartStepCardStep3(props) {
       setThreeNumberPointText(credit3Number + point2);
     }
   }
-  useEffect(() => {
-    ShowInCard();
-    console.log('useEffect,ShowInCard(),[creditNumber]');
-  }, [creditNumber]);
-  useEffect(() => {
-    ShowInCard();
-    console.log('useEffect,ShowInCard(),[credit3Number]');
-  }, [credit3Number]);
 
+  //------------格式檢查的觸發函式-------//
+  //----------onClick={() => {handleRegister();}}------------//
+  // const handleFormatCheckStep3 = () => {
+  //   // creditNumber
+  //   // creditMonth
+  //   // creditYear
+  //   // credit3Number
+  //   //  姓名不能為空值
+  //   if (name === '') {
+  //     $('.cha-wrong-name').slideDown('slow');
+  //   }
+  //   // 手機格式不符
+  //   if (!mobile.match(/^09[0-9]{8}$/)) {
+  //     $('.cha-wrong-mobile').slideDown('slow');
+  //   }
+
+  //   //   // 資料都ok才送出
+  //   else {
+  //     // 清空錯誤題示
+  //     $('.cha-wrong-mobile').slideUp('slow');
+  //     $('.cha-wrong-name').slideUp('slow');
+  //   }
+  // };
+
+  // // // 控制格式檢查
+  // useEffect(() => {
+  //   if (formatCheckStep3) {
+  //     handleFormatCheckStep3();
+  //   }
+  //   console.log('Step3格式檢查遙控器', formatCheckStep3);
+  // }, [formatCheckStep3]);
+
+  // FormatCheckStep3
   return (
     <>
       <div className="cha-main-card cha-main-card-step3">
@@ -114,6 +146,7 @@ function ChaCartStepCardStep3(props) {
               setCreditNumber(e.target.value);
             }}
           />
+          <div className="cha-wrong-creditNumber">**信用卡號碼長度不足</div>
         </div>
         {/* 月、年、後三碼 */}
         {/* MMM */}
@@ -189,6 +222,9 @@ function ChaCartStepCardStep3(props) {
                 setCreditFlip(false);
               }}
             />
+            <div className="cha-wrong-credit3Number">
+              **信用卡後三碼長度不足
+            </div>
           </div>
         </div>
         <ChaReceiptType />

@@ -7,6 +7,7 @@ const ChaSubmitModal = (props) => {
   // , takeDate, takeTime
   const SubmitDisplay = (props) => {
     const { takeDate, takeTime } = props;
+    console.log('takeDate, takeTime', takeDate, takeTime);
     // .slice(0, 10)
     return (
       <>
@@ -22,11 +23,11 @@ const ChaSubmitModal = (props) => {
           </div>
 
           <div className="cha-horizontal-line-in-submit-modal"></div>
-          {/* <p>
-            餐點預計於{takeDate}
+          <p>
+            餐點預計於{JSON.stringify(takeDate)}
             <span> </span>
-            {takeTime}前送達，請於1樓取餐
-          </p> */}
+            {JSON.stringify(takeTime)}前送達，請於1樓取餐
+          </p>
           <p> 款項及發票將於「取餐核銷完成」後請款與開立 </p>
           <div onClick={closeModal}>
             <ChaCartButton

@@ -218,3 +218,12 @@
   margin: 2.5rem 0.2rem 0.5rem 0.2rem;
   font-size: 1.5rem;
 }
+
+//格式檢查用
+.cha-wrong-creditNumber,
+.cha-wrong-credit3Number {
+  font-size: 1.5rem;
+  color: red;
+  margin-top: 1rem;
+  display: none;
+}

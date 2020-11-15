@@ -6,7 +6,7 @@ import ChaCartStepCardStep1 from 'Cha/Components/Cha-Cart-Step-Card-Step1/ChaCar
 import ChaCartStepCardStep2 from 'Cha/Components/Cha-Cart-Step-Card-Step2/ChaCartStepCardStep2';
 import ChaCartStepCardStep3 from 'Cha/Components/Cha-Cart-Step-Card-Step3/ChaCartStepCardStep3';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
-
+import $ from 'jquery';
 import 'Cha/Pages/Cha-Cart/ChaCart.scss';
 
 function ChaCart(props) {
@@ -31,6 +31,11 @@ function ChaCart(props) {
   const [district, setDistrict] = useState('');
   const [address, setAddress] = useState('');
   const [beastieCoin, setBeastieCoin] = useState('');
+  // 信用卡格式檢查用
+  const [creditNumber, setCreditNumber] = useState('');
+  const [credit3Number, setCredit3Number] = useState('');
+  //格式檢查用
+  const [formatCheck, setFormatCheck] = useState(false);
 
   //------------ 掛載就設定隱藏navbar----------//
   useEffect(() => {
@@ -147,6 +152,72 @@ function ChaCart(props) {
     }
   });
 
+  //------------格式檢查的函式-------//
+  const handleFormatCheck = () => {
+    console.log(
+      '檢查到的購物車內商品：數量、meals===[]、meals.length===0',
+      meals === [],
+      meals.length === 0
+    );
+    // 購物車內商品不能為0
+    if (meals.length === 0) {
+      $('.cha-wrong-totalAmount').slideDown('slow');
+      setTimeout(() => {
+        $('.cha-wrong-totalAmount').slideUp('slow');
+      }, 2000);
+    } else {
+      $('.cha-wrong-totalAmount').slideUp('slow');
+    }
+
+    //  姓名不能為空值
+    if (name === '') {
+      $('.cha-wrong-name').slideDown('slow');
+    } else {
+      $('.cha-wrong-name').slideUp('slow');
+    }
+
+    // 手機格式不符
+    if (!mobile.match(/^09[0-9]{8}$/)) {
+      $('.cha-wrong-mobile').slideDown('slow');
+    } else {
+      $('.cha-wrong-mobile').slideUp('slow');
+    }
+
+    //  取餐日期不能為空值
+    if (!takeDate) {
+      $('.cha-wrong-takeDate').slideDown('slow');
+    } else {
+      $('.cha-wrong-takeDate').slideUp('slow');
+    }
+
+    //信用卡號碼格式不符
+    if (!(creditNumber.length === 16)) {
+      $('.cha-wrong-creditNumber').slideDown('slow');
+    } else {
+      $('.cha-wrong-creditNumber').slideUp('slow');
+    }
+
+    // 信用卡後三碼格式不符合
+    if (!(credit3Number.length === 3)) {
+      $('.cha-wrong-credit3Number').slideDown('slow');
+    } else {
+      $('.cha-wrong-credit3Number').slideUp('slow');
+    }
+    if (
+      meals.length === 0 &&
+      name === '' &&
+      !mobile.match(/^09[0-9]{8}$/) &&
+      !takeDate &&
+      !(creditNumber.length === 16) &&
+      !(credit3Number.length === 3)
+    ) {
+      setFormatCheck(true);
+      console.log('通過格式檢查，setFormatCheck(true)');
+    } else {
+      console.log('未通過格式檢查');
+    }
+  };
+
   return (
     <>
       <ScrollButton />
@@ -191,7 +262,12 @@ function ChaCart(props) {
             setTakeTime={setTakeTime}
           />
           {/* 步驟三 */}
-          <ChaCartStepCardStep3 />
+          <ChaCartStepCardStep3
+            creditNumber={creditNumber}
+            setCreditNumber={setCreditNumber}
+            credit3Number={credit3Number}
+            setCredit3Number={setCredit3Number}
+          />
         </main>
         {/* 購物清單欄*/}
         <aside className="cha-aside">
@@ -199,8 +275,7 @@ function ChaCart(props) {
             // step1
             meals={meals}
             setMeals={setMeals}
-            // mealsDisplay={mealsDisplay}
-            // step2
+            handleFormatCheck={handleFormatCheck}
             memberSid={memberSid}
             name={name}
             mobile={mobile}
@@ -212,6 +287,7 @@ function ChaCart(props) {
             takeDate={takeDate}
             takeTime={takeTime}
             handleCartNumber={handleCartNumber}
+            formatCheck={formatCheck}
             {...props}
           />
         </aside>
