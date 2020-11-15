@@ -5,7 +5,7 @@
 <style type="text/css">
 	.st0{fill:#F7D1A4;}
 	.st1{fill:#C1A080;}
-	.st2{fill:#DDBC9E;}
+	.st2{fill:#D3B297;}
 	.st3{display:none;fill:#28E554;}
 	.st4{fill:#28E554;}
 </style>
@@ -27,7 +27,7 @@
 <rect x="233.2" y="31.2" class="st2" width="183.4" height="144.2"/>
 <rect x="-88" y="-73" class="st3" width="131.1" height="319"/>
 <rect x="607.6" y="-73" class="st3" width="131.1" height="319"/>
-<rect x="63.3" y="-319.8" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 -105.2595 -362.9195)" class="st4" width="131.1" height="171.5"/>
-<rect x="259.4" y="-319.8" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 90.8105 -558.9894)" class="st4" width="131.1" height="171.5"/>
-<rect x="456.3" y="-319.8" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 287.7455 -755.9245)" class="st4" width="131.1" height="171.5"/>
+<rect x="43" y="-299.6" class="st4" width="171.5" height="131.1"/>
+<rect x="239.1" y="-299.6" class="st4" width="171.5" height="131.1"/>
+<rect x="436" y="-299.6" class="st4" width="171.5" height="131.1"/>
 </svg>
