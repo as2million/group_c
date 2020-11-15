@@ -1,10 +1,17 @@
 import React from 'react'
 import RuCompCustom from 'Ru/Components/RuComps/RuCompCustom/RuCompCustom'
+import VNavBar from 'Share/Components/VNavbar/VNavbar'
+
 function RuProudctListCustom(props) {
-  const {handleAddCartNumber, setAmount, amount} =props
+  const { handleCartNumber, setAmount, amount } = props
   return (
     <>
-      <RuCompCustom handleAddCartNumber={handleAddCartNumber} amount={amount} setAmount={setAmount} />
+      <VNavBar {...props}/>
+      <RuCompCustom
+        handleCartNumber={handleCartNumber}
+        amount={amount}
+        setAmount={setAmount}
+      />
     </>
   )
 }

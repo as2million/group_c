@@ -43,7 +43,7 @@ function App() {
   const [showBar, setShowBar] = useState(true)
   const [cartNumber, setCartNumber] = useState(0)
   const [amount, setAmount] = useState(1)
-  const [currentUser, setCurrentUser] = useState() // 目前用戶
+  const [currentUser, setCurrentUser] = useState(4) // 目前用戶
   const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
   const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
 
@@ -71,7 +71,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    console.log(amount)
+    // console.log(amount)
     return () => {}
   }, [amount])
 
@@ -110,12 +110,24 @@ function App() {
               <RuProudctList
                 handleCartNumber={handleCartNumber}
                 currentUser={currentUser}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
               />
             </Route>
             <Route exact path="/productListSalad">
               <RuProudctListSalad
                 handleCartNumber={handleCartNumber}
                 currentUser={currentUser}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
               />
             </Route>
             <Route exact path="/productListCustom">
@@ -123,6 +135,12 @@ function App() {
                 handleCartNumber={handleCartNumber}
                 amount={amount}
                 setAmount={setAmount}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
               />
             </Route>
             {/* cha */}
@@ -163,9 +181,6 @@ function App() {
             </Route>
             {/* 404 */}
 
-            {/* <Route exact path="*">
-            <NotFoundPage />
-          </Route> */}
             {/* iris */}
             {/* 放"page資料夾"內的元件 */}
             <Route exact path="/memberUserprofile">

@@ -6,13 +6,28 @@ function RuAddCart(props) {
   // 目標的id一律用target
   // id 不同元件id
   // parentId 不同元件父母id
-  const { id, parentId, price, title, amount, handleAddCartNumber } = props
+  const {
+    id,
+    proudctId,
+    parentId,
+    price,
+    title,
+    amount,
+    handleCartNumber,
+    setIsShowHintA,
+    setIsShowHintB,
+    setIsShowHintC,
+    setIsShowHintD,
+    setIsShowHintE,
+    setIsShowHintF,
+  } = props
   // console.log(id, parentId);
 
   const addToCart = (e) => {
+    // 給第五組 動畫開始 s
     // 執行加入購物車動畫
-    const $addBtn = document.getElementById(`${id}`)
-    const $target = document.getElementById('ru-target')
+    const $addBtn = document.getElementById(`${id}`) // 觸發按鈕
+    const $target = document.getElementById('ru-target') // 目標
     // getBoundingClientRect() 取得元素相對於瀏覽器視窗的位置
     let addBtnX = $addBtn.getBoundingClientRect().left + 75 // +75(button寬度的一半) 才會在正中心
     let addBtnY = $addBtn.getBoundingClientRect().top + 22.5
@@ -64,30 +79,48 @@ function RuAddCart(props) {
     function removeNewEl() {
       document.querySelector('#obj').remove()
     }
+    // 給第五組 動畫開始 e
 
     // 執行加入localStorage
-    handleAddCartNumber('add', amount)
+    handleCartNumber('add', amount)
     updateCartToLocalStorage({
       // 設定要加入的資料
-      id: 7,
-      productName: '九九特餐-彩椒雞丁',
-      productPrice: 100,
-      productAmount: 1,
+      id: proudctId,
+      productName: title,
+      productPrice: price,
+      productAmount: amount || 1,
     })
+
+    // 按下加入購物車按鈕 關閉顯示區
+    //如果從客製化按按鈕
+    if (id === 'addCart-btn-custom') {
+      // 關閉全部的hint區塊
+      setIsShowHintA(false)
+      setIsShowHintB(false)
+      setIsShowHintC(false)
+      setIsShowHintD(false)
+      setIsShowHintE(false)
+      setIsShowHintF(false)
+    }
   }
 
-  const updateCartToLocalStorage = (value) => {
+  const updateCartToLocalStorage = (item, isAdded = true) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
-
-    const newCart = [...currentCart, value]
-    localStorage.setItem('cart', JSON.stringify(newCart))
+    const index = currentCart.findIndex((v) => v.id === item.id) // 如果localStorage裡面的id
+    if (index > -1) {
+      // 如果localStorage裡面已經有一樣的id
+      if (isAdded) {
+        currentCart[index].productAmount += amount
+      } else if (!isAdded && currentCart[index].productAmount > 1) {
+        currentCart[index].productAmount--
+      }
+    } else {
+      currentCart.push(item)
+      console.log('currentCart', currentCart)
+    }
+    localStorage.setItem('cart', JSON.stringify(currentCart))
+    // setMeals(currentCart)
   }
-
-  // useEffect(() => {
-  //   const $target = document.querySelector(target);
-  //   const $addBtn = document.querySelector(id);
-  //   console.log(target, id)
-  // }, []);
 
   return (
     <>

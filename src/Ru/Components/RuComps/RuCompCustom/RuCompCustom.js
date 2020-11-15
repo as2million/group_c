@@ -13,14 +13,17 @@ import line from './Images/line.png'
 
 function RuCompCustom(props) {
   // console.log(props);
-  const { handleAddCartNumber, amount, setAmount } = props
+  const { handleCartNumber, amount, setAmount } = props
   const [searchInput, setSearchInput] = useState('')
+  const [openBento, setOpenBento] = useState(false) // 判斷便當按鈕是否要亮
+  const [openSalad, setOpenSalad] = useState(false) // 判斷沙拉按鈕是否要亮
+  const [openCustom, setOpenCustom] = useState(false) // 判斷客製化按鈕是否要亮
 
   // JSX
   return (
     <>
       <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
-      <RuShowWidth />
+      {/* <RuShowWidth /> */}
 
       <div className="ru-mainImg-warp">
         <h1>享受美食 不需要理由</h1>
@@ -33,6 +36,7 @@ function RuCompCustom(props) {
           <RuSearchBar
             searchInput={searchInput}
             setSearchInput={setSearchInput}
+            searchId={'ru-searchId'}
           />
           {/* 搜尋欄e */}
 
@@ -40,23 +44,47 @@ function RuCompCustom(props) {
           <section className="ru-buttonWarpA">
             <RuButton
               text={'低GI便當'}
-              className={'button-btn'}
-              id={'button-btn-1'}
+              className={'ru-button-btn'}
+              id={'ru-button-btn-1'}
+              openBento={openBento}
+              setOpenBento={setOpenBento}
+              openSalad={openSalad}
+              setOpenSalad={setOpenSalad}
+              openCustom={openCustom}
+              setOpenCustom={setOpenCustom}
             />
             <RuButton
               text={'鮮蔬沙拉'}
-              className={'button-btn'}
-              id={'button-btn-2'}
+              className={'ru-button-btn'}
+              id={'ru-button-btn-2'}
+              openBento={openBento}
+              setOpenBento={setOpenBento}
+              openSalad={openSalad}
+              setOpenSalad={setOpenSalad}
+              openCustom={openCustom}
+              setOpenCustom={setOpenCustom}
             />
             <RuButton
               text={'客製化便當'}
-              className={'button-btn'}
-              id={'button-btn-3'}
+              className={'ru-button-btn'}
+              id={'ru-button-btn-3'}
+              openBento={openBento}
+              setOpenBento={setOpenBento}
+              openSalad={openSalad}
+              setOpenSalad={setOpenSalad}
+              openCustom={openCustom}
+              setOpenCustom={setOpenCustom}
             />
             <RuButton
               text={'蔬菜箱'}
-              className={'button-btn-g'}
-              id={'button-btn-4'}
+              className={'ru-button-btn-g'}
+              id={'ru-button-btn-4'}
+              openBento={openBento}
+              setOpenBento={setOpenBento}
+              openSalad={openSalad}
+              setOpenSalad={setOpenSalad}
+              openCustom={openCustom}
+              setOpenCustom={setOpenCustom}
             />
           </section>
 
@@ -64,25 +92,49 @@ function RuCompCustom(props) {
             <div>
               <RuButton
                 text={'低GI便當'}
-                className={'button-btn'}
-                id={'button-btn-1'}
+                className={'ru-button-btn'}
+                id={'ru-button-btn-1'}
+                openBento={openBento}
+                setOpenBento={setOpenBento}
+                openSalad={openSalad}
+                setOpenSalad={setOpenSalad}
+                openCustom={openCustom}
+                setOpenCustom={setOpenCustom}
               />
               <RuButton
                 text={'客製化便當'}
-                className={'button-btn'}
-                id={'button-btn-2'}
+                className={'ru-button-btn'}
+                id={'ru-button-btn-2'}
+                openBento={openBento}
+                setOpenBento={setOpenBento}
+                openSalad={openSalad}
+                setOpenSalad={setOpenSalad}
+                openCustom={openCustom}
+                setOpenCustom={setOpenCustom}
               />
             </div>
             <div>
               <RuButton
                 text={'鮮蔬沙拉'}
-                className={'button-btn'}
-                id={'button-btn-3'}
+                className={'ru-button-btn'}
+                id={'ru-button-btn-3'}
+                openBento={openBento}
+                setOpenBento={setOpenBento}
+                openSalad={openSalad}
+                setOpenSalad={setOpenSalad}
+                openCustom={openCustom}
+                setOpenCustom={setOpenCustom}
               />
               <RuButton
                 text={'蔬菜箱'}
-                className={'button-btn-g'}
-                id={'button-btn-4'}
+                className={'ru-button-btn-g'}
+                id={'ru-button-btn-4'}
+                openBento={openBento}
+                setOpenBento={setOpenBento}
+                openSalad={openSalad}
+                setOpenSalad={setOpenSalad}
+                openCustom={openCustom}
+                setOpenCustom={setOpenCustom}
               />
             </div>
           </section>
@@ -98,7 +150,7 @@ function RuCompCustom(props) {
 
       {/* 商品卡片區 s */}
       <RuCustom
-        handleAddCartNumber={handleAddCartNumber}
+        handleCartNumber={handleCartNumber}
         setAmount={setAmount}
         amount={amount}
       />
