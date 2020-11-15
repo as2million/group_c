@@ -31,9 +31,12 @@ function ChaCart(props) {
   const [district, setDistrict] = useState('');
   const [address, setAddress] = useState('');
   const [beastieCoin, setBeastieCoin] = useState('');
+
   // 信用卡格式檢查用
   const [creditNumber, setCreditNumber] = useState('');
   const [credit3Number, setCredit3Number] = useState('');
+  const [creditMonth, setCreditMonth] = useState('●●');
+  const [creditYear, setCreditYear] = useState('●●');
   //格式檢查用
   const [formatCheck, setFormatCheck] = useState(false);
 
@@ -197,29 +200,35 @@ function ChaCart(props) {
     } else {
       $('.cha-wrong-creditNumber').slideUp('slow');
     }
-
+    // creditMonth={creditMonth}
+    // setCreditMonth={setCreditMonth}
+    // creditYear={creditYear}
+    // 信用卡月份格式不符合
+    if (creditMonth === '●●') {
+      $('.cha-wrong-MONTH').slideDown('slow');
+    } else {
+      $('.cha-wrong-MONTH').slideUp('slow');
+    }
+    // 信用卡年分格式不符合
+    if (creditYear === '●●') {
+      $('.cha-wrong-YEAR').slideDown('slow');
+    } else {
+      $('.cha-wrong-YEAR').slideUp('slow');
+    }
     // 信用卡後三碼格式不符合
     if (!(credit3Number.length === 3)) {
       $('.cha-wrong-credit3Number').slideDown('slow');
     } else {
       $('.cha-wrong-credit3Number').slideUp('slow');
     }
-    console.log(
-      '!meals.length === 0,!name === "",mobile.match(/^09[0-9]{8}$/),takeDate,creditNumber.length === 16,credit3Number.length === 3,JSON.stringify(takeDate)',
-      !meals.length === 0,
-      !name === '',
-      mobile.match(/^09[0-9]{8}$/),
-      takeDate,
-      creditNumber.length === 16,
-      credit3Number.length === 3,
-      JSON.stringify(takeDate)
-    );
     if (
       !(meals.length === 0) &&
       !(name === '') &&
       mobile.match(/^09[0-9]{8}$/) &&
       takeDate &&
       creditNumber.length === 16 &&
+      !(creditMonth === '●●') &&
+      !(creditYear === '●●') &&
       credit3Number.length === 3
     ) {
       setFormatCheck(true);
@@ -278,6 +287,10 @@ function ChaCart(props) {
             setCreditNumber={setCreditNumber}
             credit3Number={credit3Number}
             setCredit3Number={setCredit3Number}
+            creditMonth={creditMonth}
+            setCreditMonth={setCreditMonth}
+            creditYear={creditYear}
+            setCreditYear={setCreditYear}
           />
         </main>
         {/* 購物清單欄*/}

@@ -14,11 +14,14 @@ function ChaCartStepCardStep3(props) {
     setCreditNumber,
     credit3Number,
     setCredit3Number,
+    creditMonth,
+    setCreditMonth,
+    creditYear,
+    setCreditYear,
   } = props;
   // const [creditNumber, setCreditNumber] = useState('');
   const [numberPointText, setNumberPointText] = useState('●●●●●●●●●●●●●●●●');
-  const [creditMonth, setCreditMonth] = useState('●●');
-  const [creditYear, setCreditYear] = useState('●●');
+
   const [creditFlip, setCreditFlip] = useState(false);
   // const [credit3Number, setCredit3Number] = useState('');
   const [threeNumberPointText, setThreeNumberPointText] = useState('●●●');
@@ -53,11 +56,14 @@ function ChaCartStepCardStep3(props) {
   }
   useEffect(() => {
     ShowInCard();
+    console.log('useEffect， [creditNumber]，信用卡畫面時時更新');
   }, [creditNumber]);
   useEffect(() => {
     ShowInCard();
+    console.log('useEffect， [creditNumber]，信用卡畫面時時更新');
   }, [credit3Number]);
 
+  console.log('creditMonth', creditMonth);
   return (
     <>
       <div className="cha-main-card cha-main-card-step3">
@@ -135,6 +141,9 @@ function ChaCartStepCardStep3(props) {
                 setCreditMonth(e.target.value);
               }}
             >
+              <option value="00" disabled selected hidden>
+                請選擇月份
+              </option>
               <option value="01">01</option>
               <option value="02">02</option>
               <option value="03">03</option>
@@ -148,7 +157,9 @@ function ChaCartStepCardStep3(props) {
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
+            <div className="cha-wrong-MONTH">**請選擇月份</div>
           </div>
+
           <div className="form-group">
             <label></label>
             <div className="cha-slash">/</div>
@@ -163,6 +174,9 @@ function ChaCartStepCardStep3(props) {
                 setCreditYear(e.target.value);
               }}
             >
+              <option value="00" disabled selected hidden>
+                請選擇年份
+              </option>
               <option value="20">2020</option>
               <option value="21">2021</option>
               <option value="22">2022</option>
@@ -174,6 +188,7 @@ function ChaCartStepCardStep3(props) {
               <option value="28">2028</option>
               <option value="29">2029</option>
             </select>
+            <div className="cha-wrong-YEAR">**請選擇年份</div>
           </div>
 
           <div className="form-group col">
