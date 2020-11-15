@@ -21,6 +21,10 @@ function VNavbar(props) {
   const {
     isLogin,
     currentUser,
+    // selectDate,
+    setSelectDate,
+    slecteTime,
+    setSelectTime,
     county,
     setCounty,
     township,
@@ -28,45 +32,139 @@ function VNavbar(props) {
     address,
     setAddress,
   } = props
-  const [startDate, setStartDate] = useState(
-    setHours(setMinutes(new Date(), 30), 11)
-  )
+  // console.log('currentUser:', currentUser)
+  const [userInfoJan, setUserInfoJan] = useState([])
+
+  const [startDate, setStartDate] = useState(new Date())
+  setSelectDate(startDate)
+
   const [status, setStatus] = useState(false)
-  // setCounty()
-  // setTownship()
 
+  //原本fetch的方法
   const addressData = (e) => {
-    //未登入=>顯示input框
-    //已登入=>顯示member.id的地址
-    fetch('http://localhost:5000/index/member_list', {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-      .then((r) => r.json())
-
-      .then((obj) => {
-        // const newAddress = [...obj, ...adress]
-        // setAddress(newAddress)
-        // console.log(address[0])
-        // console.log(obj[0].address)
-        console.log(obj)
-        setCounty(obj[0].county)
-        setTownship(obj[0].district)
-        setAddress(obj[0].address)
+    if (isLogin === true) {
+      fetch('http://localhost:5000/index/member_list', {
+        method: 'GET',
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }),
       })
+        .then((r) => r.json())
+        .then((obj) => {
+          // const newAddress = [...obj, ...adress]無法印出結果
+          // setAddress(newAddress)無法印出結果
+          // console.log(address[0])無法印出結果
+          // console.log(obj[0].address)無法印出結果
+          // console.log(obj)無法印出結果
+          // })無法印出結果
+          // console.log(obj[0].county)  ->台北市
+          // console.log(obj[0].district)  ->大安區
+          // console.log(obj[0].address)  ->忠孝東路一段50號
+          // console.log(datacountries.indexOf(obj[0].county))  ->0
+          // console.log(
+          //   datatownships[datacountries.indexOf(obj[0].county)].indexOf(
+          //     obj[0].district
+          //   )
+          // )  -> 4
+          //   console.log(currentUser - 1)
+          setCounty(datacountries.indexOf(obj[1].county))
+          setTownship(
+            datatownships[datacountries.indexOf(obj[1].county)].indexOf(
+              obj[1].district
+            )
+          )
+          setAddress(obj[1].address)
+        })
+    }
   }
-  //如果登入的話，fetch會員的地址
+
   useEffect(() => {
     addressData()
-  }, [])
+  }, [isLogin])
+
+  //疑似無法再次更改資料 -------- 取得目前user的資料 ---------- //
+
+  // const updateAddress = () => {
+  //   // const address = document.querySelector('#iris-member-address').value
+  //   const address = document.querySelector('.address-input-jan').innerHTML
+  //   const newAddressData = {
+  //     member_id: currentUser,
+  //     address: address,
+  //   }
+  // console.log(newProfile)
+
+  //   fetch('http://localhost:5000/index/updateAddress', {
+  //     method: 'POST',
+  //     body: JSON.stringify(newAddressData),
+  //     headers: new Headers({
+  //       Accept: 'application/json',
+  //       'Content-Type': 'application/json',
+  //     }),
+  //   })
+  //     .then((r) => r.json())
+  //     .then((o) => {
+  //       console.log(o)
+  //     })
+  // }
+
+  // async function getUserInfoFromServerJan() {
+  //   // if (isLogin === true) {
+  //   const url = 'http://localhost:5000/index/member_list'
+
+  //   const request = new Request(url, {
+  //     method: 'GET',
+  //     headers: new Headers({
+  //       Accept: 'application/json',
+  //       'Content-Type': 'application/json',
+  //     }),
+  //   })
+
+  //   const response = await fetch(request)
+  //   const dataJan = await response.json()
+
+  // console.log(dataJan)
+  // setUserInfoJan(dataJan)
+  // setCounty(datacountries.indexOf(userInfoJan[1].county))
+  // setTownship(
+  //   datatownships[datacountries.indexOf(userInfoJan[1].county)].indexOf(
+  //     userInfoJan[1].district
+  //   )
+  // )
+  // setAddress(userInfoJan[1].address)
+  // }
+
+  // --------- 過濾出現在使用者的資料 --------- //
+  // const currentUserInfoJan = userInfoJan.filter(
+  //   (userInfoJan) => userInfoJan.member_sid === currentUser
+  // )
+  // console.log('hi', userInfoJan)
+  // console.log(currentUserInfoJan[0])
+
+  // currentUserInfoJan.map((item, index) => {
+  //   const getcounty = item.county
+  //   const gettownship = item.district
+  //   const getaddress = item.address
+
+  //   setCounty(datacountries.indexOf(getcounty))
+  //   setTownship(
+  //     datatownships[datacountries.indexOf(getcounty)].indexOf(gettownship)
+  //   )
+  //   setAddress(getaddress)
+  // })
+
+  // 如果登入的話，fetch會員的地址
+  // useEffect(() => {
+  //   getUserInfoFromServerJan()
+  //   console.log('isLogin isLogin')
+  // }, [isLogin])
 
   return (
     <>
       {status && (
         <AddressTabs
+          {...props}
+          currentUser={currentUser}
           address={address}
           setAddress={setAddress}
           closeModal={() => setStatus(false)}
@@ -84,7 +182,10 @@ function VNavbar(props) {
             <DatePicker
               dateFormat="yyyy-MM-dd"
               selected={startDate}
-              onChange={(date) => setStartDate(date)}
+              onChange={(date) => {
+                setStartDate(date)
+                // console.log(selectDate)
+              }}
               minDate={Date.now()}
               maxDate={addDays(new Date(), 13)}
               locale="zh-TW"
@@ -94,8 +195,14 @@ function VNavbar(props) {
           <div className="d-flex align-items-center time-jan">
             <img alt="" src={clock} className="icons-jan " />
             <p className="titles-jan">取餐時間：</p>
-            <select className="form-control select-time-jan">
-              <option selected>請選擇</option>
+            <select
+              value={slecteTime}
+              onChange={(e) => {
+                setSelectTime(e.target.value)
+              }}
+              className="form-control select-time-jan"
+            >
+              <option defaultValue>請選擇取餐時間</option>
               <option>11:00 ~ 11:30</option>
               <option>11:30 ~ 12:00</option>
               <option>12:30 ~ 13:00</option>
@@ -107,8 +214,8 @@ function VNavbar(props) {
             <img alt="" src={mapLocator} className="icons-jan" />
             <p className="titles-jan">取餐地址：</p>
             <p onClick={() => setStatus(true)} className="address-input-jan">
-              {county}
-              {township}
+              {datacountries[county]}
+              {county === -1 ? '' : datatownships[county][township]}
               {address}
             </p>
           </div>

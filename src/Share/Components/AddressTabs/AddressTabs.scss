@@ -41,7 +41,7 @@ $lightBrown: #f7ede2;
 .jan-tabs-bcc {
   top: 5rem;
   left: 0;
-  height: 80rem;
+  height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
@@ -206,11 +206,15 @@ $lightBrown: #f7ede2;
   font-weight: 400;
   color: $gray;
   visibility: hidden;
+  .jan-tabs-highlight {
+    color: $deepYello;
+  }
 }
 .jan-tab-address-map {
   width: 60rem;
   height: 54rem;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
+  overflow: hidden;
 }
 .jan-tab-shops-list-wrap {
   width: 30rem;
@@ -232,7 +236,10 @@ $lightBrown: #f7ede2;
 .jan-tab-shops-map {
   width: 60rem;
   height: 54rem;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
+  iframe {
+    border: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
