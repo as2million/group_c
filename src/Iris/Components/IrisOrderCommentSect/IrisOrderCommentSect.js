@@ -164,7 +164,7 @@ function IrisUserCommentSect(props) {
 
   // --------- 過濾出現在使用者的投稿 --------- //
   const currentUserComment = allComment.filter(
-    (allComment) => allComment.member === currentUser
+    (allComment) => allComment.member_sid === currentUser
   )
 
   // --------- 留言框內容Template --------- //

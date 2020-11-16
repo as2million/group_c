@@ -52,7 +52,7 @@ function IrisMemberMenuSect(props) {
 
   // 過濾出現在使用者的投稿
   const currentUserComment = allComments.filter(
-    (allComments) => allComments.member === currentUser
+    (allComments) => allComments.member_sid === currentUser
   )
 
   // setUserCommentCount(currentUserComment.length) //執行這個會報錯
