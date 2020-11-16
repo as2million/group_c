@@ -11,13 +11,21 @@ import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg'
 import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg'
 import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg'
 // 選單連結要使用NavLink取代Link
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 function NavBar(props) {
   const [count, setCount] = useState(0)
   const [shoppingList, setShoppingList] = useState('0')
   const [showNav, setShowNav] = useState(true)
-  const { isLogin, setShowLoginModal, cartNumber, setIsLogin } = props
+  const {
+    isLogin,
+    setShowLoginModal,
+    showLoginModal,
+    cartNumber,
+    setIsLogin,
+    SetShowLoginCard,
+  } = props
 
   function myFunction() {
     const x = document.getElementById('NavBar')
@@ -36,6 +44,14 @@ function NavBar(props) {
     document.querySelector('.iris-logout-option').style.display = 'block'
   }
 
+  // 在未登入的狀態點擊會員相關選項
+  const disableLink = (e) => {
+    if (isLogin === false) {
+      e.preventDefault() //不跳轉頁面
+      setShowLoginModal(true) //秀登入光箱
+    }
+  }
+
   // 點擊登出
   const showLoginOption = () => {
     // 顯示登入選項,隱藏登出選項
@@ -44,15 +60,32 @@ function NavBar(props) {
     document.querySelector('.iris-logout-option').style.display = 'none'
   }
 
+  const clearUserStorage = () => {
+    localStorage.clear('currentUser')
+  }
+
   return (
     <>
       <div className="nav" id="NavBar">
         {/* <span id="ru-target">123</span> */}
-        <div className="navBar-jess-container">
+        <div
+          className="navBar-jess-container"
+          onClick={() => {
+            if (showLoginModal === true) {
+              setShowLoginModal(false)
+            }
+          }}
+        >
           <div className="navBar-jess-navCollapse ">
             <ul className="navBar-jess-navigation">
               <li className="navBar-jess-navigation_item">
-                <Nav.Link as={NavLink} to="/groupOrder/groupOrderCreate">
+                <Nav.Link
+                  as={NavLink}
+                  to="/groupOrder/groupOrderCreate"
+                  onClick={(e) => {
+                    disableLink(e)
+                  }}
+                >
                   作伙揪團
                 </Nav.Link>
               </li>
@@ -106,7 +139,13 @@ function NavBar(props) {
               </Nav.Link>
 
               <li className="navBar-jess-navigation_item">
-                <Nav.Link as={NavLink} to="/getcoupon">
+                <Nav.Link
+                  as={NavLink}
+                  to="/getcoupon"
+                  onClick={(e) => {
+                    disableLink(e)
+                  }}
+                >
                   專屬優惠
                 </Nav.Link>
               </li>
@@ -116,29 +155,60 @@ function NavBar(props) {
                 </Nav.Link>
               </li>
               <li className="navBar-jess-navigation_item">
-                <Nav.Link as={NavLink} to="/memberUserprofile">
-                  會員中心 <BackArrow className="backArrow" />{' '}
+                <Nav.Link
+                  as={NavLink}
+                  to="/memberUserprofile"
+                  onClick={(e) => {
+                    disableLink(e)
+                  }}
+                >
+                  會員中心 <BackArrow className="backArrow" />
                 </Nav.Link>
+                {/* </div> */}
                 <div className="navBar-jess-emptydiv">
                   <ul className="navBar-jess-dropdown2">
                     <div className="navBar-jess-triangle2"></div>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/orderManagement">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/orderManagement"
+                        onClick={(e) => {
+                          disableLink(e)
+                        }}
+                      >
                         訂單管理
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/memberUserprofile">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/memberUserprofile"
+                        onClick={(e) => {
+                          disableLink(e)
+                        }}
+                      >
                         修改會員資料
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/myFav">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/myFav"
+                        onClick={(e) => {
+                          disableLink(e)
+                        }}
+                      >
                         我的最愛
                       </Nav.Link>
                     </li>
                     <li className="navBar-jess-dropdown_item">
-                      <Nav.Link as={NavLink} to="/beastiePoint">
+                      <Nav.Link
+                        as={NavLink}
+                        to="/beastiePoint"
+                        onClick={(e) => {
+                          disableLink(e)
+                        }}
+                      >
                         我的怪獸
                       </Nav.Link>
                       <Monster className="navBar-jess-monster4" />
@@ -156,9 +226,9 @@ function NavBar(props) {
                     <li
                       className="navBar-jess-dropdown_item iris-logout-option"
                       onClick={() => {
-                        setShowLoginModal(true)
                         setIsLogin(false)
                         showLoginOption()
+                        clearUserStorage()
                       }}
                     >
                       登出
@@ -167,7 +237,12 @@ function NavBar(props) {
                 </div>
               </li>
 
-              <li id="ru-target">
+              <li
+                id="ru-target"
+                onClick={(e) => {
+                  disableLink(e)
+                }}
+              >
                 <span className="jess-navbarCartNum" id="jess-navbarCartNum">
                   {cartNumber}
                 </span>

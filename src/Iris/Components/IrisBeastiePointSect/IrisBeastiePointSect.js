@@ -12,15 +12,23 @@ import { ReactComponent as BeastieCoupon20Grey } from './Images/beastie-coupon20
 import { ReactComponent as CouponVerticalLine } from './Images/coupon_vertical_line.svg';
 
 function IrisBeastiePointSect(props) {
-  const { currentUser } = props;
-  const [couponList, setCouponList] = useState([]);
+  const { currentUser, setShowRuleBox } = props
+  const [couponList, setCouponList] = useState([])
 
   // 若localStorage有小怪獸名字就用此名，沒有就叫小怪獸
-  let beastieName = localStorage.getItem('beastieName');
+  let beastieName = localStorage.getItem('beastieName')
+
   if (beastieName) {
-    beastieName = localStorage.getItem('beastieName');
+    if (currentUser === 1) {
+      beastieName = '小Q怪'
+    } else {
+      beastieName = localStorage.getItem('beastieName')
+    }
   } else {
-    beastieName = '小怪獸';
+    beastieName = '小怪獸'
+    if (currentUser === 1) {
+      beastieName = '小Q怪'
+    }
   }
 
   // -------- 點擊鉛筆改名字 --------- //
@@ -69,27 +77,35 @@ function IrisBeastiePointSect(props) {
     const response = await fetch(request);
     const data = await response.json();
 
-    console.log(data);
-    setCouponList(data);
+    // console.log(data)
+    setCouponList(data)
   }
 
-  // ------- 一開始就會開始載入資料 ------- //
+  // 一開始就會開始載入資料
   useEffect(() => {
     getCouponFromServer();
   }, []);
 
-  // ------ 過濾出現在使用者的優惠券 ------ //
+  //  過濾出現在使用者的優惠券
   const currentUserCoupon = couponList.filter(
     (couponList) => couponList.member_sid === currentUser
   );
 
+  // 計算總值
+  let sum = 0
+  function calctotalCoin(currentObject, index, array) {
+    sum += currentObject.coupon_type
+  }
+  currentUserCoupon.forEach(calctotalCoin)
+  let userBeastieCoin = sum * 10
+
   // ------- coupon template --------- //
   const couponDisplay = currentUserCoupon.map((item, index) => {
-    const isseuDate = item.coupon_issue.slice(0, 10);
-    const isseuTime = item.coupon_issue.slice(11, 16);
-    const dueDate = item.coupon_due.slice(0, 10);
-    const dueTime = item.coupon_due.slice(11, 16);
-    const couponImgId = 'coupon-img-' + item.coupon_type;
+    const isseuDate = item.coupon_issue.slice(0, 10)
+    // const isseuTime = item.coupon_issue.slice(11, 16)
+    const dueDate = item.coupon_due.slice(0, 10)
+    const dueTime = '23:59'
+    const couponImgId = 'coupon-img-' + item.coupon_type
     return (
       <div className="iris-coupon-box d-flex align-items-center ">
         <div className="iris-coupon-icon">
@@ -104,7 +120,7 @@ function IrisBeastiePointSect(props) {
             <div className="iris-coupon-issue">
               <span>領取時間:</span>
               <span> {isseuDate}</span>
-              <span> {isseuTime}</span>
+              {/* <span> {isseuTime}</span> */}
             </div>
             <div className="iris-coupon-due">
               <span>使用期限:</span>
@@ -129,11 +145,11 @@ function IrisBeastiePointSect(props) {
 
         <div className="iris-beastie-content-container ">
           <div className="iris-beastie-icons-container d-flex  justify-content-center">
-            <div className="iris-icon-box d-flex align-items-center">
+            <div className="iris-icon-box d-flex align-items-center iris-total-coin-box">
               <BesatieCoin />
               <p>怪獸幣總資產</p>
+              <div className="iris-beastie-coin">{userBeastieCoin}</div>
             </div>
-            <div className="iris-beastie-coin">480</div>
 
             <VerticalLine />
 
@@ -161,7 +177,14 @@ function IrisBeastiePointSect(props) {
             <VerticalLine />
 
             <div className="iris-icon-box d-flex align-items-center ">
-              <BesatieBook />
+              <div
+                className="iris-rule-book"
+                onClick={() => {
+                  setShowRuleBox(true)
+                }}
+              >
+                <BesatieBook />
+              </div>
               <p>遊戲規則</p>
             </div>
           </div>

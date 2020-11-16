@@ -4,11 +4,16 @@ import { ReactComponent as WaveLine } from './Images/wave_line.svg'
 import { ReactComponent as IrisMemberLine } from './Images/iris_member_line.svg'
 import star from './Images/star.svg'
 import IrisTextArea from './IrisTextArea/IrisTextArea'
-import { id } from 'date-fns/locale'
+import { Rate } from 'antd'
+import 'antd/dist/antd.css'
 // import InputH40 from './../../../Share/Components/Input/InputH40';
 
 function IrisUserCommentSect(props) {
-  const { currentUser } = props
+  const {
+    currentUser,
+    // 設定setCommentDelete的狀態，傳到memberMenu，若有改變數字會減一
+    setCommentDelete,
+  } = props
   const [allComment, setAllComment] = useState([])
 
   // ---------- 改留言 ---------- //
@@ -87,7 +92,7 @@ function IrisUserCommentSect(props) {
     })
       .then((r) => r.json())
       .then((o) => {
-        console.log(o)
+        // console.log(o)
       })
   }
 
@@ -131,14 +136,18 @@ function IrisUserCommentSect(props) {
     commentNum.innerText = commentNum.innerText - 1
     // console.log(commentNum)
 
-    // 2. 準備要送的資料
+    // 2. 連動menu數字
+    // 設甚麼值無所謂，重點是讓狀態改變，menu那邊useEffect才會偵測到
+    setCommentDelete(thisId)
+
+    // 3. 準備要送的資料
     // 抓要刪除的投稿的資料庫sid
     const commentSid = e.target.parentNode.parentNode.parentNode.id.slice(9)
     const commentToBeDelete = {
       commentSid: commentSid,
     }
 
-    // 3. 送出
+    // 4. 送出
     fetch('http://localhost:5000/member/deleteComment', {
       method: 'POST',
       body: JSON.stringify(commentToBeDelete),
@@ -149,7 +158,7 @@ function IrisUserCommentSect(props) {
     })
       .then((r) => r.json())
       .then((o) => {
-        console.log(o)
+        // console.log(o)
       })
   }
 
@@ -162,8 +171,14 @@ function IrisUserCommentSect(props) {
   const commentDisplay = currentUserComment.map((item, index) => {
     // id用數字抓不到，前面加commentId
     const thisId = 'commentId' + item.sid
+    // 圖片
+    const imageId = 'comment-img-' + item.product_sid
+    console.log(imageId)
     // 處理從資料庫撈來的日期格式
-    const commentDate = item.created_at.slice(0, 10)
+    // let commentDate = item.created_at.toLocaleString()
+    let commentDate = item.created_at.slice(0, 10)
+    // console.log(typeof commentDate)
+
     return (
       <>
         <div className="iris-member-line"></div>
@@ -172,22 +187,18 @@ function IrisUserCommentSect(props) {
           className="iris-comment-box"
           id={thisId}
           onClick={() => {
-            console.log(thisId)
+            // console.log(thisId)
           }}
         >
           {/* <div className="iris-comment-box d-flex" id="comment1"> */}
           <div className="iris-comment-img-warpper">
-            <img className="iris-comment-img" id={item.comment_img}></img>
+            <img className="iris-comment-img" id={imageId}></img>
           </div>
           <div className="iris-comment-section-wrapper">
             <div className="iris-comment-text-wrapper d-flex">
               <div>{item.productname}</div>&nbsp;&nbsp;
               <div className="card-star-warp">
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
-                <img className="card-star" src={star} />
+                <Rate count={5} value={item.startRating} allowHalf disabled />
               </div>
             </div>
             <div className="iris-comment-text">{item.content}</div>
@@ -235,7 +246,7 @@ function IrisUserCommentSect(props) {
     <>
       <div className="container col-9">
         <div className="row justify-content-center iris-content-title-container ">
-          <h2 className="iris-comment-title">我的投稿</h2>
+          <h2 className="iris-comment-title">我的評論</h2>
           <WaveLine />
         </div>
         <div className="iris-comment-list-container">
@@ -244,7 +255,7 @@ function IrisUserCommentSect(props) {
             <span className="iris-comment-quantity">
               {currentUserComment.length}
             </span>{' '}
-            則投稿
+            則評論
           </h6>
           {/* <IrisMemberLine /> */}
 
