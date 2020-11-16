@@ -1,33 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect'
-import IrisMyFavSect from '../Components/IrisMyFavSect/IrisMyFavSect'
-import VNavbar from 'Share/Components/VNavbar/VNavbar'
-import './IrisMemberPage.scss'
-import { Redirect } from 'react-router-dom'
-import { withRouter } from 'react-router-dom'
-import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect';
+import IrisMyFavSect from '../Components/IrisMyFavSect/IrisMyFavSect';
+import VNavbar from 'Share/Components/VNavbar/VNavbar';
+import './IrisMemberPage.scss';
+import { Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 
 function IrirsMyFav(props) {
-  const [userFavDelete, setUserFavDelete] = useState('')
-  const {
-    isLogin,
-    currentUser,
-    currentUserData,
-    setShowLoginModal,
-    // vnbar
-    county,
-    setCounty,
-    township,
-    setTownship,
-    address,
-    setAddress,
-  } = props
+  const [userFavDelete, setUserFavDelete] = useState('');
+  const { isLogin, currentUser, currentUserData, setShowLoginModal } = props;
 
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
     // setShowLoginModal(true)
-    return <Redirect to="/" />
+    return <Redirect to="/" />;
   }
   return (
     <>
@@ -46,7 +34,7 @@ function IrirsMyFav(props) {
       </div>
       <ScrollButton />
     </>
-  )
+  );
 }
 
-export default withRouter(IrirsMyFav)
+export default withRouter(IrirsMyFav);

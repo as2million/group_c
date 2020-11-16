@@ -5,21 +5,21 @@ import Navbar from 'Share/Components/NavBar/NavBar';
 import Footer from 'Share/Components/Footer/Footer';
 
 // 引入 所有人的總元件
-import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
-import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
-import RuProudctList from 'Ru/Pages/RuProudctList'
-import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'
-import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'
+import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex';
+import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage';
+import RuProudctList from 'Ru/Pages/RuProudctList';
+import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad';
+import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom';
 
-import IrisOrderComment from 'Iris/Pages/IrisOrderComment'
-import IrisMyFav from 'Iris/Pages/IrisMyFav'
-import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
-import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon'
+import IrisOrderComment from 'Iris/Pages/IrisOrderComment';
+import IrisMyFav from 'Iris/Pages/IrisMyFav';
+import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint';
+import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon';
 
-import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement'
-import JessMenu from 'Jess/Pages/JessMenu'
-import JessBento from 'Jess/Pages/JessBento'
-import JessVegBox from 'Jess/Pages/JessVegBox'
+import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement';
+import JessMenu from 'Jess/Pages/JessMenu';
+import JessBento from 'Jess/Pages/JessBento';
+import JessVegBox from 'Jess/Pages/JessVegBox';
 
 import ChaCart from 'Cha/Pages/Cha-Cart/ChaCart';
 import ChaGroupOrderCreate from 'Cha/Components/Cha-Group-Order-Create/ChaGroupOrderCreate';
@@ -33,8 +33,8 @@ import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 
 import JanIndex from 'Janice/Pages/JanIndex';
 
-import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal'
-import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
+import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal';
+import IrisUserprofile from 'Iris/Pages/IrisUserprofile';
 
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
@@ -44,17 +44,17 @@ import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
 
 // 路由表
 function App() {
-  const [showBar, setShowBar] = useState(true)
-  const [cartNumber, setCartNumber] = useState(0)
-  const [amount, setAmount] = useState(1)
+  const [showBar, setShowBar] = useState(true);
+  const [cartNumber, setCartNumber] = useState(0);
+  const [amount, setAmount] = useState(1);
 
   // ---------- iris ---------- //
-  const [currentUser, setCurrentUser] = useState('') // 目前用戶
-  const [currentUserData, setCurrentUserData] = useState({}) // 目前用戶
-  const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
-  const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
-  const [couponStatus, setCouponStatus] = useState([])
-  const [couponOneStatus, setCouponOneStatus] = useState('')
+  const [currentUser, setCurrentUser] = useState(''); // 目前用戶
+  const [currentUserData, setCurrentUserData] = useState({}); // 目前用戶
+  const [isLogin, setIsLogin] = useState(false); //是否登入，預設否
+  const [showLoginModal, setShowLoginModal] = useState(false); //控制是否秀光箱
+  const [couponStatus, setCouponStatus] = useState([]);
+  const [couponOneStatus, setCouponOneStatus] = useState('');
 
   //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address,selectDate,slecteTime,takeOrNo共12個)到你們的頁面--------------//
   const [county, setCounty] = useState(-1);
@@ -112,11 +112,11 @@ function App() {
   // 若localstorage有user就用user資料
   useEffect(() => {
     if (JSON.parse(localStorage.getItem('currentUser'))) {
-      setCurrentUser(JSON.parse(localStorage.getItem('currentUser')))
+      setCurrentUser(JSON.parse(localStorage.getItem('currentUser')));
       // console.log(localStorage.getItem('currentUser'))
-      setIsLogin(true)
+      setIsLogin(true);
     }
-  }, [])
+  }, []);
 
   return (
     // <Router>元件一定要放在最外層
@@ -159,6 +159,12 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route exact path="/productListSalad">
@@ -171,6 +177,12 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route exact path="/productListCustom">
@@ -184,6 +196,12 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             {/* cha */}
@@ -196,6 +214,18 @@ function App() {
                 setCartNumber={setCartNumber}
                 isLogin={isLogin}
                 // handleCartNumber={handleCartNumber}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             {/* 揪團 */}
@@ -247,6 +277,12 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route exact path="/orderComment">
@@ -263,6 +299,12 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route exact path="/myFav">
@@ -279,6 +321,12 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route exact path="/beastiePoint">
@@ -295,6 +343,12 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route path="/getCoupon">
@@ -314,10 +368,18 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route path="/orderManagement">
               <IrisOrderManagement
+                showBar={showBar}
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -330,6 +392,12 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             {/* jess */}

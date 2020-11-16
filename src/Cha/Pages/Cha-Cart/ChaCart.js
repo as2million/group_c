@@ -19,7 +19,19 @@ function ChaCart(props) {
   const [meals, setMeals] = useState([]);
 
   // ---------------控制navbar------------//
-  const { setShowBar, setCartNumber, isLogin } = props;
+  const {
+    setShowBar,
+    setCartNumber,
+    isLogin,
+    county,
+    township,
+    address,
+    selectDate,
+    slecteTime,
+    takeOrNo,
+    setAddress,
+    setCounty,
+  } = props;
   // if (isLogin === false) {
   //   props.history.push('/');
   // }
@@ -28,12 +40,12 @@ function ChaCart(props) {
   const [memberSid, setMemberSid] = useState(1);
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
-  const [takeWay, setTakeWay] = useState('外送');
-  const [takeDate, setTakeDate] = useState(new Date());
-  const [takeTime, setTakeTime] = useState('11:00 ~ 11:30');
-  const [county, setCounty] = useState('');
-  const [district, setDistrict] = useState('');
-  const [address, setAddress] = useState('');
+  const [takeWay, setTakeWay] = useState(takeOrNo);
+  const [takeDate, setTakeDate] = useState(selectDate);
+  const [takeTime, setTakeTime] = useState(slecteTime);
+  // const [county, setCounty] = useState('');
+  const [district, setDistrict] = useState(township);
+  // const [address, setAddress] = useState('');
   const [beastieCoin, setBeastieCoin] = useState('');
 
   // 信用卡格式檢查用

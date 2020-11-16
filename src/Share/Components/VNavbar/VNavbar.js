@@ -70,13 +70,13 @@ function VNavbar(props) {
           //   console.log(currentUser - 1)
 
           if (address.length === 0) {
-            setCounty(datacountries.indexOf(obj[1].county));
+            setCounty(datacountries.indexOf(obj[0].county));
             setTownship(
-              datatownships[datacountries.indexOf(obj[1].county)].indexOf(
-                obj[1].district
+              datatownships[datacountries.indexOf(obj[0].county)].indexOf(
+                obj[0].district
               )
             );
-            setAddress(obj[1].address);
+            setAddress(obj[0].address);
           }
         });
     }
@@ -202,6 +202,7 @@ function VNavbar(props) {
               value={slecteTime}
               onChange={(e) => {
                 setSelectTime(e.target.value);
+                console.log(e.target.value);
               }}
               className="form-control select-time-jan"
             >

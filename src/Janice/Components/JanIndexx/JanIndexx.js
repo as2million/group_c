@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from 'react'
-import './JanIndexx.scss'
-import titleLeft from './Images/Svg/titleLeft.svg'
-import titleRight from './Images/Svg/titleRight.svg'
-import titleLeftLight from './Images/Svg/titleLeft-light.svg'
-import titleRightLight from './Images/Svg/titleRight-light.svg'
-import recommend1 from './Images/Svg/recommend1.svg'
-import recommend2 from './Images/Svg/recommend2.svg'
-import map1 from './Images/Svg/map1.svg'
-import map2 from './Images/Svg/map2.svg'
-import stepArrow from './Images/Svg/stepArrow.svg'
-import Button from '../../../Share/Components/Button/Button'
-import starO from './Images/Svg/star-o.svg'
-import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft'
-import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
-import VNavbar from '../../../Share/Components/VNavbar/VNavbar'
-import ToToop from '../../../Share/Components/ToTopButton/ScrollButton'
-import { datacountries, datatownships, dataprice } from './data'
+import React, { useState, useEffect } from 'react';
+import './JanIndexx.scss';
+import titleLeft from './Images/Svg/titleLeft.svg';
+import titleRight from './Images/Svg/titleRight.svg';
+import titleLeftLight from './Images/Svg/titleLeft-light.svg';
+import titleRightLight from './Images/Svg/titleRight-light.svg';
+import recommend1 from './Images/Svg/recommend1.svg';
+import recommend2 from './Images/Svg/recommend2.svg';
+import map1 from './Images/Svg/map1.svg';
+import map2 from './Images/Svg/map2.svg';
+import stepArrow from './Images/Svg/stepArrow.svg';
+import Button from '../../../Share/Components/Button/Button';
+import starO from './Images/Svg/star-o.svg';
+import ArrowLeft from '../../../Share/Components/ArrowLeft/ArrowLeft';
+import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight';
+import VNavbar from '../../../Share/Components/VNavbar/VNavbar';
+import ToToop from '../../../Share/Components/ToTopButton/ScrollButton';
+import { datacountries, datatownships, dataprice } from './data';
 
-import { Carousel } from 'antd'
-import { Link } from 'react-router-dom'
-import ItemsCarousel from 'react-items-carousel'
-import event1 from './Images/Images/event1.png'
-import event2 from './Images/Images/event2.jpg'
-import event3 from './Images/Images/event3.jpg'
-import event4 from './Images/Images/event4.jpg'
-import event5 from './Images/Images/event5.jpg'
-import event6 from './Images/Images/event6.jpg'
-import event7 from './Images/Images/event7.png'
+import { Carousel } from 'antd';
+import { Link } from 'react-router-dom';
+import ItemsCarousel from 'react-items-carousel';
+import event1 from './Images/Images/event1.png';
+import event2 from './Images/Images/event2.jpg';
+import event3 from './Images/Images/event3.jpg';
+import event4 from './Images/Images/event4.jpg';
+import event5 from './Images/Images/event5.jpg';
+import event6 from './Images/Images/event6.jpg';
+import event7 from './Images/Images/event7.png';
 
 function JanIndexx(props) {
   const {
@@ -37,13 +37,13 @@ function JanIndexx(props) {
     setTownship,
     address,
     setAddress,
-  } = props
-  const [price, setPrice] = useState(-1)
-  const [activeItemIndex, setActiveItemIndex] = useState(0)
+  } = props;
+  const [price, setPrice] = useState(-1);
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
 
   useEffect(() => {
-    setShowBar(true)
-  }, [])
+    setShowBar(true);
+  }, []);
 
   const contentStyle = {
     height: '70rem',
@@ -51,190 +51,195 @@ function JanIndexx(props) {
     lineHeight: '160px',
     textAlign: 'center',
     background: '#2638891',
-  }
+  };
 
   //品牌特色切換
   function intro1() {
     // console.log('hi')
     document.querySelector('.jan-farmer-icon').style =
-      'background: url("./Images/Svg/farmer-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s'
+      'background: url("./Images/Svg/farmer-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
     document.querySelector('.jan-diet-icon').style =
-      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-choices-icon').style =
-      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s'
+      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
     document.querySelector('.jan-network-icon').style =
-      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-kcal-icon').style =
-      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-index-feature-triangle').style =
-      'left:5.2%;transition:0.3s'
-    document.querySelector('.jan-intro1').style = 'display:flex;transition:0.3s'
-    document.querySelector('.jan-intro2').style = 'display:none'
-    document.querySelector('.jan-intro3').style = 'display:none'
-    document.querySelector('.jan-intro4').style = 'display:none'
-    document.querySelector('.jan-intro5').style = 'display:none'
+      'left:5.2%;transition:0.3s';
+    document.querySelector('.jan-intro1').style =
+      'display:flex;transition:0.3s';
+    document.querySelector('.jan-intro2').style = 'display:none';
+    document.querySelector('.jan-intro3').style = 'display:none';
+    document.querySelector('.jan-intro4').style = 'display:none';
+    document.querySelector('.jan-intro5').style = 'display:none';
   }
   function intro2() {
     document.querySelector('.jan-farmer-icon').style =
-      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-diet-icon').style =
-      'background: url("./Images/Svg/diet-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s'
+      'background: url("./Images/Svg/diet-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
     document.querySelector('.jan-choices-icon').style =
-      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s'
+      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
     document.querySelector('.jan-network-icon').style =
-      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-kcal-icon').style =
-      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-index-feature-triangle').style =
-      'left:27%;transition:0.3s'
-    document.querySelector('.jan-intro1').style = 'display:none'
-    document.querySelector('.jan-intro2').style = 'display:flex;transition:0.3s'
-    document.querySelector('.jan-intro3').style = 'display:none'
-    document.querySelector('.jan-intro4').style = 'display:none'
-    document.querySelector('.jan-intro5').style = 'display:none'
+      'left:27%;transition:0.3s';
+    document.querySelector('.jan-intro1').style = 'display:none';
+    document.querySelector('.jan-intro2').style =
+      'display:flex;transition:0.3s';
+    document.querySelector('.jan-intro3').style = 'display:none';
+    document.querySelector('.jan-intro4').style = 'display:none';
+    document.querySelector('.jan-intro5').style = 'display:none';
   }
   function intro3() {
     document.querySelector('.jan-farmer-icon').style =
-      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-diet-icon').style =
-      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-choices-icon').style =
-      'background: url("./Images/Svg/choices-o.svg") center center no-repeat;background-size: 9rem 9rem;transition:0.5s'
+      'background: url("./Images/Svg/choices-o.svg") center center no-repeat;background-size: 9rem 9rem;transition:0.5s';
     document.querySelector('.jan-network-icon').style =
-      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-kcal-icon').style =
-      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-index-feature-triangle').style =
-      'left:48.5%;transition:0.3s'
-    document.querySelector('.jan-intro1').style = 'display:none'
-    document.querySelector('.jan-intro2').style = 'display:none'
-    document.querySelector('.jan-intro3').style = 'display:flex;transition:0.3s'
-    document.querySelector('.jan-intro4').style = 'display:none'
-    document.querySelector('.jan-intro5').style = 'display:none'
+      'left:48.5%;transition:0.3s';
+    document.querySelector('.jan-intro1').style = 'display:none';
+    document.querySelector('.jan-intro2').style = 'display:none';
+    document.querySelector('.jan-intro3').style =
+      'display:flex;transition:0.3s';
+    document.querySelector('.jan-intro4').style = 'display:none';
+    document.querySelector('.jan-intro5').style = 'display:none';
   }
   function intro4() {
     document.querySelector('.jan-farmer-icon').style =
-      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-diet-icon').style =
-      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-choices-icon').style =
-      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s'
+      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
     document.querySelector('.jan-network-icon').style =
-      'background: url("./Images/Svg/network-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s'
+      'background: url("./Images/Svg/network-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
     document.querySelector('.jan-kcal-icon').style =
-      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/kcal.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-index-feature-triangle').style =
-      'left:70.5%;transition:0.3s'
-    document.querySelector('.jan-intro1').style = 'display:none'
-    document.querySelector('.jan-intro2').style = 'display:none'
-    document.querySelector('.jan-intro3').style = 'display:none'
-    document.querySelector('.jan-intro4').style = 'display:flex;transition:0.3s'
-    document.querySelector('.jan-intro5').style = 'display:none'
+      'left:70.5%;transition:0.3s';
+    document.querySelector('.jan-intro1').style = 'display:none';
+    document.querySelector('.jan-intro2').style = 'display:none';
+    document.querySelector('.jan-intro3').style = 'display:none';
+    document.querySelector('.jan-intro4').style =
+      'display:flex;transition:0.3s';
+    document.querySelector('.jan-intro5').style = 'display:none';
   }
   function intro5() {
     document.querySelector('.jan-farmer-icon').style =
-      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/farmer.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-diet-icon').style =
-      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/diet.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-choices-icon').style =
-      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s'
+      'background: url("./Images/Svg/choices.svg") center center no-repeat;background-size: 7.5rem 7.5rem;transition:0.5s';
     document.querySelector('.jan-network-icon').style =
-      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s'
+      'background: url("./Images/Svg/network.svg") center center no-repeat;background-size: 8rem 8rem;transition:0.5s';
     document.querySelector('.jan-kcal-icon').style =
-      'background: url("./Images/Svg/kcal-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s'
+      'background: url("./Images/Svg/kcal-o.svg") center center no-repeat;background-size: 9.5rem 9.5rem;transition:0.5s';
     document.querySelector('.jan-index-feature-triangle').style =
-      'left:92%;transition:0.3s;'
-    document.querySelector('.jan-intro1').style = 'display:none'
-    document.querySelector('.jan-intro2').style = 'display:none'
-    document.querySelector('.jan-intro3').style = 'display:none'
-    document.querySelector('.jan-intro4').style = 'display:none'
-    document.querySelector('.jan-intro5').style = 'display:flex;transition:0.3s'
+      'left:92%;transition:0.3s;';
+    document.querySelector('.jan-intro1').style = 'display:none';
+    document.querySelector('.jan-intro2').style = 'display:none';
+    document.querySelector('.jan-intro3').style = 'display:none';
+    document.querySelector('.jan-intro4').style = 'display:none';
+    document.querySelector('.jan-intro5').style =
+      'display:flex;transition:0.3s';
   }
 
   //監聽應用程式滾動
   function downloadIcon() {
-    const downloadArea = document.querySelector('.jan-download-area')
-    const info = document.querySelector('.jan-app-info')
-    const downloadIcon = document.querySelector('.jan-col-download')
-    const janAppIcon = document.querySelector('.jan-app-logo')
+    const downloadArea = document.querySelector('.jan-download-area');
+    const info = document.querySelector('.jan-app-info');
+    const downloadIcon = document.querySelector('.jan-col-download');
+    const janAppIcon = document.querySelector('.jan-app-logo');
     if (window.scrollY > 0.1 && downloadArea && info && downloadIcon) {
-      downloadArea.style = 'left:-29rem;transition:0.5s'
-      info.style = 'display:none;transition:0.5s'
-      downloadIcon.style = 'display:block;transition:0.5s'
-      janAppIcon.style = 'visibility: hidden'
+      downloadArea.style = 'left:-29rem;transition:0.5s';
+      info.style = 'display:none;transition:0.5s';
+      downloadIcon.style = 'display:block;transition:0.5s';
+      janAppIcon.style = 'visibility: hidden';
     }
     if (window.scrollY === 0 && downloadArea && info && downloadIcon) {
-      downloadArea.style = 'left:0rem;transition:0.5s'
-      info.style = 'display:block;transition:0.5s'
-      downloadIcon.style = 'display:none;transition:0.5s'
-      janAppIcon.style = 'visibility: visible;transition:0.5s'
+      downloadArea.style = 'left:0rem;transition:0.5s';
+      info.style = 'display:block;transition:0.5s';
+      downloadIcon.style = 'display:none;transition:0.5s';
+      janAppIcon.style = 'visibility: visible;transition:0.5s';
     }
     if (downloadArea && info && downloadIcon) {
       downloadIcon.addEventListener('click', () => {
-        downloadArea.style = 'left:0rem;transition:0.5s'
-        info.style = 'display:block;transition:0.5s'
-        downloadIcon.style = 'display:none;transition:0.5s'
-        janAppIcon.style = 'visibility: visible;transition:0.5s'
-      })
+        downloadArea.style = 'left:0rem;transition:0.5s';
+        info.style = 'display:block;transition:0.5s';
+        downloadIcon.style = 'display:none;transition:0.5s';
+        janAppIcon.style = 'visibility: visible;transition:0.5s';
+      });
     }
   }
-  window.addEventListener('scroll', downloadIcon)
+  window.addEventListener('scroll', downloadIcon);
 
   //活動牆
   function event1C() {
     document.querySelector('.jan-event-img').style =
-      'background: url("./Images/Images/event1.png") center center no-repeat;background-size: cover'
-    document.querySelector('.jan-event-title1').style = 'display:block'
-    document.querySelector('.jan-event-title2').style = 'display:none'
-    document.querySelector('.jan-event-title3').style = 'display:none'
-    document.querySelector('.jan-event-content1').style = 'display:block'
-    document.querySelector('.jan-event-content2').style = 'display:none'
-    document.querySelector('.jan-event-content3').style = 'display:none'
+      'background: url("./Images/Images/event1.png") center center no-repeat;background-size: cover';
+    document.querySelector('.jan-event-title1').style = 'display:block';
+    document.querySelector('.jan-event-title2').style = 'display:none';
+    document.querySelector('.jan-event-title3').style = 'display:none';
+    document.querySelector('.jan-event-content1').style = 'display:block';
+    document.querySelector('.jan-event-content2').style = 'display:none';
+    document.querySelector('.jan-event-content3').style = 'display:none';
   }
   function event2C() {
     document.querySelector('.jan-event-img').style =
-      'background: url("./Images/Images/event2.jpg") center center no-repeat;background-size: cover'
-    document.querySelector('.jan-event-title2').style = 'display:block'
-    document.querySelector('.jan-event-title3').style = 'display:none'
-    document.querySelector('.jan-event-title1').style = 'display:none'
-    document.querySelector('.jan-event-content2').style = 'display:block'
-    document.querySelector('.jan-event-content3').style = 'display:none'
-    document.querySelector('.jan-event-content1').style = 'display:none'
+      'background: url("./Images/Images/event2.jpg") center center no-repeat;background-size: cover';
+    document.querySelector('.jan-event-title2').style = 'display:block';
+    document.querySelector('.jan-event-title3').style = 'display:none';
+    document.querySelector('.jan-event-title1').style = 'display:none';
+    document.querySelector('.jan-event-content2').style = 'display:block';
+    document.querySelector('.jan-event-content3').style = 'display:none';
+    document.querySelector('.jan-event-content1').style = 'display:none';
   }
   function event3C() {
     document.querySelector('.jan-event-img').style =
-      'background: url("./Images/Images/event3.jpg") center center no-repeat;background-size: cover'
-    document.querySelector('.jan-event-title3').style = 'display:block'
-    document.querySelector('.jan-event-title2').style = 'display:none'
-    document.querySelector('.jan-event-title1').style = 'display:none'
-    document.querySelector('.jan-event-content3').style = 'display:block'
-    document.querySelector('.jan-event-content2').style = 'display:none'
-    document.querySelector('.jan-event-content1').style = 'display:none'
+      'background: url("./Images/Images/event3.jpg") center center no-repeat;background-size: cover';
+    document.querySelector('.jan-event-title3').style = 'display:block';
+    document.querySelector('.jan-event-title2').style = 'display:none';
+    document.querySelector('.jan-event-title1').style = 'display:none';
+    document.querySelector('.jan-event-content3').style = 'display:block';
+    document.querySelector('.jan-event-content2').style = 'display:none';
+    document.querySelector('.jan-event-content1').style = 'display:none';
   }
   function event4C() {
     document.querySelector('.jan-event-img').style =
-      'background: url("./Images/Images/event4.jpg") center center no-repeat;background-size: cover'
+      'background: url("./Images/Images/event4.jpg") center center no-repeat;background-size: cover';
   }
   function event5C() {
     document.querySelector('.jan-event-img').style =
-      'background: url("./Images/Images/event5.jpg") center center no-repeat;background-size: cover'
+      'background: url("./Images/Images/event5.jpg") center center no-repeat;background-size: cover';
   }
   function event6C() {
     document.querySelector('.jan-event-img').style =
-      'background: url("./Images/Images/event6.jpg") center center no-repeat;background-size: cover'
+      'background: url("./Images/Images/event6.jpg") center center no-repeat;background-size: cover';
   }
   function event7C() {
     document.querySelector('.jan-event-img').style =
-      'background: url("./Images/Images/event7.png") center center no-repeat;background-size: cover'
+      'background: url("./Images/Images/event7.png") center center no-repeat;background-size: cover';
   }
 
   //地圖顯示外送金額及自取門市
   const hideInfo = () => {
-    document.querySelector('.jan-map-results').style = 'visibility: hidden'
-  }
+    document.querySelector('.jan-map-results').style = 'visibility: hidden';
+  };
   const showInfo = () => {
-    document.querySelector('.jan-map-results').style = 'visibility: visible'
-  }
+    document.querySelector('.jan-map-results').style = 'visibility: visible';
+  };
 
   return (
     <>
@@ -481,8 +486,9 @@ function JanIndexx(props) {
               <Link
                 style={{ 'text-decoration': 'none' }}
                 to="/productListCustom"
-              ></Link>
-              <Button className="button-btn" text="客製化便當" />
+              >
+                <Button className="button-btn" text="客製化便當" />
+              </Link>
             </div>
           </div>
           <div className="jan-intro3-cards">
@@ -928,11 +934,11 @@ function JanIndexx(props) {
                             value={county}
                             onChange={(e) => {
                               //將字串轉成數字
-                              setCounty(+e.target.value)
-                              console.log('zqaza', +e.target.value)
+                              setCounty(+e.target.value);
+                              console.log('zqaza', +e.target.value);
                               //重置township的值
                               // setTownship(0)
-                              setTownship(-1)
+                              setTownship(-1);
                             }}
                             onClick={hideInfo}
                           >
@@ -957,7 +963,7 @@ function JanIndexx(props) {
                             value={township}
                             onChange={(e) => {
                               // 將字串轉成數字
-                              setTownship(+e.target.value)
+                              setTownship(+e.target.value);
                             }}
                             style={{ fontSize: '1.5rem' }}
                             className="form-control iris-mainpage-select"
@@ -1184,7 +1190,7 @@ function JanIndexx(props) {
 
       <ToToop />
     </>
-  )
+  );
 }
 
-export default JanIndexx
+export default JanIndexx;
