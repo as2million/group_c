@@ -68,13 +68,16 @@ function VNavbar(props) {
           //   )
           // )  -> 4
           //   console.log(currentUser - 1)
-          setCounty(datacountries.indexOf(obj[1].county));
-          setTownship(
-            datatownships[datacountries.indexOf(obj[1].county)].indexOf(
-              obj[1].district
-            )
-          );
-          setAddress(obj[1].address);
+
+          if (address.length === 0) {
+            setCounty(datacountries.indexOf(obj[1].county));
+            setTownship(
+              datatownships[datacountries.indexOf(obj[1].county)].indexOf(
+                obj[1].district
+              )
+            );
+            setAddress(obj[1].address);
+          }
         });
     }
   };
