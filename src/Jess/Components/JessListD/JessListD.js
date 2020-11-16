@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import './JessListD.scss'
-import 'antd/dist/antd.css'
-import Button from '../../../Share/Components/Button/Button'
-import { Rate } from 'antd'
-import JessModal from '../JessModal/JessModal'
+import React, { useState, useEffect } from 'react';
+import './JessListD.scss';
+import 'antd/dist/antd.css';
+import Button from '../../../Share/Components/Button/Button';
+import { Rate } from 'antd';
+import JessModal from '../JessModal/JessModal';
 // import JessCommentInput from '../JessCommentMsg/JessCommentInput'
-import JessCommentMsg from '../../Pages/JessCommentMsg'
+import JessCommentMsg from '../../Pages/JessCommentMsg';
 
 function JessListD(props) {
-  const [comments, setComments] = useState([])
-  const [status, setStatus] = useState(false)
+  const [comments, setComments] = useState([]);
+  const [status, setStatus] = useState(false);
 
   async function messageData() {
-    const url = 'http://localhost:5000/product/bentoMsg'
+    const url = 'http://localhost:5000/product/bentoMsg';
 
     const request = new Request(url, {
       method: 'GET',
@@ -20,18 +20,18 @@ function JessListD(props) {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
-    })
+    });
 
-    const response = await fetch(request)
-    const data = await response.json()
+    const response = await fetch(request);
+    const data = await response.json();
 
-    setComments(data)
-    console.log('我的get:', data)
+    setComments(data);
+    // console.log('我的get:', data)
   }
 
   useEffect(() => {
-    messageData()
-  }, [])
+    messageData();
+  }, []);
   return (
     <>
       {/* {status && (
@@ -94,13 +94,13 @@ function JessListD(props) {
                     <div className="jess-contentBorder"></div>
                   </div>
                 </>
-              )
+              );
             })}
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default JessListD
+export default JessListD;

@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import './JessMenuB.scss'
-import { Link } from 'react-router-dom'
-import brownBorder from 'Jess/Components/images/SVG/brownBorder.svg'
-import BannerAnim, { Element } from 'rc-banner-anim'
-import TweenOne from 'rc-tween-one'
-import 'rc-banner-anim/assets/index.css'
-import ArrowRight from 'Share/Components/ArrowRight/ArrowRight'
+import React, { useState, useEffect } from 'react';
+import './JessMenuB.scss';
+import { Link } from 'react-router-dom';
+import brownBorder from 'Jess/Components/images/SVG/brownBorder.svg';
+import BannerAnim, { Element } from 'rc-banner-anim';
+import TweenOne from 'rc-tween-one';
+import 'rc-banner-anim/assets/index.css';
+import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 
 function JessMenuB(props) {
-  const BgElement = Element.BgElement
+  const BgElement = Element.BgElement;
   return (
     <>
       <div className="container-fluid jess-MenuB-container-fluid ">
@@ -69,13 +69,13 @@ function JessMenuB(props) {
                   </Link>
                   <div class="mask">
                     <h2>日式燒雞腿</h2>
-                    <p>$135</p>
+                    <p>$150</p>
                   </div>
                 </div>
               </div>
               <div className="row d-flex  align-content-between">
                 <div className="jess-view-menuBpic4">
-                  <Link to="/bento/4">
+                  <Link to="/bento/6">
                     <div className="jess-menuB-pic4"></div>
                   </Link>
                   <div class="mask">
@@ -89,7 +89,7 @@ function JessMenuB(props) {
                   </Link>
                   <div class="mask">
                     <h2>熱帶火烤萊姆蝦</h2>
-                    <p>$220</p>
+                    <p>$200</p>
                   </div>
                 </div>
               </div>
@@ -112,7 +112,7 @@ function JessMenuB(props) {
         </div> */}
       </div>
     </>
-  )
+  );
 }
 
-export default JessMenuB
+export default JessMenuB;

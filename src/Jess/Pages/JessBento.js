@@ -12,7 +12,7 @@ import ToTop from 'Share/Components/ToTopButton/ScrollButton';
 function JessBento(props) {
   const { handleCartNumber, handleCarList, currentUser } = props;
   const [count, setCount] = useState(1);
-  const [total, setTotal] = useState(170);
+  const [total, setTotal] = useState(0);
   const [menu, setMenu] = useState([]);
   //useParams 設定id
   let { id } = useParams();
@@ -29,11 +29,13 @@ function JessBento(props) {
 
     const response = await fetch(request);
     const data = await response.json();
+    // console.log('data', data);
+    // console.log('menu.price', data[id].price);
 
-    // setMenu(data[0])
+    // console.log('data[id]', data[id]); //整包資料
     //這邊id值可以設定分頁
-    setMenu(data[id]);
-    // console.log(data);
+    setMenu(data[id]); //設定不進去
+    setTotal(data[id].price);
   }
 
   // -------- 取得目前user的資料 ---------- //
@@ -50,21 +52,7 @@ function JessBento(props) {
 
     const response = await fetch(request);
     const userdata = await response.json();
-    console.log('userdata', userdata);
-
-    // if (currentUser === userdata.member_sid) {
-    //   setNowUser(userdata[currentUser - 1]);
-    // }
-    // console.log('nowUser', userdata[currentUser - 1]);
-
-    // for (let i = 0; i < userdata.length; i++) {
-    //   if (currentUser === userdata[i].member_sid) {
-    //     // userArr.push(userdata[i]);
-    //     setNowUser(userdata[currentUser]);
-    //   }
-    // }
-    // console.log('nowUser', nowUser);
-    // console.log('currentUser', currentUser);
+    // console.log('userdata', userdata);
   }
 
   useEffect(() => {
