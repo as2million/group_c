@@ -60,7 +60,7 @@ function ChaOrderManagement(props) {
 
   //  --------------點選取消/退費，重新載入資料，切換到退費頁面-------------//
   useEffect(() => {
-    if (!changeOrderState === 0) {
+    if (!(changeOrderState === 0)) {
       getMyOrderData(currentMemberSid);
       console.log(
         'useEffect，[changeOrderState]，getMyOrderData(currentMemberSid)'

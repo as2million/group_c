@@ -276,11 +276,11 @@ function ChaCartSubmitCard(props) {
             購
           </span>
           物清單
-          <button
+          {/* <button
             className="cha-control-normal-switch cha-farmer-cart-switch"
-            // onClick={() => {
-            //   props.history.push('/checkpoint');
-            // }}
+            onClick={() => {
+              props.history.push('/checkpoint');
+            }}
           >
             小農購物車
           </button>
@@ -292,7 +292,7 @@ function ChaCartSubmitCard(props) {
             }}
           >
             訂餐購物車
-          </button>
+          </button> */}
         </div>
         <div className="cha-little-total">
           <div>

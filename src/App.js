@@ -125,7 +125,6 @@ function App() {
             <Route exact path="/farmIntro">
               <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
             </Route>
-
             {/* ru */}
             {/* 放"page資料夾"內的元件 */}
             <Route exact path="/productList">
@@ -150,10 +149,12 @@ function App() {
             {/* cha */}
             {/* 放"page資料夾"內的元件 */}
             {/* 購物車 */}
+
             <Route exact path="/cart">
               <ChaCart
                 setShowBar={setShowBar}
                 setCartNumber={setCartNumber}
+                isLogin={isLogin}
                 // handleCartNumber={handleCartNumber}
               />
             </Route>
@@ -185,7 +186,6 @@ function App() {
               <ChaCartTest />
             </Route>
             {/* 404 */}
-
             {/* <Route exact path="*">
             <NotFoundPage />
           </Route> */}
@@ -235,7 +235,6 @@ function App() {
                 setShowBar={setShowBar}
               />
             </Route>
-
             {/* jess */}
             {/* 放"page資料夾"內的元件 */}
             <Route path="/menu">
@@ -248,7 +247,6 @@ function App() {
             <Route path="/vegBox">
               <JessVegBox handleCartNumber={handleCartNumber} />
             </Route>
-
             {/* janice */}
             {/* 放"page資料夾"內的元件 */}
             <Route exact path="/">

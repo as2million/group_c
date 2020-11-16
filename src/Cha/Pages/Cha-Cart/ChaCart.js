@@ -8,6 +8,7 @@ import ChaCartStepCardStep3 from 'Cha/Components/Cha-Cart-Step-Card-Step3/ChaCar
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import $ from 'jquery';
 import 'Cha/Pages/Cha-Cart/ChaCart.scss';
+// import { withRouter } from 'react-router-dom';
 
 function ChaCart(props) {
   //-------------當前登入會員的id--------------//
@@ -18,8 +19,11 @@ function ChaCart(props) {
   const [meals, setMeals] = useState([]);
 
   // ---------------控制navbar------------//
-  const { setShowBar, setCartNumber } = props;
-
+  const { setShowBar, setCartNumber, isLogin } = props;
+  // if (isLogin === false) {
+  //   props.history.push('/');
+  // }
+  console.log('isLogin', isLogin);
   // ----------給「會員資料表」用-------------//
   const [memberSid, setMemberSid] = useState(1);
   const [name, setName] = useState('');
@@ -326,4 +330,5 @@ function ChaCart(props) {
     </>
   );
 }
+// export default withRouter(ChaCart);
 export default ChaCart;

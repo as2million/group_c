@@ -15,7 +15,13 @@ const ChaRefundModal = (props) => {
   // , takeDate, takeTime
   const RefundDisplay = (props) => {
     // const { takeDate, takeTime } = props;
-    // .slice(0, 10)
+    const {
+      closeModal,
+      closeModalSecret,
+      takeDate,
+      takeTime,
+      handleOrderState,
+    } = props;
     return (
       <>
         <div className="cha-refund-modal-container">
@@ -49,7 +55,7 @@ const ChaRefundModal = (props) => {
           {/* 光箱內容頂部 */}
           <div className="cha-refund-wrap-coupon-container">
             <div className="cha-refund-iris-coupon-container">
-              <RefundDisplay takeDate={takeDate} takeTime={takeTime} />
+              <RefundDisplay />
             </div>
           </div>
           {/* 光箱內容底部 */}
