@@ -25,6 +25,7 @@ function ChaReceiptType(props) {
   };
   // 已達成
   const ComponentB = (props) => {
+    const [receiptNumber, setReceiptNumber] = useState('');
     const [receiptAddress, setReceiptAddress] = useState('');
     const [receiptEmail, setReceiptEmail] = useState('');
     return (
@@ -48,12 +49,24 @@ function ChaReceiptType(props) {
             <label
               htmlFor="cha-step3-5-2-2-vehicle"
               onClick={() => {
+                setReceiptNumber('/GLRS74Q');
                 setReceiptAddress('復興南路一段390號2樓');
                 setReceiptEmail('1234567890@gmail.com.tw');
               }}
             >
-              Email
+              載具號碼
             </label>
+            <InputH40
+              type="email"
+              className="form-control cha-step3-5-2-2-vehicle"
+              id="cha-step3-5-2-2-vehicle"
+              name="cha-step3-5-2-2-vehicle"
+              placeholder="請填寫載具號碼"
+              value={receiptNumber}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="cha-step3-5-2-2-vehicle">Email</label>
             <InputH40
               type="email"
               className="form-control cha-step3-5-2-2-vehicle"

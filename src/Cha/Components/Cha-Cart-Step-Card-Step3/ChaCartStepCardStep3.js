@@ -6,14 +6,24 @@ import ChaReceiptType from 'Cha/Components/Cha-Cart-Step-Card-Step3/Cha-Receipt-
 // import TWZipCode from './Cha-Address-Select/TWZipCode';
 import './ChaCartStepCardStep3.scss';
 import InputH40 from './InputH40/InputH40';
-
+import $ from 'jquery';
 function ChaCartStepCardStep3(props) {
-  const [creditNumber, setCreditNumber] = useState('');
+  const {
+    handleFormatCheck,
+    creditNumber,
+    setCreditNumber,
+    credit3Number,
+    setCredit3Number,
+    creditMonth,
+    setCreditMonth,
+    creditYear,
+    setCreditYear,
+  } = props;
+  // const [creditNumber, setCreditNumber] = useState('');
   const [numberPointText, setNumberPointText] = useState('●●●●●●●●●●●●●●●●');
-  const [creditMonth, setCreditMonth] = useState('●●');
-  const [creditYear, setCreditYear] = useState('●●');
+
   const [creditFlip, setCreditFlip] = useState(false);
-  const [credit3Number, setCredit3Number] = useState('');
+  // const [credit3Number, setCredit3Number] = useState('');
   const [threeNumberPointText, setThreeNumberPointText] = useState('●●●');
 
   // 信用卡號呈現效果
@@ -46,11 +56,11 @@ function ChaCartStepCardStep3(props) {
   }
   useEffect(() => {
     ShowInCard();
-    console.log('useEffect,ShowInCard(),[creditNumber]');
+    console.log('useEffect， [creditNumber]，信用卡畫面實時更新');
   }, [creditNumber]);
   useEffect(() => {
     ShowInCard();
-    console.log('useEffect,ShowInCard(),[credit3Number]');
+    console.log('useEffect， [creditNumber]，信用卡畫面實時更新');
   }, [credit3Number]);
 
   return (
@@ -112,8 +122,10 @@ function ChaCartStepCardStep3(props) {
             value={creditNumber}
             onChange={(e) => {
               setCreditNumber(e.target.value);
+              // ShowInCard();
             }}
           />
+          <div className="cha-wrong-creditNumber">**信用卡號碼長度不足</div>
         </div>
         {/* 月、年、後三碼 */}
         {/* MMM */}
@@ -128,6 +140,9 @@ function ChaCartStepCardStep3(props) {
                 setCreditMonth(e.target.value);
               }}
             >
+              <option value="00" disabled selected hidden>
+                請選擇月份
+              </option>
               <option value="01">01</option>
               <option value="02">02</option>
               <option value="03">03</option>
@@ -141,7 +156,9 @@ function ChaCartStepCardStep3(props) {
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
+            <div className="cha-wrong-MONTH">**請選擇月份</div>
           </div>
+
           <div className="form-group">
             <label></label>
             <div className="cha-slash">/</div>
@@ -156,6 +173,9 @@ function ChaCartStepCardStep3(props) {
                 setCreditYear(e.target.value);
               }}
             >
+              <option value="00" disabled selected hidden>
+                請選擇年份
+              </option>
               <option value="20">2020</option>
               <option value="21">2021</option>
               <option value="22">2022</option>
@@ -167,6 +187,7 @@ function ChaCartStepCardStep3(props) {
               <option value="28">2028</option>
               <option value="29">2029</option>
             </select>
+            <div className="cha-wrong-YEAR">**請選擇年份</div>
           </div>
 
           <div className="form-group col">
@@ -181,6 +202,7 @@ function ChaCartStepCardStep3(props) {
               maxLength="3"
               onChange={(e) => {
                 setCredit3Number(e.target.value);
+                // ShowInCard();
               }}
               onFocus={() => {
                 setCreditFlip(true);
@@ -189,6 +211,9 @@ function ChaCartStepCardStep3(props) {
                 setCreditFlip(false);
               }}
             />
+            <div className="cha-wrong-credit3Number">
+              **信用卡後三碼長度不足
+            </div>
           </div>
         </div>
         <ChaReceiptType />

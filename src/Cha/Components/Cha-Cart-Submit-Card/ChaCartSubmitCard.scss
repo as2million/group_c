@@ -148,3 +148,10 @@
 // // Import Bootstrap and its default variables
 // @import '~bootstrap/scss/bootstrap.scss';
 // @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+
+.cha-wrong-format {
+  font-size: 1.5rem;
+  color: red;
+  margin-top: -2rem;
+  display: none;
+}

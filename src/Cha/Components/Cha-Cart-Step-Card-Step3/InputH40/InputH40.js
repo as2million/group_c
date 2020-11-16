@@ -7,6 +7,7 @@ import './Input.scss';
 function InputH40(props) {
   const {
     placeholder,
+    className,
     type,
     id,
     userInfo,
