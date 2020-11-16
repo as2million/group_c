@@ -237,7 +237,12 @@ function NavBar(props) {
                 </div>
               </li>
 
-              <li id="ru-target">
+              <li
+                id="ru-target"
+                onClick={(e) => {
+                  disableLink(e)
+                }}
+              >
                 <span className="jess-navbarCartNum" id="jess-navbarCartNum">
                   {cartNumber}
                 </span>
