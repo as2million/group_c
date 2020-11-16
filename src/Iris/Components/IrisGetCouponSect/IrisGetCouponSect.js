@@ -32,7 +32,7 @@ function IrisGetCouponSect(props) {
     const response = await fetch(request)
     const data = await response.json()
 
-    console.log('data', data)
+    // console.log('data', data)
     setCouponStatus(data)
 
 
@@ -47,10 +47,10 @@ function IrisGetCouponSect(props) {
       (item) => item.member_sid === currentUser
     )
 
-    console.log('couponStatus', couponStatus)
-    console.log('currentUserCouponStatus', currentUserCouponStatus)
+    // console.log('couponStatus', couponStatus)
+    // console.log('currentUserCouponStatus', currentUserCouponStatus)
 
-    if (!couponStatus) {
+    if (!currentUserCouponStatus) {
       return
     }
     if (currentUserCouponStatus[0].coupon1_status === 1) {

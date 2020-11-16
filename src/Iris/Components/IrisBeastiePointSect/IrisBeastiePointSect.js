@@ -26,6 +26,9 @@ function IrisBeastiePointSect(props) {
     }
   } else {
     beastieName = '小怪獸'
+    if (currentUser === 1) {
+      beastieName = '小Q怪'
+    }
   }
 
   // -------- 點擊鉛筆改名字 --------- //

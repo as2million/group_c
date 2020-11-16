@@ -48,7 +48,7 @@ function App() {
   const [amount, setAmount] = useState(1)
 
   // ---------- iris ---------- //
-  const [currentUser, setCurrentUser] = useState() // 目前用戶
+  const [currentUser, setCurrentUser] = useState('') // 目前用戶
   const [currentUserData, setCurrentUserData] = useState({}) // 目前用戶
   const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
   const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
@@ -82,6 +82,15 @@ function App() {
     console.log(amount)
     return () => {}
   }, [amount])
+
+  // 若localstorage有user就用user資料
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem('currentUser'))) {
+      setCurrentUser(JSON.parse(localStorage.getItem('currentUser')))
+      // console.log(localStorage.getItem('currentUser'))
+      setIsLogin(true)
+    }
+  }, [])
 
   return (
     // <Router>元件一定要放在最外層

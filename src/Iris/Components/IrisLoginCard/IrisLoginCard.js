@@ -102,6 +102,11 @@ function IrisLoginCard(props) {
       ) {
         setIsLogin(true)
         setCurrentUser(userinfo[i].member_sid) // 設定目前使用者id
+        
+        // 放在localStorage
+        let currentUserStorage = parseInt(userinfo[i].member_sid)
+        localStorage.setItem('currentUser', currentUserStorage)
+
         setCurrentUserData(userinfo[i])
         console.log(userinfo[i])
         setShowLoginModal(false) // 登入光箱消失

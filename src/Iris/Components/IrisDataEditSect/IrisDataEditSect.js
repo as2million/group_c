@@ -33,7 +33,7 @@ function IrisDataEditSect(props) {
   })
     .then((r) => r.json())
     .then((o) => {
-      console.log(o)
+      // console.log(o)
     })
 
   // ------------ 更新會員資料 ----------------- //
@@ -89,7 +89,7 @@ function IrisDataEditSect(props) {
       })
         .then((r) => r.json())
         .then((o) => {
-          console.log(o)
+          // console.log(o)
         })
 
       // 第一次填資料送優惠券
@@ -125,7 +125,7 @@ function IrisDataEditSect(props) {
         })
           .then((r) => r.json())
           .then((o) => {
-            console.log(o)
+            // console.log(o)
           })
 
         // 2. 連動menu數字
@@ -159,7 +159,7 @@ function IrisDataEditSect(props) {
     const response = await fetch(request)
     const data = await response.json()
 
-    console.log(data)
+    // console.log(data)
     setUserInfo(data)
   }
 
@@ -167,7 +167,7 @@ function IrisDataEditSect(props) {
   const currentUserInfo = userInfo.filter(
     (userInfo) => userInfo.member_sid === currentUser
   )
-  console.log(currentUserInfo[0])
+  // console.log(currentUserInfo[0])
 
   useEffect(() => {
     getUserInfoFromServer()
@@ -189,7 +189,7 @@ function IrisDataEditSect(props) {
     const response = await fetch(request)
     const data = await response.json()
 
-    console.log(data)
+    // console.log(data)
     setCouponStatus(data)
   }
   // 載入
@@ -239,11 +239,11 @@ function IrisDataEditSect(props) {
   }, [userInfo])
 
   const fillInData = () => {
-    document.querySelector('#iris-member-family-name').value = '林'
-    document.querySelector('#iris-member-given-name').value = '凱特'
-    document.querySelector('#iris-member-birthday').value = '1990-04-07'
+    document.querySelector('#iris-member-family-name').value = '陳'
+    document.querySelector('#iris-member-given-name').value = '雪莉'
+    document.querySelector('#iris-member-birthday').value = '1995-02-09'
     document.querySelector('#iris-member-address').value =
-      '台北市大安區忠孝東路一段50號'
+      '台北市南港區南港路一段27號'
   }
 
   return (

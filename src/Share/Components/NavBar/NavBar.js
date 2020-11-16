@@ -60,6 +60,10 @@ function NavBar(props) {
     document.querySelector('.iris-logout-option').style.display = 'none'
   }
 
+  const clearUserStorage = () => {
+    localStorage.clear('currentUser')
+  }
+
   return (
     <>
       <div className="nav" id="NavBar">
@@ -224,6 +228,7 @@ function NavBar(props) {
                       onClick={() => {
                         setIsLogin(false)
                         showLoginOption()
+                        clearUserStorage()
                       }}
                     >
                       登出
