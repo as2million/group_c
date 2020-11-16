@@ -7,7 +7,7 @@ const ChaSubmitModal = (props) => {
   // , takeDate, takeTime
   const SubmitDisplay = (props) => {
     const { takeDate, takeTime } = props;
-    console.log('takeDate, takeTime', takeDate, takeTime);
+    // console.log('takeDate, takeTime', takeDate, takeTime);
     // .slice(0, 10)
     return (
       <>

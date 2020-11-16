@@ -23,7 +23,7 @@ function ChaCart(props) {
   // if (isLogin === false) {
   //   props.history.push('/');
   // }
-  console.log('isLogin', isLogin);
+  // console.log('isLogin', isLogin);
   // ----------給「會員資料表」用-------------//
   const [memberSid, setMemberSid] = useState(1);
   const [name, setName] = useState('');
@@ -162,11 +162,11 @@ function ChaCart(props) {
   //------------格式檢查的函式-------//
   // !password.match(/[A-Za-z0-9]{8,24}/)
   const handleFormatCheck = () => {
-    console.log(
-      '檢查到的購物車內商品：數量、meals===[]、meals.length===0',
-      meals === [],
-      meals.length === 0
-    );
+    // console.log(
+    //   '檢查到的購物車內商品：數量、meals===[]、meals.length===0',
+    //   meals === [],
+    //   meals.length === 0
+    // );
     // 購物車內商品不能為0
     if (meals.length === 0) {
       $('.cha-wrong-totalAmount').slideDown('slow');

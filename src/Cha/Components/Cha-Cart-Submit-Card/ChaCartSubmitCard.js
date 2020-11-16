@@ -175,11 +175,12 @@ function ChaCartSubmitCard(props) {
     });
 
     try {
-      setSubmitModalController(true);
       const response = await fetch(request);
       const dataMyOrderDetail = await response.json();
       // data會是一個物件值
       console.log('完成送出my-order-detail', dataMyOrderDetail);
+      console.log('送出detail後，觸發光箱');
+      setSubmitModalController(true);
     } catch (error) {
       setError(error);
     }
