@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth'
-import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom'
-import RuButton from 'Ru/Components/RuButton/RuButton'
-import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar'
-import 'Ru/Components/RuComps/Style.scss'
+import React, { useState, useEffect } from 'react';
+import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
+import RuCustom from 'Ru/Components/RuCards/RuCustom/RuCustom';
+import RuButton from 'Ru/Components/RuButton/RuButton';
+import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar';
+import 'Ru/Components/RuComps/Style.scss';
 
 // 引用共用元件
-import SearchBar from 'Share/Components/Input/SearchBar'
-import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
+import SearchBar from 'Share/Components/Input/SearchBar';
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 // 引用圖片
-import line from './Images/line.png'
+import line from './Images/line.png';
 
 function RuCompCustom(props) {
   // console.log(props);
-  const { handleCartNumber, amount, setAmount } = props
-  const [searchInput, setSearchInput] = useState('')
-  const [openBento, setOpenBento] = useState(false) // 判斷便當按鈕是否要亮
-  const [openSalad, setOpenSalad] = useState(false) // 判斷沙拉按鈕是否要亮
-  const [openCustom, setOpenCustom] = useState(false) // 判斷客製化按鈕是否要亮
+  const { handleCartNumber, amount, setAmount, count, setCount } = props;
+  const [searchInput, setSearchInput] = useState('');
+  const [openBento, setOpenBento] = useState(false); // 判斷便當按鈕是否要亮
+  const [openSalad, setOpenSalad] = useState(false); // 判斷沙拉按鈕是否要亮
+  const [openCustom, setOpenCustom] = useState(false); // 判斷客製化按鈕是否要亮
 
   // JSX
   return (
@@ -153,6 +153,8 @@ function RuCompCustom(props) {
         handleCartNumber={handleCartNumber}
         setAmount={setAmount}
         amount={amount}
+        count={count}
+        setCount={setCount}
       />
       {/* 商品卡片區 e */}
 
@@ -164,7 +166,7 @@ function RuCompCustom(props) {
         我是footer
       </div> */}
     </>
-  )
+  );
 }
 
-export default RuCompCustom
+export default RuCompCustom;

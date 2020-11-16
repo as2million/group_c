@@ -1,57 +1,57 @@
-import React, { useState, useEffect } from 'react'
-import 'Ru/Components/RuCards/Style.scss'
-import RuNothing from 'Ru/Components/RuNothing/RuNothing'
-import RuCard from 'Ru/Components/RuCard/RuCard'
+import React, { useState, useEffect } from 'react';
+import 'Ru/Components/RuCards/Style.scss';
+import RuNothing from 'Ru/Components/RuNothing/RuNothing';
+import RuCard from 'Ru/Components/RuCard/RuCard';
 
 // 引用圖片
-import background from './Images/background.png'
+import background from './Images/background.png';
 
 function RuBento(props) {
-  const { searchInput, handleCartNumber, currentUser } = props
-  const [itemWarp1, setItemWarp1] = useState(false)
-  const [itemWarp2, setItemWarp2] = useState(false)
-  const [itemWarp3, setItemWarp3] = useState(false)
-  const [itemWarp4, setItemWarp4] = useState(false)
-  const [itemWarp5, setItemWarp5] = useState(false)
-  const [itemWarp6, setItemWarp6] = useState(false)
-  const [itemWarp7, setItemWarp7] = useState(false)
-  const [itemWarp8, setItemWarp8] = useState(false)
-  const [itemWarp9, setItemWarp9] = useState(false)
-  const [itemWarp10, setItemWarp10] = useState(false)
-  const [itemWarp11, setItemWarp11] = useState(false)
-  const [itemWarp12, setItemWarp12] = useState(false)
+  const { searchInput, handleCartNumber, currentUser, count, setCount } = props;
+  const [itemWarp1, setItemWarp1] = useState(false);
+  const [itemWarp2, setItemWarp2] = useState(false);
+  const [itemWarp3, setItemWarp3] = useState(false);
+  const [itemWarp4, setItemWarp4] = useState(false);
+  const [itemWarp5, setItemWarp5] = useState(false);
+  const [itemWarp6, setItemWarp6] = useState(false);
+  const [itemWarp7, setItemWarp7] = useState(false);
+  const [itemWarp8, setItemWarp8] = useState(false);
+  const [itemWarp9, setItemWarp9] = useState(false);
+  const [itemWarp10, setItemWarp10] = useState(false);
+  const [itemWarp11, setItemWarp11] = useState(false);
+  const [itemWarp12, setItemWarp12] = useState(false);
 
-  const [isShowNothing, setIsShowNothing] = useState(false)
+  const [isShowNothing, setIsShowNothing] = useState(false);
   // 後端資料
-  const [data, setData] = useState('')
-  const [dataFav, setDataFav] = useState('')
-  const [showFavArr, setShowFavArr] = useState([])
+  const [data, setData] = useState('');
+  const [dataFav, setDataFav] = useState('');
+  const [showFavArr, setShowFavArr] = useState([]);
 
   // 向後端請求資料
   useEffect(() => {
     // 拿商品列表
     fetch('http://localhost:5000/product/bento') // 非同步
       .then(function (response) {
-        return response.json()
+        return response.json();
       })
       .then(function (myJson) {
         // console.log(myJson)
-        const copyJson = [...myJson]
-        setData(copyJson)
-      })
+        const copyJson = [...myJson];
+        setData(copyJson);
+      });
 
     // 拿 我的最愛
     fetch('http://localhost:5000/member/myFavList') // 非同步
       .then(function (response) {
-        return response.json()
+        return response.json();
       })
       .then(function (myJson) {
         // console.log(myJson)
-        const copyJsonFav = [...myJson]
-        setDataFav(copyJsonFav)
-        console.log(copyJsonFav)
-      })
-  }, [])
+        const copyJsonFav = [...myJson];
+        setDataFav(copyJsonFav);
+        console.log(copyJsonFav);
+      });
+  }, []);
 
   useEffect(() => {
     // 第一次掛載DOM 與 每次state改變時 都會觸發
@@ -59,86 +59,86 @@ function RuBento(props) {
 
     // 等待兩個fetch都結束
     if (!data || !dataFav) {
-      return
+      return;
     }
 
     // 拿到有幾筆要固定我的最愛按鈕 邏輯
-    const favArr = [] // 放抓到的dataFav[i].product_sid資料
+    const favArr = []; // 放抓到的dataFav[i].product_sid資料
     for (let i = 0; i < dataFav.length; i++) {
       // 如果當前會員 跟 我的最愛資料表的member_sid匹配
       if (currentUser === dataFav[i].member_sid) {
         // console.log(dataFav[i].product_sid)
-        favArr.push(dataFav[i].product_sid)
+        favArr.push(dataFav[i].product_sid);
       }
     }
     // console.log(favArr)
-    setShowFavArr(favArr) // 這樣才可以傳到RuAddFavorite
+    setShowFavArr(favArr); // 這樣才可以傳到RuAddFavorite
     // console.log(showFavArr)
 
     // 搜尋功能 s
-    let title1 = data[0].productname
-    let title2 = data[1].productname
-    let title3 = data[2].productname
-    let title4 = data[3].productname
-    let title5 = data[4].productname
-    let title6 = data[5].productname
-    let title7 = data[6].productname
-    let title8 = data[7].productname
-    let title9 = data[8].productname
-    let title10 = data[9].productname
-    let title11 = data[10].productname
-    let title12 = data[11].productname
-    const $containerA = document.querySelector('.ru-itemWarp')
+    let title1 = data[0].productname;
+    let title2 = data[1].productname;
+    let title3 = data[2].productname;
+    let title4 = data[3].productname;
+    let title5 = data[4].productname;
+    let title6 = data[5].productname;
+    let title7 = data[6].productname;
+    let title8 = data[7].productname;
+    let title9 = data[8].productname;
+    let title10 = data[9].productname;
+    let title11 = data[10].productname;
+    let title12 = data[11].productname;
+    const $containerA = document.querySelector('.ru-itemWarp');
 
-    setItemWarp1(true)
-    setItemWarp2(true)
-    setItemWarp3(true)
-    setItemWarp4(true)
-    setItemWarp5(true)
-    setItemWarp6(true)
-    setItemWarp7(true)
-    setItemWarp8(true)
-    setItemWarp9(true)
-    setItemWarp10(true)
-    setItemWarp11(true)
-    setItemWarp12(true)
-    setIsShowNothing(false)
+    setItemWarp1(true);
+    setItemWarp2(true);
+    setItemWarp3(true);
+    setItemWarp4(true);
+    setItemWarp5(true);
+    setItemWarp6(true);
+    setItemWarp7(true);
+    setItemWarp8(true);
+    setItemWarp9(true);
+    setItemWarp10(true);
+    setItemWarp11(true);
+    setItemWarp12(true);
+    setIsShowNothing(false);
 
     if (title1.indexOf(searchInput) == -1) {
-      setItemWarp1(false)
+      setItemWarp1(false);
     }
     if (title2.indexOf(searchInput) == -1) {
-      setItemWarp2(false)
+      setItemWarp2(false);
     }
     if (title3.indexOf(searchInput) == -1) {
-      setItemWarp3(false)
+      setItemWarp3(false);
     }
     if (title4.indexOf(searchInput) == -1) {
-      setItemWarp4(false)
+      setItemWarp4(false);
     }
     if (title5.indexOf(searchInput) == -1) {
-      setItemWarp5(false)
+      setItemWarp5(false);
     }
     if (title6.indexOf(searchInput) == -1) {
-      setItemWarp6(false)
+      setItemWarp6(false);
     }
     if (title7.indexOf(searchInput) == -1) {
-      setItemWarp7(false)
+      setItemWarp7(false);
     }
     if (title8.indexOf(searchInput) == -1) {
-      setItemWarp8(false)
+      setItemWarp8(false);
     }
     if (title9.indexOf(searchInput) == -1) {
-      setItemWarp9(false)
+      setItemWarp9(false);
     }
     if (title10.indexOf(searchInput) == -1) {
-      setItemWarp10(false)
+      setItemWarp10(false);
     }
     if (title11.indexOf(searchInput) == -1) {
-      setItemWarp11(false)
+      setItemWarp11(false);
     }
     if (title12.indexOf(searchInput) == -1) {
-      setItemWarp12(false)
+      setItemWarp12(false);
     }
     if (
       title1.indexOf(searchInput) == -1 &&
@@ -154,15 +154,15 @@ function RuBento(props) {
       title11.indexOf(searchInput) == -1 &&
       title12.indexOf(searchInput) == -1
     ) {
-      setIsShowNothing(true)
+      setIsShowNothing(true);
     }
     // 搜尋功能 e
-    return () => {}
-  }, [searchInput, data, dataFav]) // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
+    return () => {};
+  }, [searchInput, data, dataFav]); // 如果這邊沒有設定state, 就只會在掛載時執行一次 / 如果有, 在每次state變動時都會執行一次.
 
   // 等待兩個fetch都結束
   if (!data || !dataFav) {
-    return <></>
+    return <></>;
   }
   return (
     <>
@@ -188,6 +188,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
             {itemWarp2 && (
@@ -206,6 +208,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
             {itemWarp3 && (
@@ -224,6 +228,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
 
@@ -243,6 +249,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
             {itemWarp5 && (
@@ -261,6 +269,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
             {itemWarp6 && (
@@ -279,6 +289,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
 
@@ -298,6 +310,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
             {itemWarp8 && (
@@ -316,6 +330,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
             {itemWarp9 && (
@@ -334,6 +350,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
             {itemWarp10 && (
@@ -352,6 +370,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
             {itemWarp11 && (
@@ -370,6 +390,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
             {itemWarp12 && (
@@ -388,6 +410,8 @@ function RuBento(props) {
                 handleCartNumber={handleCartNumber} // localStorage函式
                 currentUser={currentUser}
                 showFavArr={showFavArr}
+                count={count}
+                setCount={setCount}
               />
             )}
           </div>
@@ -630,7 +654,7 @@ function RuBento(props) {
       {/* </div> */}
       {/* 商品區- 手機版e */}
     </>
-  )
+  );
 }
 
-export default RuBento
+export default RuBento;
