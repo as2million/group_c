@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import './JessListC.scss'
-import './ArrowRight.scss'
-import Fade from 'react-reveal/Fade'
-import Slide from 'react-reveal/Slide'
+import React, { useState, useEffect } from 'react';
+import './JessListC.scss';
+import './ArrowRight.scss';
+import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
 // import ArrowRight from '../../../Share/Components/ArrowRight/ArrowRight'
 
 function JessListC() {
@@ -30,8 +30,8 @@ function JessListC() {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
   const ComponentA2 = (props) => {
     return (
       <div className="col-12 col-sm-7 jess-ListC-A2">
@@ -43,8 +43,8 @@ function JessListC() {
           栽培品種的形態及色彩變化相當豐富，常見的栽培品種依形態分為葉用、剝葉、立葉、皺葉、結球及嫩莖類。葉用、立葉及皺葉萵苣又稱為不結球萵苣。顏色有綠及紫色系，綠色系又分為淡綠、黃綠及深綠色等不同的變化；紫色系亦有淡紫及深紫色等不同的變化；其他尚有紫綠鑲嵌等色系。
         </p>
       </div>
-    )
-  }
+    );
+  };
   // B
   const ComponentB = (props) => {
     return (
@@ -69,8 +69,8 @@ function JessListC() {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
   const ComponentB2 = (props) => {
     return (
       <div className="col-12 col-sm-7 jess-ListC-B2">
@@ -83,8 +83,8 @@ function JessListC() {
           由於洋蔥在結球之前，雖能耐潮濕的氣候，但在進入結球期後，生長環境仍以乾燥氣候為宜。洋蒽不但是本鄉最重要的經濟作物，同時，也標誌著本鄉在全國洋蔥生產方面所占有的重要地位。
         </p>
       </div>
-    )
-  }
+    );
+  };
   // C
   const ComponentC = (props) => {
     return (
@@ -109,8 +109,8 @@ function JessListC() {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
   const ComponentC2 = (props) => {
     return (
       <div className="col-12 col-sm-7 jess-ListC-B2">
@@ -122,8 +122,8 @@ function JessListC() {
           本鄉人稱胡蘿蔔之鄉，年收穫量約四萬公頓，全台第一。位於將軍溪下游沖積平原，肥沃的沙質土壤，最適合種植素有人參之稱的胡蘿蔔，種植面積全省最廣，胡蘿蔔又稱紅蘿蔔，適合炒、滷、拌、煮、燉，是色澤美麗、營養豐富的烹調配角，鄉民以契作方式於八月中旬下種，五個月以後即可收成，屆時可見農家忙於採收胡蘿蔔的景象。
         </p>
       </div>
-    )
-  }
+    );
+  };
   // D
   const ComponentD = (props) => {
     return (
@@ -148,8 +148,8 @@ function JessListC() {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
   const ComponentD2 = (props) => {
     return (
       <div className="col-12 col-sm-7 jess-ListC-B2">
@@ -163,8 +163,8 @@ function JessListC() {
           不僅馥郁香氣讓人為之陶醉，飽滿厚實的口感更猶如鮑魚般紮實彈牙，搭配各式食材料理皆能展現最佳風味
         </p>
       </div>
-    )
-  }
+    );
+  };
   // E
   const ComponentE = (props) => {
     return (
@@ -187,8 +187,8 @@ function JessListC() {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
   const ComponentE2 = (props) => {
     return (
       <div className="col-12 col-sm-7 jess-ListC-B2">
@@ -200,50 +200,50 @@ function JessListC() {
           生長於中南台灣廣闊的田區，以低密度放養，且以天然健康五穀麥片及蔬菜餵食，讓放山古早雞有足夠的空間運動，因此皮下脂肪層薄，肉質特別結實甜美而不油膩，絕非一般雞隻可比擬。此外，相較於一般土雞，飼主為了管理方便而剪喙避免互喙。
         </p>
       </div>
-    )
-  }
+    );
+  };
 
   //
   const setTabActive = (addElem, removeName) => {
-    let removeTargets = document.querySelectorAll(removeName)
+    let removeTargets = document.querySelectorAll(removeName);
     removeTargets.forEach((target) => {
-      target.classList.remove('active')
-      console.log(target)
-    })
+      target.classList.remove('active');
+      console.log(target);
+    });
 
-    addElem.classList.add('active')
-  }
+    addElem.classList.add('active');
+  };
 
   const TabMenu = () => {
-    const [component, setComponent] = React.useState(<ComponentA />)
-    const [component2, setComponent2] = React.useState(<ComponentA2 />)
+    const [component, setComponent] = React.useState(<ComponentA />);
+    const [component2, setComponent2] = React.useState(<ComponentA2 />);
 
     const vegA = (e) => {
-      setTabActive(e.target, '.jess-a')
-      setComponent(<ComponentA />)
-      setComponent2(<ComponentA2 />)
-    }
+      setTabActive(e.target, '.jess-a');
+      setComponent(<ComponentA />);
+      setComponent2(<ComponentA2 />);
+    };
 
     const vegB = (e) => {
-      setTabActive(e.target, '.jess-a')
-      setComponent(<ComponentB />)
-      setComponent2(<ComponentB2 />)
-    }
+      setTabActive(e.target, '.jess-a');
+      setComponent(<ComponentB />);
+      setComponent2(<ComponentB2 />);
+    };
     const vegC = (e) => {
-      setTabActive(e.target, '.jess-a')
-      setComponent(<ComponentC />)
-      setComponent2(<ComponentC2 />)
-    }
+      setTabActive(e.target, '.jess-a');
+      setComponent(<ComponentC />);
+      setComponent2(<ComponentC2 />);
+    };
     const vegD = (e) => {
-      setTabActive(e.target, '.jess-a')
-      setComponent(<ComponentD />)
-      setComponent2(<ComponentD2 />)
-    }
+      setTabActive(e.target, '.jess-a');
+      setComponent(<ComponentD />);
+      setComponent2(<ComponentD2 />);
+    };
     const vegE = (e) => {
-      setTabActive(e.target, '.jess-a')
-      setComponent(<ComponentE />)
-      setComponent2(<ComponentE2 />)
-    }
+      setTabActive(e.target, '.jess-a');
+      setComponent(<ComponentE />);
+      setComponent2(<ComponentE2 />);
+    };
     return (
       <>
         <div className="container-fluid jess-proC-bg ">
@@ -298,7 +298,7 @@ function JessListC() {
             <li className="col-2 "></li>
           </ul>
 
-          <div className="jess-product-Tab1 d-flex ">{component}</div>
+          <div className="jess-product-Tab1 d-flex mt-3">{component}</div>
           <div className="container d-flex justify-content-end">
             <div className="arrowright-warp">
               <div className="jess-arrow-circleR jess-arrow" draggable="true">
@@ -311,14 +311,14 @@ function JessListC() {
           </div>
         </div>
       </>
-    )
-  }
+    );
+  };
 
   return (
     <>
       <TabMenu />
     </>
-  )
+  );
 }
 
-export default JessListC
+export default JessListC;
