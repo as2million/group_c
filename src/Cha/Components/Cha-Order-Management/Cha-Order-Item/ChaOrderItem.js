@@ -173,7 +173,8 @@ function ChaOrderItem(props) {
     addElem.classList.add('cha-active-detail');
   };
   const TabMenu = (props) => {
-    const { orderItem, setRefundModalController } = props;
+    const { orderItem } = props;
+    // , setRefundModalController
     const { setChangeOrderState, changeOrderState } = props;
     const [orderDetailComponent, setOrderDetailComponent] = useState();
     // const [open, setOpen] = useState(false);
@@ -232,7 +233,11 @@ function ChaOrderItem(props) {
           <ChaRefundModal
             // setRefundModalController={setRefundModalController}
             // refundModalController={refundModalController}
-            // handleOrderState={() => updateTotalToServer()}
+            handleOrderState={() => {
+              updateTotalToServer();
+              setRefundModalController(false);
+              console.log('呼叫POST、關閉光箱');
+            }}
             closeModal={() => setRefundModalController(false)}
           ></ChaRefundModal>
         )}
@@ -393,12 +398,12 @@ function ChaOrderItem(props) {
                   orderItem.order_state === '火速運送中') && (
                   <div
                     onClick={() => {
-                      updateTotalToServer();
+                      // updateTotalToServer();
                       // console.log(props);
                       // props.setForceKey(true);
                       // props.setTabindexKey('C');
-                      console.log('點擊取消/退費');
-                      // setRefundModalController(true);
+                      console.log('點擊取消/退費，觸發光箱');
+                      setRefundModalController(true);
                     }}
                   >
                     <ChaGrayButton
