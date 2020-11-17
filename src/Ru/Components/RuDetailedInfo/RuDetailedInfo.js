@@ -12,9 +12,9 @@ function RuDetailedInfo(props) {
     vegNameC,
     eggName,
   } = props
-  const [carbohydrates, setCarbohydrates] = useState('')
-  const [protein, setProtein] = useState('')
-  const [fat, setFat] = useState('')
+  const [carbohydrates, setCarbohydrates] = useState(0)
+  const [protein, setProtein] = useState(0)
+  const [fat, setFat] = useState(0)
 
   useEffect(() => {
     console.log(
@@ -28,6 +28,7 @@ function RuDetailedInfo(props) {
 
     // 給予營養標示邏輯
     for (let i = 0; i < data.length; i++) {
+      // if()
       // 如果副食欄位有副食
       switch (riceName) {
         // 等於資料內的productName
