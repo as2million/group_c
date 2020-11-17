@@ -274,7 +274,7 @@ function JanIndexx(props) {
             </div>
             <div>
               <div className="bannerwrap" style={contentStyle}>
-                <div className="banner2  ">
+                <div className="banner2 d-flex flex-column left-5">
                   <p>選擇友善的安心蔬果，</p>
                   <p>是我們愛護土地的方式。</p>
                 </div>
