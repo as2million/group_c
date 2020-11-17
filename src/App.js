@@ -70,12 +70,14 @@ function App() {
   const [takeOrNot, setTakeOrNot] = useState('外送');
 
   //----------------------索引值轉字串----------------------
+  const [textCounty, setTextCounty] = useState('');
+  // setTextCounty(turnCon);
+  const [textTownship, setTextTownship] = useState('');
+  // setTextTownship(turnTown);
 
-  useEffect(
-    () => setTextCounty(county !== -1 ? datacountries[county] : ''),
-
-    [county]
-  );
+  useEffect(() => setTextCounty(county !== -1 ? datacountries[county] : ''), [
+    county,
+  ]);
   useEffect(
     () =>
       setTextTownship(
@@ -83,54 +85,6 @@ function App() {
       ),
     [township]
   );
-
-  let turnCon = county !== -1 ? datacountries[county] : '';
-  let turnTown =
-    county !== -1 && township !== -1 ? datatownships[county][township] : '';
-  console.log(turnCon);
-  console.log(turnTown);
-
-  // const [textCounty, setTextCounty] = useState(
-  //   county !== -1 ? datacountries[county] : ''
-  // );
-  const [textCounty, setTextCounty] = useState('');
-  // setTextCounty(turnCon);
-  const [textTownship, setTextTownship] = useState('');
-  // setTextTownship(turnTown);
-
-  console.log('textCounty', textCounty);
-  console.log('textTownship', textTownship);
-
-  //data.js來的資料
-  console.log('datacountries', datacountries);
-  console.log('datatownships', datatownships);
-
-  //索引值
-  console.log(county);
-  console.log(township);
-
-  console.log('typeof (turnCon)', typeof turnCon);
-  console.log('typeof (turnTown)', typeof turnTown);
-
-  //完整地址
-  // console.log(
-  //   'datacountries[county]',
-  //   county !== -1 ? datacountries[county] : ''
-  // );
-  // console.log(
-  //   'datatownships[county][township]',
-  //   county !== -1 && township !== -1 ? datatownships[county][township] : ''
-  // );
-  // console.log(address);
-
-  //textCounty,textTownship
-
-  console.log(
-    ' county !== -1 ? datacountries.map((item) => item)[county]:',
-    county !== -1 ? datacountries.map((item) => item)[county] : ''
-  );
-
-  //----------------------索引值轉字串----------------------
 
   // 20201112舊版購物車icon計數處理器
   const handleCartNumber = (type = 'add', amount = 1) => {
@@ -459,6 +413,7 @@ function App() {
             </Route>
             <Route path="/orderManagement">
               <IrisOrderManagement
+                handleCartNumber={handleCartNumber}
                 showBar={showBar}
                 setShowBar={setShowBar}
                 // 會員

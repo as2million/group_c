@@ -15,6 +15,7 @@ function IrisOrderManagement(props) {
     currentUserData,
     setShowLoginModal,
     setShowBar,
+    handleCartNumber,
   } = props;
 
   useEffect(() => {
