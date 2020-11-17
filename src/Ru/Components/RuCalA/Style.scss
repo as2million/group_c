@@ -70,6 +70,7 @@
 .ru-info-total-warp {
   // background-color: rgb(130, 229, 238);
   width: 90%;
+  position: relative;
   @include flex($df, $fdr, $jcs, $ale);
 }
 
