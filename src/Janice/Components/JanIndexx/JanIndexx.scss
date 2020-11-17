@@ -41,6 +41,22 @@ $deepYello: #f5a016;
 }
 
 // 輪播牆
+.ant-carousel .slick-dots li.slick-active {
+  width: 5rem;
+}
+
+.ant-carousel .slick-dots li {
+  width: 4rem;
+}
+
+.ant-carousel .slick-dots li button {
+  height: 1.5rem;
+}
+
+.ant-carousel .slick-dots-bottom {
+  bottom: 3rem;
+}
+
 .jan-index-carousel-wrap {
   width: 100%;
   height: 70rem;

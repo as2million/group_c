@@ -165,6 +165,7 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
+                isLogin={isLogin}
               />
             </Route>
             <Route exact path="/productListSalad">
@@ -183,6 +184,7 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
+                isLogin={isLogin}
               />
             </Route>
             <Route exact path="/productListCustom">
@@ -202,6 +204,7 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
+                isLogin={isLogin}
               />
             </Route>
             {/* cha */}
@@ -418,6 +421,7 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
+                isLogin={isLogin}
               />
             </Route>
             {/* component={JessBento} */}
@@ -438,6 +442,7 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
+                isLogin={isLogin}
               />
             </Route>
             <Route path="/vegBox">
@@ -457,6 +462,7 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
+                isLogin={isLogin}
               />
             </Route>
             {/* janice */}

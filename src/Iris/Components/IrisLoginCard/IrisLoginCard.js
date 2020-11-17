@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import './IrisLoginCard.scss'
-import { ReactComponent as LoginCardBg } from './Images/login_card.svg'
-import { ReactComponent as RegisterCardBg } from './Images/register_card.svg'
-import InputH44 from './../../../Share/Components/Input/InputH44.js'
-import Button from './Button/Button'
-import ButtonLogin from './Button/ButtonLogin'
-import $ from 'jquery'
+import React, { useState, useEffect } from 'react';
+import './IrisLoginCard.scss';
+import { ReactComponent as LoginCardBg } from './Images/login_card.svg';
+import { ReactComponent as RegisterCardBg } from './Images/register_card.svg';
+import InputH44 from './../../../Share/Components/Input/InputH44.js';
+import Button from './Button/Button';
+import ButtonLogin from './Button/ButtonLogin';
+import $ from 'jquery';
 // import IrisSuccessBox from './../IrisSuccessBox/IrisSuccessBox'
 
 function IrisLoginCard(props) {
@@ -17,7 +17,7 @@ function IrisLoginCard(props) {
     SetShowLoginCard,
     setShowLoginModal,
     setCurrentUserData,
-  } = props
+  } = props;
 
   // 變成註冊表單
   const ToRegisterForm = () => {
@@ -101,17 +101,17 @@ function IrisLoginCard(props) {
         useraccount === userinfo[i].account &&
         userpassword === userinfo[i].password
       ) {
-        setIsLogin(true)
-        setCurrentUser(userinfo[i].member_sid) // 設定目前使用者id
-        
-        // 放在localStorage
-        let currentUserStorage = parseInt(userinfo[i].member_sid)
-        localStorage.setItem('currentUser', currentUserStorage)
+        setIsLogin(true);
+        setCurrentUser(userinfo[i].member_sid); // 設定目前使用者id
 
-        setCurrentUserData(userinfo[i])
-        console.log(userinfo[i])
-        setShowLoginModal(false) // 登入光箱消失
-        setShowSuccessBox(true) // 出現登入成功光箱)
+        // 放在localStorage
+        let currentUserStorage = parseInt(userinfo[i].member_sid);
+        localStorage.setItem('currentUser', currentUserStorage);
+
+        setCurrentUserData(userinfo[i]);
+        console.log(userinfo[i]);
+        setShowLoginModal(false); // 登入光箱消失
+        setShowSuccessBox(true); // 出現登入成功光箱)
       } else {
         // 若帳密錯誤，顯示錯誤提示
         $('.iris-login-alert').slideDown('slow');
@@ -183,6 +183,7 @@ function IrisLoginCard(props) {
         password: password,
         email: email,
         mobile: mobile,
+        name: null,
       };
 
       fetch('http://localhost:5000/member/userRegister', {
@@ -199,15 +200,15 @@ function IrisLoginCard(props) {
         });
 
       // 若註冊成功，顯示成功提示
-      $('.iris-register-alert').slideDown('slow')
+      $('.iris-register-alert').slideDown('slow');
       // 2秒後消失
       setTimeout(() => {
-        $('.iris-register-alert').slideUp('slow')
-      }, 2000)
-      document.querySelector('#createaccount').value = ''
-      document.querySelector('#createpassword').value = ''
-      document.querySelector('#createmail').value = ''
-      document.querySelector('#createmobile').value = ''
+        $('.iris-register-alert').slideUp('slow');
+      }, 2000);
+      document.querySelector('#createaccount').value = '';
+      document.querySelector('#createpassword').value = '';
+      document.querySelector('#createmail').value = '';
+      document.querySelector('#createmobile').value = '';
     }
   };
 
