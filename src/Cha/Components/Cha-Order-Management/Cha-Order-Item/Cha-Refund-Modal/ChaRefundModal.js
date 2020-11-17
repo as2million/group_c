@@ -15,13 +15,13 @@ const ChaRefundModal = (props) => {
   // , takeDate, takeTime
   const RefundDisplay = (props) => {
     // const { takeDate, takeTime } = props;
-    const {
-      closeModal,
-      closeModalSecret,
-      takeDate,
-      takeTime,
-      handleOrderState,
-    } = props;
+    // const {
+    //   closeModal,
+    //   closeModalSecret,
+    //   takeDate,
+    //   takeTime,
+    //   handleOrderState,
+    // } = props;
     return (
       <>
         <div className="cha-refund-modal-container">

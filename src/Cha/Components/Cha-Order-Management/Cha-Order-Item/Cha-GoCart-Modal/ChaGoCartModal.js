@@ -37,9 +37,9 @@ const ChaGoCartModal = (props) => {
                   })
                 );
                 // props.history.push('/cart');
-                orderItem.order_detail.forEach((item) =>
-                  handleCartNumber('add', item.product_amount)
-                );
+                // orderItem.order_detail.forEach((item) =>
+                //   handleCartNumber('add', item.product_amount)
+                // );
               }}
             >
               <ChaCartButton

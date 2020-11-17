@@ -19,7 +19,7 @@ function ChaOrderManagement(props) {
   //----------- 整包訂單、訂單明細的資料------------//
   const [orderData, setOrderData] = useState([]);
 
-  // -----------退費後重新讀入資料-----------//
+  // -----------退費後重新讀入資料的控制狀態-----------//
   const [changeOrderState, setChangeOrderState] = useState(0);
 
   const { setShowBar, handleCartNumber } = props;
@@ -69,8 +69,8 @@ function ChaOrderManagement(props) {
         'useEffect，[changeOrderState]，切換到退費訂單頁面',
         changeOrderState
       );
-      // setForceKey(true);
-      // setTabindexKey('C');
+      setForceKey(true);
+      setTabindexKey('C');
     }
   }, [changeOrderState]);
 

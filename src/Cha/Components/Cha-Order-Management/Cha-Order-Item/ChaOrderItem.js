@@ -17,6 +17,13 @@ import { Collapse } from 'antd';
 
 // import { Button, Collapse } from 'react-bootstrap';
 function ChaOrderItem(props) {
+  const [error, setError] = useState(null);
+
+  //Jess 光箱需要的state
+  const [status, setStatus] = useState(false);
+  const [comments, setComments] = useState([]);
+  const { Panel } = Collapse;
+
   const {
     orderItem,
     handleCartNumber,
@@ -25,22 +32,13 @@ function ChaOrderItem(props) {
     // setRefundModalController,
   } = props;
 
-  const [error, setError] = useState(null);
   //--------------光箱控制器，refund---------------//
   const [refundModalController, setRefundModalController] = useState(false);
   const [goCartModalController, setGoCartModalController] = useState(false);
-  //Jess 光箱需要的state
-  const [status, setStatus] = useState(false);
-  const [comments, setComments] = useState([]);
-  const { Panel } = Collapse;
-
-  function callback(key) {
-    console.log(key);
-  }
 
   //fetch member
   async function messageData() {
-    const url = 'http://localhost:5000/product/member1msg2';
+    const url = 'http://localhost:5000/product/member1msg1';
 
     const request = new Request(url, {
       method: 'GET',
@@ -124,17 +122,16 @@ function ChaOrderItem(props) {
           {orderItem.order_detail.map((item, value) => (
             <div className="row">
               <span className="col-5">{item.product_name}</span>
-
               <span className="col-2">${item.product_price}</span>
               <span className="col-3">X {item.product_amount}</span>
-              <span
-                className="col-2" // Jess光箱的onClick事件
-                onClick={() => setStatus(true)}
-              >
+              <span className="col-2">
                 <ChaOrangeButtonPlus
                   type="button"
-                  className="cha-detail-btn cha-order-orange-plus-btn"
+                  value="我要評價"
                   text="我要評價"
+                  className="cha-detail-btn cha-order-orange-plus-btn"
+                  // Jess光箱的onClick事件
+                  onClick={() => setStatus(true)}
                 />
               </span>
             </div>
@@ -176,7 +173,8 @@ function ChaOrderItem(props) {
     addElem.classList.add('cha-active-detail');
   };
   const TabMenu = (props) => {
-    const { orderItem, setRefundModalController } = props;
+    const { orderItem } = props;
+    // , setRefundModalController
     const { setChangeOrderState, changeOrderState } = props;
     const [orderDetailComponent, setOrderDetailComponent] = useState();
     // const [open, setOpen] = useState(false);
@@ -235,7 +233,11 @@ function ChaOrderItem(props) {
           <ChaRefundModal
             // setRefundModalController={setRefundModalController}
             // refundModalController={refundModalController}
-            // handleOrderState={() => updateTotalToServer()}
+            handleOrderState={() => {
+              updateTotalToServer();
+              setRefundModalController(false);
+              console.log('呼叫POST、關閉光箱');
+            }}
             closeModal={() => setRefundModalController(false)}
           ></ChaRefundModal>
         )}
@@ -256,6 +258,7 @@ function ChaOrderItem(props) {
             {/* <JessCommentMsg status={status} setStatus={setStatus} /> */}
           </JessModal>
         )}
+
         <div className="cha-order-item-container">
           <div className="cha-order-row">
             <div className="cha-order-column1-picture">
@@ -395,12 +398,12 @@ function ChaOrderItem(props) {
                   orderItem.order_state === '火速運送中') && (
                   <div
                     onClick={() => {
-                      updateTotalToServer();
+                      // updateTotalToServer();
                       // console.log(props);
                       // props.setForceKey(true);
                       // props.setTabindexKey('C');
-                      console.log('點擊取消/退費');
-                      // setRefundModalController(true);
+                      console.log('點擊取消/退費，觸發光箱');
+                      setRefundModalController(true);
                     }}
                   >
                     <ChaGrayButton

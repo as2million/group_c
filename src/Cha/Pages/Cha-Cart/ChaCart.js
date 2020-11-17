@@ -19,33 +19,21 @@ function ChaCart(props) {
   const [meals, setMeals] = useState([]);
 
   // ---------------控制navbar------------//
-  const {
-    setShowBar,
-    setCartNumber,
-    isLogin,
-    county,
-    township,
-    address,
-    selectDate,
-    slecteTime,
-    takeOrNo,
-    setAddress,
-    setCounty,
-  } = props;
+  const { setShowBar, setCartNumber, isLogin } = props;
   // if (isLogin === false) {
   //   props.history.push('/');
   // }
-  console.log('isLogin', isLogin);
+  // console.log('isLogin', isLogin);
   // ----------給「會員資料表」用-------------//
   const [memberSid, setMemberSid] = useState(1);
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
-  const [takeWay, setTakeWay] = useState(takeOrNo);
-  const [takeDate, setTakeDate] = useState(selectDate);
-  const [takeTime, setTakeTime] = useState(slecteTime);
-  // const [county, setCounty] = useState('');
-  const [district, setDistrict] = useState(township);
-  // const [address, setAddress] = useState('');
+  const [takeWay, setTakeWay] = useState('外送');
+  const [takeDate, setTakeDate] = useState(new Date());
+  const [takeTime, setTakeTime] = useState('11:00 ~ 11:30');
+  const [county, setCounty] = useState('');
+  const [district, setDistrict] = useState('');
+  const [address, setAddress] = useState('');
   const [beastieCoin, setBeastieCoin] = useState('');
 
   // 信用卡格式檢查用
@@ -174,11 +162,11 @@ function ChaCart(props) {
   //------------格式檢查的函式-------//
   // !password.match(/[A-Za-z0-9]{8,24}/)
   const handleFormatCheck = () => {
-    console.log(
-      '檢查到的購物車內商品：數量、meals===[]、meals.length===0',
-      meals === [],
-      meals.length === 0
-    );
+    // console.log(
+    //   '檢查到的購物車內商品：數量、meals===[]、meals.length===0',
+    //   meals === [],
+    //   meals.length === 0
+    // );
     // 購物車內商品不能為0
     if (meals.length === 0) {
       $('.cha-wrong-totalAmount').slideDown('slow');
