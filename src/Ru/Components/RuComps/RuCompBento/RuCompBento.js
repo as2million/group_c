@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
-import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth'
-import RuBento from 'Ru/Components/RuCards/RuBento/RuBento'
-import RuButton from 'Ru/Components/RuButton/RuButton'
-import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar'
-import 'Ru/Components/RuComps/Style.scss'
+import React, { useState } from 'react';
+import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
+import RuBento from 'Ru/Components/RuCards/RuBento/RuBento';
+import RuButton from 'Ru/Components/RuButton/RuButton';
+import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar';
+import 'Ru/Components/RuComps/Style.scss';
 
 // 引用共用元件
-import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 // 引用圖片
-import line from './Images/line.png'
+import line from './Images/line.png';
 
 function RuCompBento(props) {
   // console.log(props);
-  const { handleCartNumber, currentUser } = props
-  const [searchInput, setSearchInput] = useState('')
-  const [openBento, setOpenBento] = useState(false) // 判斷便當按鈕是否要亮
-  const [openSalad, setOpenSalad] = useState(false) // 判斷沙拉按鈕是否要亮
-  const [openCustom, setOpenCustom] = useState(false) // 判斷客製化按鈕是否要亮
+  const { handleCartNumber, currentUser, count, setCount } = props;
+  const [searchInput, setSearchInput] = useState('');
+  const [openBento, setOpenBento] = useState(false); // 判斷便當按鈕是否要亮
+  const [openSalad, setOpenSalad] = useState(false); // 判斷沙拉按鈕是否要亮
+  const [openCustom, setOpenCustom] = useState(false); // 判斷客製化按鈕是否要亮
   // console.log(searchInput);
 
   // JSX
@@ -152,6 +152,8 @@ function RuCompBento(props) {
         searchInput={searchInput}
         handleCartNumber={handleCartNumber} // localStorage函式
         currentUser={currentUser}
+        count={count}
+        setCount={setCount}
       />
       {/* 商品卡片區 e */}
 
@@ -163,7 +165,7 @@ function RuCompBento(props) {
         我是footer
       </div> */}
     </>
-  )
+  );
 }
 
-export default RuCompBento
+export default RuCompBento;

@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import './Style.scss'
-import star from './Images/star.svg'
-import starHalf from './Images/starHalf.svg'
-import starFull from './Images/starFull.svg'
-import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart'
-import RuAddFavorite from 'Ru/Components/RuAddFavorite/RuAddFavorite'
-import { withRouter } from 'react-router'
+import React, { useState, useEffect } from 'react';
+import './Style.scss';
+import star from './Images/star.svg';
+import starHalf from './Images/starHalf.svg';
+import starFull from './Images/starFull.svg';
+import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
+import RuAddFavorite from 'Ru/Components/RuAddFavorite/RuAddFavorite';
+import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
+import { set } from 'date-fns';
 
 function RuCard(props) {
   // title 品名
@@ -32,24 +34,12 @@ function RuCard(props) {
     handleCartNumber,
     currentUser,
     showFavArr,
-  } = props
+    count,
+    setCount,
+  } = props;
 
-  const [isShowFav, setIsShowFav] = useState(false) // 是否要定住我的最愛按鈕
-
-  //  if (showFavArr[0] === proudctId){
-  //   setIsShowFav(true)
-  //  }
-
-  // 每個卡片跳轉到指定的詳頁 邏輯
-  function linkToDetail() {
-    for (let i = 0; i < 21; i++) {
-      switch (proudctId) {
-        case data[i].sid:
-          props.history.push(`/bento/${i}`)
-          break
-      }
-    }
-  }
+  const [isShowFav, setIsShowFav] = useState(false); // 是否要定住我的最愛按鈕
+  const [path, setPath] = useState();
 
   // 定住我的最愛按鈕邏輯
   useEffect(() => {
@@ -59,21 +49,52 @@ function RuCard(props) {
         // 當該會員的加入過我的最愛的商品id 匹配 這個card元件的商品id 時
         if (showFavArr[i] === proudctId) {
           // 就定住我的最愛按鈕
-          setIsShowFav(true)
+          setIsShowFav(true);
         }
       }
     }
-  }, [])
-  
+  }, []);
+
+  // 決定前往頁面 邏輯
+  useEffect(() => {
+    if (!data) {
+      return;
+    }
+    for (let i = 0; i < 22; i++) {
+      console.log(data[i].sid);
+      switch (proudctId) {
+        case data[i].sid:
+          setPath('/bento/' + (data[i].sid - 1));
+          break;
+      }
+    }
+  }, [data]);
+  // 決定path路徑
+
+  //  if (showFavArr[0] === proudctId){
+  //   setIsShowFav(true)
+  //  }
+
+  // 每個卡片跳轉到指定的詳頁 邏輯
+  // function linkToDetail() {
+  //   for (let i = 0; i < 21; i++) {
+  //     switch (proudctId) {
+  //       case data[i].sid:
+  //         props.history.push(`/bento/${i}`);
+  //         break;
+  //     }
+  //   }
+  // }
+
   if (!data) {
-    return
+    return;
   }
   return (
     <>
       <div className="ru-card-container" id={cardMargin}>
         {/* item圖片s */}
         <section className="ru-card-img-warp">
-          <a href="" className="ru-card-link" onClick={linkToDetail}>
+          <Link to={path} className="ru-card-link">
             <img
               className="ru-card-img"
               style={{
@@ -81,7 +102,7 @@ function RuCard(props) {
                 backgroundImage: `url("/productImages/Bento/${imgId}.jpg")`,
               }}
             ></img>
-          </a>
+          </Link>
           {/* 是否固定我的最愛按鈕 */}
           {isShowFav ? (
             <div className="ru-card-abs ru-card-abs-stop">
@@ -185,17 +206,20 @@ function RuCard(props) {
             <RuAddCart
               target={'target'}
               id={id}
+              imgId={imgId}
               proudctId={proudctId}
               parentId={parentId}
               price={price}
               title={title}
               handleCartNumber={handleCartNumber} // localStorage函式
+              count={count}
+              setCount={setCount}
             />
           </div>
         </section>
         {/* 加入購物車按鈕e */}
       </div>
     </>
-  )
+  );
 }
-export default withRouter(RuCard)
+export default withRouter(RuCard);
