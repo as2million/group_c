@@ -9,9 +9,18 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 import IrisBeastieRuleBox from '../Components/IrisBeastieRuleBox/IrisBeastieRuleBox';
 
 function IrisBeastiePoint(props) {
-  const { isLogin, currentUser, currentUserData, setShowLoginModal } = props;
-
+  const {
+    isLogin,
+    currentUser,
+    currentUserData,
+    setShowLoginModal,
+    setShowBar,
+  } = props;
   const [showRuleBox, setShowRuleBox] = useState(false);
+
+  useEffect(() => {
+    setShowBar(true);
+  }, []);
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
     // setShowLoginModal(true)

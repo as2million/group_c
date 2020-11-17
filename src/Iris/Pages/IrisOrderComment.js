@@ -9,7 +9,16 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 
 function IrisOrderComment(props) {
   const [commentDelete, setCommentDelete] = useState('');
-  const { isLogin, currentUser, currentUserData, setShowLoginModal } = props;
+  const {
+    isLogin,
+    currentUser,
+    currentUserData,
+    setShowLoginModal,
+    setShowBar,
+  } = props;
+  useEffect(() => {
+    setShowBar(true);
+  }, []);
 
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {

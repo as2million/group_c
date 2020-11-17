@@ -10,7 +10,16 @@ import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 
 function IrirsMyFav(props) {
   const [userFavDelete, setUserFavDelete] = useState('');
-  const { isLogin, currentUser, currentUserData, setShowLoginModal } = props;
+  const {
+    isLogin,
+    currentUser,
+    currentUserData,
+    setShowLoginModal,
+    setShowBar,
+  } = props;
+  useEffect(() => {
+    setShowBar(true);
+  }, []);
 
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {

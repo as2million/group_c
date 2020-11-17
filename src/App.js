@@ -42,6 +42,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //加入 ScrollToTop
 import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
 
+import {
+  datacountries,
+  datatownships,
+} from '../src/Janice/Components/JanIndexx/data';
+
 // 路由表
 function App() {
   const [showBar, setShowBar] = useState(true);
@@ -56,13 +61,18 @@ function App() {
   const [couponStatus, setCouponStatus] = useState([]);
   const [couponOneStatus, setCouponOneStatus] = useState('');
 
-  //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address,selectDate,slecteTime,takeOrNo共12個)到你們的頁面--------------//
+  //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address,selectDate,slecteTime,takeOrNo共12個,兆廷要多加textCounty,textTownship)到你們的頁面--------------//
   const [county, setCounty] = useState(-1);
   const [township, setTownship] = useState(-1);
   const [address, setAddress] = useState('');
-  const [selectDate, setSelectDate] = useState('');
+  const [selectDate, setSelectDate] = useState(new Date());
   const [slecteTime, setSelectTime] = useState('11:00 ~ 11:30');
   const [takeOrNot, setTakeOrNot] = useState('外送');
+  // const [textCounty, setTextCounty] = useState('');
+  // setTextCounty(datacountries[county]);
+  // const [textTownship, setTextTownship] = useState('');
+  // setTextTownship(datatownships[county][township]);
+  //textCounty,textTownship
 
   // 20201112舊版購物車icon計數處理器
   const handleCartNumber = (type = 'add', amount = 1) => {
@@ -151,6 +161,7 @@ function App() {
             {/* 放"page資料夾"內的元件 */}
             <Route exact path="/productList">
               <RuProudctList
+                setShowBar={setShowBar}
                 handleCartNumber={handleCartNumber}
                 currentUser={currentUser}
                 county={county}
@@ -170,6 +181,7 @@ function App() {
             </Route>
             <Route exact path="/productListSalad">
               <RuProudctListSalad
+                setShowBar={setShowBar}
                 handleCartNumber={handleCartNumber}
                 currentUser={currentUser}
                 county={county}
@@ -189,6 +201,7 @@ function App() {
             </Route>
             <Route exact path="/productListCustom">
               <RuProudctListCustom
+                setShowBar={setShowBar}
                 handleCartNumber={handleCartNumber}
                 amount={amount}
                 setAmount={setAmount}
@@ -229,6 +242,8 @@ function App() {
                 setSelectDate={setSelectDate}
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
+                // textCounty={textCounty}
+                // textTownship={textTownship}
               />
             </Route>
             {/* 揪團 */}
@@ -264,6 +279,7 @@ function App() {
             {/* 放"page資料夾"內的元件 */}
             <Route exact path="/memberUserprofile">
               <IrisUserprofile
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -290,6 +306,7 @@ function App() {
             </Route>
             <Route exact path="/orderComment">
               <IrisOrderComment
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -312,6 +329,7 @@ function App() {
             </Route>
             <Route exact path="/myFav">
               <IrisMyFav
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -334,6 +352,7 @@ function App() {
             </Route>
             <Route exact path="/beastiePoint">
               <IrisBeastiePoint
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -356,6 +375,7 @@ function App() {
             </Route>
             <Route path="/getCoupon">
               <IrisGetCoupon
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -407,6 +427,7 @@ function App() {
             {/* 放"page資料夾"內的元件 */}
             <Route path="/menu">
               <JessMenu
+                setShowBar={setShowBar}
                 currentUser={currentUser}
                 setCartNumber={setCartNumber}
                 county={county}
@@ -427,6 +448,7 @@ function App() {
             {/* component={JessBento} */}
             <Route path="/bento/:id?">
               <JessBento
+                setShowBar={setShowBar}
                 currentUser={currentUser}
                 setCartNumber={setCartNumber}
                 handleCartNumber={handleCartNumber}
@@ -447,6 +469,7 @@ function App() {
             </Route>
             <Route path="/vegBox">
               <JessVegBox
+                setShowBar={setShowBar}
                 currentUser={currentUser}
                 setCartNumber={setCartNumber}
                 handleCartNumber={handleCartNumber}

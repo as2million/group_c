@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RuCompSalad from 'Ru/Components/RuComps/RuCompSalad/RuCompSalad';
 import VNavBar from 'Share/Components/VNavbar/VNavbar';
 
 function RuProudctListSalad(props) {
-  const { handleCartNumber, currentUser } = props;
+  const { handleCartNumber, currentUser, setShowBar } = props;
   const [count, setCount] = useState(1);
+  useEffect(() => {
+    setShowBar(true);
+  }, []);
   return (
     <>
       <VNavBar {...props} />

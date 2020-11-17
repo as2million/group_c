@@ -17,8 +17,12 @@ function IrisGetCoupon(props) {
     setCouponStatus,
     couponOneStatus,
     setCouponOneStatus,
+    setShowBar,
   } = props;
 
+  useEffect(() => {
+    setShowBar(true);
+  }, []);
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
     // setShowLoginModal(true)

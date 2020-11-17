@@ -14,6 +14,7 @@ function IrisUserprofile(props) {
   const [beastiePointAdd, setBeastiePointAdd] = useState();
 
   const {
+    setShowBar,
     isLogin,
     currentUser,
     currentUserData,
@@ -23,6 +24,10 @@ function IrisUserprofile(props) {
     couponOneStatus,
     setCouponOneStatus,
   } = props;
+
+  useEffect(() => {
+    setShowBar(true);
+  }, []);
 
   if (showUpdateModal === true) {
     document.querySelector('.iris-update-success-mask').style.display = 'block';

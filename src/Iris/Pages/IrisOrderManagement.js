@@ -14,15 +14,12 @@ function IrisOrderManagement(props) {
     currentUser,
     currentUserData,
     setShowLoginModal,
-    // vnbar
-    // county,
-    // setCounty,
-    // township,
-    // setTownship,
-    // address,
-    // setAddress,
+    setShowBar,
   } = props;
 
+  useEffect(() => {
+    setShowBar(true);
+  }, []);
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
     // setShowLoginModal(true)
@@ -30,15 +27,7 @@ function IrisOrderManagement(props) {
   }
   return (
     <>
-      <VNavbar
-        {...props}
-        // county={county}
-        // setCounty={setCounty}
-        // township={township}
-        // setTownship={setTownship}
-        // address={address}
-        // setAddress={setAddress}
-      />
+      <VNavbar {...props} />
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect
           currentUser={currentUser}

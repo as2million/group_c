@@ -8,7 +8,10 @@ import JessMenuD from '../Components/JessMenuD/JessMenuD';
 import ToTop from 'Share/Components/ToTopButton/ScrollButton';
 
 function JessMenu(props) {
-  const { currentUser } = props;
+  const { currentUser, setShowBar } = props;
+  useEffect(() => {
+    setShowBar(true);
+  }, []);
   // const [nowUser, setNowUser] = useState([]);
   console.log('currentUser', currentUser);
   let { id } = useParams();
