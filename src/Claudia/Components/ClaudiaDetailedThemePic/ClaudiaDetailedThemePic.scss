@@ -1,43 +1,91 @@
-//------------------------------Desktop--------------------------------
+//----------------------------Desktop 1920-----------------------------
 
-.claudia-fake-navbar {
-  width: 100vw;
-  height: 100px;
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .claudia-fake-navbar {
+    width: 100vw;
+    height: 100px;
+  }
+
+  .claudia-detailed-background {
+    width: 100%;
+  }
+
+  .claudia-detailed-background-image {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    background-image: url(./Images/strawberry_1920.jpg);
+    margin: 0px auto;
+  }
+
+  .claudia-detailed-text {
+    font-family: 'Noto Serif TC';
+    position: absolute;
+    top: 600px;
+    left: 200px;
+    color: #fafafa;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fafafa;
+  }
+
+  .claudia-detailed-text-1 {
+    font-size: 60px;
+    color: #fafafa;
+  }
+
+  .claudia-detailed-text-2 {
+    font-size: 40px;
+    color: #fafafa;
+  }
+
 }
 
-.claudia-detailed-background {
-  width: 100%;
+//----------------------------Desktop 1920-----------------------------
+
+
+//----------------------------Desktop 1440-----------------------------
+
+@media screen and (min-width: 1220px) and (max-width: 1440px) {
+
+  .claudia-fake-navbar {
+    width: 100vw;
+    height: 100px;
+  }
+
+  .claudia-detailed-background {
+    width: 100%;
+  }
+
+  .claudia-detailed-background-image {
+    width: 1440px;
+    height: 765px;
+    position: relative;
+    background-image: url(./Images/strawberry.jpg);
+    margin: 0px auto;
+  }
+
+  .claudia-detailed-text {
+    font-family: 'Noto Serif TC';
+    position: absolute;
+    top: 400px;
+    left: 200px;
+    color: #fafafa;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fafafa;
+  }
+
+  .claudia-detailed-text-1 {
+    font-size: 40px;
+    color: #fafafa;
+  }
+
+  .claudia-detailed-text-2 {
+    font-size: 36px;
+    color: #fafafa;
+  }
 }
 
-.claudia-detailed-background-image {
-  width: 1440px;
-  height: 765px;
-  position: relative;
-  background-image: url(./Images/strawberry.jpg);
-  margin: 0px auto;
-}
-
-.claudia-detailed-text {
-  font-family: 'Noto Serif TC';
-  position: absolute;
-  top: 400px;
-  left: 200px;
-  color: #fafafa;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #fafafa;
-}
-
-.claudia-detailed-text-1 {
-  font-size: 40px;
-  color: #fafafa;
-}
-
-.claudia-detailed-text-2 {
-  font-size: 36px;
-  color: #fafafa;
-}
-
-//------------------------------Desktop--------------------------------
+//----------------------------Desktop 1440-----------------------------
 
 //--------------------------------Ipad---------------------------------
 
