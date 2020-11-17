@@ -10,8 +10,6 @@ import cart from '../../../Share/Components/AddCart/Images/cart.svg';
 import BreadCrumb from '../JessBreadCrumb/BreadCrumb';
 
 function JessProdoctList(props) {
-  // const [count, setCount] = useState(1)
-  // const [total, setTotal] = useState(170)
   const {
     handleCartNumber,
     count,
@@ -29,34 +27,9 @@ function JessProdoctList(props) {
     currentUser,
     nowUser,
   } = props;
-  console.log('nowUser:', nowUser);
-  // console.log(props)
-  //useParams 設定id
-  let { id } = useParams();
-  // const [menu, setMenu] = useState([])
-  // async function bentoData() {
-  //   const url = 'http://localhost:5000/product/bento'
 
-  //   const request = new Request(url, {
-  //     method: 'GET',
-  //     headers: new Headers({
-  //       Accept: 'application/json',
-  //       'Content-Type': 'application/json',
-  //     }),
-  //   })
-
-  //   const response = await fetch(request)
-  //   const data = await response.json()
-
-  //   // setMenu(data[0])
-  //   //這邊id值可以設定分頁
-  //   setMenu(data[id])
-  //   console.log(data)
-  // }
-
-  // useEffect(() => {
-  //   bentoData()
-  // }, [])
+  // useEffect
+  // console.log('型別', typeof total, typeof menu.price);
 
   const handleClick = (type) => {
     if (type === 'increment') {
@@ -67,11 +40,11 @@ function JessProdoctList(props) {
     }
   };
   const handleTotal = (type) => {
-    if (total - 170 >= 0 && count > 0 && type === 'decrement') {
-      setTotal(total - 170);
+    if (+total - menu.price >= 0 && count > 0 && type === 'decrement') {
+      setTotal(total - parseInt(menu.price));
     }
     if (type === 'increment') {
-      setTotal(total + 170);
+      setTotal(parseInt(total) + parseInt(menu.price));
     }
   };
 
@@ -108,10 +81,11 @@ function JessProdoctList(props) {
 
         <div className="jess-productList-chichenPic">
           <img
+            alt=""
             className="jess-HeadPic"
             src={'/productImages/Bento/' + menu.img_id + '.jpg'}
           ></img>
-          <img className="jess-HeadPic" src={chickenpic}></img>
+          <img alt="" className="jess-HeadPic" src={chickenpic}></img>
         </div>
         {/* <p>/productImages/Bento/{menu.img_id}.jpg</p> */}
 
@@ -196,10 +170,10 @@ function JessProdoctList(props) {
 
                 CreateCartToLocalStorage(
                   {
-                    id: 1,
-                    productName: '中歐香料嫩雞胸',
-                    productPicture: '00_bento-chicken-breast',
-                    productPrice: 150,
+                    id: menu.sid,
+                    productName: menu.productname,
+                    productImage: menu.img_id,
+                    productPrice: menu.price,
                     productAmount: 1,
                   },
 
@@ -208,7 +182,7 @@ function JessProdoctList(props) {
                 );
               }}
             >
-              <img className="addCart-cart addCart-cart-n" src={cart} />
+              <img alt="" className="addCart-cart addCart-cart-n" src={cart} />
             </button>
           </div>
         </div>

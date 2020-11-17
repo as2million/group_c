@@ -1,14 +1,14 @@
-import React from 'react'
-import './JessMenuC.scss'
-import { Link } from 'react-router-dom'
-import brownBorder from 'Jess/Components/images/SVG/brownBorder.svg'
-import BannerAnim, { Element } from 'rc-banner-anim'
-import TweenOne from 'rc-tween-one'
-import 'rc-banner-anim/assets/index.css'
-import ArrowRight from 'Share/Components/ArrowRight/ArrowRight'
+import React from 'react';
+import './JessMenuC.scss';
+import { Link } from 'react-router-dom';
+import brownBorder from 'Jess/Components/images/SVG/brownBorder.svg';
+import BannerAnim, { Element } from 'rc-banner-anim';
+import TweenOne from 'rc-tween-one';
+import 'rc-banner-anim/assets/index.css';
+import ArrowRight from 'Share/Components/ArrowRight/ArrowRight';
 
 function JessMenuC() {
-  const BgElement = Element.BgElement
+  const BgElement = Element.BgElement;
   return (
     <>
       <div className="container-fluid jess-MenuC-container-fluid">
@@ -38,7 +38,7 @@ function JessMenuC() {
                   </Link>
                   <div class="mask">
                     <h2>均衡蛋白質沙拉</h2>
-                    <p>$135</p>
+                    <p>$150</p>
                   </div>
                 </div>
               </div>
@@ -49,7 +49,7 @@ function JessMenuC() {
                   </Link>
                   <div class="mask">
                     <h2>肌肉UPUP(增肌)沙拉</h2>
-                    <p>$130</p>
+                    <p>$170</p>
                   </div>
                 </div>
                 <div className="jess-view-menuCpic4">
@@ -121,7 +121,7 @@ function JessMenuC() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default JessMenuC
+export default JessMenuC;
