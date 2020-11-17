@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { Tabs, Sonnet, Tab, Container } from 'react-bootstrap'
-import './AddressTabs.scss'
+import React, { useState, useEffect } from 'react';
+import { Tabs, Sonnet, Tab, Container } from 'react-bootstrap';
+import './AddressTabs.scss';
 import {
   datacountries,
   datatownships,
   dataprice,
-} from '../../../Janice/Components/JanIndexx/data.js'
+} from '../../../Janice/Components/JanIndexx/data.js';
 
 function AddressTabs(props) {
   const {
@@ -19,22 +19,22 @@ function AddressTabs(props) {
     setTownship,
     address,
     setAddress,
-  } = props
+  } = props;
 
   const updateAddress = () => {
     // const address = document.querySelector('#iris-member-address').value
     const newcounty = document.querySelector('#exampleFormControlSelect1')
-      .options[county].value
+      .options[county].value;
     const newdistrict = document.querySelector('#exampleFormControlSelect2')
-      .options[township].value
+      .options[township].value;
     const newaddress = document.querySelector('#exampleFormControlSelect3')
-      .value
+      .value;
     const newAddressData = {
       member_id: currentUser,
       county: newcounty,
       district: newdistrict,
       address: newaddress,
-    }
+    };
     // console.log(newProfile)
 
     fetch('http://localhost:5000/index/updateAddress', {
@@ -47,25 +47,25 @@ function AddressTabs(props) {
     })
       .then((r) => r.json())
       .then((o) => {
-        console.log(o)
-      })
-  }
+        console.log(o);
+      });
+  };
 
   // Acomponent
   const ComponentA = (props) => {
     //地址輸入部分，預設值式資料庫地址欄位
-    const [tabInput, setTabInput] = useState(address)
+    const [tabInput, setTabInput] = useState(address);
 
     useEffect(() => {
-      setAddress(tabInput)
-    }, [tabInput])
+      setAddress(tabInput);
+    }, [tabInput]);
 
     const hideInfo = () => {
-      document.querySelector('.jan-map-results').style = 'visibility: hidden'
-    }
+      document.querySelector('.jan-map-results').style = 'visibility: hidden';
+    };
     const showInfo = () => {
-      document.querySelector('.jan-map-results').style = 'visibility: visible'
-    }
+      document.querySelector('.jan-map-results').style = 'visibility: visible';
+    };
 
     return (
       <div className="component d-flex justify-content-between align-items-center ">
@@ -86,11 +86,11 @@ function AddressTabs(props) {
                       value={county}
                       onChange={(e) => {
                         //將字串轉成數字
-                        setCounty(+e.target.value)
+                        setCounty(+e.target.value);
                         //重置township的值
-                        setTownship(0)
-                        setTownship(-1)
-                        console.log('county onchange')
+                        setTownship(0);
+                        setTownship(-1);
+                        console.log('county onchange');
                       }}
                     >
                       <option value={-1}>請選擇城市</option>
@@ -115,7 +115,7 @@ function AddressTabs(props) {
                       value={township}
                       onChange={(e) => {
                         // 將字串轉成數字
-                        setTownship(+e.target.value)
+                        setTownship(+e.target.value);
                       }}
                       style={{ fontSize: '1.5rem' }}
                       className="form-control iris-mainpage-select"
@@ -220,57 +220,57 @@ function AddressTabs(props) {
         </div>
         {/* 滿額免運地圖 */}
         <div className="jan-tab-address-map">
-          <iframe
+          {/* <iframe
             title="tabsDataMap"
             src="https://plotdb.io/v/chart/27933"
             width="600px"
             height="565px"
             allowfullscreen="true"
             frameborder="0"
-          ></iframe>
+          ></iframe> */}
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   // B
   const shopAddress = () => {
-    var radios = document.getElementsByName('shop')
+    var radios = document.getElementsByName('shop');
 
     for (var i = 0, length = radios.length; i < length; i++) {
       if (radios[i].checked) {
         // do whatever you want with the checked radio
-        console.log('radios', radios[i].value)
+        console.log('radios', radios[i].value);
         if (radios[i].value == 1) {
-          setCounty(1)
-          setTownship(1)
-          setAddress('新台五路一段96號1樓-東科店')
+          setCounty(1);
+          setTownship(1);
+          setAddress('新台五路一段96號1樓-東科店');
         }
         if (radios[i].value == 2) {
-          setCounty(0)
-          setTownship(4)
-          setAddress('安和路一段111號-安永鮮物_安和店')
+          setCounty(0);
+          setTownship(4);
+          setAddress('安和路一段111號-安永鮮物_安和店');
         }
         if (radios[i].value == 3) {
-          setCounty(0)
-          setTownship(3)
-          setAddress('八德路二段371號-歐克法咖啡_八德店')
+          setCounty(0);
+          setTownship(3);
+          setAddress('八德路二段371號-歐克法咖啡_八德店');
         }
         if (radios[i].value == 4) {
-          setCounty(0)
-          setTownship(10)
-          setAddress('重陽路263巷1號B1-南港店')
+          setCounty(0);
+          setTownship(10);
+          setAddress('重陽路263巷1號B1-南港店');
         }
         if (radios[i].value == 5) {
-          setCounty(0)
-          setTownship(4)
-          setAddress('和平東路二段223號-大安店')
+          setCounty(0);
+          setTownship(4);
+          setAddress('和平東路二段223號-大安店');
         }
         // only one radio can be logically checked, don't check the rest
-        break
+        break;
       }
     }
-  }
+  };
   const ComponentB = (props) => {
     return (
       <div className="component d-flex justify-content-between ">
@@ -305,8 +305,8 @@ function AddressTabs(props) {
               >
                 <button
                   onClick={() => {
-                    shopAddress()
-                    setTakeOrNot('自取')
+                    shopAddress();
+                    setTakeOrNot('自取');
                     // console.log(takeOrNot)
                   }}
                   className="button-btn-y "
@@ -320,45 +320,45 @@ function AddressTabs(props) {
         </div>
         {/* 門市地圖 */}
         <div className="jan-tab-shops-map">
-          <iframe
+          {/* <iframe
             src="https://www.google.com/maps/d/u/0/embed?mid=1dbpBBf0U6YHIYOs45R-S9WgBp8wBSola"
             width="600"
             height="540"
-          ></iframe>
+          ></iframe> */}
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const setTabActive = (addElem, removeName) => {
-    let removeTargets = document.querySelectorAll(removeName)
+    let removeTargets = document.querySelectorAll(removeName);
     removeTargets.forEach((target) => {
-      target.classList.remove('active')
-    })
+      target.classList.remove('active');
+    });
 
-    addElem.classList.add('active')
-  }
+    addElem.classList.add('active');
+  };
 
   const TabMenu = () => {
-    const [component, setComponent] = React.useState(<ComponentA />)
+    const [component, setComponent] = React.useState(<ComponentA />);
 
     const tabContentA = (e) => {
-      setTabActive(e.target, '.jan-address-tab-menu__item')
-      setComponent(<ComponentA />)
-    }
+      setTabActive(e.target, '.jan-address-tab-menu__item');
+      setComponent(<ComponentA />);
+    };
 
     const tabContentB = (e) => {
-      setTabActive(e.target, '.jan-address-tab-menu__item')
-      setComponent(<ComponentB name="B" />)
-    }
+      setTabActive(e.target, '.jan-address-tab-menu__item');
+      setComponent(<ComponentB name="B" />);
+    };
 
     return (
       <div className="position-absolute position-fixed jan-tabs-bcc">
         <div className="jan-tabs">
           <div
             onClick={() => {
-              closeModal()
-              setTakeOrNot('外送')
+              closeModal();
+              setTakeOrNot('外送');
               // console.log(takeOrNot)
             }}
             className="jan-tabs-close"
@@ -379,14 +379,14 @@ function AddressTabs(props) {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <>
       <TabMenu />
     </>
-  )
+  );
 }
 
-export default AddressTabs
+export default AddressTabs;

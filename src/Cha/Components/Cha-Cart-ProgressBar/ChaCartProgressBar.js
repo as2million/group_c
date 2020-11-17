@@ -39,7 +39,7 @@ function ChaCartProgressBar(props) {
           <div
             className="cha-right-arrow-fff"
             onClick={() => {
-              props.history.push.goBack();
+              props.history.goBack();
             }}
           ></div>
           <div className="cha-progress-bar-header-fff">建立訂單</div>

@@ -37,6 +37,8 @@ function ChaCart(props) {
     setSelectDate,
     slecteTime,
     setSelectTime,
+    textCounty,
+    textTownship,
   } = props;
   // if (isLogin === false) {
   //   props.history.push('/');
@@ -49,8 +51,8 @@ function ChaCart(props) {
   const [takeWay, setTakeWay] = useState(takeOrNot);
   const [takeDate, setTakeDate] = useState(selectDate);
   const [takeTime, setTakeTime] = useState(slecteTime);
-  const [county, setCounty] = useState('');
-  const [district, setDistrict] = useState('');
+  const [county, setCounty] = useState(textCounty);
+  const [district, setDistrict] = useState(textTownship);
   // console.log('textCounty', textCounty);
   // console.log('textTownship', textTownship);
 

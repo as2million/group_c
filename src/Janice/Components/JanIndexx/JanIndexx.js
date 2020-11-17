@@ -1062,14 +1062,14 @@ function JanIndexx(props) {
 
           {/* 地圖 */}
           <div className="jan-map-view">
-            <iframe
+            {/* <iframe
               title="indexDataMap"
               src="https://plotdb.io/v/chart/27933"
               width="816px"
               height="550px"
               allowfullscreen="true"
               frameborder="0"
-            ></iframe>
+            ></iframe> */}
           </div>
         </div>
       </div>
