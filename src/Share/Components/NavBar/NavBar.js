@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Nav } from 'react-bootstrap';
 import './Navbar.scss';
 import 'antd/dist/antd.css';
-import { Popover } from 'antd';
+// import { Popover } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg';
 import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg';
@@ -241,34 +241,34 @@ function NavBar(props) {
                 <span className="jess-navbarCartNum" id="jess-navbarCartNum">
                   {cartNumber}
                 </span>
-                <Popover
+                {/* <Popover
                   placement="bottomLeft"
                   content={shoppingList}
                   title="我的購買清單"
                   trigger="hover"
                   className="navbar-jess-popover"
+                > */}
+                <Nav.Link
+                  as={NavLink}
+                  to="/cart"
+                  onClick={(e) => {
+                    disableLink(e);
+                  }}
                 >
-                  <Nav.Link
-                    as={NavLink}
-                    to="/cart"
-                    onClick={(e) => {
-                      disableLink(e);
-                    }}
-                  >
-                    <ShoppingCart className="navbar-jess-ShopingCart" />
-                  </Nav.Link>
-                  <div className="navbar-tag-wrap">
-                    <div className="navbar-tag">
-                      <ShoppingAmount className="jess-navbarCartAmount" />
-                      <span
-                        className="jess-navbarCartNum"
-                        id="jess-navbarCartNum"
-                      >
-                        {cartNumber}
-                      </span>
-                    </div>
+                  <ShoppingCart className="navbar-jess-ShopingCart" />
+                </Nav.Link>
+                <div className="navbar-tag-wrap">
+                  <div className="navbar-tag">
+                    <ShoppingAmount className="jess-navbarCartAmount" />
+                    <span
+                      className="jess-navbarCartNum"
+                      id="jess-navbarCartNum"
+                    >
+                      {cartNumber}
+                    </span>
                   </div>
-                </Popover>
+                </div>
+                {/* </Popover> */}
               </li>
             </ul>
           </div>
