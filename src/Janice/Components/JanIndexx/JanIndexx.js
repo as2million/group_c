@@ -46,7 +46,7 @@ function JanIndexx(props) {
   }, []);
 
   const contentStyle = {
-    height: '70rem',
+    height: '85rem',
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',
@@ -274,9 +274,10 @@ function JanIndexx(props) {
             </div>
             <div>
               <div className="bannerwrap" style={contentStyle}>
-                <div className="banner2 d-flex flex-column left-5">
-                  <p>選擇友善的安心蔬果，</p>
-                  <p>是我們愛護土地的方式。</p>
+                <div className="banner2 d-flex flex-column text-left">
+                  <p className="float-left jan-p1">選擇友善的安心蔬果，</p>
+
+                  <p className="float-left">是我們愛護土地的方式。</p>
                 </div>
               </div>
             </div>
