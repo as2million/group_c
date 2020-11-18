@@ -89,7 +89,7 @@ function JessProdoctList(props) {
         </div>
         {/* <p>/productImages/Bento/{menu.img_id}.jpg</p> */}
 
-        <div className="jess-menuList ">
+        <div className="jess-menuList">
           <div className="jess-fav ">
             <button
               className="addFavorite-btn addFavorite-btn-n jess-a"

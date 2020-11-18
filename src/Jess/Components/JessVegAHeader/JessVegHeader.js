@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import 'antd/dist/antd.css'
-import './JessVegHeader.scss'
-import AddCart from 'Share/Components/AddCart/AddCart'
-import BreadCrumb from '../JessBreadCrumb/BreadCrumb'
-import AddFavorite from 'Share/Components/AddFavorite/AddFavorite'
-import cart from '../../../Share/Components/AddCart/Images/cart.svg'
-import vegPic from './Images/vegetableBox_slick_pic2.png'
-import vegPic2 from './Images/VegBox2.jpg'
+import React, { useState, useEffect } from 'react';
+import 'antd/dist/antd.css';
+import './JessVegHeader.scss';
+import AddCart from 'Share/Components/AddCart/AddCart';
+import BreadCrumb from '../JessBreadCrumb/BreadCrumb';
+import AddFavorite from 'Share/Components/AddFavorite/AddFavorite';
+import cart from '../../../Share/Components/AddCart/Images/cart.svg';
+import vegPic from './Images/vegetableBox_slick_pic2.png';
+import vegPic2 from './Images/VegBox2.jpg';
 
 function JessVegHeader(props) {
-  const [count, setCount] = useState(1)
-  const [total, setTotal] = useState(350)
-  const [veg, setVeg] = useState([])
-  const { handleCartNumber } = props
+  const [count, setCount] = useState(1);
+  const [total, setTotal] = useState(350);
+  const [veg, setVeg] = useState([]);
+  const { handleCartNumber } = props;
 
   async function bentoData() {
-    const url = 'http://localhost:5000/product/bento'
+    const url = 'http://localhost:5000/product/bento';
 
     const request = new Request(url, {
       method: 'GET',
@@ -23,74 +23,74 @@ function JessVegHeader(props) {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
-    })
+    });
 
-    const response = await fetch(request)
-    const data = await response.json()
+    const response = await fetch(request);
+    const data = await response.json();
     // data會是一個array
     // console.log(data)
     // console.log(data[0].productname)
 
     // setTotal(total.push(data))
     // setTotal(data)
-    setVeg(data[22])
-    console.log(data[22])
+    setVeg(data[22]);
+    console.log(data[22]);
   }
   const handleClick = (type) => {
     if (type === 'increment') {
-      setCount(count + 1)
+      setCount(count + 1);
     }
     if (type === 'decrement' && count > 1) {
-      setCount(count - 1)
+      setCount(count - 1);
     }
-  }
+  };
   const handleTotal = (type) => {
     if (total - 350 >= 0 && count > 0 && type === 'decrement') {
-      setTotal(total - 350)
+      setTotal(total - 350);
     }
     if (type === 'increment') {
-      setTotal(total + 350)
+      setTotal(total + 350);
     }
-  }
+  };
 
   useEffect(() => {
-    bentoData()
-  }, [])
+    bentoData();
+  }, []);
 
   const calA = (e) => {
-    setTabActive(e.target, '.jess-a')
-  }
+    setTabActive(e.target, '.jess-a');
+  };
   const setTabActive = (addElem, removeName) => {
-    let removeTargets = document.querySelectorAll(removeName)
+    let removeTargets = document.querySelectorAll(removeName);
     removeTargets.forEach((target) => {
-      target.classList.remove('active')
-      console.log(target)
-    })
+      target.classList.remove('active');
+      console.log(target);
+    });
 
-    addElem.classList.add('active')
-  }
+    addElem.classList.add('active');
+  };
   const sizeA = (e) => {
-    setSizeActive(e.target, '.jess-b')
-  }
+    setSizeActive(e.target, '.jess-b');
+  };
   const setSizeActive = (addElem, removeName) => {
-    let removeTargets = document.querySelectorAll(removeName)
+    let removeTargets = document.querySelectorAll(removeName);
     removeTargets.forEach((target) => {
-      target.classList.remove('active')
-      console.log(target)
-    })
+      target.classList.remove('active');
+      console.log(target);
+    });
 
-    addElem.classList.add('active')
-  }
+    addElem.classList.add('active');
+  };
 
   const favA = (e) => {
-    setfavActive(e.target, '.fav')
-  }
+    setfavActive(e.target, '.fav');
+  };
   const setfavActive = (addElem, removeName) => {
-    let removeTargets = document.querySelectorAll(removeName)
+    let removeTargets = document.querySelectorAll(removeName);
     removeTargets.forEach((target) => {
-      target.classList.toggle('active')
-    })
-  }
+      target.classList.toggle('active');
+    });
+  };
   // function CreateCartToLocalStorage(value) {
   //   const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
@@ -98,28 +98,28 @@ function JessVegHeader(props) {
   //   localStorage.setItem('cart', JSON.stringify(newCart))
   // }
   const CreateCartToLocalStorage = (item, amount = 1, isAdded) => {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
-    const index = currentCart.findIndex((v) => v.id === item.id)
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const index = currentCart.findIndex((v) => v.id === item.id);
     if (index > -1) {
       if (isAdded) {
-        currentCart[index].productAmount += amount
+        currentCart[index].productAmount += amount;
       } else if (!isAdded && currentCart[index].productAmount > 1) {
-        currentCart[index].productAmount--
+        currentCart[index].productAmount--;
       }
     } else {
-      currentCart.push(item)
-      console.log('currentCart', currentCart)
+      currentCart.push(item);
+      console.log('currentCart', currentCart);
     }
-    localStorage.setItem('cart', JSON.stringify(currentCart))
-  }
+    localStorage.setItem('cart', JSON.stringify(currentCart));
+  };
 
   return (
     <>
       <div className="jess-fluidBg">
         <div className="container jess-breadCrumb">{/* <BreadCrumb /> */}</div>
         <div className="jess-productList-VegPic">
-          <img src={vegPic2}></img>
-          <img src={vegPic}></img>
+          <img className="jess-veg" alt="" src={vegPic2}></img>
+          <img className="jess-veg" alt="" src={vegPic}></img>
         </div>
         <div className="jess-menuList ">
           <div className="jess-fav ">
@@ -190,8 +190,8 @@ function JessVegHeader(props) {
             <div className="counter-box">
               <div
                 onClick={() => {
-                  handleClick('decrement')
-                  handleTotal('decrement')
+                  handleClick('decrement');
+                  handleTotal('decrement');
                 }}
                 className={
                   count === 1
@@ -206,8 +206,8 @@ function JessVegHeader(props) {
               </div>
               <div
                 onClick={() => {
-                  handleClick('increment')
-                  handleTotal('increment')
+                  handleClick('increment');
+                  handleTotal('increment');
                 }}
                 className="counter-increment"
               >
@@ -219,16 +219,14 @@ function JessVegHeader(props) {
             <button
               className="addCart-btn addCart-btn-n"
               onClick={() => {
-                handleCartNumber('add', count)
+                handleCartNumber('add', count);
                 CreateCartToLocalStorage({
                   id: 23,
                   productName: '在地小農蔬菜箱',
-                  productPicture: '22_vegBox',
-                  size: 's',
-                  date: 2020 / 11 / 22,
+                  productImage: '22_vegBox',
                   productPrice: 350,
                   productAmount: 1,
-                })
+                });
               }}
             >
               <img className="addCart-cart addCart-cart-n" src={cart} />
@@ -237,7 +235,7 @@ function JessVegHeader(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default JessVegHeader
+export default JessVegHeader;
