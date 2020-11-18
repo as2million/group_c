@@ -174,7 +174,7 @@ function JessProdoctList(props) {
                     productName: menu.productname,
                     productImage: menu.img_id,
                     productPrice: menu.price,
-                    productAmount: 1,
+                    productAmount: count,
                   },
 
                   count,

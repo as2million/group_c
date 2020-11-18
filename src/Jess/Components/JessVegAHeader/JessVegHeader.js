@@ -225,7 +225,7 @@ function JessVegHeader(props) {
                   productName: '在地小農蔬菜箱',
                   productImage: '22_vegBox',
                   productPrice: 350,
-                  productAmount: 1,
+                  productAmount: count,
                 });
               }}
             >
