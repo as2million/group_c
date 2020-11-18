@@ -220,14 +220,14 @@ function AddressTabs(props) {
         </div>
         {/* 滿額免運地圖 */}
         <div className="jan-tab-address-map">
-          {/* <iframe
+          <iframe
             title="tabsDataMap"
             src="https://plotdb.io/v/chart/27933"
             width="600px"
             height="565px"
             allowfullscreen="true"
             frameborder="0"
-          ></iframe> */}
+          ></iframe>
         </div>
       </div>
     );
@@ -320,11 +320,11 @@ function AddressTabs(props) {
         </div>
         {/* 門市地圖 */}
         <div className="jan-tab-shops-map">
-          {/* <iframe
+          <iframe
             src="https://www.google.com/maps/d/u/0/embed?mid=1dbpBBf0U6YHIYOs45R-S9WgBp8wBSola"
             width="600"
             height="540"
-          ></iframe> */}
+          ></iframe>
         </div>
       </div>
     );
