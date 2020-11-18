@@ -84,13 +84,13 @@ function RuAddCart(props) {
     // 給第五組 動畫開始 e
 
     // 執行加入localStorage
-    handleCartNumber('add', amount);
+    handleCartNumber('add', count);
     updateCartToLocalStorage(
       {
         // 設定要加入的資料
         id: proudctId,
         productName: title,
-        productAmount: 1,
+        productAmount: count,
         productImage: imgId,
         productPrice: price,
       },
