@@ -248,7 +248,7 @@ function ChaOrderItem(props) {
         )}
         {/* 加上這個觸發光箱 */}
         {status && (
-          <JessModal loseModal={() => setStatus(false)}>
+          <JessModal closeModal={() => setStatus(false)}>
             <JessCommentInput
               closeModal={() => setStatus(false)}
               orderItem={orderItem}
