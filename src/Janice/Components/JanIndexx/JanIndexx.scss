@@ -42,18 +42,18 @@ $deepYello: #f5a016;
 
 // 輪播牆
 .ant-carousel .slick-dots li.slick-active {
-  width: 6.5rem;
+  width: 7.5rem;
 }
 .ant-carousel .slick-dots li.slick-active button {
   background-color: $orange;
 }
 .ant-carousel .slick-dots li {
-  width: 5rem;
+  width: 6rem;
 }
 
 .ant-carousel .slick-dots li button {
   height: 1.5rem;
-  background-color: $skin;
+  background-color: $lightGray;
   opacity: 0.7;
 }
 
@@ -66,9 +66,8 @@ $deepYello: #f5a016;
   height: 85rem;
   .ant-carousel > .slick-slider > ul {
     float: left;
-    margin-left: 100rem;
+    margin-left: 120rem;
     margin-bottom: 3rem;
-    scale: (10);
   }
   .bannerwrap {
     width: 100%;
@@ -132,19 +131,6 @@ $deepYello: #f5a016;
     }
   }
 
-  // 切換鈕
-  // .jan-carousel-dots {
-  //   bottom: 2.5rem;
-  //   right: 15rem;
-  // }
-  // li {
-  //   list-style: none;
-  //   width: 5.8rem;
-  //   height: 1.2rem;
-  //   margin: 0 1rem;
-  //   background-color: $skin;
-  //   cursor: pointer;
-  // }
   // 滾動提示
   .jan-mouse {
     width: 3rem;
@@ -232,7 +218,7 @@ $deepYello: #f5a016;
 // 特色專區-切換區域
 .jan-index-feature {
   max-width: 117rem;
-  height: 20rem;
+  height: 23rem;
   background-color: #fff;
   // 圓圈們
   .jan-circles {
@@ -330,7 +316,7 @@ $deepYello: #f5a016;
   border-color: transparent transparent $skin transparent;
   margin-top: 2rem;
   left: 6rem;
-  top: 20rem;
+  top: 23rem;
 }
 // 特色內容
 .jan-intro-area {
@@ -850,7 +836,7 @@ $deepYello: #f5a016;
 .jan-discount {
   background-color: $skin;
   width: 100%;
-  height: 78rem;
+  height: 80rem;
 }
 .jan-event {
   width: 85rem;
@@ -932,21 +918,6 @@ $deepYello: #f5a016;
     // }
   }
 }
-// .jan-event-hideArrowR {
-//   width: 12rem;
-//   height: 10rem;
-//   position: absolute;
-//   background-color: $skin;
-//   right: 0rem;
-//   z-index: 0;
-// }
-// .jan-event-hideArrowL {
-//   width: 10.5rem;
-//   height: 10rem;
-//   background-color: $skin;
-//   position: absolute;
-//   z-index: 200;
-// }
 
 // 購物流程背景樣式
 .jan-shopping-process {
