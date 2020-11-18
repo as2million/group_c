@@ -54,35 +54,35 @@ function ChaGroupOrderCreate(props) {
           {/* 表單們 */}
           <div className="cha-group-create-forms">
             {/* 群組名稱與揪團人姓名 */}
-            <div className="cha-group-create-groupName-and-name">
-              {/* 群組名稱 */}
-              <div className="form-group">
-                <label htmlFor="">群組名稱</label>
-                <InputH40
-                  type="text"
-                  className="form-control "
-                  id="cha-group-create-groupName"
-                  placeholder="請填寫群組名稱"
-                  value={groupName}
-                  onChange={(e) => {
-                    setGroupName(e.target.value);
-                  }}
-                />
-              </div>
-              {/* 揪團人姓名 */}
-              <div className="form-group">
-                <label htmlFor="cha-group">揪團人姓名</label>
-                <InputH40
-                  type="text"
-                  className="form-control "
-                  id=""
-                  placeholder="請填寫揪團人姓名"
-                  value={name}
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
-                />
-              </div>
+            {/* <div className="cha-group-create-groupName-and-name"> */}
+            {/* 群組名稱 */}
+            <div className="form-group">
+              <label htmlFor="">群組名稱</label>
+              <InputH40
+                type="text"
+                className="form-control "
+                id="cha-group-create-groupName"
+                placeholder="請填寫群組名稱"
+                value={groupName}
+                onChange={(e) => {
+                  setGroupName(e.target.value);
+                }}
+              />
+            </div>
+            {/* 揪團人姓名 */}
+            <div className="form-group">
+              <label htmlFor="cha-group">揪團人姓名</label>
+              <InputH40
+                type="text"
+                className="form-control "
+                id=""
+                placeholder="請填寫揪團人姓名"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
+              {/* </div> */}
             </div>
             {/* 取餐方式 */}
             <div className="form-group">
