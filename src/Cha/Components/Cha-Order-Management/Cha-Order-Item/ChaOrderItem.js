@@ -110,6 +110,8 @@ function ChaOrderItem(props) {
   // 餐點評價的內容JSX
   const ComponentMealComment = (props) => {
     // const { orderItem } = props;
+
+   
     return (
       <>
         <div className="cha-order-detail-container container">
@@ -308,7 +310,8 @@ function ChaOrderItem(props) {
                 </div>
               )}
               <div className="cha-order-column2-row2">
-                <span> 取餐聯絡人: </span>
+              <a href="/bento/0#1">
+                <span className="jess-alink"> 取餐聯絡人: </span></a>
                 <span>{orderItem.take_person}</span>
               </div>
               <div className="cha-order-column2-row3">
