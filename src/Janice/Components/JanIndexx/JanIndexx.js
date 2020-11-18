@@ -46,7 +46,7 @@ function JanIndexx(props) {
   }, []);
 
   const contentStyle = {
-    height: '85rem',
+    height: '87rem',
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',
