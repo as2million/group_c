@@ -30,11 +30,16 @@ function RuArrowRight(props) {
     return () => {
       clearInterval(moving)
     }
-  }, [isMoving])
+  }, [isMoving, limitX])
 
   return (
     <>
-      <button className="arrowRight-warp" onMouseDown={start} onMouseUp={stop} onMouseLeave={stop}>
+      <button
+        className="ru-arrowRight-warp"
+        onMouseDown={start}
+        onMouseUp={stop}
+        onMouseLeave={stop}
+      >
         <img src={ArrowR} draggable="false" />
       </button>
     </>
@@ -42,9 +47,6 @@ function RuArrowRight(props) {
 }
 
 export default RuArrowRight
-
-
-
 
 // import React, { useState, useEffect } from 'react'
 // import './Style.scss'
@@ -108,4 +110,3 @@ export default RuArrowRight
 // }
 
 // export default RuArrowRight
-

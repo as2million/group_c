@@ -19,7 +19,27 @@ function ChaCart(props) {
   const [meals, setMeals] = useState([]);
 
   // ---------------控制navbar------------//
-  const { setShowBar, setCartNumber, isLogin } = props;
+  const {
+    setShowBar,
+    setCartNumber,
+    isLogin,
+    // county,
+    // setCounty,
+    // township,
+    // textCounty,
+    // textTownship,
+
+    address,
+    setAddress,
+    takeOrNot,
+
+    selectDate,
+    setSelectDate,
+    slecteTime,
+    setSelectTime,
+    textCounty,
+    textTownship,
+  } = props;
   // if (isLogin === false) {
   //   props.history.push('/');
   // }
@@ -28,12 +48,27 @@ function ChaCart(props) {
   const [memberSid, setMemberSid] = useState(1);
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
-  const [takeWay, setTakeWay] = useState('外送');
-  const [takeDate, setTakeDate] = useState(new Date());
-  const [takeTime, setTakeTime] = useState('11:00 ~ 11:30');
-  const [county, setCounty] = useState('');
-  const [district, setDistrict] = useState('');
-  const [address, setAddress] = useState('');
+  const [takeWay, setTakeWay] = useState(takeOrNot);
+  const [takeDate, setTakeDate] = useState(selectDate);
+  const [takeTime, setTakeTime] = useState(slecteTime);
+  const [county, setCounty] = useState(textCounty);
+  const [district, setDistrict] = useState(textTownship);
+  // console.log('textCounty', textCounty);
+  // console.log('textTownship', textTownship);
+
+  // const [textCounty, setTextCounty] = useState('');
+  // const [textTownship, setTextTownship] = useState('');
+  // setTextCounty(datacountries[county]);
+  // setTextTownship(datatownships[county][township]);
+
+  // console.log('datacountries', datacountries);
+  // console.log('datatownships', datatownships);
+  // console.log('county', county);
+  // console.log('township', township);
+  // console.log('TextCounty', textCounty);
+  // console.log('textTownship', textTownship);
+
+  // const [address, setAddress] = useState('');
   const [beastieCoin, setBeastieCoin] = useState('');
 
   // 信用卡格式檢查用

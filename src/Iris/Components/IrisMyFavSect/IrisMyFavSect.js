@@ -1,17 +1,24 @@
 // correct
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { ReactComponent as WaveLine } from './Images/wave_line.svg'
 import { ReactComponent as StarOrange } from './Images/star_orange.svg'
 import { ReactComponent as StarGrey } from './Images/star_grey.svg'
 import './IrisMyFavSect.scss'
-import Card from './Card/Card'
+import IrisCard from './IrisCard/IrisCard'
 // import Star123 from './Images/star_orange.svg';
 
-function IrisDataEditSect(props) {
-  const { currentUser } = props
+function IrisMyFavSect(props) {
+  const {
+    currentUser,
+    userFavDelete,
+    // 設定userFavDelete的狀態，傳到memberMenu，若有改變數字會減一
+    setUserFavDelete,
+  } = props
   const [myFav, setMyFav] = useState([])
+  const [showFavArr, setShowFavArr] = useState([])
+  const [hideCard, setHideCard] = useState(false)
 
   // 得到目前所有的最愛資料
   async function getMyFavFromServer() {
@@ -43,60 +50,6 @@ function IrisDataEditSect(props) {
   )
   console.log(currentUserFav)
 
-  // 新增最愛
-  const addFav = (e) => {
-    // 得到 product_sid
-    const product_sid = e.target.className
-    // console.log(product_sid)
-
-    const newFavItem = {
-      currentUser: currentUser,
-      product_sid: product_sid,
-    }
-    // console.log(newProfile)
-
-    fetch('http://localhost:5000/member/addMyFav', {
-      method: 'POST',
-      body: JSON.stringify(newFavItem),
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-      .then((r) => r.json())
-      .then((o) => {
-        console.log(o)
-      })
-  }
-
-  // 刪除最愛
-  const deleteFav = (e) => {
-    console.log('delete')
-
-    // 得到 product_sid
-    const product_sid = e.target.className
-    // console.log(product_sid)
-
-    const itemToBeDelete = {
-      currentUser: currentUser,
-      product_sid: product_sid,
-    }
-    // console.log(newProfile)
-
-    fetch('http://localhost:5000/member/deleteMyFav', {
-      method: 'POST',
-      body: JSON.stringify(itemToBeDelete),
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-      .then((r) => r.json())
-      .then((o) => {
-        console.log(o)
-      })
-  }
-
   return (
     <>
       <div className="container col-9">
@@ -104,37 +57,26 @@ function IrisDataEditSect(props) {
           <h2 className="iris-profile-title">我的最愛</h2>
           <WaveLine />
         </div>
-        <div className="iris-cards-container d-flex">
+        <div className="iris-cards-container row">
           {currentUserFav.map((item, index) => {
-            const imageId = 'card-img-' + item.product_sid
-            const price = '$' + item.price
+            // const imageId = 'card-img-' + item.product_sid
             return (
-              <div>
-                <Card
-                  key={item.sid}
+              <div class="col-4">
+                <IrisCard
+                  key={item.product_sid}
                   title={item.productname}
                   comment={item.contentNum}
-                  price={price}
-                  imgId={imageId}
+                  price={item.price}
+                  imgId={item.img_id}
+                  showFavArr={showFavArr}
+                  currentUserFav={currentUserFav}
+                  stars={item.starRating}
+                  proudctId={item.product_sid}
+                  currentUser={currentUser}
+                  setUserFavDelete={setUserFavDelete}
+                  hideCard={hideCard}
+                  setHideCard={setHideCard}
                 />
-                <div
-                  id="iris-card-delete"
-                  className={item.product_sid}
-                  onClick={(e) => {
-                    deleteFav(e)
-                  }}
-                >
-                  delete
-                </div>
-                <div
-                  id="iris-card-add"
-                  className={item.product_sid}
-                  onClick={(e) => {
-                    addFav(e)
-                  }}
-                >
-                  add
-                </div>
               </div>
             )
           })}
@@ -144,4 +86,4 @@ function IrisDataEditSect(props) {
   )
 }
 
-export default IrisDataEditSect
+export default IrisMyFavSect

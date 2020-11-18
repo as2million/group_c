@@ -44,6 +44,10 @@ $font-size: 1rem;
   overflow: scroll;
   background-attachment: scroll;
 }
+
+.jess-productList-VegPic::-webkit-scrollbar {
+  display: none;
+}
 .jess-menuList {
   width: 32rem;
   margin-top: 4rem;

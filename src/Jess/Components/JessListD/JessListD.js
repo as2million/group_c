@@ -1,34 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import './JessListD.scss'
-// import Button from '../../../Share/Components/Button/Button'
-import 'antd/dist/antd.css'
-import { Rate, Modal, Button } from 'antd'
+import React, { useState, useEffect } from 'react';
+import './JessListD.scss';
+import 'antd/dist/antd.css';
+import Button from '../../../Share/Components/Button/Button';
+import { Link } from 'react-router-dom';
+import { Rate } from 'antd';
+import JessModal from '../JessModal/JessModal';
+// import JessCommentInput from '../JessCommentMsg/JessCommentInput'
+import JessCommentMsg from '../../Pages/JessCommentMsg';
 
-function JessListD() {
-  const [comments, setComments] = useState([])
-  const [visible, setVisible] = React.useState(false)
-  const [confirmLoading, setConfirmLoading] = React.useState(false)
-  const [modalText, setModalText] = React.useState('Content of the modal')
+function JessListD(props) {
+  const [comments, setComments] = useState([]);
+  const [status, setStatus] = useState(false);
 
-  const showModal = () => {
-    setVisible(true)
-  }
-
-  const handleOk = () => {
-    setModalText('The modal will be closed after two seconds')
-    setConfirmLoading(true)
-    setTimeout(() => {
-      setVisible(false)
-      setConfirmLoading(false)
-    }, 2000)
-  }
-
-  const handleCancel = () => {
-    console.log('Clicked cancel button')
-    setVisible(false)
-  }
   async function messageData() {
-    const url = 'http://localhost:5000/product/bentoMsg'
+    const url = 'http://localhost:5000/product/bentoMsg';
 
     const request = new Request(url, {
       method: 'GET',
@@ -36,20 +21,29 @@ function JessListD() {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
-    })
+    });
 
-    const response = await fetch(request)
-    const data = await response.json()
+    const response = await fetch(request);
+    const data = await response.json();
 
-    setComments(data)
-    console.log(data)
+    setComments(data);
+    // console.log('我的get:', data)
   }
 
   useEffect(() => {
-    messageData()
-  }, [])
+    messageData();
+  }, []);
   return (
     <>
+      {/* {status && (
+        <JessCommentMsg closeModal={() => setStatus(false)}></JessCommentMsg>
+      )} */}
+      {status && (
+        <JessModal closeModal={() => setStatus(false)}>
+          <JessCommentMsg status={status} setStatus={setStatus} />
+        </JessModal>
+      )}
+
       <div className="container-fluid" id="1">
         <div className="container mt-5 jess-proD-bg">
           <h2 className="jess-text-30orange text-center mt-5">商品評論</h2>
@@ -60,23 +54,15 @@ function JessListD() {
                 <li class="jess-text-15Gray">來自 180 則評分，滿分5顆星</li>
               </ul>
             </div>
-            <Button type="primary" onClick={showModal}>
-              Open Modal with async logic
-            </Button>
-            <Modal
-              title="Title"
-              visible={visible}
-              onOk={handleOk}
-              confirmLoading={confirmLoading}
-              onCancel={handleCancel}
-              centered
-            >
-              <p>{modalText}</p>
-            </Modal>
 
-            <div className="col-6 col-sm-2 jess-msg-todo d-flex align-items-center">
+            <div
+              className="col-6 col-sm-2 jess-msg-todo d-flex align-items-center"
+              onClick={() => setStatus(true)}
+            >
+              <Link to="/orderManagement">
+                <Button className="button-btn" text="我要評論" />
+              </Link>
               {/* <Button className="button-btn" text="我要評論"></Button> */}
-              <Button className="button-btn" text="我要評論"></Button>
             </div>
           </div>
           <div className="jess-msg-container">
@@ -91,12 +77,12 @@ function JessListD() {
                       <ul className="list-unstyled">
                         <li class=" d-flex ">
                           <div className="jess-rateStarColor mt-2">
-                            {/* <ReactStars
-                              size={20}
+                            <Rate
+                              count={5}
                               value={item.starRating}
-                              edit={false}
-                            /> */}
-                            <Rate count={5} value={item.starRating} disabled />
+                              allowHalf
+                              disabled
+                            />
                           </div>
                           <div className="jess-text-15Gray2 mt-2">
                             {item.name}
@@ -111,15 +97,13 @@ function JessListD() {
                     <div className="jess-contentBorder"></div>
                   </div>
                 </>
-              )
+              );
             })}
           </div>
-          {/* <Pagination size="small" total={10} /> */}
-          <div className="jess-pageTotal"></div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default JessListD
+export default JessListD;

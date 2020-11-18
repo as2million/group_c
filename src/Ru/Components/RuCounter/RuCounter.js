@@ -1,29 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import './Style.scss'
+import React, { useState, useEffect } from 'react';
+import './Style.scss';
 
 function Counter(props) {
-  const { setAmount } = props
-  const [count, setCount] = useState(1)
+  const { setAmount, count, setCount } = props;
   // const [hoverBackgroundColor, setHoverBackgroundColor] = useState('white')
   // const [hoverMinusColor, setHoverMinusColor] = useState('#858585')
 
   const handleClick = (type) => {
     if (type === 'increment') {
-      setCount(count + 1)
-      setAmount(count + 1)
+      setCount(count + 1);
+      setAmount(count + 1);
     }
     if (type === 'decrement' && count > 1) {
-      setCount(count - 1)
-      setAmount(count - 1)
+      setCount(count - 1);
+      setAmount(count - 1);
     }
-  }
+  };
 
   return (
     <>
       <div className="counter-box">
         <div
           onClick={() => {
-            handleClick('decrement')
+            handleClick('decrement');
             // if (count === 2) {
             //   setHoverBackgroundColor('white')
             //   setHoverMinusColor('#858585')
@@ -65,7 +64,7 @@ function Counter(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Counter
+export default Counter;

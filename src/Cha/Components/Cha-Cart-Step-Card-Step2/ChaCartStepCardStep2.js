@@ -21,6 +21,7 @@ function ChaCartStepCardStep2(props) {
   // setDistrict={setDistrict}
 
   const {
+    address,
     currentMemberSid,
     setCurrentMemberSid,
     setMemberSid,
@@ -28,16 +29,16 @@ function ChaCartStepCardStep2(props) {
     setName,
     mobile,
     setMobile,
-    // county,
+    county,
     setCounty,
-    // district,
+    district,
     setDistrict,
     setAddress,
     setBeastieCoin,
     takeDate,
     setTakeDate,
     takeTime,
-    // takeWay,
+    takeWay,
     setTakeWay,
     setTakeTime,
   } = props;
@@ -62,10 +63,12 @@ function ChaCartStepCardStep2(props) {
     setName(data[0].name);
     setMobile(data[0].mobile);
     setTakeWay(data[0].take_way);
-    setCounty(data[0].county);
-    setDistrict(data[0].district);
-    setAddress(data[0].address);
-    setShowAddress(data[0].county + data[0].district + data[0].address);
+    county.length === 0 && setCounty(data[0].county);
+    district.length === 0 && setDistrict(data[0].district);
+    address.length === 0 && setAddress(data[0].address);
+    address.length === 0
+      ? setShowAddress(data[0].county + data[0].district + data[0].address)
+      : setShowAddress(county + district + address);
     setMemberSid(data[0].member_sid);
     setBeastieCoin(data[0].beastie_coin);
   }

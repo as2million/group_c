@@ -1,3 +1,4 @@
+//------------------------------Desktop--------------------------------
 //Title - first line
 
 .claudia-modal {
@@ -241,7 +242,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 1.5rem;
+  padding-top: 1.2rem;
   cursor: pointer;
 }
 
@@ -352,7 +353,41 @@
   background-color: #438b6b;
 }
 
-@media only screen and (max-width: 57.6rem) {
+//------------------------------Desktop--------------------------------
+
+//--------------------------------Ipad---------------------------------
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+
+  //FIRST BLOCK
+
+  .claudia-modal-inline {
+    margin-bottom: 10px;
+  }
+
+  //THIRD BLOCK
+
+  .claudia-modal-signup-num-box {
+    width: 600px;
+  }
+
+  //FORTH BLOCK
+
+  .claudia-modal-total-price {
+    margin: 20px 0px;
+  }
+
+  .claudia-modal-cart-button {
+    width: 600px;
+  }
+
+
+}
+
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+
+@media only screen and (max-width: 576px) {
   //Title
   .claudia-modal h1 {
     font-size: 1.8rem;
@@ -529,3 +564,5 @@
     height: 37px;
   }
 }
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------

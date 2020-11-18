@@ -27,19 +27,20 @@ const ChaGoCartModal = (props) => {
             <div
               onClick={() => {
                 // closeModal
-                orderItem.order_detail.forEach((item) =>
+                orderItem.order_detail.forEach((item) => {
                   UpdateCartToLocalStorage({
                     id: item.sid,
                     productName: item.product_name,
                     productPrice: item.product_price,
                     productAmount: item.product_amount,
                     productImage: item.product_image,
-                  })
-                );
+                  });
+                  handleCartNumber('add', item.product_amount);
+                });
                 // props.history.push('/cart');
-                orderItem.order_detail.forEach((item) =>
-                  handleCartNumber('add', item.product_amount)
-                );
+                // orderItem.order_detail.forEach((item) =>
+                //   handleCartNumber('add', item.product_amount)
+                // );
               }}
             >
               <ChaCartButton

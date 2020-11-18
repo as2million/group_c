@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import './JessVegC.scss';
 import Fade from 'react-reveal/Fade';
 import Jump from 'react-reveal/Jump';
+import Jesssvg from './JessSvg';
 
 function JessVegC() {
   // A
@@ -54,7 +55,7 @@ function JessVegC() {
   const ColorD = (props) => {
     return (
       <>
-        <p className="jess-Veg-24white">紫色蔬菜</p>
+        <p className="jess-Veg-24purple">紫色蔬菜</p>
         <p className="jess-Veg-20gray">彰化 茄子</p>
         <div className="jess-Veg-20gray2">屏東 洋蔥</div>
         <Jump>
@@ -138,7 +139,7 @@ function JessVegC() {
               </div>
               <div className="col-12 col-sm-9 d-flex justify-content-start">
                 {component}
-                <div className="jess-svg"></div>
+                <div className="jess-svg">{/* <Jesssvg /> */}</div>
               </div>
             </div>
             <div className="row jess-VegC-colorRow">

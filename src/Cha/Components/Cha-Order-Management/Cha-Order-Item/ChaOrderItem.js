@@ -38,7 +38,7 @@ function ChaOrderItem(props) {
 
   //fetch member
   async function messageData() {
-    const url = 'http://localhost:5000/product/member1msg1';
+    const url = 'http://localhost:5000/product/member1msg2';
 
     const request = new Request(url, {
       method: 'GET',
@@ -124,14 +124,12 @@ function ChaOrderItem(props) {
               <span className="col-5">{item.product_name}</span>
               <span className="col-2">${item.product_price}</span>
               <span className="col-3">X {item.product_amount}</span>
-              <span className="col-2">
+              <span className="col-2" onClick={() => setStatus(true)}>
                 <ChaOrangeButtonPlus
                   type="button"
                   value="我要評價"
                   text="我要評價"
                   className="cha-detail-btn cha-order-orange-plus-btn"
-                  // Jess光箱的onClick事件
-                  onClick={() => setStatus(true)}
                 />
               </span>
             </div>

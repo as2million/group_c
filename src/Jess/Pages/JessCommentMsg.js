@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import '../Components/JessCommentMsg/JessCommentInput.scss'
-import IrisMemberMenu from '../../Iris/Components/IrisMemberMenuSect/IrisMemberMenuSect'
 import JessCommentInput from '../Components/JessCommentMsg/JessCommentInput'
-import JessCommentList from '../Components/JessCommentMsg/JessCommentList'
 
 function JessMenu(props) {
   const [textInput, setTextInput] = useState('')
   const [comments, setComments] = useState([])
   const [rating, setRating] = useState(0)
+  const { closeModal } = props
 
   async function messageData() {
     const url = 'http://localhost:5000/product/member1msg'
@@ -38,26 +37,19 @@ function JessMenu(props) {
   return (
     <>
       <div className="container-fluid jess-comment-bg">
-        <div className="row container">
-          <div className="col">
-            <IrisMemberMenu />
-          </div>
-          {/* <div className="row form-group jess-input"> */}
-          <div className="col mx-auto jess-input">
-            <JessCommentInput
-              textInput={textInput}
-              setTextInput={setTextInput}
-              comments={comments}
-              setComments={setComments}
-              rating={rating}
-              setRating={setRating}
-            />
-            <div className="jess-inputBorder"></div>
-            <div className="jess-commentBox">
-              <JessCommentList comments={comments} />
-            </div>
-          </div>
-        </div>
+        <JessCommentInput
+          textInput={textInput}
+          setTextInput={setTextInput}
+          comments={comments}
+          setComments={setComments}
+          rating={rating}
+          setRating={setRating}
+          closeModal={closeModal}
+        />
+        {/* <div className="jess-inputBorder"></div> */}
+        {/* <div className="jess-commentBox">
+          <JessCommentList comments={comments} />
+        </div> */}
       </div>
     </>
   )

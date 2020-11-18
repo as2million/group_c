@@ -1,4 +1,10 @@
 //------------------------------Desktop--------------------------------
+
+.claudia-detailed-maintext-left-i {
+  width: 455px;
+  margin: 0px auto;
+}
+
 .claudia-detailed-maintext-left-i h1 {
   font-size: 24px;
   color: #66ab8c;
@@ -17,14 +23,28 @@
 
 //--------------------------------Ipad---------------------------------
 
-@media screen and (min-width: 57.6rem) and (max-width: 120rem) {
+@media screen and (min-width: 576px) and (max-width: 769px) {
+  .claudia-detailed-maintext-left-i {
+    width: 485px;
+  }
+
+  .claudia-detailed-maintext-left-i h1 {
+    width: 485px;
+  }
+
+  .claudia-detailed-maintext-left-i p {
+    width: 485px;
+  }
 }
 
 //--------------------------------Ipad---------------------------------
 
 //----------------------Iphone 6/7/8 + Plus + X------------------------
 
-@media only screen and (max-width: 57.6rem) {
+@media screen and (max-width: 576px) {
+  .claudia-detailed-maintext-left-i {
+    width: 285px;
+  }
   .claudia-detailed-maintext-left-i h1 {
     font-size: 24px;
     color: #66ab8c;
