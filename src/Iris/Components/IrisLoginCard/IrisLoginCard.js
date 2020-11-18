@@ -6,14 +6,17 @@ import InputH44 from './../../../Share/Components/Input/InputH44.js';
 import Button from './Button/Button';
 import ButtonLogin from './Button/ButtonLogin';
 import $ from 'jquery';
+// import IrisSuccessBox from './../IrisSuccessBox/IrisSuccessBox'
 
 function IrisLoginCard(props) {
   const {
     setIsLogin,
     setCurrentUser,
     isLogin,
-    SetShowSucessBox,
+    setShowSuccessBox,
     SetShowLoginCard,
+    setShowLoginModal,
+    setCurrentUserData,
   } = props;
 
   // 變成註冊表單
@@ -100,13 +103,15 @@ function IrisLoginCard(props) {
       ) {
         setIsLogin(true);
         setCurrentUser(userinfo[i].member_sid); // 設定目前使用者id
-        SetShowSucessBox(true); // 出現登入成功光箱
-        SetShowLoginCard(false); // 登入表單消失
 
-        // Test
-        setTimeout(() => {
-          SetShowLoginCard(true);
-        }, 10000);
+        // 放在localStorage
+        let currentUserStorage = parseInt(userinfo[i].member_sid);
+        localStorage.setItem('currentUser', currentUserStorage);
+
+        setCurrentUserData(userinfo[i]);
+        console.log(userinfo[i]);
+        setShowLoginModal(false); // 登入光箱消失
+        setShowSuccessBox(true); // 出現登入成功光箱)
       } else {
         // 若帳密錯誤，顯示錯誤提示
         $('.iris-login-alert').slideDown('slow');
@@ -154,7 +159,14 @@ function IrisLoginCard(props) {
     }
 
     // 資料都ok才送出
-    else {
+    if (
+      account.match(/[A-Za-z0-9]{8,24}/) &&
+      password.match(/[A-Za-z0-9]{8,24}/) &&
+      email.match(
+        /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
+      ) &&
+      mobile.match(/^09[0-9]{8}$/)
+    ) {
       // 清空錯誤題示
       $('.iris-empty-account').slideUp('slow');
       $('.iris-empty-password').slideUp('slow');
@@ -171,6 +183,7 @@ function IrisLoginCard(props) {
         password: password,
         email: email,
         mobile: mobile,
+        name: null,
       };
 
       fetch('http://localhost:5000/member/userRegister', {
@@ -186,6 +199,12 @@ function IrisLoginCard(props) {
           console.log(o);
         });
 
+      // 若註冊成功，顯示成功提示
+      $('.iris-register-alert').slideDown('slow');
+      // 2秒後消失
+      setTimeout(() => {
+        $('.iris-register-alert').slideUp('slow');
+      }, 2000);
       document.querySelector('#createaccount').value = '';
       document.querySelector('#createpassword').value = '';
       document.querySelector('#createmail').value = '';
@@ -210,7 +229,7 @@ function IrisLoginCard(props) {
           {/* ----------------登入表單----------------- */}
           <div className="iris-login-content">
             <div className="iris-login-title">會員登入</div>
-            <div class="alert alert-danger iris-login-alert" role="alert">
+            <div className="alert alert-danger iris-login-alert" role="alert">
               帳號或密碼錯誤
             </div>
             <div className="iris-login-input d-flex  align-items-center">
@@ -222,7 +241,7 @@ function IrisLoginCard(props) {
               <InputH44 type="password" id="userpassword" />
             </div>
             <div className="iris-login-other d-flex">
-              <div class="form-check">
+              <div className="form-check">
                 <input
                   class="form-check-input iris-big-checkbox"
                   type="checkbox"
@@ -260,7 +279,10 @@ function IrisLoginCard(props) {
           {/* ----------------註冊表單----------------- */}
           <div className="iris-register-content">
             <div className="iris-register-title">會員註冊</div>
-            <div class="alert alert-success iris-register-alert" role="alert">
+            <div
+              className="alert alert-success iris-register-alert"
+              role="alert"
+            >
               註冊成功
             </div>
             <div className="iris-login-input d-flex  align-items-center">
@@ -273,7 +295,7 @@ function IrisLoginCard(props) {
               <div className="iris-login-text">密碼</div>
               <InputH44 type="password" id="createpassword" />
             </div>
-            <div class="iris-wrong-password-format">*密碼要大於8碼</div>
+            <div className="iris-wrong-password-format">*密碼要大於8碼</div>
 
             <div className="iris-login-input d-flex  align-items-center">
               <div className="iris-login-text">信箱</div>
@@ -285,7 +307,9 @@ function IrisLoginCard(props) {
               <div className="iris-login-text">手機</div>
               <InputH44 type="text" id="createmobile" />
             </div>
-            <div class="iris-wrong-mobile-format">*請填入正確的手機格式</div>
+            <div className="iris-wrong-mobile-format">
+              *請填入正確的手機格式
+            </div>
 
             <div
               className="iris-register-button"

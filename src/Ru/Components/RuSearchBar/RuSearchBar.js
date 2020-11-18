@@ -8,7 +8,7 @@ import { ReactComponent as SearchIcon } from 'Ru/Components/RuSearchBar/Images/s
 function RuSearchBar(props) {
   // 先再母元件加上 const [ searchInput, setSearchInput ] = useState('') => 這樣母元件可以拿到input的value值
   // 然後搜尋邏輯自己寫
-  const { searchInput, setSearchInput } = props;
+  const { searchInput, setSearchInput, searchId } = props;
 
   function lightenBorder() {
     document.querySelector('.ru-input-field').style['box-shadow'] =
@@ -20,8 +20,7 @@ function RuSearchBar(props) {
     // console.log('input', document.querySelector('.ru-input-field'));
     if (e.target.id !== 'ru-search') {
       if (document.querySelector('.ru-input-field')) {
-        document.querySelector('.ru-input-field').style['box-shadow'] =
-          'none';
+        document.querySelector('.ru-input-field').style['box-shadow'] = 'none';
         document.querySelector('.ru-input-field').style['border-color'] =
           '#858585';
         document.querySelector('.ru-img').style.fill = '#c2c4ca';
@@ -30,23 +29,25 @@ function RuSearchBar(props) {
   };
   return (
     <>
-      <div className="ru-input-field first-wrap">
+      <div className="ru-input-field first-wrap" id={searchId}>
         <div className="svg-wrapper">
           <SearchIcon className="ru-img" />
         </div>
-        <input
-          className="ru-searchbar"
-          id="ru-search"
-          type="text"
-          placeholder="search"
-          onClick={() => {
-            lightenBorder();
-          }}
-          value={searchInput}
-          onChange={(e) => {
-            setSearchInput(e.target.value);
-          }}
-        />
+        <form autocomplete="off">
+          <input
+            className="ru-searchbar"
+            id="ru-search"
+            type="text"
+            placeholder="search"
+            onClick={() => {
+              lightenBorder();
+            }}
+            value={searchInput}
+            onChange={(e) => {
+              setSearchInput(e.target.value);
+            }}
+          />
+        </form>
       </div>
       {/* </div> */}
     </>

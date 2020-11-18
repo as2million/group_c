@@ -75,6 +75,27 @@ $white: #ffffff;
   height: 55rem;
   padding: 0 !important;
 }
+
+@media screen and (max-width: 1440px) {
+  .jess-MenuBanner-elem .jess-MenuBanner-title {
+    color: rgb(46, 46, 46);
+    font-size: 3.6rem;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    top: 60%;
+    left: 11%;
+  }
+  .jess-MenuBanner-elem .jess-MenuBanner-text {
+    color: $darkGary;
+    font-size: 3rem;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 500;
+    letter-spacing: 0.7rem;
+    line-height: 7rem;
+    top: 60%;
+    left: 11%;
+  }
+}
 @media screen and (max-width: 576px) {
   .jess-MenuBanner {
     width: rem;

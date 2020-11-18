@@ -21,6 +21,7 @@ function ChaCartStepCardStep2(props) {
   // setDistrict={setDistrict}
 
   const {
+    address,
     currentMemberSid,
     setCurrentMemberSid,
     setMemberSid,
@@ -28,16 +29,16 @@ function ChaCartStepCardStep2(props) {
     setName,
     mobile,
     setMobile,
-    // county,
+    county,
     setCounty,
-    // district,
+    district,
     setDistrict,
     setAddress,
     setBeastieCoin,
     takeDate,
     setTakeDate,
     takeTime,
-    // takeWay,
+    takeWay,
     setTakeWay,
     setTakeTime,
   } = props;
@@ -58,14 +59,16 @@ function ChaCartStepCardStep2(props) {
     // data會是一個物件值
     // console.log(data);
     console.log('讀入會員資料', data);
-
+    //data裡面只有一個會員的資料，後端過濾完了
     setName(data[0].name);
     setMobile(data[0].mobile);
     setTakeWay(data[0].take_way);
-    setCounty(data[0].county);
-    setDistrict(data[0].district);
-    setAddress(data[0].address);
-    setShowAddress(data[0].county + data[0].district + data[0].address);
+    county.length === 0 && setCounty(data[0].county);
+    district.length === 0 && setDistrict(data[0].district);
+    address.length === 0 && setAddress(data[0].address);
+    address.length === 0
+      ? setShowAddress(data[0].county + data[0].district + data[0].address)
+      : setShowAddress(county + district + address);
     setMemberSid(data[0].member_sid);
     setBeastieCoin(data[0].beastie_coin);
   }
@@ -93,79 +96,33 @@ function ChaCartStepCardStep2(props) {
   //   showMobilInput();
   // }, [mobile]);
 
-  // // 註冊功能
-  //------------格式檢查的觸發函式-------//
-  //----------onClick={() => {handleRegister();}}
-  // const handleRegister = () => {
-  //   let account = document.querySelector('#createaccount').value;
-  //   let password = document.querySelector('#createpassword').value;
-  //   let email = document.querySelector('#createmail').value;
-  //   let mobile = document.querySelector('#createmobile').value;
-
-  //   // 帳號小於8碼
-  //   if (!account.match(/[A-Za-z0-9]{8,24}/)) {
-  //     $('.iris-empty-account').slideUp('slow');
-  //     $('.iris-wrong-account-format').slideDown('slow');
-  //     // 密碼小於8碼
+  // //------------格式檢查的函式-------//
+  // const handleFormatCheckStep2 = () => {
+  //   //  姓名不能為空值
+  //   if (name === '') {
+  //     $('.cha-wrong-name').slideDown('slow');
   //   }
-  //   if (!password.match(/[A-Za-z0-9]{8,24}/)) {
-  //     $('.iris-empty-password').slideUp('slow');
-  //     $('.iris-wrong-password-format').slideDown('slow');
-  //     // 信箱格式不符
-  //   }
-  //   if (
-  //     !email.match(
-  //       /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
-  //     )
-  //   ) {
-  //     $('.iris-empty-email').slideUp('slow');
-  //     $('.iris-wrong-email-format').slideDown('slow');
-  //     // 手機格式不符
-  //   }
+  //   // 手機格式不符
   //   if (!mobile.match(/^09[0-9]{8}$/)) {
-  //     $('.iris-empty-mobile').slideUp('slow');
-  //     $('.iris-wrong-mobile-format').slideDown('slow');
+  //     $('.cha-wrong-mobile').slideDown('slow');
   //   }
 
-  //   // 資料都ok才送出
+  //   //   // 資料都ok才送出
   //   else {
   //     // 清空錯誤題示
-  //     $('.iris-empty-account').slideUp('slow');
-  //     $('.iris-empty-password').slideUp('slow');
-  //     $('.iris-empty-email').slideUp('slow');
-  //     $('.iris-empty-mobile').slideUp('slow');
-  //     $('.iris-wrong-account-format').slideUp('slow');
-  //     $('.iris-wrong-password-format').slideUp('slow');
-  //     $('.iris-wrong-email-format').slideUp('slow');
-  //     $('.iris-wrong-mobile-format').slideUp('slow');
-
-  //     // 把輸入的內容包成物件傳出去
-  //     const newRegister = {
-  //       account: account,
-  //       password: password,
-  //       email: email,
-  //       mobile: mobile,
-  //     };
-
-  //     fetch('http://localhost:5000/member/userRegister', {
-  //       method: 'POST',
-  //       body: JSON.stringify(newRegister),
-  //       headers: new Headers({
-  //         Accept: 'application/json',
-  //         'Content-Type': 'application/json',
-  //       }),
-  //     })
-  //       .then((r) => r.json())
-  //       .then((o) => {
-  //         console.log(o);
-  //       });
-
-  //     document.querySelector('#createaccount').value = '';
-  //     document.querySelector('#createpassword').value = '';
-  //     document.querySelector('#createmail').value = '';
-  //     document.querySelector('#createmobile').value = '';
+  //     $('.cha-wrong-mobile').slideUp('slow');
+  //     $('.cha-wrong-name').slideUp('slow');
   //   }
   // };
+
+  // // 控制格式檢查
+  // useEffect(() => {
+  //   if (formatCheckStep2) {
+  //     handleFormatCheckStep2();
+  //   }
+  //   console.log('Step2格式檢查遙控器', formatCheckStep2);
+  // }, [formatCheckStep2]);
+
   return (
     <>
       <div className="cha-main-card cha-main-card-step2">
@@ -183,6 +140,7 @@ function ChaCartStepCardStep2(props) {
               setName(e.target.value);
             }}
           />
+          <div className="cha-wrong-name">**請填寫姓名</div>
         </div>
         {/* 手機號碼 */}
         <div className="form-group">
@@ -196,7 +154,8 @@ function ChaCartStepCardStep2(props) {
             onChange={(e) => {
               setMobile(e.target.value);
             }}
-          />
+          />{' '}
+          <div className="cha-wrong-mobile">**手機格式錯誤</div>
         </div>
         {/* 取餐日期、時間 */}
 
@@ -219,6 +178,7 @@ function ChaCartStepCardStep2(props) {
                 maxDate={addDays(new Date(), 13)}
                 locale="zh-TW"
               />
+              <div className="cha-wrong-takeDate">**取餐日期格式錯誤</div>
             </div>
           </div>
           <div className="form-group col-6">

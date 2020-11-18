@@ -27,6 +27,11 @@
   font-size: 1.8rem;
 }
 
+.iris-coupon1-title {
+  color: #f48145;
+  font-size: 1.8rem;
+}
+
 .iris-coupon-issue {
   color: #858585;
   font-size: 1.5rem;
@@ -45,16 +50,47 @@
   width: 100%;
 }
 
-.iris-getcoupon-learnmore {
-  color: #F48145;
+.iris-getcoupon1-learnmore {
+  color: #f48145;
   font-size: 1.8em;
   position: absolute;
   top: 0;
   right: 5%;
-  
+}
+.iris-getcoupon-learnmore {
+  color: #f48145;
+  font-size: 1.8em;
+  position: absolute;
+  top: 0;
+  right: 5%;
 }
 
+.iris-getcoupon1-learnmore:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
 .iris-getcoupon-learnmore:hover {
   cursor: pointer;
   font-weight: bold;
+}
+
+.coupon1-received {
+  color: grey;
+  font-size: 1.8em;
+  position: absolute;
+  top: 0;
+  right: 5%;
+}
+
+.iris-getcoupon1-received {
+  color: grey;
+  font-size: 1.8em;
+  position: absolute;
+  top: 0;
+  right: 5%;
+  display: none;
+}
+
+.iris-beastieCoupon-grey-svg {
+  display: none;
 }

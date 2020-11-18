@@ -6,8 +6,9 @@ import ChaCartStepCardStep1 from 'Cha/Components/Cha-Cart-Step-Card-Step1/ChaCar
 import ChaCartStepCardStep2 from 'Cha/Components/Cha-Cart-Step-Card-Step2/ChaCartStepCardStep2';
 import ChaCartStepCardStep3 from 'Cha/Components/Cha-Cart-Step-Card-Step3/ChaCartStepCardStep3';
 import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
-
+import $ from 'jquery';
 import 'Cha/Pages/Cha-Cart/ChaCart.scss';
+// import { withRouter } from 'react-router-dom';
 
 function ChaCart(props) {
   //-------------當前登入會員的id--------------//
@@ -18,19 +19,65 @@ function ChaCart(props) {
   const [meals, setMeals] = useState([]);
 
   // ---------------控制navbar------------//
-  const { setShowBar, setCartNumber } = props;
+  const {
+    setShowBar,
+    setCartNumber,
+    isLogin,
+    // county,
+    // setCounty,
+    // township,
+    // textCounty,
+    // textTownship,
 
+    address,
+    setAddress,
+    takeOrNot,
+
+    selectDate,
+    setSelectDate,
+    slecteTime,
+    setSelectTime,
+    textCounty,
+    textTownship,
+  } = props;
+  // if (isLogin === false) {
+  //   props.history.push('/');
+  // }
+  // console.log('isLogin', isLogin);
   // ----------給「會員資料表」用-------------//
   const [memberSid, setMemberSid] = useState(1);
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
-  const [takeWay, setTakeWay] = useState('外送');
-  const [takeDate, setTakeDate] = useState(new Date());
-  const [takeTime, setTakeTime] = useState('11:00 ~ 11:30');
-  const [county, setCounty] = useState('');
-  const [district, setDistrict] = useState('');
-  const [address, setAddress] = useState('');
+  const [takeWay, setTakeWay] = useState(takeOrNot);
+  const [takeDate, setTakeDate] = useState(selectDate);
+  const [takeTime, setTakeTime] = useState(slecteTime);
+  const [county, setCounty] = useState(textCounty);
+  const [district, setDistrict] = useState(textTownship);
+  // console.log('textCounty', textCounty);
+  // console.log('textTownship', textTownship);
+
+  // const [textCounty, setTextCounty] = useState('');
+  // const [textTownship, setTextTownship] = useState('');
+  // setTextCounty(datacountries[county]);
+  // setTextTownship(datatownships[county][township]);
+
+  // console.log('datacountries', datacountries);
+  // console.log('datatownships', datatownships);
+  // console.log('county', county);
+  // console.log('township', township);
+  // console.log('TextCounty', textCounty);
+  // console.log('textTownship', textTownship);
+
+  // const [address, setAddress] = useState('');
   const [beastieCoin, setBeastieCoin] = useState('');
+
+  // 信用卡格式檢查用
+  const [creditNumber, setCreditNumber] = useState('');
+  const [credit3Number, setCredit3Number] = useState('');
+  const [creditMonth, setCreditMonth] = useState('●●');
+  const [creditYear, setCreditYear] = useState('●●');
+  //格式檢查用
+  const [formatCheck, setFormatCheck] = useState(false);
 
   //------------ 掛載就設定隱藏navbar----------//
   useEffect(() => {
@@ -147,6 +194,93 @@ function ChaCart(props) {
     }
   });
 
+  //------------格式檢查的函式-------//
+  // !password.match(/[A-Za-z0-9]{8,24}/)
+  const handleFormatCheck = () => {
+    // console.log(
+    //   '檢查到的購物車內商品：數量、meals===[]、meals.length===0',
+    //   meals === [],
+    //   meals.length === 0
+    // );
+    // 購物車內商品不能為0
+    if (meals.length === 0) {
+      $('.cha-wrong-totalAmount').slideDown('slow');
+      setTimeout(() => {
+        $('.cha-wrong-totalAmount').slideUp('slow');
+      }, 2000);
+    } else {
+      $('.cha-wrong-totalAmount').slideUp('slow');
+    }
+
+    //  姓名不能為空值
+    if (name === '') {
+      $('.cha-wrong-name').slideDown('slow');
+    } else {
+      $('.cha-wrong-name').slideUp('slow');
+    }
+
+    // 手機格式不符
+    if (!mobile.match(/^09[0-9]{8}$/)) {
+      $('.cha-wrong-mobile').slideDown('slow');
+    } else {
+      $('.cha-wrong-mobile').slideUp('slow');
+    }
+
+    //  取餐日期不能為空值
+    if (!takeDate) {
+      $('.cha-wrong-takeDate').slideDown('slow');
+    } else {
+      $('.cha-wrong-takeDate').slideUp('slow');
+    }
+
+    //信用卡號碼格式不符
+    if (!(creditNumber.length === 16)) {
+      $('.cha-wrong-creditNumber').slideDown('slow');
+    } else {
+      $('.cha-wrong-creditNumber').slideUp('slow');
+    }
+    // creditMonth={creditMonth}
+    // setCreditMonth={setCreditMonth}
+    // creditYear={creditYear}
+    // 信用卡月份格式不符合
+    if (creditMonth === '●●') {
+      $('.cha-wrong-MONTH').slideDown('slow');
+    } else {
+      $('.cha-wrong-MONTH').slideUp('slow');
+    }
+    // 信用卡年分格式不符合
+    if (creditYear === '●●') {
+      $('.cha-wrong-YEAR').slideDown('slow');
+    } else {
+      $('.cha-wrong-YEAR').slideUp('slow');
+    }
+    // 信用卡後三碼格式不符合
+    if (!(credit3Number.length === 3)) {
+      $('.cha-wrong-credit3Number').slideDown('slow');
+    } else {
+      $('.cha-wrong-credit3Number').slideUp('slow');
+    }
+    if (
+      !(meals.length === 0) &&
+      !(name === '') &&
+      mobile.match(/^09[0-9]{8}$/) &&
+      takeDate &&
+      creditNumber.length === 16 &&
+      !(creditMonth === '●●') &&
+      !(creditYear === '●●') &&
+      credit3Number.length === 3
+    ) {
+      setFormatCheck(true);
+      console.log('通過格式檢查，setFormatCheck(true)');
+    } else {
+      $('.cha-wrong-format').slideDown('slow');
+      setTimeout(() => {
+        $('.cha-wrong-format').slideUp('slow');
+      }, 2000);
+      console.log('未通過格式檢查');
+    }
+  };
+
   return (
     <>
       <ScrollButton />
@@ -191,7 +325,16 @@ function ChaCart(props) {
             setTakeTime={setTakeTime}
           />
           {/* 步驟三 */}
-          <ChaCartStepCardStep3 />
+          <ChaCartStepCardStep3
+            creditNumber={creditNumber}
+            setCreditNumber={setCreditNumber}
+            credit3Number={credit3Number}
+            setCredit3Number={setCredit3Number}
+            creditMonth={creditMonth}
+            setCreditMonth={setCreditMonth}
+            creditYear={creditYear}
+            setCreditYear={setCreditYear}
+          />
         </main>
         {/* 購物清單欄*/}
         <aside className="cha-aside">
@@ -199,8 +342,7 @@ function ChaCart(props) {
             // step1
             meals={meals}
             setMeals={setMeals}
-            // mealsDisplay={mealsDisplay}
-            // step2
+            handleFormatCheck={handleFormatCheck}
             memberSid={memberSid}
             name={name}
             mobile={mobile}
@@ -212,6 +354,7 @@ function ChaCart(props) {
             takeDate={takeDate}
             takeTime={takeTime}
             handleCartNumber={handleCartNumber}
+            formatCheck={formatCheck}
             {...props}
           />
         </aside>
@@ -222,4 +365,5 @@ function ChaCart(props) {
     </>
   );
 }
+// export default withRouter(ChaCart);
 export default ChaCart;

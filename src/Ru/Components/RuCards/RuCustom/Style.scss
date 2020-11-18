@@ -1,8 +1,12 @@
-@import "Ru/Pages/variable.scss";
+@import 'Ru/Pages/variable.scss';
 
 // ------------------------------------------- 網頁版 s -------------------------------------------
 // @media screen and (min-width: 1201px) {
 @media screen and (min-width: 576.1px) {
+  .ru-box-warp .st0 {
+    stroke: none;
+  }
+
   .ru-custom-containerA {
     // 超過設計稿部份
     // background-color: rgb(0, 185, 71);
@@ -210,7 +214,13 @@
     text-align: right;
     margin-right: 15px;
     padding: 0px;
-    @include font($notoSansTC, $minor-heading, $bold, 0px, $customSelection-color);
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $bold,
+      0px,
+      $customSelection-color
+    );
   }
 
   .ru-switchBtn-container button:nth-child(2) {
@@ -219,7 +229,13 @@
     text-align: left;
     margin-left: 15px;
     padding: 0px;
-    @include font($notoSansTC, $minor-heading, $bold, 0px, $customSelection-color);
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $bold,
+      0px,
+      $customSelection-color
+    );
   }
 
   // 開關開啟
@@ -407,7 +423,13 @@
     text-align: left;
     margin-left: 15px;
     padding: 0px;
-    @include font($notoSansTC, $minor-heading, $bold, 0px, $customSelection-color);
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $bold,
+      0px,
+      $customSelection-color
+    );
   }
 
   .ru-info-container {
@@ -465,7 +487,13 @@
     width: 18.52%;
     height: 100%;
     margin: 0px;
-    @include font($notoSansTC, $productName-size, $regular, 1.25px, $light-orange);
+    @include font(
+      $notoSansTC,
+      $productName-size,
+      $regular,
+      1.25px,
+      $light-orange
+    );
     @include flex($df, $fdr, $jce, $alc);
   }
 
@@ -485,7 +513,13 @@
   .ru-info-total-warp > h3 {
     width: 62%;
     margin: 0px;
-    @include font($notoSansTC, $minor-heading, $medium, 0px, $productName-Color);
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $medium,
+      0px,
+      $productName-Color
+    );
   }
 
   .ru-info-total-warp > p {
@@ -516,7 +550,7 @@
   .ru-isCanBuy {
     width: 100%;
     pointer-events: none;
-    filter: "grayscale(100%)";
+    filter: 'grayscale(100%)';
   }
 
   .ru-checkout-warp .counter-box {
@@ -660,7 +694,13 @@
     margin: 0px;
     text-align: center;
     @include flex($df, $fdc, $jcc, $alc);
-    @include font($notoSansTC, $minor-heading, $regular, 1.25px, $productName-Color);
+    @include font(
+      $notoSansTC,
+      $minor-heading,
+      $regular,
+      1.25px,
+      $productName-Color
+    );
   }
 
   .ru-species-info ul h4 span {

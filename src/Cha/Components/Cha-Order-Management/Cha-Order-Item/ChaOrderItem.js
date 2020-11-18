@@ -7,6 +7,7 @@ import ChaOrangeButton from './Cha-Orange-Button/ChaOrangeButton';
 import ChaOrangeButtonPlus from './Cha-Orange-Button-Plus/ChaOrangeButtonPlus';
 import UpdateCartToLocalStorage from 'Share/Components/Tools/UpdateCartToLocalStorage';
 import ChaRefundModal from '../Cha-Order-Item/Cha-Refund-Modal/ChaRefundModal';
+import ChaGoCartModal from '../Cha-Order-Item/Cha-GoCart-Modal/ChaGoCartModal';
 
 //加上這三個 路徑要注意------------
 import JessModal from '../../../../Jess/Components/JessModal/JessModal';
@@ -16,6 +17,13 @@ import { Collapse } from 'antd';
 
 // import { Button, Collapse } from 'react-bootstrap';
 function ChaOrderItem(props) {
+  const [error, setError] = useState(null);
+
+  //Jess 光箱需要的state
+  const [status, setStatus] = useState(false);
+  const [comments, setComments] = useState([]);
+  const { Panel } = Collapse;
+
   const {
     orderItem,
     handleCartNumber,
@@ -24,17 +32,9 @@ function ChaOrderItem(props) {
     // setRefundModalController,
   } = props;
 
-  const [error, setError] = useState(null);
   //--------------光箱控制器，refund---------------//
   const [refundModalController, setRefundModalController] = useState(false);
-  //Jess 光箱需要的state
-  const [status, setStatus] = useState(false);
-  const [comments, setComments] = useState([]);
-  const { Panel } = Collapse;
-
-  function callback(key) {
-    console.log(key);
-  }
+  const [goCartModalController, setGoCartModalController] = useState(false);
 
   //fetch member
   async function messageData() {
@@ -72,7 +72,7 @@ function ChaOrderItem(props) {
           </div>
           <div className="cha-horizontal-line-in-order"></div>
           {orderItem.order_detail.map((item, value) => (
-            <div className="cha-detail-hover">
+            <div className="cha-detail-hover" key={value}>
               <span className="col-5">{item.product_name}</span>
               <span className="col-2">${item.product_price}</span>
               <span className="col-3">X {item.product_amount}</span>
@@ -122,17 +122,14 @@ function ChaOrderItem(props) {
           {orderItem.order_detail.map((item, value) => (
             <div className="row">
               <span className="col-5">{item.product_name}</span>
-
               <span className="col-2">${item.product_price}</span>
               <span className="col-3">X {item.product_amount}</span>
-              <span
-                className="col-2" // Jess光箱的onClick事件
-                onClick={() => setStatus(true)}
-              >
+              <span className="col-2" onClick={() => setStatus(true)}>
                 <ChaOrangeButtonPlus
                   type="button"
-                  className="cha-detail-btn cha-order-orange-plus-btn"
+                  value="我要評價"
                   text="我要評價"
+                  className="cha-detail-btn cha-order-orange-plus-btn"
                 />
               </span>
             </div>
@@ -156,7 +153,6 @@ function ChaOrderItem(props) {
   };
   // 餐點評價的內容JSX
   const ComponentReceipt = (props) => {
-    // const { orderItem } = props;
     return (
       <>
         <div className="cha-order-detail-container container d-flex justify-content-center">
@@ -175,7 +171,9 @@ function ChaOrderItem(props) {
     addElem.classList.add('cha-active-detail');
   };
   const TabMenu = (props) => {
-    // const { orderItem, setRefundModalController } = props;
+    const { orderItem } = props;
+    // , setRefundModalController
+    const { setChangeOrderState, changeOrderState } = props;
     const [orderDetailComponent, setOrderDetailComponent] = useState();
     // const [open, setOpen] = useState(false);
     const tabContentA = (e) => {
@@ -201,6 +199,7 @@ function ChaOrderItem(props) {
       // const newOrderState = { order_state: '已退費' };
 
       const url = 'http://localhost:5000/cart-api/my-order-chang-state';
+      console.log('訂單退費，改寫my-order', idForChangeState);
       const request = new Request(url, {
         method: 'POST',
         body: JSON.stringify(idForChangeState),
@@ -212,26 +211,44 @@ function ChaOrderItem(props) {
       try {
         const response = await fetch(request);
         const data = await response.json();
-        setChangeOrderState(changeOrderState + 1);
-        // console.log('data', data);
-        console.log('更改訂單狀態');
+        setChangeOrderState(+changeOrderState + 1);
+
+        console.log('changeOrderState + 1', changeOrderState + 1);
+        console.log('改寫my-order退費成功', data);
+        console.log(
+          '變更changeOrderState，呼叫GETfetch，再次讀取my-order&...',
+          changeOrderState
+        );
+        // props.setForceKey(true);
+        // props.setTabindexKey('C');
       } catch (error) {
         setError(error);
       }
     }
-
     return (
       <>
         {refundModalController && (
           <ChaRefundModal
             // setRefundModalController={setRefundModalController}
             // refundModalController={refundModalController}
+            handleOrderState={() => {
+              updateTotalToServer();
+              setRefundModalController(false);
+              console.log('呼叫POST、關閉光箱');
+            }}
             closeModal={() => setRefundModalController(false)}
           ></ChaRefundModal>
         )}
+        {goCartModalController && (
+          <ChaGoCartModal
+            closeModal={() => setGoCartModalController(false)}
+            orderItem={orderItem}
+            handleCartNumber={handleCartNumber}
+          ></ChaGoCartModal>
+        )}
         {/* 加上這個觸發光箱 */}
         {status && (
-          <JessModal closeModal={() => setStatus(false)}>
+          <JessModal loseModal={() => setStatus(false)}>
             <JessCommentInput
               closeModal={() => setStatus(false)}
               orderItem={orderItem}
@@ -239,6 +256,7 @@ function ChaOrderItem(props) {
             {/* <JessCommentMsg status={status} setStatus={setStatus} /> */}
           </JessModal>
         )}
+
         <div className="cha-order-item-container">
           <div className="cha-order-row">
             <div className="cha-order-column1-picture">
@@ -250,6 +268,7 @@ function ChaOrderItem(props) {
                     orderItem.order_detail[0].product_image +
                     '.jpg'
                   }
+                  alt=""
                 ></img>
               )}
             </div>
@@ -347,32 +366,31 @@ function ChaOrderItem(props) {
               <div className="cha-order-in-column3-control-height">
                 {(orderItem.order_state === '已送達' ||
                   orderItem.order_state === '已退費') && (
-                  <Link to="/cart">
-                    <div
-                      onClick={() => {
-                        orderItem.order_detail.forEach((item) =>
-                          UpdateCartToLocalStorage({
-                            id: item.sid,
-                            productName: item.product_name,
-                            productPrice: item.product_price,
-                            productAmount: item.product_amount,
-                            productImage: item.product_image,
-                          })
-                        );
-                        // props.history.push('/cart');
-                        orderItem.order_detail.forEach((item) =>
-                          handleCartNumber('add', item.product_amount)
-                        );
-                      }}
-                    >
-                      <ChaOrangeButton
-                        type="button"
-                        value="再次訂購"
-                        text="再次訂購"
-                        className="cha-order-orange-btn"
-                      />
-                    </div>
-                  </Link>
+                  <div
+                    onClick={() => {
+                      setGoCartModalController(true);
+                      // orderItem.order_detail.forEach((item) =>
+                      //   UpdateCartToLocalStorage({
+                      //     id: item.sid,
+                      //     productName: item.product_name,
+                      //     productPrice: item.product_price,
+                      //     productAmount: item.product_amount,
+                      //     productImage: item.product_image,
+                      //   })
+                      // );
+                      // // props.history.push('/cart');
+                      // orderItem.order_detail.forEach((item) =>
+                      //   handleCartNumber('add', item.product_amount)
+                      // );
+                    }}
+                  >
+                    <ChaOrangeButton
+                      type="button"
+                      value="再次訂購"
+                      text="再次訂購"
+                      className="cha-order-orange-btn"
+                    />
+                  </div>
                 )}
                 {(orderItem.order_state === '未送達' ||
                   orderItem.order_state === '火速運送中') && (
@@ -380,9 +398,9 @@ function ChaOrderItem(props) {
                     onClick={() => {
                       // updateTotalToServer();
                       // console.log(props);
-                      props.setForceKey(true);
-                      props.setTabindexKey('C');
-                      console.log('點擊取消/退費');
+                      // props.setForceKey(true);
+                      // props.setTabindexKey('C');
+                      console.log('點擊取消/退費，觸發光箱');
                       setRefundModalController(true);
                     }}
                   >
@@ -446,7 +464,12 @@ function ChaOrderItem(props) {
   };
   return (
     <>
-      <TabMenu orderItem={orderItem} {...props} />
+      <TabMenu
+        orderItem={orderItem}
+        {...props}
+        changeOrderState={changeOrderState}
+        setChangeOrderState={setChangeOrderState}
+      />
     </>
   );
 }

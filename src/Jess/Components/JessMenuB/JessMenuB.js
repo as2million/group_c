@@ -12,7 +12,7 @@ function JessMenuB(props) {
   return (
     <>
       <div className="container-fluid jess-MenuB-container-fluid ">
-        <div className="container  mt-5 mb-5">
+        <div className="container   mb-5">
           <p className="jess-text-30orange text-center">日常經典</p>
           <p className="jess-text-15Gray text-center">
             中央廚房當日新鮮現做，嚴選新鮮食材讓您吃得到食材原形

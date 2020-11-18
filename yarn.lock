@@ -2283,7 +2283,7 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
-antd@^4.7.3:
+antd@^4.8.2:
   version "4.8.2"
   resolved "https://registry.yarnpkg.com/antd/-/antd-4.8.2.tgz#8cad882ddb5b18bafacd009cb0096f5b20c8a2f3"
   integrity sha512-qxagKsiPVO+2rcAdX8WA3TPqiv5TS4FDGoaETVgCCln3x7ap1nqHkBC+Fr3CSNg8MxwQ+6m5BSBLcs5uDQg0Qw==
@@ -9831,10 +9831,10 @@ rc-animate@3.x, rc-animate@~3.1.0:
     raf "^3.4.0"
     rc-util "^4.15.3"
 
-rc-banner-anim@^2.4.4:
-  version "2.4.4"
-  resolved "https://registry.yarnpkg.com/rc-banner-anim/-/rc-banner-anim-2.4.4.tgz#eb7b40898897322f1e59ae700eda270264b3cab1"
-  integrity sha512-JP/zfdRECqGppvDh9ddmSwpezsEhKPZ8W3IO0TII9PyUMMzu27OK6njjJ92YVJMngMihOQ1I78qqPq0vZcEwuA==
+rc-banner-anim@^2.4.5:
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/rc-banner-anim/-/rc-banner-anim-2.4.5.tgz#411ddf3382bc1855686260a3dc298d79a5daa00c"
+  integrity sha512-OPnzSKj1k2nASy+bIPdEa+Mwf7Fy7n1Y8thH2Yw8sgXRNE3b7tHEj1Q0TjphcQpL98eZHcZjK01CR5AKcf+Trg==
   dependencies:
     babel-runtime "6.x"
     prop-types "^15.5.0"

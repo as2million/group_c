@@ -68,25 +68,26 @@ function ClaudiaDetailedSilder() {
     return (
         <>
             <div className="claudia-detailed-slider">
-                <img className="claudia-detailed-slider-ricebg" alt="" src={Rice} />
-                <div className="claudia-detailed-slider-container">
-                    <div className="claudia-image-select">
-                        <img onClick={imageSlider} alt="" src={Pic2} />
-                        <img onClick={imageSlider} alt="" src={Pic1} />
-                        <img onClick={imageSlider} alt="" src={Pic3} />
-                        <img onClick={imageSlider} alt="" src={Pic4} />
-                    </div>
-                    <div className="claudia-image-triangle-area">
-                        <div className="claudia-image-triangle-box"><div className="claudia-image-triangle"></div></div>
-                        <div className="claudia-image-triangle-box"><div style={{ visibility: 'hidden' }} className="claudia-image-triangle"></div></div>
-                        <div className="claudia-image-triangle-box"><div style={{ visibility: 'hidden' }} className="claudia-image-triangle"></div></div>
-                        <div className="claudia-image-triangle-box"><div style={{ visibility: 'hidden' }} className="claudia-image-triangle"></div></div>
-                    </div>
-                    <div className="claudia-image-large">
-                        <img alt="" src={imgSrc} />
+                <div className="claudia-detailed-slider-fixed-container">
+                    <img className="claudia-detailed-slider-ricebg" alt="" src={Rice} />
+                    <div className="claudia-detailed-slider-container">
+                        <div className="claudia-image-select">
+                            <img onClick={imageSlider} alt="" src={Pic2} />
+                            <img onClick={imageSlider} alt="" src={Pic1} />
+                            <img onClick={imageSlider} alt="" src={Pic3} />
+                            <img onClick={imageSlider} alt="" src={Pic4} />
+                        </div>
+                        <div className="claudia-image-triangle-area">
+                            <div className="claudia-image-triangle-box"><div className="claudia-image-triangle"></div></div>
+                            <div className="claudia-image-triangle-box"><div style={{ visibility: 'hidden' }} className="claudia-image-triangle"></div></div>
+                            <div className="claudia-image-triangle-box"><div style={{ visibility: 'hidden' }} className="claudia-image-triangle"></div></div>
+                            <div className="claudia-image-triangle-box"><div style={{ visibility: 'hidden' }} className="claudia-image-triangle"></div></div>
+                        </div>
+                        <div className="claudia-image-large">
+                            <img alt="" src={imgSrc} />
+                        </div>
                     </div>
                 </div>
-
             </div>
 
 

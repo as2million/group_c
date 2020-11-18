@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './JessListD.scss';
 import 'antd/dist/antd.css';
 import Button from '../../../Share/Components/Button/Button';
+import { Link } from 'react-router-dom';
 import { Rate } from 'antd';
 import JessModal from '../JessModal/JessModal';
 // import JessCommentInput from '../JessCommentMsg/JessCommentInput'
@@ -58,7 +59,9 @@ function JessListD(props) {
               className="col-6 col-sm-2 jess-msg-todo d-flex align-items-center"
               onClick={() => setStatus(true)}
             >
-              <Button className="button-btn" text="我要評論" />
+              <Link to="/orderManagement">
+                <Button className="button-btn" text="我要評論" />
+              </Link>
               {/* <Button className="button-btn" text="我要評論"></Button> */}
             </div>
           </div>
