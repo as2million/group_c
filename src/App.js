@@ -242,8 +242,8 @@ function App() {
                 setCartNumber={setCartNumber}
                 isLogin={isLogin}
                 // handleCartNumber={handleCartNumber}
-                county={county}
-                setCounty={setCounty}
+                // county={county}
+                // setCounty={setCounty}
                 township={township}
                 setTownship={setTownship}
                 address={address}
