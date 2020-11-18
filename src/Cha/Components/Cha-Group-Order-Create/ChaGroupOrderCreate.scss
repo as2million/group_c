@@ -65,6 +65,8 @@
   color: #a59583;
 }
 
+// 上圖下表
+
 .cha-group-create-card {
   width: 70rem;
   border-radius: 1rem;
@@ -98,3 +100,38 @@
   text-decoration: underline;
 }
 
+// * {
+//   outline: 1px solid red;
+// }
+
+.cha-group-create-card label {
+  font-size: 1.5rem;
+  color: #858585;
+  margin-top: 2rem;
+  margin-bottom: 1.7rem;
+}
+.cha-group-create-forms {
+  // width: 40rem;
+  margin: auto;
+}
+.cha-group-create-groupName-and-name {
+  display: flex;
+}
+
+.form-row-date-and-time input,
+.cha-group-create-groupName-and-name input {
+  width: 31rem;
+}
+#cha-group-create-groupName {
+  margin-right: 1.5rem;
+}
+.form-row-date-and-time,
+.cha-tableware {
+  margin-top: 0rem;
+}
+.cha-tableware label {
+  margin-right: 2rem;
+}
+.cha-DatePicker-display-group input {
+  width: 31rem;
+}

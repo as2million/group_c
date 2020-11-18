@@ -31,8 +31,8 @@ function ChaGroupOrderSearch(props) {
           </div>
         </div>
         {/* card */}
-        <div className="cha-group-create-card">
-          <div className="cha-group-create-header">呼朋引伴來訂餐</div>
+        <div className="cha-group-search-card">
+          <div className="cha-group-search-header">呼朋引伴來訂餐</div>
           {/* 怪獸 */}
           <div className="cha-group-monster-row">
             <div className="cha-group-left-monster"></div>
@@ -66,9 +66,9 @@ function ChaGroupOrderSearch(props) {
             />
           </div>
         </div>
-        <div className="cha-group-create-alert">
+        <div className="cha-group-search-alert">
           <div>如已建立揪團資料，請至「訂單管理」查看明細</div>
-          <div className="cha-group-create-alert-to-order-management">
+          <div className="cha-group-search-alert-to-order-management">
             前往訂單管理
           </div>
         </div>
