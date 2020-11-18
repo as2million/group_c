@@ -1032,10 +1032,11 @@ $deepYello: #f5a016;
     }
     // 地圖區域
     .jan-map-view {
-      width: 60%;
+      width: 55%;
       height: 70%;
       // border: 0.1rem solid $yellow;
-      right: -5%;
+      right: 0;
+      // right: -5%;
       bottom: 3rem;
       position: absolute;
       overflow: hidden;
