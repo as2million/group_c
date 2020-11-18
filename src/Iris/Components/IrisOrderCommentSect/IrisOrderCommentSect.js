@@ -198,7 +198,7 @@ function IrisUserCommentSect(props) {
             <div className="iris-comment-text-wrapper d-flex">
               <div>{item.productname}</div>&nbsp;&nbsp;
               <div className="card-star-warp">
-                <Rate count={5} value={item.startRating} allowHalf disabled />
+                <Rate count={5} value={item.starRating} allowHalf disabled />
               </div>
             </div>
             <div className="iris-comment-text">{item.content}</div>
