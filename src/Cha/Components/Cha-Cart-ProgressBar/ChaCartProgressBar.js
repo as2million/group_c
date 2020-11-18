@@ -42,7 +42,7 @@ function ChaCartProgressBar(props) {
               props.history.goBack();
             }}
           ></div>
-          <div className="cha-progress-bar-header-fff">建立訂單</div>
+          <div className="cha-progress-bar-header-fff">快結束囉!!</div>
         </div>
       </div>
     </>

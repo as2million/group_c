@@ -318,6 +318,20 @@ $white: #ffffff;
 .jess-menuBtn2:hover .jess-p {
   opacity: 1;
 }
+
+@media screen and (max-width: 1440px) {
+  .jess-p {
+    font-size: 1.5rem;
+    font-family: 'Noto Sans TC';
+    color: $darkBrown;
+    position: absolute;
+    right: 25rem;
+    opacity: 0;
+  }
+  .jess-menuBtn:hover .jess-p {
+    opacity: 1;
+  }
+}
 @media screen and (max-width: 576px) {
   .jess-MenuC-container-fluid {
     width: 100%;
