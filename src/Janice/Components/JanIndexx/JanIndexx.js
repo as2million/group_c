@@ -46,7 +46,7 @@ function JanIndexx(props) {
   }, []);
 
   const contentStyle = {
-    height: '87rem',
+    height: '85rem',
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',
@@ -495,7 +495,10 @@ function JanIndexx(props) {
               autoplay="autoplay"
               muted="true"
             >
-              <source src="./Images/customFinal.mp4" type="video/mp4"></source>
+              <source
+                src="/Images/customFinalVideo.mp4"
+                type="video/mp4"
+              ></source>
             </video>
           </div>
         </div>
