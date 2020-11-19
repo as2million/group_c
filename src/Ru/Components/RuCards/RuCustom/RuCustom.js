@@ -713,6 +713,7 @@ function RuCustom(props) {
                         parentId={'addCart-btn-warp-custom'}
                         handleCartNumber={handleCartNumber}
                         proudctId={todayId}
+                        imgId={'23_custom'}
                         price={
                           ricePrice +
                           meetPrice +
@@ -745,6 +746,7 @@ function RuCustom(props) {
                           parentId={'addCart-btn-warp-custom'}
                           handleCartNumber={handleCartNumber}
                           proudctId={todayId}
+                          imgId={'23_custom'}
                           price={
                             ricePrice +
                             meetPrice +

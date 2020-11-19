@@ -4,8 +4,8 @@ import titleLeft from './Images/Svg/titleLeft.svg';
 import titleRight from './Images/Svg/titleRight.svg';
 import titleLeftLight from './Images/Svg/titleLeft-light.svg';
 import titleRightLight from './Images/Svg/titleRight-light.svg';
-import recommend1 from './Images/Svg/recommend1.svg';
-import recommend2 from './Images/Svg/recommend2.svg';
+import recommend from './Images/Svg/recommend.svg';
+// import recommend2 from './Images/Svg/recommend2.svg';
 import map1 from './Images/Svg/map1.svg';
 import map2 from './Images/Svg/map2.svg';
 import stepArrow from './Images/Svg/stepArrow.svg';
@@ -46,7 +46,7 @@ function JanIndexx(props) {
   }, []);
 
   const contentStyle = {
-    height: '70rem',
+    height: '87rem',
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',
@@ -274,9 +274,10 @@ function JanIndexx(props) {
             </div>
             <div>
               <div className="bannerwrap" style={contentStyle}>
-                <div className="banner2  ">
-                  <p>選擇友善的安心蔬果，</p>
-                  <p>是我們愛護土地的方式。</p>
+                <div className="banner2 d-flex flex-column text-left">
+                  <p className="float-left jan-p1">選擇友善的安心蔬果，</p>
+
+                  <p className="float-left">是我們愛護土地的方式。</p>
                 </div>
               </div>
             </div>
@@ -291,13 +292,7 @@ function JanIndexx(props) {
               </div>
             </div>
           </Carousel>
-          {/* <div className="jan-index-carousel1">
-            <div className="jan-fresh-wrap d-flex flex-column">
-              <div className="jan-fresh"></div>
-              
-              <div className="jan-health"></div>
-            </div>
-          </div> */}
+
           {/* 應用程式下載 */}
           {/* 橘底 */}
           <div className="position-absolute position-fixed jan-download-area d-flex justify-content-center">
@@ -333,9 +328,9 @@ function JanIndexx(props) {
       <div className="container jan-p0 position-relative">
         <div className="row jan-index-feature d-flex align-items-center justify-content-center">
           {/* 標題 */}
-          <div className="d-flex align-items-center">
+          <div className="mt-4 mb-4 d-flex align-items-center">
             <img alt="" src={titleLeft} />
-            <p className="jan-feature-title">品牌特色</p>
+            <p className=" jan-feature-title">品牌特色</p>
             <img alt="" src={titleRight} />
           </div>
           {/* circles */}
@@ -500,7 +495,10 @@ function JanIndexx(props) {
               autoplay="autoplay"
               muted="true"
             >
-              <source src="./Images/customFinal.mp4" type="video/mp4"></source>
+              <source
+                src="/Images/customFinalVideo.mp4"
+                type="video/mp4"
+              ></source>
             </video>
           </div>
         </div>
@@ -560,12 +558,12 @@ function JanIndexx(props) {
           <div className="container flex-column jan-p0">
             {/* 今日推薦 */}
             <div className="row col-6">
-              <img alt="" src={recommend1} />
+              <img style={{ width: '300rem' }} alt="" src={recommend} />
             </div>
             {/* 你一定要試試 */}
-            <div className="row col-6">
+            {/* <div className="row col-6 jan-recommend2">
               <img alt="" src={recommend2} />
-            </div>
+            </div> */}
           </div>
 
           {/* 商品卡片 */}
@@ -699,7 +697,7 @@ function JanIndexx(props) {
         <div className="container jan-p0">
           <div className="row jan-p0  d-flex justify-content-center">
             {/* 專屬優惠標題 */}
-            <div className="d-flex align-items-center mt-4 mb-3">
+            <div className="mt-5 mb-5 d-flex align-items-center mt-4 mb-3">
               <img alt="" src={titleLeft} />
               <p className="jan-feature-title">專屬優惠</p>
               <img alt="" src={titleRight} />
@@ -912,8 +910,9 @@ function JanIndexx(props) {
             <br />
             {/* 標題 */}
             <div className="mt-5">
-              <img alt="" src={map1} />
-              <img alt="" src={map2} />
+              <img style={{ height: '10rem' }} alt="" src={map1} />
+              <br />
+              <img style={{ height: '10rem' }} alt="" src={map2} />
             </div>
 
             {/* 表單 */}
@@ -1062,14 +1061,14 @@ function JanIndexx(props) {
 
           {/* 地圖 */}
           <div className="jan-map-view">
-            {/* <iframe
+            <iframe
               title="indexDataMap"
               src="https://plotdb.io/v/chart/27933"
               width="816px"
               height="550px"
               allowfullscreen="true"
               frameborder="0"
-            ></iframe> */}
+            ></iframe>
           </div>
         </div>
       </div>

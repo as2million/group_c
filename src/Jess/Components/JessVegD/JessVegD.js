@@ -20,7 +20,7 @@ function JessVegD() {
                   </div>
                 </div>
                 <ul className="jess-text-15Gray">
-                  <li>無毒葉菜3~4份份</li>
+                  <li>無毒葉菜3~4份</li>
                   <li>無毒根莖2-3份</li>
                   <li>無毒蕈菇芽菜1~2份</li>
                   <li>無毒瓜果0~1份</li>

@@ -29,9 +29,10 @@ function ChaCart(props) {
     // textCounty,
     // textTownship,
 
-    address,
-    setAddress,
+    // address,
+    // setAddress,
     takeOrNot,
+    textAddress,
 
     selectDate,
     setSelectDate,
@@ -53,6 +54,7 @@ function ChaCart(props) {
   const [takeTime, setTakeTime] = useState(slecteTime);
   const [county, setCounty] = useState(textCounty);
   const [district, setDistrict] = useState(textTownship);
+  const [address,setAddress] = useState(textAddress);
   // console.log('textCounty', textCounty);
   // console.log('textTownship', textTownship);
 

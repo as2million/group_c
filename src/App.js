@@ -68,6 +68,7 @@ function App() {
   const [selectDate, setSelectDate] = useState(new Date());
   const [slecteTime, setSelectTime] = useState('11:00 ~ 11:30');
   const [takeOrNot, setTakeOrNot] = useState('外送');
+  const [textAddress, setTextAddress] = useState(address)
 
   //----------------------索引值轉字串----------------------
   const [textCounty, setTextCounty] = useState('');
@@ -75,6 +76,9 @@ function App() {
   const [textTownship, setTextTownship] = useState('');
   // setTextTownship(turnTown);
 
+  useEffect(() => setTextAddress(address), [
+    address,
+  ]);
   useEffect(() => setTextCounty(county !== -1 ? datacountries[county] : ''), [
     county,
   ]);
@@ -242,12 +246,12 @@ function App() {
                 setCartNumber={setCartNumber}
                 isLogin={isLogin}
                 // handleCartNumber={handleCartNumber}
-                county={county}
-                setCounty={setCounty}
+                // county={county}
+                // setCounty={setCounty}
                 township={township}
                 setTownship={setTownship}
-                address={address}
-                setAddress={setAddress}
+                // address={address}
+                // setAddress={setAddress}
                 takeOrNot={takeOrNot}
                 setTakeOrNot={setTakeOrNot}
                 selectDate={selectDate}
@@ -256,6 +260,7 @@ function App() {
                 setSelectTime={setSelectTime}
                 textCounty={textCounty}
                 textTownship={textTownship}
+                textAddress={textAddress}
               />
             </Route>
             {/* 揪團 */}
