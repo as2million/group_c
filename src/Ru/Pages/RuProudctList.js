@@ -10,7 +10,7 @@ function RuProudctList(props) {
   }, []);
   return (
     <>
-      <VNavBar {...props} />
+      {/* <VNavBar {...props} /> */}
       <RuCompBento
         handleCartNumber={handleCartNumber} // localStorage函式
         currentUser={currentUser}

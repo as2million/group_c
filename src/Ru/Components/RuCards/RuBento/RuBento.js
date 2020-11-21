@@ -3,6 +3,7 @@ import 'Ru/Components/RuCards/Style.scss';
 import RuNothing from 'Ru/Components/RuNothing/RuNothing';
 import RuCard from 'Ru/Components/RuCard/RuCard';
 
+
 // 引用圖片
 import background from './Images/background.png';
 

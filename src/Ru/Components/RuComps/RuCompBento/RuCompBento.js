@@ -23,7 +23,7 @@ function RuCompBento(props) {
   return (
     <>
       <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
-      {/* <RuShowWidth /> */}
+      <RuShowWidth />
 
       <div className="ru-mainImg-warp">
         <h1>享受美食 不需要理由</h1>
@@ -40,7 +40,7 @@ function RuCompBento(props) {
           {/* 搜尋欄e */}
 
           {/* 選項按鈕 s */}
-          <section className="ru-buttonWarpA">
+          <section className="ru-buttonWarp">
             <RuButton
               text={'低GI便當'}
               className={'ru-button-btn'}
@@ -87,7 +87,7 @@ function RuCompBento(props) {
             />
           </section>
 
-          <section className="ru-buttonWarpB">
+          {/* <section className="ru-buttonWarpB">
             <div>
               <RuButton
                 text={'低GI便當'}
@@ -136,7 +136,7 @@ function RuCompBento(props) {
                 setOpenCustom={setOpenCustom}
               />
             </div>
-          </section>
+          </section> */}
           {/* 選項按鈕 e */}
         </div>
 
