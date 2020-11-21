@@ -100,7 +100,10 @@ function ChaCartSubmitCard(props) {
     // handleCartNumber('minus', totalAmount);
     console.log('提交訂單後，清除localstorage');
   };
-
+  // console.log('takeDate', takeDate);
+  // console.log('String(takeDate)', String(takeDate));
+  // console.log('JSON.parse(takeDate)', JSON.parse(takeDate));
+  // console.log('JSON.stringify(takeDate)', JSON.stringify(takeDate));
   // POST給my_order的資料
   async function createToMyOrder() {
     const bodyData = {
@@ -122,7 +125,8 @@ function ChaCartSubmitCard(props) {
       tableware: tableware,
       created_at: new Date(),
     };
-
+    // console.log('takeDate', takeDate);
+    // console.log('String(takeDate)', String(takeDate));
     const url = 'http://localhost:5000/cart-api/my-order';
     console.log('要送到my-order的Data', bodyData);
     const request = new Request(url, {

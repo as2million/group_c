@@ -150,6 +150,7 @@ function ChaCartStepCardStep2(props) {
             className="form-control cha-step2-2-phone"
             id="cha-step2-2-phone"
             placeholder="請填寫手機"
+            maxLength="10"
             value={mobile}
             onChange={(e) => {
               setMobile(e.target.value);
@@ -172,7 +173,7 @@ function ChaCartStepCardStep2(props) {
                 selected={takeDate}
                 onChange={(date) => {
                   setTakeDate(date);
-                  console.log(takeDate);
+                  console.log('takeDate', takeDate);
                 }}
                 minDate={Date.now()}
                 maxDate={addDays(new Date(), 13)}

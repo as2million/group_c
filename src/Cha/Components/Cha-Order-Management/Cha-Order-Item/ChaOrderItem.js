@@ -35,7 +35,15 @@ function ChaOrderItem(props) {
   //--------------光箱控制器，refund---------------//
   const [refundModalController, setRefundModalController] = useState(false);
   const [goCartModalController, setGoCartModalController] = useState(false);
-
+  console.log('slice(0, 10)', orderItem.take_date.slice(0, 10));
+  console.log('slice(0, 9)', orderItem.take_date.slice(0, 9));
+  console.log('slice(10)', orderItem.take_date.slice(10));
+  console.log('slice(10, 10)', orderItem.take_date.slice(10, 10));
+  console.log('slice(9)', orderItem.take_date.slice(9));
+  console.log(
+    '期望結果',
+    orderItem.take_date.slice(0, 9) + (+orderItem.take_date.slice(9) + 1)
+  );
   //fetch member
   async function messageData() {
     const url = 'http://localhost:5000/product/member1msg2';
@@ -111,7 +119,6 @@ function ChaOrderItem(props) {
   const ComponentMealComment = (props) => {
     // const { orderItem } = props;
 
-   
     return (
       <>
         <div className="cha-order-detail-container container">
@@ -221,6 +228,7 @@ function ChaOrderItem(props) {
           '變更changeOrderState，呼叫GETfetch，再次讀取my-order&...',
           changeOrderState
         );
+
         // props.setForceKey(true);
         // props.setTabindexKey('C');
       } catch (error) {
@@ -310,13 +318,18 @@ function ChaOrderItem(props) {
                 </div>
               )}
               <div className="cha-order-column2-row2">
-              <a href="/bento/0#1">
-                <span className="jess-alink"> 取餐聯絡人: </span></a>
+                <a href="/bento/0#1">
+                  <span className="jess-alink"> 取餐聯絡人: </span>
+                </a>
                 <span>{orderItem.take_person}</span>
               </div>
               <div className="cha-order-column2-row3">
                 <span> 取餐時間: </span>
-                <span>{orderItem.take_date.slice(0, 10)}</span>
+                {/* <span>{orderItem.take_date.slice(0, 10)}</span> */}
+                <span>
+                  {orderItem.take_date.slice(0, 9) +
+                    (+orderItem.take_date.slice(9, 10) + 1)}
+                </span>
                 <span> </span>
                 <span>{orderItem.take_time} </span>
                 <span className="cha-order-divider"> | </span>

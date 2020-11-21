@@ -15,6 +15,7 @@ function InputH40(props) {
     value,
     onChange,
     disabled,
+    maxLength,
   } = props;
 
   return (
@@ -27,6 +28,7 @@ function InputH40(props) {
         value={value}
         onChange={onChange}
         disabled={disabled}
+        maxLength={maxLength}
         // value={userInfo}
         // onChange={(e) => setUserInfo(e.target.value)}
       />
