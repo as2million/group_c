@@ -28,7 +28,7 @@ $white: #ffffff;
   background-size: cover;
   padding: 0 !important;
   width: 100%;
-  height: 55rem;
+  height: 60rem;
   background-color: $brown;
 }
 .jess-proC-grace {
@@ -37,6 +37,7 @@ $white: #ffffff;
   width: 100%;
   height: 33.7rem;
   position: relative;
+  // background-attachment: fixed;
 }
 .jess-proC-farm {
   background: url('./images/jess-proC-farm.png') no-repeat;
@@ -56,14 +57,14 @@ $white: #ffffff;
   color: $white;
 }
 .jess-bento {
-  background: url('./images/jess-proC-bento.png') no-repeat;
+  background: url('./images/jess-proC-bento2.png') no-repeat;
   background-size: contain;
-  width: 60rem;
+  width: 55rem;
   height: 50rem;
   padding: 0;
   position: absolute;
-  right: 0;
-  top: 330rem;
+  right: 25rem;
+  top: 333rem;
 }
 .jess-text-24brown {
   font-size: 2.4rem;
@@ -86,14 +87,14 @@ $white: #ffffff;
 
 .jess-proC-vegChange {
   padding: 0 !important;
-  width: 100vh;
-  height: 60rem;
+  width: 100%;
+  height: 65rem;
   background-color: $lightBrown;
 }
 .jess-proC-vegbox {
   background-color: $brown;
   width: 100%;
-  height: 7rem;
+  height: 12rem;
   margin: 0 !important;
   padding-top: 1rem;
   list-style: none;
@@ -106,7 +107,7 @@ $white: #ffffff;
 }
 .jess-proC-vegPic1 {
   width: 18rem;
-  height: 10rem;
+  height: 15rem;
   top: -3rem;
   // background-color: $brown;
   background-image: url('./images/jess-veg1.png');
@@ -121,14 +122,14 @@ $white: #ffffff;
 
 .jess-proC-vegPic2 {
   width: 18rem;
-  height: 10rem;
+  height: 15rem;
   top: -3rem;
   // background-color: $brown;
   list-style: none;
   background-image: url('./images/jess-onion.png');
   background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 70%;
+  background-position: center center;
+  background-size: 65%;
   @include link-hover {
     background-color: $lightBrown;
   }
@@ -136,13 +137,13 @@ $white: #ffffff;
 
 .jess-proC-vegPic3 {
   width: 18rem;
-  height: 10rem;
+  height: 15rem;
   top: -3rem;
   // background-color: $lightBrown;
 
   background-image: url('./images/jess-carrot.png');
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
   background-size: 90%;
   @include link-hover {
     background-color: $lightBrown;
@@ -150,7 +151,7 @@ $white: #ffffff;
 }
 .jess-proC-vegPic4 {
   width: 18rem;
-  height: 10rem;
+  height: 15rem;
   top: -3rem;
   // background-color: $lightBrown;
   background-image: url('./images/jess-gugu.png');
@@ -163,7 +164,7 @@ $white: #ffffff;
 }
 .jess-proC-vegPic5 {
   width: 18rem;
-  height: 10rem;
+  height: 15rem;
   top: -3rem;
   // background-color: $lightBrown;
   background-image: url('./images/jess-chicken.png');
@@ -175,21 +176,23 @@ $white: #ffffff;
   }
 }
 .jess-vegChoice-text {
-  width: 17rem;
+  width: 15rem;
   height: 37rem;
   display: flex;
   margin-left: 10rem;
   justify-content: space-between;
 
   & h2 {
+    width: 5rem;
     font-size: 3.6rem;
     writing-mode: vertical-rl;
     font-family: 'Noto Serif TC', serif;
     font-weight: 600;
     color: #a59583;
-    padding-left: 3rem;
+    margin-right: 10rem;
   }
   & p {
+    width: 10rem;
     font-size: 1.6rem;
     line-height: 4rem;
     writing-mode: vertical-rl;
@@ -301,6 +304,145 @@ $white: #ffffff;
   height: 10rem;
 }
 
+///circle
+.arrowRight-warp {
+  width: 8rem;
+  height: 10rem;
+  cursor: pointer;
+}
+
+.jan-arrow-circleR:active {
+  transform: scale(0.85);
+}
+
+// .jan-arrow-circleR {
+//   background: url('../../../Janice/Components/JanIndexx/Images/Svg/arrow-circle.svg')
+//     center center no-repeat;
+//   background-size: cover;
+//   width: 8rem;
+//   height: 8rem;
+//   position: relative;
+//   cursor: pointer;
+//   transition: 0.5s;
+// }
+.jess-arrow {
+  background: url('./SVG/jess-arrow-circle-01.svg') center center no-repeat;
+  background-size: cover;
+  width: 8rem;
+  height: 8rem;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.jan-arrow-right {
+  background: url('../../../Janice/Components/JanIndexx/Images/Svg/arrow-right.svg')
+    center center;
+  width: 6.5rem;
+  height: 2.2rem;
+  background-size: cover;
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  transition: 0.5s;
+}
+.jan-arrow-circleR:hover {
+  .jan-arrow-right {
+    animation: arrow-moveR 1s infinite;
+    transition: 0.5s;
+  }
+  @keyframes arrow-moveR {
+    from {
+      right: 6rem;
+    }
+    to {
+      right: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .jess-bento {
+    background: url('./images/jess-proC-bento2.png') no-repeat;
+    background-size: contain;
+    width: 55rem;
+    height: 50rem;
+    padding: 0;
+    position: absolute;
+    right: 10rem;
+    top: 333rem;
+  }
+  .jess-proC-vegPic1 {
+    width: 18rem;
+    height: 15rem;
+    top: -3rem;
+    // background-color: $brown;
+    background-image: url('./images/jess-veg1.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    list-style: none;
+    @include link-hover {
+      background-color: $lightBrown;
+    }
+  }
+
+  .jess-proC-vegPic2 {
+    width: 18rem;
+    height: 15rem;
+    top: -3rem;
+    // background-color: $brown;
+    list-style: none;
+    background-image: url('./images/jess-onion.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 65%;
+    @include link-hover {
+      background-color: $lightBrown;
+    }
+  }
+
+  .jess-proC-vegPic3 {
+    width: 18rem;
+    height: 15rem;
+    top: -3rem;
+    // background-color: $lightBrown;
+
+    background-image: url('./images/jess-carrot.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 90%;
+    @include link-hover {
+      background-color: $lightBrown;
+    }
+  }
+  .jess-proC-vegPic4 {
+    width: 18rem;
+    height: 15rem;
+    top: -3rem;
+    // background-color: $lightBrown;
+    background-image: url('./images/jess-gugu.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 70%;
+    @include link-hover {
+      background-color: $lightBrown;
+    }
+  }
+  .jess-proC-vegPic5 {
+    width: 18rem;
+    height: 15rem;
+    top: -3rem;
+    // background-color: $lightBrown;
+    background-image: url('./images/jess-chicken.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 95%;
+    @include link-hover {
+      background-color: $lightBrown;
+    }
+  }
+}
 @media screen and (max-width: 576px) {
   .jess-proC-farm {
     display: none;
@@ -377,12 +519,12 @@ $white: #ffffff;
   }
   .jess-proC-vegPic1 {
     width: 20rem;
-    height: 8rem;
+    height: 10rem;
     margin-top: 1rem;
     // background-color: $brown;
     background-image: url('./images/jess-veg1.png');
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: center center;
     background-size: 110%;
     list-style: none;
     @include link-hover {

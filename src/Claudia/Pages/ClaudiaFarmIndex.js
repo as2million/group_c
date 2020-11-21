@@ -8,6 +8,7 @@ import ScrollButtonGreen from '../../Share/Components/ToTopButton/ScrollButtonGr
 import Test2 from '../../Claudia/Components/Test2/Test2'
 
 function ClaudiaFarmIndex() {
+
   return (
     <>
       <ClaudiaMainContent>
@@ -16,7 +17,6 @@ function ClaudiaFarmIndex() {
         <ClaudiaIndexContent />
       </ClaudiaMainContent>
       <ScrollButtonGreen />
-      {/* <Test2 /> */}
     </>
   )
 }

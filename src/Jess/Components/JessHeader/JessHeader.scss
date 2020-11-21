@@ -35,17 +35,23 @@ $font-size: 1rem;
   flex-wrap: wrap;
   position: relative;
 }
-.jess-breadCrumb {
+.jess-breadCrumb a {
   margin-top: 20rem;
+  &:hover {
+    color: $dark-yellow;
+    text-decoration: none;
+  }
 }
-.jess-fav button {
-}
+
 //
+.jess-productList-chichenPic::-webkit-scrollbar {
+  display: none;
+}
 .jess-productList-chichenPic {
   // background: url('./Images/chickenRice02.jpg') no-repeat;
-  background-size: contain;
+  // background-size: contain;
   background-position: center center;
-  width: 87rem;
+  width: 110rem;
   height: 65rem;
   margin-right: 13.5rem;
   margin-top: 4rem;
@@ -56,12 +62,13 @@ $font-size: 1rem;
   background-size: cover;
   background-position: center center;
   // overflow: hidden;
-  width: 87rem;
-  height: 65rem;
+  width: 100%;
+  // height: 65rem;
 }
 .jess-menuList {
-  width: 29rem;
+  width: 50rem;
   margin-top: 4rem;
+  margin-left: 5rem;
 }
 .jess-tittle {
   font-size: $font-size + 1.8;
@@ -238,6 +245,36 @@ hr {
     margin-top: 3rem;
   }
 }
+
+.jess-contentId:hover {
+  text-decoration: none;
+}
+@media screen and (max-width: 1440px) {
+  .jess-productList-chichenPic {
+    // background: url('./Images/chickenRice02.jpg') no-repeat;
+    // background-size: contain;
+    // background-position: center center;
+    width: 80rem;
+    height: 60rem;
+    margin-right: 13.5rem;
+    margin-top: 4rem;
+    overflow: scroll;
+    background-attachment: local;
+  }
+  .jess-HeadPic {
+    background-size: contain;
+    background-position: center center;
+    // overflow: hidden;
+    width: 100%;
+    // height: 60rem;
+  }
+  .jess-menuList {
+    width: 50rem;
+    margin-top: 4rem;
+    // margin-left: 2rem;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .jess-fluidBg {
     width: 100%;

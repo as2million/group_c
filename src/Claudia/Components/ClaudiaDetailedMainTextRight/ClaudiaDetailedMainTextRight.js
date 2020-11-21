@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import './ClaudiaDetailedMainTextRight.scss'
-import Location from './Images/location.svg'
-import Button from '../../../Share/Components/Button/Button'
-import ClaudiaModalFrame from '../ClaudiaModalFrame/ClaudiaModalFrame'
-import ClaudiaModalContent from '../ClaudiaModalContent/ClaudiaModalContent'
-import { Link, withRouter } from 'react-router-dom'
+import React, { useState } from 'react';
+import './ClaudiaDetailedMainTextRight.scss';
+import Location from './Images/location.svg';
+import Button from '../../../Share/Components/Button/Button';
+import ClaudiaModalFrame from '../ClaudiaModalFrame/ClaudiaModalFrame';
+import ClaudiaModalContent from '../ClaudiaModalContent/ClaudiaModalContent';
+import { Link, withRouter } from 'react-router-dom';
 
 function ClaudiaDetailedMainTextRight(props) {
-  const [status, setStatus] = useState(false)
-  const { handleCartNumber } = props
+  const [status, setStatus] = useState(false);
+  const { handleCartNumber } = props;
 
   return (
     <>
@@ -83,7 +83,7 @@ function ClaudiaDetailedMainTextRight(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default ClaudiaDetailedMainTextRight
+export default ClaudiaDetailedMainTextRight;

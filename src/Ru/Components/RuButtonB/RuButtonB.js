@@ -45,54 +45,55 @@ function RuButtonB(props) {
         setSelection('rice') // 開啟白飯選區
         setMoveX(0) // 選擇品項按鈕點擊時退回原位
         $rice.className = 'ru-buttonB ru-buttonB-active'
-        setLimitX(-1200) // 這邊調配右滑極限值
         setIsShowHintA(false)
         setIsShowHintB(false)
         setIsShowHintC(false)
         setIsShowHintD(true)
         setIsShowHintE(false)
         setIsShowHintF(false)
+        setLimitX(-100) // 這邊調配右滑極限值
         break
       case 'ru-buttonB-meet':
         setSelection('meet') // 開啟主菜選區
         setMoveX(0)
         $meet.className = 'ru-buttonB ru-buttonB-active'
-        setLimitX(-1000) // 這邊調配右滑極限值
         setIsShowHintA(false)
         setIsShowHintB(false)
         setIsShowHintC(false)
         setIsShowHintD(false)
         setIsShowHintE(false)
         setIsShowHintF(true)
+        setLimitX(-100) // 這邊調配右滑極限值
         break
       case 'ru-buttonB-vegetable':
         setSelection('vegetable') // 開啟配菜選區
         setMoveX(0)
         $vegetable.className = 'ru-buttonB ru-buttonB-active'
-        setLimitX(-800) // 這邊調配右滑極限值
         setIsShowHintA(true)
         setIsShowHintB(true)
         setIsShowHintC(true)
         setIsShowHintD(false)
         setIsShowHintE(false)
         setIsShowHintF(false)
+        setLimitX(-760) // 這邊調配右滑極限值
         break
       case 'ru-buttonB-egg':
         setSelection('egg') // 開啟蛋選區
         setMoveX(0)
         $egg.className = 'ru-buttonB ru-buttonB-active'
-        setLimitX(-600) // 這邊調配右滑極限值
         setIsShowHintA(false)
         setIsShowHintB(false)
         setIsShowHintC(false)
         setIsShowHintD(false)
         setIsShowHintE(true)
         setIsShowHintF(false)
+        setLimitX(0) // 這邊調配右滑極限值
         break
     }
   }
 
   useEffect(() => {
+    // 一開始就亮副食選區
     const $rice = document.getElementById('ru-buttonB-rice')
     $rice.className = 'ru-buttonB ru-buttonB-active'
     return () => {}

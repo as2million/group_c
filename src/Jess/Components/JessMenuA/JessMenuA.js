@@ -22,7 +22,7 @@ function JessMenuA() {
                 </TweenOne>
                 <TweenOne
                   className="jess-MenuBanner-text"
-                  animation={{ y: 40, opacity: 0, type: 'from', delay: 400 }}
+                  animation={{ y: 40, opacity: 0, type: 'from', delay: 700 }}
                 >
                   吃飯就該 好好講究
                 </TweenOne>

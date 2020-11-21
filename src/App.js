@@ -1,96 +1,148 @@
-import React, { useState, useEffect } from 'react'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import './App.css';
 // 引入 共用元件
-import Navbar from 'Share/Components/NavBar/NavBar'
-import Footer from 'Share/Components/Footer/Footer'
+import Navbar from 'Share/Components/NavBar/NavBar';
+import Footer from 'Share/Components/Footer/Footer';
 
 // 引入 所有人的總元件
-import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex'
-import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage'
-import RuProudctList from 'Ru/Pages/RuProudctList'
-import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad'
-import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom'
+import ClaudiaFarmIndex from 'Claudia/Pages/ClaudiaFarmIndex';
+import ClaudiaFarmDetailedPage from 'Claudia/Pages/ClaudiaFarmDetailedPage';
+import RuProudctList from 'Ru/Pages/RuProudctList';
+import RuProudctListSalad from 'Ru/Pages/RuProudctListSalad';
+import RuProudctListCustom from 'Ru/Pages/RuProudctListCustom';
 
-import IrisOrderComment from 'Iris/Pages/IrisOrderComment'
-import IrisMyFav from 'Iris/Pages/IrisMyFav'
-import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint'
-import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon'
+import IrisOrderComment from 'Iris/Pages/IrisOrderComment';
+import IrisMyFav from 'Iris/Pages/IrisMyFav';
+import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint';
+import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon';
 
-import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement'
-import JessMenu from 'Jess/Pages/JessMenu'
-import JessBento from 'Jess/Pages/JessBento'
-import JessVegBox from 'Jess/Pages/JessVegBox'
+import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement';
+import JessMenu from 'Jess/Pages/JessMenu';
+import JessBento from 'Jess/Pages/JessBento';
+import JessVegBox from 'Jess/Pages/JessVegBox';
 
-import ChaCart from 'Cha/Pages/Cha-Cart/ChaCart'
-import ChaGroupOrderCreate from 'Cha/Components/Cha-Group-Order-Create/ChaGroupOrderCreate'
-import ChaGroupOrderSearch from 'Cha/Components/Cha-Group-Order-Search/ChaGroupOrderSearch'
-import ChaGroupOrderSignIn from 'Cha/Components/Cha-Group-Order-SignIn/ChaGroupOrderSignIn'
-import ChaGroupOrderConfirm from 'Cha/Components/Cha-Group-Order-Confirm/ChaGroupOrderConfirm'
-import ChaGroupOrderMenu from 'Cha/Components/Cha-Group-Order-Menu/ChaGroupOrderMenu'
-import ChaCheckpoint from 'Cha/Pages/ChaCheckpoint'
-import ChaProductList from 'Cha/Components-demo/ChaProductList'
-import ChaCartTest from 'Cha/Components-demo/ChaCartTest'
+import ChaCart from 'Cha/Pages/Cha-Cart/ChaCart';
+import ChaGroupOrderCreate from 'Cha/Components/Cha-Group-Order-Create/ChaGroupOrderCreate';
+import ChaGroupOrderSearch from 'Cha/Components/Cha-Group-Order-Search/ChaGroupOrderSearch';
+import ChaGroupOrderSignIn from 'Cha/Components/Cha-Group-Order-SignIn/ChaGroupOrderSignIn';
+import ChaGroupOrderConfirm from 'Cha/Components/Cha-Group-Order-Confirm/ChaGroupOrderConfirm';
+import ChaGroupOrderMenu from 'Cha/Components/Cha-Group-Order-Menu/ChaGroupOrderMenu';
+import ChaCheckpoint from 'Cha/Pages/ChaCheckpoint';
+import ChaProductList from 'Cha/Components-demo/ChaProductList';
+import ChaCartTest from 'Cha/Components-demo/ChaCartTest';
 
-import JanIndex from 'Janice/Pages/JanIndex'
+import JanIndex from 'Janice/Pages/JanIndex';
 
-import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal'
-import IrisUserprofile from 'Iris/Pages/IrisUserprofile'
+import IrisLoginModal from 'Iris/Components/IrisLoginModal/IrisLoginModal';
+import IrisUserprofile from 'Iris/Pages/IrisUserprofile';
 
 // 安裝react router => npm install react-router-dom
 // 引入react router => 用於制定路由
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import ScrollToTop from '../src/Jess/Components/ScrollToTop'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+//加入 ScrollToTop
+import ScrollToTop from 'Share/Components/ScrollToTop/ScrollToTop';
+
+import {
+  datacountries,
+  datatownships,
+} from '../src/Janice/Components/JanIndexx/data.js';
 
 // 路由表
 function App() {
-  const [showBar, setShowBar] = useState(true)
-  const [cartNumber, setCartNumber] = useState(0)
-  const [amount, setAmount] = useState(1)
+  const [showBar, setShowBar] = useState(true);
+  const [cartNumber, setCartNumber] = useState(0);
+  const [amount, setAmount] = useState(1);
 
   // ---------- iris ---------- //
-  const [currentUser, setCurrentUser] = useState('') // 目前用戶
-  const [currentUserData, setCurrentUserData] = useState({}) // 目前用戶
-  const [isLogin, setIsLogin] = useState(false) //是否登入，預設否
-  const [showLoginModal, setShowLoginModal] = useState(false) //控制是否秀光箱
-  const [couponStatus, setCouponStatus] = useState([])
-  const [couponOneStatus, setCouponOneStatus] = useState('')
+  const [currentUser, setCurrentUser] = useState(''); // 目前用戶
+  const [currentUserData, setCurrentUserData] = useState({}); // 目前用戶
+  const [isLogin, setIsLogin] = useState(false); //是否登入，預設否
+  const [showLoginModal, setShowLoginModal] = useState(false); //控制是否秀光箱
+  const [couponStatus, setCouponStatus] = useState([]);
+  const [couponOneStatus, setCouponOneStatus] = useState('');
 
-  //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address)到你們的頁面--------------//
-  const [county, setCounty] = useState(-1)
-  const [township, setTownship] = useState(-1)
-  const [address, setAddress] = useState('')
+  //--------------有使用Vnavbar的人，請幫我傳狀態(county,township,address,selectDate,slecteTime,takeOrNo共12個,兆廷要多加textCounty,textTownship)到你們的頁面--------------//
+  const [county, setCounty] = useState(-1);
+  const [township, setTownship] = useState(-1);
+  const [address, setAddress] = useState('');
+  const [selectDate, setSelectDate] = useState(new Date());
+  const [slecteTime, setSelectTime] = useState('11:00 ~ 11:30');
+  const [takeOrNot, setTakeOrNot] = useState('外送');
+  const [textAddress, setTextAddress] = useState(address)
 
+  //----------------------索引值轉字串----------------------
+  const [textCounty, setTextCounty] = useState('');
+  // setTextCounty(turnCon);
+  const [textTownship, setTextTownship] = useState('');
+  // setTextTownship(turnTown);
+
+  useEffect(() => setTextAddress(address), [
+    address,
+  ]);
+  useEffect(() => setTextCounty(county !== -1 ? datacountries[county] : ''), [
+    county,
+  ]);
+  useEffect(
+    () =>
+      setTextTownship(
+        county !== -1 && township !== -1 ? datatownships[county][township] : ''
+      ),
+    [township]
+  );
+
+  // 20201112舊版購物車icon計數處理器
   const handleCartNumber = (type = 'add', amount = 1) => {
     if (type === 'add') {
-      const newCartNumber = +cartNumber + amount
-      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber))
-      setCartNumber(newCartNumber)
+      const newCartNumber = +cartNumber + amount;
+      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+      setCartNumber(newCartNumber);
     }
     if (type === 'minus') {
-      const newCartNumber = +cartNumber - amount
-      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber))
-      setCartNumber(newCartNumber)
+      const newCartNumber = +cartNumber - amount;
+      localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+      setCartNumber(newCartNumber);
     }
-  }
-  useEffect(() => {
-    const currentCartNumber =
-      JSON.parse(localStorage.getItem('cartNumber')) || 0
-    setCartNumber(currentCartNumber)
-  }, [])
+  };
+  // 20201112新版購物車icon計數處理器(修正減項邏輯，單純加的人可以不用)
+  // const handleCartNumber2 = (type = 'add', amount = 1) => {
+  //   if (type === 'add') {
+  //     let currentCartNumber =
+  //       JSON.parse(localStorage.getItem('cartNumber')) || 0;
+  //     let newCartNumber = +currentCartNumber + amount;
+  //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+  //     setCartNumber(newCartNumber);
+  //   }
+  //   if (
+  //     type === 'minus' &&
+  //     JSON.parse(localStorage.getItem('cartNumber')) > 0
+  //   ) {
+  //     let currentCartNumber =
+  //       JSON.parse(localStorage.getItem('cartNumber')) || 0;
+  //     let newCartNumber = +currentCartNumber - amount;
+  //     localStorage.setItem('cartNumber', JSON.stringify(newCartNumber));
+  //     setCartNumber(newCartNumber);
+  //   }
+  // };
 
   useEffect(() => {
-    console.log(amount)
-    return () => {}
-  }, [amount])
+    const currentCartNumber =
+      JSON.parse(localStorage.getItem('cartNumber')) || 0;
+    setCartNumber(currentCartNumber);
+  }, []);
+
+  useEffect(() => {
+    // console.log(amount)
+    return () => {};
+  }, [amount]);
 
   // 若localstorage有user就用user資料
   useEffect(() => {
     if (JSON.parse(localStorage.getItem('currentUser'))) {
-      setCurrentUser(JSON.parse(localStorage.getItem('currentUser')))
+      setCurrentUser(JSON.parse(localStorage.getItem('currentUser')));
       // console.log(localStorage.getItem('currentUser'))
-      setIsLogin(true)
+      setIsLogin(true);
     }
-  }, [])
+  }, []);
 
   return (
     // <Router>元件一定要放在最外層
@@ -105,6 +157,7 @@ function App() {
             showLoginModal={showLoginModal}
             setIsLogin={setIsLogin}
             isLogin={isLogin}
+            currentUser={currentUser}
           />
         </div>
         {/* 放切頁時不重新渲染的部份 e*/}
@@ -120,35 +173,94 @@ function App() {
             <Route exact path="/farmIntro">
               <ClaudiaFarmDetailedPage handleCartNumber={handleCartNumber} />
             </Route>
-
             {/* ru */}
             {/* 放"page資料夾"內的元件 */}
             <Route exact path="/productList">
               <RuProudctList
+                setShowBar={setShowBar}
                 handleCartNumber={handleCartNumber}
                 currentUser={currentUser}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                isLogin={isLogin}
               />
             </Route>
             <Route exact path="/productListSalad">
               <RuProudctListSalad
+                setShowBar={setShowBar}
                 handleCartNumber={handleCartNumber}
                 currentUser={currentUser}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                isLogin={isLogin}
               />
             </Route>
             <Route exact path="/productListCustom">
               <RuProudctListCustom
+                setShowBar={setShowBar}
                 handleCartNumber={handleCartNumber}
                 amount={amount}
                 setAmount={setAmount}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                isLogin={isLogin}
               />
             </Route>
             {/* cha */}
             {/* 放"page資料夾"內的元件 */}
             {/* 購物車 */}
+
             <Route exact path="/cart">
               <ChaCart
                 setShowBar={setShowBar}
-                handleCartNumber={handleCartNumber}
+                setCartNumber={setCartNumber}
+                isLogin={isLogin}
+                // handleCartNumber={handleCartNumber}
+                // county={county}
+                // setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                // address={address}
+                // setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                textCounty={textCounty}
+                textTownship={textTownship}
+                textAddress={textAddress}
               />
             </Route>
             {/* 揪團 */}
@@ -180,13 +292,11 @@ function App() {
             </Route>
             {/* 404 */}
 
-            {/* <Route exact path="*">
-            <NotFoundPage />
-          </Route> */}
             {/* iris */}
             {/* 放"page資料夾"內的元件 */}
             <Route exact path="/memberUserprofile">
               <IrisUserprofile
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -203,10 +313,17 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route exact path="/orderComment">
               <IrisOrderComment
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -219,10 +336,17 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route exact path="/myFav">
               <IrisMyFav
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -235,10 +359,17 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route exact path="/beastiePoint">
               <IrisBeastiePoint
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -251,10 +382,17 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route path="/getCoupon">
               <IrisGetCoupon
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -270,10 +408,19 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
             <Route path="/orderManagement">
               <IrisOrderManagement
+                handleCartNumber={handleCartNumber}
+                showBar={showBar}
+                setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
                 currentUser={currentUser}
@@ -286,26 +433,92 @@ function App() {
                 setTownship={setTownship}
                 address={address}
                 setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
               />
             </Route>
-
             {/* jess */}
             {/* 放"page資料夾"內的元件 */}
             <Route path="/menu">
-              <JessMenu />
+              <JessMenu
+                setShowBar={setShowBar}
+                currentUser={currentUser}
+                setCartNumber={setCartNumber}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                isLogin={isLogin}
+              />
             </Route>
             {/* component={JessBento} */}
             <Route path="/bento/:id?">
-              <JessBento handleCartNumber={handleCartNumber} />
+              <JessBento
+                setShowBar={setShowBar}
+                currentUser={currentUser}
+                setCartNumber={setCartNumber}
+                handleCartNumber={handleCartNumber}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                isLogin={isLogin}
+              />
             </Route>
             <Route path="/vegBox">
-              <JessVegBox handleCartNumber={handleCartNumber} />
+              <JessVegBox
+                setShowBar={setShowBar}
+                currentUser={currentUser}
+                setCartNumber={setCartNumber}
+                handleCartNumber={handleCartNumber}
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                isLogin={isLogin}
+              />
             </Route>
-
             {/* janice */}
             {/* 放"page資料夾"內的元件 */}
             <Route exact path="/">
               <JanIndex
+                isLogin={isLogin}
+                currentUser={currentUser}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+                setShowBar={setShowBar}
                 county={county}
                 setCounty={setCounty}
                 township={township}
@@ -333,7 +546,7 @@ function App() {
         />
       </>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

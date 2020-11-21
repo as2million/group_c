@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Fade from 'react-reveal/Fade';
-import 'antd/dist/antd.css';
-import './JessVegE.scss';
+import React, { useState, useEffect } from 'react'
+import Fade from 'react-reveal/Fade'
+import 'antd/dist/antd.css'
+import './JessVegE.scss'
 
-import Button from '../../../Share/Components/Button/Button';
+import Button from '../../../Share/Components/Button/Button'
 
 function JessVegE() {
   return (
@@ -18,10 +18,10 @@ function JessVegE() {
             <div className="col col-sm-3 jess-vegE-border"></div>
           </div>
           <div className="row mt-5 d-flex justify-content-between">
-            <div className="col-12 col-sm-4 flex-column  jess-vegE-card ">
-              <div className="col-12 col-sm-12 jess-vegE-farm1"></div>
-              <div className="col-12 col-sm-12 text-center">
-                <div className="d-flex justify-content-center mt-5">
+            <div className="jess-vegE-card justify-content-center">
+              <div className="jess-vegE-farm1"></div>
+              <div className="text-center">
+                <div className="justify-content-center mt-5">
                   <p className="jess-text-24GreenSe">朝敏果菜行</p>
                 </div>
                 <p className="jess-text-15Gray text-center">
@@ -32,10 +32,10 @@ function JessVegE() {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-4 flex-column   jess-vegE-card ">
-              <div className="col-12 col-sm-12 jess-vegE-farm2"></div>
-              <div className="col-12 col-sm-12 text-center">
-                <div className="d-flex justify-content-center mt-5">
+            <div className="jess-vegE-card justify-content-center">
+              <div className="jess-vegE-farm2"></div>
+              <div className="text-center">
+                <div className="justify-content-center mt-5">
                   <p className="jess-text-24GreenSe">農驛棧有機農園</p>
                 </div>
                 <div className="jess-text-tooMany ">
@@ -48,9 +48,9 @@ function JessVegE() {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-4 flex-column   jess-vegE-card ">
-              <div className="col-12 col-sm-12 jess-vegE-farm3"></div>
-              <div className="col-12 col-sm-12 text-center ">
+            <div className="jess-vegE-card justify-content-center ">
+              <div className="jess-vegE-farm3"></div>
+              <div className="text-center ">
                 <div className="d-flex justify-content-center mt-5">
                   <p className="jess-text-24GreenSe">北新有機休閒農場</p>
                 </div>
@@ -69,7 +69,7 @@ function JessVegE() {
         <div className="jess-vegE-bottomBorder"></div>
       </div>
     </>
-  );
+  )
 }
 
-export default JessVegE;
+export default JessVegE

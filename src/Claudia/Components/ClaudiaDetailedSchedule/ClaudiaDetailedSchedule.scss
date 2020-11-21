@@ -1,3 +1,4 @@
+//------------------------------Desktop--------------------------------
 .claudia-detailed-schedule {
     width: 100vw;
     height: 2130px;
@@ -202,8 +203,192 @@
     right: 20px;
     object-fit: cover;
 }
+//------------------------------Desktop--------------------------------
 
-@media only screen and (max-width: 57.6rem) {
+//--------------------------------Ipad---------------------------------
+@media screen and (min-width: 576px) and (max-width: 1200px) {
+    .claudia-detailed-schedule {
+        height: 1830px;
+    }
+
+    .claudia-detailed-schedule-container {
+        position: relative;
+        height: 1600px;
+        width: 380px;
+    }
+
+    .claudia-detailed-schedule h1 {
+        font-size: 28px;
+    }
+
+    //dont change the height
+    .claudia-detailed-schedule-timeline {
+        margin: 0px;
+        width: 22px;
+        height: 1681px;
+        background-image: url(./Images/SVG/rwd_ipad_timeline.svg);
+        position: absolute;
+        left: 0px;
+    }
+
+    .claudia-detailed-schedule h1 {
+        margin: 40px auto;
+    }
+
+    //Card1
+
+    .claudia-detailed-schedule-card1 {
+        width: 400px;
+        height: 400px;
+    }
+
+    .claudia-detailed-schedule-card1-text {
+        position: absolute;
+        top: -2px;
+        left: 40px;
+        font-size: 18px;
+        width: 250px;
+    }
+
+    .claudia-detailed-schedule-card1 img {
+        position: absolute;
+        top: 55px;
+        left: 40px;
+        width: 285px;
+        height: 285px;
+    }
+
+    .claudia-detailed-schedule-card1 h2 {
+        font-size: 18px;
+        width: 255px;
+    }
+
+    .claudia-detailed-schedule-card1 h3 {
+        font-size: 18px;
+        width: 255px;
+    }
+
+    //Card2
+
+    .claudia-detailed-schedule-card2 {
+        width: 400px;
+        height: 400px;
+    }
+
+    .claudia-detailed-schedule-card2-text {
+        position: absolute;
+        top: 410px;
+        left: 40px;
+        font-size: 18px;
+    }
+
+
+    .claudia-detailed-schedule-card2 img {
+        position: absolute;
+        top: 455px;
+        left: 40px;
+        width: 285px;
+        height: 285px;
+    }
+
+    .claudia-detailed-schedule-card2 h2 {
+        font-size: 18px;
+    }
+
+    .claudia-detailed-schedule-card2 h3 {
+        font-size: 18px;
+    }
+
+    
+    //Card3
+
+    .claudia-detailed-schedule-card3 {
+        width: 400px;
+        height: 400px;
+    }
+
+    .claudia-detailed-schedule-card3-text {
+        position: absolute;
+        top: 820px;
+        left: 40px;
+        font-size: 18px;
+    }
+
+    .claudia-detailed-schedule-card3 img {
+        position: absolute;
+        top: 870px;
+        left: 40px;
+        width: 285px;
+        height: 285px;
+    }
+
+    .claudia-detailed-schedule-card3 h2 {
+        font-size: 18px;
+    }
+
+    .claudia-detailed-schedule-card3 h3 {
+        font-size: 18px;
+    }
+
+    //Card4
+
+    .claudia-detailed-schedule-card4-text {
+        position: absolute;
+        top: 1250px;
+        left: 40px;
+        font-size: 18px;
+    }
+
+    .claudia-detailed-schedule-card4 img {
+        position: absolute;
+        top: 1305px;
+        left: 40px;
+        width: 285px;
+        height: 285px;
+    }
+
+    .claudia-detailed-schedule-card4 h2 {
+        font-size: 18px;
+    }
+
+    .claudia-detailed-schedule-card4 h3 {
+        font-size: 18px;
+    }
+
+    .claudia-detailed-schedule-card4 {
+        width: 0px;
+        height: 0px;
+
+    }
+
+    //Card5
+
+    .claudia-detailed-schedule-card5-text {
+        position: absolute;
+        top: 1660px;
+        left: 40px;
+        display: block;
+    }
+
+    .claudia-detailed-schedule-card5 h2 {
+        font-size: 18px;
+    }
+
+    .claudia-detailed-schedule-card5 h3 {
+        font-size: 18px;
+    }
+
+    .claudia-detailed-schedule-card5 img {
+        width: 48px;
+        height: 48px;
+        top: 1660px;
+        left: 105px;
+    }
+}
+//--------------------------------Ipad---------------------------------
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+@media only screen and (max-width: 576px) {
     .claudia-detailed-schedule-container {
         position: relative;
         height: 1600px;
@@ -381,6 +566,7 @@
     }
 
 }
+//----------------------Iphone 6/7/8 + Plus + X------------------------
 
 
 

@@ -24,8 +24,9 @@ $lightBrown: #f7ede2;
 
 .jess-proB-container-fluid {
   background: url('./SVG/bg.svg') repeat;
-  background-size: contain;
+  background-size: cover;
   padding: 0;
+  background-attachment: fixed;
 }
 .jess-proB-container {
   width: 117rem;
@@ -114,11 +115,6 @@ $lightBrown: #f7ede2;
   background-color: #ccc;
   // margin-top: 11rem;
   // margin-right: 3rem;
-}
-.jess-proB-container-fluid {
-  background: url('./SVG/bg.svg') repeat;
-  background-size: contain;
-  padding: 0;
 }
 
 @media screen and (max-width: 576px) {

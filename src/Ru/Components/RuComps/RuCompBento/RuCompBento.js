@@ -1,26 +1,29 @@
-import React, { useState } from 'react'
-import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth'
-import RuBento from 'Ru/Components/RuCards/RuBento/RuBento'
-import RuButton from 'Ru/Components/RuButton/RuButton'
-import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar'
-import 'Ru/Components/RuComps/Style.scss'
+import React, { useState } from 'react';
+import RuShowWidth from 'Ru/Components/Ru-ShowWidth/RuShowWidth';
+import RuBento from 'Ru/Components/RuCards/RuBento/RuBento';
+import RuButton from 'Ru/Components/RuButton/RuButton';
+import RuSearchBar from 'Ru/Components/RuSearchBar/RuSearchBar';
+import 'Ru/Components/RuComps/Style.scss';
 
 // 引用共用元件
-import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 // 引用圖片
-import line from './Images/line.png'
+import line from './Images/line.png';
 
-function RuCompRuBento(props) {
+function RuCompBento(props) {
   // console.log(props);
-  const { handleAddCartNumber, currentUser } = props
-  const [searchInput, setSearchInput] = useState('')
+  const { handleCartNumber, currentUser, count, setCount } = props;
+  const [searchInput, setSearchInput] = useState('');
+  const [openBento, setOpenBento] = useState(false); // 判斷便當按鈕是否要亮
+  const [openSalad, setOpenSalad] = useState(false); // 判斷沙拉按鈕是否要亮
+  const [openCustom, setOpenCustom] = useState(false); // 判斷客製化按鈕是否要亮
   // console.log(searchInput);
 
   // JSX
   return (
     <>
       <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
-      <RuShowWidth />
+      {/* <RuShowWidth /> */}
 
       <div className="ru-mainImg-warp">
         <h1>享受美食 不需要理由</h1>
@@ -40,23 +43,47 @@ function RuCompRuBento(props) {
           <section className="ru-buttonWarpA">
             <RuButton
               text={'低GI便當'}
-              className={'button-btn'}
-              id={'button-btn-1'}
+              className={'ru-button-btn'}
+              id={'ru-button-btn-1'}
+              openBento={openBento}
+              setOpenBento={setOpenBento}
+              openSalad={openSalad}
+              setOpenSalad={setOpenSalad}
+              openCustom={openCustom}
+              setOpenCustom={setOpenCustom}
             />
             <RuButton
               text={'鮮蔬沙拉'}
-              className={'button-btn'}
-              id={'button-btn-2'}
+              className={'ru-button-btn'}
+              id={'ru-button-btn-2'}
+              openBento={openBento}
+              setOpenBento={setOpenBento}
+              openSalad={openSalad}
+              setOpenSalad={setOpenSalad}
+              openCustom={openCustom}
+              setOpenCustom={setOpenCustom}
             />
             <RuButton
               text={'客製化便當'}
-              className={'button-btn'}
-              id={'button-btn-3'}
+              className={'ru-button-btn'}
+              id={'ru-button-btn-3'}
+              openBento={openBento}
+              setOpenBento={setOpenBento}
+              openSalad={openSalad}
+              setOpenSalad={setOpenSalad}
+              openCustom={openCustom}
+              setOpenCustom={setOpenCustom}
             />
             <RuButton
               text={'蔬菜箱'}
-              className={'button-btn-g'}
-              id={'button-btn-4'}
+              className={'ru-button-btn-g'}
+              id={'ru-button-btn-4'}
+              openBento={openBento}
+              setOpenBento={setOpenBento}
+              openSalad={openSalad}
+              setOpenSalad={setOpenSalad}
+              openCustom={openCustom}
+              setOpenCustom={setOpenCustom}
             />
           </section>
 
@@ -64,25 +91,49 @@ function RuCompRuBento(props) {
             <div>
               <RuButton
                 text={'低GI便當'}
-                className={'button-btn'}
-                id={'button-btn-1'}
+                className={'ru-button-btn'}
+                id={'ru-button-btn-1'}
+                openBento={openBento}
+                setOpenBento={setOpenBento}
+                openSalad={openSalad}
+                setOpenSalad={setOpenSalad}
+                openCustom={openCustom}
+                setOpenCustom={setOpenCustom}
               />
               <RuButton
                 text={'客製化便當'}
-                className={'button-btn'}
-                id={'button-btn-2'}
+                className={'ru-button-btn'}
+                id={'ru-button-btn-2'}
+                openBento={openBento}
+                setOpenBento={setOpenBento}
+                openSalad={openSalad}
+                setOpenSalad={setOpenSalad}
+                openCustom={openCustom}
+                setOpenCustom={setOpenCustom}
               />
             </div>
             <div>
               <RuButton
                 text={'鮮蔬沙拉'}
-                className={'button-btn'}
-                id={'button-btn-3'}
+                className={'ru-button-btn'}
+                id={'ru-button-btn-3'}
+                openBento={openBento}
+                setOpenBento={setOpenBento}
+                openSalad={openSalad}
+                setOpenSalad={setOpenSalad}
+                openCustom={openCustom}
+                setOpenCustom={setOpenCustom}
               />
               <RuButton
                 text={'蔬菜箱'}
-                className={'button-btn-g'}
-                id={'button-btn-4'}
+                className={'ru-button-btn-g'}
+                id={'ru-button-btn-4'}
+                openBento={openBento}
+                setOpenBento={setOpenBento}
+                openSalad={openSalad}
+                setOpenSalad={setOpenSalad}
+                openCustom={openCustom}
+                setOpenCustom={setOpenCustom}
               />
             </div>
           </section>
@@ -99,8 +150,10 @@ function RuCompRuBento(props) {
       {/* 商品卡片區 s */}
       <RuBento
         searchInput={searchInput}
-        handleAddCartNumber={handleAddCartNumber}
+        handleCartNumber={handleCartNumber} // localStorage函式
         currentUser={currentUser}
+        count={count}
+        setCount={setCount}
       />
       {/* 商品卡片區 e */}
 
@@ -112,7 +165,7 @@ function RuCompRuBento(props) {
         我是footer
       </div> */}
     </>
-  )
+  );
 }
 
-export default RuCompRuBento
+export default RuCompBento;

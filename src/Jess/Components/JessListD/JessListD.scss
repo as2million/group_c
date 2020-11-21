@@ -35,6 +35,10 @@ $white: #ffffff;
   // background-attachment: local;
   background-attachment: scroll;
 }
+
+.jess-msg-container::-webkit-scrollbar {
+  display: none;
+}
 // .jess-rateStarColor div {
 //   outline: none;
 //   color: #f48145;
@@ -74,7 +78,7 @@ $white: #ffffff;
 .jess-rateStarColor {
   outline: none;
   text-align: start;
-  width: 8rem;
+  width: 15rem;
 }
 .jess-text-15brown {
   font-size: 1.5rem;
@@ -106,8 +110,10 @@ $white: #ffffff;
   .jess-msg-todo button {
     width: 13rem;
     height: 3.5rem;
-    top: 40rem;
-    left: 9rem;
+    text-align: center;
+    font-size: 1rem;
+    // top: 40rem;
+    // left: 9rem;
   }
   .jess-msg-tittle {
     background-color: #f6f6f6;

@@ -1,23 +1,23 @@
 // 導入其它的模組
-import React, { useState, useEffect } from 'react'
-import { Nav } from 'react-bootstrap'
-import './Navbar.scss'
-import 'antd/dist/antd.css'
-import { Popover } from 'antd'
-import { MenuOutlined } from '@ant-design/icons'
-import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg'
-import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg'
-import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg'
-import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg'
-import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg'
+import React, { useState, useEffect } from 'react';
+import { Nav } from 'react-bootstrap';
+import './Navbar.scss';
+import 'antd/dist/antd.css';
+// import { Popover } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
+import { ReactComponent as Logo } from '../../Images/SVG/navbar-logo.svg';
+import { ReactComponent as BackArrow } from '../../Images/SVG/navbar-back arrow.svg';
+import { ReactComponent as Monster } from '../../Images/SVG/navbar-monster.svg';
+import { ReactComponent as ShoppingCart } from '../../Images/SVG/navbar-shopping-cart.svg';
+import { ReactComponent as ShoppingAmount } from '../../Images/SVG/navbar-cartNumber.svg';
 // 選單連結要使用NavLink取代Link
-import { NavLink, Redirect } from 'react-router-dom'
-import { withRouter } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 function NavBar(props) {
-  const [count, setCount] = useState(0)
-  const [shoppingList, setShoppingList] = useState('0')
-  const [showNav, setShowNav] = useState(true)
+  const [count, setCount] = useState(0);
+  const [shoppingList, setShoppingList] = useState('0');
+  const [showNav, setShowNav] = useState(true);
   const {
     isLogin,
     setShowLoginModal,
@@ -25,44 +25,44 @@ function NavBar(props) {
     cartNumber,
     setIsLogin,
     SetShowLoginCard,
-  } = props
+  } = props;
 
   function myFunction() {
-    const x = document.getElementById('NavBar')
+    const x = document.getElementById('NavBar');
     if (x.className === 'nav') {
-      x.className += ' responsive'
+      x.className += ' responsive';
     } else {
-      x.className = 'nav'
+      x.className = 'nav';
     }
   }
 
   // 在登入狀態
   if (isLogin === true) {
     // 登入選項消失
-    document.querySelector('.iris-login-option').style.display = 'none'
+    document.querySelector('.iris-login-option').style.display = 'none';
     // 顯示登出選項
-    document.querySelector('.iris-logout-option').style.display = 'block'
+    document.querySelector('.iris-logout-option').style.display = 'block';
   }
 
   // 在未登入的狀態點擊會員相關選項
   const disableLink = (e) => {
     if (isLogin === false) {
-      e.preventDefault() //不跳轉頁面
-      setShowLoginModal(true) //秀登入光箱
+      e.preventDefault(); //不跳轉頁面
+      setShowLoginModal(true); //秀登入光箱
     }
-  }
+  };
 
   // 點擊登出
   const showLoginOption = () => {
     // 顯示登入選項,隱藏登出選項
-    setIsLogin(false)
-    document.querySelector('.iris-login-option').style.display = 'block'
-    document.querySelector('.iris-logout-option').style.display = 'none'
-  }
+    setIsLogin(false);
+    document.querySelector('.iris-login-option').style.display = 'block';
+    document.querySelector('.iris-logout-option').style.display = 'none';
+  };
 
   const clearUserStorage = () => {
-    localStorage.clear('currentUser')
-  }
+    localStorage.clear('currentUser');
+  };
 
   return (
     <>
@@ -72,7 +72,7 @@ function NavBar(props) {
           className="navBar-jess-container"
           onClick={() => {
             if (showLoginModal === true) {
-              setShowLoginModal(false)
+              setShowLoginModal(false);
             }
           }}
         >
@@ -83,7 +83,7 @@ function NavBar(props) {
                   as={NavLink}
                   to="/groupOrder/groupOrderCreate"
                   onClick={(e) => {
-                    disableLink(e)
+                    disableLink(e);
                   }}
                 >
                   作伙揪團
@@ -143,7 +143,7 @@ function NavBar(props) {
                   as={NavLink}
                   to="/getcoupon"
                   onClick={(e) => {
-                    disableLink(e)
+                    disableLink(e);
                   }}
                 >
                   專屬優惠
@@ -159,7 +159,7 @@ function NavBar(props) {
                   as={NavLink}
                   to="/memberUserprofile"
                   onClick={(e) => {
-                    disableLink(e)
+                    disableLink(e);
                   }}
                 >
                   會員中心 <BackArrow className="backArrow" />
@@ -173,7 +173,7 @@ function NavBar(props) {
                         as={NavLink}
                         to="/orderManagement"
                         onClick={(e) => {
-                          disableLink(e)
+                          disableLink(e);
                         }}
                       >
                         訂單管理
@@ -184,7 +184,7 @@ function NavBar(props) {
                         as={NavLink}
                         to="/memberUserprofile"
                         onClick={(e) => {
-                          disableLink(e)
+                          disableLink(e);
                         }}
                       >
                         修改會員資料
@@ -195,7 +195,7 @@ function NavBar(props) {
                         as={NavLink}
                         to="/myFav"
                         onClick={(e) => {
-                          disableLink(e)
+                          disableLink(e);
                         }}
                       >
                         我的最愛
@@ -206,7 +206,7 @@ function NavBar(props) {
                         as={NavLink}
                         to="/beastiePoint"
                         onClick={(e) => {
-                          disableLink(e)
+                          disableLink(e);
                         }}
                       >
                         我的怪獸
@@ -217,7 +217,7 @@ function NavBar(props) {
                     <li
                       className="navBar-jess-dropdown_item iris-login-option"
                       onClick={() => {
-                        setShowLoginModal(true)
+                        setShowLoginModal(true);
                       }}
                     >
                       登入/註冊
@@ -226,9 +226,9 @@ function NavBar(props) {
                     <li
                       className="navBar-jess-dropdown_item iris-logout-option"
                       onClick={() => {
-                        setIsLogin(false)
-                        showLoginOption()
-                        clearUserStorage()
+                        setIsLogin(false);
+                        showLoginOption();
+                        clearUserStorage();
                       }}
                     >
                       登出
@@ -237,37 +237,38 @@ function NavBar(props) {
                 </div>
               </li>
 
-              <li
-                id="ru-target"
-                onClick={(e) => {
-                  disableLink(e)
-                }}
-              >
+              <li id="ru-target">
                 <span className="jess-navbarCartNum" id="jess-navbarCartNum">
                   {cartNumber}
                 </span>
-                <Popover
+                {/* <Popover
                   placement="bottomLeft"
                   content={shoppingList}
                   title="我的購買清單"
                   trigger="hover"
                   className="navbar-jess-popover"
+                > */}
+                <Nav.Link
+                  as={NavLink}
+                  to="/cart"
+                  onClick={(e) => {
+                    disableLink(e);
+                  }}
                 >
-                  <Nav.Link as={NavLink} to="/cart">
-                    <ShoppingCart className="navbar-jess-ShopingCart" />
-                  </Nav.Link>
-                  <div className="navbar-tag-wrap">
-                    <div className="navbar-tag">
-                      <ShoppingAmount className="jess-navbarCartAmount" />
-                      <span
-                        className="jess-navbarCartNum"
-                        id="jess-navbarCartNum"
-                      >
-                        {cartNumber}
-                      </span>
-                    </div>
+                  <ShoppingCart className="navbar-jess-ShopingCart" />
+                </Nav.Link>
+                <div className="navbar-tag-wrap">
+                  <div className="navbar-tag">
+                    <ShoppingAmount className="jess-navbarCartAmount" />
+                    <span
+                      className="jess-navbarCartNum"
+                      id="jess-navbarCartNum"
+                    >
+                      {cartNumber}
+                    </span>
                   </div>
-                </Popover>
+                </div>
+                {/* </Popover> */}
               </li>
             </ul>
           </div>
@@ -277,9 +278,9 @@ function NavBar(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 // 輸出元件(函式)
 
-export default NavBar
+export default NavBar;

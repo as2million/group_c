@@ -1,4 +1,4 @@
-@import "Ru/Pages/variable.scss";
+@import 'Ru/Pages/variable.scss';
 
 #ru-card-margin {
   margin: 0px 20px;
@@ -38,12 +38,16 @@
   transition: 0.35s;
 }
 
-
-.ru-card-abs-stop{
+.ru-card-abs-stop {
   position: absolute;
   top: 83%;
   right: 20px;
   transition: 0.35s;
+}
+
+.ru-card-abs-stop .addFavorite-btn {
+  background-color: $dark-yellow;
+  background-image: url('./Images/addFavoriteC.svg');
 }
 
 .ru-card-img {

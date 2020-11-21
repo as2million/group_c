@@ -1,3 +1,4 @@
+//------------------------------Desktop--------------------------------
 .claudia-index-card-list-box {
     width: 384px;
     height: 620px;
@@ -95,7 +96,45 @@
     outline: none;
 }
 
-@media only screen and (max-width: 57.6rem) {
+//------------------------------Desktop--------------------------------
+
+
+//--------------------------------Ipad---------------------------------
+
+@media screen and (min-width: 576.1px) and (max-width: 1200px) {
+    .claudia-index-card-list-box {
+        width: 345px;
+        height: 590px;
+        margin: 0px auto;
+    }
+
+    .claudia-index-card-list-box-button {
+        width: 265px;
+        height: 90px;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .claudia-index-card-list-box-button p {
+        font-size: 1.8rem;
+    }
+
+    .claudia-index-card-list-box-buttons {
+        margin-top: 45px;
+    }
+
+
+
+
+}
+
+//--------------------------------Ipad---------------------------------
+
+
+//----------------------Iphone 6/7/8 + Plus + X------------------------
+@media only screen and (max-width: 576px) {
 
     .claudia-index-card-list-box {
         width: 335px;
@@ -119,13 +158,5 @@
     .claudia-index-card-list-box-buttons {
         margin-top: 45px;
     }
-
-
-
-
-
-
-
-
-
 }
+//----------------------Iphone 6/7/8 + Plus + X------------------------

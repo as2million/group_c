@@ -35,6 +35,7 @@ $white: #ffffff;
   width: 35rem;
   height: 57rem;
   padding: 3rem;
+  justify-content: center;
 }
 .jess-vegE-card::after {
   width: 35rem;
@@ -56,12 +57,14 @@ $white: #ffffff;
   background-size: contain;
   width: 28rem;
   height: 28rem;
+  margin: 0 !important;
 }
 .jess-vegE-farm2 {
   background: url('./images/jess-VegE-farm2.png') no-repeat center center;
   background-size: contain;
   width: 28rem;
   height: 28rem;
+  margin: 0 !important;
 }
 .jess-vegE-farm3 {
   background: url('./images/jess-VegE-farm3.png') no-repeat center center;

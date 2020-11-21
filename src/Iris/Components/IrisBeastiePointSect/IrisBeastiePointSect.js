@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import './IrisBeastiePointSect.scss'
-import { ReactComponent as WaveLine } from './Images/wave_line.svg'
-import { ReactComponent as BesatieBook } from './Images/beastie_book.svg'
-import { ReactComponent as BesatieCoin } from './Images/beastie_coin.svg'
-import { ReactComponent as BesatieQ } from './Images/beastie_q.svg'
-import { ReactComponent as VerticalLine } from './Images/vertical_line.svg'
-import { ReactComponent as PencilIcon } from './Images/pencil_icon.svg'
-import { ReactComponent as BeastieCoupon20 } from './Images/beastie_coupon20.svg'
-import { ReactComponent as BeastieCoupon20Grey } from './Images/beastie-coupon20-grey.svg'
-import { ReactComponent as CouponVerticalLine } from './Images/coupon_vertical_line.svg'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import './IrisBeastiePointSect.scss';
+import { ReactComponent as WaveLine } from './Images/wave_line.svg';
+import { ReactComponent as BesatieBook } from './Images/beastie_book.svg';
+import { ReactComponent as BesatieCoin } from './Images/beastie_coin.svg';
+import { ReactComponent as BesatieQ } from './Images/beastie_q.svg';
+import { ReactComponent as VerticalLine } from './Images/vertical_line.svg';
+import { ReactComponent as PencilIcon } from './Images/pencil_icon.svg';
+import { ReactComponent as BeastieCoupon20 } from './Images/beastie_coupon20.svg';
+import { ReactComponent as BeastieCoupon20Grey } from './Images/beastie-coupon20-grey.svg';
+import { ReactComponent as CouponVerticalLine } from './Images/coupon_vertical_line.svg';
 
 function IrisBeastiePointSect(props) {
   const { currentUser, setShowRuleBox } = props
@@ -36,35 +36,35 @@ function IrisBeastiePointSect(props) {
     // 把現在的名字放到輸入框
     document.querySelector(
       '.iris-beastie-name-input'
-    ).value = document.querySelector('.iris-beastie-name').innerText
+    ).value = document.querySelector('.iris-beastie-name').innerText;
     // 點擊icon後名字消失，顯示輸入框
-    document.querySelector('.iris-beastie-name').style.display = 'none'
-    document.querySelector('.iris-beastie-name-input').style.display = 'block'
-  }
+    document.querySelector('.iris-beastie-name').style.display = 'none';
+    document.querySelector('.iris-beastie-name-input').style.display = 'block';
+  };
 
   // -------- 按下enter確認改名 --------- //
   const recordNewName = (e) => {
     // 按下ENTER
-    let keypress = e.keyCode
+    let keypress = e.keyCode;
     if (keypress === 13) {
       // 讓名字等於INPUT裡的值，input消失，名字出現
       document.querySelector(
         '.iris-beastie-name'
-      ).innerText = document.querySelector('.iris-beastie-name-input').value
-      document.querySelector('.iris-beastie-name-input').style.display = 'none'
+      ).innerText = document.querySelector('.iris-beastie-name-input').value;
+      document.querySelector('.iris-beastie-name-input').style.display = 'none';
 
-      document.querySelector('.iris-beastie-name').style.display = 'block'
+      document.querySelector('.iris-beastie-name').style.display = 'block';
       // 放到localStorage
       localStorage.setItem(
         'beastieName',
         document.querySelector('.iris-beastie-name-input').value
-      )
+      );
     }
-  }
+  };
 
   // ------- 得到目前所有的優惠券資料 --------- //
   async function getCouponFromServer() {
-    const url = 'http://localhost:5000/member/couponList'
+    const url = 'http://localhost:5000/member/couponList';
 
     const request = new Request(url, {
       method: 'GET',
@@ -72,10 +72,10 @@ function IrisBeastiePointSect(props) {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
-    })
+    });
 
-    const response = await fetch(request)
-    const data = await response.json()
+    const response = await fetch(request);
+    const data = await response.json();
 
     // console.log(data)
     setCouponList(data)
@@ -83,13 +83,13 @@ function IrisBeastiePointSect(props) {
 
   // 一開始就會開始載入資料
   useEffect(() => {
-    getCouponFromServer()
-  }, [])
+    getCouponFromServer();
+  }, []);
 
   //  過濾出現在使用者的優惠券
   const currentUserCoupon = couponList.filter(
     (couponList) => couponList.member_sid === currentUser
-  )
+  );
 
   // 計算總值
   let sum = 0
@@ -131,8 +131,8 @@ function IrisBeastiePointSect(props) {
           </div>
         </div>
       </div>
-    )
-  })
+    );
+  });
 
   return (
     <>
@@ -158,7 +158,7 @@ function IrisBeastiePointSect(props) {
                 <PencilIcon
                   className="iris-pencil-icon"
                   onClick={() => {
-                    changeBeastieName()
+                    changeBeastieName();
                   }}
                 />
                 &nbsp;&nbsp;
@@ -167,7 +167,7 @@ function IrisBeastiePointSect(props) {
                 <input
                   className="iris-beastie-name-input"
                   onKeyDown={(e) => {
-                    recordNewName(e)
+                    recordNewName(e);
                   }}
                 />
               </div>
@@ -193,7 +193,7 @@ function IrisBeastiePointSect(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default IrisBeastiePointSect
+export default IrisBeastiePointSect;

@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect'
-import IrisDataEditSect from '../Components/IrisDataEditSect/IrisDataEditSect'
-import VNavbar from 'Share/Components/VNavbar/VNavbar'
-import './IrisMemberPage.scss'
-import { Redirect } from 'react-router-dom'
-import ScrollButton from 'Share/Components/ToTopButton/ScrollButton'
-import IrisGetCouponBox from './../Components/IrisGetCouponBox/IrisGetCouponBox'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import IrisMemberMenuSect from '../Components/IrisMemberMenuSect/IrisMemberMenuSect';
+import IrisDataEditSect from '../Components/IrisDataEditSect/IrisDataEditSect';
+import VNavbar from 'Share/Components/VNavbar/VNavbar';
+import './IrisMemberPage.scss';
+import { Redirect } from 'react-router-dom';
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
+import IrisGetCouponBox from './../Components/IrisGetCouponBox/IrisGetCouponBox';
 
 function IrisUserprofile(props) {
-  const [showUpdateModal, setShowUpdateModal] = useState(false)
-  const [showGetCouponBox, setShowGetCouponBox] = useState(false)
-  const [beastiePointAdd, setBeastiePointAdd] = useState()
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
+  const [showGetCouponBox, setShowGetCouponBox] = useState(false);
+  const [beastiePointAdd, setBeastiePointAdd] = useState();
 
   const {
+    setShowBar,
     isLogin,
     currentUser,
     currentUserData,
@@ -22,51 +23,42 @@ function IrisUserprofile(props) {
     setCouponStatus,
     couponOneStatus,
     setCouponOneStatus,
-    // vnbar
-    county,
-    setCounty,
-    township,
-    setTownship,
-    address,
-    setAddress,
-  } = props
+  } = props;
+
+  useEffect(() => {
+    setShowBar(true);
+  }, []);
 
   if (showUpdateModal === true) {
-    document.querySelector('.iris-update-success-mask').style.display = 'block'
-    document.querySelector('.iris-update-success-box').style.display = 'block'
+    document.querySelector('.iris-update-success-mask').style.display = 'block';
+    document.querySelector('.iris-update-success-box').style.display = 'block';
   } else {
     if (
       document.querySelector('.iris-update-success-mask') &&
       document.querySelector('.iris-update-success-box')
     ) {
-      document.querySelector('.iris-update-success-mask').style.display = 'none'
-      document.querySelector('.iris-update-success-box').style.display = 'none'
+      document.querySelector('.iris-update-success-mask').style.display =
+        'none';
+      document.querySelector('.iris-update-success-box').style.display = 'none';
     }
   }
 
   if (showGetCouponBox === true) {
-    document.querySelector('.IrisGetCouponBox').style.display = 'block'
+    document.querySelector('.IrisGetCouponBox').style.display = 'block';
   } else {
     if (document.querySelector('.IrisGetCouponBox')) {
-      document.querySelector('.IrisGetCouponBox').style.display = 'none'
+      document.querySelector('.IrisGetCouponBox').style.display = 'none';
     }
   }
 
   // 在此頁面按登出的話直接導到首頁
   if (isLogin === false) {
     // setShowLoginModal(true)
-    return <Redirect to="/" />
+    return <Redirect to="/" />;
   }
   return (
     <>
-      <VNavbar
-        county={county}
-        setCounty={setCounty}
-        township={township}
-        setTownship={setTownship}
-        address={address}
-        setAddress={setAddress}
-      />
+      <VNavbar {...props} />
       <div className="container iris-memberpage-container">
         <IrisMemberMenuSect
           currentUser={currentUser}
@@ -86,7 +78,7 @@ function IrisUserprofile(props) {
         <div
           className="iris-update-success-mask"
           onClick={() => {
-            setShowUpdateModal(false)
+            setShowUpdateModal(false);
           }}
         ></div>
         <div class="iris-update-success-box">
@@ -109,7 +101,7 @@ function IrisUserprofile(props) {
         />
       </div>
     </>
-  )
+  );
 }
 
-export default IrisUserprofile
+export default IrisUserprofile;

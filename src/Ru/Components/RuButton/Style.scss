@@ -1,11 +1,11 @@
 @import 'Ru/Pages/variable.scss';
 
 // 橘色
-.button-btn:focus {
+.ru-button-btn:focus {
   outline: none;
 }
 
-.button-btn {
+.ru-button-btn {
   background-color: $white;
   height: 65px;
   width: 200px;
@@ -25,15 +25,15 @@
   );
 }
 
-.button-btn:hover {
+.ru-button-btn:hover {
   color: $white;
 }
 
-.button-btn:active {
+.ru-button-btn:active {
   border: 1px solid $dark-orange;
 }
 
-.button-btn::after {
+.ru-button-btn::after {
   content: '';
   background-color: $light-orange;
   height: 65px;
@@ -53,19 +53,19 @@
   );
 }
 
-.button-btn:hover::after {
+.ru-button-btn:hover::after {
   top: 0px;
 }
 
-.button-btn:active::after {
+.ru-button-btn:active::after {
   background-color: $dark-orange;
 }
 
 // 綠色
-.button-btn-g:focus {
+.ru-button-btn-g:focus {
   outline: none;
 }
-.button-btn-g {
+.ru-button-btn-g {
   background-color: $white;
   height: 65px;
   width: 200px;
@@ -85,15 +85,15 @@
   );
 }
 
-.button-btn-g:hover {
+.ru-button-btn-g:hover {
   color: $white;
 }
 
-.button-btn-g:active {
+.ru-button-btn-g:active {
   border: 1px solid $dark-green;
 }
 
-.button-btn-g::after {
+.ru-button-btn-g::after {
   content: '';
   background-color: $light-green;
   height: 65px;
@@ -113,10 +113,15 @@
   );
 }
 
-.button-btn-g:hover::after {
+.ru-button-btn-g:hover::after {
   top: 0px;
 }
 
-.button-btn-g:active::after {
+.ru-button-btn-g:active::after {
   background-color: $dark-green;
+}
+
+.ru-button-btn-active {
+  color: $white;
+  background-color: $light-orange;
 }
