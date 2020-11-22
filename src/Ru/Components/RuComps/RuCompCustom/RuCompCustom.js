@@ -23,7 +23,7 @@ function RuCompCustom(props) {
   return (
     <>
       <div style={{ height: '100px', backgroundColor: '#FF5151' }}></div>
-      {/* <RuShowWidth /> */}
+      <RuShowWidth />
 
       <div className="ru-mainImg-warp">
         <h1>享受美食 不需要理由</h1>
@@ -41,7 +41,7 @@ function RuCompCustom(props) {
           {/* 搜尋欄e */}
 
           {/* 選項按鈕 s */}
-          <section className="ru-buttonWarpA">
+          <section className="ru-buttonWarp">
             <RuButton
               text={'低GI便當'}
               className={'ru-button-btn'}
@@ -86,57 +86,6 @@ function RuCompCustom(props) {
               openCustom={openCustom}
               setOpenCustom={setOpenCustom}
             />
-          </section>
-
-          <section className="ru-buttonWarpB">
-            <div>
-              <RuButton
-                text={'低GI便當'}
-                className={'ru-button-btn'}
-                id={'ru-button-btn-1'}
-                openBento={openBento}
-                setOpenBento={setOpenBento}
-                openSalad={openSalad}
-                setOpenSalad={setOpenSalad}
-                openCustom={openCustom}
-                setOpenCustom={setOpenCustom}
-              />
-              <RuButton
-                text={'客製化便當'}
-                className={'ru-button-btn'}
-                id={'ru-button-btn-2'}
-                openBento={openBento}
-                setOpenBento={setOpenBento}
-                openSalad={openSalad}
-                setOpenSalad={setOpenSalad}
-                openCustom={openCustom}
-                setOpenCustom={setOpenCustom}
-              />
-            </div>
-            <div>
-              <RuButton
-                text={'鮮蔬沙拉'}
-                className={'ru-button-btn'}
-                id={'ru-button-btn-3'}
-                openBento={openBento}
-                setOpenBento={setOpenBento}
-                openSalad={openSalad}
-                setOpenSalad={setOpenSalad}
-                openCustom={openCustom}
-                setOpenCustom={setOpenCustom}
-              />
-              <RuButton
-                text={'蔬菜箱'}
-                className={'ru-button-btn-g'}
-                id={'ru-button-btn-4'}
-                openBento={openBento}
-                setOpenBento={setOpenBento}
-                openSalad={openSalad}
-                setOpenSalad={setOpenSalad}
-                openCustom={openCustom}
-                setOpenCustom={setOpenCustom}
-              />
-            </div>
           </section>
           {/* 選項按鈕 e */}
         </div>

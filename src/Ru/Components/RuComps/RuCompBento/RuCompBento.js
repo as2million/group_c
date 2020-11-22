@@ -86,58 +86,6 @@ function RuCompBento(props) {
               setOpenCustom={setOpenCustom}
             />
           </section>
-
-          {/* <section className="ru-buttonWarpB">
-            <div>
-              <RuButton
-                text={'低GI便當'}
-                className={'ru-button-btn'}
-                id={'ru-button-btn-1'}
-                openBento={openBento}
-                setOpenBento={setOpenBento}
-                openSalad={openSalad}
-                setOpenSalad={setOpenSalad}
-                openCustom={openCustom}
-                setOpenCustom={setOpenCustom}
-              />
-              <RuButton
-                text={'客製化便當'}
-                className={'ru-button-btn'}
-                id={'ru-button-btn-2'}
-                openBento={openBento}
-                setOpenBento={setOpenBento}
-                openSalad={openSalad}
-                setOpenSalad={setOpenSalad}
-                openCustom={openCustom}
-                setOpenCustom={setOpenCustom}
-              />
-            </div>
-            <div>
-              <RuButton
-                text={'鮮蔬沙拉'}
-                className={'ru-button-btn'}
-                id={'ru-button-btn-3'}
-                openBento={openBento}
-                setOpenBento={setOpenBento}
-                openSalad={openSalad}
-                setOpenSalad={setOpenSalad}
-                openCustom={openCustom}
-                setOpenCustom={setOpenCustom}
-              />
-              <RuButton
-                text={'蔬菜箱'}
-                className={'ru-button-btn-g'}
-                id={'ru-button-btn-4'}
-                openBento={openBento}
-                setOpenBento={setOpenBento}
-                openSalad={openSalad}
-                setOpenSalad={setOpenSalad}
-                openCustom={openCustom}
-                setOpenCustom={setOpenCustom}
-              />
-            </div>
-          </section> */}
-          {/* 選項按鈕 e */}
         </div>
 
         {/* 分隔曲線 s*/}

@@ -168,7 +168,7 @@ function RuBento(props) {
   return (
     <>
       {/* 商品區 - 網頁版 s */}
-      <div className="ru-item-containerA">
+      <div className="ru-item-container">
         {/* 卡片區 s */}
         <div className="ru-card-warp">
           <div className="ru-itemWarp">
@@ -419,7 +419,7 @@ function RuBento(props) {
         </div>
         {/* 卡片區 e */}
         {/* 背景米圖 s */}
-        <img src={background}></img>
+        {/* <img src={background}></img> */}
         {/* 背景米圖 e */}
       </div>
       {/* 商品區 - 網頁版 e */}

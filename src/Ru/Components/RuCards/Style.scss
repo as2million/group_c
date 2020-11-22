@@ -1,245 +1,110 @@
-@import 'Ru/Pages/variable.scss';
+@import "Ru/Pages/variable.scss";
 
 // ------------------------------------------- 網頁版 s -------------------------------------------
-@media screen and (min-width: 1201px) {
-  // ******** 便當 / 沙拉 s ********
+.ru-item-container {
+  // background-color: seagreen;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-top: 90px;
+  // margin-bottom: 60px;
+  background-image: url("./RuBento/Images/background.png");
+  background-size: 100%;
+}
 
-  .ru-item-containerA {
-    // background-color: seagreen;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    padding-top: 90px;
-    // margin-bottom: 60px;
-  }
+.ru-card-warp {
+  // background-color: gold;
+  @include page();
+  width: 100%;
+}
 
-  .ru-item-containerA > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -100;
-    width: 1920px;
-  }
+.ru-itemWarp {
+  // background-color: cornflowerblue;
+  min-height: 532px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  @include flex($df, $fdr, space-between, $als);
+}
 
-  .ru-card-warp {
-    @include page();
-    padding: 0px 102px;
-    // background-color: gold;
-    width: 100%;
-  }
-
-  .ru-itemWarp {
-    // background-color: cornflowerblue;
-    min-height: 532px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    // margin-bottom: 100px;
-    // @include flex($df, $fdr, space-between, $als);
-  }
-
-  .ru-itemWarp .ru-card-container {
-    margin: 0px 2.59%;
-    width: 27.9135%;
-    margin-bottom: 80px;
-    // flex-basis: auto;
-    // max-width: 345px;
-    // height: 0%;
-  }
-
-  // ******** 便當 / 沙拉 e ********
-
-  // 切換商品區 ----------
-  .ru-item-containerA {
-    display: block;
-  }
-  .ru-item-containerB {
-    display: none;
-  }
-  .ru-item-containerC {
-    display: none;
-  }
-  .ru-buttonWarpA {
-    display: flex;
-  }
-  .ru-buttonWarpB {
-    display: none;
-  }
+.ru-itemWarp .ru-card-container {
+  width: 27.9135%;
+  margin-bottom: 80px;
 }
 // ------------------------------------------- 網頁版 e -------------------------------------------
 
 //  ------------------------------------------- ipad pro版 s -------------------------------------------
-@media screen and (min-width: 768.1px) and (max-width: 1200px) {
-  // ******** 便當 / 沙拉 s ********
-  .ru-optionWarp {
-    @include page-iPadPro();
-  }
-
-  .ru-item-containerB {
-    // background-color: seagreen;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ru-item-containerB > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -100;
-    width: 1920px;
-  }
-
+@media screen and (min-width: 992px) and (max-width: 1365.99px) {
+  //   // ******** 便當 / 沙拉 s ********
   .ru-card-warp {
-    @include page-iPadPro();
     // background-color: gold;
+    @include page-iPadPro();
     width: 100%;
   }
 
   .ru-itemWarp {
     // background-color: cornflowerblue;
-    height: 100%;
-    margin-bottom: 100px;
     @include flex($df, $fdr, space-around, $als);
   }
 
-  .ru-itemWarp .card-container {
-    margin: 0px 10px;
+  .ru-itemWarp .ru-card-container {
+    width: 40%;
+    margin: 0px 1%;
+    margin-bottom: 80px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.9px) {
+  //   //   // ******** 便當 / 沙拉 s ********
+  .ru-card-warp {
+    // background-color: gold;
+    @include page-iPad();
+    padding: 0px 30px;
+    width: 100%;
   }
 
-  .ru-itemWarp #card-margin {
-    margin: 0px 10px;
+  .ru-itemWarp {
+    // background-color: cornflowerblue;
+    @include flex($df, $fdr, space-around, $als);
   }
 
-  .ru-itemWarp5 .card-container:nth-child(2) {
-    visibility: hidden;
-  }
-
-  .ru-itemWarp5 {
-    margin-bottom: 60px;
-  }
-  // ******** 便當 / 沙拉 e ********
-
-  // 切換商品區 ----------
-  .ru-item-containerA {
-    display: none;
-  }
-  .ru-item-containerB {
-    display: block;
-  }
-  .ru-item-containerC {
-    display: none;
-  }
-  .ru-buttonWarpA {
-    display: flex;
-  }
-  .ru-buttonWarpB {
-    display: none;
+  .ru-itemWarp .ru-card-container {
+    width: 45%;
+    margin: 0px 0%;
+    margin-bottom: 80px;
   }
 }
 //  ------------------------------------------- ipad pro版 e -------------------------------------------
 
 //  ------------------------------------------- ipad 版 s -------------------------------------------
 
-@media screen and (min-width: 576.1px) and (max-width: 768px) {
-  // ******** 便當 / 沙拉 s ********
-  .ru-optionWarp {
-    @include page-iPad();
-  }
-  .ru-item-containerB {
-    // background-color: seagreen;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ru-item-containerB > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -100;
-    width: 1920px;
-  }
-
+@media screen and (min-width: 576px) and (max-width: 767.99px) {
   .ru-card-warp {
-    @include page-iPad();
     // background-color: gold;
+    @include page-iPad();
+    padding: 0px 40px;
     width: 100%;
   }
 
   .ru-itemWarp {
     // background-color: cornflowerblue;
-    height: 100%;
-    margin-bottom: 100px;
     @include flex($df, $fdr, space-around, $als);
   }
 
-  .ru-itemWarp .card-info > h2 {
-    font-size: 16px;
-  }
-
-  .ru-itemWarp .card-info {
-    width: 155px;
-  }
-
-  .ru-itemWarp .card-img-warp {
-    height: 287px;
-  }
-
-  .ru-itemWarp .card-container {
-    width: 306px;
-    margin: 0px 5px;
-  }
-
-  .ru-itemWarp #card-margin {
-    margin: 0px 5px;
-  }
-
-  .ru-itemWarp5 .card-container:nth-child(2) {
-    visibility: hidden;
-  }
-
-  .ru-itemWarp5 {
-    margin-bottom: 60px;
-  }
-  // ******** 便當 / 沙拉 e ********
-
-  // 切換商品區 ----------
-  .ru-item-containerA {
-    display: none;
-  }
-  .ru-item-containerB {
-    display: block;
-  }
-  .ru-item-containerC {
-    display: none;
-  }
-  .ru-buttonWarpA {
-    display: none;
-  }
-  .ru-buttonWarpB {
-    display: block;
+  .ru-itemWarp .ru-card-container {
+    width: 60%;
+    margin: 0px 1.59%;
+    margin-bottom: 80px;
   }
 }
 //  ------------------------------------------- ipad 版 e -------------------------------------------
 
 //  ------------------------------------------- 手機 版 s -------------------------------------------
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575.99px) {
   // ******** 便當 / 沙拉 s ********
-  .ru-item-containerC {
-    // background-color: seagreen;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-  }
 
-  .ru-item-containerC > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -100;
-    width: 1920px;
+  .ru-item-container {
+    background-size: 400%;
   }
 
   .ru-card-warp {
@@ -252,34 +117,12 @@
   .ru-itemWarp {
     // background-color: cornflowerblue;
     height: 100%;
-    margin-bottom: 80px;
-    @include flex($df, $fdr, space-between, $als);
+    @include flex($df, $fdc, space-between, $als);
   }
 
-  .ru-itemWarp #card-margin {
-    margin: 0px;
-  }
-
-  .ru-itemWarp9 {
-    margin-bottom: 60px;
-  }
-  // ******** 便當 / 沙拉 e ********
-
-  // 切換商品區 ----------
-  .ru-item-containerA {
-    display: block;
-  }
-  .ru-item-containerB {
-    display: none;
-  }
-  .ru-item-containerC {
-    display: block;
-  }
-  .ru-buttonWarpA {
-    display: none;
-  }
-  .ru-buttonWarpB {
-    display: block;
+  .ru-itemWarp .ru-card-container {
+    width: 100%;
+    margin: 0px 0px 80px 0px;
   }
 }
 //  ------------------------------------------- 手機 版 e -------------------------------------------

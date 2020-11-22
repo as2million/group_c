@@ -148,7 +148,7 @@ function RuSalad(props) {
   return (
     <>
       {/* 商品區 - 網頁版 s */}
-      <div className="ru-item-containerA">
+      <div className="ru-item-container">
         {/* 卡片區 s */}
         <div className="ru-card-warp">
           <div className="ru-itemWarp">

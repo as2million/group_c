@@ -71,13 +71,13 @@ $letter-spacing: 5px;
 
 @mixin page-iPadPro {
   max-width: 1024px;
-  padding: 0px 100px;
+  padding: 0px 60px;
   margin: auto;
 }
 
 @mixin page-iPad {
   max-width: 768px;
-  padding: 0px 25px;
+  padding: 0px 30px;
   margin: auto;
 }
 
