@@ -16,6 +16,8 @@ import IrisMyFav from 'Iris/Pages/IrisMyFav';
 import IrisBeastiePoint from 'Iris/Pages/IrisBeastiePoint';
 import IrisGetCoupon from 'Iris/Pages/IrisGetCoupon';
 
+import IrisApp from 'Iris/IrisApp';
+
 import IrisOrderManagement from 'Iris/Pages/IrisOrderManagement';
 import JessMenu from 'Jess/Pages/JessMenu';
 import JessBento from 'Jess/Pages/JessBento';
@@ -68,7 +70,7 @@ function App() {
   const [selectDate, setSelectDate] = useState(new Date());
   const [slecteTime, setSelectTime] = useState('11:00 ~ 11:30');
   const [takeOrNot, setTakeOrNot] = useState('外送');
-  const [textAddress, setTextAddress] = useState(address)
+  const [textAddress, setTextAddress] = useState(address);
 
   //----------------------索引值轉字串----------------------
   const [textCounty, setTextCounty] = useState('');
@@ -76,9 +78,7 @@ function App() {
   const [textTownship, setTextTownship] = useState('');
   // setTextTownship(turnTown);
 
-  useEffect(() => setTextAddress(address), [
-    address,
-  ]);
+  useEffect(() => setTextAddress(address), [address]);
   useEffect(() => setTextCounty(county !== -1 ? datacountries[county] : ''), [
     county,
   ]);
@@ -294,8 +294,9 @@ function App() {
 
             {/* iris */}
             {/* 放"page資料夾"內的元件 */}
-            <Route exact path="/memberUserprofile">
-              <IrisUserprofile
+
+            <Route path="/member">
+              <IrisApp
                 setShowBar={setShowBar}
                 // 會員
                 isLogin={isLogin}
@@ -321,7 +322,34 @@ function App() {
                 setSelectTime={setSelectTime}
               />
             </Route>
-            <Route exact path="/orderComment">
+            {/* <Route exact path="/memberUserprofile">
+              <IrisUserprofile
+                setShowBar={setShowBar}
+                // 會員
+                isLogin={isLogin}
+                currentUser={currentUser}
+                setShowLoginModal={setShowLoginModal}
+                currentUserData={currentUserData}
+                couponStatus={couponStatus}
+                setCouponStatus={setCouponStatus}
+                couponOneStatus={couponOneStatus}
+                setCouponOneStatus={setCouponOneStatus}
+                // vnbar
+                county={county}
+                setCounty={setCounty}
+                township={township}
+                setTownship={setTownship}
+                address={address}
+                setAddress={setAddress}
+                takeOrNot={takeOrNot}
+                setTakeOrNot={setTakeOrNot}
+                selectDate={selectDate}
+                setSelectDate={setSelectDate}
+                slecteTime={slecteTime}
+                setSelectTime={setSelectTime}
+              />
+            </Route> */}
+            {/* <Route exact path="/orderComment">
               <IrisOrderComment
                 setShowBar={setShowBar}
                 // 會員
@@ -343,8 +371,8 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               />
-            </Route>
-            <Route exact path="/myFav">
+            </Route> */}
+            {/* <Route exact path="/myFav">
               <IrisMyFav
                 setShowBar={setShowBar}
                 // 會員
@@ -366,8 +394,8 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               />
-            </Route>
-            <Route exact path="/beastiePoint">
+            </Route> */}
+            {/* <Route exact path="/beastiePoint">
               <IrisBeastiePoint
                 setShowBar={setShowBar}
                 // 會員
@@ -389,8 +417,8 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               />
-            </Route>
-            <Route path="/getCoupon">
+            </Route> */}
+            {/* <Route path="/getCoupon">
               <IrisGetCoupon
                 setShowBar={setShowBar}
                 // 會員
@@ -415,7 +443,7 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               />
-            </Route>
+            </Route> */}
             <Route path="/orderManagement">
               <IrisOrderManagement
                 handleCartNumber={handleCartNumber}

@@ -168,7 +168,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/memberUserprofile');
+                  props.history.push('/member/Userprofile');
                 }}
               >
                 <UserProfileIcon class="iris-menu-icon" />
@@ -179,7 +179,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/beastiePoint');
+                  props.history.push('/member/beastiePoint');
                 }}
               >
                 <BeastieIcon class="iris-menu-icon" />
@@ -191,7 +191,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/getCoupon');
+                  props.history.push('/member/getCoupon');
                 }}
               >
                 <OrderIcon class="iris-menu-icon" />
@@ -227,7 +227,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/myFav');
+                  props.history.push('/member/myFav');
                 }}
               >
                 <MyFavIcon class="iris-menu-icon" />
@@ -239,7 +239,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/orderComment');
+                  props.history.push('/member/orderComment');
                 }}
               >
                 <MyCommentIcon class="iris-menu-icon" />

@@ -157,7 +157,7 @@ function NavBar(props) {
               <li className="navBar-jess-navigation_item">
                 <Nav.Link
                   as={NavLink}
-                  to="/memberUserprofile"
+                  to="/member/Userprofile"
                   onClick={(e) => {
                     disableLink(e);
                   }}
@@ -182,7 +182,7 @@ function NavBar(props) {
                     <li className="navBar-jess-dropdown_item">
                       <Nav.Link
                         as={NavLink}
-                        to="/memberUserprofile"
+                        to="/member/Userprofile"
                         onClick={(e) => {
                           disableLink(e);
                         }}
@@ -193,7 +193,7 @@ function NavBar(props) {
                     <li className="navBar-jess-dropdown_item">
                       <Nav.Link
                         as={NavLink}
-                        to="/myFav"
+                        to="/member/myFav"
                         onClick={(e) => {
                           disableLink(e);
                         }}
@@ -204,7 +204,7 @@ function NavBar(props) {
                     <li className="navBar-jess-dropdown_item">
                       <Nav.Link
                         as={NavLink}
-                        to="/beastiePoint"
+                        to="/member/beastiePoint"
                         onClick={(e) => {
                           disableLink(e);
                         }}
