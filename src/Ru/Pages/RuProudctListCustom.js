@@ -10,7 +10,7 @@ function RuProudctListCustom(props) {
   }, []);
   return (
     <>
-      <VNavBar {...props} />
+      {/* <VNavBar {...props} /> */}
       <RuCompCustom
         handleCartNumber={handleCartNumber}
         amount={amount}

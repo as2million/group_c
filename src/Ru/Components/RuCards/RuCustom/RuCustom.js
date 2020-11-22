@@ -3,10 +3,8 @@ import 'Ru/Components/RuCards/RuCustom/Style.scss';
 import RuArrowLeft from 'Ru/Components/RuArrowLeft/RuArrowLeft';
 import RuArrowRight from 'Ru/Components/RuArrowRight/RuArrowRight';
 import RuButtonB from 'Ru/Components/RuButtonB/RuButtonB';
-import RuButtonC from 'Ru/Components/RuButtonC/RuButtonC';
 import RuCounter from 'Ru/Components/RuCounter/RuCounter';
 import RuAddCart from 'Ru/Components/RuAddCart/RuAddCart';
-import RuSelection from 'Ru/Components/RuSelection/RuSelection';
 import RuPriceA from 'Ru/Components/RuPriceA/RuPriceA'; // 資訊區價格 網頁版
 import RuCalA from 'Ru/Components/RuCalA/RuCalA'; // 資訊區熱量 網頁版
 import RuRiceA from 'Ru/Components/RuFoodItems/RuRiceA/RuRiceA';
@@ -16,7 +14,6 @@ import RuEggA from 'Ru/Components/RuFoodItems/RuEggA/RuEggA';
 import RuCutsomHint from 'Ru/Components/RuCutsomHint/RuCutsomHint';
 
 // 引用共用元件
-import Card from 'Share/Components/Card/Card';
 import cauliflower from './Images/cauliflower.svg'; // rwd暫放(待刪)
 // 品項放置後s
 import cauliflowerAfter from './Images/cauliflowerAfter.svg';
@@ -562,7 +559,7 @@ function RuCustom(props) {
     <>
       {/* <div>{data[3].sid}</div> */}
       {/* 商品區 - 網頁版 s */}
-      <div className="ru-custom-containerA" id="ru-dropArea">
+      <div className="ru-custom-container" id="ru-dropArea">
         <div className="ru-custom-warp" id="ru-dropOutAreaA">
           <div className="ru-drop-container" id="ru-dropOutAreaB">
             <div className="ru-drop-warp" id="ru-dropOutAreaC">
@@ -654,7 +651,8 @@ function RuCustom(props) {
                   <LunchBox />
                 </div>
               </div>
-              <div className="ru-detail-container" id="ru-dropOutAreaD">
+              {/*  詳細資訊 s */}
+              <div className="ru-detail-container ru-detail-container-web" id="ru-dropOutAreaD">
                 <div className="ru-switchBtn-container">
                   {/* 是否開啟價格標示 */}
                   <button id={isPrice && 'ru-active'} onClick={switchPrice}>
@@ -769,6 +767,7 @@ function RuCustom(props) {
                   </div>
                 </div>
               </div>
+              {/*  詳細資訊 e */}
             </div>
           </div>
           <div className="ru-drag-container">
@@ -865,7 +864,6 @@ function RuCustom(props) {
                   />
                 </div>
               </div>
-
               <div className="ru-species-container">
                 <RuArrowLeft moveX={moveX} setMoveX={setMoveX} />
                 {/* 副食 / 主食 / 配菜 / 蛋 的元件 s*/}
@@ -901,311 +899,130 @@ function RuCustom(props) {
               </div>
             </div>
           </div>
+          {/* rwd 詳細資訊 s */}
+          <div className="ru-detail-container ru-detail-container-rwd" id="ru-dropOutAreaD">
+            <div className="ru-switchBtn-container">
+              {/* 是否開啟價格標示 */}
+              <button id={isPrice && 'ru-active'} onClick={switchPrice}>
+                今日菜色
+              </button>
+              {/* 是否開啟營養標示 */}
+              <button id={isCal && 'ru-active'} onClick={switchCal}>
+                營養標示
+              </button>
+            </div>
+            <div className="ru-info-container">
+              {isPrice && (
+                <RuPriceA
+                  riceName={riceName}
+                  ricePrice={ricePrice}
+                  meetName={meetName}
+                  meetPrice={meetPrice}
+                  eggName={eggName}
+                  eggPrice={eggPrice}
+                  vegNameA={vegNameA}
+                  vegPriceA={vegPriceA}
+                  vegNameB={vegNameB}
+                  vegPriceB={vegPriceB}
+                  vegNameC={vegNameC}
+                  vegPriceC={vegPriceC}
+                />
+              )}
+              {isCal && (
+                <RuCalA
+                  data={data}
+                  riceName={riceName}
+                  riceCal={riceCal}
+                  meetName={meetName}
+                  meetCal={meetCal}
+                  eggName={eggName}
+                  eggCal={eggCal}
+                  vegNameA={vegNameA}
+                  vegCalA={vegCalA}
+                  vegNameB={vegNameB}
+                  vegCalB={vegCalB}
+                  vegNameC={vegNameC}
+                  vegCalC={vegCalC}
+                />
+              )}
+            </div>
+            <div className="ru-checkout-container">
+              <div className="ru-checkout-warp">
+                <RuCounter
+                  setAmount={setAmount}
+                  count={count}
+                  setCount={setCount}
+                />
+                {isCanBuy ? (
+                  <RuAddCart
+                    id={'addCart-btn-custom'}
+                    parentId={'addCart-btn-warp-custom'}
+                    handleCartNumber={handleCartNumber}
+                    proudctId={todayId}
+                    imgId={'23_custom'}
+                    price={
+                      ricePrice +
+                      meetPrice +
+                      eggPrice +
+                      vegPriceA +
+                      vegPriceB +
+                      vegPriceC
+                    }
+                    title={'客製化便當'}
+                    amount={amount}
+                    setIsShowHintA={setIsShowHintA}
+                    setIsShowHintB={setIsShowHintB}
+                    setIsShowHintC={setIsShowHintC}
+                    setIsShowHintD={setIsShowHintD}
+                    setIsShowHintE={setIsShowHintE}
+                    setIsShowHintF={setIsShowHintF}
+                    count={count}
+                  />
+                ) : (
+                  <div
+                    class="ru-isCanBuy"
+                    style={{
+                      width: '100%',
+                      pointerEvents: 'none',
+                      filter: 'grayscale(100%)',
+                    }}
+                  >
+                    <RuAddCart
+                      id={'addCart-btn-custom'}
+                      parentId={'addCart-btn-warp-custom'}
+                      handleCartNumber={handleCartNumber}
+                      proudctId={todayId}
+                      imgId={'23_custom'}
+                      price={
+                        ricePrice +
+                        meetPrice +
+                        eggPrice +
+                        vegPriceA +
+                        vegPriceB +
+                        vegPriceC
+                      }
+                      title={'客製化便當'}
+                      amount={amount}
+                      setIsShowHintA={setIsShowHintA}
+                      setIsShowHintB={setIsShowHintB}
+                      setIsShowHintC={setIsShowHintC}
+                      setIsShowHintD={setIsShowHintD}
+                      setIsShowHintE={setIsShowHintE}
+                      setIsShowHintF={setIsShowHintF}
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
+        {/* rwd 詳細資訊 e */}
+
         {/* 背景米圖 s */}
         <img src={background}></img>
         {/* 背景米圖 e */}
       </div>
       {/* 商品區 - 網頁版 e */}
-
-      {/* 商品區 - 手機版 s */}
-      {/* <div className="ru-custom-containerC">
-        <div className="ru-custom-warp">
-          <div className="ru-drop-container">
-            <div className="ru-drop-warp">
-              <div className="ru-box-container">
-                <div className="ru-box-warp">
-                  <LunchBox />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ru-drag-container">
-            <div className="ru-drag-warp">
-              <div className="ru-selection-container">
-                <div className="ru-selection-warp">
-                  <div className="ru-selectionBtn-warp ru-selectionBtn-warp1">
-                    <RuButtonB
-                      text={'副食'}
-                      id={'ru-buttonB-rice'}
-                    />
-                    <RuButtonB
-                      text={'主食'}
-                      id={'ru-buttonB-meet'}
-                    />
-                  </div>
-                  <div className="ru-selectionBtn-warp ru-selectionBtn-warp2">
-                    <RuButtonB
-                      text={'配菜'}
-                      id={'ru-buttonB-vegetable'}
-                    />
-                    <RuButtonB
-                      text={'蛋'}
-                      id={'ru-buttonB-egg'}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="ru-species-container">
-                <RuArrowLeft />
-                <div className="ru-species-warp">
-                  <ul> */}
-      {/* 品項1 s*/}
-      {/* <li className="ru-species-item ru-species-item1">
-                      <div className="ru-species-img">
-                        <img src={cauliflower}></img>
-                      </div>
-                      <div className="ru-species-info">
-                        <ul>
-                          <li>
-                            <h4>
-                              綠色嫩花椰<span>$10</span>
-                            </h4>
-                          </li>
-                          <li className="ru-species-calories">
-                            熱量: <span>50大卡</span>
-                          </li>
-                          <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>10大卡</span>
-                          </li>
-                          <li className="ru-species-protein">
-                            蛋白質: <span>10大卡</span>
-                          </li>
-                          <li className="ru-species-fat">
-                            脂肪: <span>10大卡</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="ru-species-btn">
-                        <RuButtonC text={'選擇'} />
-                      </div>
-                    </li> */}
-      {/* 品項1 e*/}
-
-      {/* 品項2 s*/}
-      {/* <li className="ru-species-item ru-species-item2">
-                      <div className="ru-species-img">
-                        <img src={cauliflower}></img>
-                      </div>
-                      <div className="ru-species-info">
-                        <ul>
-                          <li>
-                            <h4>
-                              綠色嫩花椰<span>$10</span>
-                            </h4>
-                          </li>
-                          <li className="ru-species-calories">
-                            熱量: <span>50大卡</span>
-                          </li>
-                          <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>$10</span>
-                          </li>
-                          <li className="ru-species-protein">
-                            蛋白質: <span>$10</span>
-                          </li>
-                          <li className="ru-species-fat">
-                            脂肪: <span>$10</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="ru-species-btn">
-                        <RuButtonC text={'選擇'} />
-                      </div>
-                    </li> */}
-      {/* 品項2 e*/}
-
-      {/* 品項3 s*/}
-      {/* <li className="ru-species-item ru-species-item3">
-                      <div className="ru-species-img">
-                        <img src={cauliflower}></img>
-                      </div>
-                      <div className="ru-species-info">
-                        <ul>
-                          <li>
-                            <h4>
-                              綠色嫩花椰: <span>$10</span>
-                            </h4>
-                          </li>
-                          <li className="ru-species-calories">
-                            熱量: <span>50大卡</span>
-                          </li>
-                          <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>$10</span>
-                          </li>
-                          <li className="ru-species-protein">
-                            蛋白質: <span>$10</span>
-                          </li>
-                          <li className="ru-species-fat">
-                            脂肪: <span>$10</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </li> */}
-      {/* 品項3 e*/}
-
-      {/* 品項4 s*/}
-      {/* <li className="ru-species-item ru-species-item4">
-                      <div className="ru-species-img">
-                        <img src={cauliflower}></img>
-                      </div>
-                      <div className="ru-species-info">
-                        <ul>
-                          <li>
-                            <h4>
-                              綠色嫩花椰: <span>$10</span>
-                            </h4>
-                          </li>
-                          <li className="ru-species-calories">
-                            熱量: <span>50大卡</span>
-                          </li>
-                          <li className="ru-species-carbohydrates">
-                            碳水化合物: <span>$10</span>
-                          </li>
-                          <li className="ru-species-protein">
-                            蛋白質: <span>$10</span>
-                          </li>
-                          <li className="ru-species-fat">
-                            脂肪: <span>$10</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </li> */}
-      {/* 品項4 e*/}
-
-      {/* 品項5 s*/}
-      {/* <li className="ru-species-item ru-species-item5">
-                      <div className="ru-species-img">
-                        <img src={cauliflower}></img>
-                      </div>
-                      <div className="ru-species-info">
-                        <ul>
-                          <li>
-                            <h4>
-                              綠色嫩花椰:<span>$10</span>
-                            </h4>
-                          </li>
-                          <li className="ru-species-calories">
-                            熱量:<span>50大卡</span>
-                          </li>
-                          <li className="ru-species-carbohydrates">
-                            碳水化合物:<span>$10</span>
-                          </li>
-                          <li className="ru-species-protein">
-                            蛋白質:<span>$10</span>
-                          </li>
-                          <li className="ru-species-fat">
-                            脂肪:<span>$10</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </li> */}
-      {/* 品項5 e*/}
-      {/* </ul>
-                </div>
-                <RuArrowRight />
-              </div>
-
-              <div className="ru-detail-container">
-                <div className="ru-switchBtn-container">
-                  <button>今日菜色</button>
-                  <button>營養標示</button>
-                </div>
-
-                <div className="ru-info-container">
-                  <div className="ru-info-item-container">
-                    <ul className="ru-info-item-warp"> */}
-      {/* 詳細資料品項1 s */}
-      {/* <li className="ru-info-item ru-info-item1">
-                        <div className="ru-category-container">
-                          <p className="ru-category">副食</p>
-                        </div>
-                        <p className="ru-selectionName">香甜白飯</p>
-                        <p className="ru-number">$10</p>
-                      </li> */}
-      {/* 詳細資料品項1 e */}
-
-      {/* 詳細資料品項2 s */}
-      {/* <li className="ru-info-item ru-info-item2">
-                        <div className="ru-category-container">
-                          <p className="ru-category">主食</p>
-                        </div>
-                        <p className="ru-selectionName">慢煮嫩雞胸-蒜味香草</p>
-                        <p className="ru-number">$55</p>
-                      </li> */}
-      {/* 詳細資料品項2 e */}
-
-      {/* 詳細資料品項3 s */}
-      {/* <li className="ru-info-item ru-info-item3">
-                        <div className="ru-category-container">
-                          <p className="ru-category">配菜</p>
-                        </div>
-                        <p className="ru-selectionName">清炒高麗菜</p>
-                        <p className="ru-number">$10</p>
-                      </li> */}
-      {/* 詳細資料品項3 e */}
-
-      {/* 詳細資料品項4 s */}
-      {/* <li className="ru-info-item ru-info-item4">
-                        <div className="ru-category-container">
-                          <p className="ru-category">配菜</p>
-                        </div>
-                        <p className="ru-selectionName">綠色嫩花椰</p>
-                        <p className="ru-number">$10</p>
-                      </li> */}
-      {/* 詳細資料品項4 e */}
-
-      {/* 詳細資料品項5 s */}
-      {/* <li className="ru-info-item ru-info-item5">
-                        <div className="ru-category-container">
-                          <p className="ru-category">配菜</p>
-                        </div>
-                        <p className="ru-selectionName">黃金玉米</p>
-                        <p className="ru-number">$15</p>
-                      </li> */}
-      {/* 詳細資料品項5 e */}
-
-      {/* 詳細資料品項6 s */}
-      {/* <li className="ru-info-item ru-info-item6">
-                        <div className="ru-category-container">
-                          <p className="ru-category">蛋</p>
-                        </div>
-                        <p className="ru-selectionName">水煮蛋</p>
-                        <p className="ru-number">$10</p>
-                      </li> */}
-      {/* 詳細資料品項 e */}
-      {/* </ul>
-                  </div>
-                  <div className="ru-info-total-container">
-                    <div className="ru-info-total-warp">
-                      <h3>總金額</h3>
-                      <p>$110</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="ru-checkout-container">
-                  <div className="ru-checkout-warp">
-                    <RuSelection />
-                    <RuAddCart
-                      id={'addCart-btn-custom'}
-                      parentId={'addCart-btn-warp-custom'}
-                      setAmount={setAmount}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img src={background}></img>
-      </div> */}
-      {/* 商品區 - 手機版 e */}
-      {/* <Selecton /> */}
-
-      {/* 背景米圖 s */}
-      {/* <img src={background}></img> */}
-      {/* 背景米圖 e */}
     </>
   );
 }
