@@ -35,8 +35,15 @@
 .iris-brief-info {
   font-size: 1.5rem;
   color: rgb(134, 134, 134);
-  width: 8rem;
+  width: 7.5rem;
 }
+
+@media(max-width:992px){
+.iris-brief-info {
+  font-size: 1.3rem;
+  color: rgb(134, 134, 134);
+  width: 6.3rem;
+}}
 
 .iris-vl {
   border-left: 0.1rem solid rgb(134, 134, 134);

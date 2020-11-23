@@ -3,6 +3,11 @@ body {
   font-size: 10px;
 }
 
+@media (max-width: 768px) {
+  .iris-member-page-wrapper .container {
+    margin-right: 0;
+  }
+}
 
 .iris-memberpage-container {
   display: flex;
@@ -15,6 +20,12 @@ body {
     padding: 0px;
     margin: 0px;
     // margin:0
+  }
+}
+
+@media (max-width: 768px) {
+  .iris-memberpage-container {
+    min-width: 100%;
   }
 }
 

@@ -68,78 +68,83 @@ function IrisApp(props) {
 
   return (
     <>
-      <div className="container iris-memberpage-container pl-0 pr-0">
-        <IrisMemberMenuSect
-          {...props}
-          commentDelete={commentDelete}
-          userFavDelete={userFavDelete}
-          beastiePointAdd={beastiePointAdd}
+      <div className="iris-member-page-wrapper">
+        <div className="container iris-memberpage-container pl-0 pr-0">
+          <IrisMemberMenuSect
+            {...props}
+            commentDelete={commentDelete}
+            userFavDelete={userFavDelete}
+            beastiePointAdd={beastiePointAdd}
+          />
+          <Switch>
+            <Route exact path="/member/userprofile">
+              <IrisDataEditSect
+                {...props}
+                setShowUpdateModal={setShowUpdateModal}
+                setShowGetCouponBox={setShowGetCouponBox}
+                setBeastiePointAdd={setBeastiePointAdd}
+              />
+            </Route>
+            <Route exact path="/member/beastiePoint">
+              <IrisBeastiePointSect
+                {...props}
+                setShowRuleBox={setShowRuleBox}
+              />
+            </Route>
+            <Route exact path="/member/myFav">
+              <IrisMyFavSect
+                {...props}
+                userFavDelete={userFavDelete}
+                setUserFavDelete={setUserFavDelete}
+              />
+            </Route>
+            <Route exact path="/member/getCoupon">
+              <IrisGetCouponSect {...props} />
+            </Route>
+            <Route exact path="/member/orderComment">
+              <IrisOrderCommentSect
+                {...props}
+                commentDelete={commentDelete}
+                setCommentDelete={setCommentDelete}
+              />
+            </Route>
+          </Switch>
+        </div>
+
+        {/* toTopBtn */}
+        <ScrollButton />
+
+        {/* 怪獸幣規則光箱 */}
+        <IrisBeastieRuleBox
+          showRuleBox={showRuleBox}
+          setShowRuleBox={setShowRuleBox}
         />
-        <Switch>
-          <Route exact path="/member/userprofile">
-            <IrisDataEditSect
-              {...props}
-              setShowUpdateModal={setShowUpdateModal}
-              setShowGetCouponBox={setShowGetCouponBox}
-              setBeastiePointAdd={setBeastiePointAdd}
-            />
-          </Route>
-          <Route exact path="/member/beastiePoint">
-            <IrisBeastiePointSect {...props} setShowRuleBox={setShowRuleBox} />
-          </Route>
-          <Route exact path="/member/myFav">
-            <IrisMyFavSect
-              {...props}
-              userFavDelete={userFavDelete}
-              setUserFavDelete={setUserFavDelete}
-            />
-          </Route>
-          <Route exact path="/member/getCoupon">
-            <IrisGetCouponSect {...props} />
-          </Route>
-          <Route exact path="/member/orderComment">
-            <IrisOrderCommentSect
-              {...props}
-              commentDelete={commentDelete}
-              setCommentDelete={setCommentDelete}
-            />
-          </Route>
-        </Switch>
-      </div>
 
-      {/* toTopBtn */}
-      <ScrollButton />
+        {/* 成功獲得怪獸幣光箱 */}
+        <div className="IrisGetCouponBox">
+          <IrisGetCouponBox
+            showGetCouponBox={showGetCouponBox}
+            setShowGetCouponBox={setShowGetCouponBox}
+          />
+        </div>
 
-      {/* 怪獸幣規則光箱 */}
-      <IrisBeastieRuleBox
-        showRuleBox={showRuleBox}
-        setShowRuleBox={setShowRuleBox}
-      />
-
-      {/* 成功獲得怪獸幣光箱 */}
-      <div className="IrisGetCouponBox">
-        <IrisGetCouponBox
-          showGetCouponBox={showGetCouponBox}
-          setShowGetCouponBox={setShowGetCouponBox}
-        />
-      </div>
-
-      {/* 會員資料更新成功光箱 */}
-      <div
-        className="iris-update-success-mask"
-        onClick={() => {
-          setShowUpdateModal(false);
-        }}
-      ></div>
-      <div class="iris-update-success-box">
-        <div class="iris-update-success-checkmark">
-          <div class="iris-check-icon">
-            <span class="icon-line line-tip"></span>
-            <span class="icon-line line-long"></span>
-            <div class="icon-circle"></div>
-            <div class="icon-fix"></div>
+        {/* 會員資料更新成功光箱 */}
+        <div
+          className="iris-update-success-mask"
+          onClick={() => {
+            setShowUpdateModal(false);
+          }}
+        ></div>
+        <div class="iris-update-success-box">
+          <div class="iris-update-success-checkmark">
+            <div class="iris-check-icon">
+              <span class="icon-line line-tip"></span>
+              <span class="icon-line line-long"></span>
+              <div class="icon-circle"></div>
+              <div class="icon-fix"></div>
+            </div>
+            <div class="iris-update-sucess">會員資料更新成功</div>
           </div>
-          <div class="iris-update-sucess">會員資料更新成功</div>
         </div>
       </div>
     </>
