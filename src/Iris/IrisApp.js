@@ -68,7 +68,7 @@ function IrisApp(props) {
 
   return (
     <>
-      <div className="container iris-memberpage-container">
+      <div className="container iris-memberpage-container pl-0 pr-0">
         <IrisMemberMenuSect
           {...props}
           commentDelete={commentDelete}

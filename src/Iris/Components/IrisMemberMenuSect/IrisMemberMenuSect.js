@@ -10,6 +10,10 @@ import { ReactComponent as GroupOrderIcon } from './Images/group_order.svg';
 import { ReactComponent as MyFavIcon } from './Images/my_fav.svg';
 import { ReactComponent as MyCommentIcon } from './Images/my_comment.svg';
 import { ReactComponent as ProfileIcon } from './Images/profile_beastie_icon.svg';
+import { ReactComponent as WaveLine } from './Images/mobile_wave_line.svg';
+import { ReactComponent as TriagleArrow } from './Images/triangle_arrow.svg';
+import $ from 'jquery';
+
 function IrisMemberMenuSect(props) {
   const {
     currentUser,
@@ -22,6 +26,7 @@ function IrisMemberMenuSect(props) {
   const [allComments, setAllComments] = useState([]);
   const [myFavs, setMyFavs] = useState([]);
   const [couponLists, setCouponLists] = useState([]);
+  const [expandMenu, setExpandMenu] = useState(false);
 
   // -------------- 取得投稿資料 --------------- //
   // 得到所有投稿資料
@@ -55,9 +60,6 @@ function IrisMemberMenuSect(props) {
     (allComments) => allComments.member_sid === currentUser
   );
 
-  // setUserCommentCount(currentUserComment.length) //執行這個會報錯
-  // ----------------------------------------------//
-
   //  ----------------取得最愛資料----------------- //
   // 得到所有的最愛資料
   async function getMyFavFromServer() {
@@ -90,8 +92,6 @@ function IrisMemberMenuSect(props) {
   const currentUserFav = myFavs.filter(
     (myFavs) => myFavs.member_sid === currentUser
   );
-
-  // ----------------------------------------------//
 
   // -------------- 取得怪獸幣資料 --------------- //
   // 得到所有的優惠券資料
@@ -130,7 +130,27 @@ function IrisMemberMenuSect(props) {
   }
   currentUserCoupon.forEach(calctotalCoin);
   let userBeastieCoin = sum * 10;
-  // ----------------------------------------------//
+
+  // ---------------- RWD mobile ------------------- //
+  const expandMemberMenu = () => {
+    let waveLine = document.querySelector('.iris-menu-waveline #Group_5703');
+    let waveLineRec = document.querySelector(
+      '.iris-menu-waveline #Rectangle_241'
+    );
+    if (expandMenu === false) {
+      $('.iris-mune-item-wrapper-mobile').slideDown('medium');
+      setExpandMenu(true);
+      waveLine.style.fill = '#f7ede2';
+      waveLineRec.style.fill = '#f7ede2';
+    } else {
+      $('.iris-mune-item-wrapper-mobile').slideUp('medium');
+      setExpandMenu(false);
+      setTimeout(() => {
+        waveLine.style.fill = '#fff';
+        waveLineRec.style.fill = '#fff';
+      }, 375);
+    }
+  };
 
   return (
     <>
@@ -246,6 +266,128 @@ function IrisMemberMenuSect(props) {
                 <div class="iris-menu-text">我的評論</div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* for mobile Rwd */}
+      <div className="iris-membermenu-container-mobile">
+        <div className="iris-profile-background-mobile d-flex">
+          <div className="iris-profile-pic-circle ">
+            <ProfileIcon />
+          </div>
+          <div className="iris-profile-info">
+            <div className="iris-profile-name">林凱特</div>
+            <div class="iris-brief-info-wraper-mobile d-flex">
+              <div class="iris-brief-info-mobile">
+                <div>我的評論</div>
+
+                <div id="iris-comment-count">{currentUserComment.length}</div>
+              </div>
+              <div class="iris-vl"></div>
+              <div class="iris-brief-info-mobile">
+                <div>我的最愛</div>
+
+                <div id="iris-fav-count">{currentUserFav.length}</div>
+              </div>
+              <div class="iris-vl"></div>
+              <div class="iris-brief-info-mobile">
+                <div>怪獸幣</div>
+
+                <div id="iris-total-coin">{userBeastieCoin}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iris-member-dropdown-title"
+          onClick={() => {
+            expandMemberMenu();
+          }}
+        >
+          會員資料修改
+          <span className="ml-2 mb-1">
+            <TriagleArrow />
+          </span>
+        </div>
+        <div className="iris-menu-waveline">
+          <WaveLine />
+        </div>
+
+        {/* dropdown menu */}
+        <div class="iris-mune-item-wrapper-mobile">
+          <div
+            class="iris-menu-item-mobile d-flex"
+            onClick={() => {
+              props.history.push('/member/Userprofile');
+            }}
+          >
+            <div class="iris-menu-text-mobile">個人資料</div>{' '}
+          </div>
+
+          <div class="iris-menu-hr-mobile"></div>
+          <div
+            class="iris-menu-item-mobile d-flex"
+            onClick={() => {
+              props.history.push('/member/beastiePoint');
+            }}
+          >
+            <div class="iris-menu-text-mobile">怪獸幣</div>
+          </div>
+
+          <div class="iris-menu-hr-mobile"></div>
+
+          <div
+            class="iris-menu-item-mobile d-flex"
+            onClick={() => {
+              props.history.push('/member/getCoupon');
+            }}
+          >
+            <div class="iris-menu-text-mobile">專屬優惠</div>
+          </div>
+
+          <div class="iris-menu-hr-mobile"></div>
+
+          <div
+            class="iris-menu-item-mobile d-flex"
+            onClick={() => {
+              props.history.push('/orderManagement');
+            }}
+          >
+            <div class="iris-menu-text-mobile">訂單管理</div>
+          </div>
+
+          <div class="iris-menu-hr-mobile"></div>
+
+          <div
+            class="iris-menu-item-mobile d-flex"
+            onClick={() => {
+              props.history.push('/groupOrder');
+            }}
+          >
+            <div class="iris-menu-text-mobile">揪團</div>
+          </div>
+
+          <div class="iris-menu-hr-mobile"></div>
+
+          <div
+            class="iris-menu-item-mobile d-flex"
+            onClick={() => {
+              props.history.push('/member/myFav');
+            }}
+          >
+            <div class="iris-menu-text-mobile">我的最愛</div>
+          </div>
+
+          <div class="iris-menu-hr-mobile"></div>
+
+          <div
+            class="iris-menu-item-mobile d-flex"
+            onClick={() => {
+              props.history.push('/member/orderComment');
+            }}
+          >
+            <div class="iris-menu-text-mobile">我的評論</div>
           </div>
         </div>
       </div>

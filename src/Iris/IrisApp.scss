@@ -3,8 +3,19 @@ body {
   font-size: 10px;
 }
 
+
 .iris-memberpage-container {
   display: flex;
+  padding: 0px;
+}
+
+@media (max-width: 576px) {
+  .iris-memberpage-container {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    // margin:0
+  }
 }
 
 // 更新成功遮罩
