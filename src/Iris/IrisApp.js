@@ -1,41 +1,91 @@
 // ------test-----  //
 
 import React, { useState, useEffect } from 'react';
-import NavBar from './../Share/Components/NavBar/NavBar';
 import VNavbar from './../Share/Components/VNavbar/VNavbar';
-import Footer from './../Share/Components/Footer/Footer';
-import Test from './Pages/Test';
-import Test2 from './Pages/Test2';
-import IrisUserprofile from './Pages/IrisUserprofile';
-import IrisOrderComment from './Pages/IrisOrderComment';
-import IrisMyFav from './Pages/IrisMyFav';
-import IrisBeastiePoint from './Pages/IrisBeastiePoint';
-import IrisGetCoupon from './Pages/IrisGetCoupon';
-import MainContent from './Components/MainContent';
-import IrisLoginModal from './Components/IrisLoginModal/IrisLoginModal';
 import IrisMemberMenuSect from './Components/IrisMemberMenuSect/IrisMemberMenuSect';
 import IrisDataEditSect from './Components/IrisDataEditSect/IrisDataEditSect';
 import IrisBeastiePointSect from './Components/IrisBeastiePointSect/IrisBeastiePointSect';
 import IrisMyFavSect from './Components/IrisMyFavSect/IrisMyFavSect';
 import IrisGetCouponSect from './Components/IrisGetCouponSect/IrisGetCouponSect';
 import IrisOrderCommentSect from './Components/IrisOrderCommentSect/IrisOrderCommentSect';
+import IrisBeastieRuleBox from './Components/IrisBeastieRuleBox/IrisBeastieRuleBox';
+import IrisGetCouponBox from './Components/IrisGetCouponBox/IrisGetCouponBox';
 import './IrisApp.scss';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import ScrollButton from 'Share/Components/ToTopButton/ScrollButton';
 
 function IrisApp(props) {
+  const { isLogin, setShowBar } = props;
+
+  // for profile edit page
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
+  const [showGetCouponBox, setShowGetCouponBox] = useState(false);
+  const [beastiePointAdd, setBeastiePointAdd] = useState();
+
+  if (showUpdateModal === true) {
+    document.querySelector('.iris-update-success-mask').style.display = 'block';
+    document.querySelector('.iris-update-success-box').style.display = 'block';
+  } else {
+    if (
+      document.querySelector('.iris-update-success-mask') &&
+      document.querySelector('.iris-update-success-box')
+    ) {
+      document.querySelector('.iris-update-success-mask').style.display =
+        'none';
+      document.querySelector('.iris-update-success-box').style.display = 'none';
+    }
+  }
+
+  if (showGetCouponBox === true) {
+    document.querySelector('.IrisGetCouponBox').style.display = 'block';
+  } else {
+    if (document.querySelector('.IrisGetCouponBox')) {
+      document.querySelector('.IrisGetCouponBox').style.display = 'none';
+    }
+  }
+
+  // for order comment sect
+  const [commentDelete, setCommentDelete] = useState('');
+
+  // for fav sect
   const [userFavDelete, setUserFavDelete] = useState('');
+
+  // for beastie point sect
+  const [showRuleBox, setShowRuleBox] = useState(false);
+
+  // for vnbar
+  useEffect(() => {
+    setShowBar(true);
+  }, []);
+
+  // 在此頁面按登出的話直接導到首頁
+  if (isLogin === false) {
+    // setShowLoginModal(true)
+    return <Redirect to="/" />;
+  }
 
   return (
     <>
       <div className="container iris-memberpage-container">
-        <IrisMemberMenuSect {...props} />
+        <IrisMemberMenuSect
+          {...props}
+          commentDelete={commentDelete}
+          userFavDelete={userFavDelete}
+          beastiePointAdd={beastiePointAdd}
+        />
         <Switch>
           <Route exact path="/member/userprofile">
-            <IrisDataEditSect {...props} />
+            <IrisDataEditSect
+              {...props}
+              setShowUpdateModal={setShowUpdateModal}
+              setShowGetCouponBox={setShowGetCouponBox}
+              setBeastiePointAdd={setBeastiePointAdd}
+            />
           </Route>
           <Route exact path="/member/beastiePoint">
-            <IrisBeastiePointSect {...props} />
+            <IrisBeastiePointSect {...props} setShowRuleBox={setShowRuleBox} />
           </Route>
           <Route exact path="/member/myFav">
             <IrisMyFavSect
@@ -48,9 +98,49 @@ function IrisApp(props) {
             <IrisGetCouponSect {...props} />
           </Route>
           <Route exact path="/member/orderComment">
-            <IrisOrderCommentSect {...props} />
+            <IrisOrderCommentSect
+              {...props}
+              commentDelete={commentDelete}
+              setCommentDelete={setCommentDelete}
+            />
           </Route>
         </Switch>
+      </div>
+
+      {/* toTopBtn */}
+      <ScrollButton />
+
+      {/* 怪獸幣規則光箱 */}
+      <IrisBeastieRuleBox
+        showRuleBox={showRuleBox}
+        setShowRuleBox={setShowRuleBox}
+      />
+
+      {/* 成功獲得怪獸幣光箱 */}
+      <div className="IrisGetCouponBox">
+        <IrisGetCouponBox
+          showGetCouponBox={showGetCouponBox}
+          setShowGetCouponBox={setShowGetCouponBox}
+        />
+      </div>
+
+      {/* 會員資料更新成功光箱 */}
+      <div
+        className="iris-update-success-mask"
+        onClick={() => {
+          setShowUpdateModal(false);
+        }}
+      ></div>
+      <div class="iris-update-success-box">
+        <div class="iris-update-success-checkmark">
+          <div class="iris-check-icon">
+            <span class="icon-line line-tip"></span>
+            <span class="icon-line line-long"></span>
+            <div class="icon-circle"></div>
+            <div class="icon-fix"></div>
+          </div>
+          <div class="iris-update-sucess">會員資料更新成功</div>
+        </div>
       </div>
     </>
   );

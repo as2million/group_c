@@ -13,7 +13,7 @@ function IrisGetCouponSect(props) {
   const history = useHistory()
 
   const gotoProfilePage = () => {
-    history.push('/memberUserprofile')
+    history.push('/member/Userprofile')
   }
 
   // --------- 取得目前user的優惠券領取狀態 --------- //
