@@ -11,7 +11,6 @@
 
 .ru-hint-warp {
   @include flex($df, $fdr, $jcc, $alc);
-  flex-basis: 50%;
 }
 
 .ru-hint-warp > h3 {

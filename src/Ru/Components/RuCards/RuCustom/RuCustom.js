@@ -55,7 +55,7 @@ function RuCustom(props) {
   const [isPrice, setIsPrice] = useState(true); // 是否開啟價格標示
   const [isCal, setIsCal] = useState(false); // 是否開啟營養標示
   const [selection, setSelection] = useState('rice'); // 選擇開啟哪個菜色選區
-  const [limitX, setLimitX] = useState(-100); // 右滑極限值 => 白飯選區為初始值 (RuButtonB可以調不同選項區的極限值)
+  const [limitX, setLimitX] = useState(0); // 右滑極限值 => 白飯選區為初始值 (RuButtonB可以調不同選項區的極限值)
   const [imgA, setImgA] = useState();
   const [imgB, setImgB] = useState();
   const [imgC, setImgC] = useState();
@@ -137,7 +137,6 @@ function RuCustom(props) {
         const copyJson = [...myJson];
         setData(copyJson);
       });
-
     return () => {};
   }, []);
 
@@ -652,7 +651,10 @@ function RuCustom(props) {
                 </div>
               </div>
               {/*  詳細資訊 s */}
-              <div className="ru-detail-container ru-detail-container-web" id="ru-dropOutAreaD">
+              <div
+                className="ru-detail-container ru-detail-container-web"
+                id="ru-dropOutAreaD"
+              >
                 <div className="ru-switchBtn-container">
                   {/* 是否開啟價格標示 */}
                   <button id={isPrice && 'ru-active'} onClick={switchPrice}>
@@ -864,31 +866,33 @@ function RuCustom(props) {
                   />
                 </div>
               </div>
-              <div className="ru-species-container">
+              <div className="ru-arrow-container" style={{ display: 'flex' }}>
                 <RuArrowLeft moveX={moveX} setMoveX={setMoveX} />
-                {/* 副食 / 主食 / 配菜 / 蛋 的元件 s*/}
-                <div className="ru-species-warp">
-                  {/* 移動區 s */}
-                  <ul
-                    id="moveArea1"
-                    style={{ transform: `translateX(${moveX}px)` }}
-                  >
-                    {selection === 'rice' && <RuRiceA data={data} />}
-                    {selection === 'meet' && <RuMeetA data={data} />}
-                    {selection === 'vegetable' && (
-                      <RuVegetableA
-                        data={data}
-                        veg1available={veg1available}
-                        veg2available={veg2available}
-                        veg3available={veg3available}
-                        veg4available={veg4available}
-                        veg5available={veg5available}
-                      />
-                    )}
-                    {selection === 'egg' && <RuEggA data={data} />}
-                    {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
-                  </ul>
-                  {/* 移動區 e */}
+                <div className="ru-species-container">
+                  {/* 副食 / 主食 / 配菜 / 蛋 的元件 s*/}
+                  <div className="ru-species-warp">
+                    {/* 移動區 s */}
+                    <ul
+                      id="moveArea1"
+                      style={{ transform: `translateX(${moveX}px)` }}
+                    >
+                      {selection === 'rice' && <RuRiceA data={data} />}
+                      {selection === 'meet' && <RuMeetA data={data} />}
+                      {selection === 'vegetable' && (
+                        <RuVegetableA
+                          data={data}
+                          veg1available={veg1available}
+                          veg2available={veg2available}
+                          veg3available={veg3available}
+                          veg4available={veg4available}
+                          veg5available={veg5available}
+                        />
+                      )}
+                      {selection === 'egg' && <RuEggA data={data} />}
+                      {/*  副食 / 主食 / 配菜 / 蛋 的元件 e*/}
+                    </ul>
+                    {/* 移動區 e */}
+                  </div>
                 </div>
                 <RuArrowRight
                   moveX={moveX}
@@ -900,7 +904,10 @@ function RuCustom(props) {
             </div>
           </div>
           {/* rwd 詳細資訊 s */}
-          <div className="ru-detail-container ru-detail-container-rwd" id="ru-dropOutAreaD">
+          <div
+            className="ru-detail-container ru-detail-container-rwd"
+            id="ru-dropOutAreaD"
+          >
             <div className="ru-switchBtn-container">
               {/* 是否開啟價格標示 */}
               <button id={isPrice && 'ru-active'} onClick={switchPrice}>
