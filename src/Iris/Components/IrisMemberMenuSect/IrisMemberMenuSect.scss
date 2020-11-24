@@ -107,6 +107,12 @@
   margin-bottom: 3rem;
 }
 
+@media (max-width: 992px) {
+  .iris-menu-background {
+    margin-left: 1rem;
+  }
+}
+
 @media (max-width: 576px) {
   .iris-membermenu-container {
     display: none;

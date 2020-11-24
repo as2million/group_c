@@ -258,7 +258,9 @@ function IrisDataEditSect(props) {
         {/* <div className="row justify-content-center"> */}
         <div className="row justify-content-center iris-content-title-container ">
           <h2 className="iris-profile-title">會員資料</h2>
-          <WaveLine />
+          <div className="iris-profile-waveline">
+            <WaveLine />
+          </div>
           <div />
           <div className="row justify-content-center">
             <h6
@@ -276,21 +278,44 @@ function IrisDataEditSect(props) {
               帳號或密碼錯誤
             </div> */}
             <form className="iris-form-adjust">
-              <div className="d-flex  align-items-center iris-profile-item-wrapper">
-                <div className="iris-input-box testtest">姓氏</div>
-                <InputH40
-                  type="text"
-                  placeholder=""
-                  id="iris-member-family-name"
-                />
-                <div className="iris-input-box">名字</div>
+              <div className="iris-profile-item-wrapper-xl">
+                <div className="d-flex  align-items-center iris-profile-item-wrapper">
+                  <div className="iris-input-box testtest">姓氏</div>
+                  <InputH40
+                    type="text"
+                    placeholder=""
+                    id="iris-member-family-name"
+                  />
+                  <div className="iris-input-box">名字</div>
 
-                <InputH40
-                  type="text"
-                  placeholder=""
-                  id="iris-member-given-name"
-                />
+                  <InputH40
+                    type="text"
+                    placeholder=""
+                    id="iris-member-given-name"
+                  />
+                </div>
               </div>
+              {/* ----- for RWD (display block when <992px) -----*/}
+              <div className="iris-profile-item-wrapper-mobile">
+                <div className="d-flex  align-items-center iris-profile-item-wrapper">
+                  <div className="iris-input-box testtest">姓氏</div>
+                  <InputH40
+                    type="text"
+                    placeholder=""
+                    id="iris-member-family-name"
+                  />
+                </div>
+                <div className="d-flex  align-items-center iris-profile-item-wrapper">
+                  <div className="iris-input-box">名字</div>
+
+                  <InputH40
+                    type="text"
+                    placeholder=""
+                    id="iris-member-given-name"
+                  />
+                </div>
+              </div>
+              {/* --------------------------------------------- */}
               <div className="d-flex noF-wrap align-items-center iris-profile-item-wrapper">
                 <div className="iris-input-box">生日</div>
 

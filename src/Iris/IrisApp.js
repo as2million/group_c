@@ -68,6 +68,7 @@ function IrisApp(props) {
 
   return (
     <>
+      <VNavbar {...props} />
       <div className="iris-member-page-wrapper">
         <div className="container iris-memberpage-container pl-0 pr-0">
           <IrisMemberMenuSect
