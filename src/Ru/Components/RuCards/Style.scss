@@ -1,7 +1,7 @@
 @import "Ru/Pages/variable.scss";
 
 // ------------------------------------------- 網頁版 s -------------------------------------------
-.ru-item-container {
+.ru-item-container, .ru-custom-container {
   // background-color: seagreen;
   width: 100%;
   position: relative;
@@ -36,6 +36,11 @@
 //  ------------------------------------------- ipad pro版 s -------------------------------------------
 @media screen and (min-width: 992px) and (max-width: 1365.99px) {
   //   // ******** 便當 / 沙拉 s ********
+
+  .ru-item-container, .ru-custom-container {
+    background-size: 150%;
+  }
+
   .ru-card-warp {
     // background-color: gold;
     @include page-iPadPro();
@@ -56,6 +61,11 @@
 
 @media screen and (min-width: 768px) and (max-width: 991.9px) {
   //   //   // ******** 便當 / 沙拉 s ********
+
+  .ru-item-container, .ru-custom-container {
+    background-size: 250%;
+  }
+
   .ru-card-warp {
     // background-color: gold;
     @include page-iPad();
@@ -79,6 +89,10 @@
 //  ------------------------------------------- ipad 版 s -------------------------------------------
 
 @media screen and (min-width: 576px) and (max-width: 767.99px) {
+  .ru-item-container, .ru-custom-container {
+    background-size: 300%;
+  }
+
   .ru-card-warp {
     // background-color: gold;
     @include page-iPad();
@@ -103,7 +117,7 @@
 @media screen and (max-width: 575.99px) {
   // ******** 便當 / 沙拉 s ********
 
-  .ru-item-container {
+  .ru-item-container, .ru-custom-container {
     background-size: 400%;
   }
 

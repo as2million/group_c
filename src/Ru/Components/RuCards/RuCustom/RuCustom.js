@@ -1026,7 +1026,7 @@ function RuCustom(props) {
         {/* rwd 詳細資訊 e */}
 
         {/* 背景米圖 s */}
-        <img src={background}></img>
+        {/* <img src={background}></img> */}
         {/* 背景米圖 e */}
       </div>
       {/* 商品區 - 網頁版 e */}
