@@ -149,7 +149,7 @@ function App() {
     <Router>
       <>
         {/* 放切頁時不重新渲染的部份 s*/}
-        {/* <div style={{ display: !showBar && 'none' }}>
+        <div style={{ display: !showBar && 'none' }}>
           <Navbar
             cartNumber={cartNumber}
             amount={amount}
@@ -159,7 +159,7 @@ function App() {
             isLogin={isLogin}
             currentUser={currentUser}
           />
-        </div> */}
+        </div>
         {/* 放切頁時不重新渲染的部份 e*/}
         {/* 路由設定開始 */}
 
