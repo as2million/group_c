@@ -61,7 +61,7 @@ function RuCard(props) {
       return;
     }
     for (let i = 0; i < 22; i++) {
-      console.log(data[i].sid);
+      // console.log(data[i].sid);
       switch (proudctId) {
         case data[i].sid:
           setPath('/bento/' + (data[i].sid - 1));

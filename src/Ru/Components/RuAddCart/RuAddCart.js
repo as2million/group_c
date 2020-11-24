@@ -123,7 +123,7 @@ function RuAddCart(props) {
       }
     } else {
       currentCart.push(item);
-      console.log('currentCart', currentCart);
+      // console.log('currentCart', currentCart);
     }
     localStorage.setItem('cart', JSON.stringify(currentCart));
     // setMeals(currentCart)

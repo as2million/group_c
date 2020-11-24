@@ -35,7 +35,7 @@ function RuAddFavorite(props) {
       })
         .then((r) => r.json())
         .then((o) => {
-          console.log(o)
+          // console.log(o)
         })
       // 待開啟 e
     } else if (!isShowFav) {
@@ -58,7 +58,7 @@ function RuAddFavorite(props) {
       })
         .then((r) => r.json())
         .then((o) => {
-          console.log(o)
+          // console.log(o)
         })
       // 待開啟 e
     }

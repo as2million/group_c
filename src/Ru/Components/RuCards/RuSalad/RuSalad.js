@@ -46,7 +46,7 @@ function RuSalad(props) {
         // console.log(myJson)
         const copyJsonFav = [...myJson];
         setDataFav(copyJsonFav);
-        console.log(copyJsonFav);
+        // console.log(copyJsonFav);
       });
   }, []);
 

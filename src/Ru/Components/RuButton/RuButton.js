@@ -19,7 +19,7 @@ function RuButton(props) {
 
   // 路由方法
   function handleCardArea(e) {
-    console.log(props)
+    // console.log(props)
     if (id === 'ru-button-btn-1') {
       props.history.push('/productList')
     } else if (id === 'ru-button-btn-2') {

@@ -17,14 +17,14 @@ function RuDetailedInfo(props) {
   const [fat, setFat] = useState(0)
 
   useEffect(() => {
-    console.log(
-      data,
-      data[0],
-      data[0].productName,
-      data[0].cabohydrate,
-      riceName,
-      riceName === data[0].productName
-    )
+    // console.log(
+    //   data,
+    //   data[0],
+    //   data[0].productName,
+    //   data[0].cabohydrate,
+    //   riceName,
+    //   riceName === data[0].productName
+    // )
 
     // 給予營養標示邏輯
     for (let i = 0; i < data.length; i++) {
