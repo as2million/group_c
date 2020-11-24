@@ -19,7 +19,7 @@ function RuPriceA(props) {
   const [isShowTotal, setIsShowTotal] = useState(false) // 沒有品項時不出現總價
 
   useEffect(() => {
-    console.log('執行useEffect')
+    // console.log('執行useEffect')
     return () => {
       setIsShowTotal(true) // 價格state變動後才渲染總價
     }
