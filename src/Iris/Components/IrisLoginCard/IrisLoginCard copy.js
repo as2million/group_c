@@ -73,58 +73,56 @@ function IrisLoginCard(props) {
     }, 1100);
   };
 
-  // 登入比對帳密
-  // callback checkData()
-  async function handleLogin(checkData) {
-    const useraccount = document.querySelector('#useraccount').value;
-    const userpassword = document.querySelector('#userpassword').value;
-
-    let userInput = { useraccount: useraccount, userpassword: userpassword };
-
-    // 先拿到後端的資料
-    fetch('http://localhost:5000/member/userLogin', {
-      method: 'POST',
-      body: JSON.stringify(userInput),
+  // 登入
+  let userinfo = [];
+  // 拿資料庫會員資料
+  async function getData() {
+    const url = 'http://localhost:5000/member/allUserProfile';
+    const request = new Request(url, {
+      method: 'GET',
       headers: new Headers({
         Accept: 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'appliaction/json',
       }),
-    })
-      .then((r) => r.json())
-      .then((o) => {
-        // 拿到資料後判斷是否可登入
-        checkData(o);
-      });
+    });
+    const response = await fetch(request);
+    userinfo = await response.json();
   }
 
-  function checkData(o) {
-    let memberSid = o[0].map((item) => Object.values(item)[0]);
-    console.log(typeof memberSid[0]);
-    // 無此帳密
-    if (o[0].length === 0) {
-      // 若帳密錯誤，顯示錯誤提示
-      $('.iris-login-alert').slideDown('slow');
-      // 2秒後消失
-      setTimeout(() => {
-        $('.iris-login-alert').slideUp('slow');
-      }, 2000);
-      // 清空input
-      document.querySelector('#useraccount').value = '';
-      document.querySelector('#userpassword').value = '';
-      // 帳密正確
-    } else {
-      console.log('ok');
-      setIsLogin(true);
-      setCurrentUser(memberSid[0]); // 設定目前使用者id
+  // 登入比對帳密
+  // 要用 async await, 先拿到資料再比對
+  async function handleLogin() {
+    await getData();
+    const useraccount = document.querySelector('#useraccount').value;
+    const userpassword = document.querySelector('#userpassword').value;
+    for (let i = 0; i < userinfo.length; i++) {
+      if (
+        // 正確
+        useraccount === userinfo[i].account &&
+        userpassword === userinfo[i].password
+      ) {
+        setIsLogin(true);
+        setCurrentUser(userinfo[i].member_sid); // 設定目前使用者id
 
-      // 放在localStorage
-      let currentUserStorage = parseInt(memberSid[0]);
-      localStorage.setItem('currentUser', currentUserStorage);
+        // 放在localStorage
+        let currentUserStorage = parseInt(userinfo[i].member_sid);
+        localStorage.setItem('currentUser', currentUserStorage);
 
-      setCurrentUserData(o[0]);
-      console.log('current', memberSid[0]);
-      setShowLoginModal(false); // 登入光箱消失
-      setShowSuccessBox(true); // 出現登入成功光箱)
+        setCurrentUserData(userinfo[i]);
+        console.log(userinfo[i]);
+        setShowLoginModal(false); // 登入光箱消失
+        setShowSuccessBox(true); // 出現登入成功光箱)
+      } else {
+        // 若帳密錯誤，顯示錯誤提示
+        $('.iris-login-alert').slideDown('slow');
+        // 2秒後消失
+        setTimeout(() => {
+          $('.iris-login-alert').slideUp('slow');
+        }, 2000);
+        // 清空input
+        document.querySelector('#useraccount').value = '';
+        document.querySelector('#userpassword').value = '';
+      }
     }
   }
 
@@ -256,7 +254,7 @@ function IrisLoginCard(props) {
             <div
               className="iris-login-button"
               onClick={() => {
-                handleLogin(checkData);
+                handleLogin();
               }}
             >
               <ButtonLogin
