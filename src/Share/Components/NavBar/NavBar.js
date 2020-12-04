@@ -141,7 +141,7 @@ function NavBar(props) {
               <li className="navBar-jess-navigation_item">
                 <Nav.Link
                   as={NavLink}
-                  to="/getcoupon"
+                  to="/member/getcoupon"
                   onClick={(e) => {
                     disableLink(e);
                   }}
@@ -171,7 +171,7 @@ function NavBar(props) {
                     <li className="navBar-jess-dropdown_item">
                       <Nav.Link
                         as={NavLink}
-                        to="/orderManagement"
+                        to="/member/orderManagement"
                         onClick={(e) => {
                           disableLink(e);
                         }}

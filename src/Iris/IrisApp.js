@@ -11,6 +11,8 @@ import IrisOrderCommentSect from './Components/IrisOrderCommentSect/IrisOrderCom
 import IrisBeastieRuleBox from './Components/IrisBeastieRuleBox/IrisBeastieRuleBox';
 import IrisGetCouponBox from './Components/IrisGetCouponBox/IrisGetCouponBox';
 import './IrisApp.scss';
+import ChaOrderManagement from './../Cha/Components/Cha-Order-Management/ChaOrderManagement'
+
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
@@ -101,6 +103,9 @@ function IrisApp(props) {
             </Route>
             <Route exact path="/member/getCoupon">
               <IrisGetCouponSect {...props} />
+            </Route>
+            <Route exact path="/member/orderManagement">
+              <ChaOrderManagement {...props} />
             </Route>
             <Route exact path="/member/orderComment">
               <IrisOrderCommentSect

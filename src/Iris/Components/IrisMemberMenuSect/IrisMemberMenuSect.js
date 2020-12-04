@@ -21,6 +21,8 @@ function IrisMemberMenuSect(props) {
     commentDelete,
     beastiePointAdd,
     currentUserData,
+    couponStatus,
+    setCouponStatus,
   } = props;
 
   const [allComments, setAllComments] = useState([]);
@@ -223,7 +225,7 @@ function IrisMemberMenuSect(props) {
               <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
-                  props.history.push('/orderManagement');
+                  props.history.push('/member/orderManagement');
                 }}
               >
                 <PlateIcon class="iris-menu-icon" />
@@ -232,7 +234,7 @@ function IrisMemberMenuSect(props) {
 
               <div class="iris-menu-hr"></div>
 
-              <div
+              {/* <div
                 class="iris-menu-item d-flex"
                 onClick={() => {
                   props.history.push('/groupOrder');
@@ -242,7 +244,7 @@ function IrisMemberMenuSect(props) {
                 <div class="iris-menu-text">揪團</div>
               </div>
 
-              <div class="iris-menu-hr"></div>
+              <div class="iris-menu-hr"></div> */}
 
               <div
                 class="iris-menu-item d-flex"

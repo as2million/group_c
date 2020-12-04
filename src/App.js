@@ -444,7 +444,7 @@ function App() {
                 setSelectTime={setSelectTime}
               />
             </Route> */}
-            <Route path="/orderManagement">
+            {/* <Route path="/orderManagement">
               <IrisOrderManagement
                 handleCartNumber={handleCartNumber}
                 showBar={showBar}
@@ -468,7 +468,7 @@ function App() {
                 slecteTime={slecteTime}
                 setSelectTime={setSelectTime}
               />
-            </Route>
+            </Route> */}
             {/* jess */}
             {/* 放"page資料夾"內的元件 */}
             <Route path="/menu">
